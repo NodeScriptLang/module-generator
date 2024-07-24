@@ -1,0 +1,13 @@
+workspaceId: K3s1DGYzFv1WxxK3
+version: 0.0.0
+ignoreParams:
+  - alt
+  - fields
+  - userIp
+  - quotaUser
+  - prettyPrint
+  - key
+auth:
+  name: Authorization
+  in: header
+  prefix: Bearer

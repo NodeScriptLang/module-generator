@@ -1,0 +1,12 @@
+workspaceId: bCRYvfi8qAsgBZYr
+ignorePaths:
+  - oauth
+ignoreParams:
+  - token
+auth:
+  name: Authorization
+  in: header
+  prefix: Bearer
+  description: |
+    Any supported Slack token (bot, workflow, user).
+    Note: not all operations are supported with different token types.
