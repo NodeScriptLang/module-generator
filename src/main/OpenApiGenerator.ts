@@ -54,25 +54,29 @@ export class OpenApiGenerator {
         this.modules = [];
         const mainServer = this.spec.servers?.[0];
         for (const [path, pathItem] of Object.entries(this.spec.paths)) {
-            const {
-                servers: pathServers = [],
-                parameters: pathParameters = [],
-                ...declarations
-            } = pathItem;
-            const server = pathServers[0] ?? mainServer;
-            if (!server) {
+            try {
+
+                const {
+                    servers: pathServers = [],
+                    parameters: pathParameters = [],
+                    ...declarations
+                } = pathItem;
+                const server = pathServers[0] ?? mainServer;
+                if (!server) {
+                    throw new InvalidSpecError(`Cannot process path ${path}: no server`);
+                }
+                for (const [method, opSpec] of Object.entries(declarations)) {
+                    const parameters = [...pathParameters, ...opSpec.parameters ?? []].map(_ => this.resolveRef(_));
+                    const normalizedPath = '/' + path.replace(/^\/+/gi, '');
+                    const normalizedServer = server.url.replace(/\/+$/, '');
+                    const module = new OpenApiModule(this, normalizedPath, method, normalizedServer, parameters, opSpec);
+                    this.modules.push(module);
+                }
+            } catch (error) {
                 if (this.options.skipInvalid) {
-                    console.warn(`Cannot process path ${path}: no server`);
                     continue;
                 }
-                throw new InvalidSpecError(`Cannot process path ${path}: no server`);
-            }
-            for (const [method, opSpec] of Object.entries(declarations)) {
-                const parameters = [...pathParameters, ...opSpec.parameters ?? []].map(_ => this.resolveRef(_));
-                const normalizedPath = '/' + path.replace(/^\/+/gi, '');
-                const normalizedServer = server.url.replace(/\/+$/, '');
-                const module = new OpenApiModule(this, normalizedPath, method, normalizedServer, parameters, opSpec);
-                this.modules.push(module);
+                throw error;
             }
         }
     }
@@ -88,7 +92,7 @@ export class OpenApiGenerator {
     }
 
     resolveRef<T extends { $ref?: string }>(obj: T, visitedRefs = new Set<string>()): T {
-        if (obj.$ref) {
+        if (obj?.$ref) {
             // Prevent circular dependencies
             if (visitedRefs.has(obj.$ref)) {
                 return {} as any;

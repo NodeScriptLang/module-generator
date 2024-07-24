@@ -1,0 +1,9 @@
+workspaceId:
+  development:
+  production: zB3iBCbkwUnACwj8
+auth:
+  name: Authorization
+  in: header
+  prefix: Bearer
+  description: |
+    OpenAI API key.

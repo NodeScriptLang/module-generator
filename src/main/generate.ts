@@ -10,7 +10,7 @@ import { OpenApiGenerator } from './OpenApiGenerator.js';
 
 // Use .env to configure keys and generation options
 const env = process.env.NODE_ENV || 'development';
-configDotenv({ path: `env.${env}` });
+configDotenv({ path: `.env.${env}` });
 configDotenv({ path: '.env' });
 
 // The file arg must point to OpenAPI spec in JSON
@@ -18,10 +18,10 @@ const file = process.argv[2];
 if (!file) {
     throw new Error('File is required');
 }
-const apiSpec = JSON.parse(await readFile(file, 'utf-8'));
+const apiSpec = yaml.parse(await readFile(file, 'utf-8'));
 
 // Optionally .config.yaml can be used to further customize generation
-const configFile = file.replace(/\.json$/gi, '.config.yaml');
+const configFile = file.replace(/\.(json|yaml)$/gi, '.config.yaml');
 const configSpec = yaml.parse(await readFile(configFile, 'utf-8').catch(() => '{}'));
 
 // Generated specs will be placed in .generated dir

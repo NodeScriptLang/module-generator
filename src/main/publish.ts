@@ -12,7 +12,7 @@ import { NodeScriptApi } from './NodeScriptApi.js';
 
 // Use .env to configure API endpoints and keys
 const env = process.env.NODE_ENV || 'development';
-configDotenv({ path: `env.${env}` });
+configDotenv({ path: `.env.${env}` });
 configDotenv({ path: '.env' });
 const forcePublish = process.env.FORCE_PUBLISH === 'true';
 
@@ -24,7 +24,7 @@ if (!file) {
     throw new Error('File is required');
 }
 // Config file is required here, it must contain target workspaceId
-const configFile = file.replace(/\.json$/gi, '.config.yaml');
+const configFile = file.replace(/\.(json|yaml)$/gi, '.config.yaml');
 const configSpec = yaml.parse(await readFile(configFile, 'utf-8'));
 const workspaceId = configSpec.workspaceId[env];
 if (!workspaceId) {
