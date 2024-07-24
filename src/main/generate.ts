@@ -9,6 +9,8 @@ import yaml from 'yaml';
 import { OpenApiGenerator } from './OpenApiGenerator.js';
 
 // Use .env to configure keys and generation options
+const env = process.env.NODE_ENV || 'development';
+configDotenv({ path: `env.${env}` });
 configDotenv({ path: '.env' });
 
 // The file arg must point to OpenAPI spec in JSON

@@ -1,4 +1,6 @@
-workspaceId: K3s1DGYzFv1WxxK3
+workspaceId:
+  development: K3s1DGYzFv1WxxK3
+  production:
 version: 0.0.0
 ignoreParams:
   - alt

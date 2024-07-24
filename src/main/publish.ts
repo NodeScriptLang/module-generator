@@ -11,6 +11,8 @@ import yaml from 'yaml';
 import { NodeScriptApi } from './NodeScriptApi.js';
 
 // Use .env to configure API endpoints and keys
+const env = process.env.NODE_ENV || 'development';
+configDotenv({ path: `env.${env}` });
 configDotenv({ path: '.env' });
 const forcePublish = process.env.FORCE_PUBLISH === 'true';
 
@@ -24,7 +26,8 @@ if (!file) {
 // Config file is required here, it must contain target workspaceId
 const configFile = file.replace(/\.json$/gi, '.config.yaml');
 const configSpec = yaml.parse(await readFile(configFile, 'utf-8'));
-if (!configSpec.workspaceId) {
+const workspaceId = configSpec.workspaceId[env];
+if (!workspaceId) {
     throw new Error(`Missing workspaceId in ${configFile}`);
 }
 
@@ -42,7 +45,7 @@ const nsApi = new NodeScriptApi(
 );
 
 // Fetch existing modules, so that we do not publish the unchanged modules
-const existingModules = await nsApi.getWorkspaceModules(configSpec.workspaceId);
+const existingModules = await nsApi.getWorkspaceModules(workspaceId);
 
 for (const file of files) {
     try {
@@ -64,7 +67,7 @@ for (const file of files) {
         moduleSpec.version = nextVersion;
         // Now publish
         await nsApi.publishModule({
-            workspaceId: configSpec.workspaceId,
+            workspaceId,
             moduleSpec,
             computeCode: moduleCode,
             visibility: 'public',

@@ -1,4 +1,6 @@
-workspaceId: bCRYvfi8qAsgBZYr
+workspaceId:
+  development: bCRYvfi8qAsgBZYr
+  production: Y9Mmif5WBIbGp6FX
 ignorePaths:
   - oauth
 ignoreParams:
