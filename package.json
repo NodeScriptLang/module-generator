@@ -1,6 +1,6 @@
 {
     "name": "@nodescript/module-generator",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Generate NodeScript modules",
     "type": "module",
     "sideEffects": false,
