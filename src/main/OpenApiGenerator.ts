@@ -4,25 +4,7 @@ import { InvalidAiResponseError, InvalidSpecError } from './errors.js';
 import { OpenAiService } from './OpenAi.js';
 import { OpenApiModule } from './OpenApiModule.js';
 import { OpenApiSpec } from './schema.js';
-
-export interface OpenApiGeneratorOptions {
-    workspaceId: string;
-    skipInvalid: boolean;
-    openAiKey: string;
-    proxy: string;
-    ignoreParams: string[];
-    auth?: {
-        in: 'query' | 'header';
-        name: string;
-        prefix?: string;
-        description?: string;
-        oauth2?: { // TODO refine schema
-            authorizationUrl?: string;
-            tokenUrl?: string;
-            scopes?: string[];
-        };
-    };
-}
+import { OpenApiGeneratorOptions } from './types.js';
 
 export class OpenApiGenerator {
 

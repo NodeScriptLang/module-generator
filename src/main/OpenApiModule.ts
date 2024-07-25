@@ -1,5 +1,6 @@
 import { CodeBuilder } from '@nodescript/core/compiler';
 import { ModuleDefinition, ParamsDefinition } from '@nodescript/core/types';
+import { set } from '@nodescript/pointer';
 import { UnknownSchemaDef } from 'airtight';
 import camelcase from 'camelcase';
 import escapeStringRegexp from 'escape-string-regexp';
@@ -138,8 +139,11 @@ export class OpenApiModule {
             };
         }
         for (const param of this.parsedParams) {
-            const schema = this.getSimplifiedSchema(param);
-            schema.description = param.schema.description ?? '';
+            const schema = this.getSimplifiedSchema(param.schema);
+            if (!param.required && schema.default == null) {
+                schema.optional = true;
+            }
+            schema.description = param.description ?? '';
             schema.metadata = {
                 originalSchema: param.schema,
             };
@@ -165,15 +169,18 @@ export class OpenApiModule {
             }
             const resolvedSchema = this.generator.deepResolveRef(param.schema ?? {});
             const description = param.description ?? resolvedSchema.description ?? '';
-            this.parsedParams.push({
+            const parsedParam: ParsedParamSpec = {
                 paramName,
+                description,
                 originalName: param.name.trim(),
                 in: param.in,
                 schema: { ...resolvedSchema, description },
                 required: param.required ?? false,
                 style: param.style,
                 explode: param.explode,
-            });
+            };
+            this.applyParamOverrides(parsedParam);
+            this.parsedParams.push(parsedParam);
         }
         if (this.opSpec.requestBody) {
             const requestBody = this.generator.deepResolveRef(this.opSpec.requestBody);
@@ -191,6 +198,17 @@ export class OpenApiModule {
         }
     }
 
+    private applyParamOverrides(paramSpec: ParsedParamSpec) {
+        const overrides = this.generator.options.paramOverrides ?? [];
+        const paramOverride = overrides.find(_ => _.paramName === paramSpec.paramName);
+        if (!paramOverride) {
+            return;
+        }
+        for (const [key, value] of Object.entries(paramOverride.overrides)) {
+            set(paramSpec, key, value);
+        }
+    }
+
     private parseRequestBody(schema: OpenApiSchemaSpec) {
         if (schema.type === 'object') {
             // Top-level properties become sockets
@@ -201,6 +219,7 @@ export class OpenApiModule {
                 const required = (schema.required ?? []).includes(key);
                 this.parsedParams.push({
                     paramName,
+                    description: resolvedSchema.description ?? '',
                     originalName: key,
                     in: 'body',
                     schema: resolvedSchema,
@@ -212,6 +231,7 @@ export class OpenApiModule {
             this.parsedParams.push({
                 paramName: 'requestBody',
                 originalName: '',
+                description: schema.description ?? '',
                 in: 'body_raw',
                 schema,
                 required: true,
@@ -220,15 +240,13 @@ export class OpenApiModule {
         }
     }
 
-    private getSimplifiedSchema(param: ParsedParamSpec): UnknownSchemaDef {
-        const { schema, required } = param;
+    private getSimplifiedSchema(schema: OpenApiSchemaSpec): UnknownSchemaDef {
         switch (schema.type) {
             case 'string':
                 return {
                     type: 'string',
                     default: schema.default,
                     enum: schema.enum,
-                    optional: required ? undefined : true,
                 };
             case 'integer':
             case 'number':
@@ -236,24 +254,20 @@ export class OpenApiModule {
                     type: 'number',
                     minimum: schema.minimum,
                     maximum: schema.maximum,
-                    optional: required ? undefined : true,
                 };
             case 'boolean':
                 return {
                     type: 'boolean',
-                    optional: required ? undefined : true,
                 };
             case 'array':
                 return {
                     type: 'array',
                     items: { type: 'any' },
-                    optional: required ? undefined : true,
                 };
             case 'object':
             default:
                 return {
                     type: 'any',
-                    optional: required ? undefined : true,
                 };
         }
     }
@@ -333,6 +347,7 @@ export class OpenApiModule {
 export interface ParsedParamSpec {
     paramName: string;
     originalName: string;
+    description: string;
     in: 'query' | 'header' | 'cookie' | 'path' | 'body' | 'body_raw';
     schema: OpenApiSchemaSpec;
     required: boolean;
