@@ -38,7 +38,7 @@
         "typescript": "^5.5.2"
     },
     "dependencies": {
-        "@nodescript/core": "^7.18.2",
+        "@nodescript/core": "^7.18.3",
         "@nodescript/errors": "^1.1.4",
         "@nodescript/logger": "^2.0.5",
         "@nodescript/pointer": "^1.7.0",
