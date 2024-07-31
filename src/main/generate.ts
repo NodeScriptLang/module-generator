@@ -25,7 +25,7 @@ const configFile = file.replace(/\.(json|yaml)$/gi, '.config.yaml');
 const configSpec = yaml.parse(await readFile(configFile, 'utf-8').catch(() => '{}'));
 
 // Generated specs will be placed in .generated dir
-const targetDir = path.join('.generated', path.basename(file).replace(/\.json$/, ''));
+const targetDir = path.join('.generated', path.basename(file).replace(/\.(json|yaml)$/gi, ''));
 await mkdir(targetDir, { recursive: true });
 
 const generator = new OpenApiGenerator(apiSpec, {
