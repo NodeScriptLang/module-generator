@@ -1,0 +1,263 @@
+id: notion
+displayName: Notion
+workspaceId:
+  development: ""
+  production: ""
+baseUrl: https://api.notion.com
+description:
+commonParams:
+  - paramName: notionVersion
+    originalName: Notion-Version
+    required: false
+    in: header
+    description: ""
+    schema:
+      default: 2022-06-28
+      type: string
+modules:
+  - moduleName: Blocks / Delete
+    method: delete
+    path: /v1/blocks/{id}
+    description: Delete a block
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        originalName: id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Blocks / Get
+    method: get
+    path: /v1/blocks/{id}
+    description: Retrieve a block
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        originalName: id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Blocks / Properties / Update
+    method: patch
+    path: /v1/blocks/{id}
+    description: This endpoint allows you to update block content. See external docs for more info
+    externalDocs: https://developers.notion.com/reference/update-a-block
+    params:
+      - paramName: id
+        description: ""
+        originalName: id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: paragraph
+        description: ""
+        originalName: paragraph
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Blocks / Children / Get
+    method: get
+    path: /v1/blocks/{id}/children
+    description: Retrieve block children
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        originalName: id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: pageSize
+        description: ""
+        originalName: page_size
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Blocks / Children / Update
+    method: patch
+    path: /v1/blocks/{id}/children
+    description: Append block children
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        originalName: id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: children
+        description: ""
+        originalName: children
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Comments / Retrieve
+    method: get
+    path: /v1/comments
+    description: Retrieve a user object using the ID specified in the request path.
+    externalDocs: ""
+    params:
+      - paramName: blockId
+        description: ""
+        originalName: block_id
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: pageSize
+        description: ""
+        originalName: page_size
+        in: query
+        schema:
+          type: string
+        required: false
+    requestBodyType: form
+  - moduleName: Databases / Get
+    method: get
+    path: /v1/databases/{id}
+    description: "Retrieves a database object using the ID specified in the request path. "
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        originalName: id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Databases / Update
+    method: patch
+    path: /v1/databases/{id}
+    description: Update a database
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        originalName: id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: properties
+        description: ""
+        originalName: properties
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: title
+        description: ""
+        originalName: title
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Databases / Query
+    method: post
+    path: /v1/databases/{id}/query
+    description: Query a database
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        originalName: id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: filter
+        description: ""
+        originalName: filter
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Pages / Get
+    method: get
+    path: /v1/pages/{id}
+    description: "Retrieves a Page object using the ID in the request path. This
+      endpoint exposes page properties, not page content. "
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        originalName: id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Pages / Update
+    method: patch
+    path: /v1/pages/{id}
+    description: "Updates a page by setting the values of any properties specified
+      in the JSON body of the request. Properties not updated via parameters
+      will remain unchanged. "
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        originalName: id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: properties
+        description: ""
+        originalName: properties
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Pages / Properties / Get
+    method: get
+    path: /v1/pages/{page_id}/properties/{property_id}
+    description: Retrieve a Page Property Item
+    externalDocs: ""
+    params:
+      - paramName: pageId
+        description: ""
+        originalName: page_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: propertyId
+        description: ""
+        originalName: property_id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Users / Get
+    method: get
+    path: /v1/users/{id}
+    description: Retrieve a user object using the ID specified in the request path.
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        originalName: id
+        in: path
+        schema:
+          type: string
+        required: true
+    requestBodyType: form

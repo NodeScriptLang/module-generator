@@ -3,7 +3,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { getGlobalDispatcher, ProxyAgent, request } from 'undici';
 
-import { InvalidAiResponseError } from './errors.js';
+import { InvalidAiResponseError } from '../errors.js';
 
 export class OpenAiService {
 
