@@ -29,7 +29,7 @@ const targetFile = args['--out'];
 if (!targetFile) {
     throw new Error('Usage: --in=<openapi file> --out=<library spec file>');
 }
-const targetDir = path.basename(targetFile).replace(/\.(json|yaml)$/gi, '');
+const targetDir = path.dirname(targetFile);
 await mkdir(targetDir, { recursive: true });
 
 const id = path.basename(sourceFile).replace(/\.(json|yaml)$/gi, '');
