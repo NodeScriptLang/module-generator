@@ -9,7 +9,7 @@ description: One way to interact with the Slack platform is its HTTP RPC-based
   workspace tokens blessed with related OAuth scopes.
 commonParams:
   - paramName: auth
-    originalName: Authorization
+    paramKey: Authorization
     in: header
     prefix: Bearer
     required: true
@@ -25,21 +25,21 @@ modules:
     params:
       - paramName: appId
         description: The id of the app to approve.
-        originalName: app_id
+        paramKey: app_id
         in: body
         schema:
           type: string
         required: false
       - paramName: requestId
         description: The id of the request to approve.
-        originalName: request_id
+        paramKey: request_id
         in: body
         schema:
           type: string
         required: false
       - paramName: teamId
         description: ""
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
@@ -54,7 +54,7 @@ modules:
       - paramName: limit
         description: The maximum number of items to return. Must be between 1 - 1000
           both inclusive.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -62,21 +62,21 @@ modules:
       - paramName: cursor
         description: Set `cursor` to `next_cursor` returned by the previous call to list
           items in the next page
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
         required: false
       - paramName: teamId
         description: ""
-        originalName: team_id
+        paramKey: team_id
         in: query
         schema:
           type: string
         required: false
       - paramName: enterpriseId
         description: ""
-        originalName: enterprise_id
+        paramKey: enterprise_id
         in: query
         schema:
           type: string
@@ -90,7 +90,7 @@ modules:
       - paramName: limit
         description: The maximum number of items to return. Must be between 1 - 1000
           both inclusive.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -98,14 +98,14 @@ modules:
       - paramName: cursor
         description: Set `cursor` to `next_cursor` returned by the previous call to list
           items in the next page
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
         required: false
       - paramName: teamId
         description: ""
-        originalName: team_id
+        paramKey: team_id
         in: query
         schema:
           type: string
@@ -118,21 +118,21 @@ modules:
     params:
       - paramName: appId
         description: The id of the app to restrict.
-        originalName: app_id
+        paramKey: app_id
         in: body
         schema:
           type: string
         required: false
       - paramName: requestId
         description: The id of the request to restrict.
-        originalName: request_id
+        paramKey: request_id
         in: body
         schema:
           type: string
         required: false
       - paramName: teamId
         description: ""
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
@@ -147,7 +147,7 @@ modules:
       - paramName: limit
         description: The maximum number of items to return. Must be between 1 - 1000
           both inclusive.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -155,21 +155,21 @@ modules:
       - paramName: cursor
         description: Set `cursor` to `next_cursor` returned by the previous call to list
           items in the next page
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
         required: false
       - paramName: teamId
         description: ""
-        originalName: team_id
+        paramKey: team_id
         in: query
         schema:
           type: string
         required: false
       - paramName: enterpriseId
         description: ""
-        originalName: enterprise_id
+        paramKey: enterprise_id
         in: query
         schema:
           type: string
@@ -182,7 +182,7 @@ modules:
     params:
       - paramName: channelId
         description: The channel to archive.
-        originalName: channel_id
+        paramKey: channel_id
         in: body
         schema:
           type: string
@@ -196,7 +196,7 @@ modules:
     params:
       - paramName: channelId
         description: The channel to convert to private.
-        originalName: channel_id
+        paramKey: channel_id
         in: body
         schema:
           type: string
@@ -210,21 +210,21 @@ modules:
     params:
       - paramName: description
         description: Description of the public or private channel to create.
-        originalName: description
+        paramKey: description
         in: body
         schema:
           type: string
         required: false
       - paramName: isPrivate
         description: When `true`, creates a private channel instead of a public channel
-        originalName: is_private
+        paramKey: is_private
         in: body
         schema:
           type: boolean
         required: true
       - paramName: name
         description: Name of the public or private channel to create.
-        originalName: name
+        paramKey: name
         in: body
         schema:
           type: string
@@ -233,7 +233,7 @@ modules:
         description: "When `true`, the channel will be available org-wide. Note: if the
           channel is not `org_wide=true`, you must specify a `team_id` for this
           channel"
-        originalName: org_wide
+        paramKey: org_wide
         in: body
         schema:
           type: boolean
@@ -241,7 +241,7 @@ modules:
       - paramName: teamId
         description: "The workspace to create the channel in. Note: this argument is
           required unless you set `org_wide=true`."
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
@@ -255,7 +255,7 @@ modules:
     params:
       - paramName: channelId
         description: The channel to delete.
-        originalName: channel_id
+        paramKey: channel_id
         in: body
         schema:
           type: string
@@ -269,7 +269,7 @@ modules:
     params:
       - paramName: channelId
         description: The channel to be disconnected from some workspaces.
-        originalName: channel_id
+        paramKey: channel_id
         in: body
         schema:
           type: string
@@ -277,7 +277,7 @@ modules:
       - paramName: leavingTeamIds
         description: The team to be removed from the channel. Currently only a single
           team id can be specified.
-        originalName: leaving_team_ids
+        paramKey: leaving_team_ids
         in: body
         schema:
           type: string
@@ -293,7 +293,7 @@ modules:
     params:
       - paramName: channelIds
         description: A comma-separated list of channels to filter to.
-        originalName: channel_ids
+        paramKey: channel_ids
         in: query
         schema:
           type: string
@@ -301,7 +301,7 @@ modules:
       - paramName: teamIds
         description: A comma-separated list of the workspaces to which the channels you
           would like returned belong.
-        originalName: team_ids
+        paramKey: team_ids
         in: query
         schema:
           type: string
@@ -309,7 +309,7 @@ modules:
       - paramName: limit
         description: The maximum number of items to return. Must be between 1 - 1000
           both inclusive.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -317,7 +317,7 @@ modules:
       - paramName: cursor
         description: Set `cursor` to `next_cursor` returned by the previous call to list
           items in the next page.
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
@@ -330,7 +330,7 @@ modules:
     params:
       - paramName: channelId
         description: The channel to get preferences for.
-        originalName: channel_id
+        paramKey: channel_id
         in: query
         schema:
           type: string
@@ -345,7 +345,7 @@ modules:
       - paramName: channelId
         description: The channel to determine connected workspaces within the
           organization for.
-        originalName: channel_id
+        paramKey: channel_id
         in: query
         schema:
           type: string
@@ -353,7 +353,7 @@ modules:
       - paramName: cursor
         description: Set `cursor` to `next_cursor` returned by the previous call to list
           items in the next page
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
@@ -361,7 +361,7 @@ modules:
       - paramName: limit
         description: The maximum number of items to return. Must be between 1 - 1000
           both inclusive.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -374,14 +374,14 @@ modules:
     params:
       - paramName: channelId
         description: The channel that the users will be invited to.
-        originalName: channel_id
+        paramKey: channel_id
         in: body
         schema:
           type: string
         required: true
       - paramName: userIds
         description: The users to invite.
-        originalName: user_ids
+        paramKey: user_ids
         in: body
         schema:
           type: string
@@ -395,14 +395,14 @@ modules:
     params:
       - paramName: channelId
         description: The channel to rename.
-        originalName: channel_id
+        paramKey: channel_id
         in: body
         schema:
           type: string
         required: true
       - paramName: name
         description: ""
-        originalName: name
+        paramKey: name
         in: body
         schema:
           type: string
@@ -416,7 +416,7 @@ modules:
     params:
       - paramName: channelId
         description: The channel to link this group to.
-        originalName: channel_id
+        paramKey: channel_id
         in: body
         schema:
           type: string
@@ -425,7 +425,7 @@ modules:
         description: The [IDP
           Group](https://slack.com/help/articles/115001435788-Connect-identity-provider-groups-to-your-Enterprise-Grid-org)
           ID to be an allowlist for the private channel.
-        originalName: group_id
+        paramKey: group_id
         in: body
         schema:
           type: string
@@ -434,14 +434,14 @@ modules:
         description: The workspace where the channel exists. This argument is required
           for channels only tied to one workspace, and optional for channels
           that are shared across an organization.
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
         required: false
       - paramName: token
         description: "Authentication token. Requires scope: `admin.conversations:write`"
-        originalName: token
+        paramKey: token
         in: body
         schema:
           type: string
@@ -455,7 +455,7 @@ modules:
     params:
       - paramName: channelId
         description: ""
-        originalName: channel_id
+        paramKey: channel_id
         in: query
         schema:
           type: string
@@ -464,7 +464,7 @@ modules:
         description: The workspace where the channel exists. This argument is required
           for channels only tied to one workspace, and optional for channels
           that are shared across an organization.
-        originalName: team_id
+        paramKey: team_id
         in: query
         schema:
           type: string
@@ -477,7 +477,7 @@ modules:
     params:
       - paramName: channelId
         description: The channel to remove the linked group from.
-        originalName: channel_id
+        paramKey: channel_id
         in: body
         schema:
           type: string
@@ -486,7 +486,7 @@ modules:
         description: The [IDP
           Group](https://slack.com/help/articles/115001435788-Connect-identity-provider-groups-to-your-Enterprise-Grid-org)
           ID to remove from the private channel.
-        originalName: group_id
+        paramKey: group_id
         in: body
         schema:
           type: string
@@ -495,14 +495,14 @@ modules:
         description: The workspace where the channel exists. This argument is required
           for channels only tied to one workspace, and optional for channels
           that are shared across an organization.
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
         required: true
       - paramName: token
         description: "Authentication token. Requires scope: `admin.conversations:write`"
-        originalName: token
+        paramKey: token
         in: body
         schema:
           type: string
@@ -517,14 +517,14 @@ modules:
       - paramName: teamIds
         description: Comma separated string of team IDs, signifying the workspaces to
           search through.
-        originalName: team_ids
+        paramKey: team_ids
         in: query
         schema:
           type: string
         required: false
       - paramName: query
         description: Name of the the channel to query by.
-        originalName: query
+        paramKey: query
         in: query
         schema:
           type: string
@@ -532,7 +532,7 @@ modules:
       - paramName: limit
         description: Maximum number of items to be returned. Must be between 1 - 20 both
           inclusive. Default is 10.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -540,7 +540,7 @@ modules:
       - paramName: cursor
         description: Set `cursor` to `next_cursor` returned by the previous call to list
           items in the next page.
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
@@ -550,7 +550,7 @@ modules:
           example `private` will search private channels, while
           `private_exclude` will exclude them. For a full list of types, check
           the [Types section](#types).
-        originalName: search_channel_types
+        paramKey: search_channel_types
         in: query
         schema:
           type: string
@@ -561,7 +561,7 @@ modules:
           users in the channel), and `created` (date channel was created). You
           can optionally pair this with the `sort_dir` arg to change how it is
           sorted "
-        originalName: sort
+        paramKey: sort
         in: query
         schema:
           type: string
@@ -570,7 +570,7 @@ modules:
         description: Sort direction. Possible values are `asc` for ascending order like
           (1, 2, 3) or (a, b, c), and `desc` for descending order like (3, 2, 1)
           or (c, b, a)
-        originalName: sort_dir
+        paramKey: sort_dir
         in: query
         schema:
           type: string
@@ -583,14 +583,14 @@ modules:
     params:
       - paramName: channelId
         description: The channel to set the prefs for
-        originalName: channel_id
+        paramKey: channel_id
         in: body
         schema:
           type: string
         required: true
       - paramName: prefs
         description: The prefs for this channel in a stringified JSON format.
-        originalName: prefs
+        paramKey: prefs
         in: body
         schema:
           type: string
@@ -605,14 +605,14 @@ modules:
     params:
       - paramName: channelId
         description: The encoded `channel_id` to add or remove to workspaces.
-        originalName: channel_id
+        paramKey: channel_id
         in: body
         schema:
           type: string
         required: true
       - paramName: orgChannel
         description: True if channel has to be converted to an org channel
-        originalName: org_channel
+        paramKey: org_channel
         in: body
         schema:
           type: boolean
@@ -620,7 +620,7 @@ modules:
       - paramName: targetTeamIds
         description: A comma-separated list of workspaces to which the channel should be
           shared. Not required if the channel is being shared org-wide.
-        originalName: target_team_ids
+        paramKey: target_team_ids
         in: body
         schema:
           type: string
@@ -628,7 +628,7 @@ modules:
       - paramName: teamId
         description: The workspace to which the channel belongs. Omit this argument if
           the channel is a cross-workspace shared channel.
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
@@ -642,7 +642,7 @@ modules:
     params:
       - paramName: channelId
         description: The channel to unarchive.
-        originalName: channel_id
+        paramKey: channel_id
         in: body
         schema:
           type: string
@@ -657,14 +657,14 @@ modules:
       - paramName: name
         description: The name of the emoji to be removed. Colons (`:myemoji:`) around
           the value are not required, although they may be included.
-        originalName: name
+        paramKey: name
         in: body
         schema:
           type: string
         required: true
       - paramName: token
         description: "Authentication token. Requires scope: `admin.teams:write`"
-        originalName: token
+        paramKey: token
         in: body
         schema:
           type: string
@@ -672,7 +672,7 @@ modules:
       - paramName: url
         description: The URL of a file to use as an image for the emoji. Square images
           under 128KB and with transparent backgrounds work best.
-        originalName: url
+        paramKey: url
         in: body
         schema:
           type: string
@@ -686,7 +686,7 @@ modules:
     params:
       - paramName: aliasFor
         description: The alias of the emoji.
-        originalName: alias_for
+        paramKey: alias_for
         in: body
         schema:
           type: string
@@ -694,14 +694,14 @@ modules:
       - paramName: name
         description: The name of the emoji to be aliased. Colons (`:myemoji:`) around
           the value are not required, although they may be included.
-        originalName: name
+        paramKey: name
         in: body
         schema:
           type: string
         required: true
       - paramName: token
         description: "Authentication token. Requires scope: `admin.teams:write`"
-        originalName: token
+        paramKey: token
         in: body
         schema:
           type: string
@@ -716,7 +716,7 @@ modules:
       - paramName: cursor
         description: Set `cursor` to `next_cursor` returned by the previous call to list
           items in the next page
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
@@ -724,7 +724,7 @@ modules:
       - paramName: limit
         description: The maximum number of items to return. Must be between 1 - 1000
           both inclusive.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -738,14 +738,14 @@ modules:
       - paramName: name
         description: The name of the emoji to be removed. Colons (`:myemoji:`) around
           the value are not required, although they may be included.
-        originalName: name
+        paramKey: name
         in: body
         schema:
           type: string
         required: true
       - paramName: token
         description: "Authentication token. Requires scope: `admin.teams:write`"
-        originalName: token
+        paramKey: token
         in: body
         schema:
           type: string
@@ -760,21 +760,21 @@ modules:
       - paramName: name
         description: The name of the emoji to be renamed. Colons (`:myemoji:`) around
           the value are not required, although they may be included.
-        originalName: name
+        paramKey: name
         in: body
         schema:
           type: string
         required: true
       - paramName: newName
         description: The new name of the emoji.
-        originalName: new_name
+        paramKey: new_name
         in: body
         schema:
           type: string
         required: true
       - paramName: token
         description: "Authentication token. Requires scope: `admin.teams:write`"
-        originalName: token
+        paramKey: token
         in: body
         schema:
           type: string
@@ -788,14 +788,14 @@ modules:
     params:
       - paramName: inviteRequestId
         description: ID of the request to invite.
-        originalName: invite_request_id
+        paramKey: invite_request_id
         in: body
         schema:
           type: string
         required: true
       - paramName: teamId
         description: ID for the workspace where the invite request was made.
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
@@ -809,7 +809,7 @@ modules:
     params:
       - paramName: teamId
         description: ID for the workspace where the invite requests were made.
-        originalName: team_id
+        paramKey: team_id
         in: query
         schema:
           type: string
@@ -817,7 +817,7 @@ modules:
       - paramName: cursor
         description: Value of the `next_cursor` field sent as part of the previous API
           response
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
@@ -825,7 +825,7 @@ modules:
       - paramName: limit
         description: The number of results that will be returned by the API on each
           invocation. Must be between 1 - 1000, both inclusive
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -838,7 +838,7 @@ modules:
     params:
       - paramName: teamId
         description: ID for the workspace where the invite requests were made.
-        originalName: team_id
+        paramKey: team_id
         in: query
         schema:
           type: string
@@ -846,7 +846,7 @@ modules:
       - paramName: cursor
         description: Value of the `next_cursor` field sent as part of the previous api
           response
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
@@ -854,7 +854,7 @@ modules:
       - paramName: limit
         description: The number of results that will be returned by the API on each
           invocation. Must be between 1 - 1000 both inclusive
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -867,14 +867,14 @@ modules:
     params:
       - paramName: inviteRequestId
         description: ID of the request to invite.
-        originalName: invite_request_id
+        paramKey: invite_request_id
         in: body
         schema:
           type: string
         required: true
       - paramName: teamId
         description: ID for the workspace where the invite request was made.
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
@@ -888,7 +888,7 @@ modules:
     params:
       - paramName: teamId
         description: ID for the workspace where the invite requests were made.
-        originalName: team_id
+        paramKey: team_id
         in: query
         schema:
           type: string
@@ -896,7 +896,7 @@ modules:
       - paramName: cursor
         description: Value of the `next_cursor` field sent as part of the previous API
           response
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
@@ -904,7 +904,7 @@ modules:
       - paramName: limit
         description: The number of results that will be returned by the API on each
           invocation. Must be between 1 - 1000, both inclusive
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -917,7 +917,7 @@ modules:
     params:
       - paramName: limit
         description: The maximum number of items to return.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -925,14 +925,14 @@ modules:
       - paramName: cursor
         description: Set `cursor` to `next_cursor` returned by the previous call to list
           items in the next page.
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
         required: false
       - paramName: teamId
         description: ""
-        originalName: team_id
+        paramKey: team_id
         in: query
         schema:
           type: string
@@ -945,7 +945,7 @@ modules:
     params:
       - paramName: teamDescription
         description: Description for the team.
-        originalName: team_description
+        paramKey: team_description
         in: body
         schema:
           type: string
@@ -953,21 +953,21 @@ modules:
       - paramName: teamDiscoverability
         description: Who can join the team. A team's discoverability can be `open`,
           `closed`, `invite_only`, or `unlisted`.
-        originalName: team_discoverability
+        paramKey: team_discoverability
         in: body
         schema:
           type: string
         required: false
       - paramName: teamDomain
         description: Team domain (for example, slacksoftballteam).
-        originalName: team_domain
+        paramKey: team_domain
         in: body
         schema:
           type: string
         required: true
       - paramName: teamName
         description: Team name (for example, Slack Softball Team).
-        originalName: team_name
+        paramKey: team_name
         in: body
         schema:
           type: string
@@ -982,7 +982,7 @@ modules:
       - paramName: limit
         description: The maximum number of items to return. Must be between 1 - 100 both
           inclusive.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -990,7 +990,7 @@ modules:
       - paramName: cursor
         description: Set `cursor` to `next_cursor` returned by the previous call to list
           items in the next page.
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
@@ -1003,7 +1003,7 @@ modules:
     params:
       - paramName: teamId
         description: ""
-        originalName: team_id
+        paramKey: team_id
         in: query
         schema:
           type: string
@@ -1011,7 +1011,7 @@ modules:
       - paramName: limit
         description: The maximum number of items to return. Must be between 1 - 1000
           both inclusive.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -1019,7 +1019,7 @@ modules:
       - paramName: cursor
         description: Set `cursor` to `next_cursor` returned by the previous call to list
           items in the next page.
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
@@ -1032,7 +1032,7 @@ modules:
     params:
       - paramName: teamId
         description: ""
-        originalName: team_id
+        paramKey: team_id
         in: query
         schema:
           type: string
@@ -1045,21 +1045,21 @@ modules:
     params:
       - paramName: channelIds
         description: An array of channel IDs.
-        originalName: channel_ids
+        paramKey: channel_ids
         in: body
         schema:
           type: string
         required: true
       - paramName: teamId
         description: ID for the workspace to set the default channel for.
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
         required: true
       - paramName: token
         description: "Authentication token. Requires scope: `admin.teams:write`"
-        originalName: token
+        paramKey: token
         in: body
         schema:
           type: string
@@ -1073,14 +1073,14 @@ modules:
     params:
       - paramName: description
         description: The new description for the workspace.
-        originalName: description
+        paramKey: description
         in: body
         schema:
           type: string
         required: true
       - paramName: teamId
         description: ID for the workspace to set the description for.
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
@@ -1096,14 +1096,14 @@ modules:
       - paramName: discoverability
         description: This workspace's discovery setting. It must be set to one of
           `open`, `invite_only`, `closed`, or `unlisted`.
-        originalName: discoverability
+        paramKey: discoverability
         in: body
         schema:
           type: string
         required: true
       - paramName: teamId
         description: The ID of the workspace to set discoverability on.
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
@@ -1117,21 +1117,21 @@ modules:
     params:
       - paramName: imageUrl
         description: Image URL for the icon
-        originalName: image_url
+        paramKey: image_url
         in: body
         schema:
           type: string
         required: true
       - paramName: teamId
         description: ID for the workspace to set the icon for.
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
         required: true
       - paramName: token
         description: "Authentication token. Requires scope: `admin.teams:write`"
-        originalName: token
+        paramKey: token
         in: body
         schema:
           type: string
@@ -1145,14 +1145,14 @@ modules:
     params:
       - paramName: name
         description: The new name of the workspace.
-        originalName: name
+        paramKey: name
         in: body
         schema:
           type: string
         required: true
       - paramName: teamId
         description: ID for the workspace to set the name for.
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
@@ -1166,21 +1166,21 @@ modules:
     params:
       - paramName: channelIds
         description: Comma separated string of channel IDs.
-        originalName: channel_ids
+        paramKey: channel_ids
         in: body
         schema:
           type: string
         required: true
       - paramName: teamId
         description: The workspace to add default channels in.
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
         required: false
       - paramName: usergroupId
         description: ID of the IDP group to add default channels for.
-        originalName: usergroup_id
+        paramKey: usergroup_id
         in: body
         schema:
           type: string
@@ -1196,7 +1196,7 @@ modules:
       - paramName: autoProvision
         description: When `true`, this method automatically creates new workspace
           accounts for the IDP group members.
-        originalName: auto_provision
+        paramKey: auto_provision
         in: body
         schema:
           type: boolean
@@ -1204,14 +1204,14 @@ modules:
       - paramName: teamIds
         description: A comma separated list of encoded team (workspace) IDs. Each
           workspace *MUST* belong to the organization associated with the token.
-        originalName: team_ids
+        paramKey: team_ids
         in: body
         schema:
           type: string
         required: true
       - paramName: usergroupId
         description: An encoded usergroup (IDP Group) ID.
-        originalName: usergroup_id
+        paramKey: usergroup_id
         in: body
         schema:
           type: string
@@ -1225,21 +1225,21 @@ modules:
     params:
       - paramName: usergroupId
         description: ID of the IDP group to list default channels for.
-        originalName: usergroup_id
+        paramKey: usergroup_id
         in: query
         schema:
           type: string
         required: true
       - paramName: teamId
         description: ID of the the workspace.
-        originalName: team_id
+        paramKey: team_id
         in: query
         schema:
           type: string
         required: false
       - paramName: includeNumMembers
         description: Flag to include or exclude the count of members per channel.
-        originalName: include_num_members
+        paramKey: include_num_members
         in: query
         schema:
           type: boolean
@@ -1253,14 +1253,14 @@ modules:
     params:
       - paramName: channelIds
         description: Comma-separated string of channel IDs
-        originalName: channel_ids
+        paramKey: channel_ids
         in: body
         schema:
           type: string
         required: true
       - paramName: usergroupId
         description: ID of the IDP Group
-        originalName: usergroup_id
+        paramKey: usergroup_id
         in: body
         schema:
           type: string
@@ -1274,14 +1274,14 @@ modules:
     params:
       - paramName: channelIds
         description: Comma separated values of channel IDs to add user in the new workspace.
-        originalName: channel_ids
+        paramKey: channel_ids
         in: body
         schema:
           type: string
         required: false
       - paramName: isRestricted
         description: True if user should be added to the workspace as a guest.
-        originalName: is_restricted
+        paramKey: is_restricted
         in: body
         schema:
           type: boolean
@@ -1289,21 +1289,21 @@ modules:
       - paramName: isUltraRestricted
         description: True if user should be added to the workspace as a single-channel
           guest.
-        originalName: is_ultra_restricted
+        paramKey: is_ultra_restricted
         in: body
         schema:
           type: boolean
         required: false
       - paramName: teamId
         description: The ID (`T1234`) of the workspace.
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
         required: true
       - paramName: userId
         description: The ID of the user to add to the workspace.
-        originalName: user_id
+        paramKey: user_id
         in: body
         schema:
           type: string
@@ -1318,21 +1318,21 @@ modules:
       - paramName: channelIds
         description: A comma-separated list of `channel_id`s for this user to join. At
           least one channel is required.
-        originalName: channel_ids
+        paramKey: channel_ids
         in: body
         schema:
           type: string
         required: true
       - paramName: customMessage
         description: An optional message to send to the user in the invite email.
-        originalName: custom_message
+        paramKey: custom_message
         in: body
         schema:
           type: string
         required: false
       - paramName: email
         description: The email address of the person to invite.
-        originalName: email
+        paramKey: email
         in: body
         schema:
           type: string
@@ -1341,28 +1341,28 @@ modules:
         description: Timestamp when guest account should be disabled. Only include this
           timestamp if you are inviting a guest user and you want their account
           to expire on a certain date.
-        originalName: guest_expiration_ts
+        paramKey: guest_expiration_ts
         in: body
         schema:
           type: string
         required: false
       - paramName: isRestricted
         description: "Is this user a multi-channel guest user? (default: false)"
-        originalName: is_restricted
+        paramKey: is_restricted
         in: body
         schema:
           type: boolean
         required: false
       - paramName: isUltraRestricted
         description: "Is this user a single channel guest user? (default: false)"
-        originalName: is_ultra_restricted
+        paramKey: is_ultra_restricted
         in: body
         schema:
           type: boolean
         required: false
       - paramName: realName
         description: Full name of the user.
-        originalName: real_name
+        paramKey: real_name
         in: body
         schema:
           type: string
@@ -1370,14 +1370,14 @@ modules:
       - paramName: resend
         description: "Allow this invite to be resent in the future if a user has not
           signed up yet. (default: false)"
-        originalName: resend
+        paramKey: resend
         in: body
         schema:
           type: boolean
         required: false
       - paramName: teamId
         description: The ID (`T1234`) of the workspace.
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
@@ -1391,7 +1391,7 @@ modules:
     params:
       - paramName: teamId
         description: The ID (`T1234`) of the workspace.
-        originalName: team_id
+        paramKey: team_id
         in: query
         schema:
           type: string
@@ -1399,14 +1399,14 @@ modules:
       - paramName: cursor
         description: Set `cursor` to `next_cursor` returned by the previous call to list
           items in the next page.
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
         required: false
       - paramName: limit
         description: Limit for how many users to be retrieved per page
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -1419,14 +1419,14 @@ modules:
     params:
       - paramName: teamId
         description: The ID (`T1234`) of the workspace.
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
         required: true
       - paramName: userId
         description: The ID of the user to remove.
-        originalName: user_id
+        paramKey: user_id
         in: body
         schema:
           type: string
@@ -1440,14 +1440,14 @@ modules:
     params:
       - paramName: sessionId
         description: ""
-        originalName: session_id
+        paramKey: session_id
         in: body
         schema:
           type: number
         required: true
       - paramName: teamId
         description: ID of the team that the session belongs to
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
@@ -1461,21 +1461,21 @@ modules:
     params:
       - paramName: mobileOnly
         description: "Only expire mobile sessions (default: false)"
-        originalName: mobile_only
+        paramKey: mobile_only
         in: body
         schema:
           type: boolean
         required: false
       - paramName: userId
         description: The ID of the user to wipe sessions for
-        originalName: user_id
+        paramKey: user_id
         in: body
         schema:
           type: string
         required: true
       - paramName: webOnly
         description: "Only expire web sessions (default: false)"
-        originalName: web_only
+        paramKey: web_only
         in: body
         schema:
           type: boolean
@@ -1489,14 +1489,14 @@ modules:
     params:
       - paramName: teamId
         description: The ID (`T1234`) of the workspace.
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
         required: true
       - paramName: userId
         description: The ID of the user to designate as an admin.
-        originalName: user_id
+        paramKey: user_id
         in: body
         schema:
           type: string
@@ -1510,21 +1510,21 @@ modules:
     params:
       - paramName: expirationTs
         description: Timestamp when guest account should be disabled.
-        originalName: expiration_ts
+        paramKey: expiration_ts
         in: body
         schema:
           type: number
         required: true
       - paramName: teamId
         description: The ID (`T1234`) of the workspace.
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
         required: true
       - paramName: userId
         description: The ID of the user to set an expiration for.
-        originalName: user_id
+        paramKey: user_id
         in: body
         schema:
           type: string
@@ -1538,14 +1538,14 @@ modules:
     params:
       - paramName: teamId
         description: The ID (`T1234`) of the workspace.
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
         required: true
       - paramName: userId
         description: Id of the user to promote to owner.
-        originalName: user_id
+        paramKey: user_id
         in: body
         schema:
           type: string
@@ -1559,14 +1559,14 @@ modules:
     params:
       - paramName: teamId
         description: The ID (`T1234`) of the workspace.
-        originalName: team_id
+        paramKey: team_id
         in: body
         schema:
           type: string
         required: true
       - paramName: userId
         description: The ID of the user to designate as a regular user.
-        originalName: user_id
+        paramKey: user_id
         in: body
         schema:
           type: string
@@ -1580,14 +1580,14 @@ modules:
     params:
       - paramName: error
         description: Error response to return
-        originalName: error
+        paramKey: error
         in: query
         schema:
           type: string
         required: false
       - paramName: foo
         description: example property to return
-        originalName: foo
+        paramKey: foo
         in: query
         schema:
           type: string
@@ -1601,21 +1601,21 @@ modules:
     params:
       - paramName: eventContext
         description: ""
-        originalName: event_context
+        paramKey: event_context
         in: query
         schema:
           type: string
         required: true
       - paramName: cursor
         description: ""
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
         required: false
       - paramName: limit
         description: ""
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -1634,14 +1634,14 @@ modules:
     params:
       - paramName: scopes
         description: A comma separated list of scopes to request for
-        originalName: scopes
+        paramKey: scopes
         in: query
         schema:
           type: string
         required: true
       - paramName: triggerId
         description: Token used to trigger the permissions API
-        originalName: trigger_id
+        paramKey: trigger_id
         in: query
         schema:
           type: string
@@ -1657,14 +1657,14 @@ modules:
           parameter to a `next_cursor` attribute returned by a previous
           request's `response_metadata`. Default value fetches the first "page"
           of the collection. See [pagination](/docs/pagination) for more detail.
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
         required: false
       - paramName: limit
         description: The maximum number of items to return.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -1687,14 +1687,14 @@ modules:
           parameter to a `next_cursor` attribute returned by a previous
           request's `response_metadata`. Default value fetches the first "page"
           of the collection. See [pagination](/docs/pagination) for more detail.
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
         required: false
       - paramName: limit
         description: The maximum number of items to return.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -1708,21 +1708,21 @@ modules:
     params:
       - paramName: scopes
         description: A comma separated list of user scopes to request for
-        originalName: scopes
+        paramKey: scopes
         in: query
         schema:
           type: string
         required: true
       - paramName: triggerId
         description: Token used to trigger the request
-        originalName: trigger_id
+        paramKey: trigger_id
         in: query
         schema:
           type: string
         required: true
       - paramName: user
         description: The user this scope is being requested for
-        originalName: user
+        paramKey: user
         in: query
         schema:
           type: string
@@ -1735,14 +1735,14 @@ modules:
     params:
       - paramName: clientId
         description: Issued when you created your application.
-        originalName: client_id
+        paramKey: client_id
         in: query
         schema:
           type: string
         required: false
       - paramName: clientSecret
         description: Issued when you created your application.
-        originalName: client_secret
+        paramKey: client_secret
         in: query
         schema:
           type: string
@@ -1756,7 +1756,7 @@ modules:
       - paramName: test
         description: Setting this parameter to `1` triggers a _testing mode_ where the
           specified token will not actually be revoked.
-        originalName: test
+        paramKey: test
         in: query
         schema:
           type: boolean
@@ -1775,7 +1775,7 @@ modules:
     params:
       - paramName: bot
         description: Bot user to get info on
-        originalName: bot
+        paramKey: bot
         in: query
         schema:
           type: string
@@ -1791,14 +1791,14 @@ modules:
           this method is called with a user token, the `created_by` field is
           optional and defaults to the authed user of the token. Otherwise, the
           field is required.
-        originalName: created_by
+        paramKey: created_by
         in: body
         schema:
           type: string
         required: false
       - paramName: dateStart
         description: Call start time in UTC UNIX timestamp format
-        originalName: date_start
+        paramKey: date_start
         in: body
         schema:
           type: number
@@ -1806,7 +1806,7 @@ modules:
       - paramName: desktopAppJoinUrl
         description: When supplied, available Slack clients will attempt to directly
           launch the 3rd-party Call with this URL.
-        originalName: desktop_app_join_url
+        paramKey: desktop_app_join_url
         in: body
         schema:
           type: string
@@ -1814,7 +1814,7 @@ modules:
       - paramName: externalDisplayId
         description: An optional, human-readable ID supplied by the 3rd-party Call
           provider. If supplied, this ID will be displayed in the Call object.
-        originalName: external_display_id
+        paramKey: external_display_id
         in: body
         schema:
           type: string
@@ -1822,21 +1822,21 @@ modules:
       - paramName: externalUniqueId
         description: An ID supplied by the 3rd-party Call provider. It must be unique
           across all Calls from that service.
-        originalName: external_unique_id
+        paramKey: external_unique_id
         in: body
         schema:
           type: string
         required: true
       - paramName: joinUrl
         description: The URL required for a client to join the Call.
-        originalName: join_url
+        paramKey: join_url
         in: body
         schema:
           type: string
         required: true
       - paramName: title
         description: The name of the Call.
-        originalName: title
+        paramKey: title
         in: body
         schema:
           type: string
@@ -1844,7 +1844,7 @@ modules:
       - paramName: users
         description: The list of users to register as participants in the Call. [Read
           more on how to specify users here](/apis/calls#users).
-        originalName: users
+        paramKey: users
         in: body
         schema:
           type: string
@@ -1858,7 +1858,7 @@ modules:
     params:
       - paramName: duration
         description: Call duration in seconds
-        originalName: duration
+        paramKey: duration
         in: body
         schema:
           type: number
@@ -1866,7 +1866,7 @@ modules:
       - paramName: id
         description: "`id` returned when registering the call using the
           [`calls.add`](/methods/calls.add) method."
-        originalName: id
+        paramKey: id
         in: body
         schema:
           type: string
@@ -1881,7 +1881,7 @@ modules:
       - paramName: id
         description: "`id` of the Call returned by the [`calls.add`](/methods/calls.add)
           method."
-        originalName: id
+        paramKey: id
         in: query
         schema:
           type: string
@@ -1894,7 +1894,7 @@ modules:
     params:
       - paramName: id
         description: "`id` returned by the [`calls.add`](/methods/calls.add) method."
-        originalName: id
+        paramKey: id
         in: body
         schema:
           type: string
@@ -1902,7 +1902,7 @@ modules:
       - paramName: users
         description: The list of users to add as participants in the Call. [Read more on
           how to specify users here](/apis/calls#users).
-        originalName: users
+        paramKey: users
         in: body
         schema:
           type: string
@@ -1916,7 +1916,7 @@ modules:
     params:
       - paramName: id
         description: "`id` returned by the [`calls.add`](/methods/calls.add) method."
-        originalName: id
+        paramKey: id
         in: body
         schema:
           type: string
@@ -1924,7 +1924,7 @@ modules:
       - paramName: users
         description: The list of users to remove as participants in the Call. [Read more
           on how to specify users here](/apis/calls#users).
-        originalName: users
+        paramKey: users
         in: body
         schema:
           type: string
@@ -1939,28 +1939,28 @@ modules:
       - paramName: desktopAppJoinUrl
         description: When supplied, available Slack clients will attempt to directly
           launch the 3rd-party Call with this URL.
-        originalName: desktop_app_join_url
+        paramKey: desktop_app_join_url
         in: body
         schema:
           type: string
         required: false
       - paramName: id
         description: "`id` returned by the [`calls.add`](/methods/calls.add) method."
-        originalName: id
+        paramKey: id
         in: body
         schema:
           type: string
         required: true
       - paramName: joinUrl
         description: The URL required for a client to join the Call.
-        originalName: join_url
+        paramKey: join_url
         in: body
         schema:
           type: string
         required: false
       - paramName: title
         description: The name of the Call.
-        originalName: title
+        paramKey: title
         in: body
         schema:
           type: string
@@ -1977,21 +1977,21 @@ modules:
           `chat:write:user` scope. [Bot users](/bot-users) in this context are
           considered authed users. If unused or false, the message will be
           deleted with `chat:write:bot` scope.
-        originalName: as_user
+        paramKey: as_user
         in: body
         schema:
           type: boolean
         required: false
       - paramName: channel
         description: Channel containing the message to be deleted.
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
         required: false
       - paramName: ts
         description: Timestamp of the message to be deleted.
-        originalName: ts
+        paramKey: ts
         in: body
         schema:
           type: number
@@ -2008,21 +2008,21 @@ modules:
           `chat:write:user` scope. [Bot users](/bot-users) in this context are
           considered authed users. If unused or false, the message will be
           deleted with `chat:write:bot` scope.
-        originalName: as_user
+        paramKey: as_user
         in: body
         schema:
           type: boolean
         required: false
       - paramName: channel
         description: The channel the scheduled_message is posting to
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
         required: true
       - paramName: scheduledMessageId
         description: "`scheduled_message_id` returned from call to chat.scheduleMessage"
-        originalName: scheduled_message_id
+        paramKey: scheduled_message_id
         in: body
         schema:
           type: string
@@ -2036,14 +2036,14 @@ modules:
     params:
       - paramName: channel
         description: The ID of the conversation or channel containing the message
-        originalName: channel
+        paramKey: channel
         in: query
         schema:
           type: string
         required: true
       - paramName: messageTs
         description: A message's `ts` value, uniquely identifying it within a channel
-        originalName: message_ts
+        paramKey: message_ts
         in: query
         schema:
           type: string
@@ -2057,14 +2057,14 @@ modules:
       - paramName: channel
         description: Channel to send message to. Can be a public channel, private group
           or IM channel. Can be an encoded ID, or a name.
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
         required: false
       - paramName: text
         description: Text of the message to send.
-        originalName: text
+        paramKey: text
         in: body
         schema:
           type: string
@@ -2080,7 +2080,7 @@ modules:
         description: Pass true to post the message as the authed user. Defaults to true
           if the chat:write:bot scope is not included. Otherwise, defaults to
           false.
-        originalName: as_user
+        paramKey: as_user
         in: body
         schema:
           type: boolean
@@ -2088,7 +2088,7 @@ modules:
       - paramName: attachments
         description: A JSON-based array of structured attachments, presented as a
           URL-encoded string.
-        originalName: attachments
+        paramKey: attachments
         in: body
         schema:
           type: string
@@ -2096,7 +2096,7 @@ modules:
       - paramName: blocks
         description: A JSON-based array of structured blocks, presented as a URL-encoded
           string.
-        originalName: blocks
+        paramKey: blocks
         in: body
         schema:
           type: string
@@ -2104,7 +2104,7 @@ modules:
       - paramName: channel
         description: Channel, private group, or IM channel to send message to. Can be an
           encoded ID, or a name.
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
@@ -2113,7 +2113,7 @@ modules:
         description: Emoji to use as the icon for this message. Overrides `icon_url`.
           Must be used in conjunction with `as_user` set to `false`, otherwise
           ignored. See [authorship](#authorship) below.
-        originalName: icon_emoji
+        paramKey: icon_emoji
         in: body
         schema:
           type: string
@@ -2122,14 +2122,14 @@ modules:
         description: URL to an image to use as the icon for this message. Must be used
           in conjunction with `as_user` set to false, otherwise ignored. See
           [authorship](#authorship) below.
-        originalName: icon_url
+        paramKey: icon_url
         in: body
         schema:
           type: string
         required: false
       - paramName: linkNames
         description: Find and link channel names and usernames.
-        originalName: link_names
+        paramKey: link_names
         in: body
         schema:
           type: boolean
@@ -2137,7 +2137,7 @@ modules:
       - paramName: parse
         description: Change how messages are treated. Defaults to `none`. See
           [below](#formatting).
-        originalName: parse
+        paramKey: parse
         in: body
         schema:
           type: string
@@ -2146,7 +2146,7 @@ modules:
         description: How this field works and whether it is required depends on other
           fields you use in your API call. [See below](#text_usage) for more
           detail.
-        originalName: text
+        paramKey: text
         in: body
         schema:
           type: string
@@ -2156,7 +2156,7 @@ modules:
           thread. Avoid using a reply's `ts` value; use its parent's value
           instead. Ephemeral messages in threads are only shown if there is
           already an active thread.
-        originalName: thread_ts
+        paramKey: thread_ts
         in: body
         schema:
           type: string
@@ -2164,7 +2164,7 @@ modules:
       - paramName: user
         description: "`id` of the user who will receive the ephemeral message. The user
           should be in the channel specified by the `channel` argument."
-        originalName: user
+        paramKey: user
         in: body
         schema:
           type: string
@@ -2173,7 +2173,7 @@ modules:
         description: Set your bot's user name. Must be used in conjunction with
           `as_user` set to false, otherwise ignored. See
           [authorship](#authorship) below.
-        originalName: username
+        paramKey: username
         in: body
         schema:
           type: string
@@ -2188,7 +2188,7 @@ modules:
       - paramName: asUser
         description: Pass true to post the message as the authed user, instead of as a
           bot. Defaults to false. See [authorship](#authorship) below.
-        originalName: as_user
+        paramKey: as_user
         in: body
         schema:
           type: string
@@ -2196,7 +2196,7 @@ modules:
       - paramName: attachments
         description: A JSON-based array of structured attachments, presented as a
           URL-encoded string.
-        originalName: attachments
+        paramKey: attachments
         in: body
         schema:
           type: string
@@ -2204,7 +2204,7 @@ modules:
       - paramName: blocks
         description: A JSON-based array of structured blocks, presented as a URL-encoded
           string.
-        originalName: blocks
+        paramKey: blocks
         in: body
         schema:
           type: string
@@ -2212,7 +2212,7 @@ modules:
       - paramName: channel
         description: Channel, private group, or IM channel to send message to. Can be an
           encoded ID, or a name. See [below](#channels) for more details.
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
@@ -2221,7 +2221,7 @@ modules:
         description: Emoji to use as the icon for this message. Overrides `icon_url`.
           Must be used in conjunction with `as_user` set to `false`, otherwise
           ignored. See [authorship](#authorship) below.
-        originalName: icon_emoji
+        paramKey: icon_emoji
         in: body
         schema:
           type: string
@@ -2230,21 +2230,21 @@ modules:
         description: URL to an image to use as the icon for this message. Must be used
           in conjunction with `as_user` set to false, otherwise ignored. See
           [authorship](#authorship) below.
-        originalName: icon_url
+        paramKey: icon_url
         in: body
         schema:
           type: string
         required: false
       - paramName: linkNames
         description: Find and link channel names and usernames.
-        originalName: link_names
+        paramKey: link_names
         in: body
         schema:
           type: boolean
         required: false
       - paramName: mrkdwn
         description: Disable Slack markup parsing by setting to `false`. Enabled by default.
-        originalName: mrkdwn
+        paramKey: mrkdwn
         in: body
         schema:
           type: boolean
@@ -2252,7 +2252,7 @@ modules:
       - paramName: parse
         description: Change how messages are treated. Defaults to `none`. See
           [below](#formatting).
-        originalName: parse
+        paramKey: parse
         in: body
         schema:
           type: string
@@ -2261,7 +2261,7 @@ modules:
         description: Used in conjunction with `thread_ts` and indicates whether reply
           should be made visible to everyone in the channel or conversation.
           Defaults to `false`.
-        originalName: reply_broadcast
+        paramKey: reply_broadcast
         in: body
         schema:
           type: boolean
@@ -2270,7 +2270,7 @@ modules:
         description: How this field works and whether it is required depends on other
           fields you use in your API call. [See below](#text_usage) for more
           detail.
-        originalName: text
+        paramKey: text
         in: body
         schema:
           type: string
@@ -2278,21 +2278,21 @@ modules:
       - paramName: threadTs
         description: Provide another message's `ts` value to make this message a reply.
           Avoid using a reply's `ts` value; use its parent instead.
-        originalName: thread_ts
+        paramKey: thread_ts
         in: body
         schema:
           type: string
         required: false
       - paramName: unfurlLinks
         description: Pass true to enable unfurling of primarily text-based content.
-        originalName: unfurl_links
+        paramKey: unfurl_links
         in: body
         schema:
           type: boolean
         required: false
       - paramName: unfurlMedia
         description: Pass false to disable unfurling of media content.
-        originalName: unfurl_media
+        paramKey: unfurl_media
         in: body
         schema:
           type: boolean
@@ -2301,7 +2301,7 @@ modules:
         description: Set your bot's user name. Must be used in conjunction with
           `as_user` set to false, otherwise ignored. See
           [authorship](#authorship) below.
-        originalName: username
+        paramKey: username
         in: body
         schema:
           type: string
@@ -2317,7 +2317,7 @@ modules:
         description: Pass true to post the message as the authed user, instead of as a
           bot. Defaults to false. See
           [chat.postMessage](chat.postMessage#authorship).
-        originalName: as_user
+        paramKey: as_user
         in: body
         schema:
           type: boolean
@@ -2325,7 +2325,7 @@ modules:
       - paramName: attachments
         description: A JSON-based array of structured attachments, presented as a
           URL-encoded string.
-        originalName: attachments
+        paramKey: attachments
         in: body
         schema:
           type: string
@@ -2333,7 +2333,7 @@ modules:
       - paramName: blocks
         description: A JSON-based array of structured blocks, presented as a URL-encoded
           string.
-        originalName: blocks
+        paramKey: blocks
         in: body
         schema:
           type: string
@@ -2341,14 +2341,14 @@ modules:
       - paramName: channel
         description: Channel, private group, or DM channel to send message to. Can be an
           encoded ID, or a name. See [below](#channels) for more details.
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
         required: false
       - paramName: linkNames
         description: Find and link channel names and usernames.
-        originalName: link_names
+        paramKey: link_names
         in: body
         schema:
           type: boolean
@@ -2356,14 +2356,14 @@ modules:
       - paramName: parse
         description: Change how messages are treated. Defaults to `none`. See
           [chat.postMessage](chat.postMessage#formatting).
-        originalName: parse
+        paramKey: parse
         in: body
         schema:
           type: string
         required: false
       - paramName: postAt
         description: Unix EPOCH timestamp of time in future to send the message.
-        originalName: post_at
+        paramKey: post_at
         in: body
         schema:
           type: string
@@ -2372,7 +2372,7 @@ modules:
         description: Used in conjunction with `thread_ts` and indicates whether reply
           should be made visible to everyone in the channel or conversation.
           Defaults to `false`.
-        originalName: reply_broadcast
+        paramKey: reply_broadcast
         in: body
         schema:
           type: boolean
@@ -2381,7 +2381,7 @@ modules:
         description: How this field works and whether it is required depends on other
           fields you use in your API call. [See below](#text_usage) for more
           detail.
-        originalName: text
+        paramKey: text
         in: body
         schema:
           type: string
@@ -2389,21 +2389,21 @@ modules:
       - paramName: threadTs
         description: Provide another message's `ts` value to make this message a reply.
           Avoid using a reply's `ts` value; use its parent instead.
-        originalName: thread_ts
+        paramKey: thread_ts
         in: body
         schema:
           type: number
         required: false
       - paramName: unfurlLinks
         description: Pass true to enable unfurling of primarily text-based content.
-        originalName: unfurl_links
+        paramKey: unfurl_links
         in: body
         schema:
           type: boolean
         required: false
       - paramName: unfurlMedia
         description: Pass false to disable unfurling of media content.
-        originalName: unfurl_media
+        paramKey: unfurl_media
         in: body
         schema:
           type: boolean
@@ -2417,28 +2417,28 @@ modules:
     params:
       - paramName: channel
         description: The channel of the scheduled messages
-        originalName: channel
+        paramKey: channel
         in: query
         schema:
           type: string
         required: false
       - paramName: latest
         description: A UNIX timestamp of the latest value in the time range
-        originalName: latest
+        paramKey: latest
         in: query
         schema:
           type: number
         required: false
       - paramName: oldest
         description: A UNIX timestamp of the oldest value in the time range
-        originalName: oldest
+        paramKey: oldest
         in: query
         schema:
           type: number
         required: false
       - paramName: limit
         description: Maximum number of original entries to return.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -2447,7 +2447,7 @@ modules:
         description: For pagination purposes, this is the `cursor` value returned from a
           previous call to `chat.scheduledmessages.list` indicating where you
           want to start this call from.
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
@@ -2460,14 +2460,14 @@ modules:
     params:
       - paramName: channel
         description: Channel ID of the message
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
         required: true
       - paramName: ts
         description: Timestamp of the message to add unfurl behavior to.
-        originalName: ts
+        paramKey: ts
         in: body
         schema:
           type: string
@@ -2475,7 +2475,7 @@ modules:
       - paramName: unfurls
         description: URL-encoded JSON map with keys set to URLs featured in the the
           message, pointing to their unfurl blocks or message attachments.
-        originalName: unfurls
+        paramKey: unfurls
         in: body
         schema:
           type: string
@@ -2484,7 +2484,7 @@ modules:
         description: Provide a simply-formatted string to send as an ephemeral message
           to the user as invitation to authenticate further and enable full
           unfurling behavior
-        originalName: user_auth_message
+        paramKey: user_auth_message
         in: body
         schema:
           type: string
@@ -2492,7 +2492,7 @@ modules:
       - paramName: userAuthRequired
         description: Set to `true` or `1` to indicate the user must install your Slack
           app to trigger unfurls for this domain
-        originalName: user_auth_required
+        paramKey: user_auth_required
         in: body
         schema:
           type: boolean
@@ -2501,7 +2501,7 @@ modules:
         description: Send users to this custom URL where they will complete
           authentication in your app to fully trigger unfurling. Value should be
           properly URL-encoded.
-        originalName: user_auth_url
+        paramKey: user_auth_url
         in: body
         schema:
           type: string
@@ -2516,7 +2516,7 @@ modules:
       - paramName: asUser
         description: Pass true to update the message as the authed user. [Bot
           users](/bot-users) in this context are considered authed users.
-        originalName: as_user
+        paramKey: as_user
         in: body
         schema:
           type: string
@@ -2527,7 +2527,7 @@ modules:
           If you don't include this field, the message's previous `attachments`
           will be retained. To remove previous `attachments`, include an empty
           array for this field.
-        originalName: attachments
+        paramKey: attachments
         in: body
         schema:
           type: string
@@ -2537,14 +2537,14 @@ modules:
           presented as a URL-encoded string. If you don't include this field,
           the message's previous `blocks` will be retained. To remove previous
           `blocks`, include an empty array for this field.
-        originalName: blocks
+        paramKey: blocks
         in: body
         schema:
           type: string
         required: false
       - paramName: channel
         description: Channel containing the message to be updated.
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
@@ -2553,7 +2553,7 @@ modules:
         description: Find and link channel names and usernames. Defaults to `none`. If
           you do not specify a value for this field, the original value set for
           the message will be overwritten with the default, `none`.
-        originalName: link_names
+        paramKey: link_names
         in: body
         schema:
           type: string
@@ -2563,7 +2563,7 @@ modules:
           `chat.postMessage`. Accepts either `none` or `full`. If you do not
           specify a value for this field, the original value set for the message
           will be overwritten with the default, `client`.
-        originalName: parse
+        paramKey: parse
         in: body
         schema:
           type: string
@@ -2572,14 +2572,14 @@ modules:
         description: New text for the message, using the [default formatting
           rules](/reference/surfaces/formatting). It's not required when
           presenting `blocks` or `attachments`.
-        originalName: text
+        paramKey: text
         in: body
         schema:
           type: string
         required: false
       - paramName: ts
         description: Timestamp of the message to be updated.
-        originalName: ts
+        paramKey: ts
         in: body
         schema:
           type: string
@@ -2593,7 +2593,7 @@ modules:
     params:
       - paramName: channel
         description: ID of conversation to archive
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
@@ -2607,7 +2607,7 @@ modules:
     params:
       - paramName: channel
         description: Conversation to close.
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
@@ -2621,14 +2621,14 @@ modules:
     params:
       - paramName: isPrivate
         description: Create a private channel instead of a public one
-        originalName: is_private
+        paramKey: is_private
         in: body
         schema:
           type: boolean
         required: false
       - paramName: name
         description: Name of the public or private channel to create
-        originalName: name
+        paramKey: name
         in: body
         schema:
           type: string
@@ -2642,21 +2642,21 @@ modules:
     params:
       - paramName: channel
         description: Conversation ID to fetch history for.
-        originalName: channel
+        paramKey: channel
         in: query
         schema:
           type: string
         required: false
       - paramName: latest
         description: End of time range of messages to include in results.
-        originalName: latest
+        paramKey: latest
         in: query
         schema:
           type: number
         required: false
       - paramName: oldest
         description: Start of time range of messages to include in results.
-        originalName: oldest
+        paramKey: oldest
         in: query
         schema:
           type: number
@@ -2664,7 +2664,7 @@ modules:
       - paramName: inclusive
         description: Include messages with latest or oldest timestamp in results only
           when either timestamp is specified.
-        originalName: inclusive
+        paramKey: inclusive
         in: query
         schema:
           type: boolean
@@ -2673,7 +2673,7 @@ modules:
         description: The maximum number of items to return. Fewer than the requested
           number of items may be returned, even if the end of the users list
           hasn't been reached.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -2683,7 +2683,7 @@ modules:
           parameter to a `next_cursor` attribute returned by a previous
           request's `response_metadata`. Default value fetches the first "page"
           of the collection. See [pagination](/docs/pagination) for more detail.
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
@@ -2696,7 +2696,7 @@ modules:
     params:
       - paramName: channel
         description: Conversation ID to learn more about
-        originalName: channel
+        paramKey: channel
         in: query
         schema:
           type: string
@@ -2704,7 +2704,7 @@ modules:
       - paramName: includeLocale
         description: Set this to `true` to receive the locale for this conversation.
           Defaults to `false`
-        originalName: include_locale
+        paramKey: include_locale
         in: query
         schema:
           type: boolean
@@ -2712,7 +2712,7 @@ modules:
       - paramName: includeNumMembers
         description: Set to `true` to include the member count for the specified
           conversation. Defaults to `false`
-        originalName: include_num_members
+        paramKey: include_num_members
         in: query
         schema:
           type: boolean
@@ -2725,14 +2725,14 @@ modules:
     params:
       - paramName: channel
         description: The ID of the public or private channel to invite user(s) to.
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
         required: false
       - paramName: users
         description: A comma separated list of user IDs. Up to 1000 users may be listed.
-        originalName: users
+        paramKey: users
         in: body
         schema:
           type: string
@@ -2746,7 +2746,7 @@ modules:
     params:
       - paramName: channel
         description: ID of conversation to join
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
@@ -2760,14 +2760,14 @@ modules:
     params:
       - paramName: channel
         description: ID of conversation to remove user from.
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
         required: false
       - paramName: user
         description: User ID to be removed.
-        originalName: user
+        paramKey: user
         in: body
         schema:
           type: string
@@ -2781,7 +2781,7 @@ modules:
     params:
       - paramName: channel
         description: Conversation to leave
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
@@ -2795,7 +2795,7 @@ modules:
     params:
       - paramName: excludeArchived
         description: Set to `true` to exclude archived channels from the list
-        originalName: exclude_archived
+        paramKey: exclude_archived
         in: query
         schema:
           type: boolean
@@ -2803,7 +2803,7 @@ modules:
       - paramName: types
         description: Mix and match channel types by providing a comma-separated list of
           any combination of `public_channel`, `private_channel`, `mpim`, `im`
-        originalName: types
+        paramKey: types
         in: query
         schema:
           type: string
@@ -2812,7 +2812,7 @@ modules:
         description: The maximum number of items to return. Fewer than the requested
           number of items may be returned, even if the end of the list hasn't
           been reached. Must be an integer no larger than 1000.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -2822,7 +2822,7 @@ modules:
           parameter to a `next_cursor` attribute returned by a previous
           request's `response_metadata`. Default value fetches the first "page"
           of the collection. See [pagination](/docs/pagination) for more detail.
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
@@ -2835,7 +2835,7 @@ modules:
     params:
       - paramName: channel
         description: Channel or conversation to set the read cursor for.
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
@@ -2843,7 +2843,7 @@ modules:
       - paramName: ts
         description: Unique identifier of message you want marked as most recently seen
           in this conversation.
-        originalName: ts
+        paramKey: ts
         in: body
         schema:
           type: number
@@ -2857,7 +2857,7 @@ modules:
     params:
       - paramName: channel
         description: ID of the conversation to retrieve members for
-        originalName: channel
+        paramKey: channel
         in: query
         schema:
           type: string
@@ -2866,7 +2866,7 @@ modules:
         description: The maximum number of items to return. Fewer than the requested
           number of items may be returned, even if the end of the users list
           hasn't been reached.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -2876,7 +2876,7 @@ modules:
           parameter to a `next_cursor` attribute returned by a previous
           request's `response_metadata`. Default value fetches the first "page"
           of the collection. See [pagination](/docs/pagination) for more detail.
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
@@ -2890,7 +2890,7 @@ modules:
       - paramName: channel
         description: Resume a conversation by supplying an `im` or `mpim`'s ID. Or
           provide the `users` field instead.
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
@@ -2898,7 +2898,7 @@ modules:
       - paramName: returnIm
         description: Boolean, indicates you want the full IM channel definition in the
           response.
-        originalName: return_im
+        paramKey: return_im
         in: body
         schema:
           type: boolean
@@ -2908,7 +2908,7 @@ modules:
           creates a 1:1 DM.  The ordering of the users is preserved whenever a
           multi-person direct message is returned. Supply a `channel` when not
           supplying `users`.
-        originalName: users
+        paramKey: users
         in: body
         schema:
           type: string
@@ -2922,14 +2922,14 @@ modules:
     params:
       - paramName: channel
         description: ID of conversation to rename
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
         required: false
       - paramName: name
         description: New name for conversation.
-        originalName: name
+        paramKey: name
         in: body
         schema:
           type: string
@@ -2943,7 +2943,7 @@ modules:
     params:
       - paramName: channel
         description: Conversation ID to fetch thread from.
-        originalName: channel
+        paramKey: channel
         in: query
         schema:
           type: string
@@ -2953,21 +2953,21 @@ modules:
           timestamp of an existing message with 0 or more replies. If there are
           no replies then just the single message referenced by `ts` will return
           - it is just an ordinary, unthreaded message.
-        originalName: ts
+        paramKey: ts
         in: query
         schema:
           type: number
         required: false
       - paramName: latest
         description: End of time range of messages to include in results.
-        originalName: latest
+        paramKey: latest
         in: query
         schema:
           type: number
         required: false
       - paramName: oldest
         description: Start of time range of messages to include in results.
-        originalName: oldest
+        paramKey: oldest
         in: query
         schema:
           type: number
@@ -2975,7 +2975,7 @@ modules:
       - paramName: inclusive
         description: Include messages with latest or oldest timestamp in results only
           when either timestamp is specified.
-        originalName: inclusive
+        paramKey: inclusive
         in: query
         schema:
           type: boolean
@@ -2984,7 +2984,7 @@ modules:
         description: The maximum number of items to return. Fewer than the requested
           number of items may be returned, even if the end of the users list
           hasn't been reached.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -2994,7 +2994,7 @@ modules:
           parameter to a `next_cursor` attribute returned by a previous
           request's `response_metadata`. Default value fetches the first "page"
           of the collection. See [pagination](/docs/pagination) for more detail.
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
@@ -3007,14 +3007,14 @@ modules:
     params:
       - paramName: channel
         description: Conversation to set the purpose of
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
         required: false
       - paramName: purpose
         description: A new, specialer purpose
-        originalName: purpose
+        paramKey: purpose
         in: body
         schema:
           type: string
@@ -3028,14 +3028,14 @@ modules:
     params:
       - paramName: channel
         description: Conversation to set the topic of
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
         required: false
       - paramName: topic
         description: The new topic string. Does not support formatting or linkification.
-        originalName: topic
+        paramKey: topic
         in: body
         schema:
           type: string
@@ -3049,7 +3049,7 @@ modules:
     params:
       - paramName: channel
         description: ID of conversation to unarchive
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
@@ -3063,14 +3063,14 @@ modules:
     params:
       - paramName: dialog
         description: The dialog definition. This must be a JSON-encoded string.
-        originalName: dialog
+        paramKey: dialog
         in: query
         schema:
           type: string
         required: true
       - paramName: triggerId
         description: Exchange a trigger to post to the user.
-        originalName: trigger_id
+        paramKey: trigger_id
         in: query
         schema:
           type: string
@@ -3095,7 +3095,7 @@ modules:
     params:
       - paramName: user
         description: User to fetch status for (defaults to current user)
-        originalName: user
+        paramKey: user
         in: query
         schema:
           type: string
@@ -3108,14 +3108,14 @@ modules:
     params:
       - paramName: numMinutes
         description: Number of minutes, from now, to snooze until.
-        originalName: num_minutes
+        paramKey: num_minutes
         in: body
         schema:
           type: string
         required: true
       - paramName: token
         description: "Authentication token. Requires scope: `dnd:write`"
-        originalName: token
+        paramKey: token
         in: body
         schema:
           type: string
@@ -3129,7 +3129,7 @@ modules:
     params:
       - paramName: users
         description: Comma-separated list of users to fetch Do Not Disturb status for
-        originalName: users
+        paramKey: users
         in: query
         schema:
           type: string
@@ -3148,14 +3148,14 @@ modules:
     params:
       - paramName: file
         description: File to delete a comment from.
-        originalName: file
+        paramKey: file
         in: body
         schema:
           type: string
         required: false
       - paramName: id
         description: The comment to delete.
-        originalName: id
+        paramKey: id
         in: body
         schema:
           type: string
@@ -3169,7 +3169,7 @@ modules:
     params:
       - paramName: file
         description: ID of file to delete.
-        originalName: file
+        paramKey: file
         in: body
         schema:
           type: string
@@ -3183,21 +3183,21 @@ modules:
     params:
       - paramName: file
         description: Specify a file by providing its ID.
-        originalName: file
+        paramKey: file
         in: query
         schema:
           type: string
         required: false
       - paramName: count
         description: ""
-        originalName: count
+        paramKey: count
         in: query
         schema:
           type: string
         required: false
       - paramName: page
         description: ""
-        originalName: page
+        paramKey: page
         in: query
         schema:
           type: string
@@ -3206,7 +3206,7 @@ modules:
         description: The maximum number of items to return. Fewer than the requested
           number of items may be returned, even if the end of the list hasn't
           been reached.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -3218,7 +3218,7 @@ modules:
           optional, but pagination is mandatory: the default value simply
           fetches the first \"page\" of the collection of comments. See
           [pagination](/docs/pagination) for more details."
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
@@ -3231,28 +3231,28 @@ modules:
     params:
       - paramName: user
         description: Filter files created by a single user.
-        originalName: user
+        paramKey: user
         in: query
         schema:
           type: string
         required: false
       - paramName: channel
         description: Filter files appearing in a specific channel, indicated by its ID.
-        originalName: channel
+        paramKey: channel
         in: query
         schema:
           type: string
         required: false
       - paramName: tsFrom
         description: Filter files created after this timestamp (inclusive).
-        originalName: ts_from
+        paramKey: ts_from
         in: query
         schema:
           type: number
         required: false
       - paramName: tsTo
         description: Filter files created before this timestamp (inclusive).
-        originalName: ts_to
+        paramKey: ts_to
         in: query
         schema:
           type: number
@@ -3262,21 +3262,21 @@ modules:
           multiple values in the types argument, like
           `types=spaces,snippets`.The default value is `all`, which does not
           filter the list.
-        originalName: types
+        paramKey: types
         in: query
         schema:
           type: string
         required: false
       - paramName: count
         description: ""
-        originalName: count
+        paramKey: count
         in: query
         schema:
           type: string
         required: false
       - paramName: page
         description: ""
-        originalName: page
+        paramKey: page
         in: query
         schema:
           type: string
@@ -3284,7 +3284,7 @@ modules:
       - paramName: showFilesHiddenByLimit
         description: Show truncated file info for files hidden due to being too old, and
           the team who owns the file being over the file limit.
-        originalName: show_files_hidden_by_limit
+        paramKey: show_files_hidden_by_limit
         in: query
         schema:
           type: boolean
@@ -3297,21 +3297,21 @@ modules:
     params:
       - paramName: externalId
         description: Creator defined GUID for the file.
-        originalName: external_id
+        paramKey: external_id
         in: body
         schema:
           type: string
         required: false
       - paramName: externalUrl
         description: URL of the remote file.
-        originalName: external_url
+        paramKey: external_url
         in: body
         schema:
           type: string
         required: false
       - paramName: filetype
         description: type of file
-        originalName: filetype
+        paramKey: filetype
         in: body
         schema:
           type: string
@@ -3319,28 +3319,28 @@ modules:
       - paramName: indexableFileContents
         description: A text file (txt, pdf, doc, etc.) containing textual search terms
           that are used to improve discovery of the remote file.
-        originalName: indexable_file_contents
+        paramKey: indexable_file_contents
         in: body
         schema:
           type: string
         required: false
       - paramName: previewImage
         description: Preview of the document via `multipart/form-data`.
-        originalName: preview_image
+        paramKey: preview_image
         in: body
         schema:
           type: string
         required: false
       - paramName: title
         description: Title of the file being shared.
-        originalName: title
+        paramKey: title
         in: body
         schema:
           type: string
         required: false
       - paramName: token
         description: "Authentication token. Requires scope: `remote_files:write`"
-        originalName: token
+        paramKey: token
         in: body
         schema:
           type: string
@@ -3354,14 +3354,14 @@ modules:
     params:
       - paramName: file
         description: Specify a file by providing its ID.
-        originalName: file
+        paramKey: file
         in: query
         schema:
           type: string
         required: false
       - paramName: externalId
         description: Creator defined GUID for the file.
-        originalName: external_id
+        paramKey: external_id
         in: query
         schema:
           type: string
@@ -3374,28 +3374,28 @@ modules:
     params:
       - paramName: channel
         description: Filter files appearing in a specific channel, indicated by its ID.
-        originalName: channel
+        paramKey: channel
         in: query
         schema:
           type: string
         required: false
       - paramName: tsFrom
         description: Filter files created after this timestamp (inclusive).
-        originalName: ts_from
+        paramKey: ts_from
         in: query
         schema:
           type: number
         required: false
       - paramName: tsTo
         description: Filter files created before this timestamp (inclusive).
-        originalName: ts_to
+        paramKey: ts_to
         in: query
         schema:
           type: number
         required: false
       - paramName: limit
         description: The maximum number of items to return.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -3405,7 +3405,7 @@ modules:
           parameter to a `next_cursor` attribute returned by a previous
           request's `response_metadata`. Default value fetches the first "page"
           of the collection. See [pagination](/docs/pagination) for more detail.
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
@@ -3418,21 +3418,21 @@ modules:
     params:
       - paramName: externalId
         description: Creator defined GUID for the file.
-        originalName: external_id
+        paramKey: external_id
         in: body
         schema:
           type: string
         required: false
       - paramName: file
         description: Specify a file by providing its ID.
-        originalName: file
+        paramKey: file
         in: body
         schema:
           type: string
         required: false
       - paramName: token
         description: "Authentication token. Requires scope: `remote_files:write`"
-        originalName: token
+        paramKey: token
         in: body
         schema:
           type: string
@@ -3447,7 +3447,7 @@ modules:
       - paramName: file
         description: Specify a file registered with Slack by providing its ID. Either
           this field or `external_id` or both are required.
-        originalName: file
+        paramKey: file
         in: query
         schema:
           type: string
@@ -3456,14 +3456,14 @@ modules:
         description: The globally unique identifier (GUID) for the file, as set by the
           app registering the file with Slack.  Either this field or `file` or
           both are required.
-        originalName: external_id
+        paramKey: external_id
         in: query
         schema:
           type: string
         required: false
       - paramName: channels
         description: Comma-separated list of channel IDs where the file will be shared.
-        originalName: channels
+        paramKey: channels
         in: query
         schema:
           type: string
@@ -3476,28 +3476,28 @@ modules:
     params:
       - paramName: externalId
         description: Creator defined GUID for the file.
-        originalName: external_id
+        paramKey: external_id
         in: body
         schema:
           type: string
         required: false
       - paramName: externalUrl
         description: URL of the remote file.
-        originalName: external_url
+        paramKey: external_url
         in: body
         schema:
           type: string
         required: false
       - paramName: file
         description: Specify a file by providing its ID.
-        originalName: file
+        paramKey: file
         in: body
         schema:
           type: string
         required: false
       - paramName: filetype
         description: type of file
-        originalName: filetype
+        paramKey: filetype
         in: body
         schema:
           type: string
@@ -3505,28 +3505,28 @@ modules:
       - paramName: indexableFileContents
         description: File containing contents that can be used to improve searchability
           for the remote file.
-        originalName: indexable_file_contents
+        paramKey: indexable_file_contents
         in: body
         schema:
           type: string
         required: false
       - paramName: previewImage
         description: Preview of the document via `multipart/form-data`.
-        originalName: preview_image
+        paramKey: preview_image
         in: body
         schema:
           type: string
         required: false
       - paramName: title
         description: Title of the file being shared.
-        originalName: title
+        paramKey: title
         in: body
         schema:
           type: string
         required: false
       - paramName: token
         description: "Authentication token. Requires scope: `remote_files:write`"
-        originalName: token
+        paramKey: token
         in: body
         schema:
           type: string
@@ -3540,7 +3540,7 @@ modules:
     params:
       - paramName: file
         description: File to revoke
-        originalName: file
+        paramKey: file
         in: body
         schema:
           type: string
@@ -3554,7 +3554,7 @@ modules:
     params:
       - paramName: file
         description: File to share
-        originalName: file
+        paramKey: file
         in: body
         schema:
           type: string
@@ -3569,7 +3569,7 @@ modules:
       - paramName: channels
         description: Comma-separated list of channel names or IDs where the file will be
           shared.
-        originalName: channels
+        paramKey: channels
         in: body
         schema:
           type: string
@@ -3577,7 +3577,7 @@ modules:
       - paramName: content
         description: File contents via a POST variable. If omitting this parameter, you
           must provide a `file`.
-        originalName: content
+        paramKey: content
         in: body
         schema:
           type: string
@@ -3585,28 +3585,28 @@ modules:
       - paramName: file
         description: File contents via `multipart/form-data`. If omitting this
           parameter, you must submit `content`.
-        originalName: file
+        paramKey: file
         in: body
         schema:
           type: string
         required: false
       - paramName: filename
         description: Filename of file.
-        originalName: filename
+        paramKey: filename
         in: body
         schema:
           type: string
         required: false
       - paramName: filetype
         description: A [file type](/types/file#file_types) identifier.
-        originalName: filetype
+        paramKey: filetype
         in: body
         schema:
           type: string
         required: false
       - paramName: initialComment
         description: The message text introducing the file in specified `channels`.
-        originalName: initial_comment
+        paramKey: initial_comment
         in: body
         schema:
           type: string
@@ -3614,21 +3614,21 @@ modules:
       - paramName: threadTs
         description: Provide another message's `ts` value to upload this file as a
           reply. Never use a reply's `ts` value; use its parent instead.
-        originalName: thread_ts
+        paramKey: thread_ts
         in: body
         schema:
           type: number
         required: false
       - paramName: title
         description: Title of file.
-        originalName: title
+        paramKey: title
         in: body
         schema:
           type: string
         required: false
       - paramName: token
         description: "Authentication token. Requires scope: `files:write:user`"
-        originalName: token
+        paramKey: token
         in: body
         schema:
           type: string
@@ -3642,14 +3642,14 @@ modules:
     params:
       - paramName: users
         description: A comma-separated list of user ids, up to 400 per request
-        originalName: users
+        paramKey: users
         in: query
         schema:
           type: string
         required: true
       - paramName: teamId
         description: Specify team_id starts with `T` in case of Org Token
-        originalName: team_id
+        paramKey: team_id
         in: query
         schema:
           type: string
@@ -3657,7 +3657,7 @@ modules:
       - paramName: toOld
         description: Specify `true` to convert `W` global user IDs to workspace-specific
           `U` IDs. Defaults to `false`.
-        originalName: to_old
+        paramKey: to_old
         in: query
         schema:
           type: boolean
@@ -3670,14 +3670,14 @@ modules:
     params:
       - paramName: channel
         description: Channel to pin the item in.
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
         required: true
       - paramName: timestamp
         description: Timestamp of the message to pin.
-        originalName: timestamp
+        paramKey: timestamp
         in: body
         schema:
           type: string
@@ -3691,7 +3691,7 @@ modules:
     params:
       - paramName: channel
         description: Channel to get pinned items for.
-        originalName: channel
+        paramKey: channel
         in: query
         schema:
           type: string
@@ -3704,14 +3704,14 @@ modules:
     params:
       - paramName: channel
         description: Channel where the item is pinned to.
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
         required: true
       - paramName: timestamp
         description: Timestamp of the message to un-pin.
-        originalName: timestamp
+        paramKey: timestamp
         in: body
         schema:
           type: string
@@ -3725,21 +3725,21 @@ modules:
     params:
       - paramName: channel
         description: Channel where the message to add reaction to was posted.
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
         required: true
       - paramName: name
         description: Reaction (emoji) name.
-        originalName: name
+        paramKey: name
         in: body
         schema:
           type: string
         required: true
       - paramName: timestamp
         description: Timestamp of the message to add reaction to.
-        originalName: timestamp
+        paramKey: timestamp
         in: body
         schema:
           type: string
@@ -3753,35 +3753,35 @@ modules:
     params:
       - paramName: channel
         description: Channel where the message to get reactions for was posted.
-        originalName: channel
+        paramKey: channel
         in: query
         schema:
           type: string
         required: false
       - paramName: file
         description: File to get reactions for.
-        originalName: file
+        paramKey: file
         in: query
         schema:
           type: string
         required: false
       - paramName: fileComment
         description: File comment to get reactions for.
-        originalName: file_comment
+        paramKey: file_comment
         in: query
         schema:
           type: string
         required: false
       - paramName: full
         description: If true always return the complete reaction list.
-        originalName: full
+        paramKey: full
         in: query
         schema:
           type: boolean
         required: false
       - paramName: timestamp
         description: Timestamp of the message to get reactions for.
-        originalName: timestamp
+        paramKey: timestamp
         in: query
         schema:
           type: string
@@ -3794,28 +3794,28 @@ modules:
     params:
       - paramName: user
         description: Show reactions made by this user. Defaults to the authed user.
-        originalName: user
+        paramKey: user
         in: query
         schema:
           type: string
         required: false
       - paramName: full
         description: If true always return the complete reaction list.
-        originalName: full
+        paramKey: full
         in: query
         schema:
           type: boolean
         required: false
       - paramName: count
         description: ""
-        originalName: count
+        paramKey: count
         in: query
         schema:
           type: number
         required: false
       - paramName: page
         description: ""
-        originalName: page
+        paramKey: page
         in: query
         schema:
           type: number
@@ -3826,7 +3826,7 @@ modules:
           parameter is optional, but pagination is mandatory: the default value
           simply fetches the first \"page\" of the collection. See
           [pagination](/docs/pagination) for more details."
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
@@ -3835,7 +3835,7 @@ modules:
         description: The maximum number of items to return. Fewer than the requested
           number of items may be returned, even if the end of the list hasn't
           been reached.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -3848,35 +3848,35 @@ modules:
     params:
       - paramName: channel
         description: Channel where the message to remove reaction from was posted.
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
         required: false
       - paramName: file
         description: File to remove reaction from.
-        originalName: file
+        paramKey: file
         in: body
         schema:
           type: string
         required: false
       - paramName: fileComment
         description: File comment to remove reaction from.
-        originalName: file_comment
+        paramKey: file_comment
         in: body
         schema:
           type: string
         required: false
       - paramName: name
         description: Reaction (emoji) name.
-        originalName: name
+        paramKey: name
         in: body
         schema:
           type: string
         required: true
       - paramName: timestamp
         description: Timestamp of the message to remove reaction from.
-        originalName: timestamp
+        paramKey: timestamp
         in: body
         schema:
           type: string
@@ -3890,7 +3890,7 @@ modules:
     params:
       - paramName: text
         description: The content of the reminder
-        originalName: text
+        paramKey: text
         in: body
         schema:
           type: string
@@ -3900,7 +3900,7 @@ modules:
           years from now), the number of seconds until the reminder (if within
           24 hours), or a natural language description (Ex. "in 15 minutes," or
           "every Thursday")'
-        originalName: time
+        paramKey: time
         in: body
         schema:
           type: string
@@ -3908,7 +3908,7 @@ modules:
       - paramName: user
         description: The user who will receive the reminder. If no user is specified,
           the reminder will go to user who created it.
-        originalName: user
+        paramKey: user
         in: body
         schema:
           type: string
@@ -3922,7 +3922,7 @@ modules:
     params:
       - paramName: reminder
         description: The ID of the reminder to be marked as complete
-        originalName: reminder
+        paramKey: reminder
         in: body
         schema:
           type: string
@@ -3936,7 +3936,7 @@ modules:
     params:
       - paramName: reminder
         description: The ID of the reminder
-        originalName: reminder
+        paramKey: reminder
         in: body
         schema:
           type: string
@@ -3950,7 +3950,7 @@ modules:
     params:
       - paramName: reminder
         description: The ID of the reminder
-        originalName: reminder
+        paramKey: reminder
         in: query
         schema:
           type: string
@@ -3969,42 +3969,42 @@ modules:
     params:
       - paramName: count
         description: Pass the number of results you want per "page". Maximum of `100`.
-        originalName: count
+        paramKey: count
         in: query
         schema:
           type: number
         required: false
       - paramName: highlight
         description: Pass a value of `true` to enable query highlight markers (see below).
-        originalName: highlight
+        paramKey: highlight
         in: query
         schema:
           type: boolean
         required: false
       - paramName: page
         description: ""
-        originalName: page
+        paramKey: page
         in: query
         schema:
           type: number
         required: false
       - paramName: query
         description: Search query.
-        originalName: query
+        paramKey: query
         in: query
         schema:
           type: string
         required: true
       - paramName: sort
         description: Return matches sorted by either `score` or `timestamp`.
-        originalName: sort
+        paramKey: sort
         in: query
         schema:
           type: string
         required: false
       - paramName: sortDir
         description: Change sort direction to ascending (`asc`) or descending (`desc`).
-        originalName: sort_dir
+        paramKey: sort_dir
         in: query
         schema:
           type: string
@@ -4018,28 +4018,28 @@ modules:
       - paramName: channel
         description: Channel to add star to, or channel where the message to add star to
           was posted (used with `timestamp`).
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
         required: false
       - paramName: file
         description: File to add star to.
-        originalName: file
+        paramKey: file
         in: body
         schema:
           type: string
         required: false
       - paramName: fileComment
         description: File comment to add star to.
-        originalName: file_comment
+        paramKey: file_comment
         in: body
         schema:
           type: string
         required: false
       - paramName: timestamp
         description: Timestamp of the message to add star to.
-        originalName: timestamp
+        paramKey: timestamp
         in: body
         schema:
           type: string
@@ -4053,14 +4053,14 @@ modules:
     params:
       - paramName: count
         description: ""
-        originalName: count
+        paramKey: count
         in: query
         schema:
           type: string
         required: false
       - paramName: page
         description: ""
-        originalName: page
+        paramKey: page
         in: query
         schema:
           type: string
@@ -4071,7 +4071,7 @@ modules:
           parameter is optional, but pagination is mandatory: the default value
           simply fetches the first \"page\" of the collection. See
           [pagination](/docs/pagination) for more details."
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
@@ -4080,7 +4080,7 @@ modules:
         description: The maximum number of items to return. Fewer than the requested
           number of items may be returned, even if the end of the list hasn't
           been reached.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -4094,28 +4094,28 @@ modules:
       - paramName: channel
         description: Channel to remove star from, or channel where the message to remove
           star from was posted (used with `timestamp`).
-        originalName: channel
+        paramKey: channel
         in: body
         schema:
           type: string
         required: false
       - paramName: file
         description: File to remove star from.
-        originalName: file
+        paramKey: file
         in: body
         schema:
           type: string
         required: false
       - paramName: fileComment
         description: File comment to remove star from.
-        originalName: file_comment
+        paramKey: file_comment
         in: body
         schema:
           type: string
         required: false
       - paramName: timestamp
         description: Timestamp of the message to remove star from.
-        originalName: timestamp
+        paramKey: timestamp
         in: body
         schema:
           type: string
@@ -4129,21 +4129,21 @@ modules:
     params:
       - paramName: before
         description: End of time range of logs to include in results (inclusive).
-        originalName: before
+        paramKey: before
         in: query
         schema:
           type: string
         required: false
       - paramName: count
         description: ""
-        originalName: count
+        paramKey: count
         in: query
         schema:
           type: string
         required: false
       - paramName: page
         description: ""
-        originalName: page
+        paramKey: page
         in: query
         schema:
           type: string
@@ -4156,7 +4156,7 @@ modules:
     params:
       - paramName: user
         description: A user to retrieve the billable information for. Defaults to all users.
-        originalName: user
+        paramKey: user
         in: query
         schema:
           type: string
@@ -4171,7 +4171,7 @@ modules:
         description: Team to get info on, if omitted, will return information about the
           current team. Will only return team that the authenticated token is
           allowed to see through external shared channels
-        originalName: team
+        paramKey: team
         in: query
         schema:
           type: string
@@ -4184,42 +4184,42 @@ modules:
     params:
       - paramName: appId
         description: Filter logs to this Slack app. Defaults to all logs.
-        originalName: app_id
+        paramKey: app_id
         in: query
         schema:
           type: string
         required: false
       - paramName: changeType
         description: Filter logs with this change type. Defaults to all logs.
-        originalName: change_type
+        paramKey: change_type
         in: query
         schema:
           type: string
         required: false
       - paramName: count
         description: ""
-        originalName: count
+        paramKey: count
         in: query
         schema:
           type: string
         required: false
       - paramName: page
         description: ""
-        originalName: page
+        paramKey: page
         in: query
         schema:
           type: string
         required: false
       - paramName: serviceId
         description: Filter logs to this service. Defaults to all logs.
-        originalName: service_id
+        paramKey: service_id
         in: query
         schema:
           type: string
         required: false
       - paramName: user
         description: Filter logs generated by this user’s actions. Defaults to all logs.
-        originalName: user
+        paramKey: user
         in: query
         schema:
           type: string
@@ -4232,7 +4232,7 @@ modules:
     params:
       - paramName: visibility
         description: Filter by visibility.
-        originalName: visibility
+        paramKey: visibility
         in: query
         schema:
           type: string
@@ -4246,35 +4246,35 @@ modules:
       - paramName: channels
         description: A comma separated string of encoded channel IDs for which the User
           Group uses as a default.
-        originalName: channels
+        paramKey: channels
         in: body
         schema:
           type: string
         required: false
       - paramName: description
         description: A short description of the User Group.
-        originalName: description
+        paramKey: description
         in: body
         schema:
           type: string
         required: false
       - paramName: handle
         description: A mention handle. Must be unique among channels, users and User Groups.
-        originalName: handle
+        paramKey: handle
         in: body
         schema:
           type: string
         required: false
       - paramName: includeCount
         description: Include the number of users in each User Group.
-        originalName: include_count
+        paramKey: include_count
         in: body
         schema:
           type: boolean
         required: false
       - paramName: name
         description: A name for the User Group. Must be unique among User Groups.
-        originalName: name
+        paramKey: name
         in: body
         schema:
           type: string
@@ -4288,14 +4288,14 @@ modules:
     params:
       - paramName: includeCount
         description: Include the number of users in the User Group.
-        originalName: include_count
+        paramKey: include_count
         in: body
         schema:
           type: boolean
         required: false
       - paramName: usergroup
         description: The encoded ID of the User Group to disable.
-        originalName: usergroup
+        paramKey: usergroup
         in: body
         schema:
           type: string
@@ -4309,14 +4309,14 @@ modules:
     params:
       - paramName: includeCount
         description: Include the number of users in the User Group.
-        originalName: include_count
+        paramKey: include_count
         in: body
         schema:
           type: boolean
         required: false
       - paramName: usergroup
         description: The encoded ID of the User Group to enable.
-        originalName: usergroup
+        paramKey: usergroup
         in: body
         schema:
           type: string
@@ -4330,21 +4330,21 @@ modules:
     params:
       - paramName: includeUsers
         description: Include the list of users for each User Group.
-        originalName: include_users
+        paramKey: include_users
         in: query
         schema:
           type: boolean
         required: false
       - paramName: includeCount
         description: Include the number of users in each User Group.
-        originalName: include_count
+        paramKey: include_count
         in: query
         schema:
           type: boolean
         required: false
       - paramName: includeDisabled
         description: Include disabled User Groups.
-        originalName: include_disabled
+        paramKey: include_disabled
         in: query
         schema:
           type: boolean
@@ -4358,42 +4358,42 @@ modules:
       - paramName: channels
         description: A comma separated string of encoded channel IDs for which the User
           Group uses as a default.
-        originalName: channels
+        paramKey: channels
         in: body
         schema:
           type: string
         required: false
       - paramName: description
         description: A short description of the User Group.
-        originalName: description
+        paramKey: description
         in: body
         schema:
           type: string
         required: false
       - paramName: handle
         description: A mention handle. Must be unique among channels, users and User Groups.
-        originalName: handle
+        paramKey: handle
         in: body
         schema:
           type: string
         required: false
       - paramName: includeCount
         description: Include the number of users in the User Group.
-        originalName: include_count
+        paramKey: include_count
         in: body
         schema:
           type: boolean
         required: false
       - paramName: name
         description: A name for the User Group. Must be unique among User Groups.
-        originalName: name
+        paramKey: name
         in: body
         schema:
           type: string
         required: false
       - paramName: usergroup
         description: The encoded ID of the User Group to update.
-        originalName: usergroup
+        paramKey: usergroup
         in: body
         schema:
           type: string
@@ -4407,14 +4407,14 @@ modules:
     params:
       - paramName: includeDisabled
         description: Allow results that involve disabled User Groups.
-        originalName: include_disabled
+        paramKey: include_disabled
         in: query
         schema:
           type: boolean
         required: false
       - paramName: usergroup
         description: The encoded ID of the User Group to update.
-        originalName: usergroup
+        paramKey: usergroup
         in: query
         schema:
           type: string
@@ -4427,14 +4427,14 @@ modules:
     params:
       - paramName: includeCount
         description: Include the number of users in the User Group.
-        originalName: include_count
+        paramKey: include_count
         in: body
         schema:
           type: boolean
         required: false
       - paramName: usergroup
         description: The encoded ID of the User Group to update.
-        originalName: usergroup
+        paramKey: usergroup
         in: body
         schema:
           type: string
@@ -4442,7 +4442,7 @@ modules:
       - paramName: users
         description: A comma separated string of encoded user IDs that represent the
           entire list of users for the User Group.
-        originalName: users
+        paramKey: users
         in: body
         schema:
           type: string
@@ -4458,7 +4458,7 @@ modules:
         description: Browse conversations by a specific user ID's membership. Non-public
           channels are restricted to those where the calling user shares
           membership.
-        originalName: user
+        paramKey: user
         in: query
         schema:
           type: string
@@ -4466,14 +4466,14 @@ modules:
       - paramName: types
         description: Mix and match channel types by providing a comma-separated list of
           any combination of `public_channel`, `private_channel`, `mpim`, `im`
-        originalName: types
+        paramKey: types
         in: query
         schema:
           type: string
         required: false
       - paramName: excludeArchived
         description: Set to `true` to exclude archived channels from the list
-        originalName: exclude_archived
+        paramKey: exclude_archived
         in: query
         schema:
           type: boolean
@@ -4482,7 +4482,7 @@ modules:
         description: The maximum number of items to return. Fewer than the requested
           number of items may be returned, even if the end of the list hasn't
           been reached. Must be an integer no larger than 1000.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -4492,7 +4492,7 @@ modules:
           parameter to a `next_cursor` attribute returned by a previous
           request's `response_metadata`. Default value fetches the first "page"
           of the collection. See [pagination](/docs/pagination) for more detail.
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
@@ -4505,7 +4505,7 @@ modules:
     params:
       - paramName: token
         description: "Authentication token. Requires scope: `users.profile:write`"
-        originalName: token
+        paramKey: token
         in: body
         schema:
           type: string
@@ -4519,7 +4519,7 @@ modules:
     params:
       - paramName: user
         description: User to get presence info on. Defaults to the authed user.
-        originalName: user
+        paramKey: user
         in: query
         schema:
           type: string
@@ -4539,14 +4539,14 @@ modules:
       - paramName: includeLocale
         description: Set this to `true` to receive the locale for this user. Defaults to
           `false`
-        originalName: include_locale
+        paramKey: include_locale
         in: query
         schema:
           type: boolean
         required: false
       - paramName: user
         description: User to get info on
-        originalName: user
+        paramKey: user
         in: query
         schema:
           type: string
@@ -4563,7 +4563,7 @@ modules:
           hasn't been reached. Providing no `limit` value will result in Slack
           attempting to deliver you the entire result set. If the collection is
           too large you may experience `limit_required` or HTTP 500 errors.
-        originalName: limit
+        paramKey: limit
         in: query
         schema:
           type: number
@@ -4573,14 +4573,14 @@ modules:
           parameter to a `next_cursor` attribute returned by a previous
           request's `response_metadata`. Default value fetches the first "page"
           of the collection. See [pagination](/docs/pagination) for more detail.
-        originalName: cursor
+        paramKey: cursor
         in: query
         schema:
           type: string
         required: false
       - paramName: includeLocale
         description: Set this to `true` to receive the locale for users. Defaults to `false`
-        originalName: include_locale
+        paramKey: include_locale
         in: query
         schema:
           type: boolean
@@ -4593,7 +4593,7 @@ modules:
     params:
       - paramName: email
         description: An email address belonging to a user in the workspace
-        originalName: email
+        paramKey: email
         in: query
         schema:
           type: string
@@ -4606,14 +4606,14 @@ modules:
     params:
       - paramName: includeLabels
         description: Include labels for each ID in custom profile fields
-        originalName: include_labels
+        paramKey: include_labels
         in: query
         schema:
           type: boolean
         required: false
       - paramName: user
         description: User to retrieve profile info for
-        originalName: user
+        paramKey: user
         in: query
         schema:
           type: string
@@ -4626,7 +4626,7 @@ modules:
     params:
       - paramName: name
         description: Name of a single key to set. Usable only if `profile` is not passed.
-        originalName: name
+        paramKey: name
         in: body
         schema:
           type: string
@@ -4635,7 +4635,7 @@ modules:
         description: Collection of key:value pairs presented as a URL-encoded JSON hash.
           At most 50 fields may be set. Each field name is limited to 255
           characters.
-        originalName: profile
+        paramKey: profile
         in: body
         schema:
           type: string
@@ -4643,14 +4643,14 @@ modules:
       - paramName: user
         description: ID of user to change. This argument may only be specified by team
           admins on paid teams.
-        originalName: user
+        paramKey: user
         in: body
         schema:
           type: string
         required: false
       - paramName: value
         description: Value to set a single key to. Usable only if `profile` is not passed.
-        originalName: value
+        paramKey: value
         in: body
         schema:
           type: string
@@ -4670,35 +4670,35 @@ modules:
     params:
       - paramName: cropW
         description: Width/height of crop box (always square)
-        originalName: crop_w
+        paramKey: crop_w
         in: body
         schema:
           type: string
         required: false
       - paramName: cropX
         description: X coordinate of top-left corner of crop box
-        originalName: crop_x
+        paramKey: crop_x
         in: body
         schema:
           type: string
         required: false
       - paramName: cropY
         description: Y coordinate of top-left corner of crop box
-        originalName: crop_y
+        paramKey: crop_y
         in: body
         schema:
           type: string
         required: false
       - paramName: image
         description: File contents via `multipart/form-data`.
-        originalName: image
+        paramKey: image
         in: body
         schema:
           type: string
         required: false
       - paramName: token
         description: "Authentication token. Requires scope: `users.profile:write`"
-        originalName: token
+        paramKey: token
         in: body
         schema:
           type: string
@@ -4712,7 +4712,7 @@ modules:
     params:
       - paramName: presence
         description: Either `auto` or `away`
-        originalName: presence
+        paramKey: presence
         in: body
         schema:
           type: string
@@ -4726,7 +4726,7 @@ modules:
     params:
       - paramName: triggerId
         description: Exchange a trigger to post to the user.
-        originalName: trigger_id
+        paramKey: trigger_id
         in: query
         schema:
           type: string
@@ -4734,7 +4734,7 @@ modules:
       - paramName: view
         description: A [view payload](/reference/surfaces/views). This must be a
           JSON-encoded string.
-        originalName: view
+        paramKey: view
         in: query
         schema:
           type: string
@@ -4747,7 +4747,7 @@ modules:
     params:
       - paramName: userId
         description: "`id` of the user you want publish a view to."
-        originalName: user_id
+        paramKey: user_id
         in: query
         schema:
           type: string
@@ -4755,7 +4755,7 @@ modules:
       - paramName: view
         description: A [view payload](/reference/surfaces/views). This must be a
           JSON-encoded string.
-        originalName: view
+        paramKey: view
         in: query
         schema:
           type: string
@@ -4763,7 +4763,7 @@ modules:
       - paramName: hash
         description: A string that represents view state to protect against possible
           race conditions.
-        originalName: hash
+        paramKey: hash
         in: query
         schema:
           type: string
@@ -4776,7 +4776,7 @@ modules:
     params:
       - paramName: triggerId
         description: Exchange a trigger to post to the user.
-        originalName: trigger_id
+        paramKey: trigger_id
         in: query
         schema:
           type: string
@@ -4784,7 +4784,7 @@ modules:
       - paramName: view
         description: A [view payload](/reference/surfaces/views). This must be a
           JSON-encoded string.
-        originalName: view
+        paramKey: view
         in: query
         schema:
           type: string
@@ -4798,7 +4798,7 @@ modules:
       - paramName: viewId
         description: A unique identifier of the view to be updated. Either `view_id` or
           `external_id` is required.
-        originalName: view_id
+        paramKey: view_id
         in: query
         schema:
           type: string
@@ -4807,7 +4807,7 @@ modules:
         description: A unique identifier of the view set by the developer. Must be
           unique for all views on a team. Max length of 255 characters. Either
           `view_id` or `external_id` is required.
-        originalName: external_id
+        paramKey: external_id
         in: query
         schema:
           type: string
@@ -4815,7 +4815,7 @@ modules:
       - paramName: view
         description: A [view object](/reference/surfaces/views). This must be a
           JSON-encoded string.
-        originalName: view
+        paramKey: view
         in: query
         schema:
           type: string
@@ -4823,7 +4823,7 @@ modules:
       - paramName: hash
         description: A string that represents view state to protect against possible
           race conditions.
-        originalName: hash
+        paramKey: hash
         in: query
         schema:
           type: string
@@ -4836,7 +4836,7 @@ modules:
     params:
       - paramName: workflowStepExecuteId
         description: Context identifier that maps to the correct workflow step execution.
-        originalName: workflow_step_execute_id
+        paramKey: workflow_step_execute_id
         in: query
         schema:
           type: string
@@ -4846,7 +4846,7 @@ modules:
           reflect the configured `key` properties of your
           [`outputs`](/reference/workflows/workflow_step#output) array from your
           `workflow_step` object.
-        originalName: outputs
+        paramKey: outputs
         in: query
         schema:
           type: string
@@ -4859,7 +4859,7 @@ modules:
     params:
       - paramName: workflowStepExecuteId
         description: Context identifier that maps to the correct workflow step execution.
-        originalName: workflow_step_execute_id
+        paramKey: workflow_step_execute_id
         in: query
         schema:
           type: string
@@ -4867,7 +4867,7 @@ modules:
       - paramName: error
         description: A JSON-based object with a `message` property that should contain a
           human readable error message.
-        originalName: error
+        paramKey: error
         in: query
         schema:
           type: string
@@ -4881,7 +4881,7 @@ modules:
       - paramName: workflowStepEditId
         description: A context identifier provided with `view_submission` payloads used
           to call back to `workflows.updateStep`.
-        originalName: workflow_step_edit_id
+        paramKey: workflow_step_edit_id
         in: query
         schema:
           type: string
@@ -4893,7 +4893,7 @@ modules:
           set and replaced by the workflow system. You cannot create custom
           variables that will be replaced at runtime. [Read more about variables
           in workflow steps here](/workflows/steps#variables)."
-        originalName: inputs
+        paramKey: inputs
         in: query
         schema:
           type: string
@@ -4902,7 +4902,7 @@ modules:
         description: An JSON array of output objects used during step execution. This is
           the data your app agrees to provide when your workflow step was
           executed.
-        originalName: outputs
+        paramKey: outputs
         in: query
         schema:
           type: string
@@ -4910,7 +4910,7 @@ modules:
       - paramName: stepName
         description: An optional field that can be used to override the step name that
           is shown in the Workflow Builder.
-        originalName: step_name
+        paramKey: step_name
         in: query
         schema:
           type: string
@@ -4918,7 +4918,7 @@ modules:
       - paramName: stepImageUrl
         description: An optional field that can be used to override app image that is
           shown in the Workflow Builder.
-        originalName: step_image_url
+        paramKey: step_image_url
         in: query
         schema:
           type: string

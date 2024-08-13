@@ -6,7 +6,7 @@ import { OpenApiParameterSpec } from '../types.js';
 
 export interface LibraryParamSpec {
     paramName: string;
-    originalName: string;
+    paramKey: string;
     description: string;
     in: 'query' | 'header' | 'cookie' | 'path' | 'body' | 'body_raw';
     schema: SchemaSpec;
@@ -23,7 +23,7 @@ export const LibraryParamSpecSchema = new Schema<LibraryParamSpec>({
     type: 'object',
     properties: {
         paramName: { type: 'string' },
-        originalName: { type: 'string' },
+        paramKey: { type: 'string' },
         description: { type: 'string' },
         in: {
             type: 'string',

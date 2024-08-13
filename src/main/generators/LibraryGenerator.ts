@@ -38,7 +38,7 @@ export class LibraryGenerator {
                 code.indent(1);
                 for (const pspec of this.getParamSpecs(mspec)) {
                     if (pspec.in === 'path') {
-                        code.line(`.replace("{${pspec.originalName}}", ${this.paramValueExpr(pspec)})`);
+                        code.line(`.replace("{${pspec.paramKey}}", ${this.paramValueExpr(pspec)})`);
                     }
                 }
                 code.indent(-1);
@@ -47,7 +47,7 @@ export class LibraryGenerator {
             code.line('const headers = {};');
             for (const pspec of this.getParamSpecs(mspec)) {
                 if (pspec.in === 'header') {
-                    code.line(`headers[${JSON.stringify(pspec.originalName)}] = ${this.paramValueExpr(pspec)};`);
+                    code.line(`headers[${JSON.stringify(pspec.paramKey)}] = ${this.paramValueExpr(pspec)};`);
                 }
                 if (pspec.in === 'query') {
                     this.emitQueryParam(code, pspec);
@@ -123,7 +123,7 @@ export class LibraryGenerator {
 
     private emitQueryParam(code: CodeBuilder, pspec: LibraryParamSpec) {
         const paramName = JSON.stringify(pspec.paramName);
-        const originalName = JSON.stringify(pspec.originalName);
+        const paramKey = JSON.stringify(pspec.paramKey);
         if (pspec.schema.type === 'array') {
             // https://spec.openapis.org/oas/latest.html#style-values
             const delimiter = pspec.style === 'form' ? ',' :
@@ -131,14 +131,14 @@ export class LibraryGenerator {
                     pspec.style === 'pipeDelimited' ? '|' : ',';
             if (pspec.explode) {
                 code.block(`for (const item of params[]) {`, '}', () => {
-                    code.line(`addQueryParam(${originalName}, item);`);
+                    code.line(`addQueryParam(${paramKey}, item);`);
                 });
             } else {
-                code.line(`addQueryParam(${originalName}, params[${paramName}].join(${JSON.stringify(delimiter)}));`);
+                code.line(`addQueryParam(${paramKey}, params[${paramName}].join(${JSON.stringify(delimiter)}));`);
             }
         // TODO add support for objects
         } else {
-            code.line(`addQueryParam(${originalName}, params[${paramName}]);`);
+            code.line(`addQueryParam(${paramKey}, params[${paramName}]);`);
         }
     }
 
@@ -152,8 +152,8 @@ export class LibraryGenerator {
             for (const pspec of this.getParamSpecs(mspec)) {
                 if (pspec.in === 'body') {
                     const paramName = JSON.stringify(pspec.paramName);
-                    const originalName = JSON.stringify(pspec.originalName);
-                    code.line(`body[${originalName}] = params[${paramName}];`);
+                    const paramKey = JSON.stringify(pspec.paramKey);
+                    code.line(`body[${paramKey}] = params[${paramName}];`);
                 }
             }
         }
@@ -167,8 +167,8 @@ export class LibraryGenerator {
         for (const param of this.getParamSpecs(mspec)) {
             if (param.in === 'body') {
                 const paramName = JSON.stringify(param.paramName);
-                const originalName = JSON.stringify(param.originalName);
-                code.line(`addBodyParam(${originalName}, params[${paramName}]);`);
+                const paramKey = JSON.stringify(param.paramKey);
+                code.line(`addBodyParam(${paramKey}, params[${paramName}]);`);
             }
         }
     }

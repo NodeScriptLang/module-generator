@@ -107,7 +107,7 @@ export class OpenApiGenerator {
             yield {
                 paramName,
                 description,
-                originalName: param.name.trim(),
+                paramKey: param.name.trim(),
                 in: param.in,
                 schema: this.getSimplifiedSchema(resolvedSchema),
                 required: param.required ?? false,
@@ -128,7 +128,7 @@ export class OpenApiGenerator {
                 yield {
                     paramName,
                     description: resolvedSchema.description ?? '',
-                    originalName: key,
+                    paramKey: key,
                     in: 'body',
                     schema: this.getSimplifiedSchema(resolvedSchema),
                     required,
@@ -138,7 +138,7 @@ export class OpenApiGenerator {
         } else {
             yield {
                 paramName: 'requestBody',
-                originalName: '',
+                paramKey: '',
                 description: schema.description ?? '',
                 in: 'body_raw',
                 schema: this.getSimplifiedSchema(schema),

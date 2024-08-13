@@ -7,13 +7,13 @@ baseUrl: https://api.notion.com
 description:
 commonParams:
   - paramName: auth
-    originalName: Authorization
+    paramKey: Authorization
     in: header
     prefix: Bearer
     description: |
       Notion API key.
   - paramName: notionVersion
-    originalName: Notion-Version
+    paramKey: Notion-Version
     required: false
     in: header
     description: ""
@@ -28,8 +28,8 @@ modules:
     externalDocs: ""
     params:
       - paramName: id
+        paramKey: id
         description: ""
-        originalName: id
         in: path
         schema:
           type: string
@@ -41,8 +41,8 @@ modules:
     externalDocs: ""
     params:
       - paramName: id
+        paramKey: id
         description: ""
-        originalName: id
         in: path
         schema:
           type: string
@@ -54,15 +54,15 @@ modules:
     externalDocs: https://developers.notion.com/reference/update-a-block
     params:
       - paramName: id
+        paramKey: id
         description: ""
-        originalName: id
         in: path
         schema:
           type: string
         required: true
       - paramName: paragraph
+        paramKey: paragraph
         description: ""
-        originalName: paragraph
         in: body
         schema:
           type: any
@@ -75,15 +75,15 @@ modules:
     externalDocs: ""
     params:
       - paramName: id
+        paramKey: id
         description: ""
-        originalName: id
         in: path
         schema:
           type: string
         required: true
       - paramName: pageSize
+        paramKey: page_size
         description: ""
-        originalName: page_size
         in: query
         schema:
           type: string
@@ -95,15 +95,15 @@ modules:
     externalDocs: ""
     params:
       - paramName: id
+        paramKey: id
         description: ""
-        originalName: id
         in: path
         schema:
           type: string
         required: true
       - paramName: children
+        paramKey: children
         description: ""
-        originalName: children
         in: body
         schema:
           type: array
@@ -118,15 +118,15 @@ modules:
     externalDocs: ""
     params:
       - paramName: blockId
+        paramKey: block_id
         description: ""
-        originalName: block_id
         in: query
         schema:
           type: string
         required: false
       - paramName: pageSize
+        paramKey: page_size
         description: ""
-        originalName: page_size
         in: query
         schema:
           type: string
@@ -139,8 +139,8 @@ modules:
     externalDocs: ""
     params:
       - paramName: id
+        paramKey: id
         description: ""
-        originalName: id
         in: path
         schema:
           type: string
@@ -152,22 +152,22 @@ modules:
     externalDocs: ""
     params:
       - paramName: id
+        paramKey: id
         description: ""
-        originalName: id
         in: path
         schema:
           type: string
         required: true
       - paramName: properties
+        paramKey: properties
         description: ""
-        originalName: properties
         in: body
         schema:
           type: any
         required: false
       - paramName: title
+        paramKey: title
         description: ""
-        originalName: title
         in: body
         schema:
           type: array
@@ -182,15 +182,15 @@ modules:
     externalDocs: ""
     params:
       - paramName: id
+        paramKey: id
         description: ""
-        originalName: id
         in: path
         schema:
           type: string
         required: true
       - paramName: filter
+        paramKey: filter
         description: ""
-        originalName: filter
         in: body
         schema:
           type: any
@@ -204,8 +204,8 @@ modules:
     externalDocs: ""
     params:
       - paramName: id
+        paramKey: id
         description: ""
-        originalName: id
         in: path
         schema:
           type: string
@@ -219,15 +219,15 @@ modules:
     externalDocs: ""
     params:
       - paramName: id
+        paramKey: id
         description: ""
-        originalName: id
         in: path
         schema:
           type: string
         required: true
       - paramName: properties
+        paramKey: properties
         description: ""
-        originalName: properties
         in: body
         schema:
           type: any
@@ -240,15 +240,15 @@ modules:
     externalDocs: ""
     params:
       - paramName: pageId
+        paramKey: page_id
         description: ""
-        originalName: page_id
         in: path
         schema:
           type: string
         required: true
       - paramName: propertyId
+        paramKey: property_id
         description: ""
-        originalName: property_id
         in: path
         schema:
           type: string
@@ -260,8 +260,8 @@ modules:
     externalDocs: ""
     params:
       - paramName: id
+        paramKey: id
         description: ""
-        originalName: id
         in: path
         schema:
           type: string
