@@ -13,7 +13,7 @@ export class LibraryGenerator {
 
     generateModuleDefinition(mspec: LibraryModuleSpec): ModuleDefinition<any, any> {
         return {
-            moduleName: mspec.moduleName,
+            moduleName: [this.librarySpec.displayName, mspec.moduleName].join(' / '),
             version: '0.0.0',
             description: mspec.description,
             keywords: [],
@@ -61,7 +61,7 @@ export class LibraryGenerator {
                 code.line('const body = undefined;');
             }
             code.block(`const res = await ctx.lib.fetch({`, `}, body);`, () => {
-                code.line(`method: ${JSON.stringify(mspec.method)},`);
+                code.line(`method: ${JSON.stringify(mspec.method.toUpperCase())},`);
                 code.line(`url: url.href,`);
                 code.line(`headers,`);
             });
@@ -97,7 +97,7 @@ export class LibraryGenerator {
             }
             schema.description = pspec.description ?? '';
             params[pspec.paramName] = {
-                schema: pspec.schema as UnknownSchemaDef,
+                schema: schema as UnknownSchemaDef,
                 advanced: pspec.advanced ?? !pspec.required,
                 hideValue: pspec.hideValue ?? schema.type === 'any',
             };

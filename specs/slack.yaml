@@ -1,12 +1,21 @@
 id: slack
 displayName: Slack
 workspaceId:
-  development: ""
+  development: bCRYvfi8qAsgBZYr
   production: Y9Mmif5WBIbGp6FX
 baseUrl: https://slack.com/api
 description: One way to interact with the Slack platform is its HTTP RPC-based
   Web API, a collection of methods requiring OAuth 2.0-based user, bot, or
   workspace tokens blessed with related OAuth scopes.
+commonParams:
+  - paramName: auth
+    originalName: Authorization
+    in: header
+    prefix: Bearer
+    required: true
+    description: |
+      Any supported Slack token (bot, workflow, user).
+      Note: not all operations are supported with different token types.
 modules:
   - moduleName: Admin Apps / Approve
     method: post
