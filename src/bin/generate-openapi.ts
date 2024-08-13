@@ -9,8 +9,9 @@ import { OpenApiGenerator } from '../main/generators/OpenApiGenerator.js';
 
 // Use .env to configure keys and generation options
 const env = process.env.NODE_ENV || 'development';
-configDotenv({ path: `.env.${env}` });
 configDotenv({ path: '.env' });
+configDotenv({ path: `.env.${env}` });
+configDotenv({ path: `.env.openapi` });
 
 const args = arg({
     '--in': String,
@@ -34,10 +35,13 @@ await mkdir(targetDir, { recursive: true });
 
 const id = path.basename(sourceFile).replace(/\.(json|yaml)$/gi, '');
 
+const ignoreParams = (process.env[`OPENAPI_IGNORE_PARAMS_${id}`] ?? '').split(',');
+
 const generator = new OpenApiGenerator(id, openApiSpec, {
     openAiKey: process.env.OPENAI_KEY ?? '',
     proxy: process.env.HTTP_PROXY ?? '',
     skipInvalid: process.env.SKIP_INVALID === 'true',
+    ignoreParams,
 });
 
 const librarySpec = await generator.generateLibrarySpec();

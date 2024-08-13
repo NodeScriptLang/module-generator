@@ -19,10 +19,7 @@
         "lint": "eslint --ext=.js,.ts,.vue --cache .",
         "version": "npm run compile",
         "postversion": "npm publish --access=public && git push --tags origin main",
-        "generate:development": "NODE_ENV=development node out/main/generate.js",
-        "generate:production": "NODE_ENV=production node out/main/generate.js",
-        "publish:development": "NODE_ENV=development node out/main/publish.js",
-        "publish:production": "NODE_ENV=production node out/main/publish.js"
+        "generate:openapi": "node out/bin/generate-openapi.js"
     },
     "pre-commit": [
         "lint"

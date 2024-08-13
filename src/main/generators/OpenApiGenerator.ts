@@ -23,7 +23,6 @@ export class OpenApiGenerator {
     openAi: OpenAiService;
 
     private inferredServiceName = '';
-    private inferredCategories: string[] = [];
     private inferredModuleNames = new Map<string, string>();
 
     constructor(
@@ -46,7 +45,6 @@ export class OpenApiGenerator {
 
     async generateLibrarySpec(): Promise<LibrarySpec> {
         await this.inferServiceName();
-        await this.inferCategories();
         await this.inferModuleNames();
         const baseUrl = normalizeServerUrl(this.spec.servers?.[0]?.url ?? '');
         const description = this.spec.info.description ?? '';
@@ -230,48 +228,6 @@ export class OpenApiGenerator {
         console.info(`Inferred service name: ${res.name}`);
         this.inferredServiceName = res.name;
         return res.name;
-    }
-
-    private async inferCategories() {
-        const endpointsInfo = this.getEndpointsInfo();
-        const tags = this.spec.tags;
-        const prompt = [
-            `API endpoints list:`,
-
-            JSON.stringify(endpointsInfo),
-
-            `Group those endpoints logically into top-level categories.
-            Within each category identify one level of subcategories.`,
-
-            `The categories and subcategories should represent a compact,
-            systematic and logical grouping of the endpoints.`,
-
-            `Subcategories with too few items can be omitted.
-            Empty, repetitive and overly generic subcategories should be avoided.
-            All names should be succinct, in human case, words capitalized,
-            with single space between words.
-            Omit generic terms that do not contribute to meaning.
-            Avoid repeating same terms in subcategories that already exist in categories.`,
-
-            tags.length > 1 ? `The following OpenAPI spec tags can help with inferring top-level categories: ${JSON.stringify(tags)}` : '',
-
-            `The result should be a valid JSON in the following format:
-
-            {
-                categories: [
-                    {
-                        category: string;
-                        subcategories: string[];
-                    }
-                ]
-            }
-            `
-        ].map(_ => _.replace(/\s+/g, ' '));
-        const res = await this.openAi.generateCompletion(prompt, 'gpt-4o');
-        if (!Array.isArray(res.categories)) {
-            throw new InvalidAiResponseError('Expected { categories: Array }', res);
-        }
-        return res.categories;
     }
 
     private async inferModuleNames() {

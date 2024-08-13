@@ -7,12 +7,14 @@ import { OpenApiParameterSpec } from '../types.js';
 export interface LibraryParamSpec {
     paramName: string;
     originalName: string;
+    description: string;
     in: 'query' | 'header' | 'cookie' | 'path' | 'body' | 'body_raw';
+    schema: SchemaSpec;
     required: boolean;
     advanced?: boolean;
-    description: string;
-    schema: SchemaSpec;
+    hideValue?: boolean;
     example?: any;
+    prefix?: string;
     style?: OpenApiParameterSpec['style'];
     explode?: OpenApiParameterSpec['explode'];
 }
@@ -27,14 +29,22 @@ export const LibraryParamSpecSchema = new Schema<LibraryParamSpec>({
             type: 'string',
             enum: ['query', 'header', 'cookie', 'path', 'body', 'body_raw'],
         },
+        schema: SchemaSpecSchema.schema,
         required: { type: 'boolean' },
         advanced: {
             type: 'boolean',
             optional: true,
         },
-        schema: SchemaSpecSchema.schema,
+        hideValue: {
+            type: 'boolean',
+            optional: true,
+        },
         example: {
             type: 'any',
+            optional: true,
+        },
+        prefix: {
+            type: 'string',
             optional: true,
         },
         style: {

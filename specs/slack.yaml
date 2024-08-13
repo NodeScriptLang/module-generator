@@ -2,25 +2,18 @@ id: slack
 displayName: Slack
 workspaceId:
   development: ""
-  production: ""
+  production: Y9Mmif5WBIbGp6FX
 baseUrl: https://slack.com/api
 description: One way to interact with the Slack platform is its HTTP RPC-based
   Web API, a collection of methods requiring OAuth 2.0-based user, bot, or
   workspace tokens blessed with related OAuth scopes.
 modules:
-  - moduleName: Admin / Apps / Approve
+  - moduleName: Admin Apps / Approve
     method: post
     path: /admin.apps.approve
     description: Approve an app for installation on a workspace.
     externalDocs: https://api.slack.com/methods/admin.apps.approve
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.apps:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: appId
         description: The id of the app to approve.
         originalName: app_id
@@ -43,19 +36,12 @@ modules:
           type: string
         required: false
     requestBodyType: form
-  - moduleName: Admin / Approved / List Apps
+  - moduleName: Admin Apps / List Approved
     method: get
     path: /admin.apps.approved.list
     description: List approved apps for an org or workspace.
     externalDocs: https://api.slack.com/methods/admin.apps.approved.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.apps:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: limit
         description: The maximum number of items to return. Must be between 1 - 1000
           both inclusive.
@@ -86,19 +72,12 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: Admin / Requests / List Apps
+  - moduleName: Admin Apps / List Requests
     method: get
     path: /admin.apps.requests.list
     description: List app requests for a team/workspace.
     externalDocs: https://api.slack.com/methods/admin.apps.requests.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.apps:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: limit
         description: The maximum number of items to return. Must be between 1 - 1000
           both inclusive.
@@ -122,19 +101,12 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: Admin / Apps / Restrict
+  - moduleName: Admin Apps / Restrict
     method: post
     path: /admin.apps.restrict
     description: Restrict an app for installation on a workspace.
     externalDocs: https://api.slack.com/methods/admin.apps.restrict
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.apps:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: appId
         description: The id of the app to restrict.
         originalName: app_id
@@ -157,19 +129,12 @@ modules:
           type: string
         required: false
     requestBodyType: form
-  - moduleName: Admin / Restricted / List Apps
+  - moduleName: Admin Apps / List Restricted
     method: get
     path: /admin.apps.restricted.list
     description: List restricted apps for an org or workspace.
     externalDocs: https://api.slack.com/methods/admin.apps.restricted.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.apps:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: limit
         description: The maximum number of items to return. Must be between 1 - 1000
           both inclusive.
@@ -200,19 +165,12 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: Admin / Conversations / Archive
+  - moduleName: Admin Conversations / Archive
     method: post
     path: /admin.conversations.archive
     description: Archive a public or private channel.
     externalDocs: https://api.slack.com/methods/admin.conversations.archive
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channelId
         description: The channel to archive.
         originalName: channel_id
@@ -221,19 +179,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Conversations / Convert To Private
+  - moduleName: Admin Conversations / Convert To Private
     method: post
     path: /admin.conversations.convertToPrivate
     description: Convert a public channel to a private channel.
     externalDocs: https://api.slack.com/methods/admin.conversations.convertToPrivate
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channelId
         description: The channel to convert to private.
         originalName: channel_id
@@ -242,19 +193,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Conversations / Create
+  - moduleName: Admin Conversations / Create
     method: post
     path: /admin.conversations.create
     description: Create a public or private channel-based conversation.
     externalDocs: https://api.slack.com/methods/admin.conversations.create
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: description
         description: Description of the public or private channel to create.
         originalName: description
@@ -294,19 +238,12 @@ modules:
           type: string
         required: false
     requestBodyType: form
-  - moduleName: Admin / Conversations / Delete
+  - moduleName: Admin Conversations / Delete
     method: post
     path: /admin.conversations.delete
     description: Delete a public or private channel.
     externalDocs: https://api.slack.com/methods/admin.conversations.delete
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channelId
         description: The channel to delete.
         originalName: channel_id
@@ -315,19 +252,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Conversations / Disconnect Shared
+  - moduleName: Admin Conversations / Disconnect Shared
     method: post
     path: /admin.conversations.disconnectShared
     description: Disconnect a connected channel from one or more workspaces.
     externalDocs: https://api.slack.com/methods/admin.conversations.disconnectShared
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channelId
         description: The channel to be disconnected from some workspaces.
         originalName: channel_id
@@ -344,7 +274,7 @@ modules:
           type: string
         required: false
     requestBodyType: form
-  - moduleName: Admin / EKM / List Original Connected Channel Info
+  - moduleName: Admin Conversations / List Original Connected Channels
     method: get
     path: /admin.conversations.ekm.listOriginalConnectedChannelInfo
     description: List all disconnected channels—i.e., channels that were once
@@ -352,13 +282,6 @@ modules:
       original channel IDs for key revocation with EKM.
     externalDocs: https://api.slack.com/methods/admin.conversations.ekm.listOriginalConnectedChannelInfo
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.conversations:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: channelIds
         description: A comma-separated list of channels to filter to.
         originalName: channel_ids
@@ -390,19 +313,12 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: Admin / Conversations / Get Preferences
+  - moduleName: Admin Conversations / Get Preferences
     method: get
     path: /admin.conversations.getConversationPrefs
     description: Get conversation preferences for a public or private channel.
     externalDocs: https://api.slack.com/methods/admin.conversations.getConversationPrefs
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.conversations:read`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channelId
         description: The channel to get preferences for.
         originalName: channel_id
@@ -410,20 +326,13 @@ modules:
         schema:
           type: string
         required: true
-  - moduleName: Admin / Conversations / Get Teams
+  - moduleName: Admin Conversations / Get Teams
     method: get
     path: /admin.conversations.getTeams
     description: Get all the workspaces a given public or private channel is
       connected to within this Enterprise org.
     externalDocs: https://api.slack.com/methods/admin.conversations.getTeams
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.conversations:read`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channelId
         description: The channel to determine connected workspaces within the
           organization for.
@@ -448,19 +357,12 @@ modules:
         schema:
           type: number
         required: false
-  - moduleName: Admin / Conversations / Invite
+  - moduleName: Admin Conversations / Invite
     method: post
     path: /admin.conversations.invite
     description: Invite a user to a public or private channel.
     externalDocs: https://api.slack.com/methods/admin.conversations.invite
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channelId
         description: The channel that the users will be invited to.
         originalName: channel_id
@@ -476,19 +378,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Conversations / Rename
+  - moduleName: Admin Conversations / Rename
     method: post
     path: /admin.conversations.rename
     description: Rename a public or private channel.
     externalDocs: https://api.slack.com/methods/admin.conversations.rename
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channelId
         description: The channel to rename.
         originalName: channel_id
@@ -504,7 +399,7 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Restrict Access / Add Group
+  - moduleName: Admin Conversations / Restrict Access / Add Group
     method: post
     path: /admin.conversations.restrictAccess.addGroup
     description: Add an allowlist of IDP groups for accessing a channel
@@ -543,19 +438,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Restrict Access / List Groups
+  - moduleName: Admin Conversations / Restrict Access / List Groups
     method: get
     path: /admin.conversations.restrictAccess.listGroups
     description: List all IDP Groups linked to a channel
     externalDocs: https://api.slack.com/methods/admin.conversations.restrictAccess.listGroups
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.conversations:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: channelId
         description: ""
         originalName: channel_id
@@ -572,7 +460,7 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: Admin / Restrict Access / Remove Group
+  - moduleName: Admin Conversations / Restrict Access / Remove Group
     method: post
     path: /admin.conversations.restrictAccess.removeGroup
     description: Remove a linked IDP group linked from a private channel
@@ -611,19 +499,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Conversations / Search
+  - moduleName: Admin Conversations / Search
     method: get
     path: /admin.conversations.search
     description: Search for public or private channels in an Enterprise organization.
     externalDocs: https://api.slack.com/methods/admin.conversations.search
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.conversations:read`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: teamIds
         description: Comma separated string of team IDs, signifying the workspaces to
           search through.
@@ -685,19 +566,12 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: Admin / Preferences / Set Conversation
+  - moduleName: Admin Conversations / Set Preferences
     method: post
     path: /admin.conversations.setConversationPrefs
     description: Set the posting permissions for a public or private channel.
     externalDocs: https://api.slack.com/methods/admin.conversations.setConversationPrefs
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channelId
         description: The channel to set the prefs for
         originalName: channel_id
@@ -713,20 +587,13 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Teams / Set Conversations
+  - moduleName: Admin Conversations / Set Teams
     method: post
     path: /admin.conversations.setTeams
     description: Set the workspaces in an Enterprise grid org that connect to a
       public or private channel.
     externalDocs: https://api.slack.com/methods/admin.conversations.setTeams
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channelId
         description: The encoded `channel_id` to add or remove to workspaces.
         originalName: channel_id
@@ -758,19 +625,12 @@ modules:
           type: string
         required: false
     requestBodyType: form
-  - moduleName: Admin / Conversations / Unarchive
+  - moduleName: Admin Conversations / Unarchive
     method: post
     path: /admin.conversations.unarchive
     description: Unarchive a public or private channel.
     externalDocs: https://api.slack.com/methods/admin.conversations.unarchive
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channelId
         description: The channel to unarchive.
         originalName: channel_id
@@ -779,7 +639,7 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Emoji / Add
+  - moduleName: Admin Emoji / Add
     method: post
     path: /admin.emoji.add
     description: Add an emoji.
@@ -809,7 +669,7 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Emoji / Add Alias
+  - moduleName: Admin Emoji / Add Alias
     method: post
     path: /admin.emoji.addAlias
     description: Add an emoji alias.
@@ -838,19 +698,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Emoji / List
+  - moduleName: Admin Emoji / List
     method: get
     path: /admin.emoji.list
     description: List emoji for an Enterprise Grid organization.
     externalDocs: https://api.slack.com/methods/admin.emoji.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.teams:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: cursor
         description: Set `cursor` to `next_cursor` returned by the previous call to list
           items in the next page
@@ -867,7 +720,7 @@ modules:
         schema:
           type: number
         required: false
-  - moduleName: Admin / Emoji / Remove
+  - moduleName: Admin Emoji / Remove
     method: post
     path: /admin.emoji.remove
     description: Remove an emoji across an Enterprise Grid organization
@@ -889,7 +742,7 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Emoji / Rename
+  - moduleName: Admin Emoji / Rename
     method: post
     path: /admin.emoji.rename
     description: Rename an emoji.
@@ -918,19 +771,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Invite Requests / Approve
+  - moduleName: Admin Invite Requests / Approve
     method: post
     path: /admin.inviteRequests.approve
     description: Approve a workspace invite request.
     externalDocs: https://api.slack.com/methods/admin.inviteRequests.approve
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.invites:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: inviteRequestId
         description: ID of the request to invite.
         originalName: invite_request_id
@@ -946,19 +792,12 @@ modules:
           type: string
         required: false
     requestBodyType: form
-  - moduleName: Admin / Approved / List Invite Requests
+  - moduleName: Admin Invite Requests / List Approved
     method: get
     path: /admin.inviteRequests.approved.list
     description: List all approved workspace invite requests.
     externalDocs: https://api.slack.com/methods/admin.inviteRequests.approved.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.invites:read`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: teamId
         description: ID for the workspace where the invite requests were made.
         originalName: team_id
@@ -982,19 +821,12 @@ modules:
         schema:
           type: number
         required: false
-  - moduleName: Admin / Denied / List Invite Requests
+  - moduleName: Admin Invite Requests / List Denied
     method: get
     path: /admin.inviteRequests.denied.list
     description: List all denied workspace invite requests.
     externalDocs: https://api.slack.com/methods/admin.inviteRequests.denied.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.invites:read`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: teamId
         description: ID for the workspace where the invite requests were made.
         originalName: team_id
@@ -1018,19 +850,12 @@ modules:
         schema:
           type: number
         required: false
-  - moduleName: Admin / Invite Requests / Deny
+  - moduleName: Admin Invite Requests / Deny
     method: post
     path: /admin.inviteRequests.deny
     description: Deny a workspace invite request.
     externalDocs: https://api.slack.com/methods/admin.inviteRequests.deny
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.invites:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: inviteRequestId
         description: ID of the request to invite.
         originalName: invite_request_id
@@ -1046,19 +871,12 @@ modules:
           type: string
         required: false
     requestBodyType: form
-  - moduleName: Admin / Invite Requests / List
+  - moduleName: Admin Invite Requests / List
     method: get
     path: /admin.inviteRequests.list
     description: List all pending workspace invite requests.
     externalDocs: https://api.slack.com/methods/admin.inviteRequests.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.invites:read`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: teamId
         description: ID for the workspace where the invite requests were made.
         originalName: team_id
@@ -1082,19 +900,12 @@ modules:
         schema:
           type: number
         required: false
-  - moduleName: Admin / Admins / List Teams
+  - moduleName: Admin Teams / List Admins
     method: get
     path: /admin.teams.admins.list
     description: List all of the admins on a given workspace.
     externalDocs: https://api.slack.com/methods/admin.teams.admins.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.teams:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: limit
         description: The maximum number of items to return.
         originalName: limit
@@ -1117,19 +928,12 @@ modules:
         schema:
           type: string
         required: true
-  - moduleName: Admin / Teams / Create
+  - moduleName: Admin Teams / Create
     method: post
     path: /admin.teams.create
     description: Create an Enterprise team.
     externalDocs: https://api.slack.com/methods/admin.teams.create
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.teams:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: teamDescription
         description: Description for the team.
         originalName: team_description
@@ -1160,19 +964,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Teams / List
+  - moduleName: Admin Teams / List
     method: get
     path: /admin.teams.list
     description: List all teams on an Enterprise organization
     externalDocs: https://api.slack.com/methods/admin.teams.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.teams:read`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: limit
         description: The maximum number of items to return. Must be between 1 - 100 both
           inclusive.
@@ -1189,19 +986,12 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: Admin / Owners / List Teams
+  - moduleName: Admin Teams / List Owners
     method: get
     path: /admin.teams.owners.list
     description: List all of the owners on a given workspace.
     externalDocs: https://api.slack.com/methods/admin.teams.owners.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.teams:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: teamId
         description: ""
         originalName: team_id
@@ -1225,19 +1015,12 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: Admin / Settings / Info Teams
+  - moduleName: Admin Teams / Settings
     method: get
     path: /admin.teams.settings.info
     description: Fetch information about settings in a workspace
     externalDocs: https://api.slack.com/methods/admin.teams.settings.info
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.teams:read`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: teamId
         description: ""
         originalName: team_id
@@ -1245,7 +1028,7 @@ modules:
         schema:
           type: string
         required: true
-  - moduleName: Admin / Settings / Set Default Channels
+  - moduleName: Admin Teams / Set Default Channels
     method: post
     path: /admin.teams.settings.setDefaultChannels
     description: Set the default channels of a workspace.
@@ -1273,19 +1056,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Settings / Set Description
+  - moduleName: Admin Teams / Set Description
     method: post
     path: /admin.teams.settings.setDescription
     description: Set the description of a given workspace.
     externalDocs: https://api.slack.com/methods/admin.teams.settings.setDescription
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.teams:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: description
         description: The new description for the workspace.
         originalName: description
@@ -1301,20 +1077,13 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Settings / Set Discoverability
+  - moduleName: Admin Teams / Set Discoverability
     method: post
     path: /admin.teams.settings.setDiscoverability
     description: An API method that allows admins to set the discoverability of a
       given workspace
     externalDocs: https://api.slack.com/methods/admin.teams.settings.setDiscoverability
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.teams:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: discoverability
         description: This workspace's discovery setting. It must be set to one of
           `open`, `invite_only`, `closed`, or `unlisted`.
@@ -1331,7 +1100,7 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Settings / Set Icon
+  - moduleName: Admin Teams / Set Icon
     method: post
     path: /admin.teams.settings.setIcon
     description: Sets the icon of a workspace.
@@ -1359,19 +1128,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Settings / Set Name
+  - moduleName: Admin Teams / Set Name
     method: post
     path: /admin.teams.settings.setName
     description: Set the name of a given workspace.
     externalDocs: https://api.slack.com/methods/admin.teams.settings.setName
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.teams:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: name
         description: The new name of the workspace.
         originalName: name
@@ -1387,19 +1149,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / User Groups / Add Channels
+  - moduleName: Admin Usergroups / Add Channels
     method: post
     path: /admin.usergroups.addChannels
     description: Add one or more default channels to an IDP group.
     externalDocs: https://api.slack.com/methods/admin.usergroups.addChannels
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.usergroups:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channelIds
         description: Comma separated string of channel IDs.
         originalName: channel_ids
@@ -1422,20 +1177,13 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / User Groups / Add Teams
+  - moduleName: Admin Usergroups / Add Teams
     method: post
     path: /admin.usergroups.addTeams
     description: Associate one or more default workspaces with an organization-wide
       IDP group.
     externalDocs: https://api.slack.com/methods/admin.usergroups.addTeams
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.teams:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: autoProvision
         description: When `true`, this method automatically creates new workspace
           accounts for the IDP group members.
@@ -1460,19 +1208,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / User Groups / List Channels
+  - moduleName: Admin Usergroups / List Channels
     method: get
     path: /admin.usergroups.listChannels
     description: List the channels linked to an org-level IDP group (user group).
     externalDocs: https://api.slack.com/methods/admin.usergroups.listChannels
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.usergroups:read`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: usergroupId
         description: ID of the IDP group to list default channels for.
         originalName: usergroup_id
@@ -1494,20 +1235,13 @@ modules:
         schema:
           type: boolean
         required: false
-  - moduleName: Admin / User Groups / Remove Channels
+  - moduleName: Admin Usergroups / Remove Channels
     method: post
     path: /admin.usergroups.removeChannels
     description: Remove one or more default channels from an org-level IDP group
       (user group).
     externalDocs: https://api.slack.com/methods/admin.usergroups.removeChannels
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.usergroups:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channelIds
         description: Comma-separated string of channel IDs
         originalName: channel_ids
@@ -1523,19 +1257,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Users / Assign
+  - moduleName: Admin Users / Assign
     method: post
     path: /admin.users.assign
     description: Add an Enterprise user to a workspace.
     externalDocs: https://api.slack.com/methods/admin.users.assign
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.users:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channelIds
         description: Comma separated values of channel IDs to add user in the new workspace.
         originalName: channel_ids
@@ -1573,19 +1300,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Users / Invite
+  - moduleName: Admin Users / Invite
     method: post
     path: /admin.users.invite
     description: Invite a user to a workspace.
     externalDocs: https://api.slack.com/methods/admin.users.invite
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.users:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channelIds
         description: A comma-separated list of `channel_id`s for this user to join. At
           least one channel is required.
@@ -1654,19 +1374,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Users / List
+  - moduleName: Admin Users / List
     method: get
     path: /admin.users.list
     description: List users on a workspace
     externalDocs: https://api.slack.com/methods/admin.users.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.users:read`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: teamId
         description: The ID (`T1234`) of the workspace.
         originalName: team_id
@@ -1689,19 +1402,12 @@ modules:
         schema:
           type: number
         required: false
-  - moduleName: Admin / Users / Remove
+  - moduleName: Admin Users / Remove
     method: post
     path: /admin.users.remove
     description: Remove a user from a workspace.
     externalDocs: https://api.slack.com/methods/admin.users.remove
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.users:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: teamId
         description: The ID (`T1234`) of the workspace.
         originalName: team_id
@@ -1717,19 +1423,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Session / Invalidate
+  - moduleName: Admin Users / Invalidate Session
     method: post
     path: /admin.users.session.invalidate
     description: Invalidate a single session for a user by session_id
     externalDocs: https://api.slack.com/methods/admin.users.session.invalidate
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.users:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: sessionId
         description: ""
         originalName: session_id
@@ -1745,19 +1444,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Session / Reset
+  - moduleName: Admin Users / Reset Session
     method: post
     path: /admin.users.session.reset
     description: Wipes all valid sessions on all devices for a given user
     externalDocs: https://api.slack.com/methods/admin.users.session.reset
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.users:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: mobileOnly
         description: "Only expire mobile sessions (default: false)"
         originalName: mobile_only
@@ -1780,19 +1472,12 @@ modules:
           type: boolean
         required: false
     requestBodyType: form
-  - moduleName: Admin / Users / Set Admin
+  - moduleName: Admin Users / Set Admin
     method: post
     path: /admin.users.setAdmin
     description: Set an existing guest, regular user, or owner to be an admin user.
     externalDocs: https://api.slack.com/methods/admin.users.setAdmin
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.users:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: teamId
         description: The ID (`T1234`) of the workspace.
         originalName: team_id
@@ -1808,19 +1493,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Users / Set Expiration
+  - moduleName: Admin Users / Set Expiration
     method: post
     path: /admin.users.setExpiration
     description: Set an expiration for a guest user
     externalDocs: https://api.slack.com/methods/admin.users.setExpiration
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.users:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: expirationTs
         description: Timestamp when guest account should be disabled.
         originalName: expiration_ts
@@ -1843,19 +1521,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Users / Set Owner
+  - moduleName: Admin Users / Set Owner
     method: post
     path: /admin.users.setOwner
     description: Set an existing guest, regular user, or admin user to be a workspace owner.
     externalDocs: https://api.slack.com/methods/admin.users.setOwner
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.users:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: teamId
         description: The ID (`T1234`) of the workspace.
         originalName: team_id
@@ -1871,19 +1542,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Admin / Users / Set Regular
+  - moduleName: Admin Users / Set Regular
     method: post
     path: /admin.users.setRegular
     description: Set an existing guest user, admin user, or owner to be a regular user.
     externalDocs: https://api.slack.com/methods/admin.users.setRegular
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin.users:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: teamId
         description: The ID (`T1234`) of the workspace.
         originalName: team_id
@@ -1899,7 +1563,7 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: API / Test
+  - moduleName: Test
     method: get
     path: /api.test
     description: Checks API calling code.
@@ -1919,20 +1583,13 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: Apps / Event Authorizations / List
+  - moduleName: Apps / List Event Authorizations
     method: get
     path: /apps.event.authorizations.list
     description: Get a list of authorizations for the given event context. Each
       authorization represents an app installation that the event is visible to.
     externalDocs: https://api.slack.com/methods/apps.event.authorizations.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `authorizations:read`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: eventContext
         description: ""
         originalName: event_context
@@ -1954,32 +1611,18 @@ modules:
         schema:
           type: number
         required: false
-  - moduleName: Apps / Permissions / Info
+  - moduleName: Apps / Permissions / Get
     method: get
     path: /apps.permissions.info
     description: Returns list of permissions this app has on a team.
     externalDocs: https://api.slack.com/methods/apps.permissions.info
-    params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `none`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: false
+    params: []
   - moduleName: Apps / Permissions / Request
     method: get
     path: /apps.permissions.request
     description: Allows an app to request additional scopes
     externalDocs: https://api.slack.com/methods/apps.permissions.request
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `none`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: scopes
         description: A comma separated list of scopes to request for
         originalName: scopes
@@ -1994,19 +1637,12 @@ modules:
         schema:
           type: string
         required: true
-  - moduleName: Resources / List Permissions
+  - moduleName: Apps / Permissions / List Resources
     method: get
     path: /apps.permissions.resources.list
     description: Returns list of resource grants this app has on a team.
     externalDocs: https://api.slack.com/methods/apps.permissions.resources.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `none`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: cursor
         description: Paginate through collections of data by setting the `cursor`
           parameter to a `next_cursor` attribute returned by a previous
@@ -2024,33 +1660,19 @@ modules:
         schema:
           type: number
         required: false
-  - moduleName: Scopes / List Permissions
+  - moduleName: Apps / Permissions / List Scopes
     method: get
     path: /apps.permissions.scopes.list
     description: Returns list of scopes this app has on a team.
     externalDocs: https://api.slack.com/methods/apps.permissions.scopes.list
-    params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `none`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
-  - moduleName: Users / List Permissions
+    params: []
+  - moduleName: Apps / Permissions / List Users
     method: get
     path: /apps.permissions.users.list
     description: Returns list of user grants and corresponding scopes this app has
       on a team.
     externalDocs: https://api.slack.com/methods/apps.permissions.users.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `none`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: cursor
         description: Paginate through collections of data by setting the `cursor`
           parameter to a `next_cursor` attribute returned by a previous
@@ -2068,20 +1690,13 @@ modules:
         schema:
           type: number
         required: false
-  - moduleName: Users / Request Permissions
+  - moduleName: Apps / Permissions / Request
     method: get
     path: /apps.permissions.users.request
     description: Enables an app to trigger a permissions modal to grant an app
       access to a user access scope.
     externalDocs: https://api.slack.com/methods/apps.permissions.users.request
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `none`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: scopes
         description: A comma separated list of user scopes to request for
         originalName: scopes
@@ -2109,13 +1724,6 @@ modules:
     description: Uninstalls your app from a workspace.
     externalDocs: https://api.slack.com/methods/apps.uninstall
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `none`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: false
       - paramName: clientId
         description: Issued when you created your application.
         originalName: client_id
@@ -2136,13 +1744,6 @@ modules:
     description: Revokes a token.
     externalDocs: https://api.slack.com/methods/auth.revoke
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `none`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: test
         description: Setting this parameter to `1` triggers a _testing mode_ where the
           specified token will not actually be revoked.
@@ -2156,27 +1757,13 @@ modules:
     path: /auth.test
     description: Checks authentication & identity.
     externalDocs: https://api.slack.com/methods/auth.test
-    params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `none`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
+    params: []
   - moduleName: Bots / Info
     method: get
     path: /bots.info
     description: Gets information about a bot user.
     externalDocs: https://api.slack.com/methods/bots.info
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `users:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: bot
         description: Bot user to get info on
         originalName: bot
@@ -2190,13 +1777,6 @@ modules:
     description: Registers a new Call.
     externalDocs: https://api.slack.com/methods/calls.add
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `calls:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: createdBy
         description: The valid Slack user ID of the user who created this Call. When
           this method is called with a user token, the `created_by` field is
@@ -2267,13 +1847,6 @@ modules:
     description: Ends a Call.
     externalDocs: https://api.slack.com/methods/calls.end
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `calls:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: duration
         description: Call duration in seconds
         originalName: duration
@@ -2296,13 +1869,6 @@ modules:
     description: Returns information about a Call.
     externalDocs: https://api.slack.com/methods/calls.info
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `calls:read`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: id
         description: "`id` of the Call returned by the [`calls.add`](/methods/calls.add)
           method."
@@ -2311,19 +1877,12 @@ modules:
         schema:
           type: string
         required: true
-  - moduleName: Participants / Add Calls
+  - moduleName: Calls / Add Participants
     method: post
     path: /calls.participants.add
     description: Registers new participants added to a Call.
     externalDocs: https://api.slack.com/methods/calls.participants.add
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `calls:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: id
         description: "`id` returned by the [`calls.add`](/methods/calls.add) method."
         originalName: id
@@ -2340,19 +1899,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Participants / Remove Calls
+  - moduleName: Calls / Remove Participants
     method: post
     path: /calls.participants.remove
     description: Registers participants removed from a Call.
     externalDocs: https://api.slack.com/methods/calls.participants.remove
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `calls:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: id
         description: "`id` returned by the [`calls.add`](/methods/calls.add) method."
         originalName: id
@@ -2375,13 +1927,6 @@ modules:
     description: Updates information about a Call.
     externalDocs: https://api.slack.com/methods/calls.update
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `calls:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: desktopAppJoinUrl
         description: When supplied, available Slack clients will attempt to directly
           launch the 3rd-party Call with this URL.
@@ -2418,13 +1963,6 @@ modules:
     description: Deletes a message.
     externalDocs: https://api.slack.com/methods/chat.delete
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `chat:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: asUser
         description: Pass true to delete the message as the authed user with
           `chat:write:user` scope. [Bot users](/bot-users) in this context are
@@ -2456,13 +1994,6 @@ modules:
     description: Deletes a pending scheduled message from the queue.
     externalDocs: https://api.slack.com/methods/chat.deleteScheduledMessage
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `chat:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: asUser
         description: Pass true to delete the message as the authed user with
           `chat:write:user` scope. [Bot users](/bot-users) in this context are
@@ -2494,13 +2025,6 @@ modules:
     description: Retrieve a permalink URL for a specific extant message
     externalDocs: https://api.slack.com/methods/chat.getPermalink
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `none`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: channel
         description: The ID of the conversation or channel containing the message
         originalName: channel
@@ -2515,19 +2039,12 @@ modules:
         schema:
           type: string
         required: true
-  - moduleName: Chat / Me Message
+  - moduleName: Chat / MeMessage
     method: post
     path: /chat.meMessage
     description: Share a me message into a channel.
     externalDocs: https://api.slack.com/methods/chat.meMessage
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `chat:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: channel
         description: Channel to send message to. Can be a public channel, private group
           or IM channel. Can be an encoded ID, or a name.
@@ -2550,13 +2067,6 @@ modules:
     description: Sends an ephemeral message to a user in a channel.
     externalDocs: https://api.slack.com/methods/chat.postEphemeral
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `chat:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: asUser
         description: Pass true to post the message as the authed user. Defaults to true
           if the chat:write:bot scope is not included. Otherwise, defaults to
@@ -2666,13 +2176,6 @@ modules:
     description: Sends a message to a channel.
     externalDocs: https://api.slack.com/methods/chat.postMessage
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `chat:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: asUser
         description: Pass true to post the message as the authed user, instead of as a
           bot. Defaults to false. See [authorship](#authorship) below.
@@ -2801,13 +2304,6 @@ modules:
     description: Schedules a message to be sent to a channel.
     externalDocs: https://api.slack.com/methods/chat.scheduleMessage
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `chat:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: asUser
         description: Pass true to post the message as the authed user, instead of as a
           bot. Defaults to false. See
@@ -2904,19 +2400,12 @@ modules:
           type: boolean
         required: false
     requestBodyType: form
-  - moduleName: Scheduled Messages / List
+  - moduleName: Chat / List Scheduled Messages
     method: get
     path: /chat.scheduledMessages.list
     description: Returns a list of scheduled messages.
     externalDocs: https://api.slack.com/methods/chat.scheduledMessages.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `none`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: channel
         description: The channel of the scheduled messages
         originalName: channel
@@ -2960,13 +2449,6 @@ modules:
     description: Provide custom unfurl behavior for user-posted URLs
     externalDocs: https://api.slack.com/methods/chat.unfurl
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `links:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channel
         description: Channel ID of the message
         originalName: channel
@@ -3022,13 +2504,6 @@ modules:
     description: Updates a message.
     externalDocs: https://api.slack.com/methods/chat.update
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `chat:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: asUser
         description: Pass true to update the message as the authed user. [Bot
           users](/bot-users) in this context are considered authed users.
@@ -3107,13 +2582,6 @@ modules:
     description: Archives a conversation.
     externalDocs: https://api.slack.com/methods/conversations.archive
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: channel
         description: ID of conversation to archive
         originalName: channel
@@ -3128,13 +2596,6 @@ modules:
     description: Closes a direct message or multi-person direct message.
     externalDocs: https://api.slack.com/methods/conversations.close
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: channel
         description: Conversation to close.
         originalName: channel
@@ -3149,13 +2610,6 @@ modules:
     description: Initiates a public or private channel-based conversation
     externalDocs: https://api.slack.com/methods/conversations.create
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: isPrivate
         description: Create a private channel instead of a public one
         originalName: is_private
@@ -3171,19 +2625,12 @@ modules:
           type: string
         required: false
     requestBodyType: form
-  - moduleName: Conversations / History
+  - moduleName: Conversations / Get History
     method: get
     path: /conversations.history
     description: Fetches a conversation's history of messages and events.
     externalDocs: https://api.slack.com/methods/conversations.history
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `conversations:history`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: false
       - paramName: channel
         description: Conversation ID to fetch history for.
         originalName: channel
@@ -3232,19 +2679,12 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: Conversations / Info
+  - moduleName: Conversations / Get Info
     method: get
     path: /conversations.info
     description: Retrieve information about a conversation.
     externalDocs: https://api.slack.com/methods/conversations.info
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `conversations:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: false
       - paramName: channel
         description: Conversation ID to learn more about
         originalName: channel
@@ -3274,13 +2714,6 @@ modules:
     description: Invites users to a channel.
     externalDocs: https://api.slack.com/methods/conversations.invite
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: channel
         description: The ID of the public or private channel to invite user(s) to.
         originalName: channel
@@ -3302,13 +2735,6 @@ modules:
     description: Joins an existing conversation.
     externalDocs: https://api.slack.com/methods/conversations.join
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `channels:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: channel
         description: ID of conversation to join
         originalName: channel
@@ -3323,13 +2749,6 @@ modules:
     description: Removes a user from a conversation.
     externalDocs: https://api.slack.com/methods/conversations.kick
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: channel
         description: ID of conversation to remove user from.
         originalName: channel
@@ -3351,13 +2770,6 @@ modules:
     description: Leaves a conversation.
     externalDocs: https://api.slack.com/methods/conversations.leave
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: channel
         description: Conversation to leave
         originalName: channel
@@ -3372,13 +2784,6 @@ modules:
     description: Lists all channels in a Slack team.
     externalDocs: https://api.slack.com/methods/conversations.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `conversations:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: false
       - paramName: excludeArchived
         description: Set to `true` to exclude archived channels from the list
         originalName: exclude_archived
@@ -3419,13 +2824,6 @@ modules:
     description: Sets the read cursor in a channel.
     externalDocs: https://api.slack.com/methods/conversations.mark
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: channel
         description: Channel or conversation to set the read cursor for.
         originalName: channel
@@ -3442,19 +2840,12 @@ modules:
           type: number
         required: false
     requestBodyType: form
-  - moduleName: Conversations / Members
+  - moduleName: Conversations / Get Members
     method: get
     path: /conversations.members
     description: Retrieve members of a conversation.
     externalDocs: https://api.slack.com/methods/conversations.members
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `conversations:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: false
       - paramName: channel
         description: ID of the conversation to retrieve members for
         originalName: channel
@@ -3487,13 +2878,6 @@ modules:
     description: Opens or resumes a direct message or multi-person direct message.
     externalDocs: https://api.slack.com/methods/conversations.open
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: channel
         description: Resume a conversation by supplying an `im` or `mpim`'s ID. Or
           provide the `users` field instead.
@@ -3527,13 +2911,6 @@ modules:
     description: Renames a conversation.
     externalDocs: https://api.slack.com/methods/conversations.rename
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: channel
         description: ID of conversation to rename
         originalName: channel
@@ -3549,19 +2926,12 @@ modules:
           type: string
         required: false
     requestBodyType: form
-  - moduleName: Conversations / Replies
+  - moduleName: Conversations / Get Replies
     method: get
     path: /conversations.replies
     description: Retrieve a thread of messages posted to a conversation
     externalDocs: https://api.slack.com/methods/conversations.replies
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `conversations:history`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: false
       - paramName: channel
         description: Conversation ID to fetch thread from.
         originalName: channel
@@ -3626,13 +2996,6 @@ modules:
     description: Sets the purpose for a conversation.
     externalDocs: https://api.slack.com/methods/conversations.setPurpose
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: channel
         description: Conversation to set the purpose of
         originalName: channel
@@ -3654,13 +3017,6 @@ modules:
     description: Sets the topic for a conversation.
     externalDocs: https://api.slack.com/methods/conversations.setTopic
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: channel
         description: Conversation to set the topic of
         originalName: channel
@@ -3682,13 +3038,6 @@ modules:
     description: Reverses conversation archival.
     externalDocs: https://api.slack.com/methods/conversations.unarchive
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `conversations:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: channel
         description: ID of conversation to unarchive
         originalName: channel
@@ -3703,13 +3052,6 @@ modules:
     description: Open a dialog with a user
     externalDocs: https://api.slack.com/methods/dialog.open
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `none`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: dialog
         description: The dialog definition. This must be a JSON-encoded string.
         originalName: dialog
@@ -3729,40 +3071,19 @@ modules:
     path: /dnd.endDnd
     description: Ends the current user's Do Not Disturb session immediately.
     externalDocs: https://api.slack.com/methods/dnd.endDnd
-    params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `dnd:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
+    params: []
   - moduleName: DND / End Snooze
     method: post
     path: /dnd.endSnooze
     description: Ends the current user's snooze mode immediately.
     externalDocs: https://api.slack.com/methods/dnd.endSnooze
-    params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `dnd:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
+    params: []
   - moduleName: DND / Info
     method: get
     path: /dnd.info
     description: Retrieves a user's current Do Not Disturb status.
     externalDocs: https://api.slack.com/methods/dnd.info
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `dnd:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: false
       - paramName: user
         description: User to fetch status for (defaults to current user)
         originalName: user
@@ -3797,13 +3118,6 @@ modules:
     description: Retrieves the Do Not Disturb status for up to 50 users on a team.
     externalDocs: https://api.slack.com/methods/dnd.teamInfo
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `dnd:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: false
       - paramName: users
         description: Comma-separated list of users to fetch Do Not Disturb status for
         originalName: users
@@ -3816,27 +3130,13 @@ modules:
     path: /emoji.list
     description: Lists custom emoji for a team.
     externalDocs: https://api.slack.com/methods/emoji.list
-    params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `emoji:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
-  - moduleName: Files / Delete Comment
+    params: []
+  - moduleName: Files / Comments / Delete
     method: post
     path: /files.comments.delete
     description: Deletes an existing comment on a file.
     externalDocs: https://api.slack.com/methods/files.comments.delete
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `files:write:user`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: file
         description: File to delete a comment from.
         originalName: file
@@ -3858,13 +3158,6 @@ modules:
     description: Deletes a file.
     externalDocs: https://api.slack.com/methods/files.delete
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `files:write:user`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: file
         description: ID of file to delete.
         originalName: file
@@ -3873,19 +3166,12 @@ modules:
           type: string
         required: false
     requestBodyType: form
-  - moduleName: Files / Info
+  - moduleName: Files / Get Info
     method: get
     path: /files.info
     description: Gets information about a file.
     externalDocs: https://api.slack.com/methods/files.info
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `files:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: false
       - paramName: file
         description: Specify a file by providing its ID.
         originalName: file
@@ -3934,13 +3220,6 @@ modules:
     description: List for a team, in a channel, or from a user with applied filters.
     externalDocs: https://api.slack.com/methods/files.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `files:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: false
       - paramName: user
         description: Filter files created by a single user.
         originalName: user
@@ -4001,7 +3280,7 @@ modules:
         schema:
           type: boolean
         required: false
-  - moduleName: Remote / Add File
+  - moduleName: Files / Add Remote
     method: post
     path: /files.remote.add
     description: Adds a file from a remote service
@@ -4058,19 +3337,12 @@ modules:
           type: string
         required: false
     requestBodyType: form
-  - moduleName: Remote / Info File
+  - moduleName: Files / Get Remote Info
     method: get
     path: /files.remote.info
     description: Retrieve information about a remote file added to Slack
     externalDocs: https://api.slack.com/methods/files.remote.info
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `remote_files:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: false
       - paramName: file
         description: Specify a file by providing its ID.
         originalName: file
@@ -4085,19 +3357,12 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: Remote / List File
+  - moduleName: Files / List Remote
     method: get
     path: /files.remote.list
     description: Retrieve information about a remote file added to Slack
     externalDocs: https://api.slack.com/methods/files.remote.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `remote_files:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: false
       - paramName: channel
         description: Filter files appearing in a specific channel, indicated by its ID.
         originalName: channel
@@ -4136,7 +3401,7 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: Remote / Remove File
+  - moduleName: Files / Remove Remote
     method: post
     path: /files.remote.remove
     description: Remove a remote file.
@@ -4164,19 +3429,12 @@ modules:
           type: string
         required: false
     requestBodyType: form
-  - moduleName: Remote / Share File
+  - moduleName: Files / Share Remote
     method: get
     path: /files.remote.share
     description: Share a remote file into a channel.
     externalDocs: https://api.slack.com/methods/files.remote.share
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `remote_files:share`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: false
       - paramName: file
         description: Specify a file registered with Slack by providing its ID. Either
           this field or `external_id` or both are required.
@@ -4201,7 +3459,7 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: Remote / Update File
+  - moduleName: Files / Update Remote
     method: post
     path: /files.remote.update
     description: Updates an existing remote file.
@@ -4271,13 +3529,6 @@ modules:
     description: Revokes public/external sharing access for a file
     externalDocs: https://api.slack.com/methods/files.revokePublicURL
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `files:write:user`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: file
         description: File to revoke
         originalName: file
@@ -4286,19 +3537,12 @@ modules:
           type: string
         required: false
     requestBodyType: form
-  - moduleName: Files / Shared Public URL
+  - moduleName: Files / Create Public URL
     method: post
     path: /files.sharedPublicURL
     description: Enables a file for public/external sharing.
     externalDocs: https://api.slack.com/methods/files.sharedPublicURL
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `files:write:user`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: file
         description: File to share
         originalName: file
@@ -4387,13 +3631,6 @@ modules:
     description: For Enterprise Grid workspaces, map local user IDs to global user IDs
     externalDocs: https://api.slack.com/methods/migration.exchange
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `tokens.basic`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: users
         description: A comma-separated list of user ids, up to 400 per request
         originalName: users
@@ -4416,137 +3653,12 @@ modules:
         schema:
           type: boolean
         required: false
-  - moduleName: OAuth / Access
-    method: get
-    path: /oauth.access
-    description: Exchanges a temporary OAuth verifier code for an access token.
-    externalDocs: https://api.slack.com/methods/oauth.access
-    params:
-      - paramName: clientId
-        description: Issued when you created your application.
-        originalName: client_id
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: clientSecret
-        description: Issued when you created your application.
-        originalName: client_secret
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: code
-        description: The `code` param returned via the OAuth callback.
-        originalName: code
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: redirectUri
-        description: This must match the originally submitted URI (if one was sent).
-        originalName: redirect_uri
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: singleChannel
-        description: Request the user to add your app only to a single channel. Only
-          valid with a [legacy workspace
-          app](https://api.slack.com/legacy-workspace-apps).
-        originalName: single_channel
-        in: query
-        schema:
-          type: boolean
-        required: false
-  - moduleName: OAuth / Token
-    method: get
-    path: /oauth.token
-    description: Exchanges a temporary OAuth verifier code for a workspace token.
-    externalDocs: https://api.slack.com/methods/oauth.token
-    params:
-      - paramName: clientId
-        description: Issued when you created your application.
-        originalName: client_id
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: clientSecret
-        description: Issued when you created your application.
-        originalName: client_secret
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: code
-        description: The `code` param returned via the OAuth callback.
-        originalName: code
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: redirectUri
-        description: This must match the originally submitted URI (if one was sent).
-        originalName: redirect_uri
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: singleChannel
-        description: Request the user to add your app only to a single channel.
-        originalName: single_channel
-        in: query
-        schema:
-          type: boolean
-        required: false
-  - moduleName: OAuth V2 / Access
-    method: get
-    path: /oauth.v2.access
-    description: Exchanges a temporary OAuth verifier code for an access token.
-    externalDocs: https://api.slack.com/methods/oauth.v2.access
-    params:
-      - paramName: clientId
-        description: Issued when you created your application.
-        originalName: client_id
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: clientSecret
-        description: Issued when you created your application.
-        originalName: client_secret
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: code
-        description: The `code` param returned via the OAuth callback.
-        originalName: code
-        in: query
-        schema:
-          type: string
-        required: true
-      - paramName: redirectUri
-        description: This must match the originally submitted URI (if one was sent).
-        originalName: redirect_uri
-        in: query
-        schema:
-          type: string
-        required: false
   - moduleName: Pins / Add
     method: post
     path: /pins.add
     description: Pins an item to a channel.
     externalDocs: https://api.slack.com/methods/pins.add
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `pins:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channel
         description: Channel to pin the item in.
         originalName: channel
@@ -4568,13 +3680,6 @@ modules:
     description: Lists items pinned to a channel.
     externalDocs: https://api.slack.com/methods/pins.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `pins:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: channel
         description: Channel to get pinned items for.
         originalName: channel
@@ -4588,13 +3693,6 @@ modules:
     description: Un-pins an item from a channel.
     externalDocs: https://api.slack.com/methods/pins.remove
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `pins:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channel
         description: Channel where the item is pinned to.
         originalName: channel
@@ -4616,13 +3714,6 @@ modules:
     description: Adds a reaction to an item.
     externalDocs: https://api.slack.com/methods/reactions.add
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `reactions:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channel
         description: Channel where the message to add reaction to was posted.
         originalName: channel
@@ -4651,13 +3742,6 @@ modules:
     description: Gets reactions for an item.
     externalDocs: https://api.slack.com/methods/reactions.get
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `reactions:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: channel
         description: Channel where the message to get reactions for was posted.
         originalName: channel
@@ -4699,13 +3783,6 @@ modules:
     description: Lists reactions made by a user.
     externalDocs: https://api.slack.com/methods/reactions.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `reactions:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: user
         description: Show reactions made by this user. Defaults to the authed user.
         originalName: user
@@ -4760,13 +3837,6 @@ modules:
     description: Removes a reaction from an item.
     externalDocs: https://api.slack.com/methods/reactions.remove
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `reactions:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channel
         description: Channel where the message to remove reaction from was posted.
         originalName: channel
@@ -4809,13 +3879,6 @@ modules:
     description: Creates a reminder.
     externalDocs: https://api.slack.com/methods/reminders.add
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `reminders:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: text
         description: The content of the reminder
         originalName: text
@@ -4848,13 +3911,6 @@ modules:
     description: Marks a reminder as complete.
     externalDocs: https://api.slack.com/methods/reminders.complete
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `reminders:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: reminder
         description: The ID of the reminder to be marked as complete
         originalName: reminder
@@ -4869,13 +3925,6 @@ modules:
     description: Deletes a reminder.
     externalDocs: https://api.slack.com/methods/reminders.delete
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `reminders:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: false
       - paramName: reminder
         description: The ID of the reminder
         originalName: reminder
@@ -4890,13 +3939,6 @@ modules:
     description: Gets information about a reminder.
     externalDocs: https://api.slack.com/methods/reminders.info
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `reminders:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: false
       - paramName: reminder
         description: The ID of the reminder
         originalName: reminder
@@ -4909,57 +3951,13 @@ modules:
     path: /reminders.list
     description: Lists all reminders created by or for a given user.
     externalDocs: https://api.slack.com/methods/reminders.list
-    params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `reminders:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: false
-  - moduleName: RTM / Connect
-    method: get
-    path: /rtm.connect
-    description: Starts a Real Time Messaging session.
-    externalDocs: https://api.slack.com/methods/rtm.connect
-    params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `rtm:stream`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
-      - paramName: batchPresenceAware
-        description: Batch presence deliveries via subscription. Enabling changes the
-          shape of `presence_change` events. See [batch
-          presence](/docs/presence-and-status#batching).
-        originalName: batch_presence_aware
-        in: query
-        schema:
-          type: boolean
-        required: false
-      - paramName: presenceSub
-        description: Only deliver presence events when requested by subscription. See
-          [presence subscriptions](/docs/presence-and-status#subscriptions).
-        originalName: presence_sub
-        in: query
-        schema:
-          type: boolean
-        required: false
+    params: []
   - moduleName: Search / Messages
     method: get
     path: /search.messages
     description: Searches for messages matching a query.
     externalDocs: https://api.slack.com/methods/search.messages
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `search:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: count
         description: Pass the number of results you want per "page". Maximum of `100`.
         originalName: count
@@ -5008,13 +4006,6 @@ modules:
     description: Adds a star to an item.
     externalDocs: https://api.slack.com/methods/stars.add
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `stars:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channel
         description: Channel to add star to, or channel where the message to add star to
           was posted (used with `timestamp`).
@@ -5051,13 +4042,6 @@ modules:
     description: Lists stars for a user.
     externalDocs: https://api.slack.com/methods/stars.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `stars:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: false
       - paramName: count
         description: ""
         originalName: count
@@ -5098,13 +4082,6 @@ modules:
     description: Removes a star from an item.
     externalDocs: https://api.slack.com/methods/stars.remove
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `stars:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channel
         description: Channel to remove star from, or channel where the message to remove
           star from was posted (used with `timestamp`).
@@ -5141,13 +4118,6 @@ modules:
     description: Gets the access logs for the current team.
     externalDocs: https://api.slack.com/methods/team.accessLogs
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: before
         description: End of time range of logs to include in results (inclusive).
         originalName: before
@@ -5169,19 +4139,12 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: Team / Billable Info
+  - moduleName: Team / Get Billable Info
     method: get
     path: /team.billableInfo
     description: Gets billable users information for the current team.
     externalDocs: https://api.slack.com/methods/team.billableInfo
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: user
         description: A user to retrieve the billable information for. Defaults to all users.
         originalName: user
@@ -5189,19 +4152,12 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: Team / Info
+  - moduleName: Team / Get Info
     method: get
     path: /team.info
     description: Gets information about the current team.
     externalDocs: https://api.slack.com/methods/team.info
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `team:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: team
         description: Team to get info on, if omitted, will return information about the
           current team. Will only return team that the authenticated token is
@@ -5211,19 +4167,12 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: Team / Integration Logs
+  - moduleName: Team / Get Integration Logs
     method: get
     path: /team.integrationLogs
     description: Gets the integration logs for the current team.
     externalDocs: https://api.slack.com/methods/team.integrationLogs
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `admin`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: appId
         description: Filter logs to this Slack app. Defaults to all logs.
         originalName: app_id
@@ -5266,19 +4215,12 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: Profile / Get Team
+  - moduleName: Team / Get Profile
     method: get
     path: /team.profile.get
     description: Retrieve a team's profile.
     externalDocs: https://api.slack.com/methods/team.profile.get
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `users.profile:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: visibility
         description: Filter by visibility.
         originalName: visibility
@@ -5286,19 +4228,12 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: User Groups / Create
+  - moduleName: Usergroups / Create
     method: post
     path: /usergroups.create
     description: Create a User Group
     externalDocs: https://api.slack.com/methods/usergroups.create
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `usergroups:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channels
         description: A comma separated string of encoded channel IDs for which the User
           Group uses as a default.
@@ -5336,19 +4271,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: User Groups / Disable
+  - moduleName: Usergroups / Disable
     method: post
     path: /usergroups.disable
     description: Disable an existing User Group
     externalDocs: https://api.slack.com/methods/usergroups.disable
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `usergroups:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: includeCount
         description: Include the number of users in the User Group.
         originalName: include_count
@@ -5364,19 +4292,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: User Groups / Enable
+  - moduleName: Usergroups / Enable
     method: post
     path: /usergroups.enable
     description: Enable a User Group
     externalDocs: https://api.slack.com/methods/usergroups.enable
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `usergroups:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: includeCount
         description: Include the number of users in the User Group.
         originalName: include_count
@@ -5392,7 +4313,7 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: User Groups / List
+  - moduleName: Usergroups / List
     method: get
     path: /usergroups.list
     description: List all User Groups for a team
@@ -5405,13 +4326,6 @@ modules:
         schema:
           type: boolean
         required: false
-      - paramName: token
-        description: "Authentication token. Requires scope: `usergroups:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: includeCount
         description: Include the number of users in each User Group.
         originalName: include_count
@@ -5426,19 +4340,12 @@ modules:
         schema:
           type: boolean
         required: false
-  - moduleName: User Groups / Update
+  - moduleName: Usergroups / Update
     method: post
     path: /usergroups.update
     description: Update an existing User Group
     externalDocs: https://api.slack.com/methods/usergroups.update
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `usergroups:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: channels
         description: A comma separated string of encoded channel IDs for which the User
           Group uses as a default.
@@ -5483,19 +4390,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Users / List Group
+  - moduleName: Usergroups / List Users
     method: get
     path: /usergroups.users.list
     description: List all users in a User Group
     externalDocs: https://api.slack.com/methods/usergroups.users.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `usergroups:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: includeDisabled
         description: Allow results that involve disabled User Groups.
         originalName: include_disabled
@@ -5510,19 +4410,12 @@ modules:
         schema:
           type: string
         required: true
-  - moduleName: Users / Update Group
+  - moduleName: Usergroups / Update Users
     method: post
     path: /usergroups.users.update
     description: Update the list of users for a User Group
     externalDocs: https://api.slack.com/methods/usergroups.users.update
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `usergroups:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: includeCount
         description: Include the number of users in the User Group.
         originalName: include_count
@@ -5546,19 +4439,12 @@ modules:
           type: string
         required: true
     requestBodyType: form
-  - moduleName: Users / Conversations
+  - moduleName: Users / Get Conversations
     method: get
     path: /users.conversations
     description: List conversations the calling user may access.
     externalDocs: https://api.slack.com/methods/users.conversations
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `conversations:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: false
       - paramName: user
         description: Browse conversations by a specific user ID's membership. Non-public
           channels are restricted to those where the calling user shares
@@ -5622,13 +4508,6 @@ modules:
     description: Gets user presence information.
     externalDocs: https://api.slack.com/methods/users.getPresence
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `users:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: user
         description: User to get presence info on. Defaults to the authed user.
         originalName: user
@@ -5636,32 +4515,18 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: Users / Identity
+  - moduleName: Users / Get Identity
     method: get
     path: /users.identity
     description: Get a user's identity.
     externalDocs: https://api.slack.com/methods/users.identity
-    params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `identity.basic`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: false
+    params: []
   - moduleName: Users / Info
     method: get
     path: /users.info
     description: Gets information about a user.
     externalDocs: https://api.slack.com/methods/users.info
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `users:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: includeLocale
         description: Set this to `true` to receive the locale for this user. Defaults to
           `false`
@@ -5683,13 +4548,6 @@ modules:
     description: Lists all users in a Slack team.
     externalDocs: https://api.slack.com/methods/users.list
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `users:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: false
       - paramName: limit
         description: The maximum number of items to return. Fewer than the requested
           number of items may be returned, even if the end of the users list
@@ -5724,13 +4582,6 @@ modules:
     description: Find a user with an email address.
     externalDocs: https://api.slack.com/methods/users.lookupByEmail
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `users:read.email`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: email
         description: An email address belonging to a user in the workspace
         originalName: email
@@ -5738,19 +4589,12 @@ modules:
         schema:
           type: string
         required: true
-  - moduleName: Profile / Get User
+  - moduleName: Users / Get Profile
     method: get
     path: /users.profile.get
     description: Retrieves a user's profile information.
     externalDocs: https://api.slack.com/methods/users.profile.get
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `users.profile:read`"
-        originalName: token
-        in: query
-        schema:
-          type: string
-        required: true
       - paramName: includeLabels
         description: Include labels for each ID in custom profile fields
         originalName: include_labels
@@ -5765,19 +4609,12 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: Profile / Set User
+  - moduleName: Users / Set Profile
     method: post
     path: /users.profile.set
     description: Set the profile information for a user.
     externalDocs: https://api.slack.com/methods/users.profile.set
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `users.profile:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: name
         description: Name of a single key to set. Usable only if `profile` is not passed.
         originalName: name
@@ -5815,14 +4652,7 @@ modules:
     path: /users.setActive
     description: Marked a user as active. Deprecated and non-functional.
     externalDocs: https://api.slack.com/methods/users.setActive
-    params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `users:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
+    params: []
   - moduleName: Users / Set Photo
     method: post
     path: /users.setPhoto
@@ -5871,13 +4701,6 @@ modules:
     description: Manually sets user presence.
     externalDocs: https://api.slack.com/methods/users.setPresence
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `users:write`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: presence
         description: Either `auto` or `away`
         originalName: presence
@@ -5892,13 +4715,6 @@ modules:
     description: Open a view for a user.
     externalDocs: https://api.slack.com/methods/views.open
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `none`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: triggerId
         description: Exchange a trigger to post to the user.
         originalName: trigger_id
@@ -5920,13 +4736,6 @@ modules:
     description: Publish a static view for a User.
     externalDocs: https://api.slack.com/methods/views.publish
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `none`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: userId
         description: "`id` of the user you want publish a view to."
         originalName: user_id
@@ -5956,13 +4765,6 @@ modules:
     description: Push a view onto the stack of a root view.
     externalDocs: https://api.slack.com/methods/views.push
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `none`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: triggerId
         description: Exchange a trigger to post to the user.
         originalName: trigger_id
@@ -5984,13 +4786,6 @@ modules:
     description: Update an existing view.
     externalDocs: https://api.slack.com/methods/views.update
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `none`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: viewId
         description: A unique identifier of the view to be updated. Either `view_id` or
           `external_id` is required.
@@ -6030,13 +4825,6 @@ modules:
     description: Indicate that an app's step in a workflow completed execution.
     externalDocs: https://api.slack.com/methods/workflows.stepCompleted
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `workflow.steps:execute`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: workflowStepExecuteId
         description: Context identifier that maps to the correct workflow step execution.
         originalName: workflow_step_execute_id
@@ -6060,13 +4848,6 @@ modules:
     description: Indicate that an app's step in a workflow failed to execute.
     externalDocs: https://api.slack.com/methods/workflows.stepFailed
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `workflow.steps:execute`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: workflowStepExecuteId
         description: Context identifier that maps to the correct workflow step execution.
         originalName: workflow_step_execute_id
@@ -6088,13 +4869,6 @@ modules:
     description: Update the configuration for a workflow extension step.
     externalDocs: https://api.slack.com/methods/workflows.updateStep
     params:
-      - paramName: token
-        description: "Authentication token. Requires scope: `workflow.steps:execute`"
-        originalName: token
-        in: header
-        schema:
-          type: string
-        required: true
       - paramName: workflowStepEditId
         description: A context identifier provided with `view_submission` payloads used
           to call back to `workflows.updateStep`.

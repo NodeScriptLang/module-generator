@@ -2,7 +2,7 @@ id: notion
 displayName: Notion
 workspaceId:
   development: ""
-  production: ""
+  production: 5nSUXxACmPQWw66N
 baseUrl: https://api.notion.com
 description:
 commonParams:
@@ -41,10 +41,10 @@ modules:
         schema:
           type: string
         required: true
-  - moduleName: Blocks / Properties / Update
+  - moduleName: Blocks / Update
     method: patch
     path: /v1/blocks/{id}
-    description: This endpoint allows you to update block content. See external docs for more info
+    description: Updates block content. Refer to external docs for more info.
     externalDocs: https://developers.notion.com/reference/update-a-block
     params:
       - paramName: id
@@ -82,7 +82,7 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: Blocks / Children / Update
+  - moduleName: Blocks / Children / Append
     method: patch
     path: /v1/blocks/{id}/children
     description: Append block children
@@ -105,7 +105,7 @@ modules:
             type: any
         required: false
     requestBodyType: json
-  - moduleName: Comments / Retrieve
+  - moduleName: Comments / Get
     method: get
     path: /v1/comments
     description: Retrieve a user object using the ID specified in the request path.

@@ -7,11 +7,10 @@ yarn.lock
 .env*
 !.env.example
 !.env.test
+!.env.openapi
 
 out/
 .tmp*
-_dev
-_archive/
 *.tsbuildinfo
 
 .aicache/
