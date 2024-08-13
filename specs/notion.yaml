@@ -6,6 +6,12 @@ workspaceId:
 baseUrl: https://api.notion.com
 description:
 commonParams:
+  - paramName: auth
+    originalName: Authorization
+    in: header
+    prefix: Bearer
+    description: |
+      Notion API key.
   - paramName: notionVersion
     originalName: Notion-Version
     required: false
