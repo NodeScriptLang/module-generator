@@ -285,7 +285,7 @@ export class OpenApiGenerator {
             res.push({
                 method,
                 path,
-                summary: opSpec.summary,
+                // summary: opSpec.summary,
                 operationId: opSpec.operationId,
                 tags: opSpec.tags,
             });
