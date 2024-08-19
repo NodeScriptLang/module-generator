@@ -38,16 +38,16 @@ export class LibraryGenerator {
                 code.indent(1);
                 for (const pspec of this.getParamSpecs(mspec)) {
                     if (pspec.in === 'path') {
-                        code.line(`.replace("{${pspec.paramKey}}", ${this.paramValueExpr(pspec)})`);
+                        code.line(`.replace("{${pspec.paramKey}}", params[${JSON.stringify(pspec.paramName)}])`);
                     }
                 }
                 code.indent(-1);
             });
-            code.line('const addQueryParam = (key, val) => { if (val !== undefined) url.searchParams.append(key, val) };');
             code.line('const headers = {};');
+            code.line('const addQueryParam = (key, val) => { if (val != null) url.searchParams.append(key, val) };');
             for (const pspec of this.getParamSpecs(mspec)) {
                 if (pspec.in === 'header') {
-                    code.line(`headers[${JSON.stringify(pspec.paramKey)}] = ${this.paramValueExpr(pspec)};`);
+                    this.emitHeaderParam(code, pspec);
                 }
                 if (pspec.in === 'query') {
                     this.emitQueryParam(code, pspec);
@@ -112,15 +112,6 @@ export class LibraryGenerator {
         ];
     }
 
-    private paramValueExpr(pspec: LibraryParamSpec) {
-        const { paramName, prefix } = pspec;
-        const valueExpr = `params[${JSON.stringify(paramName)}]`;
-        if (prefix) {
-            return `(${JSON.stringify(prefix)} + " " + ${valueExpr}.replace(/^${escapeStringRegexp(prefix)}\\s+/gi, ''))`;
-        }
-        return valueExpr;
-    }
-
     private emitQueryParam(code: CodeBuilder, pspec: LibraryParamSpec) {
         const paramName = JSON.stringify(pspec.paramName);
         const paramKey = JSON.stringify(pspec.paramKey);
@@ -130,7 +121,7 @@ export class LibraryGenerator {
                 pspec.style === 'spaceDelimited' ? ' ' :
                     pspec.style === 'pipeDelimited' ? '|' : ',';
             if (pspec.explode) {
-                code.block(`for (const item of params[]) {`, '}', () => {
+                code.block(`for (const item of params[${paramName}] ?? []) {`, '}', () => {
                     code.line(`addQueryParam(${paramKey}, item);`);
                 });
             } else {
@@ -140,6 +131,19 @@ export class LibraryGenerator {
         } else {
             code.line(`addQueryParam(${paramKey}, params[${paramName}]);`);
         }
+    }
+
+    private emitHeaderParam(code: CodeBuilder, pspec: LibraryParamSpec) {
+        const prefix = pspec.prefix;
+        const paramName = JSON.stringify(pspec.paramName);
+        const paramKey = JSON.stringify(pspec.paramKey);
+        code.block(`if (params[${paramName}] != null) {`, `}`, () => {
+            let valueExpr = `params[${paramName}]`;
+            if (prefix) {
+                valueExpr = `(${JSON.stringify(pspec.prefix)} + " " + ${valueExpr}.replace(/^${escapeStringRegexp(prefix)}\\s*/gi, ''))`;
+            }
+            code.line(`headers[${paramKey}] = ${valueExpr};`);
+        });
     }
 
     private emitRequestBodyJson(code: CodeBuilder, mspec: LibraryModuleSpec) {

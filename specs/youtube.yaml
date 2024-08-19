@@ -1,0 +1,4957 @@
+id: youtube
+displayName: YouTube
+workspaceId:
+  development: ""
+  production: W3e3jO3u3NTi8FlC
+baseUrl: https://youtube.googleapis.com
+description: The YouTube Data API v3 is an API that provides access to YouTube
+  data, such as videos, playlists, and channels.
+commonParams:
+  - paramName: accessToken
+    paramKey: Authorization
+    prefix: Bearer
+    in: header
+    description: OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/youtube` scope. Google Auth / Service Account Token can be used to obtain a valid access token.
+    required: false
+    advanced: false
+  - paramName: apiKey
+    paramKey: key
+    in: query
+    description: API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used.
+    required: false
+modules:
+  - moduleName: Abuse Reports / Insert
+    method: post
+    path: /youtube/v3/abuseReports
+    description: Inserts a new resource into this collection.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter serves two purposes in this operation. It
+          identifies the properties that the write operation will set as well as
+          the properties that the API response will include.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: abuseTypes
+        description: ""
+        paramKey: abuseTypes
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: description
+        description: ""
+        paramKey: description
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: relatedEntities
+        description: ""
+        paramKey: relatedEntities
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: subject
+        description: ""
+        paramKey: subject
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Activities / List
+    method: get
+    path: /youtube/v3/activities
+    description: Retrieves a list of resources, possibly filtered.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies a comma-separated list of one or
+          more activity resource properties that the API response will include.
+          If the parameter identifies a property that contains child properties,
+          the child properties will be included in the response. For example, in
+          an activity resource, the snippet property contains other properties
+          that identify the type of activity, a display title for the activity,
+          and so forth. If you set *part=snippet*, the API response will also
+          contain all of those nested properties.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: channelId
+        description: ""
+        paramKey: channelId
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: home
+        description: ""
+        paramKey: home
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: maxResults
+        description: The *maxResults* parameter specifies the maximum number of items
+          that should be returned in the result set.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 0
+          maximum: 50
+        required: false
+      - paramName: mine
+        description: ""
+        paramKey: mine
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: pageToken
+        description: The *pageToken* parameter identifies a specific page in the result
+          set that should be returned. In an API response, the nextPageToken and
+          prevPageToken properties identify other pages that could be retrieved.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: publishedAfter
+        description: ""
+        paramKey: publishedAfter
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: publishedBefore
+        description: ""
+        paramKey: publishedBefore
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: regionCode
+        description: ""
+        paramKey: regionCode
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Captions / Delete
+    method: delete
+    path: /youtube/v3/captions
+    description: Deletes a resource.
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        paramKey: id
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: onBehalfOf
+        description: ID of the Google+ Page for the channel that the request is be on
+          behalf of
+        paramKey: onBehalfOf
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The actual CMS account that the user
+          authenticates with must be linked to the specified YouTube content
+          owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Captions / List
+    method: get
+    path: /youtube/v3/captions
+    description: Retrieves a list of resources, possibly filtered.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies a comma-separated list of one or
+          more caption resource parts that the API response will include. The
+          part names that you can include in the parameter value are id and
+          snippet.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: videoId
+        description: Returns the captions for the specified video.
+        paramKey: videoId
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: id
+        description: Returns the captions with the given IDs for Stubby or Apiary.
+        paramKey: id
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: onBehalfOf
+        description: ID of the Google+ Page for the channel that the request is on
+          behalf of.
+        paramKey: onBehalfOf
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The actual CMS account that the user
+          authenticates with must be linked to the specified YouTube content
+          owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Captions / Download
+    method: get
+    path: /youtube/v3/captions/{id}
+    description: Downloads a caption track.
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: The ID of the caption track to download, required for One Platform.
+        paramKey: id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: onBehalfOf
+        description: ID of the Google+ Page for the channel that the request is be on
+          behalf of
+        paramKey: onBehalfOf
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The actual CMS account that the user
+          authenticates with must be linked to the specified YouTube content
+          owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: tfmt
+        description: Convert the captions into this format. Supported options are sbv,
+          srt, and vtt.
+        paramKey: tfmt
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: tlang
+        description: tlang is the language code; machine translate the captions into
+          this language.
+        paramKey: tlang
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Channel Sections / Delete
+    method: delete
+    path: /youtube/v3/channelSections
+    description: Deletes a resource.
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        paramKey: id
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Channel Sections / List
+    method: get
+    path: /youtube/v3/channelSections
+    description: Retrieves a list of resources, possibly filtered.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies a comma-separated list of one or
+          more channelSection resource properties that the API response will
+          include. The part names that you can include in the parameter value
+          are id, snippet, and contentDetails. If the parameter identifies a
+          property that contains child properties, the child properties will be
+          included in the response. For example, in a channelSection resource,
+          the snippet property contains other properties, such as a display
+          title for the channelSection. If you set *part=snippet*, the API
+          response will also contain all of those nested properties.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: channelId
+        description: Return the ChannelSections owned by the specified channel ID.
+        paramKey: channelId
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: hl
+        description: Return content in specified language
+        paramKey: hl
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: Return the ChannelSections with the given IDs for Stubby or Apiary.
+        paramKey: id
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: mine
+        description: Return the ChannelSections owned by the authenticated user.
+        paramKey: mine
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Channel Sections / Insert
+    method: post
+    path: /youtube/v3/channelSections
+    description: Inserts a new resource into this collection.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter serves two purposes in this operation. It
+          identifies the properties that the write operation will set as well as
+          the properties that the API response will include. The part names that
+          you can include in the parameter value are snippet and contentDetails.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: onBehalfOfContentOwnerChannel
+        description: This parameter can only be used in a properly authorized request.
+          *Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwnerChannel* parameter specifies the
+          YouTube channel ID of the channel to which a video is being added.
+          This parameter is required when a request specifies a value for the
+          onBehalfOfContentOwner parameter, and it can only be used in
+          conjunction with that parameter. In addition, the request must be
+          authorized using a CMS account that is linked to the content owner
+          that the onBehalfOfContentOwner parameter specifies. Finally, the
+          channel that the onBehalfOfContentOwnerChannel parameter value
+          specifies must be linked to the content owner that the
+          onBehalfOfContentOwner parameter specifies. This parameter is intended
+          for YouTube content partners that own and manage many different
+          YouTube channels. It allows content owners to authenticate once and
+          perform actions on behalf of the channel specified in the parameter
+          value, without having to provide authentication credentials for each
+          separate channel.
+        paramKey: onBehalfOfContentOwnerChannel
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: contentDetails
+        description: Details about a channelsection, including playlists and channels.
+        paramKey: contentDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: etag
+        description: Etag of this resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: The ID that YouTube uses to uniquely identify the channel section.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          "youtube#channelSection".'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#channelSection
+        required: false
+      - paramName: localizations
+        description: Localizations for different languages
+        paramKey: localizations
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: snippet
+        description: Basic details about a channel section, including title, style and
+          position.
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: targeting
+        description: ChannelSection targeting setting.
+        paramKey: targeting
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Channel Sections / Update
+    method: put
+    path: /youtube/v3/channelSections
+    description: Updates an existing resource.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter serves two purposes in this operation. It
+          identifies the properties that the write operation will set as well as
+          the properties that the API response will include. The part names that
+          you can include in the parameter value are snippet and contentDetails.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: contentDetails
+        description: Details about a channelsection, including playlists and channels.
+        paramKey: contentDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: etag
+        description: Etag of this resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: The ID that YouTube uses to uniquely identify the channel section.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          "youtube#channelSection".'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#channelSection
+        required: false
+      - paramName: localizations
+        description: Localizations for different languages
+        paramKey: localizations
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: snippet
+        description: Basic details about a channel section, including title, style and
+          position.
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: targeting
+        description: ChannelSection targeting setting.
+        paramKey: targeting
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Channels / List
+    method: get
+    path: /youtube/v3/channels
+    description: Retrieves a list of resources, possibly filtered.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies a comma-separated list of one or
+          more channel resource properties that the API response will include.
+          If the parameter identifies a property that contains child properties,
+          the child properties will be included in the response. For example, in
+          a channel resource, the contentDetails property contains other
+          properties, such as the uploads properties. As such, if you set
+          *part=contentDetails*, the API response will also contain all of those
+          nested properties.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: categoryId
+        description: Return the channels within the specified guide category ID.
+        paramKey: categoryId
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: forUsername
+        description: Return the channel associated with a YouTube username.
+        paramKey: forUsername
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: hl
+        description: Stands for "host language". Specifies the localization language of
+          the metadata to be filled into snippet.localized. The field is filled
+          with the default metadata if there is no localization in the specified
+          language. The parameter value must be a language code included in the
+          list returned by the i18nLanguages.list method (e.g. en_US, es_MX).
+        paramKey: hl
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: Return the channels with the specified IDs.
+        paramKey: id
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: managedByMe
+        description: Return the channels managed by the authenticated user.
+        paramKey: managedByMe
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: maxResults
+        description: The *maxResults* parameter specifies the maximum number of items
+          that should be returned in the result set.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 0
+          maximum: 50
+        required: false
+      - paramName: mine
+        description: Return the ids of channels owned by the authenticated user.
+        paramKey: mine
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: mySubscribers
+        description: Return the channels subscribed to the authenticated user
+        paramKey: mySubscribers
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: pageToken
+        description: The *pageToken* parameter identifies a specific page in the result
+          set that should be returned. In an API response, the nextPageToken and
+          prevPageToken properties identify other pages that could be retrieved.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Channels / Update
+    method: put
+    path: /youtube/v3/channels
+    description: Updates an existing resource.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter serves two purposes in this operation. It
+          identifies the properties that the write operation will set as well as
+          the properties that the API response will include. The API currently
+          only allows the parameter value to be set to either brandingSettings
+          or invideoPromotion. (You cannot update both of those parts with a
+          single request.) Note that this method overrides the existing values
+          for all of the mutable properties that are contained in any parts that
+          the parameter value specifies.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: onBehalfOfContentOwner
+        description: The *onBehalfOfContentOwner* parameter indicates that the
+          authenticated user is acting on behalf of the content owner specified
+          in the parameter value. This parameter is intended for YouTube content
+          partners that own and manage many different YouTube channels. It
+          allows content owners to authenticate once and get access to all their
+          video and channel data, without having to provide authentication
+          credentials for each individual channel. The actual CMS account that
+          the user authenticates with needs to be linked to the specified
+          YouTube content owner.
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: auditDetails
+        description: The auditDetails object encapsulates channel data that is relevant
+          for YouTube Partners during the audit process.
+        paramKey: auditDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: brandingSettings
+        description: Branding properties of a YouTube channel.
+        paramKey: brandingSettings
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: contentDetails
+        description: Details about the content of a channel.
+        paramKey: contentDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: contentOwnerDetails
+        description: The contentOwnerDetails object encapsulates channel data that is
+          relevant for YouTube Partners linked with the channel.
+        paramKey: contentOwnerDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: conversionPings
+        description: The conversionPings object encapsulates information about
+          conversion pings that need to be respected by the channel.
+        paramKey: conversionPings
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: etag
+        description: Etag of this resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: The ID that YouTube uses to uniquely identify the channel.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          "youtube#channel".'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#channel
+        required: false
+      - paramName: localizations
+        description: Localizations for different languages
+        paramKey: localizations
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: snippet
+        description: Basic details about a channel, including title, description and
+          thumbnails.
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: statistics
+        description: "Statistics about a channel: number of subscribers, number of
+          videos in the channel, etc."
+        paramKey: statistics
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: status
+        description: JSON template for the status part of a channel.
+        paramKey: status
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: topicDetails
+        description: Freebase topic information related to the channel.
+        paramKey: topicDetails
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Comment Threads / List
+    method: get
+    path: /youtube/v3/commentThreads
+    description: Retrieves a list of resources, possibly filtered.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies a comma-separated list of one or
+          more commentThread resource properties that the API response will
+          include.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: allThreadsRelatedToChannelId
+        description: Returns the comment threads of all videos of the channel and the
+          channel comments as well.
+        paramKey: allThreadsRelatedToChannelId
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: channelId
+        description: Returns the comment threads for all the channel comments (ie does
+          not include comments left on videos).
+        paramKey: channelId
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: Returns the comment threads with the given IDs for Stubby or Apiary.
+        paramKey: id
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: maxResults
+        description: The *maxResults* parameter specifies the maximum number of items
+          that should be returned in the result set.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 1
+          maximum: 100
+        required: false
+      - paramName: moderationStatus
+        description: "Limits the returned comment threads to those with the specified
+          moderation status. Not compatible with the 'id' filter. Valid values:
+          published, heldForReview, likelySpam."
+        paramKey: moderationStatus
+        in: query
+        schema:
+          type: string
+          enum:
+            - published
+            - heldForReview
+            - likelySpam
+            - rejected
+        required: false
+      - paramName: order
+        description: ""
+        paramKey: order
+        in: query
+        schema:
+          type: string
+          enum:
+            - orderUnspecified
+            - time
+            - relevance
+        required: false
+      - paramName: pageToken
+        description: The *pageToken* parameter identifies a specific page in the result
+          set that should be returned. In an API response, the nextPageToken and
+          prevPageToken properties identify other pages that could be retrieved.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: searchTerms
+        description: Limits the returned comment threads to those matching the specified
+          key words. Not compatible with the 'id' filter.
+        paramKey: searchTerms
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: textFormat
+        description: The requested text format for the returned comments.
+        paramKey: textFormat
+        in: query
+        schema:
+          type: string
+          enum:
+            - textFormatUnspecified
+            - html
+            - plainText
+        required: false
+      - paramName: videoId
+        description: Returns the comment threads of the specified video.
+        paramKey: videoId
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Comment Threads / Insert
+    method: post
+    path: /youtube/v3/commentThreads
+    description: Inserts a new resource into this collection.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter identifies the properties that the API
+          response will include. Set the parameter value to snippet. The snippet
+          part has a quota cost of 2 units.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: etag
+        description: Etag of this resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: The ID that YouTube uses to uniquely identify the comment thread.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          "youtube#commentThread".'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#commentThread
+        required: false
+      - paramName: replies
+        description: Comments written in (direct or indirect) reply to the top level
+          comment.
+        paramKey: replies
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: snippet
+        description: Basic details about a comment thread.
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Comment Threads / Update
+    method: put
+    path: /youtube/v3/commentThreads
+    description: Updates an existing resource.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies a comma-separated list of
+          commentThread resource properties that the API response will include.
+          You must at least include the snippet part in the parameter value
+          since that part contains all of the properties that the API request
+          can update.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: etag
+        description: Etag of this resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: The ID that YouTube uses to uniquely identify the comment thread.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          "youtube#commentThread".'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#commentThread
+        required: false
+      - paramName: replies
+        description: Comments written in (direct or indirect) reply to the top level
+          comment.
+        paramKey: replies
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: snippet
+        description: Basic details about a comment thread.
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Comments / Delete
+    method: delete
+    path: /youtube/v3/comments
+    description: Deletes a resource.
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        paramKey: id
+        in: query
+        schema:
+          type: string
+        required: true
+  - moduleName: Comments / List
+    method: get
+    path: /youtube/v3/comments
+    description: Retrieves a list of resources, possibly filtered.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies a comma-separated list of one or
+          more comment resource properties that the API response will include.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: id
+        description: Returns the comments with the given IDs for One Platform.
+        paramKey: id
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: maxResults
+        description: The *maxResults* parameter specifies the maximum number of items
+          that should be returned in the result set.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 1
+          maximum: 100
+        required: false
+      - paramName: pageToken
+        description: The *pageToken* parameter identifies a specific page in the result
+          set that should be returned. In an API response, the nextPageToken and
+          prevPageToken properties identify other pages that could be retrieved.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: parentId
+        description: Returns replies to the specified comment. Note, currently YouTube
+          features only one level of replies (ie replies to top level comments).
+          However replies to replies may be supported in the future.
+        paramKey: parentId
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: textFormat
+        description: The requested text format for the returned comments.
+        paramKey: textFormat
+        in: query
+        schema:
+          type: string
+          enum:
+            - textFormatUnspecified
+            - html
+            - plainText
+        required: false
+  - moduleName: Comments / Insert
+    method: post
+    path: /youtube/v3/comments
+    description: Inserts a new resource into this collection.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter identifies the properties that the API
+          response will include. Set the parameter value to snippet. The snippet
+          part has a quota cost of 2 units.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: etag
+        description: Etag of this resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: The ID that YouTube uses to uniquely identify the comment.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          "youtube#comment".'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#comment
+        required: false
+      - paramName: snippet
+        description: Basic details about a comment, such as its author and text.
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Comments / Update
+    method: put
+    path: /youtube/v3/comments
+    description: Updates an existing resource.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter identifies the properties that the API
+          response will include. You must at least include the snippet part in
+          the parameter value since that part contains all of the properties
+          that the API request can update.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: etag
+        description: Etag of this resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: The ID that YouTube uses to uniquely identify the comment.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          "youtube#comment".'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#comment
+        required: false
+      - paramName: snippet
+        description: Basic details about a comment, such as its author and text.
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Comments / Mark As Spam
+    method: post
+    path: /youtube/v3/comments/markAsSpam
+    description: Expresses the caller's opinion that one or more comments should be
+      flagged as spam.
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: Flags the comments with the given IDs as spam in the caller's opinion.
+        paramKey: id
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+  - moduleName: Comments / Set Moderation Status
+    method: post
+    path: /youtube/v3/comments/setModerationStatus
+    description: Sets the moderation status of one or more comments.
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: Modifies the moderation status of the comments with the given IDs
+        paramKey: id
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: moderationStatus
+        description: "Specifies the requested moderation status. Note, comments can be
+          in statuses, which are not available through this call. For example,
+          this call does not allow to mark a comment as 'likely spam'. Valid
+          values: MODERATION_STATUS_PUBLISHED,
+          MODERATION_STATUS_HELD_FOR_REVIEW, MODERATION_STATUS_REJECTED."
+        paramKey: moderationStatus
+        in: query
+        schema:
+          type: string
+          enum:
+            - published
+            - heldForReview
+            - likelySpam
+            - rejected
+        required: true
+      - paramName: banAuthor
+        description: If set to true the author of the comment gets added to the ban
+          list. This means all future comments of the author will autmomatically
+          be rejected. Only valid in combination with STATUS_REJECTED.
+        paramKey: banAuthor
+        in: query
+        schema:
+          type: boolean
+        required: false
+  - moduleName: i18n Languages / List
+    method: get
+    path: /youtube/v3/i18nLanguages
+    description: Retrieves a list of resources, possibly filtered.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies the i18nLanguage resource properties
+          that the API response will include. Set the parameter value to
+          snippet.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: hl
+        description: ""
+        paramKey: hl
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: i18n Regions / List
+    method: get
+    path: /youtube/v3/i18nRegions
+    description: Retrieves a list of resources, possibly filtered.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies the i18nRegion resource properties
+          that the API response will include. Set the parameter value to
+          snippet.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: hl
+        description: ""
+        paramKey: hl
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Live Broadcasts / Delete
+    method: delete
+    path: /youtube/v3/liveBroadcasts
+    description: Delete a given broadcast.
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: Broadcast to delete.
+        paramKey: id
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: onBehalfOfContentOwnerChannel
+        description: This parameter can only be used in a properly authorized request.
+          *Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwnerChannel* parameter specifies the
+          YouTube channel ID of the channel to which a video is being added.
+          This parameter is required when a request specifies a value for the
+          onBehalfOfContentOwner parameter, and it can only be used in
+          conjunction with that parameter. In addition, the request must be
+          authorized using a CMS account that is linked to the content owner
+          that the onBehalfOfContentOwner parameter specifies. Finally, the
+          channel that the onBehalfOfContentOwnerChannel parameter value
+          specifies must be linked to the content owner that the
+          onBehalfOfContentOwner parameter specifies. This parameter is intended
+          for YouTube content partners that own and manage many different
+          YouTube channels. It allows content owners to authenticate once and
+          perform actions on behalf of the channel specified in the parameter
+          value, without having to provide authentication credentials for each
+          separate channel.
+        paramKey: onBehalfOfContentOwnerChannel
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Live Broadcasts / List
+    method: get
+    path: /youtube/v3/liveBroadcasts
+    description: Retrieve the list of broadcasts associated with the given channel.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies a comma-separated list of one or
+          more liveBroadcast resource properties that the API response will
+          include. The part names that you can include in the parameter value
+          are id, snippet, contentDetails, status and statistics.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: broadcastStatus
+        description: Return broadcasts with a certain status, e.g. active broadcasts.
+        paramKey: broadcastStatus
+        in: query
+        schema:
+          type: string
+          enum:
+            - broadcastStatusFilterUnspecified
+            - all
+            - active
+            - upcoming
+            - completed
+        required: false
+      - paramName: broadcastType
+        description: Return only broadcasts with the selected type.
+        paramKey: broadcastType
+        in: query
+        schema:
+          type: string
+          enum:
+            - broadcastTypeFilterUnspecified
+            - all
+            - event
+            - persistent
+        required: false
+      - paramName: id
+        description: Return broadcasts with the given ids from Stubby or Apiary.
+        paramKey: id
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: maxResults
+        description: The *maxResults* parameter specifies the maximum number of items
+          that should be returned in the result set.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 0
+          maximum: 50
+        required: false
+      - paramName: mine
+        description: ""
+        paramKey: mine
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: onBehalfOfContentOwnerChannel
+        description: This parameter can only be used in a properly authorized request.
+          *Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwnerChannel* parameter specifies the
+          YouTube channel ID of the channel to which a video is being added.
+          This parameter is required when a request specifies a value for the
+          onBehalfOfContentOwner parameter, and it can only be used in
+          conjunction with that parameter. In addition, the request must be
+          authorized using a CMS account that is linked to the content owner
+          that the onBehalfOfContentOwner parameter specifies. Finally, the
+          channel that the onBehalfOfContentOwnerChannel parameter value
+          specifies must be linked to the content owner that the
+          onBehalfOfContentOwner parameter specifies. This parameter is intended
+          for YouTube content partners that own and manage many different
+          YouTube channels. It allows content owners to authenticate once and
+          perform actions on behalf of the channel specified in the parameter
+          value, without having to provide authentication credentials for each
+          separate channel.
+        paramKey: onBehalfOfContentOwnerChannel
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: pageToken
+        description: The *pageToken* parameter identifies a specific page in the result
+          set that should be returned. In an API response, the nextPageToken and
+          prevPageToken properties identify other pages that could be retrieved.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Live Broadcasts / Insert
+    method: post
+    path: /youtube/v3/liveBroadcasts
+    description: Inserts a new stream for the authenticated user.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter serves two purposes in this operation. It
+          identifies the properties that the write operation will set as well as
+          the properties that the API response will include. The part properties
+          that you can include in the parameter value are id, snippet,
+          contentDetails, and status.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: onBehalfOfContentOwnerChannel
+        description: This parameter can only be used in a properly authorized request.
+          *Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwnerChannel* parameter specifies the
+          YouTube channel ID of the channel to which a video is being added.
+          This parameter is required when a request specifies a value for the
+          onBehalfOfContentOwner parameter, and it can only be used in
+          conjunction with that parameter. In addition, the request must be
+          authorized using a CMS account that is linked to the content owner
+          that the onBehalfOfContentOwner parameter specifies. Finally, the
+          channel that the onBehalfOfContentOwnerChannel parameter value
+          specifies must be linked to the content owner that the
+          onBehalfOfContentOwner parameter specifies. This parameter is intended
+          for YouTube content partners that own and manage many different
+          YouTube channels. It allows content owners to authenticate once and
+          perform actions on behalf of the channel specified in the parameter
+          value, without having to provide authentication credentials for each
+          separate channel.
+        paramKey: onBehalfOfContentOwnerChannel
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: contentDetails
+        description: Detailed settings of a broadcast.
+        paramKey: contentDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: etag
+        description: Etag of this resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: The ID that YouTube assigns to uniquely identify the broadcast.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          "youtube#liveBroadcast".'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#liveBroadcast
+        required: false
+      - paramName: snippet
+        description: Basic broadcast information.
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: statistics
+        description: Statistics about the live broadcast. These represent a snapshot of
+          the values at the time of the request. Statistics are only returned
+          for live broadcasts.
+        paramKey: statistics
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: status
+        description: Live broadcast state.
+        paramKey: status
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Live Broadcasts / Update
+    method: put
+    path: /youtube/v3/liveBroadcasts
+    description: Updates an existing broadcast for the authenticated user.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter serves two purposes in this operation. It
+          identifies the properties that the write operation will set as well as
+          the properties that the API response will include. The part properties
+          that you can include in the parameter value are id, snippet,
+          contentDetails, and status. Note that this method will override the
+          existing values for all of the mutable properties that are contained
+          in any parts that the parameter value specifies. For example, a
+          broadcast's privacy status is defined in the status part. As such, if
+          your request is updating a private or unlisted broadcast, and the
+          request's part parameter value includes the status part, the
+          broadcast's privacy setting will be updated to whatever value the
+          request body specifies. If the request body does not specify a value,
+          the existing privacy setting will be removed and the broadcast will
+          revert to the default privacy setting.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: onBehalfOfContentOwnerChannel
+        description: This parameter can only be used in a properly authorized request.
+          *Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwnerChannel* parameter specifies the
+          YouTube channel ID of the channel to which a video is being added.
+          This parameter is required when a request specifies a value for the
+          onBehalfOfContentOwner parameter, and it can only be used in
+          conjunction with that parameter. In addition, the request must be
+          authorized using a CMS account that is linked to the content owner
+          that the onBehalfOfContentOwner parameter specifies. Finally, the
+          channel that the onBehalfOfContentOwnerChannel parameter value
+          specifies must be linked to the content owner that the
+          onBehalfOfContentOwner parameter specifies. This parameter is intended
+          for YouTube content partners that own and manage many different
+          YouTube channels. It allows content owners to authenticate once and
+          perform actions on behalf of the channel specified in the parameter
+          value, without having to provide authentication credentials for each
+          separate channel.
+        paramKey: onBehalfOfContentOwnerChannel
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: contentDetails
+        description: Detailed settings of a broadcast.
+        paramKey: contentDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: etag
+        description: Etag of this resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: The ID that YouTube assigns to uniquely identify the broadcast.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          "youtube#liveBroadcast".'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#liveBroadcast
+        required: false
+      - paramName: snippet
+        description: Basic broadcast information.
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: statistics
+        description: Statistics about the live broadcast. These represent a snapshot of
+          the values at the time of the request. Statistics are only returned
+          for live broadcasts.
+        paramKey: statistics
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: status
+        description: Live broadcast state.
+        paramKey: status
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Live Broadcasts / Bind
+    method: post
+    path: /youtube/v3/liveBroadcasts/bind
+    description: Bind a broadcast to a stream.
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: Broadcast to bind to the stream
+        paramKey: id
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: part
+        description: The *part* parameter specifies a comma-separated list of one or
+          more liveBroadcast resource properties that the API response will
+          include. The part names that you can include in the parameter value
+          are id, snippet, contentDetails, and status.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: onBehalfOfContentOwnerChannel
+        description: This parameter can only be used in a properly authorized request.
+          *Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwnerChannel* parameter specifies the
+          YouTube channel ID of the channel to which a video is being added.
+          This parameter is required when a request specifies a value for the
+          onBehalfOfContentOwner parameter, and it can only be used in
+          conjunction with that parameter. In addition, the request must be
+          authorized using a CMS account that is linked to the content owner
+          that the onBehalfOfContentOwner parameter specifies. Finally, the
+          channel that the onBehalfOfContentOwnerChannel parameter value
+          specifies must be linked to the content owner that the
+          onBehalfOfContentOwner parameter specifies. This parameter is intended
+          for YouTube content partners that own and manage many different
+          YouTube channels. It allows content owners to authenticate once and
+          perform actions on behalf of the channel specified in the parameter
+          value, without having to provide authentication credentials for each
+          separate channel.
+        paramKey: onBehalfOfContentOwnerChannel
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: streamId
+        description: Stream to bind, if not set unbind the current one.
+        paramKey: streamId
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Live Broadcasts / Insert Cue Point
+    method: post
+    path: /youtube/v3/liveBroadcasts/cuepoint
+    description: Insert cuepoints in a broadcast
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: Broadcast to insert ads to, or equivalently `external_video_id` for
+          internal use.
+        paramKey: id
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: onBehalfOfContentOwnerChannel
+        description: This parameter can only be used in a properly authorized request.
+          *Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwnerChannel* parameter specifies the
+          YouTube channel ID of the channel to which a video is being added.
+          This parameter is required when a request specifies a value for the
+          onBehalfOfContentOwner parameter, and it can only be used in
+          conjunction with that parameter. In addition, the request must be
+          authorized using a CMS account that is linked to the content owner
+          that the onBehalfOfContentOwner parameter specifies. Finally, the
+          channel that the onBehalfOfContentOwnerChannel parameter value
+          specifies must be linked to the content owner that the
+          onBehalfOfContentOwner parameter specifies. This parameter is intended
+          for YouTube content partners that own and manage many different
+          YouTube channels. It allows content owners to authenticate once and
+          perform actions on behalf of the channel specified in the parameter
+          value, without having to provide authentication credentials for each
+          separate channel.
+        paramKey: onBehalfOfContentOwnerChannel
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: part
+        description: The *part* parameter specifies a comma-separated list of one or
+          more liveBroadcast resource properties that the API response will
+          include. The part names that you can include in the parameter value
+          are id, snippet, contentDetails, and status.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: cueType
+        description: ""
+        paramKey: cueType
+        in: body
+        schema:
+          type: string
+          enum:
+            - cueTypeUnspecified
+            - cueTypeAd
+        required: false
+      - paramName: durationSecs
+        description: The duration of this cuepoint.
+        paramKey: durationSecs
+        in: body
+        schema:
+          type: number
+        required: false
+      - paramName: etag
+        description: ""
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: The identifier for cuepoint resource.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: insertionOffsetTimeMs
+        description: The time when the cuepoint should be inserted by offset to the
+          broadcast actual start time.
+        paramKey: insertionOffsetTimeMs
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: walltimeMs
+        description: The wall clock time at which the cuepoint should be inserted. Only
+          one of insertion_offset_time_ms and walltime_ms may be set at a time.
+        paramKey: walltimeMs
+        in: body
+        schema:
+          type: string
+        required: false
+    requestBodyType: json
+  - moduleName: Live Broadcasts / Transition
+    method: post
+    path: /youtube/v3/liveBroadcasts/transition
+    description: Transition a broadcast to a given status.
+    externalDocs: ""
+    params:
+      - paramName: broadcastStatus
+        description: The status to which the broadcast is going to transition.
+        paramKey: broadcastStatus
+        in: query
+        schema:
+          type: string
+          enum:
+            - statusUnspecified
+            - testing
+            - live
+            - complete
+        required: true
+      - paramName: id
+        description: Broadcast to transition.
+        paramKey: id
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: part
+        description: The *part* parameter specifies a comma-separated list of one or
+          more liveBroadcast resource properties that the API response will
+          include. The part names that you can include in the parameter value
+          are id, snippet, contentDetails, and status.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: onBehalfOfContentOwnerChannel
+        description: This parameter can only be used in a properly authorized request.
+          *Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwnerChannel* parameter specifies the
+          YouTube channel ID of the channel to which a video is being added.
+          This parameter is required when a request specifies a value for the
+          onBehalfOfContentOwner parameter, and it can only be used in
+          conjunction with that parameter. In addition, the request must be
+          authorized using a CMS account that is linked to the content owner
+          that the onBehalfOfContentOwner parameter specifies. Finally, the
+          channel that the onBehalfOfContentOwnerChannel parameter value
+          specifies must be linked to the content owner that the
+          onBehalfOfContentOwner parameter specifies. This parameter is intended
+          for YouTube content partners that own and manage many different
+          YouTube channels. It allows content owners to authenticate once and
+          perform actions on behalf of the channel specified in the parameter
+          value, without having to provide authentication credentials for each
+          separate channel.
+        paramKey: onBehalfOfContentOwnerChannel
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Live Chat Bans / Delete
+    method: delete
+    path: /youtube/v3/liveChat/bans
+    description: Deletes a chat ban.
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        paramKey: id
+        in: query
+        schema:
+          type: string
+        required: true
+  - moduleName: Live Chat Bans / Insert
+    method: post
+    path: /youtube/v3/liveChat/bans
+    description: Inserts a new resource into this collection.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter serves two purposes in this operation. It
+          identifies the properties that the write operation will set as well as
+          the properties that the API response returns. Set the parameter value
+          to snippet.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: etag
+        description: Etag of this resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: The ID that YouTube assigns to uniquely identify the ban.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          `"youtube#liveChatBan"`.'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#liveChatBan
+        required: false
+      - paramName: snippet
+        description: ""
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Live Chat Messages / Delete
+    method: delete
+    path: /youtube/v3/liveChat/messages
+    description: Deletes a chat message.
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        paramKey: id
+        in: query
+        schema:
+          type: string
+        required: true
+  - moduleName: Live Chat Messages / List
+    method: get
+    path: /youtube/v3/liveChat/messages
+    description: Retrieves a list of resources, possibly filtered.
+    externalDocs: ""
+    params:
+      - paramName: liveChatId
+        description: The id of the live chat for which comments should be returned.
+        paramKey: liveChatId
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: part
+        description: The *part* parameter specifies the liveChatComment resource parts
+          that the API response will include. Supported values are id and
+          snippet.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: hl
+        description: Specifies the localization language in which the system messages
+          should be returned.
+        paramKey: hl
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: maxResults
+        description: The *maxResults* parameter specifies the maximum number of items
+          that should be returned in the result set.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 200
+          maximum: 2000
+        required: false
+      - paramName: pageToken
+        description: The *pageToken* parameter identifies a specific page in the result
+          set that should be returned. In an API response, the nextPageToken
+          property identify other pages that could be retrieved.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: profileImageSize
+        description: Specifies the size of the profile image that should be returned for
+          each user.
+        paramKey: profileImageSize
+        in: query
+        schema:
+          type: number
+          minimum: 16
+          maximum: 720
+        required: false
+  - moduleName: Live Chat Messages / Insert
+    method: post
+    path: /youtube/v3/liveChat/messages
+    description: Inserts a new resource into this collection.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter serves two purposes. It identifies the
+          properties that the write operation will set as well as the properties
+          that the API response will include. Set the parameter value to
+          snippet.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: authorDetails
+        description: ""
+        paramKey: authorDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: etag
+        description: Etag of this resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: The ID that YouTube assigns to uniquely identify the message.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          "youtube#liveChatMessage".'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#liveChatMessage
+        required: false
+      - paramName: snippet
+        description: "Next ID: 33"
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Live Chat Moderators / Delete
+    method: delete
+    path: /youtube/v3/liveChat/moderators
+    description: Deletes a chat moderator.
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        paramKey: id
+        in: query
+        schema:
+          type: string
+        required: true
+  - moduleName: Live Chat Moderators / List
+    method: get
+    path: /youtube/v3/liveChat/moderators
+    description: Retrieves a list of resources, possibly filtered.
+    externalDocs: ""
+    params:
+      - paramName: liveChatId
+        description: The id of the live chat for which moderators should be returned.
+        paramKey: liveChatId
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: part
+        description: The *part* parameter specifies the liveChatModerator resource parts
+          that the API response will include. Supported values are id and
+          snippet.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: maxResults
+        description: The *maxResults* parameter specifies the maximum number of items
+          that should be returned in the result set.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 0
+          maximum: 50
+        required: false
+      - paramName: pageToken
+        description: The *pageToken* parameter identifies a specific page in the result
+          set that should be returned. In an API response, the nextPageToken and
+          prevPageToken properties identify other pages that could be retrieved.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Live Chat Moderators / Insert
+    method: post
+    path: /youtube/v3/liveChat/moderators
+    description: Inserts a new resource into this collection.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter serves two purposes in this operation. It
+          identifies the properties that the write operation will set as well as
+          the properties that the API response returns. Set the parameter value
+          to snippet.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: etag
+        description: Etag of this resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: The ID that YouTube assigns to uniquely identify the moderator.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          "youtube#liveChatModerator".'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#liveChatModerator
+        required: false
+      - paramName: snippet
+        description: ""
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Live Streams / Delete
+    method: delete
+    path: /youtube/v3/liveStreams
+    description: Deletes an existing stream for the authenticated user.
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        paramKey: id
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: onBehalfOfContentOwnerChannel
+        description: This parameter can only be used in a properly authorized request.
+          *Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwnerChannel* parameter specifies the
+          YouTube channel ID of the channel to which a video is being added.
+          This parameter is required when a request specifies a value for the
+          onBehalfOfContentOwner parameter, and it can only be used in
+          conjunction with that parameter. In addition, the request must be
+          authorized using a CMS account that is linked to the content owner
+          that the onBehalfOfContentOwner parameter specifies. Finally, the
+          channel that the onBehalfOfContentOwnerChannel parameter value
+          specifies must be linked to the content owner that the
+          onBehalfOfContentOwner parameter specifies. This parameter is intended
+          for YouTube content partners that own and manage many different
+          YouTube channels. It allows content owners to authenticate once and
+          perform actions on behalf of the channel specified in the parameter
+          value, without having to provide authentication credentials for each
+          separate channel.
+        paramKey: onBehalfOfContentOwnerChannel
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Live Streams / List
+    method: get
+    path: /youtube/v3/liveStreams
+    description: Retrieve the list of streams associated with the given channel. --
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies a comma-separated list of one or
+          more liveStream resource properties that the API response will
+          include. The part names that you can include in the parameter value
+          are id, snippet, cdn, and status.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: id
+        description: Return LiveStreams with the given ids from Stubby or Apiary.
+        paramKey: id
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: maxResults
+        description: The *maxResults* parameter specifies the maximum number of items
+          that should be returned in the result set.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 0
+          maximum: 50
+        required: false
+      - paramName: mine
+        description: ""
+        paramKey: mine
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: onBehalfOfContentOwnerChannel
+        description: This parameter can only be used in a properly authorized request.
+          *Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwnerChannel* parameter specifies the
+          YouTube channel ID of the channel to which a video is being added.
+          This parameter is required when a request specifies a value for the
+          onBehalfOfContentOwner parameter, and it can only be used in
+          conjunction with that parameter. In addition, the request must be
+          authorized using a CMS account that is linked to the content owner
+          that the onBehalfOfContentOwner parameter specifies. Finally, the
+          channel that the onBehalfOfContentOwnerChannel parameter value
+          specifies must be linked to the content owner that the
+          onBehalfOfContentOwner parameter specifies. This parameter is intended
+          for YouTube content partners that own and manage many different
+          YouTube channels. It allows content owners to authenticate once and
+          perform actions on behalf of the channel specified in the parameter
+          value, without having to provide authentication credentials for each
+          separate channel.
+        paramKey: onBehalfOfContentOwnerChannel
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: pageToken
+        description: The *pageToken* parameter identifies a specific page in the result
+          set that should be returned. In an API response, the nextPageToken and
+          prevPageToken properties identify other pages that could be retrieved.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Live Streams / Insert
+    method: post
+    path: /youtube/v3/liveStreams
+    description: Inserts a new stream for the authenticated user.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter serves two purposes in this operation. It
+          identifies the properties that the write operation will set as well as
+          the properties that the API response will include. The part properties
+          that you can include in the parameter value are id, snippet, cdn,
+          content_details, and status.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: onBehalfOfContentOwnerChannel
+        description: This parameter can only be used in a properly authorized request.
+          *Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwnerChannel* parameter specifies the
+          YouTube channel ID of the channel to which a video is being added.
+          This parameter is required when a request specifies a value for the
+          onBehalfOfContentOwner parameter, and it can only be used in
+          conjunction with that parameter. In addition, the request must be
+          authorized using a CMS account that is linked to the content owner
+          that the onBehalfOfContentOwner parameter specifies. Finally, the
+          channel that the onBehalfOfContentOwnerChannel parameter value
+          specifies must be linked to the content owner that the
+          onBehalfOfContentOwner parameter specifies. This parameter is intended
+          for YouTube content partners that own and manage many different
+          YouTube channels. It allows content owners to authenticate once and
+          perform actions on behalf of the channel specified in the parameter
+          value, without having to provide authentication credentials for each
+          separate channel.
+        paramKey: onBehalfOfContentOwnerChannel
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: cdn
+        description: Brief description of the live stream cdn settings.
+        paramKey: cdn
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: contentDetails
+        description: Detailed settings of a stream.
+        paramKey: contentDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: etag
+        description: Etag of this resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: The ID that YouTube assigns to uniquely identify the stream.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          "youtube#liveStream".'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#liveStream
+        required: false
+      - paramName: snippet
+        description: ""
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: status
+        description: Brief description of the live stream status.
+        paramKey: status
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Live Streams / Update
+    method: put
+    path: /youtube/v3/liveStreams
+    description: Updates an existing stream for the authenticated user.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter serves two purposes in this operation. It
+          identifies the properties that the write operation will set as well as
+          the properties that the API response will include. The part properties
+          that you can include in the parameter value are id, snippet, cdn, and
+          status. Note that this method will override the existing values for
+          all of the mutable properties that are contained in any parts that the
+          parameter value specifies. If the request body does not specify a
+          value for a mutable property, the existing value for that property
+          will be removed.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: onBehalfOfContentOwnerChannel
+        description: This parameter can only be used in a properly authorized request.
+          *Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwnerChannel* parameter specifies the
+          YouTube channel ID of the channel to which a video is being added.
+          This parameter is required when a request specifies a value for the
+          onBehalfOfContentOwner parameter, and it can only be used in
+          conjunction with that parameter. In addition, the request must be
+          authorized using a CMS account that is linked to the content owner
+          that the onBehalfOfContentOwner parameter specifies. Finally, the
+          channel that the onBehalfOfContentOwnerChannel parameter value
+          specifies must be linked to the content owner that the
+          onBehalfOfContentOwner parameter specifies. This parameter is intended
+          for YouTube content partners that own and manage many different
+          YouTube channels. It allows content owners to authenticate once and
+          perform actions on behalf of the channel specified in the parameter
+          value, without having to provide authentication credentials for each
+          separate channel.
+        paramKey: onBehalfOfContentOwnerChannel
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: cdn
+        description: Brief description of the live stream cdn settings.
+        paramKey: cdn
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: contentDetails
+        description: Detailed settings of a stream.
+        paramKey: contentDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: etag
+        description: Etag of this resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: The ID that YouTube assigns to uniquely identify the stream.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          "youtube#liveStream".'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#liveStream
+        required: false
+      - paramName: snippet
+        description: ""
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: status
+        description: Brief description of the live stream status.
+        paramKey: status
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Members / List
+    method: get
+    path: /youtube/v3/members
+    description: Retrieves a list of members that match the request criteria for a channel.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies the member resource parts that the
+          API response will include. Set the parameter value to snippet.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: filterByMemberChannelId
+        description: Comma separated list of channel IDs. Only data about members that
+          are part of this list will be included in the response.
+        paramKey: filterByMemberChannelId
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: hasAccessToLevel
+        description: Filter members in the results set to the ones that have access to a
+          level.
+        paramKey: hasAccessToLevel
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: maxResults
+        description: The *maxResults* parameter specifies the maximum number of items
+          that should be returned in the result set.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 0
+          maximum: 1000
+        required: false
+      - paramName: mode
+        description: Parameter that specifies which channel members to return.
+        paramKey: mode
+        in: query
+        schema:
+          type: string
+          enum:
+            - listMembersModeUnknown
+            - updates
+            - all_current
+        required: false
+      - paramName: pageToken
+        description: The *pageToken* parameter identifies a specific page in the result
+          set that should be returned. In an API response, the nextPageToken and
+          prevPageToken properties identify other pages that could be retrieved.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Membership Levels / List
+    method: get
+    path: /youtube/v3/membershipsLevels
+    description: Retrieves a list of all pricing levels offered by a creator to the fans.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies the membershipsLevel resource parts
+          that the API response will include. Supported values are id and
+          snippet.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+  - moduleName: Playlist Items / Delete
+    method: delete
+    path: /youtube/v3/playlistItems
+    description: Deletes a resource.
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        paramKey: id
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Playlist Items / List
+    method: get
+    path: /youtube/v3/playlistItems
+    description: Retrieves a list of resources, possibly filtered.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies a comma-separated list of one or
+          more playlistItem resource properties that the API response will
+          include. If the parameter identifies a property that contains child
+          properties, the child properties will be included in the response. For
+          example, in a playlistItem resource, the snippet property contains
+          numerous fields, including the title, description, position, and
+          resourceId properties. As such, if you set *part=snippet*, the API
+          response will contain all of those properties.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: id
+        description: ""
+        paramKey: id
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: maxResults
+        description: The *maxResults* parameter specifies the maximum number of items
+          that should be returned in the result set.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 0
+          maximum: 50
+        required: false
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: pageToken
+        description: The *pageToken* parameter identifies a specific page in the result
+          set that should be returned. In an API response, the nextPageToken and
+          prevPageToken properties identify other pages that could be retrieved.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: playlistId
+        description: Return the playlist items within the given playlist.
+        paramKey: playlistId
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: videoId
+        description: Return the playlist items associated with the given video ID.
+        paramKey: videoId
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Playlist Items / Insert
+    method: post
+    path: /youtube/v3/playlistItems
+    description: Inserts a new resource into this collection.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter serves two purposes in this operation. It
+          identifies the properties that the write operation will set as well as
+          the properties that the API response will include.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: contentDetails
+        description: ""
+        paramKey: contentDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: etag
+        description: Etag of this resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: The ID that YouTube uses to uniquely identify the playlist item.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          "youtube#playlistItem".'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#playlistItem
+        required: false
+      - paramName: snippet
+        description: "Basic details about a playlist, including title, description and
+          thumbnails. Basic details of a YouTube Playlist item provided by the
+          author. Next ID: 15"
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: status
+        description: Information about the playlist item's privacy status.
+        paramKey: status
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Playlist Items / Update
+    method: put
+    path: /youtube/v3/playlistItems
+    description: Updates an existing resource.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter serves two purposes in this operation. It
+          identifies the properties that the write operation will set as well as
+          the properties that the API response will include. Note that this
+          method will override the existing values for all of the mutable
+          properties that are contained in any parts that the parameter value
+          specifies. For example, a playlist item can specify a start time and
+          end time, which identify the times portion of the video that should
+          play when users watch the video in the playlist. If your request is
+          updating a playlist item that sets these values, and the request's
+          part parameter value includes the contentDetails part, the playlist
+          item's start and end times will be updated to whatever value the
+          request body specifies. If the request body does not specify values,
+          the existing start and end times will be removed and replaced with the
+          default settings.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: contentDetails
+        description: ""
+        paramKey: contentDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: etag
+        description: Etag of this resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: The ID that YouTube uses to uniquely identify the playlist item.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          "youtube#playlistItem".'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#playlistItem
+        required: false
+      - paramName: snippet
+        description: "Basic details about a playlist, including title, description and
+          thumbnails. Basic details of a YouTube Playlist item provided by the
+          author. Next ID: 15"
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: status
+        description: Information about the playlist item's privacy status.
+        paramKey: status
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Playlists / Delete
+    method: delete
+    path: /youtube/v3/playlists
+    description: Deletes a resource.
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        paramKey: id
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Playlists / List
+    method: get
+    path: /youtube/v3/playlists
+    description: Retrieves a list of resources, possibly filtered.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies a comma-separated list of one or
+          more playlist resource properties that the API response will include.
+          If the parameter identifies a property that contains child properties,
+          the child properties will be included in the response. For example, in
+          a playlist resource, the snippet property contains properties like
+          author, title, description, tags, and timeCreated. As such, if you set
+          *part=snippet*, the API response will contain all of those properties.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: channelId
+        description: Return the playlists owned by the specified channel ID.
+        paramKey: channelId
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: hl
+        description: Return content in specified language
+        paramKey: hl
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: Return the playlists with the given IDs for Stubby or Apiary.
+        paramKey: id
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: maxResults
+        description: The *maxResults* parameter specifies the maximum number of items
+          that should be returned in the result set.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 0
+          maximum: 50
+        required: false
+      - paramName: mine
+        description: Return the playlists owned by the authenticated user.
+        paramKey: mine
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: onBehalfOfContentOwnerChannel
+        description: This parameter can only be used in a properly authorized request.
+          *Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwnerChannel* parameter specifies the
+          YouTube channel ID of the channel to which a video is being added.
+          This parameter is required when a request specifies a value for the
+          onBehalfOfContentOwner parameter, and it can only be used in
+          conjunction with that parameter. In addition, the request must be
+          authorized using a CMS account that is linked to the content owner
+          that the onBehalfOfContentOwner parameter specifies. Finally, the
+          channel that the onBehalfOfContentOwnerChannel parameter value
+          specifies must be linked to the content owner that the
+          onBehalfOfContentOwner parameter specifies. This parameter is intended
+          for YouTube content partners that own and manage many different
+          YouTube channels. It allows content owners to authenticate once and
+          perform actions on behalf of the channel specified in the parameter
+          value, without having to provide authentication credentials for each
+          separate channel.
+        paramKey: onBehalfOfContentOwnerChannel
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: pageToken
+        description: The *pageToken* parameter identifies a specific page in the result
+          set that should be returned. In an API response, the nextPageToken and
+          prevPageToken properties identify other pages that could be retrieved.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Playlists / Insert
+    method: post
+    path: /youtube/v3/playlists
+    description: Inserts a new resource into this collection.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter serves two purposes in this operation. It
+          identifies the properties that the write operation will set as well as
+          the properties that the API response will include.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: onBehalfOfContentOwnerChannel
+        description: This parameter can only be used in a properly authorized request.
+          *Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwnerChannel* parameter specifies the
+          YouTube channel ID of the channel to which a video is being added.
+          This parameter is required when a request specifies a value for the
+          onBehalfOfContentOwner parameter, and it can only be used in
+          conjunction with that parameter. In addition, the request must be
+          authorized using a CMS account that is linked to the content owner
+          that the onBehalfOfContentOwner parameter specifies. Finally, the
+          channel that the onBehalfOfContentOwnerChannel parameter value
+          specifies must be linked to the content owner that the
+          onBehalfOfContentOwner parameter specifies. This parameter is intended
+          for YouTube content partners that own and manage many different
+          YouTube channels. It allows content owners to authenticate once and
+          perform actions on behalf of the channel specified in the parameter
+          value, without having to provide authentication credentials for each
+          separate channel.
+        paramKey: onBehalfOfContentOwnerChannel
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: contentDetails
+        description: ""
+        paramKey: contentDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: etag
+        description: Etag of this resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: The ID that YouTube uses to uniquely identify the playlist.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          "youtube#playlist".'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#playlist
+        required: false
+      - paramName: localizations
+        description: Localizations for different languages
+        paramKey: localizations
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: player
+        description: ""
+        paramKey: player
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: snippet
+        description: Basic details about a playlist, including title, description and
+          thumbnails.
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: status
+        description: ""
+        paramKey: status
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Playlists / Update
+    method: put
+    path: /youtube/v3/playlists
+    description: Updates an existing resource.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter serves two purposes in this operation. It
+          identifies the properties that the write operation will set as well as
+          the properties that the API response will include. Note that this
+          method will override the existing values for mutable properties that
+          are contained in any parts that the request body specifies. For
+          example, a playlist's description is contained in the snippet part,
+          which must be included in the request body. If the request does not
+          specify a value for the snippet.description property, the playlist's
+          existing description will be deleted.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: contentDetails
+        description: ""
+        paramKey: contentDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: etag
+        description: Etag of this resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: The ID that YouTube uses to uniquely identify the playlist.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          "youtube#playlist".'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#playlist
+        required: false
+      - paramName: localizations
+        description: Localizations for different languages
+        paramKey: localizations
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: player
+        description: ""
+        paramKey: player
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: snippet
+        description: Basic details about a playlist, including title, description and
+          thumbnails.
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: status
+        description: ""
+        paramKey: status
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Search / List
+    method: get
+    path: /youtube/v3/search
+    description: Retrieves a list of search resources
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies a comma-separated list of one or
+          more search resource properties that the API response will include.
+          Set the parameter value to snippet.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: channelId
+        description: Filter on resources belonging to this channelId.
+        paramKey: channelId
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: channelType
+        description: Add a filter on the channel search.
+        paramKey: channelType
+        in: query
+        schema:
+          type: string
+          enum:
+            - channelTypeUnspecified
+            - any
+            - show
+        required: false
+      - paramName: eventType
+        description: Filter on the livestream status of the videos.
+        paramKey: eventType
+        in: query
+        schema:
+          type: string
+          enum:
+            - none
+            - upcoming
+            - live
+            - completed
+        required: false
+      - paramName: forContentOwner
+        description: Search owned by a content owner.
+        paramKey: forContentOwner
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: forDeveloper
+        description: Restrict the search to only retrieve videos uploaded using the
+          project id of the authenticated user.
+        paramKey: forDeveloper
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: forMine
+        description: Search for the private videos of the authenticated user.
+        paramKey: forMine
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: location
+        description: Filter on location of the video
+        paramKey: location
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: locationRadius
+        description: Filter on distance from the location (specified above).
+        paramKey: locationRadius
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: maxResults
+        description: The *maxResults* parameter specifies the maximum number of items
+          that should be returned in the result set.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 0
+          maximum: 50
+        required: false
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: order
+        description: Sort order of the results.
+        paramKey: order
+        in: query
+        schema:
+          type: string
+          enum:
+            - searchSortUnspecified
+            - date
+            - rating
+            - viewCount
+            - relevance
+            - title
+            - videoCount
+        required: false
+      - paramName: pageToken
+        description: The *pageToken* parameter identifies a specific page in the result
+          set that should be returned. In an API response, the nextPageToken and
+          prevPageToken properties identify other pages that could be retrieved.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: publishedAfter
+        description: Filter on resources published after this date.
+        paramKey: publishedAfter
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: publishedBefore
+        description: Filter on resources published before this date.
+        paramKey: publishedBefore
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: q
+        description: Textual search terms to match.
+        paramKey: q
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: regionCode
+        description: Display the content as seen by viewers in this country.
+        paramKey: regionCode
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: relatedToVideoId
+        description: Search related to a resource.
+        paramKey: relatedToVideoId
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: relevanceLanguage
+        description: Return results relevant to this language.
+        paramKey: relevanceLanguage
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: safeSearch
+        description: Indicates whether the search results should include restricted
+          content as well as standard content.
+        paramKey: safeSearch
+        in: query
+        schema:
+          type: string
+          enum:
+            - safeSearchSettingUnspecified
+            - none
+            - moderate
+            - strict
+        required: false
+      - paramName: topicId
+        description: Restrict results to a particular topic.
+        paramKey: topicId
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: type
+        description: Restrict results to a particular set of resource types from One
+          Platform.
+        paramKey: type
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: videoCaption
+        description: Filter on the presence of captions on the videos.
+        paramKey: videoCaption
+        in: query
+        schema:
+          type: string
+          enum:
+            - videoCaptionUnspecified
+            - any
+            - closedCaption
+            - none
+        required: false
+      - paramName: videoCategoryId
+        description: Filter on videos in a specific category.
+        paramKey: videoCategoryId
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: videoDefinition
+        description: Filter on the definition of the videos.
+        paramKey: videoDefinition
+        in: query
+        schema:
+          type: string
+          enum:
+            - any
+            - standard
+            - high
+        required: false
+      - paramName: videoDimension
+        description: Filter on 3d videos.
+        paramKey: videoDimension
+        in: query
+        schema:
+          type: string
+          enum:
+            - any
+            - 2d
+            - 3d
+        required: false
+      - paramName: videoDuration
+        description: Filter on the duration of the videos.
+        paramKey: videoDuration
+        in: query
+        schema:
+          type: string
+          enum:
+            - videoDurationUnspecified
+            - any
+            - short
+            - medium
+            - long
+        required: false
+      - paramName: videoEmbeddable
+        description: Filter on embeddable videos.
+        paramKey: videoEmbeddable
+        in: query
+        schema:
+          type: string
+          enum:
+            - videoEmbeddableUnspecified
+            - any
+            - "true"
+        required: false
+      - paramName: videoLicense
+        description: Filter on the license of the videos.
+        paramKey: videoLicense
+        in: query
+        schema:
+          type: string
+          enum:
+            - any
+            - youtube
+            - creativeCommon
+        required: false
+      - paramName: videoSyndicated
+        description: Filter on syndicated videos.
+        paramKey: videoSyndicated
+        in: query
+        schema:
+          type: string
+          enum:
+            - videoSyndicatedUnspecified
+            - any
+            - "true"
+        required: false
+      - paramName: videoType
+        description: Filter on videos of a specific type.
+        paramKey: videoType
+        in: query
+        schema:
+          type: string
+          enum:
+            - videoTypeUnspecified
+            - any
+            - movie
+            - episode
+        required: false
+  - moduleName: Subscriptions / Delete
+    method: delete
+    path: /youtube/v3/subscriptions
+    description: Deletes a resource.
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        paramKey: id
+        in: query
+        schema:
+          type: string
+        required: true
+  - moduleName: Subscriptions / List
+    method: get
+    path: /youtube/v3/subscriptions
+    description: Retrieves a list of resources, possibly filtered.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies a comma-separated list of one or
+          more subscription resource properties that the API response will
+          include. If the parameter identifies a property that contains child
+          properties, the child properties will be included in the response. For
+          example, in a subscription resource, the snippet property contains
+          other properties, such as a display title for the subscription. If you
+          set *part=snippet*, the API response will also contain all of those
+          nested properties.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: channelId
+        description: Return the subscriptions of the given channel owner.
+        paramKey: channelId
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: forChannelId
+        description: Return the subscriptions to the subset of these channels that the
+          authenticated user is subscribed to.
+        paramKey: forChannelId
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: Return the subscriptions with the given IDs for Stubby or Apiary.
+        paramKey: id
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: maxResults
+        description: The *maxResults* parameter specifies the maximum number of items
+          that should be returned in the result set.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 0
+          maximum: 50
+        required: false
+      - paramName: mine
+        description: Flag for returning the subscriptions of the authenticated user.
+        paramKey: mine
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: myRecentSubscribers
+        description: ""
+        paramKey: myRecentSubscribers
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: mySubscribers
+        description: Return the subscribers of the given channel owner.
+        paramKey: mySubscribers
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: onBehalfOfContentOwnerChannel
+        description: This parameter can only be used in a properly authorized request.
+          *Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwnerChannel* parameter specifies the
+          YouTube channel ID of the channel to which a video is being added.
+          This parameter is required when a request specifies a value for the
+          onBehalfOfContentOwner parameter, and it can only be used in
+          conjunction with that parameter. In addition, the request must be
+          authorized using a CMS account that is linked to the content owner
+          that the onBehalfOfContentOwner parameter specifies. Finally, the
+          channel that the onBehalfOfContentOwnerChannel parameter value
+          specifies must be linked to the content owner that the
+          onBehalfOfContentOwner parameter specifies. This parameter is intended
+          for YouTube content partners that own and manage many different
+          YouTube channels. It allows content owners to authenticate once and
+          perform actions on behalf of the channel specified in the parameter
+          value, without having to provide authentication credentials for each
+          separate channel.
+        paramKey: onBehalfOfContentOwnerChannel
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: order
+        description: The order of the returned subscriptions
+        paramKey: order
+        in: query
+        schema:
+          type: string
+          enum:
+            - subscriptionOrderUnspecified
+            - relevance
+            - unread
+            - alphabetical
+        required: false
+      - paramName: pageToken
+        description: The *pageToken* parameter identifies a specific page in the result
+          set that should be returned. In an API response, the nextPageToken and
+          prevPageToken properties identify other pages that could be retrieved.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Subscriptions / Insert
+    method: post
+    path: /youtube/v3/subscriptions
+    description: Inserts a new resource into this collection.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter serves two purposes in this operation. It
+          identifies the properties that the write operation will set as well as
+          the properties that the API response will include.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: contentDetails
+        description: Details about the content to witch a subscription refers.
+        paramKey: contentDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: etag
+        description: Etag of this resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: The ID that YouTube uses to uniquely identify the subscription.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          "youtube#subscription".'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#subscription
+        required: false
+      - paramName: snippet
+        description: Basic details about a subscription, including title, description
+          and thumbnails of the subscribed item.
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: subscriberSnippet
+        description: Basic details about a subscription's subscriber including title,
+          description, channel ID and thumbnails.
+        paramKey: subscriberSnippet
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Super Chat Events / List
+    method: get
+    path: /youtube/v3/superChatEvents
+    description: Retrieves a list of resources, possibly filtered.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies the superChatEvent resource parts
+          that the API response will include. This parameter is currently not
+          supported.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: hl
+        description: Return rendered funding amounts in specified language.
+        paramKey: hl
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: maxResults
+        description: The *maxResults* parameter specifies the maximum number of items
+          that should be returned in the result set.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 1
+          maximum: 50
+        required: false
+      - paramName: pageToken
+        description: The *pageToken* parameter identifies a specific page in the result
+          set that should be returned. In an API response, the nextPageToken and
+          prevPageToken properties identify other pages that could be retrieved.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Tests / Insert
+    method: post
+    path: /youtube/v3/tests
+    description: POST method.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: ""
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: externalChannelId
+        description: ""
+        paramKey: externalChannelId
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: featuredPart
+        description: ""
+        paramKey: featuredPart
+        in: body
+        schema:
+          type: boolean
+        required: false
+      - paramName: gaia
+        description: ""
+        paramKey: gaia
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: ""
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: snippet
+        description: ""
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Third Party Links / Delete
+    method: delete
+    path: /youtube/v3/thirdPartyLinks
+    description: Deletes a resource.
+    externalDocs: ""
+    params:
+      - paramName: linkingToken
+        description: Delete the partner links with the given linking token.
+        paramKey: linkingToken
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: type
+        description: Type of the link to be deleted.
+        paramKey: type
+        in: query
+        schema:
+          type: string
+          enum:
+            - linkUnspecified
+            - channelToStoreLink
+        required: true
+      - paramName: externalChannelId
+        description: Channel ID to which changes should be applied, for delegation.
+        paramKey: externalChannelId
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: part
+        description: Do not use. Required for compatibility.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+  - moduleName: Third Party Links / List
+    method: get
+    path: /youtube/v3/thirdPartyLinks
+    description: Retrieves a list of resources, possibly filtered.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies the thirdPartyLink resource parts
+          that the API response will include. Supported values are linkingToken,
+          status, and snippet.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: externalChannelId
+        description: Channel ID to which changes should be applied, for delegation.
+        paramKey: externalChannelId
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: linkingToken
+        description: Get a third party link with the given linking token.
+        paramKey: linkingToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: type
+        description: Get a third party link of the given type.
+        paramKey: type
+        in: query
+        schema:
+          type: string
+          enum:
+            - linkUnspecified
+            - channelToStoreLink
+        required: false
+  - moduleName: Third Party Links / Insert
+    method: post
+    path: /youtube/v3/thirdPartyLinks
+    description: Inserts a new resource into this collection.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies the thirdPartyLink resource parts
+          that the API request and response will include. Supported values are
+          linkingToken, status, and snippet.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: externalChannelId
+        description: Channel ID to which changes should be applied, for delegation.
+        paramKey: externalChannelId
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: etag
+        description: Etag of this resource
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          "youtube#thirdPartyLink".'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#thirdPartyLink
+        required: false
+      - paramName: linkingToken
+        description: The linking_token identifies a YouTube account and channel with
+          which the third party account is linked.
+        paramKey: linkingToken
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: snippet
+        description: Basic information about a third party account link, including its
+          type and type-specific information.
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: status
+        description: The third-party link status object contains information about the
+          status of the link.
+        paramKey: status
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Third Party Links / Update
+    method: put
+    path: /youtube/v3/thirdPartyLinks
+    description: Updates an existing resource.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies the thirdPartyLink resource parts
+          that the API request and response will include. Supported values are
+          linkingToken, status, and snippet.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: externalChannelId
+        description: Channel ID to which changes should be applied, for delegation.
+        paramKey: externalChannelId
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: etag
+        description: Etag of this resource
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          "youtube#thirdPartyLink".'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#thirdPartyLink
+        required: false
+      - paramName: linkingToken
+        description: The linking_token identifies a YouTube account and channel with
+          which the third party account is linked.
+        paramKey: linkingToken
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: snippet
+        description: Basic information about a third party account link, including its
+          type and type-specific information.
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: status
+        description: The third-party link status object contains information about the
+          status of the link.
+        paramKey: status
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Thumbnails / Set
+    method: post
+    path: /youtube/v3/thumbnails/set
+    description: As this is not an insert in a strict sense (it supports
+      uploading/setting of a thumbnail for multiple videos, which doesn't result
+      in creation of a single resource), I use a custom verb here.
+    externalDocs: ""
+    params:
+      - paramName: videoId
+        description: Returns the Thumbnail with the given video IDs for Stubby or Apiary.
+        paramKey: videoId
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The actual CMS account that the user
+          authenticates with must be linked to the specified YouTube content
+          owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Video Abuse Report Reasons / List
+    method: get
+    path: /youtube/v3/videoAbuseReportReasons
+    description: Retrieves a list of resources, possibly filtered.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies the videoCategory resource parts
+          that the API response will include. Supported values are id and
+          snippet.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: hl
+        description: ""
+        paramKey: hl
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Video Categories / List
+    method: get
+    path: /youtube/v3/videoCategories
+    description: Retrieves a list of resources, possibly filtered.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies the videoCategory resource
+          properties that the API response will include. Set the parameter value
+          to snippet.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: hl
+        description: ""
+        paramKey: hl
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: Returns the video categories with the given IDs for Stubby or Apiary.
+        paramKey: id
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: regionCode
+        description: ""
+        paramKey: regionCode
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Videos / Delete
+    method: delete
+    path: /youtube/v3/videos
+    description: Deletes a resource.
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        paramKey: id
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The actual CMS account that the user
+          authenticates with must be linked to the specified YouTube content
+          owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Videos / List
+    method: get
+    path: /youtube/v3/videos
+    description: Retrieves a list of resources, possibly filtered.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter specifies a comma-separated list of one or
+          more video resource properties that the API response will include. If
+          the parameter identifies a property that contains child properties,
+          the child properties will be included in the response. For example, in
+          a video resource, the snippet property contains the channelId, title,
+          description, tags, and categoryId properties. As such, if you set
+          *part=snippet*, the API response will contain all of those properties.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: chart
+        description: Return the videos that are in the specified chart.
+        paramKey: chart
+        in: query
+        schema:
+          type: string
+          enum:
+            - chartUnspecified
+            - mostPopular
+        required: false
+      - paramName: hl
+        description: Stands for "host language". Specifies the localization language of
+          the metadata to be filled into snippet.localized. The field is filled
+          with the default metadata if there is no localization in the specified
+          language. The parameter value must be a language code included in the
+          list returned by the i18nLanguages.list method (e.g. en_US, es_MX).
+        paramKey: hl
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: Return videos with the given ids.
+        paramKey: id
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: locale
+        description: ""
+        paramKey: locale
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: maxHeight
+        description: ""
+        paramKey: maxHeight
+        in: query
+        schema:
+          type: number
+          minimum: 72
+          maximum: 8192
+        required: false
+      - paramName: maxResults
+        description: The *maxResults* parameter specifies the maximum number of items
+          that should be returned in the result set. *Note:* This parameter is
+          supported for use in conjunction with the myRating and chart
+          parameters, but it is not supported for use in conjunction with the id
+          parameter.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 1
+          maximum: 50
+        required: false
+      - paramName: maxWidth
+        description: Return the player with maximum height specified in
+        paramKey: maxWidth
+        in: query
+        schema:
+          type: number
+          minimum: 72
+          maximum: 8192
+        required: false
+      - paramName: myRating
+        description: Return videos liked/disliked by the authenticated user. Does not
+          support RateType.RATED_TYPE_NONE.
+        paramKey: myRating
+        in: query
+        schema:
+          type: string
+          enum:
+            - none
+            - like
+            - dislike
+        required: false
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: pageToken
+        description: The *pageToken* parameter identifies a specific page in the result
+          set that should be returned. In an API response, the nextPageToken and
+          prevPageToken properties identify other pages that could be retrieved.
+          *Note:* This parameter is supported for use in conjunction with the
+          myRating and chart parameters, but it is not supported for use in
+          conjunction with the id parameter.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: regionCode
+        description: Use a chart that is specific to the specified region
+        paramKey: regionCode
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: videoCategoryId
+        description: Use chart that is specific to the specified video category
+        paramKey: videoCategoryId
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Videos / Update
+    method: put
+    path: /youtube/v3/videos
+    description: Updates an existing resource.
+    externalDocs: ""
+    params:
+      - paramName: part
+        description: The *part* parameter serves two purposes in this operation. It
+          identifies the properties that the write operation will set as well as
+          the properties that the API response will include. Note that this
+          method will override the existing values for all of the mutable
+          properties that are contained in any parts that the parameter value
+          specifies. For example, a video's privacy setting is contained in the
+          status part. As such, if your request is updating a private video, and
+          the request's part parameter value includes the status part, the
+          video's privacy setting will be updated to whatever value the request
+          body specifies. If the request body does not specify a value, the
+          existing privacy setting will be removed and the video will revert to
+          the default privacy setting. In addition, not all parts contain
+          properties that can be set when inserting or updating a video. For
+          example, the statistics object encapsulates statistics that YouTube
+          calculates for a video and does not contain values that you can set or
+          modify. If the parameter value specifies a part that does not contain
+          mutable values, that part will still be included in the API response.
+        paramKey: part
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The actual CMS account that the user
+          authenticates with must be linked to the specified YouTube content
+          owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: ageGating
+        description: ""
+        paramKey: ageGating
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: contentDetails
+        description: Details about the content of a YouTube Video.
+        paramKey: contentDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: etag
+        description: Etag of this resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: fileDetails
+        description: Describes original video file properties, including technical
+          details about audio and video streams, but also metadata information
+          like content length, digitization time, or geotagging information.
+        paramKey: fileDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: id
+        description: The ID that YouTube uses to uniquely identify the video.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: 'Identifies what kind of resource this is. Value: the fixed string
+          "youtube#video".'
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: youtube#video
+        required: false
+      - paramName: liveStreamingDetails
+        description: Details about the live streaming metadata.
+        paramKey: liveStreamingDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: localizations
+        description: The localizations object contains localized versions of the basic
+          details about the video, such as its title and description.
+        paramKey: localizations
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: monetizationDetails
+        description: Details about monetization of a YouTube Video.
+        paramKey: monetizationDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: player
+        description: Player to be used for a video playback.
+        paramKey: player
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: processingDetails
+        description: Describes processing status and progress and availability of some
+          other Video resource parts.
+        paramKey: processingDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: projectDetails
+        description: "DEPRECATED. b/157517979: This part was never populated after it
+          was added. However, it sees non-zero traffic because there is
+          generated client code in the wild that refers to it [1]. We keep this
+          field and do NOT remove it because otherwise V3 would return an error
+          when this part gets requested [2]. [1]
+          https://developers.google.com/resources/api-libraries/documentation/y\
+          outube/v3/csharp/latest/classGoogle_1_1Apis_1_1YouTube_1_1v3_1_1Data_\
+          1_1VideoProjectDetails.html [2]
+          http://google3/video/youtube/src/python/servers/data_api/common.py?l=\
+          1565-1569&rcl=344141677"
+        paramKey: projectDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: recordingDetails
+        description: Recording information associated with the video.
+        paramKey: recordingDetails
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: snippet
+        description: Basic details about a video, including title, description,
+          uploader, thumbnails and category.
+        paramKey: snippet
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: statistics
+        description: Statistics about the video, such as the number of times the video
+          was viewed or liked.
+        paramKey: statistics
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: status
+        description: "Basic details about a video category, such as its localized title.
+          Next Id: 18"
+        paramKey: status
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: suggestions
+        description: Specifies suggestions on how to improve video content, including
+          encoding hints, tag suggestions, and editor suggestions.
+        paramKey: suggestions
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: topicDetails
+        description: Freebase topic information related to the video.
+        paramKey: topicDetails
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Videos / Get Rating
+    method: get
+    path: /youtube/v3/videos/getRating
+    description: Retrieves the ratings that the authorized user gave to a list of
+      specified videos.
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        paramKey: id
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Videos / Rate
+    method: post
+    path: /youtube/v3/videos/rate
+    description: Adds a like or dislike rating to a video or removes a rating from a video.
+    externalDocs: ""
+    params:
+      - paramName: id
+        description: ""
+        paramKey: id
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: rating
+        description: ""
+        paramKey: rating
+        in: query
+        schema:
+          type: string
+          enum:
+            - none
+            - like
+            - dislike
+        required: true
+  - moduleName: Videos / Report Abuse
+    method: post
+    path: /youtube/v3/videos/reportAbuse
+    description: Report abuse for a video.
+    externalDocs: ""
+    params:
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: comments
+        description: Additional comments regarding the abuse report.
+        paramKey: comments
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: language
+        description: The language that the content was viewed in.
+        paramKey: language
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: reasonId
+        description: The high-level, or primary, reason that the content is abusive. The
+          value is an abuse report reason ID.
+        paramKey: reasonId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: secondaryReasonId
+        description: The specific, or secondary, reason that this content is abusive (if
+          available). The value is an abuse report reason ID that is a valid
+          secondary reason for the primary reason.
+        paramKey: secondaryReasonId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: videoId
+        description: The ID that YouTube uses to uniquely identify the video.
+        paramKey: videoId
+        in: body
+        schema:
+          type: string
+        required: false
+    requestBodyType: json
+  - moduleName: Watermarks / Unset
+    method: post
+    path: /youtube/v3/watermarks/unset
+    description: Allows removal of channel watermark.
+    externalDocs: ""
+    params:
+      - paramName: channelId
+        description: ""
+        paramKey: channelId
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: onBehalfOfContentOwner
+        description: "*Note:* This parameter is intended exclusively for YouTube content
+          partners. The *onBehalfOfContentOwner* parameter indicates that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that
+          own and manage many different YouTube channels. It allows content
+          owners to authenticate once and get access to all their video and
+          channel data, without having to provide authentication credentials for
+          each individual channel. The CMS account that the user authenticates
+          with must be linked to the specified YouTube content owner."
+        paramKey: onBehalfOfContentOwner
+        in: query
+        schema:
+          type: string
+        required: false
