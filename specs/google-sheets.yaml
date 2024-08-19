@@ -10,7 +10,7 @@ commonParams:
     paramKey: Authorization
     prefix: Bearer
     in: header
-    description: OAuth 2 access token. Google Auth / Service Account Token can be used to obtain a valid access token. Leave blank if apiKey is used.
+    description: OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/spreadsheets` scope. Google Auth / Service Account Token can be used to obtain a valid access token.
     required: false
     advanced: false
   - paramName: apiKey
