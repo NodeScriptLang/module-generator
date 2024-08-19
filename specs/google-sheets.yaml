@@ -1,0 +1,986 @@
+id: google-sheets
+displayName: Google Sheets
+workspaceId:
+  development: ""
+  production: EPNXWt2GHezJM2hK
+baseUrl: https://sheets.googleapis.com
+description: Reads and writes Google Sheets.
+commonParams:
+  - paramName: accessToken
+    paramKey: Authorization
+    prefix: Bearer
+    in: header
+    description: OAuth 2 access token. Google Auth / Service Account Token can be used to obtain a valid access token. Leave blank if apiKey is used.
+    required: false
+    advanced: false
+  - paramName: apiKey
+    paramKey: key
+    in: query
+    description: API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used.
+    required: false
+modules:
+  - moduleName: Create
+    method: post
+    path: /v4/spreadsheets
+    description: Creates a spreadsheet, returning the newly created spreadsheet.
+    externalDocs: ""
+    params:
+      - paramName: dataSourceSchedules
+        description: Output only. A list of data source refresh schedules.
+        paramKey: dataSourceSchedules
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: dataSources
+        description: A list of external data sources connected with the spreadsheet.
+        paramKey: dataSources
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: developerMetadata
+        description: The developer metadata associated with a spreadsheet.
+        paramKey: developerMetadata
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: namedRanges
+        description: The named ranges defined in a spreadsheet.
+        paramKey: namedRanges
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: properties
+        description: Properties of a spreadsheet.
+        paramKey: properties
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: sheets
+        description: The sheets that are part of a spreadsheet.
+        paramKey: sheets
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: spreadsheetId
+        description: The ID of the spreadsheet. This field is read-only.
+        paramKey: spreadsheetId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: spreadsheetUrl
+        description: The url of the spreadsheet. This field is read-only.
+        paramKey: spreadsheetUrl
+        in: body
+        schema:
+          type: string
+        required: false
+    requestBodyType: json
+  - moduleName: Get
+    method: get
+    path: /v4/spreadsheets/{spreadsheetId}
+    description: "Returns the spreadsheet at the given ID. The caller must specify
+      the spreadsheet ID. By default, data within grids is not returned. You can
+      include grid data in one of 2 ways: * Specify a field
+      mask listing
+      your desired fields using the `fields` URL parameter in HTTP * Set the
+      includeGridData URL parameter to true. If a field mask is set, the
+      `includeGridData` parameter is ignored For large spreadsheets, as a best
+      practice, retrieve only the specific spreadsheet fields that you want. To
+      retrieve only subsets of spreadsheet data, use the ranges URL parameter.
+      Ranges are specified using A1
+      notation. You can define a single cell
+      (for example, `A1`) or multiple cells (for example, `A1:D5`). You can also
+      get cells from other sheets within the same spreadsheet (for example,
+      `Sheet2!A1:C4`) or retrieve multiple ranges at once (for example,
+      `?ranges=A1:D5&ranges=Sheet2!A1:C4`). Limiting the range returns only the
+      portions of the spreadsheet that intersect the requested ranges."
+    externalDocs: ""
+    params:
+      - paramName: spreadsheetId
+        description: The spreadsheet to request.
+        paramKey: spreadsheetId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: includeGridData
+        description: True if grid data should be returned. This parameter is ignored if
+          a field mask was set in the request.
+        paramKey: includeGridData
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: ranges
+        description: The ranges to retrieve from the spreadsheet.
+        paramKey: ranges
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+  - moduleName: Developer Metadata / Get
+    method: get
+    path: /v4/spreadsheets/{spreadsheetId}/developerMetadata/{metadataId}
+    description: Returns the developer metadata with the specified ID. The caller
+      must specify the spreadsheet ID and the developer metadata's unique
+      metadataId.
+    externalDocs: ""
+    params:
+      - paramName: spreadsheetId
+        description: The ID of the spreadsheet to retrieve metadata from.
+        paramKey: spreadsheetId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: metadataId
+        description: The ID of the developer metadata to retrieve.
+        paramKey: metadataId
+        in: path
+        schema:
+          type: number
+        required: true
+  - moduleName: Developer Metadata / Search
+    method: post
+    path: /v4/spreadsheets/{spreadsheetId}/developerMetadata:search
+    description: Returns all developer metadata matching the specified DataFilter.
+      If the provided DataFilter represents a DeveloperMetadataLookup object,
+      this will return all DeveloperMetadata entries selected by it. If the
+      DataFilter represents a location in a spreadsheet, this will return all
+      developer metadata associated with locations intersecting that region.
+    externalDocs: ""
+    params:
+      - paramName: spreadsheetId
+        description: The ID of the spreadsheet to retrieve metadata from.
+        paramKey: spreadsheetId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: dataFilters
+        description: The data filters describing the criteria used to determine which
+          DeveloperMetadata entries to return. DeveloperMetadata matching any of
+          the specified filters are included in the response.
+        paramKey: dataFilters
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Sheets / Copy To
+    method: post
+    path: /v4/spreadsheets/{spreadsheetId}/sheets/{sheetId}:copyTo
+    description: Copies a single sheet from a spreadsheet to another spreadsheet.
+      Returns the properties of the newly created sheet.
+    externalDocs: ""
+    params:
+      - paramName: spreadsheetId
+        description: The ID of the spreadsheet containing the sheet to copy.
+        paramKey: spreadsheetId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: sheetId
+        description: The ID of the sheet to copy.
+        paramKey: sheetId
+        in: path
+        schema:
+          type: number
+        required: true
+      - paramName: destinationSpreadsheetId
+        description: The ID of the spreadsheet to copy the sheet to.
+        paramKey: destinationSpreadsheetId
+        in: body
+        schema:
+          type: string
+        required: false
+    requestBodyType: json
+  - moduleName: Values / Get
+    method: get
+    path: /v4/spreadsheets/{spreadsheetId}/values/{range}
+    description: Returns a range of values from a spreadsheet. The caller must
+      specify the spreadsheet ID and a range.
+    externalDocs: ""
+    params:
+      - paramName: spreadsheetId
+        description: The ID of the spreadsheet to retrieve data from.
+        paramKey: spreadsheetId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: range
+        description: The A1 notation or R1C1
+          notation of the range to retrieve
+          values from.
+        paramKey: range
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: dateTimeRenderOption
+        description: How dates, times, and durations should be represented in the
+          output. This is ignored if value_render_option is FORMATTED_VALUE. The
+          default dateTime render option is SERIAL_NUMBER.
+        paramKey: dateTimeRenderOption
+        in: query
+        schema:
+          type: string
+          enum:
+            - SERIAL_NUMBER
+            - FORMATTED_STRING
+        required: false
+      - paramName: majorDimension
+        description: "The major dimension that results should use. For example, if the
+          spreadsheet data in Sheet1 is: `A1=1,B1=2,A2=3,B2=4`, then requesting
+          `range=Sheet1!A1:B2?majorDimension=ROWS` returns `[[1,2],[3,4]]`,
+          whereas requesting `range=Sheet1!A1:B2?majorDimension=COLUMNS` returns
+          `[[1,3],[2,4]]`."
+        paramKey: majorDimension
+        in: query
+        schema:
+          type: string
+          enum:
+            - DIMENSION_UNSPECIFIED
+            - ROWS
+            - COLUMNS
+        required: false
+      - paramName: valueRenderOption
+        description: How values should be represented in the output. The default render
+          option is FORMATTED_VALUE.
+        paramKey: valueRenderOption
+        in: query
+        schema:
+          type: string
+          enum:
+            - FORMATTED_VALUE
+            - UNFORMATTED_VALUE
+            - FORMULA
+        required: false
+  - moduleName: Values / Update
+    method: put
+    path: /v4/spreadsheets/{spreadsheetId}/values/{range}
+    description: Sets values in a range of a spreadsheet. The caller must specify
+      the spreadsheet ID, range, and a valueInputOption.
+    externalDocs: ""
+    params:
+      - paramName: spreadsheetId
+        description: The ID of the spreadsheet to update.
+        paramKey: spreadsheetId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: range
+        description: The A1 notation of the values
+          to update.
+        paramKey: range
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: includeValuesInResponse
+        description: Determines if the update response should include the values of the
+          cells that were updated. By default, responses do not include the
+          updated values. If the range to write was larger than the range
+          actually written, the response includes all values in the requested
+          range (excluding trailing empty rows and columns).
+        paramKey: includeValuesInResponse
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: responseDateTimeRenderOption
+        description: Determines how dates, times, and durations in the response should
+          be rendered. This is ignored if response_value_render_option is
+          FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER.
+        paramKey: responseDateTimeRenderOption
+        in: query
+        schema:
+          type: string
+          enum:
+            - SERIAL_NUMBER
+            - FORMATTED_STRING
+        required: false
+      - paramName: responseValueRenderOption
+        description: Determines how values in the response should be rendered. The
+          default render option is FORMATTED_VALUE.
+        paramKey: responseValueRenderOption
+        in: query
+        schema:
+          type: string
+          enum:
+            - FORMATTED_VALUE
+            - UNFORMATTED_VALUE
+            - FORMULA
+        required: false
+      - paramName: valueInputOption
+        description: How the input data should be interpreted.
+        paramKey: valueInputOption
+        in: query
+        schema:
+          type: string
+          enum:
+            - INPUT_VALUE_OPTION_UNSPECIFIED
+            - RAW
+            - USER_ENTERED
+        required: false
+      - paramName: majorDimension
+        description: "The major dimension of the values. For output, if the spreadsheet
+          data is: `A1=1,B1=2,A2=3,B2=4`, then requesting
+          `range=A1:B2,majorDimension=ROWS` will return `[[1,2],[3,4]]`, whereas
+          requesting `range=A1:B2,majorDimension=COLUMNS` will return
+          `[[1,3],[2,4]]`. For input, with `range=A1:B2,majorDimension=ROWS`
+          then `[[1,2],[3,4]]` will set `A1=1,B1=2,A2=3,B2=4`. With
+          `range=A1:B2,majorDimension=COLUMNS` then `[[1,2],[3,4]]` will set
+          `A1=1,B1=3,A2=2,B2=4`. When writing, if this field is not set, it
+          defaults to ROWS."
+        paramKey: majorDimension
+        in: body
+        schema:
+          type: string
+          enum:
+            - DIMENSION_UNSPECIFIED
+            - ROWS
+            - COLUMNS
+        required: false
+      - paramName: range
+        description: The range the values cover, in A1
+          notation. For output, this range
+          indicates the entire requested range, even though the values will
+          exclude trailing rows and columns. When appending values, this field
+          represents the range to search for a table, after which values will be
+          appended.
+        paramKey: range
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: values
+        description: "The data that was read or to be written. This is an array of
+          arrays, the outer array representing all the data and each inner array
+          representing a major dimension. Each item in the inner array
+          corresponds with one cell. For output, empty trailing rows and columns
+          will not be included. For input, supported value types are: bool,
+          string, and double. Null values will be skipped. To set a cell to an
+          empty value, set the string value to an empty string."
+        paramKey: values
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Values / Append
+    method: post
+    path: /v4/spreadsheets/{spreadsheetId}/values/{range}:append
+    description: Appends values to a spreadsheet. The input range is used to search
+      for existing data and find a "table" within that range. Values will be
+      appended to the next row of the table, starting with the first column of
+      the table. The caller must
+      specify the spreadsheet ID, range, and a valueInputOption. The
+      `valueInputOption` only controls how the input data will be added to the
+      sheet (column-wise or row-wise), it does not influence what cell the data
+      starts being written to.
+    externalDocs: ""
+    params:
+      - paramName: spreadsheetId
+        description: The ID of the spreadsheet to update.
+        paramKey: spreadsheetId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: range
+        description: The A1 notation of a range to
+          search for a logical table of data. Values are appended after the last
+          row of the table.
+        paramKey: range
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: includeValuesInResponse
+        description: Determines if the update response should include the values of the
+          cells that were appended. By default, responses do not include the
+          updated values.
+        paramKey: includeValuesInResponse
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: insertDataOption
+        description: How the input data should be inserted.
+        paramKey: insertDataOption
+        in: query
+        schema:
+          type: string
+          enum:
+            - OVERWRITE
+            - INSERT_ROWS
+        required: false
+      - paramName: responseDateTimeRenderOption
+        description: Determines how dates, times, and durations in the response should
+          be rendered. This is ignored if response_value_render_option is
+          FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER.
+        paramKey: responseDateTimeRenderOption
+        in: query
+        schema:
+          type: string
+          enum:
+            - SERIAL_NUMBER
+            - FORMATTED_STRING
+        required: false
+      - paramName: responseValueRenderOption
+        description: Determines how values in the response should be rendered. The
+          default render option is FORMATTED_VALUE.
+        paramKey: responseValueRenderOption
+        in: query
+        schema:
+          type: string
+          enum:
+            - FORMATTED_VALUE
+            - UNFORMATTED_VALUE
+            - FORMULA
+        required: false
+      - paramName: valueInputOption
+        description: How the input data should be interpreted.
+        paramKey: valueInputOption
+        in: query
+        schema:
+          type: string
+          enum:
+            - INPUT_VALUE_OPTION_UNSPECIFIED
+            - RAW
+            - USER_ENTERED
+        required: false
+      - paramName: majorDimension
+        description: "The major dimension of the values. For output, if the spreadsheet
+          data is: `A1=1,B1=2,A2=3,B2=4`, then requesting
+          `range=A1:B2,majorDimension=ROWS` will return `[[1,2],[3,4]]`, whereas
+          requesting `range=A1:B2,majorDimension=COLUMNS` will return
+          `[[1,3],[2,4]]`. For input, with `range=A1:B2,majorDimension=ROWS`
+          then `[[1,2],[3,4]]` will set `A1=1,B1=2,A2=3,B2=4`. With
+          `range=A1:B2,majorDimension=COLUMNS` then `[[1,2],[3,4]]` will set
+          `A1=1,B1=3,A2=2,B2=4`. When writing, if this field is not set, it
+          defaults to ROWS."
+        paramKey: majorDimension
+        in: body
+        schema:
+          type: string
+          enum:
+            - DIMENSION_UNSPECIFIED
+            - ROWS
+            - COLUMNS
+        required: false
+      - paramName: range
+        description: The range the values cover, in A1
+          notation. For output, this range
+          indicates the entire requested range, even though the values will
+          exclude trailing rows and columns. When appending values, this field
+          represents the range to search for a table, after which values will be
+          appended.
+        paramKey: range
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: values
+        description: "The data that was read or to be written. This is an array of
+          arrays, the outer array representing all the data and each inner array
+          representing a major dimension. Each item in the inner array
+          corresponds with one cell. For output, empty trailing rows and columns
+          will not be included. For input, supported value types are: bool,
+          string, and double. Null values will be skipped. To set a cell to an
+          empty value, set the string value to an empty string."
+        paramKey: values
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Values / Clear
+    method: post
+    path: /v4/spreadsheets/{spreadsheetId}/values/{range}:clear
+    description: Clears values from a spreadsheet. The caller must specify the
+      spreadsheet ID and range. Only values are cleared -- all other properties
+      of the cell (such as formatting, data validation, etc..) are kept.
+    externalDocs: ""
+    params:
+      - paramName: spreadsheetId
+        description: The ID of the spreadsheet to update.
+        paramKey: spreadsheetId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: range
+        description: The A1 notation or R1C1
+          notation of the values to clear.
+        paramKey: range
+        in: path
+        schema:
+          type: string
+        required: true
+    requestBodyType: json
+  - moduleName: Values / Batch Clear
+    method: post
+    path: /v4/spreadsheets/{spreadsheetId}/values:batchClear
+    description: Clears one or more ranges of values from a spreadsheet. The caller
+      must specify the spreadsheet ID and one or more ranges. Only values are
+      cleared -- all other properties of the cell (such as formatting and data
+      validation) are kept.
+    externalDocs: ""
+    params:
+      - paramName: spreadsheetId
+        description: The ID of the spreadsheet to update.
+        paramKey: spreadsheetId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: ranges
+        description: The ranges to clear, in A1 notation or R1C1 notation.
+        paramKey: ranges
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Values / Batch Clear By Filter
+    method: post
+    path: /v4/spreadsheets/{spreadsheetId}/values:batchClearByDataFilter
+    description: Clears one or more ranges of values from a spreadsheet. The caller
+      must specify the spreadsheet ID and one or more DataFilters. Ranges
+      matching any of the specified data filters will be cleared. Only values
+      are cleared -- all other properties of the cell (such as formatting, data
+      validation, etc..) are kept.
+    externalDocs: ""
+    params:
+      - paramName: spreadsheetId
+        description: The ID of the spreadsheet to update.
+        paramKey: spreadsheetId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: dataFilters
+        description: The DataFilters used to determine which ranges to clear.
+        paramKey: dataFilters
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Values / Batch Get
+    method: get
+    path: /v4/spreadsheets/{spreadsheetId}/values:batchGet
+    description: Returns one or more ranges of values from a spreadsheet. The caller
+      must specify the spreadsheet ID and one or more ranges.
+    externalDocs: ""
+    params:
+      - paramName: spreadsheetId
+        description: The ID of the spreadsheet to retrieve data from.
+        paramKey: spreadsheetId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: dateTimeRenderOption
+        description: How dates, times, and durations should be represented in the
+          output. This is ignored if value_render_option is FORMATTED_VALUE. The
+          default dateTime render option is SERIAL_NUMBER.
+        paramKey: dateTimeRenderOption
+        in: query
+        schema:
+          type: string
+          enum:
+            - SERIAL_NUMBER
+            - FORMATTED_STRING
+        required: false
+      - paramName: majorDimension
+        description: 'The major dimension that results should use. For example, if the
+          spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`, then requesting
+          `ranges=["A1:B2"],majorDimension=ROWS` returns `[[1,2],[3,4]]`,
+          whereas requesting `ranges=["A1:B2"],majorDimension=COLUMNS` returns
+          `[[1,3],[2,4]]`.'
+        paramKey: majorDimension
+        in: query
+        schema:
+          type: string
+          enum:
+            - DIMENSION_UNSPECIFIED
+            - ROWS
+            - COLUMNS
+        required: false
+      - paramName: ranges
+        description: The A1 notation or R1C1 notation of the range to retrieve values from.
+        paramKey: ranges
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: valueRenderOption
+        description: How values should be represented in the output. The default render
+          option is ValueRenderOption.FORMATTED_VALUE.
+        paramKey: valueRenderOption
+        in: query
+        schema:
+          type: string
+          enum:
+            - FORMATTED_VALUE
+            - UNFORMATTED_VALUE
+            - FORMULA
+        required: false
+  - moduleName: Values / Batch Get By Filter
+    method: post
+    path: /v4/spreadsheets/{spreadsheetId}/values:batchGetByDataFilter
+    description: Returns one or more ranges of values that match the specified data
+      filters. The caller must specify the spreadsheet ID and one or more
+      DataFilters. Ranges that match any of the data filters in the request will
+      be returned.
+    externalDocs: ""
+    params:
+      - paramName: spreadsheetId
+        description: The ID of the spreadsheet to retrieve data from.
+        paramKey: spreadsheetId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: dataFilters
+        description: The data filters used to match the ranges of values to retrieve.
+          Ranges that match any of the specified data filters are included in
+          the response.
+        paramKey: dataFilters
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: dateTimeRenderOption
+        description: How dates, times, and durations should be represented in the
+          output. This is ignored if value_render_option is FORMATTED_VALUE. The
+          default dateTime render option is SERIAL_NUMBER.
+        paramKey: dateTimeRenderOption
+        in: body
+        schema:
+          type: string
+          enum:
+            - SERIAL_NUMBER
+            - FORMATTED_STRING
+        required: false
+      - paramName: majorDimension
+        description: "The major dimension that results should use. For example, if the
+          spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`, then a request that
+          selects that range and sets `majorDimension=ROWS` returns
+          `[[1,2],[3,4]]`, whereas a request that sets `majorDimension=COLUMNS`
+          returns `[[1,3],[2,4]]`."
+        paramKey: majorDimension
+        in: body
+        schema:
+          type: string
+          enum:
+            - DIMENSION_UNSPECIFIED
+            - ROWS
+            - COLUMNS
+        required: false
+      - paramName: valueRenderOption
+        description: How values should be represented in the output. The default render
+          option is FORMATTED_VALUE.
+        paramKey: valueRenderOption
+        in: body
+        schema:
+          type: string
+          enum:
+            - FORMATTED_VALUE
+            - UNFORMATTED_VALUE
+            - FORMULA
+        required: false
+    requestBodyType: json
+  - moduleName: Values / Batch Update
+    method: post
+    path: /v4/spreadsheets/{spreadsheetId}/values:batchUpdate
+    description: Sets values in one or more ranges of a spreadsheet. The caller must
+      specify the spreadsheet ID, a valueInputOption, and one or more
+      ValueRanges.
+    externalDocs: ""
+    params:
+      - paramName: spreadsheetId
+        description: The ID of the spreadsheet to update.
+        paramKey: spreadsheetId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: data
+        description: The new values to apply to the spreadsheet.
+        paramKey: data
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: includeValuesInResponse
+        description: Determines if the update response should include the values of the
+          cells that were updated. By default, responses do not include the
+          updated values. The `updatedData` field within each of the
+          BatchUpdateValuesResponse.responses contains the updated values. If
+          the range to write was larger than the range actually written, the
+          response includes all values in the requested range (excluding
+          trailing empty rows and columns).
+        paramKey: includeValuesInResponse
+        in: body
+        schema:
+          type: boolean
+        required: false
+      - paramName: responseDateTimeRenderOption
+        description: Determines how dates, times, and durations in the response should
+          be rendered. This is ignored if response_value_render_option is
+          FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER.
+        paramKey: responseDateTimeRenderOption
+        in: body
+        schema:
+          type: string
+          enum:
+            - SERIAL_NUMBER
+            - FORMATTED_STRING
+        required: false
+      - paramName: responseValueRenderOption
+        description: Determines how values in the response should be rendered. The
+          default render option is FORMATTED_VALUE.
+        paramKey: responseValueRenderOption
+        in: body
+        schema:
+          type: string
+          enum:
+            - FORMATTED_VALUE
+            - UNFORMATTED_VALUE
+            - FORMULA
+        required: false
+      - paramName: valueInputOption
+        description: How the input data should be interpreted.
+        paramKey: valueInputOption
+        in: body
+        schema:
+          type: string
+          enum:
+            - INPUT_VALUE_OPTION_UNSPECIFIED
+            - RAW
+            - USER_ENTERED
+        required: false
+    requestBodyType: json
+  - moduleName: Values / Batch Update By Filter
+    method: post
+    path: /v4/spreadsheets/{spreadsheetId}/values:batchUpdateByDataFilter
+    description: Sets values in one or more ranges of a spreadsheet. The caller must
+      specify the spreadsheet ID, a valueInputOption, and one or more
+      DataFilterValueRanges.
+    externalDocs: ""
+    params:
+      - paramName: spreadsheetId
+        description: The ID of the spreadsheet to update.
+        paramKey: spreadsheetId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: data
+        description: The new values to apply to the spreadsheet. If more than one range
+          is matched by the specified DataFilter the specified values are
+          applied to all of those ranges.
+        paramKey: data
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: includeValuesInResponse
+        description: Determines if the update response should include the values of the
+          cells that were updated. By default, responses do not include the
+          updated values. The `updatedData` field within each of the
+          BatchUpdateValuesResponse.responses contains the updated values. If
+          the range to write was larger than the range actually written, the
+          response includes all values in the requested range (excluding
+          trailing empty rows and columns).
+        paramKey: includeValuesInResponse
+        in: body
+        schema:
+          type: boolean
+        required: false
+      - paramName: responseDateTimeRenderOption
+        description: Determines how dates, times, and durations in the response should
+          be rendered. This is ignored if response_value_render_option is
+          FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER.
+        paramKey: responseDateTimeRenderOption
+        in: body
+        schema:
+          type: string
+          enum:
+            - SERIAL_NUMBER
+            - FORMATTED_STRING
+        required: false
+      - paramName: responseValueRenderOption
+        description: Determines how values in the response should be rendered. The
+          default render option is FORMATTED_VALUE.
+        paramKey: responseValueRenderOption
+        in: body
+        schema:
+          type: string
+          enum:
+            - FORMATTED_VALUE
+            - UNFORMATTED_VALUE
+            - FORMULA
+        required: false
+      - paramName: valueInputOption
+        description: How the input data should be interpreted.
+        paramKey: valueInputOption
+        in: body
+        schema:
+          type: string
+          enum:
+            - INPUT_VALUE_OPTION_UNSPECIFIED
+            - RAW
+            - USER_ENTERED
+        required: false
+    requestBodyType: json
+  - moduleName: Batch Update
+    method: post
+    path: /v4/spreadsheets/{spreadsheetId}:batchUpdate
+    description: Applies one or more updates to the spreadsheet. Each request is
+      validated before being applied. If any request is not valid then the
+      entire request will fail and nothing will be applied. Some requests have
+      replies to give you some information about how they are applied. The
+      replies will mirror the requests. For example, if you applied 4 updates
+      and the 3rd one had a reply, then the response will have 2 empty replies,
+      the actual reply, and another empty reply, in that order. Due to the
+      collaborative nature of spreadsheets, it is not guaranteed that the
+      spreadsheet will reflect exactly your changes after this completes,
+      however it is guaranteed that the updates in the request will be applied
+      together atomically. Your changes may be altered with respect to
+      collaborator changes. If there are no collaborators, the spreadsheet
+      should reflect your changes.
+    externalDocs: ""
+    params:
+      - paramName: spreadsheetId
+        description: The spreadsheet to apply the updates to.
+        paramKey: spreadsheetId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: includeSpreadsheetInResponse
+        description: Determines if the update response should include the spreadsheet
+          resource.
+        paramKey: includeSpreadsheetInResponse
+        in: body
+        schema:
+          type: boolean
+        required: false
+      - paramName: requests
+        description: A list of updates to apply to the spreadsheet. Requests will be
+          applied in the order they are specified. If any request is not valid,
+          no requests will be applied.
+        paramKey: requests
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: responseIncludeGridData
+        description: True if grid data should be returned. Meaningful only if
+          include_spreadsheet_in_response is 'true'. This parameter is ignored
+          if a field mask was set in the request.
+        paramKey: responseIncludeGridData
+        in: body
+        schema:
+          type: boolean
+        required: false
+      - paramName: responseRanges
+        description: Limits the ranges included in the response spreadsheet. Meaningful
+          only if include_spreadsheet_in_response is 'true'.
+        paramKey: responseRanges
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Get By Filter
+    method: post
+    path: /v4/spreadsheets/{spreadsheetId}:getByDataFilter
+    description: Returns the spreadsheet at the given ID. The caller must specify
+      the spreadsheet ID. This method differs from GetSpreadsheet in that it
+      allows selecting which subsets of spreadsheet data to return by specifying
+      a dataFilters parameter. Multiple DataFilters can be specified. Specifying
+      one or more data filters returns the portions of the spreadsheet that
+      intersect ranges matched by any of the filters. By default, data within
+      grids is not returned.
+    externalDocs: ""
+    params:
+      - paramName: spreadsheetId
+        description: The spreadsheet to request.
+        paramKey: spreadsheetId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: dataFilters
+        description: The DataFilters used to select which ranges to retrieve from the
+          spreadsheet.
+        paramKey: dataFilters
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: includeGridData
+        description: True if grid data should be returned. This parameter is ignored if
+          a field mask was set in the request.
+        paramKey: includeGridData
+        in: body
+        schema:
+          type: boolean
+        required: false
+    requestBodyType: json

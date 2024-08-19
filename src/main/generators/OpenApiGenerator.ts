@@ -63,33 +63,39 @@ export class OpenApiGenerator {
 
     *generateModuleSpecs(): Iterable<LibraryModuleSpec> {
         for (const ep of this.traverseEndpoints()) {
-            const inferredModuleName = this.inferredModuleNames.get([ep.method, ep.path].join(' ')) ?? '';
-            // const endpointServer = ep.endpointServers ? normalizeServerUrl(ep.endpointServers[0]?.url) : undefined;
-            const paramSpecs = [...this.parseParameters(ep.parameters)];
-            let requestBodyType: 'json' | 'form' | undefined;
-            if (ep.opSpec.requestBody) {
-                const requestBody = this.deepResolveRef(ep.opSpec.requestBody);
-                const jsonContent = requestBody.content?.['application/json'];
-                const formContent = requestBody.content?.['application/x-www-form-urlencoded'];
-                if (jsonContent?.schema) {
-                    requestBodyType = 'json';
-                    paramSpecs.push(...this.parseRequestBody(jsonContent.schema));
-                } else if (formContent?.schema) {
-                    requestBodyType = 'form';
-                    paramSpecs.push(...this.parseRequestBody(formContent.schema));
-                } else if (!this.options.skipInvalid) {
-                    throw new UnsupportedFeatureError('Unsupported request body content');
+            try {
+                const inferredModuleName = this.inferredModuleNames.get([ep.method, ep.path].join(' ')) ?? '';
+                // const endpointServer = ep.endpointServers ? normalizeServerUrl(ep.endpointServers[0]?.url) : undefined;
+                const paramSpecs = [...this.parseParameters(ep.parameters)];
+                let requestBodyType: 'json' | 'form' | undefined;
+                if (ep.opSpec.requestBody) {
+                    const requestBody = this.deepResolveRef(ep.opSpec.requestBody);
+                    const jsonContent = requestBody.content?.['application/json'];
+                    const formContent = requestBody.content?.['application/x-www-form-urlencoded'];
+                    if (jsonContent?.schema) {
+                        requestBodyType = 'json';
+                        paramSpecs.push(...this.parseRequestBody(jsonContent.schema));
+                    } else if (formContent?.schema) {
+                        requestBodyType = 'form';
+                        paramSpecs.push(...this.parseRequestBody(formContent.schema));
+                    } else {
+                        throw new UnsupportedFeatureError('Unsupported request body content');
+                    }
+                }
+                yield {
+                    moduleName: inferredModuleName,
+                    method: ep.method,
+                    path: normalizePath(ep.path),
+                    description: ep.opSpec.description ?? ep.opSpec.summary ?? '',
+                    externalDocs: ep.opSpec.externalDocs?.url ?? '',
+                    params: paramSpecs,
+                    requestBodyType,
+                };
+            } catch (err) {
+                if (!this.options.skipInvalid) {
+                    throw err;
                 }
             }
-            yield {
-                moduleName: inferredModuleName,
-                method: ep.method,
-                path: normalizePath(ep.path),
-                description: ep.opSpec.description ?? ep.opSpec.summary ?? '',
-                externalDocs: ep.opSpec.externalDocs?.url ?? '',
-                params: paramSpecs,
-                requestBodyType,
-            };
         }
     }
 
@@ -99,7 +105,7 @@ export class OpenApiGenerator {
                 continue;
             }
             const paramName = camelcase(param.name.trim());
-            if (this.options.ignoreParams.includes(paramName)) {
+            if (this.options.ignoreParams.includes(paramName) || this.options.ignoreParams.includes(param.name)) {
                 continue;
             }
             const resolvedSchema = this.deepResolveRef(param.schema ?? {});
