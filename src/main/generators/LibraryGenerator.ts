@@ -92,9 +92,9 @@ export class LibraryGenerator {
         const params: ParamsDefinition<any> = {};
         for (const pspec of this.getParamSpecs(mspec)) {
             const schema: SchemaSpec = { ...pspec.schema };
-            if (!pspec.required && schema.default == null) {
-                schema.optional = true;
-            }
+            const hasDefault = schema.default == null;
+            const optional = schema.optional == null ?? (!pspec.required && !hasDefault);
+            schema.optional = optional;
             schema.description = pspec.description ?? '';
             params[pspec.paramName] = {
                 schema: schema as UnknownSchemaDef,

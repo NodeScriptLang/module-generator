@@ -13,6 +13,17 @@ commonParams:
     prefix: Bearer
     description: |
       OpenAI API key.
+    required: true
+    schema:
+      type: string
+  - paramName: betaAccess
+    paramKey: OpenAI-Beta
+    in: header
+    description: Adds OpenAI-Beta for access to new and experimental features.
+    schema:
+      type: string
+      default: assistants=v2
+      optional: false
 modules:
   - moduleName: Chat / Completions / Create
     method: post
