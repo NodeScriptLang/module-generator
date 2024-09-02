@@ -1,0 +1,4976 @@
+id: google-calendar
+displayName: Google Calendar
+workspaceId:
+  development: "ik0sEQBQuTYmlbYU"
+  production: "RewY07hJ4rw9Wnou"
+baseUrl: https://www.googleapis.com/calendar/v3
+description: Manipulates events and other calendar data.
+commonParams:
+  - paramName: accessToken
+    paramKey: Authorization
+    prefix: Bearer
+    in: header
+    description: OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/calendar` scope. Google Auth / Service Account Token can be used to obtain a valid access token.
+    required: false
+    advanced: false
+  - paramName: apiKey
+    paramKey: key
+    in: query
+    description: API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used.
+    required: false
+modules:
+  - moduleName: Calendars / Create
+    method: post
+    path: /calendars
+    description: Creates a secondary calendar.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: conferenceProperties
+        description: ""
+        paramKey: conferenceProperties
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: description
+        description: Description of the calendar. Optional.
+        paramKey: description
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: etag
+        description: ETag of the resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: Identifier of the calendar. To retrieve IDs call the
+          calendarList.list() method.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: Type of the resource ("calendar#calendar").
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: calendar#calendar
+        required: false
+      - paramName: location
+        description: Geographic location of the calendar as free-form text. Optional.
+        paramKey: location
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: summary
+        description: Title of the calendar.
+        paramKey: summary
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: timeZone
+        description: The time zone of the calendar. (Formatted as an IANA Time Zone
+          Database name, e.g. "Europe/Zurich".) Optional.
+        paramKey: timeZone
+        in: body
+        schema:
+          type: string
+        required: false
+    requestBodyType: json
+  - moduleName: Calendars / Delete
+    method: delete
+    path: /calendars/{calendarId}
+    description: Deletes a secondary calendar. Use calendars.clear for clearing all
+      events on primary calendars.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Calendars / Get
+    method: get
+    path: /calendars/{calendarId}
+    description: Returns metadata for a calendar.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Calendars / Update Partial
+    method: patch
+    path: /calendars/{calendarId}
+    description: Updates metadata for a calendar. This method supports patch semantics.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: conferenceProperties
+        description: ""
+        paramKey: conferenceProperties
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: description
+        description: Description of the calendar. Optional.
+        paramKey: description
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: etag
+        description: ETag of the resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: Identifier of the calendar. To retrieve IDs call the
+          calendarList.list() method.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: Type of the resource ("calendar#calendar").
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: calendar#calendar
+        required: false
+      - paramName: location
+        description: Geographic location of the calendar as free-form text. Optional.
+        paramKey: location
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: summary
+        description: Title of the calendar.
+        paramKey: summary
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: timeZone
+        description: The time zone of the calendar. (Formatted as an IANA Time Zone
+          Database name, e.g. "Europe/Zurich".) Optional.
+        paramKey: timeZone
+        in: body
+        schema:
+          type: string
+        required: false
+    requestBodyType: json
+  - moduleName: Calendars / Update
+    method: put
+    path: /calendars/{calendarId}
+    description: Updates metadata for a calendar.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: conferenceProperties
+        description: ""
+        paramKey: conferenceProperties
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: description
+        description: Description of the calendar. Optional.
+        paramKey: description
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: etag
+        description: ETag of the resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: Identifier of the calendar. To retrieve IDs call the
+          calendarList.list() method.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: Type of the resource ("calendar#calendar").
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: calendar#calendar
+        required: false
+      - paramName: location
+        description: Geographic location of the calendar as free-form text. Optional.
+        paramKey: location
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: summary
+        description: Title of the calendar.
+        paramKey: summary
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: timeZone
+        description: The time zone of the calendar. (Formatted as an IANA Time Zone
+          Database name, e.g. "Europe/Zurich".) Optional.
+        paramKey: timeZone
+        in: body
+        schema:
+          type: string
+        required: false
+    requestBodyType: json
+  - moduleName: ACL / List
+    method: get
+    path: /calendars/{calendarId}/acl
+    description: Returns the rules in the access control list for the calendar.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: maxResults
+        description: Maximum number of entries returned on one result page. By default
+          the value is 100 entries. The page size can never be larger than 250
+          entries. Optional.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 1
+        required: false
+      - paramName: pageToken
+        description: Token specifying which result page to return. Optional.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: showDeleted
+        description: Whether to include deleted ACLs in the result. Deleted ACLs are
+          represented by role equal to "none". Deleted ACLs will always be
+          included if syncToken is provided. Optional. The default is False.
+        paramKey: showDeleted
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: syncToken
+        description: >-
+          Token obtained from the nextSyncToken field returned on the last page
+          of results from the previous list request. It makes the result of this
+          list request contain only entries that have changed since then. All
+          entries deleted since the previous list request will always be in the
+          result set and it is not allowed to set showDeleted to False.
+
+          If the syncToken expires, the server will respond with a 410 GONE
+          response code and the client should clear its storage and perform a
+          full synchronization without any syncToken.
+
+          Optional. The default is to return all entries.
+        paramKey: syncToken
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: ACL / Create
+    method: post
+    path: /calendars/{calendarId}/acl
+    description: Creates an access control rule.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: sendNotifications
+        description: Whether to send notifications about the calendar sharing change.
+          Optional. The default is True.
+        paramKey: sendNotifications
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: etag
+        description: ETag of the resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: Identifier of the Access Control List (ACL) rule. See Sharing
+          calendars.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: Type of the resource ("calendar#aclRule").
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: calendar#aclRule
+        required: false
+      - paramName: role
+        description: >-
+          The role assigned to the scope. Possible values are:  
+
+          - "none" - Provides no access. 
+
+          - "freeBusyReader" - Provides read access to free/busy information. 
+
+          - "reader" - Provides read access to the calendar. Private events will
+          appear to users with reader access, but event details will be hidden. 
+
+          - "writer" - Provides read and write access to the calendar. Private
+          events will appear to users with writer access, and event details will
+          be visible. 
+
+          - "owner" - Provides ownership of the calendar. This role has all of
+          the permissions of the writer role with the additional ability to see
+          and manipulate ACLs.
+        paramKey: role
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: scope
+        description: The extent to which calendar access is granted by this ACL rule.
+        paramKey: scope
+        in: body
+        schema:
+          type: any
+        required: true
+    requestBodyType: json
+  - moduleName: ACL / Watch
+    method: post
+    path: /calendars/{calendarId}/acl/watch
+    description: Watch for changes to ACL resources.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: maxResults
+        description: Maximum number of entries returned on one result page. By default
+          the value is 100 entries. The page size can never be larger than 250
+          entries. Optional.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 1
+        required: false
+      - paramName: pageToken
+        description: Token specifying which result page to return. Optional.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: showDeleted
+        description: Whether to include deleted ACLs in the result. Deleted ACLs are
+          represented by role equal to "none". Deleted ACLs will always be
+          included if syncToken is provided. Optional. The default is False.
+        paramKey: showDeleted
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: syncToken
+        description: >-
+          Token obtained from the nextSyncToken field returned on the last page
+          of results from the previous list request. It makes the result of this
+          list request contain only entries that have changed since then. All
+          entries deleted since the previous list request will always be in the
+          result set and it is not allowed to set showDeleted to False.
+
+          If the syncToken expires, the server will respond with a 410 GONE
+          response code and the client should clear its storage and perform a
+          full synchronization without any syncToken.
+
+          Optional. The default is to return all entries.
+        paramKey: syncToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: address
+        description: The address where notifications are delivered for this channel.
+        paramKey: address
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: expiration
+        description: Date and time of notification channel expiration, expressed as a
+          Unix timestamp, in milliseconds. Optional.
+        paramKey: expiration
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: channelId
+        description: A UUID or similar unique string that identifies this channel.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: kind
+        description: Identifies this as a notification channel used to watch for changes
+          to a resource, which is "api#channel".
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: api#channel
+        required: false
+      - paramName: params
+        description: Additional parameters controlling delivery channel behavior. Optional.
+        paramKey: params
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: payload
+        description: A Boolean value to indicate whether payload is wanted. Optional.
+        paramKey: payload
+        in: body
+        schema:
+          type: boolean
+        required: false
+      - paramName: resourceId
+        description: An opaque ID that identifies the resource being watched on this
+          channel. Stable across different API versions.
+        paramKey: resourceId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: resourceUri
+        description: A version-specific identifier for the watched resource.
+        paramKey: resourceUri
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: token
+        description: An arbitrary string delivered to the target address with each
+          notification delivered over this channel. Optional.
+        paramKey: token
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: type
+        description: The type of delivery mechanism used for this channel. Valid values
+          are "web_hook" (or "webhook"). Both values refer to a channel where
+          Http requests are used to deliver messages.
+        paramKey: type
+        in: body
+        schema:
+          type: string
+        required: true
+    requestBodyType: json
+  - moduleName: ACL / Delete Rule
+    method: delete
+    path: /calendars/{calendarId}/acl/{ruleId}
+    description: Deletes an access control rule.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: ruleId
+        description: ACL rule identifier.
+        paramKey: ruleId
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: ACL / Get Rule
+    method: get
+    path: /calendars/{calendarId}/acl/{ruleId}
+    description: Returns an access control rule.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: ruleId
+        description: ACL rule identifier.
+        paramKey: ruleId
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: ACL / Update Rule Partial
+    method: patch
+    path: /calendars/{calendarId}/acl/{ruleId}
+    description: Updates an access control rule. This method supports patch semantics.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: ruleId
+        description: ACL rule identifier.
+        paramKey: ruleId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: sendNotifications
+        description: Whether to send notifications about the calendar sharing change.
+          Note that there are no notifications on access removal. Optional. The
+          default is True.
+        paramKey: sendNotifications
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: etag
+        description: ETag of the resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: Identifier of the Access Control List (ACL) rule. See Sharing
+          calendars.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: Type of the resource ("calendar#aclRule").
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: calendar#aclRule
+        required: false
+      - paramName: role
+        description: >-
+          The role assigned to the scope. Possible values are:  
+
+          - "none" - Provides no access. 
+
+          - "freeBusyReader" - Provides read access to free/busy information. 
+
+          - "reader" - Provides read access to the calendar. Private events will
+          appear to users with reader access, but event details will be hidden. 
+
+          - "writer" - Provides read and write access to the calendar. Private
+          events will appear to users with writer access, and event details will
+          be visible. 
+
+          - "owner" - Provides ownership of the calendar. This role has all of
+          the permissions of the writer role with the additional ability to see
+          and manipulate ACLs.
+        paramKey: role
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: scope
+        description: The extent to which calendar access is granted by this ACL rule.
+        paramKey: scope
+        in: body
+        schema:
+          type: any
+        required: true
+    requestBodyType: json
+  - moduleName: ACL / Update Rule
+    method: put
+    path: /calendars/{calendarId}/acl/{ruleId}
+    description: Updates an access control rule.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: ruleId
+        description: ACL rule identifier.
+        paramKey: ruleId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: sendNotifications
+        description: Whether to send notifications about the calendar sharing change.
+          Note that there are no notifications on access removal. Optional. The
+          default is True.
+        paramKey: sendNotifications
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: etag
+        description: ETag of the resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: Identifier of the Access Control List (ACL) rule. See Sharing
+          calendars.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: Type of the resource ("calendar#aclRule").
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: calendar#aclRule
+        required: false
+      - paramName: role
+        description: >-
+          The role assigned to the scope. Possible values are:  
+
+          - "none" - Provides no access. 
+
+          - "freeBusyReader" - Provides read access to free/busy information. 
+
+          - "reader" - Provides read access to the calendar. Private events will
+          appear to users with reader access, but event details will be hidden. 
+
+          - "writer" - Provides read and write access to the calendar. Private
+          events will appear to users with writer access, and event details will
+          be visible. 
+
+          - "owner" - Provides ownership of the calendar. This role has all of
+          the permissions of the writer role with the additional ability to see
+          and manipulate ACLs.
+        paramKey: role
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: scope
+        description: The extent to which calendar access is granted by this ACL rule.
+        paramKey: scope
+        in: body
+        schema:
+          type: any
+        required: true
+    requestBodyType: json
+  - moduleName: Calendars / Clear
+    method: post
+    path: /calendars/{calendarId}/clear
+    description: Clears a primary calendar. This operation deletes all events
+      associated with the primary calendar of an account.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Events / List
+    method: get
+    path: /calendars/{calendarId}/events
+    description: Returns events on the specified calendar.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: eventTypes
+        description: >-
+          Event types to return. Optional. Possible values are: 
+
+          - "default" 
+
+          - "focusTime" 
+
+          - "outOfOffice"This parameter can be repeated multiple times to return
+          events of different types. Currently, this is the only allowed value
+          for this field: 
+
+          - ["default", "focusTime", "outOfOffice"] This value will be the
+          default.
+
+
+          If you're enrolled in the Working Location developer preview program,
+          in addition to the default value above you can also set the
+          "workingLocation" event type: 
+
+          - ["default", "focusTime", "outOfOffice", "workingLocation"] 
+
+          - ["workingLocation"] Additional combinations of these 4 event types
+          will be made available in later releases. Developer Preview.
+        paramKey: eventTypes
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: iCalUid
+        description: Specifies an event ID in the iCalendar format to be provided in the
+          response. Optional. Use this if you want to search for an event by its
+          iCalendar ID.
+        paramKey: iCalUID
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: maxAttendees
+        description: The maximum number of attendees to include in the response. If
+          there are more than the specified number of attendees, only the
+          participant is returned. Optional.
+        paramKey: maxAttendees
+        in: query
+        schema:
+          type: number
+          minimum: 1
+        required: false
+      - paramName: maxResults
+        description: Maximum number of events returned on one result page. The number of
+          events in the resulting page may be less than this value, or none at
+          all, even if there are more events matching the query. Incomplete
+          pages can be detected by a non-empty nextPageToken field in the
+          response. By default the value is 250 events. The page size can never
+          be larger than 2500 events. Optional.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 1
+        required: false
+      - paramName: orderBy
+        description: The order of the events returned in the result. Optional. The
+          default is an unspecified, stable order.
+        paramKey: orderBy
+        in: query
+        schema:
+          type: string
+          enum:
+            - startTime
+            - updated
+        required: false
+      - paramName: pageToken
+        description: Token specifying which result page to return. Optional.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: privateExtendedProperty
+        description: Extended properties constraint specified as propertyName=value.
+          Matches only private properties. This parameter might be repeated
+          multiple times to return events that match all given constraints.
+        paramKey: privateExtendedProperty
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: q
+        description: "Free text search terms to find events that match these terms in
+          the following fields: summary, description, location, attendee's
+          displayName, attendee's email. Optional."
+        paramKey: q
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: sharedExtendedProperty
+        description: Extended properties constraint specified as propertyName=value.
+          Matches only shared properties. This parameter might be repeated
+          multiple times to return events that match all given constraints.
+        paramKey: sharedExtendedProperty
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: showDeleted
+        description: Whether to include deleted events (with status equals "cancelled")
+          in the result. Cancelled instances of recurring events (but not the
+          underlying recurring event) will still be included if showDeleted and
+          singleEvents are both False. If showDeleted and singleEvents are both
+          True, only single instances of deleted events (but not the underlying
+          recurring events) are returned. Optional. The default is False.
+        paramKey: showDeleted
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: showHiddenInvitations
+        description: Whether to include hidden invitations in the result. Optional. The
+          default is False.
+        paramKey: showHiddenInvitations
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: singleEvents
+        description: Whether to expand recurring events into instances and only return
+          single one-off events and instances of recurring events, but not the
+          underlying recurring events themselves. Optional. The default is
+          False.
+        paramKey: singleEvents
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: syncToken
+        description: >-
+          Token obtained from the nextSyncToken field returned on the last page
+          of results from the previous list request. It makes the result of this
+          list request contain only entries that have changed since then. All
+          events deleted since the previous list request will always be in the
+          result set and it is not allowed to set showDeleted to False.
+
+          There are several query parameters that cannot be specified together
+          with nextSyncToken to ensure consistency of the client state.
+
+
+          These are: 
+
+          - iCalUID 
+
+          - orderBy 
+
+          - privateExtendedProperty 
+
+          - q 
+
+          - sharedExtendedProperty 
+
+          - timeMin 
+
+          - timeMax 
+
+          - updatedMin If the syncToken expires, the server will respond with a
+          410 GONE response code and the client should clear its storage and
+          perform a full synchronization without any syncToken.
+
+          Optional. The default is to return all entries.
+        paramKey: syncToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: timeMax
+        description: Upper bound (exclusive) for an event's start time to filter by.
+          Optional. The default is not to filter by start time. Must be an
+          RFC3339 timestamp with mandatory time zone offset, for example,
+          2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be
+          provided but are ignored. If timeMin is set, timeMax must be greater
+          than timeMin.
+        paramKey: timeMax
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: timeMin
+        description: Lower bound (exclusive) for an event's end time to filter by.
+          Optional. The default is not to filter by end time. Must be an RFC3339
+          timestamp with mandatory time zone offset, for example,
+          2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be
+          provided but are ignored. If timeMax is set, timeMin must be smaller
+          than timeMax.
+        paramKey: timeMin
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: timeZone
+        description: Time zone used in the response. Optional. The default is the time
+          zone of the calendar.
+        paramKey: timeZone
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: updatedMin
+        description: Lower bound for an event's last modification time (as a RFC3339
+          timestamp) to filter by. When specified, entries deleted since this
+          time will always be included regardless of showDeleted. Optional. The
+          default is not to filter by last modification time.
+        paramKey: updatedMin
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Events / Create
+    method: post
+    path: /calendars/{calendarId}/events
+    description: Creates an event.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: conferenceDataVersion
+        description: Version number of conference data supported by the API client.
+          Version 0 assumes no conference data support and ignores conference
+          data in the event's body. Version 1 enables support for copying of
+          ConferenceData as well as for creating new conferences using the
+          createRequest field of conferenceData. The default is 0.
+        paramKey: conferenceDataVersion
+        in: query
+        schema:
+          type: number
+          minimum: 0
+          maximum: 1
+        required: false
+      - paramName: maxAttendees
+        description: The maximum number of attendees to include in the response. If
+          there are more than the specified number of attendees, only the
+          participant is returned. Optional.
+        paramKey: maxAttendees
+        in: query
+        schema:
+          type: number
+          minimum: 1
+        required: false
+      - paramName: sendUpdates
+        description: Whether to send notifications about the creation of the new event.
+          Note that some emails might still be sent. The default is false.
+        paramKey: sendUpdates
+        in: query
+        schema:
+          type: string
+          enum:
+            - all
+            - externalOnly
+            - none
+        required: false
+      - paramName: supportsAttachments
+        description: Whether API client performing operation supports event attachments.
+          Optional. The default is False.
+        paramKey: supportsAttachments
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: anyoneCanAddSelf
+        description: Whether anyone can invite themselves to the event (deprecated).
+          Optional. The default is False.
+        paramKey: anyoneCanAddSelf
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: attachments
+        description: >-
+          File attachments for the event.
+
+          In order to modify attachments the supportsAttachments request
+          parameter should be set to true.
+
+          There can be at most 25 attachments per event,
+        paramKey: attachments
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: attendees
+        description: The attendees of the event. See the Events with attendees guide for
+          more information on scheduling events with other calendar users.
+          Service accounts need to use domain-wide delegation of authority to
+          populate the attendee list.
+        paramKey: attendees
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: attendeesOmitted
+        description: Whether attendees may have been omitted from the event's
+          representation. When retrieving an event, this may be due to a
+          restriction specified by the maxAttendee query parameter. When
+          updating an event, this can be used to only update the participant's
+          response. Optional. The default is False.
+        paramKey: attendeesOmitted
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: colorId
+        description: The color of the event. This is an ID referring to an entry in the
+          event section of the colors definition (see the  colors endpoint).
+          Optional.
+        paramKey: colorId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: conferenceData
+        description: ""
+        paramKey: conferenceData
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: created
+        description: Creation time of the event (as a RFC3339 timestamp). Read-only.
+        paramKey: created
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: creator
+        description: The creator of the event. Read-only.
+        paramKey: creator
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: description
+        description: Description of the event. Can contain HTML. Optional.
+        paramKey: description
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: end
+        description: "End object of the event, including timeZone and either date or dateTime properties"
+        paramKey: end
+        in: body
+        schema:
+          type: any
+        required: true
+      - paramName: etag
+        description: ETag of the resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: eventType
+        description: |-
+          Specific type of the event. Read-only. Possible values are:  
+          - "default" - A regular event or not further specified. 
+          - "outOfOffice" - An out-of-office event. 
+          - "focusTime" - A focus-time event. 
+          - "workingLocation" - A working location event. Developer Preview.
+        paramKey: eventType
+        in: body
+        schema:
+          type: string
+          default: default
+        required: false
+      - paramName: extendedProperties
+        description: Extended properties of the event.
+        paramKey: extendedProperties
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: gadget
+        description: A gadget that extends this event. Gadgets are deprecated; this
+          structure is instead only used for returning birthday calendar
+          metadata.
+        paramKey: gadget
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: guestsCanInviteOthers
+        description: Whether attendees other than the organizer can invite others to the
+          event. Optional. The default is True.
+        paramKey: guestsCanInviteOthers
+        in: body
+        schema:
+          type: boolean
+          default: true
+        required: false
+      - paramName: guestsCanModify
+        description: Whether attendees other than the organizer can modify the event.
+          Optional. The default is False.
+        paramKey: guestsCanModify
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: guestsCanSeeOtherGuests
+        description: Whether attendees other than the organizer can see who the event's
+          attendees are. Optional. The default is True.
+        paramKey: guestsCanSeeOtherGuests
+        in: body
+        schema:
+          type: boolean
+          default: true
+        required: false
+      - paramName: hangoutLink
+        description: An absolute link to the Google Hangout associated with this event.
+          Read-only.
+        paramKey: hangoutLink
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: htmlLink
+        description: An absolute link to this event in the Google Calendar Web UI.
+          Read-only.
+        paramKey: htmlLink
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: iCalUid
+        description: >-
+          Event unique identifier as defined in RFC5545. It is used to uniquely
+          identify events accross calendaring systems and must be supplied when
+          importing events via the import method.
+
+          Note that the iCalUID and the id are not identical and only one of
+          them should be supplied at event creation time. One difference in
+          their semantics is that in recurring events, all occurrences of one
+          event have different ids while they all share the same iCalUIDs. To
+          retrieve an event using its iCalUID, call the events.list method using
+          the iCalUID parameter. To retrieve an event using its id, call the
+          events.get method.
+        paramKey: iCalUID
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: >-
+          Opaque identifier of the event. When creating new single or recurring
+          events, you can specify their IDs. Provided IDs must follow these
+          rules:  
+
+          - characters allowed in the ID are those used in base32hex encoding,
+          i.e. lowercase letters a-v and digits 0-9, see section 3.1.2 in
+          RFC2938 
+
+          - the length of the ID must be between 5 and 1024 characters 
+
+          - the ID must be unique per calendar  Due to the globally distributed
+          nature of the system, we cannot guarantee that ID collisions will be
+          detected at event creation time. To minimize the risk of collisions we
+          recommend using an established UUID algorithm such as one described in
+          RFC4122.
+
+          If you do not specify an ID, it will be automatically generated by the
+          server.
+
+          Note that the icalUID and the id are not identical and only one of
+          them should be supplied at event creation time. One difference in
+          their semantics is that in recurring events, all occurrences of one
+          event have different ids while they all share the same icalUIDs.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: Type of the resource ("calendar#event").
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: calendar#event
+        required: false
+      - paramName: location
+        description: Geographic location of the event as free-form text. Optional.
+        paramKey: location
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: locked
+        description: Whether this is a locked event copy where no changes can be made to
+          the main event fields "summary", "description", "location", "start",
+          "end" or "recurrence". The default is False. Read-Only.
+        paramKey: locked
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: organizer
+        description: The organizer of the event. If the organizer is also an attendee,
+          this is indicated with a separate entry in attendees with the
+          organizer field set to True. To change the organizer, use the move
+          operation. Read-only, except when importing an event.
+        paramKey: organizer
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: originalStartTime
+        description: ""
+        paramKey: originalStartTime
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: privateCopy
+        description: If set to True, Event propagation is disabled. Note that it is not
+          the same thing as Private event properties. Optional. Immutable. The
+          default is False.
+        paramKey: privateCopy
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: recurrence
+        description: List of RRULE, EXRULE, RDATE and EXDATE lines for a recurring
+          event, as specified in RFC5545. Note that DTSTART and DTEND lines are
+          not allowed in this field; event start and end times are specified in
+          the start and end fields. This field is omitted for single events or
+          instances of recurring events.
+        paramKey: recurrence
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: recurringEventId
+        description: For an instance of a recurring event, this is the id of the
+          recurring event to which this instance belongs. Immutable.
+        paramKey: recurringEventId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: reminders
+        description: Information about the event's reminders for the authenticated user.
+        paramKey: reminders
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: sequence
+        description: Sequence number as per iCalendar.
+        paramKey: sequence
+        in: body
+        schema:
+          type: number
+        required: false
+      - paramName: source
+        description: Source from which the event was created. For example, a web page,
+          an email message or any document identifiable by an URL with HTTP or
+          HTTPS scheme. Can only be seen or modified by the creator of the
+          event.
+        paramKey: source
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: start
+        description: "Start object of the event, including timeZone and either date or dateTime properties"
+        paramKey: start
+        in: body
+        schema:
+          type: any
+        required: true
+      - paramName: status
+        description: >-
+          Status of the event. Optional. Possible values are:  
+
+          - "confirmed" - The event is confirmed. This is the default status. 
+
+          - "tentative" - The event is tentatively confirmed. 
+
+          - "cancelled" - The event is cancelled (deleted). The list method
+          returns cancelled events only on incremental sync (when syncToken or
+          updatedMin are specified) or if the showDeleted flag is set to true.
+          The get method always returns them.
+
+          A cancelled status represents two different states depending on the
+          event type:  
+
+          - Cancelled exceptions of an uncancelled recurring event indicate that
+          this instance should no longer be presented to the user. Clients
+          should store these events for the lifetime of the parent recurring
+          event.
+
+          Cancelled exceptions are only guaranteed to have values for the id,
+          recurringEventId and originalStartTime fields populated. The other
+          fields might be empty.  
+
+          - All other cancelled events represent deleted events. Clients should
+          remove their locally synced copies. Such cancelled events will
+          eventually disappear, so do not rely on them being available
+          indefinitely.
+
+          Deleted events are only guaranteed to have the id field
+          populated.   On the organizer's calendar, cancelled events continue to
+          expose event details (summary, location, etc.) so that they can be
+          restored (undeleted). Similarly, the events to which the user was
+          invited and that they manually removed continue to provide details.
+          However, incremental sync requests with showDeleted set to false will
+          not return these details.
+
+          If an event changes its organizer (for example via the move operation)
+          and the original organizer is not on the attendee list, it will leave
+          behind a cancelled event where only the id field is guaranteed to be
+          populated.
+        paramKey: status
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: summary
+        description: Title of the event.
+        paramKey: summary
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: transparency
+        description: >-
+          Whether the event blocks time on the calendar. Optional. Possible
+          values are:  
+
+          - "opaque" - Default value. The event does block time on the calendar.
+          This is equivalent to setting Show me as to Busy in the Calendar UI. 
+
+          - "transparent" - The event does not block time on the calendar. This
+          is equivalent to setting Show me as to Available in the Calendar UI.
+        paramKey: transparency
+        in: body
+        schema:
+          type: string
+          default: opaque
+        required: false
+      - paramName: updated
+        description: Last modification time of the event (as a RFC3339 timestamp).
+          Read-only.
+        paramKey: updated
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: visibility
+        description: >-
+          Visibility of the event. Optional. Possible values are:  
+
+          - "default" - Uses the default visibility for events on the calendar.
+          This is the default value. 
+
+          - "public" - The event is public and event details are visible to all
+          readers of the calendar. 
+
+          - "private" - The event is private and only event attendees may view
+          event details. 
+
+          - "confidential" - The event is private. This value is provided for
+          compatibility reasons.
+        paramKey: visibility
+        in: body
+        schema:
+          type: string
+          default: default
+        required: false
+      - paramName: workingLocationProperties
+        description: ""
+        paramKey: workingLocationProperties
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Events / Import
+    method: post
+    path: /calendars/{calendarId}/events/import
+    description: Imports an event. This operation is used to add a private copy of
+      an existing event to a calendar.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: conferenceDataVersion
+        description: Version number of conference data supported by the API client.
+          Version 0 assumes no conference data support and ignores conference
+          data in the event's body. Version 1 enables support for copying of
+          ConferenceData as well as for creating new conferences using the
+          createRequest field of conferenceData. The default is 0.
+        paramKey: conferenceDataVersion
+        in: query
+        schema:
+          type: number
+          minimum: 0
+          maximum: 1
+        required: false
+      - paramName: supportsAttachments
+        description: Whether API client performing operation supports event attachments.
+          Optional. The default is False.
+        paramKey: supportsAttachments
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: anyoneCanAddSelf
+        description: Whether anyone can invite themselves to the event (deprecated).
+          Optional. The default is False.
+        paramKey: anyoneCanAddSelf
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: attachments
+        description: >-
+          File attachments for the event.
+
+          In order to modify attachments the supportsAttachments request
+          parameter should be set to true.
+
+          There can be at most 25 attachments per event,
+        paramKey: attachments
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: attendees
+        description: The attendees of the event. See the Events with attendees guide for
+          more information on scheduling events with other calendar users.
+          Service accounts need to use domain-wide delegation of authority to
+          populate the attendee list.
+        paramKey: attendees
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: attendeesOmitted
+        description: Whether attendees may have been omitted from the event's
+          representation. When retrieving an event, this may be due to a
+          restriction specified by the maxAttendee query parameter. When
+          updating an event, this can be used to only update the participant's
+          response. Optional. The default is False.
+        paramKey: attendeesOmitted
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: colorId
+        description: The color of the event. This is an ID referring to an entry in the
+          event section of the colors definition (see the  colors endpoint).
+          Optional.
+        paramKey: colorId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: conferenceData
+        description: ""
+        paramKey: conferenceData
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: created
+        description: Creation time of the event (as a RFC3339 timestamp). Read-only.
+        paramKey: created
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: creator
+        description: The creator of the event. Read-only.
+        paramKey: creator
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: description
+        description: Description of the event. Can contain HTML. Optional.
+        paramKey: description
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: end
+        description: "End object of the event, including timeZone and either date or dateTime properties"
+        paramKey: end
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: endTimeUnspecified
+        description: Whether the end time is actually unspecified. An end time is still
+          provided for compatibility reasons, even if this attribute is set to
+          True. The default is False.
+        paramKey: endTimeUnspecified
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: etag
+        description: ETag of the resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: eventType
+        description: |-
+          Specific type of the event. Read-only. Possible values are:  
+          - "default" - A regular event or not further specified. 
+          - "outOfOffice" - An out-of-office event. 
+          - "focusTime" - A focus-time event. 
+          - "workingLocation" - A working location event. Developer Preview.
+        paramKey: eventType
+        in: body
+        schema:
+          type: string
+          default: default
+        required: false
+      - paramName: extendedProperties
+        description: Extended properties of the event.
+        paramKey: extendedProperties
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: gadget
+        description: A gadget that extends this event. Gadgets are deprecated; this
+          structure is instead only used for returning birthday calendar
+          metadata.
+        paramKey: gadget
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: guestsCanInviteOthers
+        description: Whether attendees other than the organizer can invite others to the
+          event. Optional. The default is True.
+        paramKey: guestsCanInviteOthers
+        in: body
+        schema:
+          type: boolean
+          default: true
+        required: false
+      - paramName: guestsCanModify
+        description: Whether attendees other than the organizer can modify the event.
+          Optional. The default is False.
+        paramKey: guestsCanModify
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: guestsCanSeeOtherGuests
+        description: Whether attendees other than the organizer can see who the event's
+          attendees are. Optional. The default is True.
+        paramKey: guestsCanSeeOtherGuests
+        in: body
+        schema:
+          type: boolean
+          default: true
+        required: false
+      - paramName: hangoutLink
+        description: An absolute link to the Google Hangout associated with this event.
+          Read-only.
+        paramKey: hangoutLink
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: htmlLink
+        description: An absolute link to this event in the Google Calendar Web UI.
+          Read-only.
+        paramKey: htmlLink
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: iCalUid
+        description: >-
+          Event unique identifier as defined in RFC5545. It is used to uniquely
+          identify events accross calendaring systems and must be supplied when
+          importing events via the import method.
+
+          Note that the iCalUID and the id are not identical and only one of
+          them should be supplied at event creation time. One difference in
+          their semantics is that in recurring events, all occurrences of one
+          event have different ids while they all share the same iCalUIDs. To
+          retrieve an event using its iCalUID, call the events.list method using
+          the iCalUID parameter. To retrieve an event using its id, call the
+          events.get method.
+        paramKey: iCalUID
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: >-
+          Opaque identifier of the event. When creating new single or recurring
+          events, you can specify their IDs. Provided IDs must follow these
+          rules:  
+
+          - characters allowed in the ID are those used in base32hex encoding,
+          i.e. lowercase letters a-v and digits 0-9, see section 3.1.2 in
+          RFC2938 
+
+          - the length of the ID must be between 5 and 1024 characters 
+
+          - the ID must be unique per calendar  Due to the globally distributed
+          nature of the system, we cannot guarantee that ID collisions will be
+          detected at event creation time. To minimize the risk of collisions we
+          recommend using an established UUID algorithm such as one described in
+          RFC4122.
+
+          If you do not specify an ID, it will be automatically generated by the
+          server.
+
+          Note that the icalUID and the id are not identical and only one of
+          them should be supplied at event creation time. One difference in
+          their semantics is that in recurring events, all occurrences of one
+          event have different ids while they all share the same icalUIDs.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: Type of the resource ("calendar#event").
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: calendar#event
+        required: false
+      - paramName: location
+        description: Geographic location of the event as free-form text. Optional.
+        paramKey: location
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: locked
+        description: Whether this is a locked event copy where no changes can be made to
+          the main event fields "summary", "description", "location", "start",
+          "end" or "recurrence". The default is False. Read-Only.
+        paramKey: locked
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: organizer
+        description: The organizer of the event. If the organizer is also an attendee,
+          this is indicated with a separate entry in attendees with the
+          organizer field set to True. To change the organizer, use the move
+          operation. Read-only, except when importing an event.
+        paramKey: organizer
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: originalStartTime
+        description: ""
+        paramKey: originalStartTime
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: privateCopy
+        description: If set to True, Event propagation is disabled. Note that it is not
+          the same thing as Private event properties. Optional. Immutable. The
+          default is False.
+        paramKey: privateCopy
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: recurrence
+        description: List of RRULE, EXRULE, RDATE and EXDATE lines for a recurring
+          event, as specified in RFC5545. Note that DTSTART and DTEND lines are
+          not allowed in this field; event start and end times are specified in
+          the start and end fields. This field is omitted for single events or
+          instances of recurring events.
+        paramKey: recurrence
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: recurringEventId
+        description: For an instance of a recurring event, this is the id of the
+          recurring event to which this instance belongs. Immutable.
+        paramKey: recurringEventId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: reminders
+        description: Information about the event's reminders for the authenticated user.
+        paramKey: reminders
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: sequence
+        description: Sequence number as per iCalendar.
+        paramKey: sequence
+        in: body
+        schema:
+          type: number
+        required: false
+      - paramName: source
+        description: Source from which the event was created. For example, a web page,
+          an email message or any document identifiable by an URL with HTTP or
+          HTTPS scheme. Can only be seen or modified by the creator of the
+          event.
+        paramKey: source
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: start
+        description: "Start object of the event, including timeZone and either date or dateTime properties"
+        paramKey: start
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: status
+        description: >-
+          Status of the event. Optional. Possible values are:  
+
+          - "confirmed" - The event is confirmed. This is the default status. 
+
+          - "tentative" - The event is tentatively confirmed. 
+
+          - "cancelled" - The event is cancelled (deleted). The list method
+          returns cancelled events only on incremental sync (when syncToken or
+          updatedMin are specified) or if the showDeleted flag is set to true.
+          The get method always returns them.
+
+          A cancelled status represents two different states depending on the
+          event type:  
+
+          - Cancelled exceptions of an uncancelled recurring event indicate that
+          this instance should no longer be presented to the user. Clients
+          should store these events for the lifetime of the parent recurring
+          event.
+
+          Cancelled exceptions are only guaranteed to have values for the id,
+          recurringEventId and originalStartTime fields populated. The other
+          fields might be empty.  
+
+          - All other cancelled events represent deleted events. Clients should
+          remove their locally synced copies. Such cancelled events will
+          eventually disappear, so do not rely on them being available
+          indefinitely.
+
+          Deleted events are only guaranteed to have the id field
+          populated.   On the organizer's calendar, cancelled events continue to
+          expose event details (summary, location, etc.) so that they can be
+          restored (undeleted). Similarly, the events to which the user was
+          invited and that they manually removed continue to provide details.
+          However, incremental sync requests with showDeleted set to false will
+          not return these details.
+
+          If an event changes its organizer (for example via the move operation)
+          and the original organizer is not on the attendee list, it will leave
+          behind a cancelled event where only the id field is guaranteed to be
+          populated.
+        paramKey: status
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: summary
+        description: Title of the event.
+        paramKey: summary
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: transparency
+        description: >-
+          Whether the event blocks time on the calendar. Optional. Possible
+          values are:  
+
+          - "opaque" - Default value. The event does block time on the calendar.
+          This is equivalent to setting Show me as to Busy in the Calendar UI. 
+
+          - "transparent" - The event does not block time on the calendar. This
+          is equivalent to setting Show me as to Available in the Calendar UI.
+        paramKey: transparency
+        in: body
+        schema:
+          type: string
+          default: opaque
+        required: false
+      - paramName: updated
+        description: Last modification time of the event (as a RFC3339 timestamp).
+          Read-only.
+        paramKey: updated
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: visibility
+        description: >-
+          Visibility of the event. Optional. Possible values are:  
+
+          - "default" - Uses the default visibility for events on the calendar.
+          This is the default value. 
+
+          - "public" - The event is public and event details are visible to all
+          readers of the calendar. 
+
+          - "private" - The event is private and only event attendees may view
+          event details. 
+
+          - "confidential" - The event is private. This value is provided for
+          compatibility reasons.
+        paramKey: visibility
+        in: body
+        schema:
+          type: string
+          default: default
+        required: false
+      - paramName: workingLocationProperties
+        description: ""
+        paramKey: workingLocationProperties
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Events / Quick Add
+    method: post
+    path: /calendars/{calendarId}/events/quickAdd
+    description: Creates an event based on a simple text string.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: text
+        description: The text describing the event to be created.
+        paramKey: text
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: sendUpdates
+        description: Guests who should receive notifications about the creation of the
+          new event.
+        paramKey: sendUpdates
+        in: query
+        schema:
+          type: string
+          enum:
+            - all
+            - externalOnly
+            - none
+        required: false
+  - moduleName: Events / Watch
+    method: post
+    path: /calendars/{calendarId}/events/watch
+    description: Watch for changes to Events resources.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: eventTypes
+        description: >-
+          Event types to return. Optional. Possible values are: 
+
+          - "default" 
+
+          - "focusTime" 
+
+          - "outOfOffice"This parameter can be repeated multiple times to return
+          events of different types. Currently, this is the only allowed value
+          for this field: 
+
+          - ["default", "focusTime", "outOfOffice"] This value will be the
+          default.
+
+
+          If you're enrolled in the Working Location developer preview program,
+          in addition to the default value above you can also set the
+          "workingLocation" event type: 
+
+          - ["default", "focusTime", "outOfOffice", "workingLocation"] 
+
+          - ["workingLocation"] Additional combinations of these 4 event types
+          will be made available in later releases. Developer Preview.
+        paramKey: eventTypes
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: iCalUid
+        description: Specifies an event ID in the iCalendar format to be provided in the
+          response. Optional. Use this if you want to search for an event by its
+          iCalendar ID.
+        paramKey: iCalUID
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: maxAttendees
+        description: The maximum number of attendees to include in the response. If
+          there are more than the specified number of attendees, only the
+          participant is returned. Optional.
+        paramKey: maxAttendees
+        in: query
+        schema:
+          type: number
+          minimum: 1
+        required: false
+      - paramName: maxResults
+        description: Maximum number of events returned on one result page. The number of
+          events in the resulting page may be less than this value, or none at
+          all, even if there are more events matching the query. Incomplete
+          pages can be detected by a non-empty nextPageToken field in the
+          response. By default the value is 250 events. The page size can never
+          be larger than 2500 events. Optional.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 1
+        required: false
+      - paramName: orderBy
+        description: The order of the events returned in the result. Optional. The
+          default is an unspecified, stable order.
+        paramKey: orderBy
+        in: query
+        schema:
+          type: string
+          enum:
+            - startTime
+            - updated
+        required: false
+      - paramName: pageToken
+        description: Token specifying which result page to return. Optional.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: privateExtendedProperty
+        description: Extended properties constraint specified as propertyName=value.
+          Matches only private properties. This parameter might be repeated
+          multiple times to return events that match all given constraints.
+        paramKey: privateExtendedProperty
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: q
+        description: "Free text search terms to find events that match these terms in
+          the following fields: summary, description, location, attendee's
+          displayName, attendee's email. Optional."
+        paramKey: q
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: sharedExtendedProperty
+        description: Extended properties constraint specified as propertyName=value.
+          Matches only shared properties. This parameter might be repeated
+          multiple times to return events that match all given constraints.
+        paramKey: sharedExtendedProperty
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: showDeleted
+        description: Whether to include deleted events (with status equals "cancelled")
+          in the result. Cancelled instances of recurring events (but not the
+          underlying recurring event) will still be included if showDeleted and
+          singleEvents are both False. If showDeleted and singleEvents are both
+          True, only single instances of deleted events (but not the underlying
+          recurring events) are returned. Optional. The default is False.
+        paramKey: showDeleted
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: showHiddenInvitations
+        description: Whether to include hidden invitations in the result. Optional. The
+          default is False.
+        paramKey: showHiddenInvitations
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: singleEvents
+        description: Whether to expand recurring events into instances and only return
+          single one-off events and instances of recurring events, but not the
+          underlying recurring events themselves. Optional. The default is
+          False.
+        paramKey: singleEvents
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: syncToken
+        description: >-
+          Token obtained from the nextSyncToken field returned on the last page
+          of results from the previous list request. It makes the result of this
+          list request contain only entries that have changed since then. All
+          events deleted since the previous list request will always be in the
+          result set and it is not allowed to set showDeleted to False.
+
+          There are several query parameters that cannot be specified together
+          with nextSyncToken to ensure consistency of the client state.
+
+
+          These are: 
+
+          - iCalUID 
+
+          - orderBy 
+
+          - privateExtendedProperty 
+
+          - q 
+
+          - sharedExtendedProperty 
+
+          - timeMin 
+
+          - timeMax 
+
+          - updatedMin If the syncToken expires, the server will respond with a
+          410 GONE response code and the client should clear its storage and
+          perform a full synchronization without any syncToken.
+
+          Optional. The default is to return all entries.
+        paramKey: syncToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: timeMax
+        description: Upper bound (exclusive) for an event's start time to filter by.
+          Optional. The default is not to filter by start time. Must be an
+          RFC3339 timestamp with mandatory time zone offset, for example,
+          2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be
+          provided but are ignored. If timeMin is set, timeMax must be greater
+          than timeMin.
+        paramKey: timeMax
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: timeMin
+        description: Lower bound (exclusive) for an event's end time to filter by.
+          Optional. The default is not to filter by end time. Must be an RFC3339
+          timestamp with mandatory time zone offset, for example,
+          2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be
+          provided but are ignored. If timeMax is set, timeMin must be smaller
+          than timeMax.
+        paramKey: timeMin
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: timeZone
+        description: Time zone used in the response. Optional. The default is the time
+          zone of the calendar.
+        paramKey: timeZone
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: updatedMin
+        description: Lower bound for an event's last modification time (as a RFC3339
+          timestamp) to filter by. When specified, entries deleted since this
+          time will always be included regardless of showDeleted. Optional. The
+          default is not to filter by last modification time.
+        paramKey: updatedMin
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: address
+        description: The address where notifications are delivered for this channel.
+        paramKey: address
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: expiration
+        description: Date and time of notification channel expiration, expressed as a
+          Unix timestamp, in milliseconds. Optional.
+        paramKey: expiration
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: channelId
+        description: A UUID or similar unique string that identifies this channel.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: Identifies this as a notification channel used to watch for changes
+          to a resource, which is "api#channel".
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: api#channel
+        required: false
+      - paramName: params
+        description: Additional parameters controlling delivery channel behavior. Optional.
+        paramKey: params
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: payload
+        description: A Boolean value to indicate whether payload is wanted. Optional.
+        paramKey: payload
+        in: body
+        schema:
+          type: boolean
+        required: false
+      - paramName: resourceId
+        description: An opaque ID that identifies the resource being watched on this
+          channel. Stable across different API versions.
+        paramKey: resourceId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: resourceUri
+        description: A version-specific identifier for the watched resource.
+        paramKey: resourceUri
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: token
+        description: An arbitrary string delivered to the target address with each
+          notification delivered over this channel. Optional.
+        paramKey: token
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: type
+        description: The type of delivery mechanism used for this channel. Valid values
+          are "web_hook" (or "webhook"). Both values refer to a channel where
+          Http requests are used to deliver messages.
+        paramKey: type
+        in: body
+        schema:
+          type: string
+        required: true
+    requestBodyType: json
+  - moduleName: Events / Delete
+    method: delete
+    path: /calendars/{calendarId}/events/{eventId}
+    description: Deletes an event.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: eventId
+        description: Event identifier.
+        paramKey: eventId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: sendUpdates
+        description: Guests who should receive notifications about the deletion of the
+          event.
+        paramKey: sendUpdates
+        in: query
+        schema:
+          type: string
+          enum:
+            - all
+            - externalOnly
+            - none
+        required: false
+  - moduleName: Events / Get
+    method: get
+    path: /calendars/{calendarId}/events/{eventId}
+    description: Returns an event based on its Google Calendar ID. To retrieve an
+      event using its iCalendar ID, call the events.list method using the
+      iCalUID parameter.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: eventId
+        description: Event identifier.
+        paramKey: eventId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: maxAttendees
+        description: The maximum number of attendees to include in the response. If
+          there are more than the specified number of attendees, only the
+          participant is returned. Optional.
+        paramKey: maxAttendees
+        in: query
+        schema:
+          type: number
+          minimum: 1
+        required: false
+      - paramName: timeZone
+        description: Time zone used in the response. Optional. The default is the time
+          zone of the calendar.
+        paramKey: timeZone
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Events / Update Partial
+    method: patch
+    path: /calendars/{calendarId}/events/{eventId}
+    description: Updates an event. This method supports patch semantics.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: eventId
+        description: Event identifier.
+        paramKey: eventId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: conferenceDataVersion
+        description: Version number of conference data supported by the API client.
+          Version 0 assumes no conference data support and ignores conference
+          data in the event's body. Version 1 enables support for copying of
+          ConferenceData as well as for creating new conferences using the
+          createRequest field of conferenceData. The default is 0.
+        paramKey: conferenceDataVersion
+        in: query
+        schema:
+          type: number
+          minimum: 0
+          maximum: 1
+        required: false
+      - paramName: maxAttendees
+        description: The maximum number of attendees to include in the response. If
+          there are more than the specified number of attendees, only the
+          participant is returned. Optional.
+        paramKey: maxAttendees
+        in: query
+        schema:
+          type: number
+          minimum: 1
+        required: false
+      - paramName: sendUpdates
+        description: Guests who should receive notifications about the event update (for
+          example, title changes, etc.).
+        paramKey: sendUpdates
+        in: query
+        schema:
+          type: string
+          enum:
+            - all
+            - externalOnly
+            - none
+        required: false
+      - paramName: supportsAttachments
+        description: Whether API client performing operation supports event attachments.
+          Optional. The default is False.
+        paramKey: supportsAttachments
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: anyoneCanAddSelf
+        description: Whether anyone can invite themselves to the event (deprecated).
+          Optional. The default is False.
+        paramKey: anyoneCanAddSelf
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: attachments
+        description: >-
+          File attachments for the event.
+
+          In order to modify attachments the supportsAttachments request
+          parameter should be set to true.
+
+          There can be at most 25 attachments per event,
+        paramKey: attachments
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: attendees
+        description: The attendees of the event. See the Events with attendees guide for
+          more information on scheduling events with other calendar users.
+          Service accounts need to use domain-wide delegation of authority to
+          populate the attendee list.
+        paramKey: attendees
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: attendeesOmitted
+        description: Whether attendees may have been omitted from the event's
+          representation. When retrieving an event, this may be due to a
+          restriction specified by the maxAttendee query parameter. When
+          updating an event, this can be used to only update the participant's
+          response. Optional. The default is False.
+        paramKey: attendeesOmitted
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: colorId
+        description: The color of the event. This is an ID referring to an entry in the
+          event section of the colors definition (see the  colors endpoint).
+          Optional.
+        paramKey: colorId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: conferenceData
+        description: ""
+        paramKey: conferenceData
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: created
+        description: Creation time of the event (as a RFC3339 timestamp). Read-only.
+        paramKey: created
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: creator
+        description: The creator of the event. Read-only.
+        paramKey: creator
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: description
+        description: Description of the event. Can contain HTML. Optional.
+        paramKey: description
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: end
+        description: "End object of the event, including timeZone and either date or dateTime properties"
+        paramKey: end
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: endTimeUnspecified
+        description: Whether the end time is actually unspecified. An end time is still
+          provided for compatibility reasons, even if this attribute is set to
+          True. The default is False.
+        paramKey: endTimeUnspecified
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: etag
+        description: ETag of the resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: eventType
+        description: |-
+          Specific type of the event. Read-only. Possible values are:  
+          - "default" - A regular event or not further specified. 
+          - "outOfOffice" - An out-of-office event. 
+          - "focusTime" - A focus-time event. 
+          - "workingLocation" - A working location event. Developer Preview.
+        paramKey: eventType
+        in: body
+        schema:
+          type: string
+          default: default
+        required: false
+      - paramName: extendedProperties
+        description: Extended properties of the event.
+        paramKey: extendedProperties
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: gadget
+        description: A gadget that extends this event. Gadgets are deprecated; this
+          structure is instead only used for returning birthday calendar
+          metadata.
+        paramKey: gadget
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: guestsCanInviteOthers
+        description: Whether attendees other than the organizer can invite others to the
+          event. Optional. The default is True.
+        paramKey: guestsCanInviteOthers
+        in: body
+        schema:
+          type: boolean
+          default: true
+        required: false
+      - paramName: guestsCanModify
+        description: Whether attendees other than the organizer can modify the event.
+          Optional. The default is False.
+        paramKey: guestsCanModify
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: guestsCanSeeOtherGuests
+        description: Whether attendees other than the organizer can see who the event's
+          attendees are. Optional. The default is True.
+        paramKey: guestsCanSeeOtherGuests
+        in: body
+        schema:
+          type: boolean
+          default: true
+        required: false
+      - paramName: hangoutLink
+        description: An absolute link to the Google Hangout associated with this event.
+          Read-only.
+        paramKey: hangoutLink
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: htmlLink
+        description: An absolute link to this event in the Google Calendar Web UI.
+          Read-only.
+        paramKey: htmlLink
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: iCalUid
+        description: >-
+          Event unique identifier as defined in RFC5545. It is used to uniquely
+          identify events accross calendaring systems and must be supplied when
+          importing events via the import method.
+
+          Note that the iCalUID and the id are not identical and only one of
+          them should be supplied at event creation time. One difference in
+          their semantics is that in recurring events, all occurrences of one
+          event have different ids while they all share the same iCalUIDs. To
+          retrieve an event using its iCalUID, call the events.list method using
+          the iCalUID parameter. To retrieve an event using its id, call the
+          events.get method.
+        paramKey: iCalUID
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: >-
+          Opaque identifier of the event. When creating new single or recurring
+          events, you can specify their IDs. Provided IDs must follow these
+          rules:  
+
+          - characters allowed in the ID are those used in base32hex encoding,
+          i.e. lowercase letters a-v and digits 0-9, see section 3.1.2 in
+          RFC2938 
+
+          - the length of the ID must be between 5 and 1024 characters 
+
+          - the ID must be unique per calendar  Due to the globally distributed
+          nature of the system, we cannot guarantee that ID collisions will be
+          detected at event creation time. To minimize the risk of collisions we
+          recommend using an established UUID algorithm such as one described in
+          RFC4122.
+
+          If you do not specify an ID, it will be automatically generated by the
+          server.
+
+          Note that the icalUID and the id are not identical and only one of
+          them should be supplied at event creation time. One difference in
+          their semantics is that in recurring events, all occurrences of one
+          event have different ids while they all share the same icalUIDs.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: Type of the resource ("calendar#event").
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: calendar#event
+        required: false
+      - paramName: location
+        description: Geographic location of the event as free-form text. Optional.
+        paramKey: location
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: locked
+        description: Whether this is a locked event copy where no changes can be made to
+          the main event fields "summary", "description", "location", "start",
+          "end" or "recurrence". The default is False. Read-Only.
+        paramKey: locked
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: organizer
+        description: The organizer of the event. If the organizer is also an attendee,
+          this is indicated with a separate entry in attendees with the
+          organizer field set to True. To change the organizer, use the move
+          operation. Read-only, except when importing an event.
+        paramKey: organizer
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: originalStartTime
+        description: ""
+        paramKey: originalStartTime
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: privateCopy
+        description: If set to True, Event propagation is disabled. Note that it is not
+          the same thing as Private event properties. Optional. Immutable. The
+          default is False.
+        paramKey: privateCopy
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: recurrence
+        description: List of RRULE, EXRULE, RDATE and EXDATE lines for a recurring
+          event, as specified in RFC5545. Note that DTSTART and DTEND lines are
+          not allowed in this field; event start and end times are specified in
+          the start and end fields. This field is omitted for single events or
+          instances of recurring events.
+        paramKey: recurrence
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: recurringEventId
+        description: For an instance of a recurring event, this is the id of the
+          recurring event to which this instance belongs. Immutable.
+        paramKey: recurringEventId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: reminders
+        description: Information about the event's reminders for the authenticated user.
+        paramKey: reminders
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: sequence
+        description: Sequence number as per iCalendar.
+        paramKey: sequence
+        in: body
+        schema:
+          type: number
+        required: false
+      - paramName: source
+        description: Source from which the event was created. For example, a web page,
+          an email message or any document identifiable by an URL with HTTP or
+          HTTPS scheme. Can only be seen or modified by the creator of the
+          event.
+        paramKey: source
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: start
+        description: "Start object of the event, including timeZone and either date or dateTime properties"
+        paramKey: start
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: status
+        description: >-
+          Status of the event. Optional. Possible values are:  
+
+          - "confirmed" - The event is confirmed. This is the default status. 
+
+          - "tentative" - The event is tentatively confirmed. 
+
+          - "cancelled" - The event is cancelled (deleted). The list method
+          returns cancelled events only on incremental sync (when syncToken or
+          updatedMin are specified) or if the showDeleted flag is set to true.
+          The get method always returns them.
+
+          A cancelled status represents two different states depending on the
+          event type:  
+
+          - Cancelled exceptions of an uncancelled recurring event indicate that
+          this instance should no longer be presented to the user. Clients
+          should store these events for the lifetime of the parent recurring
+          event.
+
+          Cancelled exceptions are only guaranteed to have values for the id,
+          recurringEventId and originalStartTime fields populated. The other
+          fields might be empty.  
+
+          - All other cancelled events represent deleted events. Clients should
+          remove their locally synced copies. Such cancelled events will
+          eventually disappear, so do not rely on them being available
+          indefinitely.
+
+          Deleted events are only guaranteed to have the id field
+          populated.   On the organizer's calendar, cancelled events continue to
+          expose event details (summary, location, etc.) so that they can be
+          restored (undeleted). Similarly, the events to which the user was
+          invited and that they manually removed continue to provide details.
+          However, incremental sync requests with showDeleted set to false will
+          not return these details.
+
+          If an event changes its organizer (for example via the move operation)
+          and the original organizer is not on the attendee list, it will leave
+          behind a cancelled event where only the id field is guaranteed to be
+          populated.
+        paramKey: status
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: summary
+        description: Title of the event.
+        paramKey: summary
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: transparency
+        description: >-
+          Whether the event blocks time on the calendar. Optional. Possible
+          values are:  
+
+          - "opaque" - Default value. The event does block time on the calendar.
+          This is equivalent to setting Show me as to Busy in the Calendar UI. 
+
+          - "transparent" - The event does not block time on the calendar. This
+          is equivalent to setting Show me as to Available in the Calendar UI.
+        paramKey: transparency
+        in: body
+        schema:
+          type: string
+          default: opaque
+        required: false
+      - paramName: updated
+        description: Last modification time of the event (as a RFC3339 timestamp).
+          Read-only.
+        paramKey: updated
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: visibility
+        description: >-
+          Visibility of the event. Optional. Possible values are:  
+
+          - "default" - Uses the default visibility for events on the calendar.
+          This is the default value. 
+
+          - "public" - The event is public and event details are visible to all
+          readers of the calendar. 
+
+          - "private" - The event is private and only event attendees may view
+          event details. 
+
+          - "confidential" - The event is private. This value is provided for
+          compatibility reasons.
+        paramKey: visibility
+        in: body
+        schema:
+          type: string
+          default: default
+        required: false
+      - paramName: workingLocationProperties
+        description: ""
+        paramKey: workingLocationProperties
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Events / Update
+    method: put
+    path: /calendars/{calendarId}/events/{eventId}
+    description: Updates an event.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: eventId
+        description: Event identifier.
+        paramKey: eventId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: conferenceDataVersion
+        description: Version number of conference data supported by the API client.
+          Version 0 assumes no conference data support and ignores conference
+          data in the event's body. Version 1 enables support for copying of
+          ConferenceData as well as for creating new conferences using the
+          createRequest field of conferenceData. The default is 0.
+        paramKey: conferenceDataVersion
+        in: query
+        schema:
+          type: number
+          minimum: 0
+          maximum: 1
+        required: false
+      - paramName: maxAttendees
+        description: The maximum number of attendees to include in the response. If
+          there are more than the specified number of attendees, only the
+          participant is returned. Optional.
+        paramKey: maxAttendees
+        in: query
+        schema:
+          type: number
+          minimum: 1
+        required: false
+      - paramName: sendUpdates
+        description: Guests who should receive notifications about the event update (for
+          example, title changes, etc.).
+        paramKey: sendUpdates
+        in: query
+        schema:
+          type: string
+          enum:
+            - all
+            - externalOnly
+            - none
+        required: false
+      - paramName: supportsAttachments
+        description: Whether API client performing operation supports event attachments.
+          Optional. The default is False.
+        paramKey: supportsAttachments
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: anyoneCanAddSelf
+        description: Whether anyone can invite themselves to the event (deprecated).
+          Optional. The default is False.
+        paramKey: anyoneCanAddSelf
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: attachments
+        description: >-
+          File attachments for the event.
+
+          In order to modify attachments the supportsAttachments request
+          parameter should be set to true.
+
+          There can be at most 25 attachments per event,
+        paramKey: attachments
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: attendees
+        description: The attendees of the event. See the Events with attendees guide for
+          more information on scheduling events with other calendar users.
+          Service accounts need to use domain-wide delegation of authority to
+          populate the attendee list.
+        paramKey: attendees
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: attendeesOmitted
+        description: Whether attendees may have been omitted from the event's
+          representation. When retrieving an event, this may be due to a
+          restriction specified by the maxAttendee query parameter. When
+          updating an event, this can be used to only update the participant's
+          response. Optional. The default is False.
+        paramKey: attendeesOmitted
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: colorId
+        description: The color of the event. This is an ID referring to an entry in the
+          event section of the colors definition (see the  colors endpoint).
+          Optional.
+        paramKey: colorId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: conferenceData
+        description: ""
+        paramKey: conferenceData
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: created
+        description: Creation time of the event (as a RFC3339 timestamp). Read-only.
+        paramKey: created
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: creator
+        description: The creator of the event. Read-only.
+        paramKey: creator
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: description
+        description: Description of the event. Can contain HTML. Optional.
+        paramKey: description
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: end
+        description: "End object of the event, including timeZone and either date or dateTime properties"
+        paramKey: end
+        in: body
+        schema:
+          type: any
+        required: true
+      - paramName: endTimeUnspecified
+        description: Whether the end time is actually unspecified. An end time is still
+          provided for compatibility reasons, even if this attribute is set to
+          True. The default is False.
+        paramKey: endTimeUnspecified
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: etag
+        description: ETag of the resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: eventType
+        description: |-
+          Specific type of the event. Read-only. Possible values are:  
+          - "default" - A regular event or not further specified. 
+          - "outOfOffice" - An out-of-office event. 
+          - "focusTime" - A focus-time event. 
+          - "workingLocation" - A working location event. Developer Preview.
+        paramKey: eventType
+        in: body
+        schema:
+          type: string
+          default: default
+        required: false
+      - paramName: extendedProperties
+        description: Extended properties of the event.
+        paramKey: extendedProperties
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: gadget
+        description: A gadget that extends this event. Gadgets are deprecated; this
+          structure is instead only used for returning birthday calendar
+          metadata.
+        paramKey: gadget
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: guestsCanInviteOthers
+        description: Whether attendees other than the organizer can invite others to the
+          event. Optional. The default is True.
+        paramKey: guestsCanInviteOthers
+        in: body
+        schema:
+          type: boolean
+          default: true
+        required: false
+      - paramName: guestsCanModify
+        description: Whether attendees other than the organizer can modify the event.
+          Optional. The default is False.
+        paramKey: guestsCanModify
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: guestsCanSeeOtherGuests
+        description: Whether attendees other than the organizer can see who the event's
+          attendees are. Optional. The default is True.
+        paramKey: guestsCanSeeOtherGuests
+        in: body
+        schema:
+          type: boolean
+          default: true
+        required: false
+      - paramName: hangoutLink
+        description: An absolute link to the Google Hangout associated with this event.
+          Read-only.
+        paramKey: hangoutLink
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: htmlLink
+        description: An absolute link to this event in the Google Calendar Web UI.
+          Read-only.
+        paramKey: htmlLink
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: iCalUid
+        description: >-
+          Event unique identifier as defined in RFC5545. It is used to uniquely
+          identify events accross calendaring systems and must be supplied when
+          importing events via the import method.
+
+          Note that the iCalUID and the id are not identical and only one of
+          them should be supplied at event creation time. One difference in
+          their semantics is that in recurring events, all occurrences of one
+          event have different ids while they all share the same iCalUIDs. To
+          retrieve an event using its iCalUID, call the events.list method using
+          the iCalUID parameter. To retrieve an event using its id, call the
+          events.get method.
+        paramKey: iCalUID
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: id
+        description: >-
+          Opaque identifier of the event. When creating new single or recurring
+          events, you can specify their IDs. Provided IDs must follow these
+          rules:  
+
+          - characters allowed in the ID are those used in base32hex encoding,
+          i.e. lowercase letters a-v and digits 0-9, see section 3.1.2 in
+          RFC2938 
+
+          - the length of the ID must be between 5 and 1024 characters 
+
+          - the ID must be unique per calendar  Due to the globally distributed
+          nature of the system, we cannot guarantee that ID collisions will be
+          detected at event creation time. To minimize the risk of collisions we
+          recommend using an established UUID algorithm such as one described in
+          RFC4122.
+
+          If you do not specify an ID, it will be automatically generated by the
+          server.
+
+          Note that the icalUID and the id are not identical and only one of
+          them should be supplied at event creation time. One difference in
+          their semantics is that in recurring events, all occurrences of one
+          event have different ids while they all share the same icalUIDs.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: Type of the resource ("calendar#event").
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: calendar#event
+        required: false
+      - paramName: location
+        description: Geographic location of the event as free-form text. Optional.
+        paramKey: location
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: locked
+        description: Whether this is a locked event copy where no changes can be made to
+          the main event fields "summary", "description", "location", "start",
+          "end" or "recurrence". The default is False. Read-Only.
+        paramKey: locked
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: organizer
+        description: The organizer of the event. If the organizer is also an attendee,
+          this is indicated with a separate entry in attendees with the
+          organizer field set to True. To change the organizer, use the move
+          operation. Read-only, except when importing an event.
+        paramKey: organizer
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: originalStartTime
+        description: ""
+        paramKey: originalStartTime
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: privateCopy
+        description: If set to True, Event propagation is disabled. Note that it is not
+          the same thing as Private event properties. Optional. Immutable. The
+          default is False.
+        paramKey: privateCopy
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: recurrence
+        description: List of RRULE, EXRULE, RDATE and EXDATE lines for a recurring
+          event, as specified in RFC5545. Note that DTSTART and DTEND lines are
+          not allowed in this field; event start and end times are specified in
+          the start and end fields. This field is omitted for single events or
+          instances of recurring events.
+        paramKey: recurrence
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: recurringEventId
+        description: For an instance of a recurring event, this is the id of the
+          recurring event to which this instance belongs. Immutable.
+        paramKey: recurringEventId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: reminders
+        description: Information about the event's reminders for the authenticated user.
+        paramKey: reminders
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: sequence
+        description: Sequence number as per iCalendar.
+        paramKey: sequence
+        in: body
+        schema:
+          type: number
+        required: false
+      - paramName: source
+        description: Source from which the event was created. For example, a web page,
+          an email message or any document identifiable by an URL with HTTP or
+          HTTPS scheme. Can only be seen or modified by the creator of the
+          event.
+        paramKey: source
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: start
+        description: "Start object of the event, including timeZone and either date or dateTime properties"
+        paramKey: start
+        in: body
+        schema:
+          type: any
+        required: true
+      - paramName: status
+        description: >-
+          Status of the event. Optional. Possible values are:  
+
+          - "confirmed" - The event is confirmed. This is the default status. 
+
+          - "tentative" - The event is tentatively confirmed. 
+
+          - "cancelled" - The event is cancelled (deleted). The list method
+          returns cancelled events only on incremental sync (when syncToken or
+          updatedMin are specified) or if the showDeleted flag is set to true.
+          The get method always returns them.
+
+          A cancelled status represents two different states depending on the
+          event type:  
+
+          - Cancelled exceptions of an uncancelled recurring event indicate that
+          this instance should no longer be presented to the user. Clients
+          should store these events for the lifetime of the parent recurring
+          event.
+
+          Cancelled exceptions are only guaranteed to have values for the id,
+          recurringEventId and originalStartTime fields populated. The other
+          fields might be empty.  
+
+          - All other cancelled events represent deleted events. Clients should
+          remove their locally synced copies. Such cancelled events will
+          eventually disappear, so do not rely on them being available
+          indefinitely.
+
+          Deleted events are only guaranteed to have the id field
+          populated.   On the organizer's calendar, cancelled events continue to
+          expose event details (summary, location, etc.) so that they can be
+          restored (undeleted). Similarly, the events to which the user was
+          invited and that they manually removed continue to provide details.
+          However, incremental sync requests with showDeleted set to false will
+          not return these details.
+
+          If an event changes its organizer (for example via the move operation)
+          and the original organizer is not on the attendee list, it will leave
+          behind a cancelled event where only the id field is guaranteed to be
+          populated.
+        paramKey: status
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: summary
+        description: Title of the event.
+        paramKey: summary
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: transparency
+        description: >-
+          Whether the event blocks time on the calendar. Optional. Possible
+          values are:  
+
+          - "opaque" - Default value. The event does block time on the calendar.
+          This is equivalent to setting Show me as to Busy in the Calendar UI. 
+
+          - "transparent" - The event does not block time on the calendar. This
+          is equivalent to setting Show me as to Available in the Calendar UI.
+        paramKey: transparency
+        in: body
+        schema:
+          type: string
+          default: opaque
+        required: false
+      - paramName: updated
+        description: Last modification time of the event (as a RFC3339 timestamp).
+          Read-only.
+        paramKey: updated
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: visibility
+        description: >-
+          Visibility of the event. Optional. Possible values are:  
+
+          - "default" - Uses the default visibility for events on the calendar.
+          This is the default value. 
+
+          - "public" - The event is public and event details are visible to all
+          readers of the calendar. 
+
+          - "private" - The event is private and only event attendees may view
+          event details. 
+
+          - "confidential" - The event is private. This value is provided for
+          compatibility reasons.
+        paramKey: visibility
+        in: body
+        schema:
+          type: string
+          default: default
+        required: false
+      - paramName: workingLocationProperties
+        description: ""
+        paramKey: workingLocationProperties
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Events / Instances
+    method: get
+    path: /calendars/{calendarId}/events/{eventId}/instances
+    description: Returns instances of the specified recurring event.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: eventId
+        description: Recurring event identifier.
+        paramKey: eventId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: maxAttendees
+        description: The maximum number of attendees to include in the response. If
+          there are more than the specified number of attendees, only the
+          participant is returned. Optional.
+        paramKey: maxAttendees
+        in: query
+        schema:
+          type: number
+          minimum: 1
+        required: false
+      - paramName: maxResults
+        description: Maximum number of events returned on one result page. By default
+          the value is 250 events. The page size can never be larger than 2500
+          events. Optional.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 1
+        required: false
+      - paramName: originalStart
+        description: The original start time of the instance in the result. Optional.
+        paramKey: originalStart
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: pageToken
+        description: Token specifying which result page to return. Optional.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: showDeleted
+        description: Whether to include deleted events (with status equals "cancelled")
+          in the result. Cancelled instances of recurring events will still be
+          included if singleEvents is False. Optional. The default is False.
+        paramKey: showDeleted
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: timeMax
+        description: Upper bound (exclusive) for an event's start time to filter by.
+          Optional. The default is not to filter by start time. Must be an
+          RFC3339 timestamp with mandatory time zone offset.
+        paramKey: timeMax
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: timeMin
+        description: Lower bound (inclusive) for an event's end time to filter by.
+          Optional. The default is not to filter by end time. Must be an RFC3339
+          timestamp with mandatory time zone offset.
+        paramKey: timeMin
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: timeZone
+        description: Time zone used in the response. Optional. The default is the time
+          zone of the calendar.
+        paramKey: timeZone
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Events / Move
+    method: post
+    path: /calendars/{calendarId}/events/{eventId}/move
+    description: Moves an event to another calendar, i.e. changes an event's organizer.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier of the source calendar where the event
+          currently is on.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: eventId
+        description: Event identifier.
+        paramKey: eventId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: destination
+        description: Calendar identifier of the target calendar where the event is to be
+          moved to.
+        paramKey: destination
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: sendUpdates
+        description: Guests who should receive notifications about the change of the
+          event's organizer.
+        paramKey: sendUpdates
+        in: query
+        schema:
+          type: string
+          enum:
+            - all
+            - externalOnly
+            - none
+        required: false
+  - moduleName: Channels / Stop
+    method: post
+    path: /channels/stop
+    description: Stop watching resources through this channel
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: address
+        description: The address where notifications are delivered for this channel.
+        paramKey: address
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: expiration
+        description: Date and time of notification channel expiration, expressed as a
+          Unix timestamp, in milliseconds. Optional.
+        paramKey: expiration
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: channelId
+        description: A UUID or similar unique string that identifies this channel.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: kind
+        description: Identifies this as a notification channel used to watch for changes
+          to a resource, which is "api#channel".
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: api#channel
+        required: false
+      - paramName: params
+        description: Additional parameters controlling delivery channel behavior. Optional.
+        paramKey: params
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: payload
+        description: A Boolean value to indicate whether payload is wanted. Optional.
+        paramKey: payload
+        in: body
+        schema:
+          type: boolean
+        required: false
+      - paramName: resourceId
+        description: An opaque ID that identifies the resource being watched on this
+          channel. Stable across different API versions.
+        paramKey: resourceId
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: resourceUri
+        description: A version-specific identifier for the watched resource.
+        paramKey: resourceUri
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: token
+        description: An arbitrary string delivered to the target address with each
+          notification delivered over this channel. Optional.
+        paramKey: token
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: type
+        description: The type of delivery mechanism used for this channel. Valid values
+          are "web_hook" (or "webhook"). Both values refer to a channel where
+          Http requests are used to deliver messages.
+        paramKey: type
+        in: body
+        schema:
+          type: string
+        required: true
+    requestBodyType: json
+  - moduleName: Colors / Get
+    method: get
+    path: /colors
+    description: Returns the color definitions for calendars and events.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: FreeBusy / Query
+    method: post
+    path: /freeBusy
+    description: Returns free/busy information for a set of calendars.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarExpansionMax
+        description: Maximal number of calendars for which FreeBusy information is to be
+          provided. Optional. Maximum value is 50.
+        paramKey: calendarExpansionMax
+        in: body
+        schema:
+          type: number
+        required: false
+      - paramName: groupExpansionMax
+        description: Maximal number of calendar identifiers to be provided for a single
+          group. Optional. An error is returned for a group with more members
+          than this value. Maximum value is 100.
+        paramKey: groupExpansionMax
+        in: body
+        schema:
+          type: number
+        required: false
+      - paramName: items
+        description: List of calendars and/or groups to query.
+        paramKey: items
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+      - paramName: timeMax
+        description: The end of the interval for the query formatted as per RFC3339.
+        paramKey: timeMax
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: timeMin
+        description: The start of the interval for the query formatted as per RFC3339.
+        paramKey: timeMin
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: timeZone
+        description: Time zone used in the response. Optional. The default is UTC.
+        paramKey: timeZone
+        in: body
+        schema:
+          type: string
+          default: UTC
+        required: false
+    requestBodyType: json
+  - moduleName: CalendarList / List
+    method: get
+    path: /users/me/calendarList
+    description: Returns the calendars on the user's calendar list.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: maxResults
+        description: Maximum number of entries returned on one result page. By default
+          the value is 100 entries. The page size can never be larger than 250
+          entries. Optional.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 1
+        required: false
+      - paramName: minAccessRole
+        description: The minimum access role for the user in the returned entries.
+          Optional. The default is no restriction.
+        paramKey: minAccessRole
+        in: query
+        schema:
+          type: string
+          enum:
+            - freeBusyReader
+            - owner
+            - reader
+            - writer
+        required: false
+      - paramName: pageToken
+        description: Token specifying which result page to return. Optional.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: showDeleted
+        description: Whether to include deleted calendar list entries in the result.
+          Optional. The default is False.
+        paramKey: showDeleted
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: showHidden
+        description: Whether to show hidden entries. Optional. The default is False.
+        paramKey: showHidden
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: syncToken
+        description: >-
+          Token obtained from the nextSyncToken field returned on the last page
+          of results from the previous list request. It makes the result of this
+          list request contain only entries that have changed since then. If
+          only read-only fields such as calendar properties or ACLs have
+          changed, the entry won't be returned. All entries deleted and hidden
+          since the previous list request will always be in the result set and
+          it is not allowed to set showDeleted neither showHidden to False.
+
+          To ensure client state consistency minAccessRole query parameter
+          cannot be specified together with nextSyncToken.
+
+          If the syncToken expires, the server will respond with a 410 GONE
+          response code and the client should clear its storage and perform a
+          full synchronization without any syncToken.
+
+          Optional. The default is to return all entries.
+        paramKey: syncToken
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: CalendarList / Create
+    method: post
+    path: /users/me/calendarList
+    description: Inserts an existing calendar into the user's calendar list.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: colorRgbFormat
+        description: Whether to use the foregroundColor and backgroundColor fields to
+          write the calendar colors (RGB). If this feature is used, the
+          index-based colorId field will be set to the best matching option
+          automatically. Optional. The default is False.
+        paramKey: colorRgbFormat
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: accessRole
+        description: >-
+          The effective access role that the authenticated user has on the
+          calendar. Read-only. Possible values are:  
+
+          - "freeBusyReader" - Provides read access to free/busy information. 
+
+          - "reader" - Provides read access to the calendar. Private events will
+          appear to users with reader access, but event details will be hidden. 
+
+          - "writer" - Provides read and write access to the calendar. Private
+          events will appear to users with writer access, and event details will
+          be visible. 
+
+          - "owner" - Provides ownership of the calendar. This role has all of
+          the permissions of the writer role with the additional ability to see
+          and manipulate ACLs.
+        paramKey: accessRole
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: backgroundColor
+        description: The main color of the calendar in the hexadecimal format "#0088aa".
+          This property supersedes the index-based colorId property. To set or
+          change this property, you need to specify colorRgbFormat=true in the
+          parameters of the insert, update and patch methods. Optional.
+        paramKey: backgroundColor
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: colorId
+        description: The color of the calendar. This is an ID referring to an entry in
+          the calendar section of the colors definition (see the colors
+          endpoint). This property is superseded by the backgroundColor and
+          foregroundColor properties and can be ignored when using these
+          properties. Optional.
+        paramKey: colorId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: conferenceProperties
+        description: ""
+        paramKey: conferenceProperties
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: defaultReminders
+        description: The default reminders that the authenticated user has for this
+          calendar.
+        paramKey: defaultReminders
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: deleted
+        description: Whether this calendar list entry has been deleted from the calendar
+          list. Read-only. Optional. The default is False.
+        paramKey: deleted
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: description
+        description: Description of the calendar. Optional. Read-only.
+        paramKey: description
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: etag
+        description: ETag of the resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: foregroundColor
+        description: The foreground color of the calendar in the hexadecimal format
+          "#ffffff". This property supersedes the index-based colorId property.
+          To set or change this property, you need to specify
+          colorRgbFormat=true in the parameters of the insert, update and patch
+          methods. Optional.
+        paramKey: foregroundColor
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: hidden
+        description: Whether the calendar has been hidden from the list. Optional. The
+          attribute is only returned when the calendar is hidden, in which case
+          the value is true.
+        paramKey: hidden
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: id
+        description: Identifier of the calendar.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: kind
+        description: Type of the resource ("calendar#calendarListEntry").
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: calendar#calendarListEntry
+        required: false
+      - paramName: location
+        description: Geographic location of the calendar as free-form text. Optional.
+          Read-only.
+        paramKey: location
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: notificationSettings
+        description: The notifications that the authenticated user is receiving for this
+          calendar.
+        paramKey: notificationSettings
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: primary
+        description: Whether the calendar is the primary calendar of the authenticated
+          user. Read-only. Optional. The default is False.
+        paramKey: primary
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: selected
+        description: Whether the calendar content shows up in the calendar UI. Optional.
+          The default is False.
+        paramKey: selected
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: summary
+        description: Title of the calendar. Read-only.
+        paramKey: summary
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: summaryOverride
+        description: The summary that the authenticated user has set for this calendar.
+          Optional.
+        paramKey: summaryOverride
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: timeZone
+        description: The time zone of the calendar. Optional. Read-only.
+        paramKey: timeZone
+        in: body
+        schema:
+          type: string
+        required: false
+    requestBodyType: json
+  - moduleName: CalendarList / Watch
+    method: post
+    path: /users/me/calendarList/watch
+    description: Watch for changes to CalendarList resources.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: maxResults
+        description: Maximum number of entries returned on one result page. By default
+          the value is 100 entries. The page size can never be larger than 250
+          entries. Optional.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 1
+        required: false
+      - paramName: minAccessRole
+        description: The minimum access role for the user in the returned entries.
+          Optional. The default is no restriction.
+        paramKey: minAccessRole
+        in: query
+        schema:
+          type: string
+          enum:
+            - freeBusyReader
+            - owner
+            - reader
+            - writer
+        required: false
+      - paramName: pageToken
+        description: Token specifying which result page to return. Optional.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: showDeleted
+        description: Whether to include deleted calendar list entries in the result.
+          Optional. The default is False.
+        paramKey: showDeleted
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: showHidden
+        description: Whether to show hidden entries. Optional. The default is False.
+        paramKey: showHidden
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: syncToken
+        description: >-
+          Token obtained from the nextSyncToken field returned on the last page
+          of results from the previous list request. It makes the result of this
+          list request contain only entries that have changed since then. If
+          only read-only fields such as calendar properties or ACLs have
+          changed, the entry won't be returned. All entries deleted and hidden
+          since the previous list request will always be in the result set and
+          it is not allowed to set showDeleted neither showHidden to False.
+
+          To ensure client state consistency minAccessRole query parameter
+          cannot be specified together with nextSyncToken.
+
+          If the syncToken expires, the server will respond with a 410 GONE
+          response code and the client should clear its storage and perform a
+          full synchronization without any syncToken.
+
+          Optional. The default is to return all entries.
+        paramKey: syncToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: address
+        description: The address where notifications are delivered for this channel.
+        paramKey: address
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: expiration
+        description: Date and time of notification channel expiration, expressed as a
+          Unix timestamp, in milliseconds. Optional.
+        paramKey: expiration
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: channelId
+        description: A UUID or similar unique string that identifies this channel.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: kind
+        description: Identifies this as a notification channel used to watch for changes
+          to a resource, which is "api#channel".
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: api#channel
+        required: false
+      - paramName: params
+        description: Additional parameters controlling delivery channel behavior. Optional.
+        paramKey: params
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: payload
+        description: A Boolean value to indicate whether payload is wanted. Optional.
+        paramKey: payload
+        in: body
+        schema:
+          type: boolean
+        required: false
+      - paramName: resourceId
+        description: An opaque ID that identifies the resource being watched on this
+          channel. Stable across different API versions.
+        paramKey: resourceId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: resourceUri
+        description: A version-specific identifier for the watched resource.
+        paramKey: resourceUri
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: token
+        description: An arbitrary string delivered to the target address with each
+          notification delivered over this channel. Optional.
+        paramKey: token
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: type
+        description: The type of delivery mechanism used for this channel. Valid values
+          are "web_hook" (or "webhook"). Both values refer to a channel where
+          Http requests are used to deliver messages.
+        paramKey: type
+        in: body
+        schema:
+          type: string
+        required: true
+    requestBodyType: json
+  - moduleName: CalendarList / Delete
+    method: delete
+    path: /users/me/calendarList/{calendarId}
+    description: Removes a calendar from the user's calendar list.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: CalendarList / Get
+    method: get
+    path: /users/me/calendarList/{calendarId}
+    description: Returns a calendar from the user's calendar list.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: CalendarList / Update Partial
+    method: patch
+    path: /users/me/calendarList/{calendarId}
+    description: Updates an existing calendar on the user's calendar list. This
+      method supports patch semantics.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: colorRgbFormat
+        description: Whether to use the foregroundColor and backgroundColor fields to
+          write the calendar colors (RGB). If this feature is used, the
+          index-based colorId field will be set to the best matching option
+          automatically. Optional. The default is False.
+        paramKey: colorRgbFormat
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: accessRole
+        description: >-
+          The effective access role that the authenticated user has on the
+          calendar. Read-only. Possible values are:  
+
+          - "freeBusyReader" - Provides read access to free/busy information. 
+
+          - "reader" - Provides read access to the calendar. Private events will
+          appear to users with reader access, but event details will be hidden. 
+
+          - "writer" - Provides read and write access to the calendar. Private
+          events will appear to users with writer access, and event details will
+          be visible. 
+
+          - "owner" - Provides ownership of the calendar. This role has all of
+          the permissions of the writer role with the additional ability to see
+          and manipulate ACLs.
+        paramKey: accessRole
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: backgroundColor
+        description: The main color of the calendar in the hexadecimal format "#0088aa".
+          This property supersedes the index-based colorId property. To set or
+          change this property, you need to specify colorRgbFormat=true in the
+          parameters of the insert, update and patch methods. Optional.
+        paramKey: backgroundColor
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: colorId
+        description: The color of the calendar. This is an ID referring to an entry in
+          the calendar section of the colors definition (see the colors
+          endpoint). This property is superseded by the backgroundColor and
+          foregroundColor properties and can be ignored when using these
+          properties. Optional.
+        paramKey: colorId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: conferenceProperties
+        description: ""
+        paramKey: conferenceProperties
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: defaultReminders
+        description: The default reminders that the authenticated user has for this
+          calendar.
+        paramKey: defaultReminders
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: deleted
+        description: Whether this calendar list entry has been deleted from the calendar
+          list. Read-only. Optional. The default is False.
+        paramKey: deleted
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: description
+        description: Description of the calendar. Optional. Read-only.
+        paramKey: description
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: etag
+        description: ETag of the resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: foregroundColor
+        description: The foreground color of the calendar in the hexadecimal format
+          "#ffffff". This property supersedes the index-based colorId property.
+          To set or change this property, you need to specify
+          colorRgbFormat=true in the parameters of the insert, update and patch
+          methods. Optional.
+        paramKey: foregroundColor
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: hidden
+        description: Whether the calendar has been hidden from the list. Optional. The
+          attribute is only returned when the calendar is hidden, in which case
+          the value is true.
+        paramKey: hidden
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: id
+        description: Identifier of the calendar.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: Type of the resource ("calendar#calendarListEntry").
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: calendar#calendarListEntry
+        required: false
+      - paramName: location
+        description: Geographic location of the calendar as free-form text. Optional.
+          Read-only.
+        paramKey: location
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: notificationSettings
+        description: The notifications that the authenticated user is receiving for this
+          calendar.
+        paramKey: notificationSettings
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: primary
+        description: Whether the calendar is the primary calendar of the authenticated
+          user. Read-only. Optional. The default is False.
+        paramKey: primary
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: selected
+        description: Whether the calendar content shows up in the calendar UI. Optional.
+          The default is False.
+        paramKey: selected
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: summary
+        description: Title of the calendar. Read-only.
+        paramKey: summary
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: summaryOverride
+        description: The summary that the authenticated user has set for this calendar.
+          Optional.
+        paramKey: summaryOverride
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: timeZone
+        description: The time zone of the calendar. Optional. Read-only.
+        paramKey: timeZone
+        in: body
+        schema:
+          type: string
+        required: false
+    requestBodyType: json
+  - moduleName: CalendarList / Update
+    method: put
+    path: /users/me/calendarList/{calendarId}
+    description: Updates an existing calendar on the user's calendar list.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: calendarId
+        description: Calendar identifier. To retrieve calendar IDs call the
+          calendarList.list method. If you want to access the primary calendar
+          of the currently logged in user, use the "primary" keyword.
+        paramKey: calendarId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: colorRgbFormat
+        description: Whether to use the foregroundColor and backgroundColor fields to
+          write the calendar colors (RGB). If this feature is used, the
+          index-based colorId field will be set to the best matching option
+          automatically. Optional. The default is False.
+        paramKey: colorRgbFormat
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: accessRole
+        description: >-
+          The effective access role that the authenticated user has on the
+          calendar. Read-only. Possible values are:  
+
+          - "freeBusyReader" - Provides read access to free/busy information. 
+
+          - "reader" - Provides read access to the calendar. Private events will
+          appear to users with reader access, but event details will be hidden. 
+
+          - "writer" - Provides read and write access to the calendar. Private
+          events will appear to users with writer access, and event details will
+          be visible. 
+
+          - "owner" - Provides ownership of the calendar. This role has all of
+          the permissions of the writer role with the additional ability to see
+          and manipulate ACLs.
+        paramKey: accessRole
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: backgroundColor
+        description: The main color of the calendar in the hexadecimal format "#0088aa".
+          This property supersedes the index-based colorId property. To set or
+          change this property, you need to specify colorRgbFormat=true in the
+          parameters of the insert, update and patch methods. Optional.
+        paramKey: backgroundColor
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: colorId
+        description: The color of the calendar. This is an ID referring to an entry in
+          the calendar section of the colors definition (see the colors
+          endpoint). This property is superseded by the backgroundColor and
+          foregroundColor properties and can be ignored when using these
+          properties. Optional.
+        paramKey: colorId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: conferenceProperties
+        description: ""
+        paramKey: conferenceProperties
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: defaultReminders
+        description: The default reminders that the authenticated user has for this
+          calendar.
+        paramKey: defaultReminders
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: deleted
+        description: Whether this calendar list entry has been deleted from the calendar
+          list. Read-only. Optional. The default is False.
+        paramKey: deleted
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: description
+        description: Description of the calendar. Optional. Read-only.
+        paramKey: description
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: etag
+        description: ETag of the resource.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: foregroundColor
+        description: The foreground color of the calendar in the hexadecimal format
+          "#ffffff". This property supersedes the index-based colorId property.
+          To set or change this property, you need to specify
+          colorRgbFormat=true in the parameters of the insert, update and patch
+          methods. Optional.
+        paramKey: foregroundColor
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: hidden
+        description: Whether the calendar has been hidden from the list. Optional. The
+          attribute is only returned when the calendar is hidden, in which case
+          the value is true.
+        paramKey: hidden
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: id
+        description: Identifier of the calendar.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: kind
+        description: Type of the resource ("calendar#calendarListEntry").
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: calendar#calendarListEntry
+        required: false
+      - paramName: location
+        description: Geographic location of the calendar as free-form text. Optional.
+          Read-only.
+        paramKey: location
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: notificationSettings
+        description: The notifications that the authenticated user is receiving for this
+          calendar.
+        paramKey: notificationSettings
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: primary
+        description: Whether the calendar is the primary calendar of the authenticated
+          user. Read-only. Optional. The default is False.
+        paramKey: primary
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: selected
+        description: Whether the calendar content shows up in the calendar UI. Optional.
+          The default is False.
+        paramKey: selected
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: summary
+        description: Title of the calendar. Read-only.
+        paramKey: summary
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: summaryOverride
+        description: The summary that the authenticated user has set for this calendar.
+          Optional.
+        paramKey: summaryOverride
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: timeZone
+        description: The time zone of the calendar. Optional. Read-only.
+        paramKey: timeZone
+        in: body
+        schema:
+          type: string
+        required: false
+    requestBodyType: json
+  - moduleName: Settings / List
+    method: get
+    path: /users/me/settings
+    description: Returns all user settings for the authenticated user.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: maxResults
+        description: Maximum number of entries returned on one result page. By default
+          the value is 100 entries. The page size can never be larger than 250
+          entries. Optional.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 1
+        required: false
+      - paramName: pageToken
+        description: Token specifying which result page to return. Optional.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: syncToken
+        description: >-
+          Token obtained from the nextSyncToken field returned on the last page
+          of results from the previous list request. It makes the result of this
+          list request contain only entries that have changed since then.
+
+          If the syncToken expires, the server will respond with a 410 GONE
+          response code and the client should clear its storage and perform a
+          full synchronization without any syncToken.
+
+          Optional. The default is to return all entries.
+        paramKey: syncToken
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Settings / Watch
+    method: post
+    path: /users/me/settings/watch
+    description: Watch for changes to Settings resources.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: maxResults
+        description: Maximum number of entries returned on one result page. By default
+          the value is 100 entries. The page size can never be larger than 250
+          entries. Optional.
+        paramKey: maxResults
+        in: query
+        schema:
+          type: number
+          minimum: 1
+        required: false
+      - paramName: pageToken
+        description: Token specifying which result page to return. Optional.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: syncToken
+        description: >-
+          Token obtained from the nextSyncToken field returned on the last page
+          of results from the previous list request. It makes the result of this
+          list request contain only entries that have changed since then.
+
+          If the syncToken expires, the server will respond with a 410 GONE
+          response code and the client should clear its storage and perform a
+          full synchronization without any syncToken.
+
+          Optional. The default is to return all entries.
+        paramKey: syncToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: address
+        description: The address where notifications are delivered for this channel.
+        paramKey: address
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: expiration
+        description: Date and time of notification channel expiration, expressed as a
+          Unix timestamp, in milliseconds. Optional.
+        paramKey: expiration
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: channelId
+        description: A UUID or similar unique string that identifies this channel.
+        paramKey: id
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: kind
+        description: Identifies this as a notification channel used to watch for changes
+          to a resource, which is "api#channel".
+        paramKey: kind
+        in: body
+        schema:
+          type: string
+          default: api#channel
+        required: false
+      - paramName: params
+        description: Additional parameters controlling delivery channel behavior. Optional.
+        paramKey: params
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: payload
+        description: A Boolean value to indicate whether payload is wanted. Optional.
+        paramKey: payload
+        in: body
+        schema:
+          type: boolean
+        required: false
+      - paramName: resourceId
+        description: An opaque ID that identifies the resource being watched on this
+          channel. Stable across different API versions.
+        paramKey: resourceId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: resourceUri
+        description: A version-specific identifier for the watched resource.
+        paramKey: resourceUri
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: token
+        description: An arbitrary string delivered to the target address with each
+          notification delivered over this channel. Optional.
+        paramKey: token
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: type
+        description: The type of delivery mechanism used for this channel. Valid values
+          are "web_hook" (or "webhook"). Both values refer to a channel where
+          Http requests are used to deliver messages.
+        paramKey: type
+        in: body
+        schema:
+          type: string
+        required: true
+    requestBodyType: json
+  - moduleName: Settings / Get
+    method: get
+    path: /users/me/settings/{setting}
+    description: Returns a single user setting.
+    externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: setting
+        description: The id of the user setting.
+        paramKey: setting
+        in: path
+        schema:
+          type: string
+        required: true
