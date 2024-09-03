@@ -1,0 +1,298 @@
+id: google-docs
+displayName: Google Docs
+workspaceId:
+  development: "BBpuJYsdDsGDklzV"
+  production: "QzyGl9Nz6s8Y7ixs"
+baseUrl: https://docs.googleapis.com
+description: Reads and writes Google Docs documents.
+commonParams:
+  - paramName: accessToken
+    paramKey: Authorization
+    prefix: Bearer
+    in: header
+    description: OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/documents` scope. Google Auth / Service Account Token can be used to obtain a valid access token.
+    required: false
+    advanced: false
+  - paramName: apiKey
+    paramKey: key
+    in: query
+    description: API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used.
+    required: false
+modules:
+  - moduleName: Documents / Create
+    method: post
+    path: /v1/documents
+    description: Creates a blank document using the title given in the request.
+      Other fields in the request, including any provided content, are ignored.
+      Returns the created document.
+    externalDocs: "https://developers.google.com/docs/api/reference/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: uploadProtocol
+        description: Upload protocol for media (e.g. "raw", "multipart").
+        paramKey: upload_protocol
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: uploadType
+        description: Legacy upload protocol for media (e.g. "media", "multipart").
+        paramKey: uploadType
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: body
+        description: The document body. The body typically contains the full document
+          contents except for headers, footers, and footnotes.
+        paramKey: body
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: documentId
+        description: Output only. The ID of the document.
+        paramKey: documentId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: documentStyle
+        description: The style of the document.
+        paramKey: documentStyle
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: footers
+        description: Output only. The footers in the document, keyed by footer ID.
+        paramKey: footers
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: footnotes
+        description: Output only. The footnotes in the document, keyed by footnote ID.
+        paramKey: footnotes
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: headers
+        description: Output only. The headers in the document, keyed by header ID.
+        paramKey: headers
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: inlineObjects
+        description: Output only. The inline objects in the document, keyed by object ID.
+        paramKey: inlineObjects
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: lists
+        description: Output only. The lists in the document, keyed by list ID.
+        paramKey: lists
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: namedRanges
+        description: Output only. The named ranges in the document, keyed by name.
+        paramKey: namedRanges
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: namedStyles
+        description: The named styles. Paragraphs in the document can inherit their
+          TextStyle and ParagraphStyle from these named styles.
+        paramKey: namedStyles
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: positionedObjects
+        description: Output only. The positioned objects in the document, keyed by
+          object ID.
+        paramKey: positionedObjects
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: revisionId
+        description: Output only. The revision ID of the document. Can be used in update
+          requests to specify which revision of a document to apply updates to
+          and how the request should behave if the document has been edited
+          since that revision. Only populated if the user has edit access to the
+          document. The revision ID is not a sequential number but an opaque
+          string. The format of the revision ID might change over time. A
+          returned revision ID is only guaranteed to be valid for 24 hours after
+          it has been returned and cannot be shared across users. If the
+          revision ID is unchanged between calls, then the document has not
+          changed. Conversely, a changed ID (for the same document and user)
+          usually means the document has been updated. However, a changed ID can
+          also be due to internal factors such as ID format changes.
+        paramKey: revisionId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: suggestedDocumentStyleChanges
+        description: Output only. The suggested changes to the style of the document,
+          keyed by suggestion ID.
+        paramKey: suggestedDocumentStyleChanges
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: suggestedNamedStylesChanges
+        description: Output only. The suggested changes to the named styles of the
+          document, keyed by suggestion ID.
+        paramKey: suggestedNamedStylesChanges
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: suggestionsViewMode
+        description: "Output only. The suggestions view mode applied to the document.
+          Note: When editing a document, changes must be based on a document
+          with SUGGESTIONS_INLINE."
+        paramKey: suggestionsViewMode
+        in: body
+        schema:
+          type: string
+          enum:
+            - DEFAULT_FOR_CURRENT_ACCESS
+            - SUGGESTIONS_INLINE
+            - PREVIEW_SUGGESTIONS_ACCEPTED
+            - PREVIEW_WITHOUT_SUGGESTIONS
+        required: false
+      - paramName: title
+        description: The title of the document.
+        paramKey: title
+        in: body
+        schema:
+          type: string
+        required: false
+    requestBodyType: json
+  - moduleName: Documents / Get
+    method: get
+    path: /v1/documents/{documentId}
+    description: Gets the latest version of the specified document.
+    externalDocs: "https://developers.google.com/docs/api/reference/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: uploadProtocol
+        description: Upload protocol for media (e.g. "raw", "multipart").
+        paramKey: upload_protocol
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: uploadType
+        description: Legacy upload protocol for media (e.g. "media", "multipart").
+        paramKey: uploadType
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: documentId
+        description: The ID of the document to retrieve.
+        paramKey: documentId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: suggestionsViewMode
+        description: The suggestions view mode to apply to the document. This allows
+          viewing the document with all suggestions inline, accepted or
+          rejected. If one is not specified, DEFAULT_FOR_CURRENT_ACCESS is used.
+        paramKey: suggestionsViewMode
+        in: query
+        schema:
+          type: string
+          enum:
+            - DEFAULT_FOR_CURRENT_ACCESS
+            - SUGGESTIONS_INLINE
+            - PREVIEW_SUGGESTIONS_ACCEPTED
+            - PREVIEW_WITHOUT_SUGGESTIONS
+        required: false
+  - moduleName: Documents / Batch Update
+    method: post
+    path: /v1/documents/{documentId}:batchUpdate
+    description: "Applies one or more updates to the document. Each request is
+      validated before being applied. If any request is not valid, then the
+      entire request will fail and nothing will be applied. Some requests have
+      replies to give you some information about how they are applied. Other
+      requests do not need to return information; these each return an empty
+      reply. The order of replies matches that of the requests. For example,
+      suppose you call batchUpdate with four updates, and only the third one
+      returns information. The response would have two empty replies, the reply
+      to the third request, and another empty reply, in that order. Because
+      other users may be editing the document, the document might not exactly
+      reflect your changes: your changes may be altered with respect to
+      collaborator changes. If there are no collaborators, the document should
+      reflect your changes. In any case, the updates in your request are
+      guaranteed to be applied together atomically."
+    externalDocs: "https://developers.google.com/docs/api/reference/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: uploadProtocol
+        description: Upload protocol for media (e.g. "raw", "multipart").
+        paramKey: upload_protocol
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: uploadType
+        description: Legacy upload protocol for media (e.g. "media", "multipart").
+        paramKey: uploadType
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: documentId
+        description: The ID of the document to update.
+        paramKey: documentId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: requests
+        description: A list of updates to apply to the document.
+        paramKey: requests
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: writeControl
+        description: Provides control over how write requests are executed.
+        paramKey: writeControl
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
