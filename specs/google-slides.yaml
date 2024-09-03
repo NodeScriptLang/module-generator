@@ -1,0 +1,348 @@
+id: google-slides
+displayName: Google Slides
+workspaceId:
+  development: "2pax1XJWi94t8rRU"
+  production: "vM8wVmZ7jSi7rGJt"
+baseUrl: https://slides.googleapis.com
+description: Reads and writes Google Slides presentations.
+commonParams:
+  - paramName: accessToken
+    paramKey: Authorization
+    prefix: Bearer
+    in: header
+    description: OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/presentations` scope. Google Auth / Service Account Token can be used to obtain a valid access token.
+    required: false
+    advanced: false
+  - paramName: apiKey
+    paramKey: key
+    in: query
+    description: API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used.
+    required: false
+modules:
+  - moduleName: Presentations / Create
+    method: post
+    path: /v1/presentations
+    description: Creates a blank presentation using the title given in the request.
+      If a `presentationId` is provided, it is used as the ID of the new
+      presentation. Otherwise, a new ID is generated. Other fields in the
+      request, including any provided content, are ignored. Returns the created
+      presentation.
+    externalDocs: "https://developers.google.com/slides/api/reference/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: uploadProtocol
+        description: Upload protocol for media (e.g. "raw", "multipart").
+        paramKey: upload_protocol
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: uploadType
+        description: Legacy upload protocol for media (e.g. "media", "multipart").
+        paramKey: uploadType
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: layouts
+        description: The layouts in the presentation. A layout is a template that
+          determines how content is arranged and styled on the slides that
+          inherit from that layout.
+        paramKey: layouts
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: locale
+        description: The locale of the presentation, as an IETF BCP 47 language tag.
+        paramKey: locale
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: masters
+        description: "The slide masters in the presentation. A slide master contains all
+          common page elements and the common properties for a set of layouts.
+          They serve three purposes: - Placeholder shapes on a master contain
+          the default text styles and shape properties of all placeholder shapes
+          on pages that use that master. - The master page properties define the
+          common page properties inherited by its layouts. - Any other shapes on
+          the master slide appear on all slides using that master, regardless of
+          their layout."
+        paramKey: masters
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: notesMaster
+        description: ""
+        paramKey: notesMaster
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: pageSize
+        description: ""
+        paramKey: pageSize
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: presentationId
+        description: The ID of the presentation.
+        paramKey: presentationId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: revisionId
+        description: Output only. The revision ID of the presentation. Can be used in
+          update requests to assert the presentation revision hasn't changed
+          since the last read operation. Only populated if the user has edit
+          access to the presentation. The revision ID is not a sequential number
+          but a nebulous string. The format of the revision ID may change over
+          time, so it should be treated opaquely. A returned revision ID is only
+          guaranteed to be valid for 24 hours after it has been returned and
+          cannot be shared across users. If the revision ID is unchanged between
+          calls, then the presentation has not changed. Conversely, a changed ID
+          (for the same presentation and user) usually means the presentation
+          has been updated. However, a changed ID can also be due to internal
+          factors such as ID format changes.
+        paramKey: revisionId
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: slides
+        description: The slides in the presentation. A slide inherits properties from a
+          slide layout.
+        paramKey: slides
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: title
+        description: The title of the presentation.
+        paramKey: title
+        in: body
+        schema:
+          type: string
+        required: false
+    requestBodyType: json
+  - moduleName: Presentations / Get
+    method: get
+    path: /v1/presentations/{presentationId}
+    description: Gets the latest version of the specified presentation.
+    externalDocs: "https://developers.google.com/slides/api/reference/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: uploadProtocol
+        description: Upload protocol for media (e.g. "raw", "multipart").
+        paramKey: upload_protocol
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: uploadType
+        description: Legacy upload protocol for media (e.g. "media", "multipart").
+        paramKey: uploadType
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: presentationId
+        description: The ID of the presentation to retrieve.
+        paramKey: presentationId
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Presentations / Pages / Get
+    method: get
+    path: /v1/presentations/{presentationId}/pages/{pageObjectId}
+    description: Gets the latest version of the specified page in the presentation.
+    externalDocs: "https://developers.google.com/slides/api/reference/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: uploadProtocol
+        description: Upload protocol for media (e.g. "raw", "multipart").
+        paramKey: upload_protocol
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: uploadType
+        description: Legacy upload protocol for media (e.g. "media", "multipart").
+        paramKey: uploadType
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: presentationId
+        description: The ID of the presentation to retrieve.
+        paramKey: presentationId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: pageObjectId
+        description: The object ID of the page to retrieve.
+        paramKey: pageObjectId
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Presentations / Pages / Get Thumbnail
+    method: get
+    path: /v1/presentations/{presentationId}/pages/{pageObjectId}/thumbnail
+    description: Generates a thumbnail of the latest version of the specified page
+      in the presentation and returns a URL to the thumbnail image. This request
+      counts as an [expensive read request](/slides/limits) for quota purposes.
+    externalDocs: "https://developers.google.com/slides/api/reference/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: uploadProtocol
+        description: Upload protocol for media (e.g. "raw", "multipart").
+        paramKey: upload_protocol
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: uploadType
+        description: Legacy upload protocol for media (e.g. "media", "multipart").
+        paramKey: uploadType
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: presentationId
+        description: The ID of the presentation to retrieve.
+        paramKey: presentationId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: pageObjectId
+        description: The object ID of the page whose thumbnail to retrieve.
+        paramKey: pageObjectId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: thumbnailPropertiesMimeType
+        description: The optional mime type of the thumbnail image. If you don't specify
+          the mime type, the mime type defaults to PNG.
+        paramKey: thumbnailProperties.mimeType
+        in: query
+        schema:
+          type: string
+          enum:
+            - PNG
+        required: false
+      - paramName: thumbnailPropertiesThumbnailSize
+        description: The optional thumbnail image size. If you don't specify the size,
+          the server chooses a default size of the image.
+        paramKey: thumbnailProperties.thumbnailSize
+        in: query
+        schema:
+          type: string
+          enum:
+            - THUMBNAIL_SIZE_UNSPECIFIED
+            - LARGE
+            - MEDIUM
+            - SMALL
+        required: false
+  - moduleName: Presentations / Batch Update
+    method: post
+    path: /v1/presentations/{presentationId}:batchUpdate
+    description: "Applies one or more updates to the presentation. Each request is
+      validated before being applied. If any request is not valid, then the
+      entire request will fail and nothing will be applied. Some requests have
+      replies to give you some information about how they are applied. Other
+      requests do not need to return information; these each return an empty
+      reply. The order of replies matches that of the requests. For example,
+      suppose you call batchUpdate with four updates, and only the third one
+      returns information. The response would have two empty replies: the reply
+      to the third request, and another empty reply, in that order. Because
+      other users may be editing the presentation, the presentation might not
+      exactly reflect your changes: your changes may be altered with respect to
+      collaborator changes. If there are no collaborators, the presentation
+      should reflect your changes. In any case, the updates in your request are
+      guaranteed to be applied together atomically."
+    externalDocs: "https://developers.google.com/slides/api/reference/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: uploadProtocol
+        description: Upload protocol for media (e.g. "raw", "multipart").
+        paramKey: upload_protocol
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: uploadType
+        description: Legacy upload protocol for media (e.g. "media", "multipart").
+        paramKey: uploadType
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: presentationId
+        description: The presentation to apply the updates to.
+        paramKey: presentationId
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: requests
+        description: A list of updates to apply to the presentation.
+        paramKey: requests
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+      - paramName: writeControl
+        description: Provides control over how write requests are executed.
+        paramKey: writeControl
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
