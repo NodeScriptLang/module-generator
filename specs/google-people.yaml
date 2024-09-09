@@ -1,0 +1,1994 @@
+id: google-people
+displayName: Google People
+workspaceId:
+  development: "Mnv1tFutdmj8dpTT"
+  production: "Ssn1YPt03HaUm1wR"
+baseUrl: https://people.googleapis.com
+description: Provides access to information about profiles and contacts.
+commonParams:
+  - paramName: accessToken
+    paramKey: Authorization
+    prefix: Bearer
+    in: header
+    description: OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/contacts` scope. Google Auth / Service Account Token can be used to obtain a valid access token.
+    required: false
+    advanced: false
+  - paramName: apiKey
+    paramKey: key
+    in: query
+    description: API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used.
+    required: false
+modules:
+  - moduleName: Contact Groups / Get
+    method: get
+    path: /v1/{resourceName}
+    description: Get a specific contact group owned by the authenticated user by specifying a contact group resource name.
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: resourceName
+        description: Required. The resource name of the contact group to provide information
+          about. Specify `contactGroups/{id}`. To get information about a contactGroup, specify
+          the resource name that identifies the contact as returned by
+          `contactgroups.list`.
+        paramKey: resourceName
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: maxMembers
+        description: Optional. Specifies the maximum number of members to return. Defaults to 0 if not set, which will return zero members.
+        paramKey: maxMembers
+        in: path
+        schema:
+          type: number
+        required: false
+      - paramName: groupFields
+        description: "Optional. A field mask to restrict which fields on the group are
+          returned. Defaults to `metadata`, `groupType`, `memberCount`, and
+          `name` if not set or set to empty. Valid fields are: * clientData *
+          groupType * memberCount * metadata * name"
+        paramKey: groupFields
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Contact Groups / List
+    method: get
+    path: /v1/contactGroups
+    description: List all contact groups owned by the authenticated user. Members of
+      the contact groups are not populated.
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: groupFields
+        description: "Optional. A field mask to restrict which fields on the group are
+          returned. Defaults to `metadata`, `groupType`, `memberCount`, and
+          `name` if not set or set to empty. Valid fields are: * clientData *
+          groupType * memberCount * metadata * name"
+        paramKey: groupFields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: pageSize
+        description: Optional. The maximum number of resources to return. Valid values
+          are between 1 and 1000, inclusive. Defaults to 30 if not set or set to
+          0.
+        paramKey: pageSize
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: pageToken
+        description: Optional. The next_page_token value returned from a previous call
+          to [ListContactGroups](/people/api/rest/v1/contactgroups/list).
+          Requests the next page of resources.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: syncToken
+        description: Optional. A sync token, returned by a previous call to
+          `contactgroups.list`. Only resources changed since the sync token was
+          created will be returned.
+        paramKey: syncToken
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Contact Groups / Create
+    method: post
+    path: /v1/contactGroups
+    description: Create a new contact group owned by the authenticated user. Created
+      contact group names must be unique to the users contact groups. Attempting
+      to create a group with a duplicate name will return a HTTP 409 error.
+      Mutate requests for the same user should be sent sequentially to avoid
+      increased latency and failures.
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: contactGroup
+        description: A contact group.
+        paramKey: contactGroup
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: readGroupFields
+        description: "Optional. A field mask to restrict which fields on the group are
+          returned. Defaults to `metadata`, `groupType`, and `name` if not set
+          or set to empty. Valid fields are: * clientData * groupType * metadata
+          * name"
+        paramKey: readGroupFields
+        in: body
+        schema:
+          type: string
+        required: false
+    requestBodyType: json
+  - moduleName: Contact Groups / Batch Get
+    method: get
+    path: /v1/contactGroups:batchGet
+    description: Get a list of contact groups owned by the authenticated user by
+      specifying a list of contact group resource names.
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: groupFields
+        description: "Optional. A field mask to restrict which fields on the group are
+          returned. Defaults to `metadata`, `groupType`, `memberCount`, and
+          `name` if not set or set to empty. Valid fields are: * clientData *
+          groupType * memberCount * metadata * name"
+        paramKey: groupFields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: maxMembers
+        description: Optional. Specifies the maximum number of members to return for
+          each group. Defaults to 0 if not set, which will return zero members.
+        paramKey: maxMembers
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: resourceNames
+        description: Required. The resource names of the contact groups to get. There is
+          a maximum of 200 resource names.
+        paramKey: resourceNames
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+  - moduleName: Other Contacts / List
+    method: get
+    path: /v1/otherContacts
+    description: List all "Other contacts", that is contacts that are not in a
+      contact group. "Other contacts" are typically auto created contacts from
+      interactions. Sync tokens expire 7 days after the full sync. A request
+      with an expired sync token will get an error with an
+      [google.rpc.ErrorInfo](https://cloud.google.com/apis/design/errors#error_info)
+      with reason "EXPIRED_SYNC_TOKEN". In the case of such an error clients
+      should make a full sync request without a `sync_token`. The first page of
+      a full sync request has an additional quota. If the quota is exceeded, a
+      429 error will be returned. This quota is fixed and can not be increased.
+      When the `sync_token` is specified, resources deleted since the last sync
+      will be returned as a person with `PersonMetadata.deleted` set to true.
+      When the `page_token` or `sync_token` is specified, all other request
+      parameters must match the first call. Writes may have a propagation delay
+      of several minutes for sync requests. Incremental syncs are not intended
+      for read-after-write use cases. See example usage at [List the user's
+      other contacts that have
+      changed](/people/v1/other-contacts#list_the_users_other_contacts_that_have_changed).
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: pageSize
+        description: Optional. The number of "Other contacts" to include in the
+          response. Valid values are between 1 and 1000, inclusive. Defaults to
+          100 if not set or set to 0.
+        paramKey: pageSize
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: pageToken
+        description: Optional. A page token, received from a previous response
+          `next_page_token`. Provide this to retrieve the subsequent page. When
+          paginating, all other parameters provided to `otherContacts.list` must
+          match the first call that provided the page token.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: readMask
+        description: "Required. A field mask to restrict which fields on each person are
+          returned. Multiple fields can be specified by separating them with
+          commas. What values are valid depend on what ReadSourceType is used.
+          If READ_SOURCE_TYPE_CONTACT is used, valid values are: *
+          emailAddresses * metadata * names * phoneNumbers * photos If
+          READ_SOURCE_TYPE_PROFILE is used, valid values are: * addresses *
+          ageRanges * biographies * birthdays * calendarUrls * clientData *
+          coverPhotos * emailAddresses * events * externalIds * genders *
+          imClients * interests * locales * locations * memberships * metadata *
+          miscKeywords * names * nicknames * occupations * organizations *
+          phoneNumbers * photos * relations * sipAddresses * skills * urls *
+          userDefined"
+        paramKey: readMask
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: requestSyncToken
+        description: Optional. Whether the response should return `next_sync_token` on
+          the last page of results. It can be used to get incremental changes
+          since the last request by setting it on the request `sync_token`. More
+          details about sync behavior at `otherContacts.list`.
+        paramKey: requestSyncToken
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: sources
+        description: "Optional. A mask of what source types to return. Defaults to
+          READ_SOURCE_TYPE_CONTACT if not set. Possible values for this field
+          are: * READ_SOURCE_TYPE_CONTACT *
+          READ_SOURCE_TYPE_CONTACT,READ_SOURCE_TYPE_PROFILE Specifying
+          READ_SOURCE_TYPE_PROFILE without specifying READ_SOURCE_TYPE_CONTACT
+          is not permitted."
+        paramKey: sources
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: syncToken
+        description: Optional. A sync token, received from a previous response
+          `next_sync_token` Provide this to retrieve only the resources changed
+          since the last request. When syncing, all other parameters provided to
+          `otherContacts.list` must match the first call that provided the sync
+          token. More details about sync behavior at `otherContacts.list`.
+        paramKey: syncToken
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Other Contacts / Search
+    method: get
+    path: /v1/otherContacts:search
+    description: "Provides a list of contacts in the authenticated user's other
+      contacts that matches the search query. The query matches on a contact's
+      `names`, `emailAddresses`, and `phoneNumbers` fields that are from the
+      OTHER_CONTACT source. **IMPORTANT**: Before searching, clients should send
+      a warmup request with an empty query to update the cache. See
+      https://developers.google.com/people/v1/other-contacts#search_the_users_o\
+      ther_contacts"
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: pageSize
+        description: Optional. The number of results to return. Defaults to 10 if field
+          is not set, or set to 0. Values greater than 30 will be capped to 30.
+        paramKey: pageSize
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: query
+        description: Required. The plain-text query for the request. The query is used
+          to match prefix phrases of the fields on a person. For example, a
+          person with name "foo name" matches queries such as "f", "fo", "foo",
+          "foo n", "nam", etc., but not "oo n".
+        paramKey: query
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: readMask
+        description: "Required. A field mask to restrict which fields on each person are
+          returned. Multiple fields can be specified by separating them with
+          commas. Valid values are: * emailAddresses * metadata * names *
+          phoneNumbers"
+        paramKey: readMask
+        in: query
+        schema:
+          type: string
+        required: true
+  - moduleName: People / Batch Create
+    method: post
+    path: /v1/people:batchCreateContacts
+    description: Create a batch of new contacts and return the PersonResponses for
+      the newly Mutate requests for the same user should be sent sequentially to
+      avoid increased latency and failures.
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: contacts
+        description: Required. The contact to create. Allows up to 200 contacts in a
+          single request.
+        paramKey: contacts
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+      - paramName: readMask
+        description: "Required. A field mask to restrict which fields on each person are
+          returned in the response. Multiple fields can be specified by
+          separating them with commas. If read mask is left empty, the
+          post-mutate-get is skipped and no data will be returned in the
+          response. Valid values are: * addresses * ageRanges * biographies *
+          birthdays * calendarUrls * clientData * coverPhotos * emailAddresses *
+          events * externalIds * genders * imClients * interests * locales *
+          locations * memberships * metadata * miscKeywords * names * nicknames
+          * occupations * organizations * phoneNumbers * photos * relations *
+          sipAddresses * skills * urls * userDefined"
+        paramKey: readMask
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: sources
+        description: Optional. A mask of what source types to return in the post mutate
+          read. Defaults to READ_SOURCE_TYPE_CONTACT and
+          READ_SOURCE_TYPE_PROFILE if not set.
+        paramKey: sources
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+    requestBodyType: json
+  - moduleName: People / Batch Delete
+    method: post
+    path: /v1/people:batchDeleteContacts
+    description: Delete a batch of contacts. Any non-contact data will not be
+      deleted. Mutate requests for the same user should be sent sequentially to
+      avoid increased latency and failures.
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: resourceNames
+        description: Required. The resource names of the contact to delete. It's
+          repeatable. Allows up to 500 resource names in a single request.
+        paramKey: resourceNames
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+    requestBodyType: json
+  - moduleName: People / Batch Get
+    method: get
+    path: /v1/people:batchGet
+    description: Provides information about a list of specific people by specifying
+      a list of requested resource names. Use `people/me` to indicate the
+      authenticated user. The request returns a 400 error if 'personFields' is
+      not specified.
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: personFields
+        description: "Required. A field mask to restrict which fields on each person are
+          returned. Multiple fields can be specified by separating them with
+          commas. Valid values are: * addresses * ageRanges * biographies *
+          birthdays * calendarUrls * clientData * coverPhotos * emailAddresses *
+          events * externalIds * genders * imClients * interests * locales *
+          locations * memberships * metadata * miscKeywords * names * nicknames
+          * occupations * organizations * phoneNumbers * photos * relations *
+          sipAddresses * skills * urls * userDefined"
+        paramKey: personFields
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: requestMaskIncludeField
+        description: "Required. Comma-separated list of person fields to be included in
+          the response. Each path should start with `person.`: for example,
+          `person.names` or `person.photos`."
+        paramKey: requestMask.includeField
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: resourceNames
+        description: Required. The resource names of the people to provide information
+          about. It's repeatable. The URL query parameter should be
+          resourceNames=<name1>&resourceNames=<name2>&... - To get information
+          about the authenticated user, specify `people/me`. - To get
+          information about a google account, specify `people/{account_id}`. -
+          To get information about a contact, specify the resource name that
+          identifies the contact as returned by `people.connections.list`. There
+          is a maximum of 200 resource names.
+        paramKey: resourceNames
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: sources
+        description: Optional. A mask of what source types to return. Defaults to
+          READ_SOURCE_TYPE_CONTACT and READ_SOURCE_TYPE_PROFILE if not set.
+        paramKey: sources
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+  - moduleName: People / Batch Update
+    method: post
+    path: /v1/people:batchUpdateContacts
+    description: Update a batch of contacts and return a map of resource names to
+      PersonResponses for the updated contacts. Mutate requests for the same
+      user should be sent sequentially to avoid increased latency and failures.
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: contacts
+        description: Required. A map of resource names to the person data to be updated.
+          Allows up to 200 contacts in a single request.
+        paramKey: contacts
+        in: body
+        schema:
+          type: any
+        required: true
+      - paramName: readMask
+        description: "Required. A field mask to restrict which fields on each person are
+          returned. Multiple fields can be specified by separating them with
+          commas. If read mask is left empty, the post-mutate-get is skipped and
+          no data will be returned in the response. Valid values are: *
+          addresses * ageRanges * biographies * birthdays * calendarUrls *
+          clientData * coverPhotos * emailAddresses * events * externalIds *
+          genders * imClients * interests * locales * locations * memberships *
+          metadata * miscKeywords * names * nicknames * occupations *
+          organizations * phoneNumbers * photos * relations * sipAddresses *
+          skills * urls * userDefined"
+        paramKey: readMask
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: sources
+        description: Optional. A mask of what source types to return. Defaults to
+          READ_SOURCE_TYPE_CONTACT and READ_SOURCE_TYPE_PROFILE if not set.
+        paramKey: sources
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: updateMask
+        description: "Required. A field mask to restrict which fields on the person are
+          updated. Multiple fields can be specified by separating them with
+          commas. All specified fields will be replaced, or cleared if left
+          empty for each person. Valid values are: * addresses * biographies *
+          birthdays * calendarUrls * clientData * emailAddresses * events *
+          externalIds * genders * imClients * interests * locales * locations *
+          memberships * miscKeywords * names * nicknames * occupations *
+          organizations * phoneNumbers * relations * sipAddresses * urls *
+          userDefined"
+        paramKey: updateMask
+        in: body
+        schema:
+          type: string
+        required: true
+    requestBodyType: json
+  - moduleName: People / Create
+    method: post
+    path: /v1/people:createContact
+    description: "Create a new contact and return the person resource for that
+      contact. The request returns a 400 error if more than one field is
+      specified on a field that is a singleton for contact sources: *
+      biographies * birthdays * genders * names Mutate requests for the same
+      user should be sent sequentially to avoid increased latency and failures."
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: personFields
+        description: "A field mask to restrict which fields on each person are
+          returned. Multiple fields can be specified by separating them with
+          commas. Defaults to all fields if not set. Valid values are: *
+          addresses * ageRanges * biographies * birthdays * calendarUrls *
+          clientData * coverPhotos * emailAddresses * events * externalIds *
+          genders * imClients * interests * locales * locations * memberships *
+          metadata * miscKeywords * names * nicknames * occupations *
+          organizations * phoneNumbers * photos * relations * sipAddresses *
+          skills * urls * userDefined"
+        paramKey: personFields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: sources
+        description: Optional. A mask of what source types to return. Defaults to
+          READ_SOURCE_TYPE_CONTACT and READ_SOURCE_TYPE_PROFILE if not set.
+        paramKey: sources
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: addresses
+        description: The person's street addresses.
+        paramKey: addresses
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: ageRanges
+        description: Output only. The person's age ranges.
+        paramKey: ageRanges
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: biographies
+        description: The person's biographies. This field is a singleton for contact
+          sources.
+        paramKey: biographies
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: birthdays
+        description: The person's birthdays. This field is a singleton for contact sources.
+        paramKey: birthdays
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: calendarUrls
+        description: The person's calendar URLs.
+        paramKey: calendarUrls
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: clientData
+        description: The person's client data.
+        paramKey: clientData
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: coverPhotos
+        description: Output only. The person's cover photos.
+        paramKey: coverPhotos
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: emailAddresses
+        description: The person's email addresses. For `people.connections.list` and
+          `otherContacts.list` the number of email addresses is limited to 100.
+          If a Person has more email addresses the entire set can be obtained by
+          calling GetPeople.
+        paramKey: emailAddresses
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: etag
+        description: The [HTTP entity tag](https://en.wikipedia.org/wiki/HTTP_ETag) of
+          the resource. Used for web cache validation.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: events
+        description: The person's events.
+        paramKey: events
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: externalIds
+        description: The person's external IDs.
+        paramKey: externalIds
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: fileAses
+        description: The person's file-ases.
+        paramKey: fileAses
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: genders
+        description: The person's genders. This field is a singleton for contact sources.
+        paramKey: genders
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: imClients
+        description: The person's instant messaging clients.
+        paramKey: imClients
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: interests
+        description: The person's interests.
+        paramKey: interests
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: locales
+        description: The person's locale preferences.
+        paramKey: locales
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: locations
+        description: The person's locations.
+        paramKey: locations
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: memberships
+        description: The person's group memberships.
+        paramKey: memberships
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: metadata
+        description: The metadata about a person.
+        paramKey: metadata
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: miscKeywords
+        description: The person's miscellaneous keywords.
+        paramKey: miscKeywords
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: names
+        description: The person's names. This field is a singleton for contact sources.
+        paramKey: names
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: nicknames
+        description: The person's nicknames.
+        paramKey: nicknames
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: occupations
+        description: The person's occupations.
+        paramKey: occupations
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: organizations
+        description: The person's past or current organizations.
+        paramKey: organizations
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: phoneNumbers
+        description: The person's phone numbers. For `people.connections.list` and
+          `otherContacts.list` the number of phone numbers is limited to 100. If
+          a Person has more phone numbers the entire set can be obtained by
+          calling GetPeople.
+        paramKey: phoneNumbers
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: photos
+        description: Output only. The person's photos.
+        paramKey: photos
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: relations
+        description: The person's relations.
+        paramKey: relations
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: resourceName
+        description: The resource name for the person, assigned by the server. An ASCII
+          string in the form of `people/{person_id}`.
+        paramKey: resourceName
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: sipAddresses
+        description: The person's SIP addresses.
+        paramKey: sipAddresses
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: skills
+        description: The person's skills.
+        paramKey: skills
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: urls
+        description: The person's associated URLs.
+        paramKey: urls
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: userDefined
+        description: The person's user defined data.
+        paramKey: userDefined
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+    requestBodyType: json
+  - moduleName: People / Directory / List
+    method: get
+    path: /v1/people:listDirectoryPeople
+    description: Provides a list of domain profiles and domain contacts in the
+      authenticated user's domain directory. When the `sync_token` is specified,
+      resources deleted since the last sync will be returned as a person with
+      `PersonMetadata.deleted` set to true. When the `page_token` or
+      `sync_token` is specified, all other request parameters must match the
+      first call. Writes may have a propagation delay of several minutes for
+      sync requests. Incremental syncs are not intended for read-after-write use
+      cases. See example usage at [List the directory people that have
+      changed](/people/v1/directory#list_the_directory_people_that_have_changed).
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: mergeSources
+        description: Optional. Additional data to merge into the directory sources if
+          they are connected through verified join keys such as email addresses
+          or phone numbers.
+        paramKey: mergeSources
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: pageSize
+        description: Optional. The number of people to include in the response. Valid
+          values are between 1 and 1000, inclusive. Defaults to 100 if not set
+          or set to 0.
+        paramKey: pageSize
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: pageToken
+        description: Optional. A page token, received from a previous response
+          `next_page_token`. Provide this to retrieve the subsequent page. When
+          paginating, all other parameters provided to
+          `people.listDirectoryPeople` must match the first call that provided
+          the page token.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: readMask
+        description: "Required. A field mask to restrict which fields on each person are
+          returned. Multiple fields can be specified by separating them with
+          commas. Valid values are: * addresses * ageRanges * biographies *
+          birthdays * calendarUrls * clientData * coverPhotos * emailAddresses *
+          events * externalIds * genders * imClients * interests * locales *
+          locations * memberships * metadata * miscKeywords * names * nicknames
+          * occupations * organizations * phoneNumbers * photos * relations *
+          sipAddresses * skills * urls * userDefined"
+        paramKey: readMask
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: requestSyncToken
+        description: Optional. Whether the response should return `next_sync_token`. It
+          can be used to get incremental changes since the last request by
+          setting it on the request `sync_token`. More details about sync
+          behavior at `people.listDirectoryPeople`.
+        paramKey: requestSyncToken
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: sources
+        description: Required. Directory sources to return.
+        paramKey: sources
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+      - paramName: syncToken
+        description: Optional. A sync token, received from a previous response
+          `next_sync_token` Provide this to retrieve only the resources changed
+          since the last request. When syncing, all other parameters provided to
+          `people.listDirectoryPeople` must match the first call that provided
+          the sync token. More details about sync behavior at
+          `people.listDirectoryPeople`.
+        paramKey: syncToken
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: People / Contacts / Search
+    method: get
+    path: /v1/people:searchContacts
+    description: "Provides a list of contacts in the authenticated user's grouped
+      contacts that matches the search query. The query matches on a contact's
+      `names`, `nickNames`, `emailAddresses`, `phoneNumbers`, and
+      `organizations` fields that are from the CONTACT source. **IMPORTANT**:
+      Before searching, clients should send a warmup request with an empty query
+      to update the cache. See
+      https://developers.google.com/people/v1/contacts#search_the_users_contact\
+      s"
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: pageSize
+        description: Optional. The number of results to return. Defaults to 10 if field
+          is not set, or set to 0. Values greater than 30 will be capped to 30.
+        paramKey: pageSize
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: query
+        description: Required. The plain-text query for the request. The query is used
+          to match prefix phrases of the fields on a person. For example, a
+          person with name "foo name" matches queries such as "f", "fo", "foo",
+          "foo n", "nam", etc., but not "oo n".
+        paramKey: query
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: readMask
+        description: "Required. A field mask to restrict which fields on each person are
+          returned. Multiple fields can be specified by separating them with
+          commas. Valid values are: * addresses * ageRanges * biographies *
+          birthdays * calendarUrls * clientData * coverPhotos * emailAddresses *
+          events * externalIds * genders * imClients * interests * locales *
+          locations * memberships * metadata * miscKeywords * names * nicknames
+          * occupations * organizations * phoneNumbers * photos * relations *
+          sipAddresses * skills * urls * userDefined"
+        paramKey: readMask
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: sources
+        description: Optional. A mask of what source types to return. Defaults to
+          READ_SOURCE_TYPE_CONTACT if not set.
+        paramKey: sources
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+  - moduleName: People / Directory / Search
+    method: get
+    path: /v1/people:searchDirectoryPeople
+    description: Provides a list of domain profiles and domain contacts in the
+      authenticated user's domain directory that match the search query.
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: mergeSources
+        description: Optional. Additional data to merge into the directory sources if
+          they are connected through verified join keys such as email addresses
+          or phone numbers.
+        paramKey: mergeSources
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: pageSize
+        description: Optional. The number of people to include in the response. Valid
+          values are between 1 and 500, inclusive. Defaults to 100 if not set or
+          set to 0.
+        paramKey: pageSize
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: pageToken
+        description: Optional. A page token, received from a previous response
+          `next_page_token`. Provide this to retrieve the subsequent page. When
+          paginating, all other parameters provided to `SearchDirectoryPeople`
+          must match the first call that provided the page token.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: query
+        description: Required. Prefix query that matches fields in the person. Does NOT
+          use the read_mask for determining what fields to match.
+        paramKey: query
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: readMask
+        description: "Required. A field mask to restrict which fields on each person are
+          returned. Multiple fields can be specified by separating them with
+          commas. Valid values are: * addresses * ageRanges * biographies *
+          birthdays * calendarUrls * clientData * coverPhotos * emailAddresses *
+          events * externalIds * genders * imClients * interests * locales *
+          locations * memberships * metadata * miscKeywords * names * nicknames
+          * occupations * organizations * phoneNumbers * photos * relations *
+          sipAddresses * skills * urls * userDefined"
+        paramKey: readMask
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: sources
+        description: Required. Directory sources to return.
+        paramKey: sources
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+        style: form
+        explode: true
+  - moduleName: Contact Groups / Delete
+    method: delete
+    path: /v1/{resourceName}
+    description: Delete an existing contact group owned by the authenticated user by
+      specifying a contact group resource name. Mutate requests for the same
+      user should be sent sequentially to avoid increased latency and failures.
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: resourceName
+        description: Required. The resource name of the contact group to delete.
+        paramKey: resourceName
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: deleteContacts
+        description: Optional. Set to true to also delete the contacts in the specified
+          group.
+        paramKey: deleteContacts
+        in: query
+        schema:
+          type: boolean
+        required: false
+  - moduleName: People / Get
+    method: get
+    path: /v1/{resourceName}
+    description: Provides information about a person by specifying a resource name.
+      Use `people/me` to indicate the authenticated user. The request returns a
+      400 error if 'personFields' is not specified.
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: resourceName
+        description: Required. The resource name of the person to provide information
+          about. - To get information about the authenticated user, specify
+          `people/me`. - To get information about a google account, specify
+          `people/{account_id}`. - To get information about a contact, specify
+          the resource name that identifies the contact as returned by
+          `people.connections.list`.
+        paramKey: resourceName
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: personFields
+        description: "Required. A field mask to restrict which fields on the person are
+          returned. Multiple fields can be specified by separating them with
+          commas. Valid values are: * addresses * ageRanges * biographies *
+          birthdays * calendarUrls * clientData * coverPhotos * emailAddresses *
+          events * externalIds * genders * imClients * interests * locales *
+          locations * memberships * metadata * miscKeywords * names * nicknames
+          * occupations * organizations * phoneNumbers * photos * relations *
+          sipAddresses * skills * urls * userDefined"
+        paramKey: personFields
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: requestMaskIncludeField
+        description: "Required. Comma-separated list of person fields to be included in
+          the response. Each path should start with `person.`: for example,
+          `person.names` or `person.photos`."
+        paramKey: requestMask.includeField
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: sources
+        description: Optional. A mask of what source types to return. Defaults to
+          READ_SOURCE_TYPE_PROFILE and READ_SOURCE_TYPE_CONTACT if not set.
+        paramKey: sources
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+  - moduleName: Contact Groups / Update
+    method: put
+    path: /v1/{resourceName}
+    description: Update the name of an existing contact group owned by the
+      authenticated user. Updated contact group names must be unique to the
+      users contact groups. Attempting to create a group with a duplicate name
+      will return a HTTP 409 error. Mutate requests for the same user should be
+      sent sequentially to avoid increased latency and failures.
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: resourceName
+        description: The resource name for the contact group, assigned by the server. An
+          ASCII string, in the form of `contactGroups/{contact_group_id}`.
+        paramKey: resourceName
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: contactGroup
+        description: A contact group.
+        paramKey: contactGroup
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: readGroupFields
+        description: "Optional. A field mask to restrict which fields on the group are
+          returned. Defaults to `metadata`, `groupType`, and `name` if not set
+          or set to empty. Valid fields are: * clientData * groupType *
+          memberCount * metadata * name"
+        paramKey: readGroupFields
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: updateGroupFields
+        description: "Optional. A field mask to restrict which fields on the group are
+          updated. Multiple fields can be specified by separating them with
+          commas. Defaults to `name` if not set or set to empty. Updated fields
+          are replaced. Valid values are: * clientData * name"
+        paramKey: updateGroupFields
+        in: body
+        schema:
+          type: string
+        required: false
+    requestBodyType: json
+  - moduleName: People / Connections / List
+    method: get
+    path: /v1/{resourceName}/connections
+    description: Provides a list of the authenticated user's contacts. Sync tokens
+      expire 7 days after the full sync. A request with an expired sync token
+      will get an error with an
+      [google.rpc.ErrorInfo](https://cloud.google.com/apis/design/errors#error_info)
+      with reason "EXPIRED_SYNC_TOKEN". In the case of such an error clients
+      should make a full sync request without a `sync_token`. The first page of
+      a full sync request has an additional quota. If the quota is exceeded, a
+      429 error will be returned. This quota is fixed and can not be increased.
+      When the `sync_token` is specified, resources deleted since the last sync
+      will be returned as a person with `PersonMetadata.deleted` set to true.
+      When the `page_token` or `sync_token` is specified, all other request
+      parameters must match the first call. Writes may have a propagation delay
+      of several minutes for sync requests. Incremental syncs are not intended
+      for read-after-write use cases. See example usage at [List the user's
+      contacts that have
+      changed](/people/v1/contacts#list_the_users_contacts_that_have_changed).
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: resourceName
+        description: Required. The resource name to return connections for. Only
+          `people/me` is valid.
+        paramKey: resourceName
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: pageSize
+        description: Optional. The number of connections to include in the response.
+          Valid values are between 1 and 1000, inclusive. Defaults to 100 if not
+          set or set to 0.
+        paramKey: pageSize
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: pageToken
+        description: Optional. A page token, received from a previous response
+          `next_page_token`. Provide this to retrieve the subsequent page. When
+          paginating, all other parameters provided to `people.connections.list`
+          must match the first call that provided the page token.
+        paramKey: pageToken
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: personFields
+        description: "Required. A field mask to restrict which fields on each person are
+          returned. Multiple fields can be specified by separating them with
+          commas. Valid values are: * addresses * ageRanges * biographies *
+          birthdays * calendarUrls * clientData * coverPhotos * emailAddresses *
+          events * externalIds * genders * imClients * interests * locales *
+          locations * memberships * metadata * miscKeywords * names * nicknames
+          * occupations * organizations * phoneNumbers * photos * relations *
+          sipAddresses * skills * urls * userDefined"
+        paramKey: personFields
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: requestMaskIncludeField
+        description: "Required. Comma-separated list of person fields to be included in
+          the response. Each path should start with `person.`: for example,
+          `person.names` or `person.photos`."
+        paramKey: requestMask.includeField
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: requestSyncToken
+        description: Optional. Whether the response should return `next_sync_token` on
+          the last page of results. It can be used to get incremental changes
+          since the last request by setting it on the request `sync_token`. More
+          details about sync behavior at `people.connections.list`.
+        paramKey: requestSyncToken
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: sortOrder
+        description: Optional. The order in which the connections should be sorted.
+          Defaults to `LAST_MODIFIED_ASCENDING`.
+        paramKey: sortOrder
+        in: query
+        schema:
+          type: string
+          enum:
+            - LAST_MODIFIED_ASCENDING
+            - LAST_MODIFIED_DESCENDING
+            - FIRST_NAME_ASCENDING
+            - LAST_NAME_ASCENDING
+        required: false
+      - paramName: sources
+        description: Optional. A mask of what source types to return. Defaults to
+          READ_SOURCE_TYPE_CONTACT and READ_SOURCE_TYPE_PROFILE if not set.
+        paramKey: sources
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: syncToken
+        description: Optional. A sync token, received from a previous response
+          `next_sync_token` Provide this to retrieve only the resources changed
+          since the last request. When syncing, all other parameters provided to
+          `people.connections.list` must match the first call that provided the
+          sync token. More details about sync behavior at
+          `people.connections.list`.
+        paramKey: syncToken
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Contact Groups / Members / Modify
+    method: post
+    path: /v1/{resourceName}/members:modify
+    description: Modify the members of a contact group owned by the authenticated
+      user. The only system contact groups that can have members added are
+      `contactGroups/myContacts` and `contactGroups/starred`. Other system
+      contact groups are deprecated and can only have contacts removed.
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: resourceName
+        description: Required. The resource name of the contact group to modify.
+        paramKey: resourceName
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: resourceNamesToAdd
+        description: Optional. The resource names of the contact people to add in the
+          form of `people/{person_id}`. The total number of resource names in
+          `resource_names_to_add` and `resource_names_to_remove` must be less
+          than or equal to 1000.
+        paramKey: resourceNamesToAdd
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: resourceNamesToRemove
+        description: Optional. The resource names of the contact people to remove in the
+          form of `people/{person_id}`. The total number of resource names in
+          `resource_names_to_add` and `resource_names_to_remove` must be less
+          than or equal to 1000.
+        paramKey: resourceNamesToRemove
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Other Contacts / Copy To My Contacts
+    method: post
+    path: /v1/{resourceName}:copyOtherContactToMyContactsGroup
+    description: Copies an "Other contact" to a new contact in the user's
+      "myContacts" group Mutate requests for the same user should be sent
+      sequentially to avoid increased latency and failures.
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: resourceName
+        description: Required. The resource name of the "Other contact" to copy.
+        paramKey: resourceName
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: copyMask
+        description: "Required. A field mask to restrict which fields are copied into
+          the new contact. Valid values are: * emailAddresses * names *
+          phoneNumbers"
+        paramKey: copyMask
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: readMask
+        description: "Optional. A field mask to restrict which fields on the person are
+          returned. Multiple fields can be specified by separating them with
+          commas. Defaults to the copy mask with metadata and membership fields
+          if not set. Valid values are: * addresses * ageRanges * biographies *
+          birthdays * calendarUrls * clientData * coverPhotos * emailAddresses *
+          events * externalIds * genders * imClients * interests * locales *
+          locations * memberships * metadata * miscKeywords * names * nicknames
+          * occupations * organizations * phoneNumbers * photos * relations *
+          sipAddresses * skills * urls * userDefined"
+        paramKey: readMask
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: sources
+        description: Optional. A mask of what source types to return. Defaults to
+          READ_SOURCE_TYPE_CONTACT and READ_SOURCE_TYPE_PROFILE if not set.
+        paramKey: sources
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+    requestBodyType: json
+  - moduleName: People / Delete Contact
+    method: delete
+    path: /v1/{resourceName}:deleteContact
+    description: Delete a contact person. Any non-contact data will not be deleted.
+      Mutate requests for the same user should be sent sequentially to avoid
+      increased latency and failures.
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: resourceName
+        description: Required. The resource name of the contact to delete.
+        paramKey: resourceName
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: People / Delete Contact Photo
+    method: delete
+    path: /v1/{resourceName}:deleteContactPhoto
+    description: Delete a contact's photo. Mutate requests for the same user should
+      be done sequentially to avoid // lock contention.
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: resourceName
+        description: Required. The resource name of the contact whose photo will be deleted.
+        paramKey: resourceName
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: personFields
+        description: "Optional. A field mask to restrict which fields on the person are
+          returned. Multiple fields can be specified by separating them with
+          commas. Defaults to empty if not set, which will skip the post mutate
+          get. Valid values are: * addresses * ageRanges * biographies *
+          birthdays * calendarUrls * clientData * coverPhotos * emailAddresses *
+          events * externalIds * genders * imClients * interests * locales *
+          locations * memberships * metadata * miscKeywords * names * nicknames
+          * occupations * organizations * phoneNumbers * photos * relations *
+          sipAddresses * skills * urls * userDefined"
+        paramKey: personFields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: sources
+        description: Optional. A mask of what source types to return. Defaults to
+          READ_SOURCE_TYPE_CONTACT and READ_SOURCE_TYPE_PROFILE if not set.
+        paramKey: sources
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+  - moduleName: People / Update Contact
+    method: patch
+    path: /v1/{resourceName}:updateContact
+    description: "Update contact data for an existing contact person. Any
+      non-contact data will not be modified. Any non-contact data in the person
+      to update will be ignored. All fields specified in the `update_mask` will
+      be replaced. The server returns a 400 error if `person.metadata.sources`
+      is not specified for the contact to be updated or if there is no contact
+      source. The server returns a 400 error with reason
+      `\"failedPrecondition\"` if `person.metadata.sources.etag` is different
+      than the contact's etag, which indicates the contact has changed since its
+      data was read. Clients should get the latest person and merge their
+      updates into the latest person. The server returns a 400 error if
+      `memberships` are being updated and there are no contact group memberships
+      specified on the person. The server returns a 400 error if more than one
+      field is specified on a field that is a singleton for contact sources: *
+      biographies * birthdays * genders * names Mutate requests for the same
+      user should be sent sequentially to avoid increased latency and failures."
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: resourceName
+        description: The resource name for the person, assigned by the server. An ASCII
+          string in the form of `people/{person_id}`.
+        paramKey: resourceName
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: personFields
+        description: "Optional. A field mask to restrict which fields on each person are
+          returned. Multiple fields can be specified by separating them with
+          commas. Defaults to all fields if not set. Valid values are: *
+          addresses * ageRanges * biographies * birthdays * calendarUrls *
+          clientData * coverPhotos * emailAddresses * events * externalIds *
+          genders * imClients * interests * locales * locations * memberships *
+          metadata * miscKeywords * names * nicknames * occupations *
+          organizations * phoneNumbers * photos * relations * sipAddresses *
+          skills * urls * userDefined"
+        paramKey: personFields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: sources
+        description: Optional. A mask of what source types to return. Defaults to
+          READ_SOURCE_TYPE_CONTACT and READ_SOURCE_TYPE_PROFILE if not set.
+        paramKey: sources
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+        style: form
+        explode: true
+      - paramName: updatePersonFields
+        description: "Required. A field mask to restrict which fields on the person are
+          updated. Multiple fields can be specified by separating them with
+          commas. All updated fields will be replaced. Valid values are: *
+          addresses * biographies * birthdays * calendarUrls * clientData *
+          emailAddresses * events * externalIds * genders * imClients *
+          interests * locales * locations * memberships * miscKeywords * names *
+          nicknames * occupations * organizations * phoneNumbers * relations *
+          sipAddresses * urls * userDefined"
+        paramKey: updatePersonFields
+        in: query
+        schema:
+          type: string
+        required: true
+      - paramName: addresses
+        description: The person's street addresses.
+        paramKey: addresses
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: ageRanges
+        description: Output only. The person's age ranges.
+        paramKey: ageRanges
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: biographies
+        description: The person's biographies. This field is a singleton for contact
+          sources.
+        paramKey: biographies
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: birthdays
+        description: The person's birthdays. This field is a singleton for contact sources.
+        paramKey: birthdays
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: calendarUrls
+        description: The person's calendar URLs.
+        paramKey: calendarUrls
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: clientData
+        description: The person's client data.
+        paramKey: clientData
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: coverPhotos
+        description: Output only. The person's cover photos.
+        paramKey: coverPhotos
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: emailAddresses
+        description: The person's email addresses. For `people.connections.list` and
+          `otherContacts.list` the number of email addresses is limited to 100.
+          If a Person has more email addresses the entire set can be obtained by
+          calling GetPeople.
+        paramKey: emailAddresses
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: etag
+        description: The [HTTP entity tag](https://en.wikipedia.org/wiki/HTTP_ETag) of
+          the resource. Used for web cache validation.
+        paramKey: etag
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: events
+        description: The person's events.
+        paramKey: events
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: externalIds
+        description: The person's external IDs.
+        paramKey: externalIds
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: fileAses
+        description: The person's file-ases.
+        paramKey: fileAses
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: genders
+        description: The person's genders. This field is a singleton for contact sources.
+        paramKey: genders
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: imClients
+        description: The person's instant messaging clients.
+        paramKey: imClients
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: interests
+        description: The person's interests.
+        paramKey: interests
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: locales
+        description: The person's locale preferences.
+        paramKey: locales
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: locations
+        description: The person's locations.
+        paramKey: locations
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: memberships
+        description: The person's group memberships.
+        paramKey: memberships
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: metadata
+        description: The metadata about a person.
+        paramKey: metadata
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: miscKeywords
+        description: The person's miscellaneous keywords.
+        paramKey: miscKeywords
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: names
+        description: The person's names. This field is a singleton for contact sources.
+        paramKey: names
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: nicknames
+        description: The person's nicknames.
+        paramKey: nicknames
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: occupations
+        description: The person's occupations.
+        paramKey: occupations
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: organizations
+        description: The person's past or current organizations.
+        paramKey: organizations
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: phoneNumbers
+        description: The person's phone numbers. For `people.connections.list` and
+          `otherContacts.list` the number of phone numbers is limited to 100. If
+          a Person has more phone numbers the entire set can be obtained by
+          calling GetPeople.
+        paramKey: phoneNumbers
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: photos
+        description: Output only. The person's photos.
+        paramKey: photos
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: relations
+        description: The person's relations.
+        paramKey: relations
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: resourceName
+        description: The resource name for the person, assigned by the server. An ASCII
+          string in the form of `people/{person_id}`.
+        paramKey: resourceName
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: sipAddresses
+        description: The person's SIP addresses.
+        paramKey: sipAddresses
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: skills
+        description: The person's skills.
+        paramKey: skills
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: urls
+        description: The person's associated URLs.
+        paramKey: urls
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: userDefined
+        description: The person's user defined data.
+        paramKey: userDefined
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+    requestBodyType: json
+  - moduleName: People / Update Contact Photo
+    method: patch
+    path: /v1/{resourceName}:updateContactPhoto
+    description: Update a contact's photo. Mutate requests for the same user should
+      be sent sequentially to avoid increased latency and failures.
+    externalDocs: "https://developers.google.com/people/api/rest"
+    params:
+      - paramName: fields
+        description: Selector specifying which fields to include in a partial response.
+        paramKey: fields
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: resourceName
+        description: Required. Person resource name
+        paramKey: resourceName
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: personFields
+        description: "Optional. A field mask to restrict which fields on the person are
+          returned. Multiple fields can be specified by separating them with
+          commas. Defaults to empty if not set, which will skip the post mutate
+          get. Valid values are: * addresses * ageRanges * biographies *
+          birthdays * calendarUrls * clientData * coverPhotos * emailAddresses *
+          events * externalIds * genders * imClients * interests * locales *
+          locations * memberships * metadata * miscKeywords * names * nicknames
+          * occupations * organizations * phoneNumbers * photos * relations *
+          sipAddresses * skills * urls * userDefined"
+        paramKey: personFields
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: photoBytes
+        description: Required. Raw photo bytes (base64-encoded string)
+        paramKey: photoBytes
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: sources
+        description: Optional. A mask of what source types to return. Defaults to
+          READ_SOURCE_TYPE_CONTACT and READ_SOURCE_TYPE_PROFILE if not set.
+        paramKey: sources
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+    requestBodyType: json
