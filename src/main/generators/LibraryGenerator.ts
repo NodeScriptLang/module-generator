@@ -26,6 +26,7 @@ export class LibraryGenerator {
             },
             attributes: {
                 externalDocs: mspec.externalDocs,
+                appConnectionTemplateId: mspec.appConnectionTemplateId
             },
         };
     }
@@ -93,7 +94,7 @@ export class LibraryGenerator {
         for (const pspec of this.getParamSpecs(mspec)) {
             const schema: SchemaSpec = { ...pspec.schema };
             const hasDefault = schema.default == null;
-            const optional = schema.optional == null ?? (!pspec.required && !hasDefault);
+            const optional = schema.optional == null ? (!pspec.required && !hasDefault) : schema.optional;
             schema.optional = optional;
             schema.description = pspec.description ?? '';
             params[pspec.paramName] = {

@@ -8,6 +8,7 @@ export interface LibraryModuleSpec {
     path: string;
     description: string;
     externalDocs: string;
+    appConnectionTemplateId: string;
     requestBodyType?: 'json' | 'form';
     params: LibraryParamSpec[];
 }
@@ -20,6 +21,7 @@ export const LibraryModuleSpecSchema = new Schema<LibraryModuleSpec>({
         path: { type: 'string' },
         description: { type: 'string' },
         externalDocs: { type: 'string' },
+        appConnectionTemplateId: { type: 'string' },
         requestBodyType: {
             type: 'string',
             enum: ['json', 'form'],

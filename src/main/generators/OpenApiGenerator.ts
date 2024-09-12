@@ -57,6 +57,7 @@ export class OpenApiGenerator {
             },
             baseUrl,
             description,
+            appConnectionTemplateId: this.id,
             modules: [...this.generateModuleSpecs()],
         };
     }
@@ -88,6 +89,7 @@ export class OpenApiGenerator {
                     path: normalizePath(ep.path),
                     description: ep.opSpec.description ?? ep.opSpec.summary ?? '',
                     externalDocs: ep.opSpec.externalDocs?.url ?? '',
+                    appConnectionTemplateId: this.id,
                     params: paramSpecs,
                     requestBodyType,
                 };

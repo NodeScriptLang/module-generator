@@ -9,6 +9,7 @@ export interface LibrarySpec {
     workspaceId: Record<string, string>;
     baseUrl: string;
     description: string;
+    appConnectionTemplateId: string;
     commonParams?: LibraryParamSpec[];
     auth?: {
         name: string;
@@ -30,6 +31,7 @@ export const LibrarySpecSchema = new Schema<LibrarySpec>({
         },
         baseUrl: { type: 'string' },
         description: { type: 'string' },
+        appConnectionTemplateId: { type: 'string' },
         commonParams: {
             type: 'array',
             items: LibraryParamSpecSchema.schema,
