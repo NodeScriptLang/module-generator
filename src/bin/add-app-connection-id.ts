@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// Run this script ONLY for previously generated specs
 import arg from 'arg';
 import { configDotenv } from 'dotenv';
 import { mkdir, readFile, writeFile } from 'fs/promises';
