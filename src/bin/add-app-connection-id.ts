@@ -5,8 +5,8 @@ import { mkdir, readFile, writeFile } from 'fs/promises';
 import path from 'path';
 import yaml from 'yaml';
 
-import { LibrarySpec, LibrarySpecSchema } from '../main/schema/LibrarySpec.js';
 import { InvalidSpecError } from '../main/errors.js';
+import { LibrarySpec, LibrarySpecSchema } from '../main/schema/LibrarySpec.js';
 
 // Use .env to configure keys and generation options
 const env = process.env.NODE_ENV || 'development';
