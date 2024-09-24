@@ -26,6 +26,7 @@ export class LibraryGenerator {
             },
             attributes: {
                 externalDocs: mspec.externalDocs,
+                appConnectionTemplateId: this.librarySpec.id,
             },
         };
     }

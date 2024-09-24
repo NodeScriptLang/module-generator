@@ -16,6 +16,7 @@ export interface LibrarySpec {
         description: string;
     };
     modules: LibraryModuleSpec[];
+    attributes?: Record<string, any>;
 }
 
 export const LibrarySpecSchema = new Schema<LibrarySpec>({
@@ -52,6 +53,12 @@ export const LibrarySpecSchema = new Schema<LibrarySpec>({
         modules: {
             type: 'array',
             items: LibraryModuleSpecSchema.schema,
+        },
+        attributes: {
+            type: 'object',
+            properties: {},
+            additionalProperties: { type: 'any' },
+            optional: true,
         },
     },
 });

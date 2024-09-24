@@ -58,6 +58,9 @@ export class OpenApiGenerator {
             baseUrl,
             description,
             modules: [...this.generateModuleSpecs()],
+            attributes: {
+                appConnectionTemplateId: this.id
+            }
         };
     }
 
