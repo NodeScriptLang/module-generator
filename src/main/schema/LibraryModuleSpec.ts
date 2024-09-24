@@ -10,6 +10,7 @@ export interface LibraryModuleSpec {
     externalDocs: string;
     requestBodyType?: 'json' | 'form';
     params: LibraryParamSpec[];
+    attributes?: Record<string, any>;
 }
 
 export const LibraryModuleSpecSchema = new Schema<LibraryModuleSpec>({
@@ -28,6 +29,12 @@ export const LibraryModuleSpecSchema = new Schema<LibraryModuleSpec>({
         params: {
             type: 'array',
             items: LibraryParamSpecSchema.schema,
+        },
+        attributes: {
+            type: 'object',
+            properties: {},
+            additionalProperties: { type: 'any' },
+            optional: true,
         },
     },
 });
