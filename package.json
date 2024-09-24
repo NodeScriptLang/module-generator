@@ -23,7 +23,6 @@
         "generate:library": "node out/bin/generate-library.js",
         "publish:library": "node out/bin/publish-library.js",
         "generate:appConnectionTemplateId": "node out/bin/add-app-connection-id.js"
-
     },
     "pre-commit": [
         "lint"
