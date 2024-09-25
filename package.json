@@ -21,8 +21,8 @@
         "postversion": "npm publish --access=public && git push --tags origin main",
         "generate:openapi": "node out/bin/generate-openapi.js",
         "generate:library": "node out/bin/generate-library.js",
-        "publish:library": "node out/bin/publish-library.js",
-        "generate:appConnectionTemplateId": "node out/bin/add-app-connection-id.js"
+        "generate:appConnectionTemplateId": "node out/bin/add-app-connection-id.js",
+        "publish:library": "node out/bin/publish-library.js"
     },
     "pre-commit": [
         "lint"
