@@ -166,7 +166,7 @@ export class LibraryGenerator {
 
     private emitRequestBodyForm(code: CodeBuilder, mspec: LibraryModuleSpec) {
         code.line('headers["content-type"] = "application/x-www-form-urlencoded";');
-        code.line('const body = new URLSearchParams();');
+        code.line('let body = new URLSearchParams();');
         code.line('const addBodyParam = (key, val) => { if (val !== undefined) body.append(key, val) };');
         for (const param of this.getParamSpecs(mspec)) {
             if (param.in === 'body') {
@@ -175,6 +175,7 @@ export class LibraryGenerator {
                 code.line(`addBodyParam(${paramKey}, params[${paramName}]);`);
             }
         }
+        code.line('body = body.toString()');
     }
 
 }
