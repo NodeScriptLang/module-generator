@@ -16,7 +16,6 @@ export interface LibrarySpec {
         description: string;
     };
     modules: LibraryModuleSpec[];
-    attributes?: Record<string, any>;
 }
 
 export const LibrarySpecSchema = new Schema<LibrarySpec>({
