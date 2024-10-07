@@ -54,11 +54,5 @@ export const LibrarySpecSchema = new Schema<LibrarySpec>({
             type: 'array',
             items: LibraryModuleSpecSchema.schema,
         },
-        attributes: {
-            type: 'object',
-            properties: {},
-            additionalProperties: { type: 'any' },
-            optional: true,
-        },
     },
 });

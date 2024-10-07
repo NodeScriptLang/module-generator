@@ -58,9 +58,6 @@ export class OpenApiGenerator {
             baseUrl,
             description,
             modules: [...this.generateModuleSpecs()],
-            attributes: {
-                appConnectionTemplateId: this.id
-            }
         };
     }
 
@@ -93,9 +90,6 @@ export class OpenApiGenerator {
                     externalDocs: ep.opSpec.externalDocs?.url ?? '',
                     params: paramSpecs,
                     requestBodyType,
-                    attributes: {
-                        appConnectionTemplateId: this.id
-                    }
                 };
             } catch (err) {
                 if (!this.options.skipInvalid) {
