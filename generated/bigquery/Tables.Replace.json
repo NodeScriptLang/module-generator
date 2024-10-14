@@ -1,0 +1,436 @@
+{
+  "moduleName": "BigQuery / Tables / Replace",
+  "version": "0.0.0",
+  "description": "Updates information in an existing table. The update method replaces the entire table resource, whereas the patch method only replaces fields that are provided in the submitted table resource.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/cloud-platform` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Project ID of the table to update"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "datasetId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Dataset ID of the table to update"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "tableId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Table ID of the table to update"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "autodetectSchema": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "When true will autodetect schema, else will keep original schema"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "cloneDefinition": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "clustering": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "creationTime": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] The time when this table was created, in milliseconds since the epoch."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "defaultCollation": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] The default collation of the table."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "defaultRoundingMode": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] The default rounding mode of the table."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Optional] A user-friendly description of this table."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "encryptionConfiguration": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "etag": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] A hash of the table metadata. Used to ensure there were no concurrent modifications to the resource when attempting an update. Not guaranteed to change when the table contents or the fields numRows, numBytes, numLongTermBytes or lastModifiedTime change."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "expirationTime": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Optional] The time when this table expires, in milliseconds since the epoch. If not present, the table will persist indefinitely. Expired tables will be deleted and their storage reclaimed. The defaultTableExpirationMs property of the encapsulating dataset can be used to set a default expirationTime on newly created tables."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "externalDataConfiguration": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "friendlyName": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Optional] A descriptive name for this table."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] An opaque ID uniquely identifying the table."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "kind": {
+      "schema": {
+        "type": "string",
+        "default": "bigquery#table",
+        "optional": true,
+        "description": "[Output-only] The type of the resource."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "labels": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The labels associated with this table. You can use these to organize and group your tables. Label keys and values can be no longer than 63 characters, can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter and each label in the list must have a different key."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "lastModifiedTime": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] The time when this table was last modified, in milliseconds since the epoch."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "location": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] The geographic location where the table resides. This value is inherited from the dataset."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "materializedView": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "maxStaleness": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Optional] Max staleness of data that could be returned when table or materialized view is queried (formatted as Google SQL Interval type)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "model": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "numBytes": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] The size of this table in bytes, excluding any data in the streaming buffer."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "numLongTermBytes": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] The number of bytes in the table that are considered \"long-term storage\"."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "numPhysicalBytes": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] [TrustedTester] The physical size of this table in bytes, excluding any data in the streaming buffer. This includes compression and storage used for time travel."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "numRows": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] The number of rows of data in this table, excluding any data in the streaming buffer."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "numActiveLogicalBytes": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] Number of logical bytes that are less than 90 days old."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "numActivePhysicalBytes": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] Number of physical bytes less than 90 days old. This data is not kept in real time, and might be delayed by a few seconds to a few minutes."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "numLongTermLogicalBytes": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] Number of logical bytes that are more than 90 days old."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "numLongTermPhysicalBytes": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] Number of physical bytes more than 90 days old. This data is not kept in real time, and might be delayed by a few seconds to a few minutes."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "numPartitions": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] The number of partitions present in the table or materialized view. This data is not kept in real time, and might be delayed by a few seconds to a few minutes."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "numTimeTravelPhysicalBytes": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] Number of physical bytes used by time travel storage (deleted or changed data). This data is not kept in real time, and might be delayed by a few seconds to a few minutes."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "numTotalLogicalBytes": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] Total number of logical bytes in the table or materialized view."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "numTotalPhysicalBytes": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] The physical size of this table in bytes. This also includes storage used for time travel. This data is not kept in real time, and might be delayed by a few seconds to a few minutes."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "rangePartitioning": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "requirePartitionFilter": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "[Optional] If set to true, queries over this table require a partition filter that can be used for partition elimination to be specified."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "schema": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "selfLink": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] A URL that can be used to access this resource again."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "snapshotDefinition": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "streamingBuffer": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "tableReference": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "timePartitioning": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "type": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] Describes the table type. The following values are supported: TABLE: A normal BigQuery table. VIEW: A virtual table defined by a SQL query. SNAPSHOT: An immutable, read-only table that is a copy of another table. [TrustedTester] MATERIALIZED_VIEW: SQL query whose result is persisted. EXTERNAL: A table that references data stored in an external storage system, such as Google Cloud Storage. The default value is TABLE."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "view": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "7cf749b5e8244d1152895a479ec94d679f4236c3ad0b34595db27f13f0188f1e"
+  }
+}

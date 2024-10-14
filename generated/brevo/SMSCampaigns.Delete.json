@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / SMS Campaigns / Delete",
+  "version": "0.0.0",
+  "description": "Delete an SMS campaign",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "campaignId": {
+      "schema": {
+        "type": "number",
+        "description": "id of the SMS campaign"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "125ed3764b8df80e6407501eed88d291973f854c52548e79e3d7487ca776cba1"
+  }
+}

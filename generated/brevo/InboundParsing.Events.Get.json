@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Inbound Parsing / Events / Get",
+  "version": "0.0.0",
+  "description": "This endpoint will show the list of all events history for one particular received email.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "uuid": {
+      "schema": {
+        "type": "string",
+        "description": "UUID to fetch events specific to recieved email"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "b45c3f2a72421e280a668c5ed4d082f2d141f4e3f64e1228fcfd4e501b4fec41"
+  }
+}

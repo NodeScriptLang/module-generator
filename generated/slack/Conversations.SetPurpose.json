@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Conversations / Set Purpose",
+  "version": "0.0.0",
+  "description": "Sets the purpose for a conversation.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Conversation to set the purpose of"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "purpose": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A new, specialer purpose"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/conversations.setPurpose",
+    "codeHash": "6b91cde331391b498ea97ee21c4326c8191948b4d203b31d8616b27deb166391"
+  }
+}

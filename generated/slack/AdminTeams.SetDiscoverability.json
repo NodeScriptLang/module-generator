@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Admin Teams / Set Discoverability",
+  "version": "0.0.0",
+  "description": "An API method that allows admins to set the discoverability of a given workspace",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "discoverability": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "This workspace's discovery setting. It must be set to one of `open`, `invite_only`, `closed`, or `unlisted`."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the workspace to set discoverability on."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.teams.settings.setDiscoverability",
+    "codeHash": "94e15396fbfcfef69977a6fb59010e4f0206397ed97f6a8f5988665c9d9fa37f"
+  }
+}

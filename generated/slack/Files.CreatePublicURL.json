@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Files / Create Public URL",
+  "version": "0.0.0",
+  "description": "Enables a file for public/external sharing.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "file": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "File to share"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/files.sharedPublicURL",
+    "codeHash": "7ff082f7d8cc0bded3d95d451cac460da08d47c5fb670f830a2cae42f5e4f5d9"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "moduleName": "Brevo / Master Account / Invited Users / List",
+  "version": "0.0.0",
+  "description": "This endpoint allows you to list all Admin users of your Admin account",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "b3374e3010c6884679f9b1e434d7d11b83afb52c7e74ebc71842eb6040126192"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / External Feeds / Get",
+  "version": "0.0.0",
+  "description": "This endpoint will update an external feed.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "uuid": {
+      "schema": {
+        "type": "string",
+        "description": "UUID of the feed to fetch"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "520e12b33b3ad7f7b518175caceea2fe7e09753aa33e2cb87fc3b1ea26041b29"
+  }
+}

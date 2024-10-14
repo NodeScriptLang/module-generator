@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Test",
+  "version": "0.0.0",
+  "description": "Checks API calling code.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "error": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Error response to return"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "foo": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "example property to return"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/api.test",
+    "codeHash": "db4d30dd13edc747755673945bc649de9af30e69950810541224114ddbb08417"
+  }
+}

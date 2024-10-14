@@ -1,0 +1,29 @@
+{
+  "moduleName": "Slack / Apps / Permissions / List Scopes",
+  "version": "0.0.0",
+  "description": "Returns list of scopes this app has on a team.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/apps.permissions.scopes.list",
+    "codeHash": "d0a20369ae75486121e6f55863acfce7582bb3029bda2f9bfeedf79a23bcb682"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "moduleName": "Brevo / Email Campaigns / Send Test",
+  "version": "0.0.0",
+  "description": "Send an email campaign to your test list",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "campaignId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the campaign"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "emailTo": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "List of the email addresses of the recipients whom you wish to send the test mail.\n_If left empty, the test mail will be sent to your entire test list. You can not send more than 50 test emails per day_.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "e8acb595dc824da570afc2d3811ff28c50fac0a72f1aa88f365e6fbd9383888a"
+  }
+}

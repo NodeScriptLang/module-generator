@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Admin Teams / List",
+  "version": "0.0.0",
+  "description": "List all teams on an Enterprise organization",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The maximum number of items to return. Must be between 1 - 100 both inclusive."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "cursor": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Set `cursor` to `next_cursor` returned by the previous call to list items in the next page."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.teams.list",
+    "codeHash": "66cc75435bf933929c8e7a81edf693e6afc3814564121eb137e6b13b1d2f46bc"
+  }
+}

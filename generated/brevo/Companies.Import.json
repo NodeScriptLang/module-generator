@@ -1,0 +1,28 @@
+{
+  "moduleName": "Brevo / Companies / Import",
+  "version": "0.0.0",
+  "description": "Import companies from a CSV file with mapping options.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "2ab0f957b1d77625203334e6088c61deb0713b3d0cd690f065236da7cf7f07df"
+  }
+}

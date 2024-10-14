@@ -1,0 +1,71 @@
+{
+  "moduleName": "Brevo / Events / Create",
+  "version": "0.0.0",
+  "description": "Create an event to track a contact's interaction.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "eventName": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the event that occurred. This is how you will find your event in Brevo. Limited to 255 characters, alphanumerical characters and - _ only."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "eventDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Timestamp of when the event occurred (e.g. \"2024-01-24T17:39:57+01:00\"). If no value is passed, the timestamp of the event creation is used."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "identifiers": {
+      "schema": {
+        "type": "any",
+        "description": "Identifies the contact associated with the event. At least one identifier is required."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "contactProperties": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Properties defining the state of the contact associated to this event. Useful to update contact attributes defined in your contacts database while passing the event. For example: **\"FIRSTNAME\": \"Jane\" , \"AGE\": 37**"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "eventProperties": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Properties of the event. Top level properties and nested properties can be used to better segment contacts and personalise workflow conditions. The following field type are supported: string, number, boolean (true/false), date (Timestamp e.g. \"2024-01-24T17:39:57+01:00\"). Keys are limited to 255 characters, alphanumerical characters and - _ only. Size is limited to 50Kb."
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "54491f3593301f9462f37075a65dd1192750fb3e95938433d64ac5694bae2e43"
+  }
+}

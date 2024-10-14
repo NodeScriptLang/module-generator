@@ -1,0 +1,65 @@
+{
+  "moduleName": "Slack / Users / Set Profile",
+  "version": "0.0.0",
+  "description": "Set the profile information for a user.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Name of a single key to set. Usable only if `profile` is not passed."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "profile": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Collection of key:value pairs presented as a URL-encoded JSON hash. At most 50 fields may be set. Each field name is limited to 255 characters."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "user": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ID of user to change. This argument may only be specified by team admins on paid teams."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "value": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Value to set a single key to. Usable only if `profile` is not passed."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/users.profile.set",
+    "codeHash": "f173f0925b1e31d67ebd6564f59d0fb9d27a160119b9f2a9c6e4872ef59cd41a"
+  }
+}

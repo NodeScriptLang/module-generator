@@ -1,0 +1,46 @@
+{
+  "moduleName": "YouTube / Subscriptions / Delete",
+  "version": "0.0.0",
+  "description": "Deletes a resource.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/youtube` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "67fa69c65173dc3e34df433e1e18b61fe17bd37b5f9e629d9cca70cd814c7183"
+  }
+}

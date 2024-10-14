@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Users / Info",
+  "version": "0.0.0",
+  "description": "Gets information about a user.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "includeLocale": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Set this to `true` to receive the locale for this user. Defaults to `false`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "user": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "User to get info on"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/users.info",
+    "codeHash": "c8f322ecc35105b0f4c6ca99c65b28805a1a8b0c2aa9dc93bdd4a3703dc48d93"
+  }
+}

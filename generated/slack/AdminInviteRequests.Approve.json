@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Admin Invite Requests / Approve",
+  "version": "0.0.0",
+  "description": "Approve a workspace invite request.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "inviteRequestId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ID of the request to invite."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ID for the workspace where the invite request was made."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.inviteRequests.approve",
+    "codeHash": "6f00e96212ecd2657cb24955ea655a10dad3b072c760b87239fe8bde35ade7bb"
+  }
+}

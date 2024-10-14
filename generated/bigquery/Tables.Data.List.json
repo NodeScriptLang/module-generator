@@ -1,0 +1,92 @@
+{
+  "moduleName": "BigQuery / Tables / Data / List",
+  "version": "0.0.0",
+  "description": "Retrieves table data from a specified set of rows. Requires the READER dataset role.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/cloud-platform` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Project ID of the table to read"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "datasetId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Dataset ID of the table to read"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "tableId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Table ID of the table to read"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "maxResults": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Maximum number of results to return"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Page token, returned by a previous call, identifying the result set"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "selectedFields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "List of fields to return (comma-separated). If unspecified, all fields are returned"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "startIndex": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Zero-based index of the starting row to read"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "2edc41d9771835e14c44b37b826622b1c990443751d679f2751a62061b4a2d1a"
+  }
+}

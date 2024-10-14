@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Domains / Get",
+  "version": "0.0.0",
+  "description": "Validate domain configuration",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "domainName": {
+      "schema": {
+        "type": "string",
+        "description": "Domain name"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "c7e5ff3b7baf56f0a26cac9ff817b2a4b88f6e2e8b9725c9af0664ac9387a06e"
+  }
+}

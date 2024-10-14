@@ -1,0 +1,72 @@
+{
+  "moduleName": "Brevo / Notes / Create",
+  "version": "0.0.0",
+  "description": "Create a note",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "text": {
+      "schema": {
+        "type": "string",
+        "description": "Text content of a note"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "contactIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Contact Ids linked to a note"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "dealIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Deal Ids linked to a note"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "companyIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Company Ids linked to a note"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "d02aa9d3b1552fa61d16ad60cc61a1371b6171a0f4be1dfd4b4fe0277b25dd57"
+  }
+}

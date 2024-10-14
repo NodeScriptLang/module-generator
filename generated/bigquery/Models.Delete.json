@@ -1,0 +1,56 @@
+{
+  "moduleName": "BigQuery / Models / Delete",
+  "version": "0.0.0",
+  "description": "Deletes the model specified by modelId from the dataset.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/cloud-platform` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. Project ID of the model to delete."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "datasetId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. Dataset ID of the model to delete."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "modelId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. Model ID of the model to delete."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "24e2b051bfa535698a5e909277175c5f8bb8fc2915a424ddd414b487db415a7f"
+  }
+}

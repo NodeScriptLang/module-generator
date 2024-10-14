@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Admin Users / Remove",
+  "version": "0.0.0",
+  "description": "Remove a user from a workspace.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID (`T1234`) of the workspace."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the user to remove."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.users.remove",
+    "codeHash": "afe4f783e6a91ff95177439e6048cd719c524327bb83feb4f06422df05b6cf1c"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Admin Invite Requests / Deny",
+  "version": "0.0.0",
+  "description": "Deny a workspace invite request.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "inviteRequestId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ID of the request to invite."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ID for the workspace where the invite request was made."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.inviteRequests.deny",
+    "codeHash": "60ec59495776ba42f136114a4f934d2d2ac076a909009650dba3d3b8c18c473f"
+  }
+}

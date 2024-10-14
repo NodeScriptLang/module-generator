@@ -1,0 +1,54 @@
+{
+  "moduleName": "Brevo / Deals / Update",
+  "version": "0.0.0",
+  "description": "Update a deal",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Name of deal"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "attributes": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Attributes for deal update\n\nTo assign owner of a Deal you can send attributes.deal_owner and utilize the account email or ID.\n\nIf you wish to update the pipeline of a deal you need to provide the `pipeline` and the `deal_stage`\n\nPipeline and deal_stage are ids you can fetch using this endpoint `/crm/pipeline/details/{pipelineID}`\n"
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "94788beec46aac8636c379b5b25aa86bf8e2460439121951ddfb26e644b72740"
+  }
+}

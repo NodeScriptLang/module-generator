@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Admin Teams / Set Name",
+  "version": "0.0.0",
+  "description": "Set the name of a given workspace.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The new name of the workspace."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ID for the workspace to set the name for."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.teams.settings.setName",
+    "codeHash": "4515b4f94f30bfaa7ddc95e782655cc13f5ff9fa5d27d5a7b6eb6d85c39a8239"
+  }
+}

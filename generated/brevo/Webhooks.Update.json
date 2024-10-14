@@ -1,0 +1,105 @@
+{
+  "moduleName": "Brevo / Webhooks / Update",
+  "version": "0.0.0",
+  "description": "Update a webhook",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "webhookId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the webhook"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "url": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "URL of the webhook"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Description of the webhook"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "events": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "- Events triggering the webhook. Possible values for **Transactional** type webhook:\n#### `sent` OR `request`, `delivered`, `hardBounce`, `softBounce`, `blocked`, `spam`, `invalid`, `deferred`, `click`, `opened`, `uniqueOpened` and `unsubscribed`\n- Possible values for **Marketing** type webhook:\n#### `spam`, `opened`, `click`, `hardBounce`, `softBounce`, `unsubscribed`, `listAddition` & `delivered`\n- Possible values for **Inbound** type webhook:\n#### `inboundEmailProcessed`\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "domain": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Inbound domain of webhook, used in case of event type `inbound`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "batched": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Batching configuration of the webhook, we send batched webhooks if its true"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Authentication header to be send with the webhook requests"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "headers": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "f183309aefba43373a4a9377fb3a3c73e2a24df75a331dd6aacef03db6b7032d"
+  }
+}

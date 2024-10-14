@@ -1,0 +1,63 @@
+{
+  "moduleName": "Brevo / Email Campaigns / Export Recipients",
+  "version": "0.0.0",
+  "description": "Export the recipients of an email campaign",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "campaignId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the campaign"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "notifyUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Webhook called once the export process is finished. For reference, https://help.brevo.com/hc/en-us/articles/360007666479"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "recipientsType": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "all",
+          "nonClickers",
+          "nonOpeners",
+          "clickers",
+          "openers",
+          "softBounces",
+          "hardBounces",
+          "unsubscribed"
+        ],
+        "description": "Type of recipients to export for a campaign"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "562231a6e5dcbd821c4393c9a7873ecedd5e66c1bd12d14e537ed91c4e57dadd"
+  }
+}

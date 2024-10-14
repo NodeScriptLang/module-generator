@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Apps / List Event Authorizations",
+  "version": "0.0.0",
+  "description": "Get a list of authorizations for the given event context. Each authorization represents an app installation that the event is visible to.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "eventContext": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "cursor": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/apps.event.authorizations.list",
+    "codeHash": "4688c1fbfb78d6e0a2e16ee3f14c6c67cadcb74aebea10adf67d284a0bda0e43"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Contacts / Lists / Delete",
+  "version": "0.0.0",
+  "description": "Delete a list",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "listId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the list"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "bbe68ca5f7d5f3f57a053474d581dafe8ed679f4a8a181890a1cc53430a48f8f"
+  }
+}

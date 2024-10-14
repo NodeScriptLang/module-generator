@@ -1,0 +1,103 @@
+{
+  "moduleName": "YouTube / Subscriptions / Insert",
+  "version": "0.0.0",
+  "description": "Inserts a new resource into this collection.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/youtube` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "part": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "The *part* parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "contentDetails": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Details about the content to witch a subscription refers."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "etag": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Etag of this resource."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID that YouTube uses to uniquely identify the subscription."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "kind": {
+      "schema": {
+        "type": "string",
+        "default": "youtube#subscription",
+        "description": "Identifies what kind of resource this is. Value: the fixed string \"youtube#subscription\"."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "snippet": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Basic details about a subscription, including title, description and thumbnails of the subscribed item."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "subscriberSnippet": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Basic details about a subscription's subscriber including title, description, channel ID and thumbnails."
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "3a80e32f094645c95d046b0525e6c5a459bf99eb2aa4984d2497849f12e87ffe"
+  }
+}

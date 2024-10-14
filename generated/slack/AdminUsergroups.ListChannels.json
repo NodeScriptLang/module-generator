@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Admin Usergroups / List Channels",
+  "version": "0.0.0",
+  "description": "List the channels linked to an org-level IDP group (user group).",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "usergroupId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ID of the IDP group to list default channels for."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ID of the the workspace."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includeNumMembers": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Flag to include or exclude the count of members per channel."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.usergroups.listChannels",
+    "codeHash": "d642040d6770ea69ca9adde64beb953e3553a475ce9a9abd997cb41f7d50ba51"
+  }
+}

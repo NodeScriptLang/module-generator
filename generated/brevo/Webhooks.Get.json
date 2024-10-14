@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Webhooks / Get",
+  "version": "0.0.0",
+  "description": "Get a webhook details",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "webhookId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the webhook"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "9a09a2515b7750d8fd3f107df116a92a52ac3b9dcc348ad35a8cf621d65cbf53"
+  }
+}

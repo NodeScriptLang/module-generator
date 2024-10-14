@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Coupons / Get",
+  "version": "0.0.0",
+  "description": "Get a coupon collection by id",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "Id of the collection to return"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "4d9b1e5e763b24a097badbe3b3e888d7472dd3663d5a3e517df7fe4f4cc65447"
+  }
+}

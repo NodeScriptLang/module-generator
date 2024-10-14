@@ -1,0 +1,74 @@
+{
+  "moduleName": "Slack / Users / Set Photo",
+  "version": "0.0.0",
+  "description": "Set the user profile photo",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "cropW": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Width/height of crop box (always square)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "cropX": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "X coordinate of top-left corner of crop box"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "cropY": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Y coordinate of top-left corner of crop box"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "image": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "File contents via `multipart/form-data`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "token": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Authentication token. Requires scope: `users.profile:write`"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/users.setPhoto",
+    "codeHash": "c38c4f2072307eabf8a282af52ba328936de45e71b3c76fdb82250ebb37874b0"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / User / Permissions / Get",
+  "version": "0.0.0",
+  "description": "Check user permission",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "description": "Email of the invited user."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "4b4e27c8241091791a0723c6537449fc903525fefc117bc49127058249467cd7"
+  }
+}

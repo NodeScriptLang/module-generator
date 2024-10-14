@@ -1,0 +1,29 @@
+{
+  "moduleName": "Slack / DND / End Snooze",
+  "version": "0.0.0",
+  "description": "Ends the current user's snooze mode immediately.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/dnd.endSnooze",
+    "codeHash": "f58437ac46bd35446611e805a8d91538de39520a34a3ddf7f5a9704039b08284"
+  }
+}

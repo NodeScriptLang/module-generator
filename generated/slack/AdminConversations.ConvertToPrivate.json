@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Admin Conversations / Convert To Private",
+  "version": "0.0.0",
+  "description": "Convert a public channel to a private channel.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channelId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The channel to convert to private."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.conversations.convertToPrivate",
+    "codeHash": "1ceb07327467b3caddf0e76500319ec0c47e730db6b5313e8bf13e8cc55cf71a"
+  }
+}

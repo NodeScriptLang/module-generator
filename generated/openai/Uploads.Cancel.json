@@ -1,0 +1,48 @@
+{
+  "moduleName": "OpenAI / Uploads / Cancel",
+  "version": "0.0.0",
+  "description": "Cancels the Upload. No Parts may be added after an Upload is cancelled.\n",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "optional": false,
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "uploadId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the Upload.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "codeHash": "fe4dc382398d4bcd08d9991b977951c6839c39a057843634f262e7a77b5e8f67"
+  }
+}

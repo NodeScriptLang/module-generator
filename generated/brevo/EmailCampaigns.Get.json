@@ -1,0 +1,52 @@
+{
+  "moduleName": "Brevo / Email Campaigns / Get",
+  "version": "0.0.0",
+  "description": "Get an email campaign report",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "campaignId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the campaign"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "statistics": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "globalStats",
+          "linksStats",
+          "statsByDomain",
+          "statsByDevice",
+          "statsByBrowser"
+        ],
+        "optional": true,
+        "description": "Filter on the type of statistics required. Example **globalStats** value will only fetch globalStats info of the campaign in returned response."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "7369871898cfbcc49a605a9d9281267b0b772c21fc62599c52279a27dd37dca6"
+  }
+}

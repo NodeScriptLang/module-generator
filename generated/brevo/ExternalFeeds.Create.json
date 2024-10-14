@@ -1,0 +1,117 @@
+{
+  "moduleName": "Brevo / External Feeds / Create",
+  "version": "0.0.0",
+  "description": "This endpoint will create an external feed.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "Name of the feed"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "url": {
+      "schema": {
+        "type": "string",
+        "description": "URL of the feed"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "authType": {
+      "schema": {
+        "type": "string",
+        "default": "noAuth",
+        "enum": [
+          "basic",
+          "token",
+          "noAuth"
+        ],
+        "description": "Auth type of the feed:\n * `basic`\n * `token`\n * `noAuth`\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "username": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Username for authType `basic`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "password": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Password for authType `basic`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "token": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Token for authType `token`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "headers": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Custom headers for the feed"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maxRetries": {
+      "schema": {
+        "type": "number",
+        "default": "5",
+        "minimum": 0,
+        "maximum": 5,
+        "description": "Maximum number of retries on the feed url"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "cache": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "description": "Toggle caching of feed url response"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "1ae2a367b3c16534112d90bdea78904727e5e211284a019824f754a35b14816e"
+  }
+}

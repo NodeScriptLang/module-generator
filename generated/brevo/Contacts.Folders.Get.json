@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Contacts / Folders / Get",
+  "version": "0.0.0",
+  "description": "Returns a folder's details",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "folderId": {
+      "schema": {
+        "type": "number",
+        "description": "id of the folder"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "9faf89991f240102c8316a8987e0f2ab237a4545a8c2f2506de4a5742077dc05"
+  }
+}

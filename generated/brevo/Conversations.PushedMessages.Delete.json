@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Conversations / Pushed Messages / Delete",
+  "version": "0.0.0",
+  "description": "Delete an automated message",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the message"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "929b47a1421ce78c46f391294b899d4bc44117e568c18e64651efdfae9227c8c"
+  }
+}

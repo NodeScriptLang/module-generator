@@ -1,0 +1,57 @@
+{
+  "moduleName": "OpenAI / Threads / Runs / Cancel",
+  "version": "0.0.0",
+  "description": "Cancels a run that is `in_progress`.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "optional": false,
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "threadId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the thread to which this run belongs."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "runId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the run to cancel."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "codeHash": "4edf8391b7178dd95e85942d2fe8021be14e7e197482485bf8a92f4993ffcbf2"
+  }
+}

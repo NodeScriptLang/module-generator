@@ -1,0 +1,95 @@
+{
+  "moduleName": "Brevo / Companies / List",
+  "version": "0.0.0",
+  "description": "Get all Companies",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "filters": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by attrbutes. If you have filter for owner on your side please send it as {\"attributes.owner\":\"6299dcf3874a14eacbc65c46\"}"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "linkedContactsIds": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Filter by linked contacts ids"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "linkedDealsIds": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by linked Deals ids"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Index of the first document of the page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Number of documents per page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "optional": true,
+        "description": "Sort the results in the ascending/descending order. Default order is **descending** by creation if `sort` is not passed"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sortBy": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The field used to sort field names."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "c92d7f9b0f9fe524270b46f4c69552ed568c010f996daaac3009ec5c5264616a"
+  }
+}

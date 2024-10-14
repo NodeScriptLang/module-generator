@@ -1,0 +1,61 @@
+{
+  "moduleName": "Brevo / Contacts / Segments / List",
+  "version": "0.0.0",
+  "description": "Get all the segments",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "10",
+        "minimum": 0,
+        "maximum": 50,
+        "description": "Number of documents per page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "offset": {
+      "schema": {
+        "type": "number",
+        "default": "0",
+        "description": "Index of the first document of the page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "default": "desc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "description": "Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "28d44c8e73bcaafaf5d81edf92f3f94b4b79b55226bc3db12b7c6fe1f32b1682"
+  }
+}

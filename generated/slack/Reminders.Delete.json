@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Reminders / Delete",
+  "version": "0.0.0",
+  "description": "Deletes a reminder.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "reminder": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the reminder"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/reminders.delete",
+    "codeHash": "8610bdf159c374f1aad699475baad2e809fd3b9fdb0546f479c6da602178e53e"
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "moduleName": "Brevo / Ecommerce / Orders / Create",
+  "version": "0.0.0",
+  "description": "Manages the transactional status of the order",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "Unique ID of the order."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "createdAt": {
+      "schema": {
+        "type": "string",
+        "description": "Event occurrence UTC date-time (YYYY-MM-DDTHH:mm:ssZ), when order is actually created."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "updatedAt": {
+      "schema": {
+        "type": "string",
+        "description": "Event updated UTC date-time (YYYY-MM-DDTHH:mm:ssZ), when the status of the order is actually changed/updated."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "status": {
+      "schema": {
+        "type": "string",
+        "description": "State of the order."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "amount": {
+      "schema": {
+        "type": "number",
+        "description": "Total amount of the order, including all shipping expenses, tax and the price of items."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "storeId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ID of store where the order is placed"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "identifiers": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Identifies the contact associated with the order."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "products": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Email of the contact, Mandatory if \"phone\" field is not passed in \"billing\" parameter."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "billing": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Billing details of an order."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "coupons": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Coupons applied to the order. Stored case insensitive."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "5e5f4c089423619f542443ebcdb414359e10f099618b94f3dd9996df2b74b57a"
+  }
+}

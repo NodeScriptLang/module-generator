@@ -1,0 +1,54 @@
+{
+  "moduleName": "Google Sheets / Developer Metadata / Get",
+  "version": "0.0.0",
+  "description": "Returns the developer metadata with the specified ID. The caller must specify the spreadsheet ID and the developer metadata's unique metadataId.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/spreadsheets` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "spreadsheetId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the spreadsheet to retrieve metadata from."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "metadataId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the developer metadata to retrieve."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "17c3a749faebe3321899c887a6aad5ca6a882c5e3a0fb3f003ddc6be7b948e88"
+  }
+}

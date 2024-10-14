@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Files / Remove Remote",
+  "version": "0.0.0",
+  "description": "Remove a remote file.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "externalId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Creator defined GUID for the file."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "file": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Specify a file by providing its ID."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "token": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Authentication token. Requires scope: `remote_files:write`"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/files.remote.remove",
+    "codeHash": "d851c2eea6459f26e5e370113e858e2fc2d3928d708fcbc187408e82d08563e6"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Admin Usergroups / Add Channels",
+  "version": "0.0.0",
+  "description": "Add one or more default channels to an IDP group.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channelIds": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Comma separated string of channel IDs."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The workspace to add default channels in."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "usergroupId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ID of the IDP group to add default channels for."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.usergroups.addChannels",
+    "codeHash": "a4db9bc915913c07771409e68cc513d9468ac1ba603c9819830164930e5b2691"
+  }
+}

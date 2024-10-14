@@ -1,0 +1,153 @@
+{
+  "moduleName": "Brevo / Master Account / SubAccount Applications / Toggle",
+  "version": "0.0.0",
+  "description": "API endpoints for the Corporate owner to enable/disable applications on the sub-account",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the sub-account organization (mandatory)"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "inbox": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Set this field to enable or disable Inbox on the sub-account / Not applicable on ENTv2"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "whatsapp": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Set this field to enable or disable Whatsapp campaigns on the sub-account"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "automation": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Set this field to enable or disable Automation on the sub-account"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "emailCampaigns": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Set this field to enable or disable Email Campaigns on the sub-account"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "smsCampaigns": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Set this field to enable or disable SMS Marketing on the sub-account"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "landingPages": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Set this field to enable or disable Landing pages on the sub-account"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "transactionalEmails": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Set this field to enable or disable Transactional Email on the sub-account"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "transactionalSms": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Set this field to enable or disable Transactional SMS on the sub-account"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "facebookAds": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Set this field to enable or disable Facebook ads on the sub-account"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "webPush": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Set this field to enable or disable Web Push on the sub-account"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "meetings": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Set this field to enable or disable Meetings on the sub-account"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "conversations": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Set this field to enable or disable Conversations on the sub-account"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "crm": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Set this field to enable or disable Sales CRM on the sub-account"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "698307c073e60f75605434b2a13721b016965da3a2f1ab90badb093fe6dd66e4"
+  }
+}

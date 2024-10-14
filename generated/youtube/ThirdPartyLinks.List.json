@@ -1,0 +1,80 @@
+{
+  "moduleName": "YouTube / Third Party Links / List",
+  "version": "0.0.0",
+  "description": "Retrieves a list of resources, possibly filtered.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/youtube` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "part": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "The *part* parameter specifies the thirdPartyLink resource parts that the API response will include. Supported values are linkingToken, status, and snippet."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "externalChannelId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Channel ID to which changes should be applied, for delegation."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "linkingToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Get a third party link with the given linking token."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "type": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "linkUnspecified",
+          "channelToStoreLink"
+        ],
+        "optional": true,
+        "description": "Get a third party link of the given type."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "c348c810a206bdc9d72fb766f7f7ee54b5423770fa7dd76e15d3c50dc58ade5c"
+  }
+}

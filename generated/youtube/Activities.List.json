@@ -1,0 +1,123 @@
+{
+  "moduleName": "YouTube / Activities / List",
+  "version": "0.0.0",
+  "description": "Retrieves a list of resources, possibly filtered.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/youtube` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "part": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "The *part* parameter specifies a comma-separated list of one or more activity resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in an activity resource, the snippet property contains other properties that identify the type of activity, a display title for the activity, and so forth. If you set *part=snippet*, the API response will also contain all of those nested properties."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "channelId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "home": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maxResults": {
+      "schema": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 50,
+        "optional": true,
+        "description": "The *maxResults* parameter specifies the maximum number of items that should be returned in the result set."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "mine": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "publishedAfter": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "publishedBefore": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "regionCode": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "ddc0cf1c2fa7765724c8edc345134a374f0cbc84c78a4a94d87cbfa9cf0a66a0"
+  }
+}

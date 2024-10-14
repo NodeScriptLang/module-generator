@@ -1,0 +1,44 @@
+{
+  "moduleName": "Brevo / Contacts / Lists / Create",
+  "version": "0.0.0",
+  "description": "Create a list",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "Name of the list"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "folderId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the parent folder in which this list is to be created"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "bbd1ae63511201a8b24c9af0bde81a892598590316bfb86e7e4ad131148716b4"
+  }
+}

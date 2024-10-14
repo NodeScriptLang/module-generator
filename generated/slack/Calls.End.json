@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Calls / End",
+  "version": "0.0.0",
+  "description": "Ends a Call.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "duration": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Call duration in seconds"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "`id` returned when registering the call using the [`calls.add`](/methods/calls.add) method."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/calls.end",
+    "codeHash": "3199e0a1ead9a46e9d2052509cfd9c832fb990714cf7956dbbd1d64eb0536d1a"
+  }
+}

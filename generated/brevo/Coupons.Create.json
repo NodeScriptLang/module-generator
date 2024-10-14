@@ -1,0 +1,71 @@
+{
+  "moduleName": "Brevo / Coupons / Create",
+  "version": "0.0.0",
+  "description": "Create а coupon collection",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "Name of the coupons collection"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "defaultCoupon": {
+      "schema": {
+        "type": "string",
+        "description": "Default coupons collection name"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "expirationDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Specify an expiration date for the coupon collection in RFC3339 format. Use null to remove the expiration date."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "remainingDaysAlert": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Send a notification alert (email) when the remaining days until the expiration date are equal or fall bellow this number. Use null to disable alerts."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "remainingCouponsAlert": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Send a notification alert (email) when the remaining coupons count is equal or fall bellow this number. Use null to disable alerts."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "9dbacf7f25e16f3eee162f0c74a974e346c9430ca494677f37d72f861ee6cc03"
+  }
+}

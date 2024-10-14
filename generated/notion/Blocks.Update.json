@@ -1,0 +1,55 @@
+{
+  "moduleName": "Notion / Blocks / Update",
+  "version": "0.0.0",
+  "description": "Updates block content. Refer to external docs for more info.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Notion API key.\n"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "notionVersion": {
+      "schema": {
+        "type": "string",
+        "default": "2022-06-28",
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "paragraph": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.notion.com/reference/update-a-block",
+    "codeHash": "0d0a701935a61d0489ddb234b43ec0430bd6de053bc17ae326c348956bb69fc3"
+  }
+}

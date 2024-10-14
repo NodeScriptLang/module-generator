@@ -1,0 +1,65 @@
+{
+  "moduleName": "Slack / Admin Apps / List Restricted",
+  "version": "0.0.0",
+  "description": "List restricted apps for an org or workspace.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The maximum number of items to return. Must be between 1 - 1000 both inclusive."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "cursor": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Set `cursor` to `next_cursor` returned by the previous call to list items in the next page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "enterpriseId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.apps.restricted.list",
+    "codeHash": "2752881eaa3cd8d4d0a3137f737538d7060878067619762b20c6009d66708d3a"
+  }
+}

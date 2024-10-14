@@ -1,0 +1,49 @@
+{
+  "moduleName": "YouTube / Membership Levels / List",
+  "version": "0.0.0",
+  "description": "Retrieves a list of all pricing levels offered by a creator to the fans.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/youtube` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "part": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "The *part* parameter specifies the membershipsLevel resource parts that the API response will include. Supported values are id and snippet."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "9c9802e3ce19f36a0738c375ff7e62b5a1f998f64e1712e0c0105b4b065bf3e2"
+  }
+}

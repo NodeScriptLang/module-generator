@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Email Campaigns / Delete",
+  "version": "0.0.0",
+  "description": "Delete an email campaign",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "campaignId": {
+      "schema": {
+        "type": "number",
+        "description": "id of the campaign"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "488470ce94e034506dfd43df5e9a15725910bc0b7a205a2394ba805186d86e68"
+  }
+}

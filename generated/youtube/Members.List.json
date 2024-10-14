@@ -1,0 +1,101 @@
+{
+  "moduleName": "YouTube / Members / List",
+  "version": "0.0.0",
+  "description": "Retrieves a list of members that match the request criteria for a channel.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/youtube` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "part": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "The *part* parameter specifies the member resource parts that the API response will include. Set the parameter value to snippet."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "filterByMemberChannelId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Comma separated list of channel IDs. Only data about members that are part of this list will be included in the response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "hasAccessToLevel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter members in the results set to the ones that have access to a level."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maxResults": {
+      "schema": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1000,
+        "optional": true,
+        "description": "The *maxResults* parameter specifies the maximum number of items that should be returned in the result set."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "mode": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "listMembersModeUnknown",
+          "updates",
+          "all_current"
+        ],
+        "optional": true,
+        "description": "Parameter that specifies which channel members to return."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "726d201b0c565ab91b469bc3909efdebcc18a61aec40a8574ec116ba8160e97b"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Admin Users / Set Owner",
+  "version": "0.0.0",
+  "description": "Set an existing guest, regular user, or admin user to be a workspace owner.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID (`T1234`) of the workspace."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Id of the user to promote to owner."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.users.setOwner",
+    "codeHash": "426174e96b1925723854c03bb89d4c82387529608a23f8e2f817584728a8fce9"
+  }
+}

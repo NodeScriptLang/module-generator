@@ -1,0 +1,56 @@
+{
+  "moduleName": "BigQuery / Jobs / Delete",
+  "version": "0.0.0",
+  "description": "Requests the deletion of the metadata of a job. This call returns when the job's metadata is deleted.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/cloud-platform` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. Project ID of the job for which metadata is to be deleted."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "jobId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. Job ID of the job for which metadata is to be deleted. If this is a parent job which has child jobs, the metadata from all child jobs will be deleted as well. Direct deletion of the metadata of child jobs is not allowed."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "location": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The geographic location of the job. Required. See details at: https://cloud.google.com/bigquery/docs/locations#specifying_your_location."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "40d0c7247fb3ae39df6e7b4579b610c7e1d4ac6e41a5dbd1c42c9cc1b421b444"
+  }
+}

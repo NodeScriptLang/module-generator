@@ -1,0 +1,45 @@
+{
+  "moduleName": "Brevo / Email Campaigns / Upload Image",
+  "version": "0.0.0",
+  "description": "Upload an image to your account's image gallery",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "imageUrl": {
+      "schema": {
+        "type": "string",
+        "description": "The absolute url of the image (**no local file**). Maximum allowed size for image is **2MB**.\nAllowed extensions for images are:\n#### jpeg, jpg, png, bmp, gif.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Name of the image."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "5b836ba44215f7e11adb081c5c3f1a2202ce28f034802334610928a2ef8e6890"
+  }
+}

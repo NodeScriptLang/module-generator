@@ -1,0 +1,63 @@
+{
+  "moduleName": "Brevo / Companies / Update",
+  "version": "0.0.0",
+  "description": "Update a company",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Name of company"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "attributes": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Attributes for company update"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "countryCode": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Country code if phone_number is passed in attributes."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "4cb7134dbfc94e148225dee50a90e71bc944a0f666aeb487738f9a7f8b06f74f"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Conversations / Join",
+  "version": "0.0.0",
+  "description": "Joins an existing conversation.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ID of conversation to join"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/conversations.join",
+    "codeHash": "6ed6fef369911373e5dbd120c0a9dec0273c9b2d2f54699817aa807b4f2fa98f"
+  }
+}

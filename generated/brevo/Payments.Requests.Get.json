@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Payments / Requests / Get",
+  "version": "0.0.0",
+  "description": "Get payment request details",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "Id of the payment Request"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "2dc3d5fccab233abc6c1f430f4419af649f7ef8545e38c61c65bec1989947a81"
+  }
+}

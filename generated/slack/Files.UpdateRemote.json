@@ -1,0 +1,101 @@
+{
+  "moduleName": "Slack / Files / Update Remote",
+  "version": "0.0.0",
+  "description": "Updates an existing remote file.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "externalId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Creator defined GUID for the file."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "externalUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "URL of the remote file."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "file": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Specify a file by providing its ID."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "filetype": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "type of file"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "indexableFileContents": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "File containing contents that can be used to improve searchability for the remote file."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "previewImage": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Preview of the document via `multipart/form-data`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "title": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Title of the file being shared."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "token": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Authentication token. Requires scope: `remote_files:write`"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/files.remote.update",
+    "codeHash": "e95ca31d08313fcd8af4706ec17a223f3b84dc49c75e97a02837954e470969b0"
+  }
+}

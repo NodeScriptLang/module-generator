@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Files / Data",
+  "version": "0.0.0",
+  "description": "Get file details",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "File id to get file data."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "94306b0b878d1ff89f7906a3baba8e5e3605f210861823613796701449b1141b"
+  }
+}

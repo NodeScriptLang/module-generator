@@ -1,0 +1,114 @@
+{
+  "moduleName": "OpenAI / Vector Stores / File Batches / List Files",
+  "version": "0.0.0",
+  "description": "Returns a list of vector store files in a batch.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "optional": false,
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "vectorStoreId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the vector store that the files belong to."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "batchId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the file batch that the files belong to."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "20",
+        "optional": true,
+        "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "order": {
+      "schema": {
+        "type": "string",
+        "default": "desc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "optional": true,
+        "description": "Sort order by the `created_at` timestamp of the objects. `asc` for ascending order and `desc` for descending order.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "after": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A cursor for use in pagination. `after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include after=obj_foo in order to fetch the next page of the list.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "before": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "filter": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "in_progress",
+          "completed",
+          "failed",
+          "cancelled"
+        ],
+        "optional": true,
+        "description": "Filter by file status. One of `in_progress`, `completed`, `failed`, `cancelled`."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "codeHash": "281bc31cbe8b84f22db6823ebd884bc2732839f35c0326667f0b75e96a31f3a0"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "moduleName": "Brevo / Inbound Parsing / Events / List",
+  "version": "0.0.0",
+  "description": "This endpoint will show the list of all the events for the received emails.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "sender": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Email address of the sender."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "startDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Mandatory if endDate is used. Starting date (YYYY-MM-DD or YYYY-MM-DDTHH:mm:ss.SSSZ) from which you want to fetch the list. Maximum time period that can be selected is one month."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "endDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Mandatory if startDate is used. Ending date (YYYY-MM-DD or YYYY-MM-DDTHH:mm:ss.SSSZ) till which you want to fetch the list. Maximum time period that can be selected is one month."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "100",
+        "minimum": 0,
+        "maximum": 500,
+        "description": "Number of documents returned per page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "offset": {
+      "schema": {
+        "type": "number",
+        "default": "0",
+        "description": "Index of the first document on the page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "default": "desc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "description": "Sort the results in the ascending/descending order of record creation"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "3ee0b36372b0e05bb067959aee883bb11aa0e0ecd74fd07f4bf5c8d92425d529"
+  }
+}

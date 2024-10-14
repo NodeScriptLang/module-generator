@@ -1,0 +1,56 @@
+{
+  "moduleName": "BigQuery / Jobs / Get",
+  "version": "0.0.0",
+  "description": "Returns information about a specific job. Job information is available for a six month period after creation. Requires that you're the person who ran the job, or have the Is Owner project role.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/cloud-platform` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Required] Project ID of the requested job"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "jobId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Required] Job ID of the requested job"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "location": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The geographic location of the job. Required except for US and EU. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "f6f238396e95fe62542939f10d4b1dd51d1ed6ebd473e26ec5d6c39f5a0ba0af"
+  }
+}

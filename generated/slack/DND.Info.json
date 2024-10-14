@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / DND / Info",
+  "version": "0.0.0",
+  "description": "Retrieves a user's current Do Not Disturb status.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "user": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "User to fetch status for (defaults to current user)"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/dnd.info",
+    "codeHash": "ecc2840d4e973039bcae6a9aac66d115306728e31c61ebe8f59b9217654b5a87"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "moduleName": "BigQuery / Jobs / Cancel",
+  "version": "0.0.0",
+  "description": "Requests that a job be cancelled. This call will return immediately, and the client will need to poll for the job status to see if the cancel completed successfully. Cancelled jobs may still incur costs.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/cloud-platform` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Required] Project ID of the job to cancel"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "jobId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Required] Job ID of the job to cancel"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "location": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The geographic location of the job. Required except for US and EU. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "db8c1c7117de6b3f52b99e3f83d69cf1e5c787bc9b9ba791575c5ef841f067a6"
+  }
+}

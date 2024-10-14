@@ -1,0 +1,79 @@
+{
+  "moduleName": "Brevo / WhatsApp Campaigns / List",
+  "version": "0.0.0",
+  "description": "Return all your created WhatsApp campaigns",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "startDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if endDate is used**. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the WhatsApp campaigns created.\n**Prefer to pass your timezone in date-time format for accurate result**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "endDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if startDate is used**. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the WhatsApp campaigns created.\n**Prefer to pass your timezone in date-time format for accurate result**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "50",
+        "minimum": 0,
+        "maximum": 100,
+        "description": "Number of documents per page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "offset": {
+      "schema": {
+        "type": "number",
+        "default": "0",
+        "description": "Index of the first document in the page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "default": "desc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "description": "Sort the results in the ascending/descending order of record modification. Default order is **descending** if `sort` is not passed"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "d1275532c55771b69f5e54e8d70d843daa46ced67db263f0d96e2b54858d9110"
+  }
+}

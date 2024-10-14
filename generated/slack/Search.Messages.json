@@ -1,0 +1,83 @@
+{
+  "moduleName": "Slack / Search / Messages",
+  "version": "0.0.0",
+  "description": "Searches for messages matching a query.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "count": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Pass the number of results you want per \"page\". Maximum of `100`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "highlight": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Pass a value of `true` to enable query highlight markers (see below)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "query": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Search query."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Return matches sorted by either `score` or `timestamp`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sortDir": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Change sort direction to ascending (`asc`) or descending (`desc`)."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/search.messages",
+    "codeHash": "84fbd645a687ede46ea212229f6c6c7139437ab5e73be86b30a15ee923ac29ed"
+  }
+}

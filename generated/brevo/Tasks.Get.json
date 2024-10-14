@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Tasks / Get",
+  "version": "0.0.0",
+  "description": "Get a task",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "8e810c196456cc3f02ba9c5e086708fdfe635c5db546e544ae388ff7677c1396"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "moduleName": "Brevo / Contacts / Attributes / Multi Delete",
+  "version": "0.0.0",
+  "description": "Delete a multiple-choice attribute option",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "attributeType": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "multiple-choice"
+        ],
+        "description": "Type of the attribute"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "multipleChoiceAttribute": {
+      "schema": {
+        "type": "string",
+        "description": "Name of the existing muliple-choice attribute"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "multipleChoiceAttributeOption": {
+      "schema": {
+        "type": "string",
+        "description": "Name of the existing multiple-choice attribute option that you want to delete"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "1da8b498b36306dd39760f72f9b960d05c42c34baf587677bfa6b96c64c0b89e"
+  }
+}

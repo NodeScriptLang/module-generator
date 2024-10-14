@@ -1,0 +1,69 @@
+{
+  "moduleName": "OpenAI / Vector Stores / File Batches / Create",
+  "version": "0.0.0",
+  "description": "Create a vector store file batch.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "optional": false,
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "vectorStoreId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the vector store for which to create a File Batch.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "fileIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "A list of File IDs that the vector store should use. Useful for tools like `file_search` that can access files."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "chunkingStrategy": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy."
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "codeHash": "b6f3ba6e8fa878851a02374053f7838a154730dea9fa2149ad3b215b88c8bb1b"
+  }
+}

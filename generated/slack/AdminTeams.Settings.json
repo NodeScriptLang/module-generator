@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Admin Teams / Settings",
+  "version": "0.0.0",
+  "description": "Fetch information about settings in a workspace",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.teams.settings.info",
+    "codeHash": "422a82d11979be9002aae7d2e25477240bff3db1791a3c95526e3722520fff8f"
+  }
+}

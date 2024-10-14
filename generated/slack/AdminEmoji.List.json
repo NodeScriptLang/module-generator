@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Admin Emoji / List",
+  "version": "0.0.0",
+  "description": "List emoji for an Enterprise Grid organization.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "cursor": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Set `cursor` to `next_cursor` returned by the previous call to list items in the next page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The maximum number of items to return. Must be between 1 - 1000 both inclusive."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.emoji.list",
+    "codeHash": "c75138b1413a99db89b0e344afafddce788d3fb8a50307a16c8c111f8fde131c"
+  }
+}

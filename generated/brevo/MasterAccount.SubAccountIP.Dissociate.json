@@ -1,0 +1,47 @@
+{
+  "moduleName": "Brevo / Master Account / SubAccount IP / Dissociate",
+  "version": "0.0.0",
+  "description": "This endpoint allows to dissociate an IP from sub-accounts",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "ip": {
+      "schema": {
+        "type": "string",
+        "description": "IP address"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "ids": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "Pass the list of sub-account Ids to be dissociated from the IP address"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "7166ee8e14463af65a740ce3730199bccb4962e2dcbb711abae744cc4b0f1e40"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "moduleName": "YouTube / Comments / Update",
+  "version": "0.0.0",
+  "description": "Updates an existing resource.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/youtube` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "part": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "The *part* parameter identifies the properties that the API response will include. You must at least include the snippet part in the parameter value since that part contains all of the properties that the API request can update."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "etag": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Etag of this resource."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID that YouTube uses to uniquely identify the comment."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "kind": {
+      "schema": {
+        "type": "string",
+        "default": "youtube#comment",
+        "description": "Identifies what kind of resource this is. Value: the fixed string \"youtube#comment\"."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "snippet": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Basic details about a comment, such as its author and text."
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "5f5cc3cf712a9bdbcec376a1353bdace5cb366269339bce8166f9ad3777477e7"
+  }
+}

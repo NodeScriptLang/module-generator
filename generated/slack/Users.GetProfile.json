@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Users / Get Profile",
+  "version": "0.0.0",
+  "description": "Retrieves a user's profile information.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "includeLabels": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Include labels for each ID in custom profile fields"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "user": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "User to retrieve profile info for"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/users.profile.get",
+    "codeHash": "b1085271f901c959a70e411922166285afa1a91838f5a416c1645f5ee22b8eaa"
+  }
+}

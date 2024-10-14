@@ -1,0 +1,67 @@
+{
+  "moduleName": "Google Sheets / Get By Filter",
+  "version": "0.0.0",
+  "description": "Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. This method differs from GetSpreadsheet in that it allows selecting which subsets of spreadsheet data to return by specifying a dataFilters parameter. Multiple DataFilters can be specified. Specifying one or more data filters returns the portions of the spreadsheet that intersect ranges matched by any of the filters. By default, data within grids is not returned.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/spreadsheets` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "spreadsheetId": {
+      "schema": {
+        "type": "string",
+        "description": "The spreadsheet to request."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "dataFilters": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The DataFilters used to select which ranges to retrieve from the spreadsheet."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includeGridData": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "True if grid data should be returned. This parameter is ignored if a field mask was set in the request."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "e4a166daa32a91243ff59fbee194eab14e86e69f68b8a4fb086697e4eca6c887"
+  }
+}

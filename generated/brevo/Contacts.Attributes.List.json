@@ -1,0 +1,28 @@
+{
+  "moduleName": "Brevo / Contacts / Attributes / List",
+  "version": "0.0.0",
+  "description": "List all attributes",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "648cbbf32452f20f2acfe37897415a318de397f8544d14dbd42b3190c296c502"
+  }
+}

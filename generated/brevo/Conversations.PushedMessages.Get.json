@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Conversations / Pushed Messages / Get",
+  "version": "0.0.0",
+  "description": "Get an automated message",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the message sent previously"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "6d02bd3bdc8d410eb0490abd8d8912c2e2081e89ad7bfc6f7de2f9af95eed4ea"
+  }
+}

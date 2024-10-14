@@ -1,0 +1,69 @@
+{
+  "moduleName": "OpenAI / Uploads / Complete",
+  "version": "0.0.0",
+  "description": "Completes the Upload.\nWithin the returned Upload object, there is a nested File object that is ready to use in the rest of the platform.\nYou can specify the order of the Parts by passing in an ordered list of the Part IDs.\nThe number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No Parts may be added after an Upload is completed.\n",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "optional": false,
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "uploadId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the Upload.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "partIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The ordered list of Part IDs.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "md5": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The optional md5 checksum for the file contents to verify if the bytes uploaded matches what you expect.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "codeHash": "bb6039e783f13a95d6dbdc763845a16b5d4788269d698310b0a4d1c7b1a3f824"
+  }
+}

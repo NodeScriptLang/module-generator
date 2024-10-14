@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Chat / Get Permalink",
+  "version": "0.0.0",
+  "description": "Retrieve a permalink URL for a specific extant message",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the conversation or channel containing the message"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "messageTs": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A message's `ts` value, uniquely identifying it within a channel"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/chat.getPermalink",
+    "codeHash": "16765cd41084c3cb7bf13c45364d450c9e89e28d8d61d8ca456530a25891ce06"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / User / Revoke Permission",
+  "version": "0.0.0",
+  "description": "Revoke user permission",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "description": "Email of the invited user."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "e130dcb8664268f17dd0ac915faaa0dc1c4078479404b5558a2ee40236b31091"
+  }
+}

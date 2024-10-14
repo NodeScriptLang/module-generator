@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Workflows / Step Completed",
+  "version": "0.0.0",
+  "description": "Indicate that an app's step in a workflow completed execution.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "workflowStepExecuteId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Context identifier that maps to the correct workflow step execution."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "outputs": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Key-value object of outputs from your step. Keys of this object reflect the configured `key` properties of your [`outputs`](/reference/workflows/workflow_step#output) array from your `workflow_step` object."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/workflows.stepCompleted",
+    "codeHash": "08e022c91e9407108a735bda1858c5db2b149f6e81c14f9f7ac14b1d40b88da2"
+  }
+}

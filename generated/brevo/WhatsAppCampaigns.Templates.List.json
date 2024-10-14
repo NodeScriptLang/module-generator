@@ -1,0 +1,92 @@
+{
+  "moduleName": "Brevo / WhatsApp Campaigns / Templates / List",
+  "version": "0.0.0",
+  "description": "Return all your created WhatsApp templates",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "startDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if endDate is used**. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the templates created.\n**Prefer to pass your timezone in date-time format for accurate result**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "endDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if startDate is used**. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the templates created.\n**Prefer to pass your timezone in date-time format for accurate result**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "50",
+        "minimum": 0,
+        "maximum": 100,
+        "description": "Number of documents per page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "offset": {
+      "schema": {
+        "type": "number",
+        "default": "0",
+        "description": "Index of the first document in the page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "default": "desc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "description": "Sort the results in the ascending/descending order of record modification. Default order is **descending** if `sort` is not passed"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "source": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "Automation",
+          "Conversations"
+        ],
+        "optional": true,
+        "description": "source of the template"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "6cd20d4a62569fae8011a171eed1828ca8399c6276419e69df8ca0eb7e90a4ef"
+  }
+}

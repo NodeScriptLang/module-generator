@@ -1,0 +1,55 @@
+{
+  "moduleName": "Brevo / Webhooks / List",
+  "version": "0.0.0",
+  "description": "Get all webhooks",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "type": {
+      "schema": {
+        "type": "string",
+        "default": "transactional",
+        "enum": [
+          "marketing",
+          "transactional",
+          "inbound"
+        ],
+        "description": "Filter on webhook type"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "default": "desc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "description": "Sort the results in the ascending/descending order of webhook creation"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "529eabfe5c8e02ecc18d8771b70dc02310440f1b995cea4a193f621a9bc64731"
+  }
+}

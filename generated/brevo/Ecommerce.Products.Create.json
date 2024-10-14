@@ -1,0 +1,137 @@
+{
+  "moduleName": "Brevo / Ecommerce / Products / Create",
+  "version": "0.0.0",
+  "description": "Create/Update a product",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "Product ID for which you requested the details"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "Mandatory in case of creation**. Name of the product for which you requested the details"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "url": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "URL to the product"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "imageUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Absolute URL to the cover image of the product"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sku": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Product identifier from the shop"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "price": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Price of the product"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "categories": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Category ID-s of the product"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "parentId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Parent product id of the product"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "metaInfo": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Meta data of product such as description, vendor, producer, stock level. The size of cumulative metaInfo shall not exceed **1000 KB**. Maximum length of metaInfo object can be 10."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "updateEnabled": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "description": "Facilitate to update the existing category in the same request (updateEnabled = true)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "deletedAt": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) of the product deleted from the shop's database"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "isDeleted": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "product deleted from the shop's database"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "2df69e784976f6aad635f8cfe6939d8d9c371882ebe9d4374e76872ef900beda"
+  }
+}

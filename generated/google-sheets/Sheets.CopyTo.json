@@ -1,0 +1,63 @@
+{
+  "moduleName": "Google Sheets / Sheets / Copy To",
+  "version": "0.0.0",
+  "description": "Copies a single sheet from a spreadsheet to another spreadsheet. Returns the properties of the newly created sheet.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/spreadsheets` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "spreadsheetId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the spreadsheet containing the sheet to copy."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "sheetId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the sheet to copy."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "destinationSpreadsheetId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the spreadsheet to copy the sheet to."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "50fdc229e37986db168b8f4db0001c24f17f278b9fe78a460fde27a6869938bd"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "moduleName": "BigQuery / Tables / Get",
+  "version": "0.0.0",
+  "description": "Gets the specified table resource by table ID. This method does not return the data in the table, it only returns the table resource, which describes the structure of this table.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/cloud-platform` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Project ID of the requested table"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "datasetId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Dataset ID of the requested table"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "tableId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Table ID of the requested table"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "selectedFields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "List of fields to return (comma-separated). If unspecified, all fields are returned"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "view": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "BASIC",
+          "FULL",
+          "STORAGE_STATS",
+          "TABLE_METADATA_VIEW_UNSPECIFIED"
+        ],
+        "optional": true,
+        "description": "Specifies the view that determines which table information is returned. By default, basic table information and storage statistics (STORAGE_STATS) are returned."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "359b298d3d6fe86b90e1e00a15dcc00d958dffb0a9f871c17bc413edc9134944"
+  }
+}

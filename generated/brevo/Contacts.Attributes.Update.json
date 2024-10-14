@@ -1,0 +1,83 @@
+{
+  "moduleName": "Brevo / Contacts / Attributes / Update",
+  "version": "0.0.0",
+  "description": "Update contact attribute",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "attributeCategory": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "category",
+          "calculated",
+          "global",
+          "normal"
+        ],
+        "description": "Category of the attribute"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "attributeName": {
+      "schema": {
+        "type": "string",
+        "description": "Name of the existing attribute"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "value": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Value of the attribute to update. **Use only if the attribute's category is 'calculated' or 'global'**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "enumeration": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "List of the values and labels that the attribute can take. **Use only if the attribute's category is \"category\"**. For example,\n**[{\"value\":1, \"label\":\"male\"}, {\"value\":2, \"label\":\"female\"}]**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "multiCategoryOptions": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Use this option to add multiple-choice attributes options only if the attribute's category is \"normal\". **This option is specifically designed for updating multiple-choice attributes**. For example:\n**[\"USA\",\"INDIA\"]**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "20e4a73ca307c857cc4883404aa82b084c6c20d18905f73ca6fd460e81c7714d"
+  }
+}

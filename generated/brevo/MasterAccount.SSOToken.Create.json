@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Master Account / SSO Token / Create",
+  "version": "0.0.0",
+  "description": "This endpoint generates an SSO token to authenticate and access the admin account using the endpoint https://account-app.brevo.com/account/login/corporate/sso/[token], where [token] will be replaced by the actual token.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "description": "User email of admin account"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "08c435f9a1ae53effaf815c093f8f7f70d0bbe4b8c5ada1b50ae4b14c08fa891"
+  }
+}

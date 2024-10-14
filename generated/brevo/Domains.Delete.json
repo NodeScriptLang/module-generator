@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Domains / Delete",
+  "version": "0.0.0",
+  "description": "Delete a domain",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "domainName": {
+      "schema": {
+        "type": "string",
+        "description": "Domain name"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "55c863565da8adf56811c3cdd7a9977b3cb2d8b2fb52d2c8dcdf9d94e2e0c949"
+  }
+}

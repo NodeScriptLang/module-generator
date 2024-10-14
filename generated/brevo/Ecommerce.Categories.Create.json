@@ -1,0 +1,81 @@
+{
+  "moduleName": "Brevo / Ecommerce / Categories / Create",
+  "version": "0.0.0",
+  "description": "Create/Update a category",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "Unique Category ID as saved in the shop\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory in case of creation**. Name of the Category, as displayed in the shop\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "url": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "URL to the category"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "updateEnabled": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "description": "Facilitate to update the existing category in the same request (updateEnabled = true)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "deletedAt": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) of the category deleted from the shop's database"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "isDeleted": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "category deleted from the shop's database"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "56df0195e701e57feb8a7b73374478188a5b0013dccaaeccbca1b3125ecb89d2"
+  }
+}

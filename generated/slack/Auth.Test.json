@@ -1,0 +1,29 @@
+{
+  "moduleName": "Slack / Auth / Test",
+  "version": "0.0.0",
+  "description": "Checks authentication & identity.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/auth.test",
+    "codeHash": "6c16a73b50f9e325d0632fffb7041658e34e931cccefd3e6d7a94e964c18f60c"
+  }
+}

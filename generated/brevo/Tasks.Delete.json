@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Tasks / Delete",
+  "version": "0.0.0",
+  "description": "Delete a task",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "e20bb202c85845c9d8b03b575d63898392667a660f3bb4c8066e1b4ca0de7b63"
+  }
+}

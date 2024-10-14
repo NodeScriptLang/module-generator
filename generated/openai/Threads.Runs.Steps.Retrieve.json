@@ -1,0 +1,66 @@
+{
+  "moduleName": "OpenAI / Threads / Runs / Steps / Retrieve",
+  "version": "0.0.0",
+  "description": "Retrieves a run step.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "optional": false,
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "threadId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the thread to which the run and run step belongs."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "runId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the run to which the run step belongs."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "stepId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the run step to retrieve."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "codeHash": "364dd117e869918ec7ec51cf927eec114aed57f566dbb67e6db469fa7d80ba14"
+  }
+}

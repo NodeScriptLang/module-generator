@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Reminders / Info",
+  "version": "0.0.0",
+  "description": "Gets information about a reminder.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "reminder": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the reminder"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/reminders.info",
+    "codeHash": "4d24a3094a8130bb1be6d2073d584e02a53d9fd03f4761e0dfcee3d16859ec26"
+  }
+}

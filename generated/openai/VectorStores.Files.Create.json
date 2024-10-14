@@ -1,0 +1,66 @@
+{
+  "moduleName": "OpenAI / Vector Stores / Files / Create",
+  "version": "0.0.0",
+  "description": "Create a vector store file by attaching a File to a vector store.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "optional": false,
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "vectorStoreId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the vector store for which to create a File.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "fileId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A File ID that the vector store should use. Useful for tools like `file_search` that can access files."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "chunkingStrategy": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy."
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "codeHash": "89fba900f9021c577be6d7714f374a32779304ae558c9afac5aed7bed360036b"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "moduleName": "Brevo / SMS Campaigns / Send Report",
+  "version": "0.0.0",
+  "description": "Send report of Sent and Archived campaign, to the specified email addresses, with respective data and a pdf attachment in detail.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "campaignId": {
+      "schema": {
+        "type": "number",
+        "description": "id of the campaign"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "language": {
+      "schema": {
+        "type": "string",
+        "default": "fr",
+        "enum": [
+          "fr",
+          "es",
+          "pt",
+          "it",
+          "de",
+          "en"
+        ],
+        "description": "Language of email content for campaign report sending."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "any",
+        "description": "Custom attributes for the report email."
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "d5440afe0b5ff244cbd0f6edc3871df7e2960ea83c2d201cca881a9c257f0a0d"
+  }
+}

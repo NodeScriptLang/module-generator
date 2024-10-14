@@ -1,0 +1,44 @@
+{
+  "moduleName": "Brevo / Conversations / Pushed Messages / Update",
+  "version": "0.0.0",
+  "description": "Update an automated message",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the message"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "text": {
+      "schema": {
+        "type": "string",
+        "description": "edited message text"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "975f753a76ad506bce4eaced401d28ab5578f21d4cffa9ee62bef5ac374bfdb5"
+  }
+}

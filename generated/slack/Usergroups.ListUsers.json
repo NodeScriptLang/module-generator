@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Usergroups / List Users",
+  "version": "0.0.0",
+  "description": "List all users in a User Group",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "includeDisabled": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Allow results that involve disabled User Groups."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "usergroup": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The encoded ID of the User Group to update."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/usergroups.users.list",
+    "codeHash": "9c6755fe5ab773a651540b4f338845b12ee555f62619f56ff834ccc3821a023a"
+  }
+}

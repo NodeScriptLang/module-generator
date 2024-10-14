@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Views / Open",
+  "version": "0.0.0",
+  "description": "Open a view for a user.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "triggerId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Exchange a trigger to post to the user."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "view": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A [view payload](/reference/surfaces/views). This must be a JSON-encoded string."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/views.open",
+    "codeHash": "224aa18ffb3d88dd9028a32a41f952e7f66a8fbbd48f5cd11d1154f273934604"
+  }
+}

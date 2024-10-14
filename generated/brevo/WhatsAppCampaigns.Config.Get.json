@@ -1,0 +1,28 @@
+{
+  "moduleName": "Brevo / WhatsApp Campaigns / Config / Get",
+  "version": "0.0.0",
+  "description": "Get your WhatsApp API account information",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "f0fd7a338286df558336e50d71035417f55db5477759cd30f4431db0f63db305"
+  }
+}

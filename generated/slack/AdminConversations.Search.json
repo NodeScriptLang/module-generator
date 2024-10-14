@@ -1,0 +1,92 @@
+{
+  "moduleName": "Slack / Admin Conversations / Search",
+  "version": "0.0.0",
+  "description": "Search for public or private channels in an Enterprise organization.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "teamIds": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Comma separated string of team IDs, signifying the workspaces to search through."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "query": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Name of the the channel to query by."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Maximum number of items to be returned. Must be between 1 - 20 both inclusive. Default is 10."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "cursor": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Set `cursor` to `next_cursor` returned by the previous call to list items in the next page."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "searchChannelTypes": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The type of channel to include or exclude in the search. For example `private` will search private channels, while `private_exclude` will exclude them. For a full list of types, check the [Types section](#types)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Possible values are `relevant` (search ranking based on what we think is closest), `name` (alphabetical), `member_count` (number of users in the channel), and `created` (date channel was created). You can optionally pair this with the `sort_dir` arg to change how it is sorted "
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sortDir": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Sort direction. Possible values are `asc` for ascending order like (1, 2, 3) or (a, b, c), and `desc` for descending order like (3, 2, 1) or (c, b, a)"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.conversations.search",
+    "codeHash": "fd2e9a0a8c4dd3709e774cd74f392464aa8519bc141d2051916146ea39ac3336"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "moduleName": "Brevo / Master Account / SubAccount / Create",
+  "version": "0.0.0",
+  "description": "This endpoint will create a new sub-account under a master account",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "companyName": {
+      "schema": {
+        "type": "string",
+        "description": "Set the name of the sub-account company"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "description": "Email address for the organization"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "language": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "en",
+          "fr",
+          "it",
+          "es",
+          "pt",
+          "de"
+        ],
+        "optional": true,
+        "description": "Set the language of the sub-account"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "timezone": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Set the timezone of the sub-account"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "groupIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Set the group(s) for the sub-account"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "3779d0d9dd8ea2d5e744ad445dd37fedf5c78ae4a9b434a6ace36a668d3a40f9"
+  }
+}

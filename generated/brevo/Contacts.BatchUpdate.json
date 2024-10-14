@@ -1,0 +1,40 @@
+{
+  "moduleName": "Brevo / Contacts / Batch Update",
+  "version": "0.0.0",
+  "description": "Update multiple contacts",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "contacts": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "List of contacts to be updated"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "046349ad4d2e3559879bd24d3e63558a49bb3dcd9e8576665663c57a380f1422"
+  }
+}

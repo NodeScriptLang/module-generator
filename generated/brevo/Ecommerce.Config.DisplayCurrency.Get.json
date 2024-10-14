@@ -1,0 +1,28 @@
+{
+  "moduleName": "Brevo / Ecommerce / Config / Display Currency / Get",
+  "version": "0.0.0",
+  "description": "Get the ISO 4217 compliant display currency code for your Brevo account",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "1329f97e8cbe9c518860601645763bde2e329d59c359bd178efbbc3b7a48f516"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "moduleName": "Brevo / External Feeds / List",
+  "version": "0.0.0",
+  "description": "This endpoint can fetch all created external feeds.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "search": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Can be used to filter records by search keyword on feed name"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "startDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Mandatory if `endDate` is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Can be maximum 30 days older than current date."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "endDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Mandatory if `startDate` is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "default": "desc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "description": "Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "authType": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "basic",
+          "token",
+          "noAuth"
+        ],
+        "optional": true,
+        "description": "Filter the records by `authType` of the feed."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "50",
+        "minimum": 0,
+        "maximum": 500,
+        "description": "Number of documents returned per page."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "offset": {
+      "schema": {
+        "type": "number",
+        "default": "0",
+        "description": "Index of the first document on the page."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "14512add545229c909cd8c55195863eb13ce9f0aaa049c7bb3ec7ea6922876eb"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "moduleName": "OpenAI / Moderations / Create",
+  "version": "0.0.0",
+  "description": "Classifies if text is potentially harmful.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "optional": false,
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "input": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The input text to classify"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "model": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Two content moderations models are available: `text-moderation-stable` and `text-moderation-latest`.\nThe default is `text-moderation-latest` which will be automatically upgraded over time. This ensures you are always using our most accurate model. If you use `text-moderation-stable`, we will provide advanced notice before updating the model. Accuracy of `text-moderation-stable` may be slightly lower than for `text-moderation-latest`.\n"
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "codeHash": "d7f4616dfaa71b92fa83f87e25fefcd90033cf805b24e1643131f938a260f28f"
+  }
+}

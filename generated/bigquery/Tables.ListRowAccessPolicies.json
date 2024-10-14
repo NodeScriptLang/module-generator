@@ -1,0 +1,74 @@
+{
+  "moduleName": "BigQuery / Tables / List Row Access Policies",
+  "version": "0.0.0",
+  "description": "Lists all row access policies on the specified table.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/cloud-platform` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. Project ID of the row access policies to list."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "datasetId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. Dataset ID of row access policies to list."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "tableId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. Table ID of the table to list row access policies."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "pageSize": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The maximum number of results to return in a single response page. Leverage the page tokens to iterate through the entire collection."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Page token, returned by a previous call, to request the next page of results."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "ed1df324ccb02631954a0d1c31b37539f95acb065fd27aac826b427e061e0f8b"
+  }
+}

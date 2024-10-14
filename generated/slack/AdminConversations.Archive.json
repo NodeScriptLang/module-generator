@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Admin Conversations / Archive",
+  "version": "0.0.0",
+  "description": "Archive a public or private channel.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channelId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The channel to archive."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.conversations.archive",
+    "codeHash": "086cc2d4edc94a8a39f467dc8c89f674e63d1eae1292b9f4fe788df913088e1b"
+  }
+}

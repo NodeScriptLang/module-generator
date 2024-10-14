@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Chat / MeMessage",
+  "version": "0.0.0",
+  "description": "Share a me message into a channel.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Channel to send message to. Can be a public channel, private group or IM channel. Can be an encoded ID, or a name."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "text": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Text of the message to send."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/chat.meMessage",
+    "codeHash": "af2464319dd69fd6739b6796a01505feafdc96fd375c98ac9ff0ff5f9ed11245"
+  }
+}

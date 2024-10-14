@@ -1,0 +1,46 @@
+{
+  "moduleName": "Brevo / Senders / List",
+  "version": "0.0.0",
+  "description": "Get the list of all your senders",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "ip": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter your senders for a specific ip. **Available for dedicated IP usage only**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "domain": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter your senders for a specific domain"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "1276e4cc5416eaddd36737fa11ff110b4fc35f3d050196d9973d78ebb739cc61"
+  }
+}

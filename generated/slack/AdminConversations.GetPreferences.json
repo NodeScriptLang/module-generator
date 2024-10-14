@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Admin Conversations / Get Preferences",
+  "version": "0.0.0",
+  "description": "Get conversation preferences for a public or private channel.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channelId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The channel to get preferences for."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.conversations.getConversationPrefs",
+    "codeHash": "50da2f3f7951f1c354497ae17e9208bb72b469a77cb2b5791c3c28a5e69ab130"
+  }
+}

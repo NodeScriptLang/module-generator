@@ -1,0 +1,28 @@
+{
+  "moduleName": "Brevo / Ecommerce / Activate",
+  "version": "0.0.0",
+  "description": "Getting access to Brevo eCommerce.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "3e76fd38182c420fc7086aea928ad786c2f76ef0c43aa5e46e3e6cde1d0368e2"
+  }
+}

@@ -17,6 +17,7 @@ export interface LibraryParamSpec {
     prefix?: string;
     style?: OpenApiParameterSpec['style'];
     explode?: OpenApiParameterSpec['explode'];
+    attributes?: Record<string, any>;
 }
 
 export const LibraryParamSpecSchema = new Schema<LibraryParamSpec>({
@@ -54,6 +55,12 @@ export const LibraryParamSpecSchema = new Schema<LibraryParamSpec>({
         },
         explode: {
             type: 'boolean',
+            optional: true,
+        },
+        attributes: {
+            type: 'object',
+            properties: {},
+            additionalProperties: { type: 'any' },
             optional: true,
         },
     },

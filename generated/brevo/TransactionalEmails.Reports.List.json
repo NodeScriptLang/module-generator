@@ -1,0 +1,97 @@
+{
+  "moduleName": "Brevo / Transactional Emails / Reports / List",
+  "version": "0.0.0",
+  "description": "Get your transactional email activity aggregated per day",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "10",
+        "minimum": 0,
+        "maximum": 30,
+        "description": "Number of documents returned per page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "offset": {
+      "schema": {
+        "type": "number",
+        "default": "0",
+        "description": "Index of the first document on the page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "startDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if endDate is used.** Starting date of the report (YYYY-MM-DD)\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "endDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if startDate is used.** Ending date of the report (YYYY-MM-DD)\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "days": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Number of days in the past including today (positive integer). _Not compatible with 'startDate' and 'endDate'_\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "tag": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Tag of the emails"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "default": "desc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "description": "Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "b640f8ee1382853348545a0e1e565778b2041090f7201a939a6951869c6895eb"
+  }
+}

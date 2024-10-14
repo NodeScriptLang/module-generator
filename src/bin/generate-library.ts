@@ -28,7 +28,7 @@ if (!sourceFile) {
 const librarySpec = LibrarySpecSchema.decode(yaml.parse(await readFile(sourceFile, 'utf-8')));
 const id = path.basename(sourceFile).replace(/\.(json|yaml)$/gi, '');
 
-const targetDir = path.join('.generated', id);
+const targetDir = path.join('generated', id);
 await mkdir(targetDir, { recursive: true });
 
 const generator = new LibraryGenerator(librarySpec);

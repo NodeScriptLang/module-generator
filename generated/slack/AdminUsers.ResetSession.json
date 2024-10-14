@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Admin Users / Reset Session",
+  "version": "0.0.0",
+  "description": "Wipes all valid sessions on all devices for a given user",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "mobileOnly": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Only expire mobile sessions (default: false)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the user to wipe sessions for"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "webOnly": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Only expire web sessions (default: false)"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.users.session.reset",
+    "codeHash": "3513a9f51a124ad8c36da1e52cb953fa5522e341cd16ce38e6c4737c2e3c40dd"
+  }
+}

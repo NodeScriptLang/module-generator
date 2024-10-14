@@ -1,0 +1,101 @@
+{
+  "moduleName": "Brevo / Transactional Emails / Scheduled Email / Get",
+  "version": "0.0.0",
+  "description": "Fetch scheduled batch of emails by batchId or single scheduled email by messageId (Can retrieve data upto 30 days old)",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "identifier": {
+      "schema": {
+        "type": "string",
+        "description": "The `batchId` of scheduled emails batch (Should be a valid UUIDv4) or the `messageId` of scheduled email."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "startDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Mandatory if `endDate` is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Can be maximum 30 days older tha current date."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "endDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Mandatory if `startDate` is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "default": "desc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "description": "Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed. Not valid when identifier is `messageId`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "status": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "processed",
+          "inProgress",
+          "queued"
+        ],
+        "optional": true,
+        "description": "Filter the records by `status` of the scheduled email batch or message. Not valid when identifier is `messageId`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "100",
+        "minimum": 0,
+        "maximum": 500,
+        "description": "Number of documents returned per page. Not valid when identifier is `messageId`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "offset": {
+      "schema": {
+        "type": "number",
+        "default": "0",
+        "description": "Index of the first document on the page.  Not valid when identifier is `messageId`."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "c2e2dcccd2bd6339ef818f65f0e889ecc38bb4f1f679153e1c733889d1d0d341"
+  }
+}

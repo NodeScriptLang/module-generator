@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Admin Conversations / Disconnect Shared",
+  "version": "0.0.0",
+  "description": "Disconnect a connected channel from one or more workspaces.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channelId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The channel to be disconnected from some workspaces."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "leavingTeamIds": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The team to be removed from the channel. Currently only a single team id can be specified."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.conversations.disconnectShared",
+    "codeHash": "befc07e76537a4fea5afc78f8c84e6e07c7ed6fa868f2033b1e4bfcd795fe205"
+  }
+}

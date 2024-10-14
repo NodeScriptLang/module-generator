@@ -1,0 +1,77 @@
+{
+  "moduleName": "YouTube / Live Chat Moderators / List",
+  "version": "0.0.0",
+  "description": "Retrieves a list of resources, possibly filtered.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/youtube` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "liveChatId": {
+      "schema": {
+        "type": "string",
+        "description": "The id of the live chat for which moderators should be returned."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "part": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "The *part* parameter specifies the liveChatModerator resource parts that the API response will include. Supported values are id and snippet."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "maxResults": {
+      "schema": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 50,
+        "optional": true,
+        "description": "The *maxResults* parameter specifies the maximum number of items that should be returned in the result set."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "f943dabdbb976eb6417ee22b5cbb55e378cb726153f9d5c39634120bf5cb9154"
+  }
+}

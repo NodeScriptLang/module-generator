@@ -1,0 +1,95 @@
+{
+  "moduleName": "Brevo / WhatsApp Campaigns / Templates / Create",
+  "version": "0.0.0",
+  "description": "Create a WhatsApp template",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "Name of the template"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "language": {
+      "schema": {
+        "type": "string",
+        "description": "Language of the template. For Example :\n**en** for English\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "category": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "MARKETING",
+          "UTILITY"
+        ],
+        "description": "Category of the template"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "mediaUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Absolute url of the media file **(no local file)** for the header. **Use this field in you want to add media in Template header and headerText is empty**.\nAllowed extensions for media files are:\n#### jpeg | png | mp4 | pdf\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "bodyText": {
+      "schema": {
+        "type": "string",
+        "description": "Body of the template. **Maximum allowed characters are 1024**"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "headerText": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Text content of the header in the template. **Maximum allowed characters are 45**\n**Use this field to add text content in template header and if mediaUrl is empty**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "source": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "Automation",
+          "Conversations"
+        ],
+        "optional": true,
+        "description": "source of the template"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "003a97a09eab6dfc982a27c7938e997d2bc490f3195904ab9272435f301916c2"
+  }
+}

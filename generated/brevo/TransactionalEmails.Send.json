@@ -1,0 +1,190 @@
+{
+  "moduleName": "Brevo / Transactional Emails / Send",
+  "version": "0.0.0",
+  "description": "Send a transactional email",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "sender": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "**Mandatory if `templateId` is not passed**. Pass name (_optional_) and email or id of sender from which emails will be sent. **`name` will be ignored if passed along with sender `id`**. For example,\n**{\"name\":\"Mary from MyShop\", \"email\":\"no-reply@myshop.com\"}**\n**{\"id\":2}**\n"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "to": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "**Mandatory if messageVersions are not passed, ignored if messageVersions are passed**\nList of email addresses and names (_optional_) of the recipients. For example,\n**[{\"name\":\"Jimmy\", \"email\":\"jimmy98@example.com\"}, {\"name\":\"Joe\", \"email\":\"joe@example.com\"}]**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "bcc": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "List of email addresses and names (_optional_) of the recipients in bcc\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "cc": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "List of email addresses and names (_optional_) of the recipients in cc\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "htmlContent": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "HTML body of the message. **Mandatory if 'templateId' is not passed, ignored if 'templateId' is passed**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "textContent": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Plain Text body of the message. **Ignored if 'templateId' is passed**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "subject": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Subject of the message. **Mandatory if 'templateId' is not passed**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "replyTo": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Email (**required**), along with name (_optional_), on which transactional mail recipients will be able to reply back. For example,\n**{\"email\":\"ann6533@example.com\", \"name\":\"Ann\"}**\n"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "attachment": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Pass the _absolute URL_ (**no local file**) or the _base64 content_ of the attachment along with the attachment name. **Mandatory if attachment content is passed**. For example,\n**[{\"url\":\"https://attachment.domain.com/myAttachmentFromUrl.jpg\", \"name\":\"myAttachmentFromUrl.jpg\"}, {\"content\":\"base64 example content\", \"name\":\"myAttachmentFromBase64.jpg\"}]**.\nAllowed extensions for attachment file:\n#### xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff, rtf, bmp, cgm, css, shtml, html, htm, zip, xml, ppt, pptx, tar, ez, ics, mobi, msg, pub, eps, odt, mp3, m4a, m4v, wma, ogg, flac, wav, aif, aifc, aiff, mp4, mov, avi, mkv, mpeg, mpg, wmv, pkpass and xlsm.\nIf `templateId` is passed and is in New Template Language format then both attachment url and content are accepted. If template is in Old template Language format, then `attachment` is ignored\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "headers": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Pass the set of custom headers (_not the standard headers_) that shall be sent along the mail headers in the original email. **'sender.ip'** header can be set (**only for dedicated ip users**) to mention the IP to be used for sending transactional emails. Headers are allowed in `This-Case-Only` (i.e. words separated by hyphen with first letter of each word in capital letter), they will be converted to such case styling if not in this format in the request payload. For example,\n**{\"sender.ip\":\"1.2.3.4\", \"X-Mailin-custom\":\"some_custom_header\", \"idempotencyKey\":\"abc-123\"}**.\n"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "templateId": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Id of the template."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "params": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Pass the set of attributes to customize the template. For example, **{\"FNAME\":\"Joe\", \"LNAME\":\"Doe\"}**. It's **considered only if template is in New Template Language format**.\n"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "messageVersions": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "You can customize and send out multiple versions of a mail. **templateId** can be customized only if global parameter contains templateId. **htmlContent and textContent** can be customized only if any of the two, htmlContent or textContent, is present in global parameters. Some global parameters such as **to(mandatory), bcc, cc, replyTo, subject** can also be customized specific to each version.\nTotal number of recipients in one API request must not exceed 2000. However, you can still pass upto 99 recipients maximum in one message version.\nThe size of individual params in all the messageVersions shall not exceed **100 KB** limit and that of cumulative params shall not exceed **1000 KB**.\nYou can follow this **step-by-step guide** on how to use **messageVersions** to batch send emails - **https://developers.brevo.com/docs/batch-send-transactional-emails**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "tags": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Tag your emails to find them more easily"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "scheduledAt": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "UTC date-time on which the email has to schedule (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for scheduling. There can be an expected delay of +5 minutes in scheduled email delivery."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "batchId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Valid UUIDv4 batch id to identify the scheduled batches transactional email. If not passed we will create a valid UUIDv4 batch id at our end."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "8e8755cb688f3b5d506da09441658279271b87e5dd0e627ccf4701a9b69806ef"
+  }
+}

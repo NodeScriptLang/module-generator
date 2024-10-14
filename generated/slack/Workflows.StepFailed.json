@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Workflows / Step Failed",
+  "version": "0.0.0",
+  "description": "Indicate that an app's step in a workflow failed to execute.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "workflowStepExecuteId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Context identifier that maps to the correct workflow step execution."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "error": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A JSON-based object with a `message` property that should contain a human readable error message."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/workflows.stepFailed",
+    "codeHash": "b257f30eebc242f82885d2ee93f7977d5f60b09b10befedf8bd754c96f818dd2"
+  }
+}

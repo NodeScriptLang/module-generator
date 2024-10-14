@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Master Account / SubAccount / Get",
+  "version": "0.0.0",
+  "description": "This endpoint will provide the details for the specified sub-account company",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the sub-account organization"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "cd29cb56b8eccf4d0643ef3196a5cf8375d72dd761837c6b07f07c225d37a0ae"
+  }
+}

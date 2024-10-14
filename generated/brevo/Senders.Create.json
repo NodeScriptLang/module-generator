@@ -1,0 +1,56 @@
+{
+  "moduleName": "Brevo / Senders / Create",
+  "version": "0.0.0",
+  "description": "Create a new sender",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "From Name to use for the sender"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "description": "From email to use for the sender. A verification email will be sent to this address."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "ips": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "**Mandatory in case of dedicated IP**. IPs to associate to the sender\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "5aec317e00cd2e91733942018c2a2eea7d356af2f79905d6d36f2b011b40a3a2"
+  }
+}

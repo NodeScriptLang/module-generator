@@ -1,0 +1,39 @@
+{
+  "moduleName": "OpenAI / Models / List",
+  "version": "0.0.0",
+  "description": "Lists the currently available models, and provides basic information about each one such as the owner and availability.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "optional": false,
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "codeHash": "7751a23b30cadaf510eb08dd60b6856c1f0ff5e1ffad50a24e5560e0edc44f15"
+  }
+}

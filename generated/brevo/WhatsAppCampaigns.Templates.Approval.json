@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / WhatsApp Campaigns / Templates / Approval",
+  "version": "0.0.0",
+  "description": "Send your WhatsApp template for approval",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "templateId": {
+      "schema": {
+        "type": "number",
+        "description": "id of the template"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "70a45875ee7450b1cdc40174a559d15885a7cb077baea0a15e8cc1b99f3b8573"
+  }
+}

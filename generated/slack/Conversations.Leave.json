@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Conversations / Leave",
+  "version": "0.0.0",
+  "description": "Leaves a conversation.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Conversation to leave"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/conversations.leave",
+    "codeHash": "e0d2b09df005d2fcac9a2cd4f42b307195ed98115da13ddf79d2ac8d0ff7fdac"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Admin Teams / Set Description",
+  "version": "0.0.0",
+  "description": "Set the description of a given workspace.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The new description for the workspace."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ID for the workspace to set the description for."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.teams.settings.setDescription",
+    "codeHash": "e21055c32446d4f0aa27414ec34eacad65a3d0ffa0496efe2511b14cfde16d45"
+  }
+}

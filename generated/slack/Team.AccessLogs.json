@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Team / Access Logs",
+  "version": "0.0.0",
+  "description": "Gets the access logs for the current team.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "before": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "End of time range of logs to include in results (inclusive)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "count": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/team.accessLogs",
+    "codeHash": "1d109e897f18a812c1bf3ff6c40e9359862e2d462820908f09128b17219a6a8a"
+  }
+}

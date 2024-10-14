@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Companies / Delete",
+  "version": "0.0.0",
+  "description": "Delete a company",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "Company ID to delete"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "c8d8ea825224cbacf13b9fe73da099fd31977d8436a10a620de512acd59c1b29"
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "moduleName": "Google Sheets / Create",
+  "version": "0.0.0",
+  "description": "Creates a spreadsheet, returning the newly created spreadsheet.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/spreadsheets` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "dataSourceSchedules": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Output only. A list of data source refresh schedules."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "dataSources": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "A list of external data sources connected with the spreadsheet."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "developerMetadata": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The developer metadata associated with a spreadsheet."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "namedRanges": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The named ranges defined in a spreadsheet."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "properties": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Properties of a spreadsheet."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "sheets": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The sheets that are part of a spreadsheet."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "spreadsheetId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the spreadsheet. This field is read-only."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "spreadsheetUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The url of the spreadsheet. This field is read-only."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "5a4512253cc3f1696e1e3d7cf8f1ced398b99404b0d7b8cfeb6239d5602bb7a7"
+  }
+}

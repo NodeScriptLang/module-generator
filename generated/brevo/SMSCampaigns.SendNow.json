@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / SMS Campaigns / Send Now",
+  "version": "0.0.0",
+  "description": "Send your SMS campaign immediately",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "campaignId": {
+      "schema": {
+        "type": "number",
+        "description": "id of the campaign"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "8d574a1a80e1d6fa67aeae2c1b6d02c4ac9e456cf936ca6e38f59432915fcc1e"
+  }
+}

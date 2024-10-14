@@ -14,4 +14,3 @@ out/
 *.tsbuildinfo
 
 .aicache/
-.generated/

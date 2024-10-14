@@ -1,0 +1,69 @@
+{
+  "moduleName": "Brevo / Deals / Create",
+  "version": "0.0.0",
+  "description": "Create a deal",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "Name of deal"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "attributes": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Attributes for deal creation\n\nTo assign owner of a Deal you can send attributes.deal_owner and utilize the account email or ID.\n\nIf you want to create a deal on a specific pipeline and stage you can use the following attributes `pipeline` and `deal_stage`.\n\nPipeline and deal_stage are ids you can fetch using this endpoint `/crm/pipeline/details/{pipelineID}`\n"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "linkedContactsIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Contact ids to be linked with deal"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "linkedCompaniesIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Company ids to be linked with deal"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "3e6b4475379652b5a77f784251fb0b64ef9b7d6a40b0e20d004b1d9829844458"
+  }
+}

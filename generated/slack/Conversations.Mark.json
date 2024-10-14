@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Conversations / Mark",
+  "version": "0.0.0",
+  "description": "Sets the read cursor in a channel.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Channel or conversation to set the read cursor for."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "ts": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Unique identifier of message you want marked as most recently seen in this conversation."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/conversations.mark",
+    "codeHash": "6e7a78e8b2fab33544d96b35783010f1efa483680d87f11bc4b4d13e1bf925c6"
+  }
+}

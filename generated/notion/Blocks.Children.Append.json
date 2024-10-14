@@ -1,0 +1,58 @@
+{
+  "moduleName": "Notion / Blocks / Children / Append",
+  "version": "0.0.0",
+  "description": "Append block children",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Notion API key.\n"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "notionVersion": {
+      "schema": {
+        "type": "string",
+        "default": "2022-06-28",
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "children": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "91ebadcf3c35a1d56838fa2f0769f5092bb57ead7a9bbb1d0a5d4362dbeb806f"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / DND / Team Info",
+  "version": "0.0.0",
+  "description": "Retrieves the Do Not Disturb status for up to 50 users on a team.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "users": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Comma-separated list of users to fetch Do Not Disturb status for"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/dnd.teamInfo",
+    "codeHash": "8eef93afe5c33d7bd36dff9dd47da568cae379f106b43b39bcf679043b0d435c"
+  }
+}

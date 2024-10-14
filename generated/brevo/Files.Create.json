@@ -1,0 +1,28 @@
+{
+  "moduleName": "Brevo / Files / Create",
+  "version": "0.0.0",
+  "description": "Upload a file",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "f26d38ba71a8131ff1fe725f587fefa506194852d0486fd2d14da57f3f605a87"
+  }
+}

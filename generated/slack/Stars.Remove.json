@@ -1,0 +1,65 @@
+{
+  "moduleName": "Slack / Stars / Remove",
+  "version": "0.0.0",
+  "description": "Removes a star from an item.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Channel to remove star from, or channel where the message to remove star from was posted (used with `timestamp`)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "file": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "File to remove star from."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fileComment": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "File comment to remove star from."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "timestamp": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Timestamp of the message to remove star from."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/stars.remove",
+    "codeHash": "fa93df1c0509c824adeab5331efcc395c3bfe49573d8af1d2214410228d41246"
+  }
+}

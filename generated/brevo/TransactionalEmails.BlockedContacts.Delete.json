@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Transactional Emails / Blocked Contacts / Delete",
+  "version": "0.0.0",
+  "description": "Unblock or resubscribe a transactional contact",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "description": "contact email (urlencoded) to unblock."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "d2762822d69540ca4d268c90f7d1e3c6d4891d8996fe95496eef18d54be70921"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Master Account / Group / Get",
+  "version": "0.0.0",
+  "description": "This endpoint allows you to retrieve a specific group’s information such as the list of sub-organizations and the user associated with the group.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "Id of the group of sub-organization"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "56458ea0ab1e2ad798b25f7105724e3f3a9dd84c2f5f5c86839428fb8262ea67"
+  }
+}

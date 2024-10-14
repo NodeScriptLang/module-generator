@@ -1,0 +1,106 @@
+{
+  "moduleName": "Brevo / Contacts / Create",
+  "version": "0.0.0",
+  "description": "Create a contact",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Email address of the user. **Mandatory if \"SMS\" field is not passed in \"attributes\" parameter**. Mobile Number in **SMS** field should be passed with proper country code. For example:\n**{\"SMS\":\"+91xxxxxxxxxx\"}** or **{\"SMS\":\"0091xxxxxxxxxx\"}**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "extId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Pass your own Id to create a contact."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "attributes": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Pass the set of attributes and their values. The attribute's parameter should be passed in capital letter while creating a contact. Values that don't match the attribute type (e.g. text or string in a date attribute) will be ignored. **These attributes must be present in your Brevo account.**. For eg:\n**{\"FNAME\":\"Elly\", \"LNAME\":\"Roger\", \"COUNTRIES\":[\"India\",\"China\"]}**\n"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "emailBlacklisted": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Set this field to blacklist the contact for emails (emailBlacklisted = true)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "smsBlacklisted": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Set this field to blacklist the contact for SMS (smsBlacklisted = true)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "listIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Ids of the lists to add the contact to"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "updateEnabled": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "description": "Facilitate to update the existing contact in the same request (updateEnabled = true)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "smtpBlacklistSender": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "transactional email forbidden sender for contact. Use only for email Contact ( only available if updateEnabled = true )"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "57b89dab741f5dbac7dad9f7a78f9dfd47b7dc831ac06cf56c70b679be99262d"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "moduleName": "Notion / Databases / Update",
+  "version": "0.0.0",
+  "description": "Update a database",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Notion API key.\n"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "notionVersion": {
+      "schema": {
+        "type": "string",
+        "default": "2022-06-28",
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "properties": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "title": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "1ca377f1f16e7f345f45c510e4ad081eaad60496f4632c088c7b457bc5c8fd20"
+  }
+}

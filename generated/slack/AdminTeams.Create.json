@@ -1,0 +1,65 @@
+{
+  "moduleName": "Slack / Admin Teams / Create",
+  "version": "0.0.0",
+  "description": "Create an Enterprise team.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "teamDescription": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Description for the team."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "teamDiscoverability": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Who can join the team. A team's discoverability can be `open`, `closed`, `invite_only`, or `unlisted`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "teamDomain": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Team domain (for example, slacksoftballteam)."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamName": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Team name (for example, Slack Softball Team)."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.teams.create",
+    "codeHash": "aca6281ddeaf97c66a329e7446e2e461c6efcb86ac4025ed2ea9b7a96e3a33b7"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Conversations / Close",
+  "version": "0.0.0",
+  "description": "Closes a direct message or multi-person direct message.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Conversation to close."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/conversations.close",
+    "codeHash": "9972e76f7ed749a44d818e6b422dc47801efbcc93315f1d002ecf8720a3bbaa4"
+  }
+}

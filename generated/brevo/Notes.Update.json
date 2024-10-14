@@ -1,0 +1,80 @@
+{
+  "moduleName": "Brevo / Notes / Update",
+  "version": "0.0.0",
+  "description": "Update a note",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "Note ID to update"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "text": {
+      "schema": {
+        "type": "string",
+        "description": "Text content of a note"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "contactIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Contact Ids linked to a note"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "dealIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Deal Ids linked to a note"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "companyIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Company Ids linked to a note"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "706949f3fa8fdab0435c30968f65f51ada7bd8a0e8d5f67ad3d3146479c4c66b"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "moduleName": "Slack / Files / List",
+  "version": "0.0.0",
+  "description": "List for a team, in a channel, or from a user with applied filters.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "user": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter files created by a single user."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter files appearing in a specific channel, indicated by its ID."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "tsFrom": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Filter files created after this timestamp (inclusive)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "tsTo": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Filter files created before this timestamp (inclusive)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "types": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter files by type ([see below](#file_types)). You can pass multiple values in the types argument, like `types=spaces,snippets`.The default value is `all`, which does not filter the list."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "count": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "showFilesHiddenByLimit": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Show truncated file info for files hidden due to being too old, and the team who owns the file being over the file limit."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/files.list",
+    "codeHash": "8c9d9079fe1eeffb1cca70bfac107024709edfbd742f0da7f698b4537b485c4c"
+  }
+}

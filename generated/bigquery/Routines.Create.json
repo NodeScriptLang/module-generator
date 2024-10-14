@@ -1,0 +1,216 @@
+{
+  "moduleName": "BigQuery / Routines / Create",
+  "version": "0.0.0",
+  "description": "Creates a new routine in the dataset.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/cloud-platform` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. Project ID of the new routine"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "datasetId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. Dataset ID of the new routine"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "arguments": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "creationTime": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Output only. The time when this routine was created, in milliseconds since the epoch."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "definitionBody": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. The body of the routine. For functions, this is the expression in the AS clause. If language=SQL, it is the substring inside (but excluding) the parentheses. For example, for the function created with the following statement: `CREATE FUNCTION JoinLines(x string, y string) as (concat(x, \"\\n\", y))` The definition_body is `concat(x, \"\\n\", y)` (\\n is not replaced with linebreak). If language=JAVASCRIPT, it is the evaluated string in the AS clause. For example, for the function created with the following statement: `CREATE FUNCTION f() RETURNS STRING LANGUAGE js AS 'return \"\\n\";\\n'` The definition_body is `return \"\\n\";\\n` Note that both \\n are replaced with linebreaks."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional. The description of the routine, if defined."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "determinismLevel": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "DETERMINISM_LEVEL_UNSPECIFIED",
+          "DETERMINISTIC",
+          "NOT_DETERMINISTIC"
+        ],
+        "optional": true,
+        "description": "Optional. The determinism level of the JavaScript UDF, if defined."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "etag": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Output only. A hash of this resource."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "importedLibraries": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Optional. If language = \"JAVASCRIPT\", this field stores the path of the imported JAVASCRIPT libraries."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "language": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "LANGUAGE_UNSPECIFIED",
+          "SQL",
+          "JAVASCRIPT",
+          "PYTHON",
+          "JAVA",
+          "SCALA"
+        ],
+        "optional": true,
+        "description": "Optional. Defaults to \"SQL\" if remote_function_options field is absent, not set otherwise."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "lastModifiedTime": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Output only. The time when this routine was last modified, in milliseconds since the epoch."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "remoteFunctionOptions": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Options for a remote user-defined function."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "returnTableType": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "A table type"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "returnType": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "routineReference": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "routineType": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "ROUTINE_TYPE_UNSPECIFIED",
+          "SCALAR_FUNCTION",
+          "PROCEDURE",
+          "TABLE_VALUED_FUNCTION"
+        ],
+        "optional": true,
+        "description": "Required. The type of routine."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sparkOptions": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Options for a user-defined Spark routine."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "strictMode": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Optional. Can be set for procedures only. If true (default), the definition body will be validated in the creation and the updates of the procedure. For procedures with an argument of ANY TYPE, the definition body validtion is not supported at creation/update time, and thus this field must be set to false explicitly."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "78d3555dc6dd8829eb6d00325c2c61cf968e11077714eaeb2670db61b0505111"
+  }
+}

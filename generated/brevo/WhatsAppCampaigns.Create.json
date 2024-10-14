@@ -1,0 +1,60 @@
+{
+  "moduleName": "Brevo / WhatsApp Campaigns / Create",
+  "version": "0.0.0",
+  "description": "Create and Send a WhatsApp campaign",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "Name of the WhatsApp campaign creation"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "templateId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the WhatsApp template in **approved** state"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "scheduledAt": {
+      "schema": {
+        "type": "string",
+        "description": "Sending UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). **Prefer to pass your timezone in date-time format for accurate result.For example: **2017-06-01T12:30:00+02:00**\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "recipients": {
+      "schema": {
+        "type": "any",
+        "description": "Segment ids and List ids to include/exclude from campaign"
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "cbf4186394ad96662920a905a915c6fa23dbe02d4204df856f0d8c07adbefe3f"
+  }
+}

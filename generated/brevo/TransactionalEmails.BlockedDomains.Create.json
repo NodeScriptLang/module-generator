@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Transactional Emails / Blocked Domains / Create",
+  "version": "0.0.0",
+  "description": "Blocks a new domain in order to avoid messages being sent to the same",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "domain": {
+      "schema": {
+        "type": "string",
+        "description": "name of the domain to be blocked"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "a51ebed066481eed0027de86cf04f137a063bd2f7ce66db488cbf573fc97cc64"
+  }
+}

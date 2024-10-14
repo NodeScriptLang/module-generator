@@ -1,0 +1,46 @@
+{
+  "moduleName": "Notion / Blocks / Get",
+  "version": "0.0.0",
+  "description": "Retrieve a block",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Notion API key.\n"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "notionVersion": {
+      "schema": {
+        "type": "string",
+        "default": "2022-06-28",
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "c3a6573296a994be18a24af8cf8ac809fb1c2723ea590fad3f83147942560a41"
+  }
+}

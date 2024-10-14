@@ -1,0 +1,79 @@
+{
+  "moduleName": "Brevo / Payments / Requests / Create",
+  "version": "0.0.0",
+  "description": "Create a payment request",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "reference": {
+      "schema": {
+        "type": "string",
+        "description": "Reference of the payment request, it will appear on the payment page.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "cart": {
+      "schema": {
+        "type": "any",
+        "description": "Specify the payment currency and amount.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "contactId": {
+      "schema": {
+        "type": "number",
+        "description": "Brevo ID of the contact requested to pay.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "description of payment request\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "notification": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Optional. Use this object if you want to let Brevo send an email to the contact, with the payment request URL. If empty, no notifications (message and reminders) will be sent.\n"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "configuration": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Optional. Redirect contact to a custom success page once payment is successful. If empty the default Brevo page will be displayed once a payment is validated\n"
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "ed7dbde211e8ebc822c580cd2b4c4f1ca67ec4f1181d23fc0ebf3186ac0c1e2f"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "moduleName": "Brevo / Contacts / Stats",
+  "version": "0.0.0",
+  "description": "Get email campaigns' statistics for a contact",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "identifier": {
+      "schema": {
+        "type": "any",
+        "description": "Email (urlencoded) OR ID of the contact"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "startDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if endDate is used.** Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "endDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if startDate is used.** Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate. Maximum difference between startDate and endDate should not be greater than 90 days\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "2bbb042d33bdd2ec174a393b4bef3a6ae15d3edde9056f5f4897e66c1aeff14a"
+  }
+}

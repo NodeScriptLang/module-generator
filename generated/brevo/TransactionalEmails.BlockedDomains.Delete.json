@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Transactional Emails / Blocked Domains / Delete",
+  "version": "0.0.0",
+  "description": "Unblocks an existing domain from the list of blocked domains",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "domain": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the domain to be deleted"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "877ebdb0ad432407f8ae7259382570b0ae9d3ef467408858986df11a0bd32bfe"
+  }
+}

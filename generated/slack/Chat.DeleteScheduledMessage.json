@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Chat / Delete Scheduled Message",
+  "version": "0.0.0",
+  "description": "Deletes a pending scheduled message from the queue.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "asUser": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Pass true to delete the message as the authed user with `chat:write:user` scope. [Bot users](/bot-users) in this context are considered authed users. If unused or false, the message will be deleted with `chat:write:bot` scope."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The channel the scheduled_message is posting to"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "scheduledMessageId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "`scheduled_message_id` returned from call to chat.scheduleMessage"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/chat.deleteScheduledMessage",
+    "codeHash": "52dc31f2d8c9a9f552cff671575a4d8e1f9f2b815f19bd47648859e5fd831f7b"
+  }
+}

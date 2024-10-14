@@ -1,0 +1,74 @@
+{
+  "moduleName": "Slack / Reactions / Remove",
+  "version": "0.0.0",
+  "description": "Removes a reaction from an item.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Channel where the message to remove reaction from was posted."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "file": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "File to remove reaction from."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fileComment": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "File comment to remove reaction from."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Reaction (emoji) name."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "timestamp": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Timestamp of the message to remove reaction from."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/reactions.remove",
+    "codeHash": "0766574a2359344d30897c425ad3665cdd0fce2f577cc4fb177eb87545116a00"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Master Account / SubAccount / Delete",
+  "version": "0.0.0",
+  "description": "Delete a sub-account",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the sub-account organization to be deleted"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "1ce93476074b63443549b8cb1223a77063ae574f54913607eaf31962f86aab52"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "moduleName": "YouTube / Comment Threads / Update",
+  "version": "0.0.0",
+  "description": "Updates an existing resource.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/youtube` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "part": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The *part* parameter specifies a comma-separated list of commentThread resource properties that the API response will include. You must at least include the snippet part in the parameter value since that part contains all of the properties that the API request can update."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "etag": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Etag of this resource."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID that YouTube uses to uniquely identify the comment thread."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "kind": {
+      "schema": {
+        "type": "string",
+        "default": "youtube#commentThread",
+        "description": "Identifies what kind of resource this is. Value: the fixed string \"youtube#commentThread\"."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "replies": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Comments written in (direct or indirect) reply to the top level comment."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "snippet": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Basic details about a comment thread."
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "d0c1eb8eb9ff1bf76fe5fc50a1944e5b9c4aefa09305eb6559a5e54e364d319e"
+  }
+}

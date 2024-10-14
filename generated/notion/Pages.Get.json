@@ -1,0 +1,46 @@
+{
+  "moduleName": "Notion / Pages / Get",
+  "version": "0.0.0",
+  "description": "Retrieves a Page object using the ID in the request path. This endpoint exposes page properties, not page content. ",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Notion API key.\n"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "notionVersion": {
+      "schema": {
+        "type": "string",
+        "default": "2022-06-28",
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "8cb093e4b52767424a97a842176f34045bae06f47e57dbc9f28e9aa63b75b99d"
+  }
+}

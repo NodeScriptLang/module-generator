@@ -1,0 +1,92 @@
+{
+  "moduleName": "BigQuery / Queries / Results",
+  "version": "0.0.0",
+  "description": "Retrieves the results of a query job.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/cloud-platform` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Required] Project ID of the query job"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "jobId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Required] Job ID of the query job"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "location": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The geographic location where the job should run. Required except for US and EU. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maxResults": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Maximum number of results to read"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Page token, returned by a previous call, to request the next page of results"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "startIndex": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Zero-based index of the starting row"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "timeoutMs": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "How long to wait for the query to complete, in milliseconds, before returning. Default is 10 seconds. If the timeout passes before the job completes, the 'jobComplete' field in the response will be false"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "53d8de20a39def9ad1490c46d0f0aaa09abeb29a1e85c3bea59241c5f27c37fe"
+  }
+}

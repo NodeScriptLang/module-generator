@@ -1,0 +1,55 @@
+{
+  "moduleName": "Brevo / SMS Campaigns / Update Status",
+  "version": "0.0.0",
+  "description": "Update a campaign's status",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "campaignId": {
+      "schema": {
+        "type": "number",
+        "description": "id of the campaign"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "status": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "suspended",
+          "archive",
+          "darchive",
+          "sent",
+          "queued",
+          "replicate",
+          "replicateTemplate",
+          "draft"
+        ],
+        "optional": true,
+        "description": "Note:- **replicateTemplate** status will be available **only for template type campaigns.**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "fd07c1c0e4235215d8cf71d639dcbd2fc700453657f76e72b85e14a18007922b"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "moduleName": "Brevo / Companies / Link-Unlink",
+  "version": "0.0.0",
+  "description": "Link and Unlink company with contact and deal",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "linkContactIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Contact ids for contacts to be linked with company"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "unlinkContactIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Contact ids for contacts to be unlinked from company"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "linkDealsIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Deal ids for deals to be linked with company"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "unlinkDealsIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Deal ids for deals to be unlinked from company"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "88ef1167e57d2ab0d107d82c55be5bd0704011a9b25f78df5fdf9205a2f872a3"
+  }
+}

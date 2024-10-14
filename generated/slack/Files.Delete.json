@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Files / Delete",
+  "version": "0.0.0",
+  "description": "Deletes a file.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "file": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ID of file to delete."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/files.delete",
+    "codeHash": "033fadf9aadeac57ddafc036a0b56dfbaf45993c6ec1ff43c3601c45a5aab3de"
+  }
+}

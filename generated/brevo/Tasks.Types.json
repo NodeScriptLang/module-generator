@@ -1,0 +1,28 @@
+{
+  "moduleName": "Brevo / Tasks / Types",
+  "version": "0.0.0",
+  "description": "Get all task types",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "beebc079068a328e3c9864e9d5d5c1ba455e60debdb9f131dfc912105cf3bb4f"
+  }
+}

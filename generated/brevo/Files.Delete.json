@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Files / Delete",
+  "version": "0.0.0",
+  "description": "Delete a file",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "File id to delete."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "101fc2a7874287c9c5bcaf46c665637e6c427140a4c595fc60529fe0bd6a55ac"
+  }
+}

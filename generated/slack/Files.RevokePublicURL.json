@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Files / Revoke Public URL",
+  "version": "0.0.0",
+  "description": "Revokes public/external sharing access for a file",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "file": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "File to revoke"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/files.revokePublicURL",
+    "codeHash": "c7cb131fad368c270c284a809a34a805051daf2455239921e4bef9edcaef416b"
+  }
+}

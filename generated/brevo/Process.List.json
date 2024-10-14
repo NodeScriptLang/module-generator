@@ -1,0 +1,61 @@
+{
+  "moduleName": "Brevo / Process / List",
+  "version": "0.0.0",
+  "description": "Return all the processes for your account",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "10",
+        "minimum": 0,
+        "maximum": 50,
+        "description": "Number limitation for the result returned"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "offset": {
+      "schema": {
+        "type": "number",
+        "default": "0",
+        "description": "Beginning point in the list to retrieve from."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "default": "desc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "description": "Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "1f1d88ace9e8f05e8be99e24ecff536e7207ac3e7a024fb2f625f76bcc77749f"
+  }
+}

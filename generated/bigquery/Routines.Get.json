@@ -1,0 +1,65 @@
+{
+  "moduleName": "BigQuery / Routines / Get",
+  "version": "0.0.0",
+  "description": "Gets the specified routine resource by routine ID.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/cloud-platform` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. Project ID of the requested routine"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "datasetId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. Dataset ID of the requested routine"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "routineId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. Routine ID of the requested routine"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "readMask": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "If set, only the Routine fields in the field mask are returned in the response. If unset, all Routine fields are returned."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "5f13205f42e30c18ed6de81c0fdc40fa1707eeb779d727d41615179c6556ea61"
+  }
+}

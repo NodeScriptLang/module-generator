@@ -1,0 +1,54 @@
+{
+  "moduleName": "Google Sheets / Values / Clear",
+  "version": "0.0.0",
+  "description": "Clears values from a spreadsheet. The caller must specify the spreadsheet ID and range. Only values are cleared -- all other properties of the cell (such as formatting, data validation, etc..) are kept.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/spreadsheets` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "spreadsheetId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the spreadsheet to update."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "range": {
+      "schema": {
+        "type": "string",
+        "description": "The A1 notation or R1C1 notation of the values to clear."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "87e63738dd2845ec0e5843aaa053217c4bc6c06ebe3739af4db12f92e03f9c64"
+  }
+}

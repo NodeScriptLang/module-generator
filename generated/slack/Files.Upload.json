@@ -1,0 +1,110 @@
+{
+  "moduleName": "Slack / Files / Upload",
+  "version": "0.0.0",
+  "description": "Uploads or creates a file.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channels": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Comma-separated list of channel names or IDs where the file will be shared."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "content": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "File contents via a POST variable. If omitting this parameter, you must provide a `file`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "file": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "File contents via `multipart/form-data`. If omitting this parameter, you must submit `content`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "filename": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filename of file."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "filetype": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A [file type](/types/file#file_types) identifier."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "initialComment": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The message text introducing the file in specified `channels`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "threadTs": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Provide another message's `ts` value to upload this file as a reply. Never use a reply's `ts` value; use its parent instead."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "title": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Title of file."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "token": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Authentication token. Requires scope: `files:write:user`"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/files.upload",
+    "codeHash": "9562dac6765ad0f43564506ac0e052835ef3b709f96679df16dc1e6f902369a8"
+  }
+}

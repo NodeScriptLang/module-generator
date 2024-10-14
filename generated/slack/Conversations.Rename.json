@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Conversations / Rename",
+  "version": "0.0.0",
+  "description": "Renames a conversation.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ID of conversation to rename"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "New name for conversation."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/conversations.rename",
+    "codeHash": "aca779fadfc91b340f3ccb70384734903154e591f22b04be2b6f66b6afaafddb"
+  }
+}

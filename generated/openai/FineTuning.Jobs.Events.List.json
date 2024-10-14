@@ -1,0 +1,67 @@
+{
+  "moduleName": "OpenAI / Fine Tuning / Jobs / Events / List",
+  "version": "0.0.0",
+  "description": "Get status updates for a fine-tuning job.\n",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "optional": false,
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fineTuningJobId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the fine-tuning job to get events for.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "after": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Identifier for the last event from the previous pagination request."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "20",
+        "optional": true,
+        "description": "Number of events to retrieve."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "codeHash": "54b82de24d6949064a52f63e0173aa0ecca29d3b8052d1957d8a97efc5ff5eed"
+  }
+}

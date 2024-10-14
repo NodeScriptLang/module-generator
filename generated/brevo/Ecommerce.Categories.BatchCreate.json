@@ -1,0 +1,48 @@
+{
+  "moduleName": "Brevo / Ecommerce / Categories / Batch Create",
+  "version": "0.0.0",
+  "description": "Create categories in batch",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "categories": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "array of categories objects"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "updateEnabled": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Facilitate to update the existing categories in the same request (updateEnabled = true)"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "22cb35d188db9fb52fcfb06b3230b779903a1263f0ac58a4e2bf8333058fcbad"
+  }
+}

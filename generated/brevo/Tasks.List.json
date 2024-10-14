@@ -1,0 +1,160 @@
+{
+  "moduleName": "Brevo / Tasks / List",
+  "version": "0.0.0",
+  "description": "Get all tasks",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "filter[type]": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by task type (ID)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "filter[status]": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "done",
+          "undone"
+        ],
+        "optional": true,
+        "description": "Filter by task status"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "filter[date]": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "overdue",
+          "today",
+          "tomorrow",
+          "week",
+          "range"
+        ],
+        "optional": true,
+        "description": "Filter by date"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "filter[assignTo]": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by the \"assignTo\" ID. You can utilize account emails for the \"assignTo\" attribute."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "filter[contacts]": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by contact ids"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "filter[deals]": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by deals ids"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "filter[companies]": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by companies ids"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "dateFrom": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "dateFrom to date range filter type (timestamp in milliseconds)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "dateTo": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "dateTo to date range filter type (timestamp in milliseconds)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "offset": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Index of the first document of the page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "50",
+        "description": "Number of documents per page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "optional": true,
+        "description": "Sort the results in the ascending/descending order. Default order is **descending** by creation if `sort` is not passed"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sortBy": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The field used to sort field names."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "e23d9228d916a6af115e6f1f993fe59b7703a77cdc772da751f547518e19ba82"
+  }
+}

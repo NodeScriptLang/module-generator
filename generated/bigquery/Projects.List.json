@@ -1,0 +1,47 @@
+{
+  "moduleName": "BigQuery / Projects / List",
+  "version": "0.0.0",
+  "description": "Lists all projects to which you have been granted any project role.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/cloud-platform` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "maxResults": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Maximum number of results to return"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Page token, returned by a previous call, to request the next page of results"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "80de9c9f51557bdaf6ce743455f475e2b865a6dcc5fdff9e568f6e92cf6ffbd1"
+  }
+}

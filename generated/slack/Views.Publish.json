@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Views / Publish",
+  "version": "0.0.0",
+  "description": "Publish a static view for a User.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "`id` of the user you want publish a view to."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "view": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A [view payload](/reference/surfaces/views). This must be a JSON-encoded string."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "hash": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A string that represents view state to protect against possible race conditions."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/views.publish",
+    "codeHash": "e8cc2d6fb861ef4cafc0869f6ae8bd2e8188572ded82fda311317e236eaa2389"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Companies / Get",
+  "version": "0.0.0",
+  "description": "Get a company",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "Get Company Details"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "9bdf2bb56a5c623cd6ea6c63e599fd15df876729be6161ad1db168a0d80eba68"
+  }
+}

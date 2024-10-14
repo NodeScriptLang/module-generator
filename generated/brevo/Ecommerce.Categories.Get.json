@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Ecommerce / Categories / Get",
+  "version": "0.0.0",
+  "description": "Get a category details",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "Category ID"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "f9ff838b136a45bea44d165facc277ff99dc4b2750cc33540cd9742a587a281c"
+  }
+}

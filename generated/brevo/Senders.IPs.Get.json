@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Senders / IPs / Get",
+  "version": "0.0.0",
+  "description": "Get all the dedicated IPs for a sender",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "senderId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the sender"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "013584f76978bbbf70d82ec63874de2b6ff3204dfdd3f20e373d2621513cae1c"
+  }
+}

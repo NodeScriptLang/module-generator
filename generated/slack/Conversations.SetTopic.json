@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Conversations / Set Topic",
+  "version": "0.0.0",
+  "description": "Sets the topic for a conversation.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Conversation to set the topic of"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "topic": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The new topic string. Does not support formatting or linkification."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/conversations.setTopic",
+    "codeHash": "448649c34fc6756ab02e9e89c3055e25a4839526552c7acaad614fbf2fbc2537"
+  }
+}

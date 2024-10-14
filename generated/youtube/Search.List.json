@@ -1,0 +1,394 @@
+{
+  "moduleName": "YouTube / Search / List",
+  "version": "0.0.0",
+  "description": "Retrieves a list of search resources",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/youtube` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "part": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "The *part* parameter specifies a comma-separated list of one or more search resource properties that the API response will include. Set the parameter value to snippet."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "channelId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter on resources belonging to this channelId."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "channelType": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "channelTypeUnspecified",
+          "any",
+          "show"
+        ],
+        "optional": true,
+        "description": "Add a filter on the channel search."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "eventType": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "none",
+          "upcoming",
+          "live",
+          "completed"
+        ],
+        "optional": true,
+        "description": "Filter on the livestream status of the videos."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "forContentOwner": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Search owned by a content owner."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "forDeveloper": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Restrict the search to only retrieve videos uploaded using the project id of the authenticated user."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "forMine": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Search for the private videos of the authenticated user."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "location": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter on location of the video"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "locationRadius": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter on distance from the location (specified above)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maxResults": {
+      "schema": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 50,
+        "optional": true,
+        "description": "The *maxResults* parameter specifies the maximum number of items that should be returned in the result set."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "onBehalfOfContentOwner": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "order": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "searchSortUnspecified",
+          "date",
+          "rating",
+          "viewCount",
+          "relevance",
+          "title",
+          "videoCount"
+        ],
+        "optional": true,
+        "description": "Sort order of the results."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "publishedAfter": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter on resources published after this date."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "publishedBefore": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter on resources published before this date."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "q": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Textual search terms to match."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "regionCode": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Display the content as seen by viewers in this country."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "relatedToVideoId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Search related to a resource."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "relevanceLanguage": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Return results relevant to this language."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "safeSearch": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "safeSearchSettingUnspecified",
+          "none",
+          "moderate",
+          "strict"
+        ],
+        "optional": true,
+        "description": "Indicates whether the search results should include restricted content as well as standard content."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "topicId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Restrict results to a particular topic."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "type": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Restrict results to a particular set of resource types from One Platform."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "videoCaption": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "videoCaptionUnspecified",
+          "any",
+          "closedCaption",
+          "none"
+        ],
+        "optional": true,
+        "description": "Filter on the presence of captions on the videos."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "videoCategoryId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter on videos in a specific category."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "videoDefinition": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "any",
+          "standard",
+          "high"
+        ],
+        "optional": true,
+        "description": "Filter on the definition of the videos."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "videoDimension": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "any",
+          "2d",
+          "3d"
+        ],
+        "optional": true,
+        "description": "Filter on 3d videos."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "videoDuration": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "videoDurationUnspecified",
+          "any",
+          "short",
+          "medium",
+          "long"
+        ],
+        "optional": true,
+        "description": "Filter on the duration of the videos."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "videoEmbeddable": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "videoEmbeddableUnspecified",
+          "any",
+          "true"
+        ],
+        "optional": true,
+        "description": "Filter on embeddable videos."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "videoLicense": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "any",
+          "youtube",
+          "creativeCommon"
+        ],
+        "optional": true,
+        "description": "Filter on the license of the videos."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "videoSyndicated": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "videoSyndicatedUnspecified",
+          "any",
+          "true"
+        ],
+        "optional": true,
+        "description": "Filter on syndicated videos."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "videoType": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "videoTypeUnspecified",
+          "any",
+          "movie",
+          "episode"
+        ],
+        "optional": true,
+        "description": "Filter on videos of a specific type."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "f35963438cf892a6df53bef4458275500ee3b69cd36901473cb04f6b8c60032a"
+  }
+}

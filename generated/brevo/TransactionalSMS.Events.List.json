@@ -1,0 +1,128 @@
+{
+  "moduleName": "Brevo / Transactional SMS / Events / List",
+  "version": "0.0.0",
+  "description": "Get all your SMS activity (unaggregated events)",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "50",
+        "minimum": 0,
+        "maximum": 100,
+        "description": "Number of documents per page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "startDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if endDate is used.** Starting date (YYYY-MM-DD) of the report\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "endDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if startDate is used.** Ending date (YYYY-MM-DD) of the report\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "offset": {
+      "schema": {
+        "type": "number",
+        "default": "0",
+        "description": "Index of the first document of the page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "days": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Number of days in the past including today (positive integer). **Not compatible with 'startDate' and 'endDate'**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "phoneNumber": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter the report for a specific phone number"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "event": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "bounces",
+          "hardBounces",
+          "softBounces",
+          "delivered",
+          "sent",
+          "accepted",
+          "unsubscription",
+          "replies",
+          "blocked",
+          "rejected",
+          "skipped"
+        ],
+        "optional": true,
+        "description": "Filter the report for specific events"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "tags": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter the report for specific tags passed as a serialized urlencoded array"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "default": "desc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "description": "Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "916f1d60923215d1f9b8150d430ede8c87acf569a21ff9ded6f57389496b62ab"
+  }
+}

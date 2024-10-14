@@ -1,0 +1,103 @@
+{
+  "moduleName": "YouTube / Third Party Links / Insert",
+  "version": "0.0.0",
+  "description": "Inserts a new resource into this collection.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/youtube` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "part": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "The *part* parameter specifies the thirdPartyLink resource parts that the API request and response will include. Supported values are linkingToken, status, and snippet."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "externalChannelId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Channel ID to which changes should be applied, for delegation."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "etag": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Etag of this resource"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "kind": {
+      "schema": {
+        "type": "string",
+        "default": "youtube#thirdPartyLink",
+        "description": "Identifies what kind of resource this is. Value: the fixed string \"youtube#thirdPartyLink\"."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "linkingToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The linking_token identifies a YouTube account and channel with which the third party account is linked."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "snippet": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Basic information about a third party account link, including its type and type-specific information."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "status": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The third-party link status object contains information about the status of the link."
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "58e3ed0ab12848b27a12f3fc8f678227b85e5da6e58c9bc5400a04227a0d310d"
+  }
+}

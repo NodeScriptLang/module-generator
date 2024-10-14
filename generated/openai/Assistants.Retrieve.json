@@ -1,0 +1,48 @@
+{
+  "moduleName": "OpenAI / Assistants / Retrieve",
+  "version": "0.0.0",
+  "description": "Retrieves an assistant.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "optional": false,
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "assistantId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the assistant to retrieve."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "codeHash": "5cbdd9794b379fdd567e376502fda1261044afca9b6358fc5ab00e2628dbf32c"
+  }
+}

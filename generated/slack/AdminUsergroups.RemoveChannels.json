@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Admin Usergroups / Remove Channels",
+  "version": "0.0.0",
+  "description": "Remove one or more default channels from an org-level IDP group (user group).",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channelIds": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Comma-separated string of channel IDs"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "usergroupId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ID of the IDP Group"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.usergroups.removeChannels",
+    "codeHash": "2c2de2f2a6d7ee828a08bb130b32cca052332df3f43ca09b0d67b21672305e56"
+  }
+}

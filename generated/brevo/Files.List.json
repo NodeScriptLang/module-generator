@@ -1,0 +1,100 @@
+{
+  "moduleName": "Brevo / Files / List",
+  "version": "0.0.0",
+  "description": "Get all files",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "entity": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "companies",
+          "deals",
+          "contacts"
+        ],
+        "optional": true,
+        "description": "Filter by file entity type"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "entityIds": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by file entity IDs"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "dateFrom": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "dateFrom to date range filter type (timestamp in milliseconds)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "dateTo": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "dateTo to date range filter type (timestamp in milliseconds)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "offset": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Index of the first document of the page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "50",
+        "description": "Number of documents per page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "optional": true,
+        "description": "Sort the results in the ascending/descending order. Default order is **descending** by creation if `sort` is not passed"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "0ed5c0b9a28afa31693b3d518383519c9d7ac6a159f1c785b05357c06b892009"
+  }
+}

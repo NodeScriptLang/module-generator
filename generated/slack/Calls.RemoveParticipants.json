@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Calls / Remove Participants",
+  "version": "0.0.0",
+  "description": "Registers participants removed from a Call.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "`id` returned by the [`calls.add`](/methods/calls.add) method."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "users": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The list of users to remove as participants in the Call. [Read more on how to specify users here](/apis/calls#users)."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/calls.participants.remove",
+    "codeHash": "adede76dd5ac4a28a5f3236bb2320edb347d8da44c33858f6bf51c335ccb7e51"
+  }
+}

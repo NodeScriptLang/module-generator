@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Files / Comments / Delete",
+  "version": "0.0.0",
+  "description": "Deletes an existing comment on a file.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "file": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "File to delete a comment from."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The comment to delete."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/files.comments.delete",
+    "codeHash": "e03fb0bb8157f28c5599ebe766b2a7d109c5b1d56b128bccae7a2b71fff9b0d4"
+  }
+}

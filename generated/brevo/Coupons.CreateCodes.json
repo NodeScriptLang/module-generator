@@ -1,0 +1,47 @@
+{
+  "moduleName": "Brevo / Coupons / Create Codes",
+  "version": "0.0.0",
+  "description": "Create coupons for a coupon collection",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "collectionId": {
+      "schema": {
+        "type": "string",
+        "description": "The id of the coupon collection for which the coupons will be created"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "coupons": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "e4cda75345eed203db4917cde569bd6461aed83aad666eb7060ad73189ff74b4"
+  }
+}

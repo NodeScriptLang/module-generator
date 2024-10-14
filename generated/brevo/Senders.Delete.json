@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Senders / Delete",
+  "version": "0.0.0",
+  "description": "Delete a sender",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "senderId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the sender"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "ebb1ae56a6a953ebc2a4d53522cc3e13c6cdd15ca0893bf54825ce217da4e9b8"
+  }
+}

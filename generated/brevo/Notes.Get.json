@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Notes / Get",
+  "version": "0.0.0",
+  "description": "Get a note",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "Note ID to get"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "65a4a1be269902a01a1244df75baaf32e4f82dacec64ab6cd3a6fcf9dbb014f3"
+  }
+}

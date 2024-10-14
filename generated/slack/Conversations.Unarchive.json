@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Conversations / Unarchive",
+  "version": "0.0.0",
+  "description": "Reverses conversation archival.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ID of conversation to unarchive"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/conversations.unarchive",
+    "codeHash": "cc6f4816355878585baa30600bc156d637b5c21c19d0c18fd00bb3678fe40bf2"
+  }
+}

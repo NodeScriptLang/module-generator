@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Payments / Requests / Delete",
+  "version": "0.0.0",
+  "description": "Delete a payment request.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the payment request."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "38747ec63f8dcc415417030c8ebece3c6fc6a8fbaef64b3ad3873bf63375694e"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Usergroups / List",
+  "version": "0.0.0",
+  "description": "List all User Groups for a team",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "includeUsers": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Include the list of users for each User Group."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includeCount": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Include the number of users in each User Group."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includeDisabled": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Include disabled User Groups."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/usergroups.list",
+    "codeHash": "6e0f689a54ce8399b6689c013371abb65067c7efeb476ef4b8516926393c4741"
+  }
+}

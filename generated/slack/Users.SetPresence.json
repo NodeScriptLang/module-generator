@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Users / Set Presence",
+  "version": "0.0.0",
+  "description": "Manually sets user presence.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "presence": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Either `auto` or `away`"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/users.setPresence",
+    "codeHash": "ab9c1b95b232c2def4fbae1bc622cbc16f06d015fb48a063aff37a64e3dd2aa4"
+  }
+}

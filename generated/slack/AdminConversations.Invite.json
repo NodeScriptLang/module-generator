@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Admin Conversations / Invite",
+  "version": "0.0.0",
+  "description": "Invite a user to a public or private channel.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channelId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The channel that the users will be invited to."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "userIds": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The users to invite."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.conversations.invite",
+    "codeHash": "3a96c8ccf4705e3a7c69f9ea04afb6b7a78e9742adaece953c0fe14483bcc9f6"
+  }
+}

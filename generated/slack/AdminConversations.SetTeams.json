@@ -1,0 +1,65 @@
+{
+  "moduleName": "Slack / Admin Conversations / Set Teams",
+  "version": "0.0.0",
+  "description": "Set the workspaces in an Enterprise grid org that connect to a public or private channel.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channelId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The encoded `channel_id` to add or remove to workspaces."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "orgChannel": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "True if channel has to be converted to an org channel"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "targetTeamIds": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma-separated list of workspaces to which the channel should be shared. Not required if the channel is being shared org-wide."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The workspace to which the channel belongs. Omit this argument if the channel is a cross-workspace shared channel."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.conversations.setTeams",
+    "codeHash": "2e0fb9018f6f7a637a196cb6cd316f4d9d947ccb9d310205847b0c33bba0604b"
+  }
+}

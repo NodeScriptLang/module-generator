@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Pins / Add",
+  "version": "0.0.0",
+  "description": "Pins an item to a channel.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Channel to pin the item in."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "timestamp": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Timestamp of the message to pin."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/pins.add",
+    "codeHash": "6cd34045e71d50eb46a7fe22c58b827c0b33ae8d5adbec4e9305555f23df6339"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "moduleName": "Brevo / Email Campaigns / Update Status",
+  "version": "0.0.0",
+  "description": "Update an email campaign status",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "campaignId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the campaign"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "status": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "suspended",
+          "archive",
+          "darchive",
+          "sent",
+          "queued",
+          "replicate",
+          "replicateTemplate",
+          "draft"
+        ],
+        "optional": true,
+        "description": "Note:- **replicateTemplate** status will be available **only for template type campaigns.**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "10b0668d4294ef4681bec701f6d90876c71e727ac3d35ec18413f346d617cb9e"
+  }
+}

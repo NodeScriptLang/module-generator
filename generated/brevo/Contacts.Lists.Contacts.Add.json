@@ -1,0 +1,44 @@
+{
+  "moduleName": "Brevo / Contacts / Lists / Contacts / Add",
+  "version": "0.0.0",
+  "description": "Add existing contacts to a list",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "listId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the list"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "requestBody": {
+      "schema": {
+        "type": "any",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "f8502e6bffd3e7c319ec3e8e766aeea4e6125de3f199f0b7c5c6ba1168eac9f1"
+  }
+}

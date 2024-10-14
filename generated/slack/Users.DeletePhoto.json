@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Users / Delete Photo",
+  "version": "0.0.0",
+  "description": "Delete the user profile photo",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "token": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Authentication token. Requires scope: `users.profile:write`"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/users.deletePhoto",
+    "codeHash": "856b2728c0357aebb519ee973cd386dc1f0c777f97f4c66cf25c0f939382fc10"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Admin Emoji / Rename",
+  "version": "0.0.0",
+  "description": "Rename an emoji.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The name of the emoji to be renamed. Colons (`:myemoji:`) around the value are not required, although they may be included."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "newName": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The new name of the emoji."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "token": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Authentication token. Requires scope: `admin.teams:write`"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.emoji.rename",
+    "codeHash": "f0bc30f8045ddbe250bb0514fb36f0ea134325b01b292750933fcfc55fd8683a"
+  }
+}

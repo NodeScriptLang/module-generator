@@ -1,0 +1,44 @@
+{
+  "moduleName": "Brevo / Master Account / SubAccount / List",
+  "version": "0.0.0",
+  "description": "This endpoint will provide the list all the sub-accounts of the master account.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "offset": {
+      "schema": {
+        "type": "number",
+        "description": "Index of the first sub-account in the page"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "description": "Number of sub-accounts to be displayed on each page"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "2be6decbf5edea1cfb3b1aedbc8cee39e2da3ecd668a7fe9cb2312c308aa0141"
+  }
+}

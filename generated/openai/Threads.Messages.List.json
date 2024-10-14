@@ -1,0 +1,99 @@
+{
+  "moduleName": "OpenAI / Threads / Messages / List",
+  "version": "0.0.0",
+  "description": "Returns a list of messages for a given thread.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "optional": false,
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "threadId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the threads the messages belong to."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "20",
+        "optional": true,
+        "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "order": {
+      "schema": {
+        "type": "string",
+        "default": "desc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "optional": true,
+        "description": "Sort order by the `created_at` timestamp of the objects. `asc` for ascending order and `desc` for descending order.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "after": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A cursor for use in pagination. `after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include after=obj_foo in order to fetch the next page of the list.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "before": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "runId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter messages by the run ID that generated them.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "codeHash": "e48dcba4db3e00d5e9ada6f43594652e6127f68409790aa9a2f15889c9859af7"
+  }
+}

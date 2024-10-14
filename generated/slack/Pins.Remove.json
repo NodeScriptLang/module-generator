@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Pins / Remove",
+  "version": "0.0.0",
+  "description": "Un-pins an item from a channel.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Channel where the item is pinned to."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "timestamp": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Timestamp of the message to un-pin."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/pins.remove",
+    "codeHash": "4f44bf65c23ad45cb5c4efd14e620237d27de8cf29b3ae45c40ca1aa7badbdd1"
+  }
+}

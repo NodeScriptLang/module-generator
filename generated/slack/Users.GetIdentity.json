@@ -1,0 +1,29 @@
+{
+  "moduleName": "Slack / Users / Get Identity",
+  "version": "0.0.0",
+  "description": "Get a user's identity.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/users.identity",
+    "codeHash": "8975bf158539aa7134f688041c5221c86375147b6cb47f0452e2e84436c45833"
+  }
+}

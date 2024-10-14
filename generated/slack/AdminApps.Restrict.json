@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Admin Apps / Restrict",
+  "version": "0.0.0",
+  "description": "Restrict an app for installation on a workspace.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "appId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The id of the app to restrict."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "requestId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The id of the request to restrict."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.apps.restrict",
+    "codeHash": "81c0e6005e3e6b3812306a1761f5b0b0a0dce586cd0057cacd60ddf28fb5df4d"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Views / Push",
+  "version": "0.0.0",
+  "description": "Push a view onto the stack of a root view.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "triggerId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Exchange a trigger to post to the user."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "view": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A [view payload](/reference/surfaces/views). This must be a JSON-encoded string."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/views.push",
+    "codeHash": "b122ea40696d7a29e6e2d685be71d9f941c15362c90dbf884d484e7852193f7d"
+  }
+}

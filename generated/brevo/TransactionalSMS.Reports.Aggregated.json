@@ -1,0 +1,64 @@
+{
+  "moduleName": "Brevo / Transactional SMS / Reports / Aggregated",
+  "version": "0.0.0",
+  "description": "Get your SMS activity aggregated over a period of time",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "startDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if endDate is used.** Starting date (YYYY-MM-DD) of the report\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "endDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if startDate is used.** Ending date (YYYY-MM-DD) of the report\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "days": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Number of days in the past including today (positive integer). **Not compatible with startDate and endDate**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "tag": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter on a tag"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "c007dd55953d46eeb3b7b08cc325b7197483332f445324ca8ab5d7906680a786"
+  }
+}

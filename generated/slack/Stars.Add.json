@@ -1,0 +1,65 @@
+{
+  "moduleName": "Slack / Stars / Add",
+  "version": "0.0.0",
+  "description": "Adds a star to an item.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Channel to add star to, or channel where the message to add star to was posted (used with `timestamp`)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "file": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "File to add star to."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fileComment": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "File comment to add star to."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "timestamp": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Timestamp of the message to add star to."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/stars.add",
+    "codeHash": "cfda93560870ea3db973b8d42bcafc29572c0efb1e34a84ce0488f1e3da59f1c"
+  }
+}

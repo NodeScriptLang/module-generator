@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Transactional Emails / Delete",
+  "version": "0.0.0",
+  "description": "Delete an SMTP transactional log",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "identifier": {
+      "schema": {
+        "type": "string",
+        "description": "MessageId or Email of the transactional log(s) to delete"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "af8acfcdd454d059fdd9634716bae662342321b29cf6778f8fb51bb7ba23f343"
+  }
+}

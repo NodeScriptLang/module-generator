@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Admin Teams / Set Default Channels",
+  "version": "0.0.0",
+  "description": "Set the default channels of a workspace.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channelIds": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An array of channel IDs."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ID for the workspace to set the default channel for."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "token": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Authentication token. Requires scope: `admin.teams:write`"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.teams.settings.setDefaultChannels",
+    "codeHash": "5deef5a5e98480faefd5a1dc9cdd1b0682735e971b47ae7fcf57d3f54f600160"
+  }
+}

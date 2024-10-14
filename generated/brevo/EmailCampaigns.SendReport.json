@@ -1,0 +1,61 @@
+{
+  "moduleName": "Brevo / Email Campaigns / Send Report",
+  "version": "0.0.0",
+  "description": "A PDF will be sent to the specified email addresses",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "campaignId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the campaign"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "language": {
+      "schema": {
+        "type": "string",
+        "default": "fr",
+        "enum": [
+          "fr",
+          "es",
+          "pt",
+          "it",
+          "de",
+          "en"
+        ],
+        "description": "Language of email content for campaign report sending."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "any",
+        "description": "Custom attributes for the report email."
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "23435fc81a62f381174fba4276eaea67298032381471bdd23688c0c954bee470"
+  }
+}

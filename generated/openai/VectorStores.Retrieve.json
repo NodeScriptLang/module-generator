@@ -1,0 +1,48 @@
+{
+  "moduleName": "OpenAI / Vector Stores / Retrieve",
+  "version": "0.0.0",
+  "description": "Retrieves a vector store.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "optional": false,
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "vectorStoreId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the vector store to retrieve."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "codeHash": "81fabbfbd53643d4c0044e2b014db98ad3834be7e9360657618f2b70ce80bb08"
+  }
+}

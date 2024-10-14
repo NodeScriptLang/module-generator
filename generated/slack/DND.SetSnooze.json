@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / DND / Set Snooze",
+  "version": "0.0.0",
+  "description": "Turns on Do Not Disturb mode for the current user, or changes its duration.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "numMinutes": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Number of minutes, from now, to snooze until."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "token": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Authentication token. Requires scope: `dnd:write`"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/dnd.setSnooze",
+    "codeHash": "f6f60524bd8073ba711e460f25172d6ab9a4f3f4d186f988bc0de8ad62f909d8"
+  }
+}

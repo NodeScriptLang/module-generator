@@ -1,0 +1,57 @@
+{
+  "moduleName": "Brevo / Ecommerce / Orders / Batch Create",
+  "version": "0.0.0",
+  "description": "Create multiple orders at one time instead of one order at a time",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "orders": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "array of order objects"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "notifyUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Notify Url provided by client to get the status of batch request"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "historical": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "description": "Defines wether you want your orders to be considered as live data or as historical data (import of past data, synchronising data). True: orders will not trigger any automation workflows. False: orders will trigger workflows as usual."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "9b16f29346c5dcbfb9fbfd6acf72fe3887f85556a24793ab6a727a7949ebdb54"
+  }
+}

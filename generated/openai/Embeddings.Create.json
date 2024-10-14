@@ -1,0 +1,91 @@
+{
+  "moduleName": "OpenAI / Embeddings / Create",
+  "version": "0.0.0",
+  "description": "Creates an embedding vector representing the input text.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "optional": false,
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "input": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Input text to embed, encoded as a string or array of tokens. To embed multiple inputs in a single request, pass an array of strings or array of token arrays. The input must not exceed the max input tokens for the model (8192 tokens for `text-embedding-ada-002`), cannot be an empty string, and any array must be 2048 dimensions or less.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "model": {
+      "schema": {
+        "type": "string",
+        "default": "gpt-4o",
+        "optional": true,
+        "description": "ID of the model to use.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "encodingFormat": {
+      "schema": {
+        "type": "string",
+        "default": "float",
+        "enum": [
+          "float",
+          "base64"
+        ],
+        "optional": true,
+        "description": "The format to return the embeddings in."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "dimensions": {
+      "schema": {
+        "type": "number",
+        "minimum": 1,
+        "optional": true,
+        "description": "The number of dimensions the resulting output embeddings should have. Only supported in `text-embedding-3` and later models.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "user": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "codeHash": "f9ae95dae65a734c9535edbc5b3389ea9190c8ce96246638f7e2e50ce6f85fc3"
+  }
+}

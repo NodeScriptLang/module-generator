@@ -1,0 +1,81 @@
+{
+  "moduleName": "OpenAI / Uploads / Create",
+  "version": "0.0.0",
+  "description": "Creates an intermediate Upload object that you can add Parts to. Currently, an Upload can accept at most 8 GB in total and expires after an hour after you create it. Once you complete the Upload, we will create a File object that contains all the parts you uploaded. This File is usable in the rest of our platform as a regular File object.\n",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "optional": false,
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "filename": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The name of the file to upload.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "purpose": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "assistants",
+          "batch",
+          "fine-tune",
+          "vision"
+        ],
+        "optional": true,
+        "description": "The intended purpose of the uploaded file.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "bytes": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The number of bytes in the file you are uploading.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "mimeType": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The MIME type of the file. This must fall within the supported MIME types for your file purpose. See the supported MIME types for assistants and vision.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "codeHash": "0828aed33a187651c23d0f3227e738811d9d9185f1435f8f9b447a28434470c9"
+  }
+}

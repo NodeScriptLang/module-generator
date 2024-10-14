@@ -1,0 +1,99 @@
+{
+  "moduleName": "Google Sheets / Values / Batch Get",
+  "version": "0.0.0",
+  "description": "Returns one or more ranges of values from a spreadsheet. The caller must specify the spreadsheet ID and one or more ranges.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/spreadsheets` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "spreadsheetId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the spreadsheet to retrieve data from."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "dateTimeRenderOption": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "SERIAL_NUMBER",
+          "FORMATTED_STRING"
+        ],
+        "optional": true,
+        "description": "How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "majorDimension": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "DIMENSION_UNSPECIFIED",
+          "ROWS",
+          "COLUMNS"
+        ],
+        "optional": true,
+        "description": "The major dimension that results should use. For example, if the spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`, then requesting `ranges=[\"A1:B2\"],majorDimension=ROWS` returns `[[1,2],[3,4]]`, whereas requesting `ranges=[\"A1:B2\"],majorDimension=COLUMNS` returns `[[1,3],[2,4]]`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "ranges": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The A1 notation or R1C1 notation of the range to retrieve values from."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "valueRenderOption": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "FORMATTED_VALUE",
+          "UNFORMATTED_VALUE",
+          "FORMULA"
+        ],
+        "optional": true,
+        "description": "How values should be represented in the output. The default render option is ValueRenderOption.FORMATTED_VALUE."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "43fcc535e207974cf5788f2222909b347d514d095f25557dcf02c06a2e5880cd"
+  }
+}

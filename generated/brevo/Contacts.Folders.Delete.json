@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Contacts / Folders / Delete",
+  "version": "0.0.0",
+  "description": "Delete a folder (and all its lists)",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "folderId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the folder"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "5b6c20464fd193bb94f32aba4494ed536a385d54c301f411bbfe45c1119bccf4"
+  }
+}

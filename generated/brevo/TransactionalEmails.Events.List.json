@@ -1,0 +1,149 @@
+{
+  "moduleName": "Brevo / Transactional Emails / Events / List",
+  "version": "0.0.0",
+  "description": "This endpoint will show the aggregated stats for past 30 days by default if `startDate` and `endDate` OR `days` is not passed. The date range can not exceed 90 days",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "2500",
+        "minimum": 0,
+        "maximum": 5000,
+        "description": "Number limitation for the result returned"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "offset": {
+      "schema": {
+        "type": "number",
+        "default": "0",
+        "description": "Beginning point in the list to retrieve from."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "startDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if endDate is used.** Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "endDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if startDate is used.** Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "days": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Number of days in the past including today (positive integer). _Not compatible with 'startDate' and 'endDate'_\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter the report for a specific email addresses"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "event": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "bounces",
+          "hardBounces",
+          "softBounces",
+          "delivered",
+          "spam",
+          "requests",
+          "opened",
+          "clicks",
+          "invalid",
+          "deferred",
+          "blocked",
+          "unsubscribed",
+          "error",
+          "loadedByProxy"
+        ],
+        "optional": true,
+        "description": "Filter the report for a specific event type"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "tags": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter the report for tags (serialized and urlencoded array)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "messageId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter on a specific message id"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "templateId": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Filter on a specific template id"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "default": "desc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "description": "Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "23bde4bcbcac46d804dfe61ae2e897289b2b7bf92c123dd5ad39353e949f2831"
+  }
+}

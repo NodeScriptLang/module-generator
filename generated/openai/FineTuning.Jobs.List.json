@@ -1,0 +1,58 @@
+{
+  "moduleName": "OpenAI / Fine Tuning / Jobs / List",
+  "version": "0.0.0",
+  "description": "List your organization's fine-tuning jobs\n",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "optional": false,
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "after": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Identifier for the last job from the previous pagination request."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "20",
+        "optional": true,
+        "description": "Number of fine-tuning jobs to retrieve."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "codeHash": "2fb22b91da7bf81ac282d710c9b18be5ac366084ff480d15df88b197e43cf904"
+  }
+}

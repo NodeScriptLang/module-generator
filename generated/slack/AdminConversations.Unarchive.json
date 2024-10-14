@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Admin Conversations / Unarchive",
+  "version": "0.0.0",
+  "description": "Unarchive a public or private channel.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channelId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The channel to unarchive."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.conversations.unarchive",
+    "codeHash": "444edbfa142943269c5ca76f9e2396e639e92bf831a6a620cf75773f2d1d3d53"
+  }
+}

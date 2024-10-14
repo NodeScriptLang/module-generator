@@ -1,0 +1,29 @@
+{
+  "moduleName": "Slack / DND / End",
+  "version": "0.0.0",
+  "description": "Ends the current user's Do Not Disturb session immediately.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/dnd.endDnd",
+    "codeHash": "8a9155c8bfcf4520b6d2d6a18d164ec23f5c208c30bcda7b0475d91b436722e3"
+  }
+}

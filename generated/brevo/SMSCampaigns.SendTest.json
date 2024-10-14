@@ -1,0 +1,45 @@
+{
+  "moduleName": "Brevo / SMS Campaigns / Send Test",
+  "version": "0.0.0",
+  "description": "Send a test SMS campaign",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "campaignId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the SMS campaign"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "phoneNumber": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Mobile number of the recipient with the country code. This number **must belong to one of your contacts in Brevo account and must not be blacklisted**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "0ed7c3abc9758db18a4aced48d9bb5a6314afa3d9da39497121f5c3e5327b465"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Transactional Emails / Templates / Delete",
+  "version": "0.0.0",
+  "description": "Delete an inactive email template",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "templateId": {
+      "schema": {
+        "type": "number",
+        "description": "id of the template"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "1ae04a0732418569e988d9ac0a4b9f9383d72fcc7daa611a8ce39381bc841d51"
+  }
+}

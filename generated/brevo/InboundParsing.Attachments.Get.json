@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Inbound Parsing / Attachments / Get",
+  "version": "0.0.0",
+  "description": "This endpoint will retrieve inbound attachment with download token.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "downloadToken": {
+      "schema": {
+        "type": "string",
+        "description": "Token to fetch a particular attachment"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "fb8686e18c9e682bf0a5e39b632f3d9b05dff918a7b33229e63c9e6857306980"
+  }
+}

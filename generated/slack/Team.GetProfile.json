@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Team / Get Profile",
+  "version": "0.0.0",
+  "description": "Retrieve a team's profile.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "visibility": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by visibility."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/team.profile.get",
+    "codeHash": "dcd9b6f4624b1b82a46bdf9933efff18c3b6d210d6aa46a096604fe9892938ab"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Dialog / Open",
+  "version": "0.0.0",
+  "description": "Open a dialog with a user",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "dialog": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The dialog definition. This must be a JSON-encoded string."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "triggerId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Exchange a trigger to post to the user."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/dialog.open",
+    "codeHash": "1aec6dea4629cb0fd6d751601bd6bce90ea1cfd146271e88f88f338872924326"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Team / Get Info",
+  "version": "0.0.0",
+  "description": "Gets information about the current team.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "team": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Team to get info on, if omitted, will return information about the current team. Will only return team that the authenticated token is allowed to see through external shared channels"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/team.info",
+    "codeHash": "54af377b44df2215adcad866be39dcfb0e5fac8286951a26426763481682b415"
+  }
+}

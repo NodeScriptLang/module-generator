@@ -1,0 +1,51 @@
+{
+  "moduleName": "Brevo / Contacts / Attributes / Delete",
+  "version": "0.0.0",
+  "description": "Delete an attribute",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "attributeCategory": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "normal",
+          "transactional",
+          "category",
+          "calculated",
+          "global"
+        ],
+        "description": "Category of the attribute"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "attributeName": {
+      "schema": {
+        "type": "string",
+        "description": "Name of the existing attribute"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "4fc69c4ff87542f0903bb47d05b54b4992cb44546fffc7026aa6e119e378f956"
+  }
+}

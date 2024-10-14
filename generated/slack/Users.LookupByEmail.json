@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Users / Lookup By Email",
+  "version": "0.0.0",
+  "description": "Find a user with an email address.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An email address belonging to a user in the workspace"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/users.lookupByEmail",
+    "codeHash": "473638e944944c9de50b99f3106ccc2d4d15511358d326ff87241434bf3f34d2"
+  }
+}

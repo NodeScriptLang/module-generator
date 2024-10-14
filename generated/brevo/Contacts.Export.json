@@ -1,0 +1,57 @@
+{
+  "moduleName": "Brevo / Contacts / Export",
+  "version": "0.0.0",
+  "description": "It returns the background process ID which on completion calls the notify URL that you have set in the input. File will be available in csv.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "exportAttributes": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "List of all the attributes that you want to export. **These attributes must be present in your contact database.** For example:\n**['fname', 'lname', 'email']**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "customContactFilter": {
+      "schema": {
+        "type": "any",
+        "description": "Set the filter for the contacts to be exported.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "notifyUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Webhook that will be called once the export process is finished. For reference, https://help.brevo.com/hc/en-us/articles/360007666479"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "0da4f9e407c6cd65821badaee2dd5a33652ad31d795bdb29149dd1c3a4ea7f7e"
+  }
+}

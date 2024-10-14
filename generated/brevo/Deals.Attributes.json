@@ -1,0 +1,28 @@
+{
+  "moduleName": "Brevo / Deals / Attributes",
+  "version": "0.0.0",
+  "description": "Get deal attributes",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "d7211b038bef3fee785cc58dc575fec87fb36b39199fc8e34f4f63139b2b5f49"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Transactional WhatsApp / Send Message",
+  "version": "0.0.0",
+  "description": "This endpoint is used to send a WhatsApp message. <br/>(**The first message you send using the API must contain a Template ID. You must create a template on WhatsApp on the Brevo platform to fetch the Template ID.**)",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "requestBody": {
+      "schema": {
+        "type": "any",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "ab77d9045a4b683692017b60940f0353e1c485929b86dc7e731e12d01eaf30ce"
+  }
+}

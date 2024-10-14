@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Email Campaigns / Shared URL",
+  "version": "0.0.0",
+  "description": "Get a unique URL to share & import an email template from one Brevo account to another.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "campaignId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the campaign or template"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "218efefdc3ee28593a0bd1b50b3d2b9638ef03ab2d22da36d03c6ad3159d28a0"
+  }
+}

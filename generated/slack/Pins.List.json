@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Pins / List",
+  "version": "0.0.0",
+  "description": "Lists items pinned to a channel.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Channel to get pinned items for."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/pins.list",
+    "codeHash": "5619406a69eac03c009009814a945cf3c9404bf09be7a40bcdfc9724376828d0"
+  }
+}

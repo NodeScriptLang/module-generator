@@ -1,0 +1,48 @@
+{
+  "moduleName": "Brevo / Ecommerce / Products / Batch Create",
+  "version": "0.0.0",
+  "description": "Create products in batch",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "products": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "array of products objects"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "updateEnabled": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Facilitate to update the existing categories in the same request (updateEnabled = true)"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "e7bc90079d7eefcef2bde2ffb01757710bbe084b631c202634aacf03e3a1a0bd"
+  }
+}

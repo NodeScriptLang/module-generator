@@ -1,0 +1,47 @@
+{
+  "moduleName": "Brevo / Ecommerce / Attribution / Metrics / Get",
+  "version": "0.0.0",
+  "description": "Get detailed attribution metrics for a single Brevo campaign",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "conversionSource": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "email_campaign"
+        ],
+        "description": "The Brevo campaign type for which data will be retrieved"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "conversionSourceId": {
+      "schema": {
+        "type": "number",
+        "description": "The Brevo campaign id for which data will be retrieved"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "4ba253d535764568fb434a5cf56a26bfe01c8fab5e72d19e2135b7c7f7f15805"
+  }
+}

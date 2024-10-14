@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Master Account / User Revoke",
+  "version": "0.0.0",
+  "description": "This endpoint allows to revoke/remove an invited member of your Admin account",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "description": "Email of the invited user"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "1d361953fdd8a19fe60569afc56cb1a05f67fbb4d72a3966041828cb04db7d52"
+  }
+}

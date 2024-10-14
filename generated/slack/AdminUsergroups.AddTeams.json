@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Admin Usergroups / Add Teams",
+  "version": "0.0.0",
+  "description": "Associate one or more default workspaces with an organization-wide IDP group.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "autoProvision": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "When `true`, this method automatically creates new workspace accounts for the IDP group members."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "teamIds": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma separated list of encoded team (workspace) IDs. Each workspace *MUST* belong to the organization associated with the token."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "usergroupId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An encoded usergroup (IDP Group) ID."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.usergroups.addTeams",
+    "codeHash": "6a39fadc83c3c72a2ce3883e22646c99c60bf4bc65907a4b3863f9db042b2aea"
+  }
+}

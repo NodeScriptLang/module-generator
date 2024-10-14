@@ -35,7 +35,7 @@ if (!workspaceId) {
     throw new Error(`Missing workspaceId in ${sourceFile}`);
 }
 
-const targetDir = path.join('.generated', id);
+const targetDir = path.join('generated', id);
 const files = (await readdir(targetDir))
     .filter(_ => _.endsWith('.json'))
     .map(_ => path.join(targetDir, _));

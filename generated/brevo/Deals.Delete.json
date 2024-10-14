@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Deals / Delete",
+  "version": "0.0.0",
+  "description": "Delete a deal",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "cb9dd23b263b05f167dd3205f22a3d3c59b10b21ca6d48c6e33eccb42c29b01e"
+  }
+}

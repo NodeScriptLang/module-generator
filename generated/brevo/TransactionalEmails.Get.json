@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Transactional Emails / Get",
+  "version": "0.0.0",
+  "description": "Get the personalized content of a sent transactional email",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "uuid": {
+      "schema": {
+        "type": "string",
+        "description": "Unique id of the transactional email that has been sent to a particular contact"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "601cbba026167fb56cb2072af0a85d6b8fa32adff24cd568a210ba94b58218fd"
+  }
+}

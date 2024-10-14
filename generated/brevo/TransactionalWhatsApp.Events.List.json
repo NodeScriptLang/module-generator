@@ -1,0 +1,115 @@
+{
+  "moduleName": "Brevo / Transactional WhatsApp / Events / List",
+  "version": "0.0.0",
+  "description": "This endpoint will show the unaggregated statistics for WhatsApp activity (30 days by default if `startDate` and `endDate` or `days` is not passed. The date range can not exceed 90 days)",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "2500",
+        "minimum": 0,
+        "maximum": 5000,
+        "description": "Number limitation for the result returned"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "offset": {
+      "schema": {
+        "type": "number",
+        "default": "0",
+        "description": "Beginning point in the list to retrieve from"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "startDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if endDate is used.** Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "endDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if startDate is used.** Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "days": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Number of days in the past including today (positive integer). _Not compatible with 'startDate' and 'endDate'_\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "contactNumber": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter results for specific contact (WhatsApp Number with country code. Example, 85264318721)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "event": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "sent",
+          "delivered",
+          "read",
+          "error",
+          "unsubscribe",
+          "reply",
+          "soft-bounce"
+        ],
+        "optional": true,
+        "description": "Filter the report for a specific event type"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "default": "desc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "description": "Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "2bd40b0d6b65551e4d24d830713694e36ffddc7bd5ea85857c77e0f3a7982d51"
+  }
+}

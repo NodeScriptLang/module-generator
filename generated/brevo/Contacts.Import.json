@@ -1,0 +1,133 @@
+{
+  "moduleName": "Brevo / Contacts / Import",
+  "version": "0.0.0",
+  "description": "It returns the background process ID which on completion calls\nthe notify URL that you have set in the input.\n\n**Note**:\n- Any contact attribute that doesn't exist in your account will be ignored at import end.\n",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "fileUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if fileBody and jsonBody is not defined.** URL of the file to be imported (**no local file**). Possible file formats:\n#### .txt, .csv, .json\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fileBody": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if fileUrl and jsonBody is not defined.** CSV content to be imported. Use semicolon to separate multiple attributes. **Maximum allowed file body size is 10MB** . However we recommend a safe limit of around 8 MB to avoid the issues caused due to increase of file body size while parsing. Please use fileUrl instead to import bigger files.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "jsonBody": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "**Mandatory if fileUrl and fileBody is not defined.** JSON content to be imported. **Maximum allowed json body size is 10MB** . However we recommend a safe limit of around 8 MB to avoid the issues caused due to increase of json body size while parsing. Please use fileUrl instead to import bigger files.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "listIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "**Mandatory if newList is not defined.** Ids of the lists in which the contacts shall be imported. For example, **[2, 4, 7]**.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "notifyUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "URL that will be called once the import process is finished. For reference, https://help.brevo.com/hc/en-us/articles/360007666479"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "newList": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "To create a new list and import the contacts into it, pass the listName and an optional folderId."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "emailBlacklist": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "description": "To blacklist all the contacts for email"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "disableNotification": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "description": "To disable email notification"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "smsBlacklist": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "description": "To blacklist all the contacts for sms"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "updateExistingContacts": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "description": "To facilitate the choice to update the existing contacts"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "emptyContactsAttributes": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "description": "To facilitate the choice to erase any attribute of the existing contacts with empty value. emptyContactsAttributes = true means the empty fields in your import will erase any attribute that currently contain data in Brevo, & emptyContactsAttributes = false means the empty fields will not affect your existing data ( **only available if `updateExistingContacts` set to true **)\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "ca39718b6f16f033b9ffe3ca1ec1e7b22b15553c58879175978c033a4247ac9c"
+  }
+}

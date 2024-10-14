@@ -1,0 +1,54 @@
+{
+  "moduleName": "Brevo / Master Account / SubAccount / Update Plan",
+  "version": "0.0.0",
+  "description": "This endpoint will update the sub-account plan. On the Corporate solution new version v2, you can set an unlimited number of credits in your sub-organization. Please pass the value “-1\" to set the consumable in unlimited mode.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the sub-account organization"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "credits": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Credit details to update"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "features": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Features details to update"
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "40bd1274430f1b62cad52861020f122e95283940cc103efe60ee9a62bdefb2c4"
+  }
+}

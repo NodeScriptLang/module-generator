@@ -1,0 +1,54 @@
+{
+  "moduleName": "Brevo / Contacts / Lists / Update",
+  "version": "0.0.0",
+  "description": "Update a list",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "listId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the list"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Name of the list. Either of the two parameters (name, folderId) can be updated at a time."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "folderId": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Id of the folder in which the list is to be moved. Either of the two parameters (name, folderId) can be updated at a time."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "17c99c181f4be739ea0f0071074ef6845bdb9f475d7fe726bece1263fd152cbe"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Usergroups / Update Users",
+  "version": "0.0.0",
+  "description": "Update the list of users for a User Group",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "includeCount": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Include the number of users in the User Group."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "usergroup": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The encoded ID of the User Group to update."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "users": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma separated string of encoded user IDs that represent the entire list of users for the User Group."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/usergroups.users.update",
+    "codeHash": "d18368e3d4a5222e40138c3febd540a4d677b090aabfa88811cb086b87e24119"
+  }
+}

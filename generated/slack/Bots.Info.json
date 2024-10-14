@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Bots / Info",
+  "version": "0.0.0",
+  "description": "Gets information about a bot user.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "bot": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Bot user to get info on"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/bots.info",
+    "codeHash": "c6ba17f97e1f4b636a1eb5248420ada399a1dbf0d9deb04b7e4962f1e785966f"
+  }
+}

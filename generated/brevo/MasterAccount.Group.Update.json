@@ -1,0 +1,57 @@
+{
+  "moduleName": "Brevo / Master Account / Group / Update",
+  "version": "0.0.0",
+  "description": "This endpoint allows to update a group of sub-accounts",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "Id of the group"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "groupName": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The name of the group of sub-accounts"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "subAccountIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Pass the list of sub-account Ids to be included in the group"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "688b0e1cf769fab538d89015417c2ec3ab7458ca35a80eafdcf122f86b286e65"
+  }
+}

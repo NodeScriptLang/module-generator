@@ -1,0 +1,29 @@
+{
+  "moduleName": "Slack / Emoji / List",
+  "version": "0.0.0",
+  "description": "Lists custom emoji for a team.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/emoji.list",
+    "codeHash": "e59c4a0c66f0f761b8faf0ad54010944b9191e3af98d71f3527c82128b878277"
+  }
+}

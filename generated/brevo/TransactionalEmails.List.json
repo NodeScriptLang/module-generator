@@ -1,0 +1,106 @@
+{
+  "moduleName": "Brevo / Transactional Emails / List",
+  "version": "0.0.0",
+  "description": "This endpoint will show the list of emails for past 30 days by default. To retrieve emails before that time, please pass startDate and endDate in query filters.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if templateId and messageId are not passed in query filters.** Email address to which transactional email has been sent.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "templateId": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "**Mandatory if email and messageId are not passed in query filters.** Id of the template that was used to compose transactional email.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "messageId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if templateId and email are not passed in query filters.** Message ID of the transactional email sent.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "startDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if endDate is used.** Starting date (YYYY-MM-DD) from which you want to fetch the list. **Maximum time period that can be selected is one month**.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "endDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Mandatory if startDate is used.** Ending date (YYYY-MM-DD) till which you want to fetch the list. **Maximum time period that can be selected is one month.**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "default": "desc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "description": "Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "500",
+        "minimum": 0,
+        "maximum": 1000,
+        "description": "Number of documents returned per page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "offset": {
+      "schema": {
+        "type": "number",
+        "default": "0",
+        "description": "Index of the first document in the page"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "64b13b491ff09100fbd2a0306d3ef89d6afa449d8995a37b9d5e854d77b39dbe"
+  }
+}

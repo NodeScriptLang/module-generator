@@ -1,0 +1,73 @@
+{
+  "moduleName": "Brevo / Master Account / SubAccount / SSO Token / Create",
+  "version": "0.0.0",
+  "description": "This endpoint generates an sso token to authenticate and access a sub-account of the master using the account endpoint https://account-app.brevo.com/account/login/sub-account/sso/[token], where [token] will be replaced by the actual token.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the sub-account organization"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "User email of sub-account organization"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "target": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "automation",
+          "email_campaign",
+          "contacts",
+          "landing_pages",
+          "email_transactional",
+          "senders",
+          "sms_campaign",
+          "sms_transactional"
+        ],
+        "optional": true,
+        "description": "**Set target after login success**\n* **automation** - Redirect to Automation after login\n* **email_campaign** - Redirect to Email Campaign after login\n* **contacts** - Redirect to Contacts after login\n* **landing_pages** - Redirect to Landing Pages after login\n* **email_transactional** - Redirect to Email Transactional after login\n* **senders** - Redirect to Senders after login\n* **sms_campaign** - Redirect to Sms Campaign after login\n* **sms_transactional** - Redirect to Sms Transactional after login\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "url": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Set the full target URL after login success. The user will land directly on this target URL after login"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "cb9626ca52d99a46ca187e84de2d1916b52195aae69315f41debfbbc266425e9"
+  }
+}

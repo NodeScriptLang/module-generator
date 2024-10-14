@@ -1,0 +1,104 @@
+{
+  "moduleName": "YouTube / Comments / List",
+  "version": "0.0.0",
+  "description": "Retrieves a list of resources, possibly filtered.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/youtube` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "part": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "The *part* parameter specifies a comma-separated list of one or more comment resource properties that the API response will include."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Returns the comments with the given IDs for One Platform."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maxResults": {
+      "schema": {
+        "type": "number",
+        "minimum": 1,
+        "maximum": 100,
+        "optional": true,
+        "description": "The *maxResults* parameter specifies the maximum number of items that should be returned in the result set."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "parentId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Returns replies to the specified comment. Note, currently YouTube features only one level of replies (ie replies to top level comments). However replies to replies may be supported in the future."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "textFormat": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "textFormatUnspecified",
+          "html",
+          "plainText"
+        ],
+        "optional": true,
+        "description": "The requested text format for the returned comments."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "dea806137883ea8155e784453f77cc6635fcb6afb6aab64a415c644b00d682cd"
+  }
+}

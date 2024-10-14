@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Webhooks / Delete",
+  "version": "0.0.0",
+  "description": "Delete a webhook",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "webhookId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the webhook"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "e9f62bfc1abfdcd82a92a91acec634840a5953b84f9fe88d25009f209381e9c6"
+  }
+}

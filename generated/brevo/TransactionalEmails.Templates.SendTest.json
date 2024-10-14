@@ -1,0 +1,48 @@
+{
+  "moduleName": "Brevo / Transactional Emails / Templates / Send Test",
+  "version": "0.0.0",
+  "description": "Send a template to your test list",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "templateId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the template"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "emailTo": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "List of the email addresses of the recipients whom you wish to send the test mail.\n_If left empty, the test mail will be sent to your entire test list. You can not send more than 50 test emails per day_.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "f4bf5a261d54f3975e4a5e68bc6964aced86f191f0c07b21ec36a44f750868f4"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "moduleName": "Brevo / Deals / Pipeline / Get",
+  "version": "0.0.0",
+  "description": "This endpoint is deprecated. Prefer /crm/pipeline/details/{pipelineID} instead.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "d263fa24f547e0d1f42acff1e08f9d78c566e533575569f91179a9176fe8f315"
+  }
+}

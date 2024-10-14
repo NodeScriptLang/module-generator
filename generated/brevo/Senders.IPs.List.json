@@ -1,0 +1,28 @@
+{
+  "moduleName": "Brevo / Senders / IPs / List",
+  "version": "0.0.0",
+  "description": "Get all the dedicated IPs for your account",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "28b297ab770a19aab5e100fdda4031588552c216c3792a47d7a0eb6174a0a1ba"
+  }
+}

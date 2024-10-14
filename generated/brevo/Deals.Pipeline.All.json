@@ -1,0 +1,28 @@
+{
+  "moduleName": "Brevo / Deals / Pipeline / All",
+  "version": "0.0.0",
+  "description": "Get all pipelines",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "15b55861cb7e422fc2924d462f91dcf4fa54e442ec345d764f821b9c629cabfc"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "moduleName": "Brevo / Ecommerce / Attribution / Products / List",
+  "version": "0.0.0",
+  "description": "Get attributed product sales for a single Brevo campaign",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "conversionSource": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "email_campaign"
+        ],
+        "description": "The Brevo campaign type for which data will be retrieved"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "conversionSourceId": {
+      "schema": {
+        "type": "number",
+        "description": "The Brevo campaign id for which data will be retrieved"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "50866efc0e97da49ef6e8e867e3886d7cdbfebfc7ef8578013e633ec30bd7845"
+  }
+}

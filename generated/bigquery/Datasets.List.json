@@ -1,0 +1,74 @@
+{
+  "moduleName": "BigQuery / Datasets / List",
+  "version": "0.0.0",
+  "description": "Lists all datasets in the specified project to which you have been granted the READER dataset role.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/cloud-platform` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Project ID of the datasets to be listed"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "all": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether to list all datasets, including hidden ones"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "filter": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An expression for filtering the results of the request by label. The syntax is \"labels.<name>[:<value>]\". Multiple filters can be ANDed together by connecting with a space. Example: \"labels.department:receiving labels.active\". See Filtering datasets using labels for details."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maxResults": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The maximum number of results to return"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Page token, returned by a previous call, to request the next page of results"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "e7268c784e252414f268138b9e4df46f736002eb7a380bcd8775034565ae79f5"
+  }
+}

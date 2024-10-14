@@ -1,0 +1,99 @@
+{
+  "moduleName": "Google Sheets / Values / Batch Get By Filter",
+  "version": "0.0.0",
+  "description": "Returns one or more ranges of values that match the specified data filters. The caller must specify the spreadsheet ID and one or more DataFilters. Ranges that match any of the data filters in the request will be returned.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/spreadsheets` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "spreadsheetId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the spreadsheet to retrieve data from."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "dataFilters": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The data filters used to match the ranges of values to retrieve. Ranges that match any of the specified data filters are included in the response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "dateTimeRenderOption": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "SERIAL_NUMBER",
+          "FORMATTED_STRING"
+        ],
+        "optional": true,
+        "description": "How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "majorDimension": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "DIMENSION_UNSPECIFIED",
+          "ROWS",
+          "COLUMNS"
+        ],
+        "optional": true,
+        "description": "The major dimension that results should use. For example, if the spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`, then a request that selects that range and sets `majorDimension=ROWS` returns `[[1,2],[3,4]]`, whereas a request that sets `majorDimension=COLUMNS` returns `[[1,3],[2,4]]`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "valueRenderOption": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "FORMATTED_VALUE",
+          "UNFORMATTED_VALUE",
+          "FORMULA"
+        ],
+        "optional": true,
+        "description": "How values should be represented in the output. The default render option is FORMATTED_VALUE."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "7731a38867788597690c61c6d2a617ebf62811317e174f2f52b3033fefa4f52d"
+  }
+}

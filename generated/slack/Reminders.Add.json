@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Reminders / Add",
+  "version": "0.0.0",
+  "description": "Creates a reminder.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "text": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The content of the reminder"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "time": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "When this reminder should happen: the Unix timestamp (up to five years from now), the number of seconds until the reminder (if within 24 hours), or a natural language description (Ex. \"in 15 minutes,\" or \"every Thursday\")"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "user": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The user who will receive the reminder. If no user is specified, the reminder will go to user who created it."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/reminders.add",
+    "codeHash": "e75d7bf92f1ad91f1569c59229ac0f1bd24e9e78a17a6c8d92df13029088da46"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "moduleName": "Brevo / Contacts / Attributes / Create",
+  "version": "0.0.0",
+  "description": "Create contact attribute",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "attributeCategory": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "normal",
+          "transactional",
+          "category",
+          "calculated",
+          "global"
+        ],
+        "description": "Category of the attribute"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "attributeName": {
+      "schema": {
+        "type": "string",
+        "description": "Name of the attribute"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "value": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Value of the attribute. **Use only if the attribute's category is 'calculated' or 'global'**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "isRecurring": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Type of the attribute. **Use only if the attribute's category is 'calculated' or 'global'**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "enumeration": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "List of values and labels that the attribute can take. **Use only if the attribute's category is \"category\"**. For example:\n**[{\"value\":1, \"label\":\"male\"}, {\"value\":2, \"label\":\"female\"}]**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "multiCategoryOptions": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "List of options you want to add for multiple-choice attribute. **Use only if the attribute's category is \"normal\" and attribute's type is \"multiple-choice\".** For example:\n**[\"USA\",\"INDIA\"]**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "type": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "text",
+          "date",
+          "float",
+          "boolean",
+          "id",
+          "category",
+          "multiple-choice"
+        ],
+        "optional": true,
+        "description": "Type of the attribute. **Use only if the attribute's category is 'normal', 'category' or 'transactional'**\nType **boolean and multiple-choice** is only available if the category is **normal** attribute\nType **id** is only available if the category is **transactional** attribute\nType **category** is only available if the category is **category** attribute\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "b7012a9e10b72031451360bb33980b903b2d6ae5c633e72b5383b70090303d1b"
+  }
+}

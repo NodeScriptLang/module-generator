@@ -1,0 +1,64 @@
+{
+  "moduleName": "Brevo / Conversations / Agent Online Ping",
+  "version": "0.0.0",
+  "description": "We recommend pinging this endpoint every minute for as long as the agent has to be considered online.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "agentId": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "agent ID. It can be found on agent’s page or received <a href=\"https://developers.brevo.com/docs/conversations-webhooks\">from a webhook</a>. Alternatively, you can use `agentEmail` + `agentName` + `receivedFrom` instead (all 3 fields required)."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "receivedFrom": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "mark your messages to distinguish messages created by you from the others."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "agentEmail": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "agent email. When sending online pings from a standalone system, it’s hard to maintain a 1-to-1 relationship between the users of both systems. In this case, an agent can be specified by their email address. If there’s no agent with the specified email address in your Brevo organization, a dummy agent will be created automatically."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "agentName": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "agent name"
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "236f96f64c7e5521ae7887918778621a305310a69059774747f5be1eb316da05"
+  }
+}

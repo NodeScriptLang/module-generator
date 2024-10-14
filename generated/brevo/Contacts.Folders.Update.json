@@ -1,0 +1,45 @@
+{
+  "moduleName": "Brevo / Contacts / Folders / Update",
+  "version": "0.0.0",
+  "description": "Update a folder",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "folderId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the folder"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Name of the folder"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "7bb6a45fb99a19bf103747a0feb2068da4ac97def671221759ea455de5ac3563"
+  }
+}

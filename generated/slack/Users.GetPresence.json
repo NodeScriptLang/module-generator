@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Users / Get Presence",
+  "version": "0.0.0",
+  "description": "Gets user presence information.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "user": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "User to get presence info on. Defaults to the authed user."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/users.getPresence",
+    "codeHash": "85e5f7903a375e4c67ec63b1b0d03045d582ce149be325a543aa9218df8ce2d0"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Ecommerce / Products / Get",
+  "version": "0.0.0",
+  "description": "Get a product's details",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "Product ID"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "9b4cefd6d60be078c9552a94ba29c4bf62d77ee4f41b510beb2e75cb4a4991b9"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "moduleName": "Brevo / Master Account / Group / Create",
+  "version": "0.0.0",
+  "description": "This endpoint allows to create a group of sub-accounts",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "groupName": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the group of sub-accounts"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "subAccountIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Pass the list of sub-account Ids to be included in the group"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "a1b744f3a5d4f75ebdef7ff04b95f6ee5cfa73a2924cd0cc04a2ab5eae3dd3b6"
+  }
+}

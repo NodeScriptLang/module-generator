@@ -1,0 +1,58 @@
+{
+  "moduleName": "Brevo / Ecommerce / Attribution / Metrics / List",
+  "version": "0.0.0",
+  "description": "Get attribution metrics for one or more Brevo campaigns",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "periodFrom": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "When getting metrics for a specific period, define the starting datetime in RFC3339 format"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "periodTo": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "When getting metrics for a specific period, define the end datetime in RFC3339 format"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "emailCampaignId[]": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The email campaign id(s) to get metrics for"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "c2497798ba46b389d45ea2cab2c584d39f4a740f62c7323707061cd37856acb8"
+  }
+}

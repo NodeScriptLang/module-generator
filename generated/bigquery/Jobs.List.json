@@ -1,0 +1,117 @@
+{
+  "moduleName": "BigQuery / Jobs / List",
+  "version": "0.0.0",
+  "description": "Lists all jobs that you started in the specified project. Job information is available for a six month period after creation. The job list is sorted in reverse chronological order, by job creation time. Requires the Can View project role, or the Is Owner project role if you set the allUsers property.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/cloud-platform` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Project ID of the jobs to list"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "allUsers": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether to display jobs owned by all users in the project. Default false"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maxCreationTime": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Max value for job creation time, in milliseconds since the POSIX epoch. If set, only jobs created before or at this timestamp are returned"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maxResults": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Maximum number of results to return"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "minCreationTime": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Min value for job creation time, in milliseconds since the POSIX epoch. If set, only jobs created after or at this timestamp are returned"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Page token, returned by a previous call, to request the next page of results"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "parentJobId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "If set, retrieves only jobs whose parent is this job. Otherwise, retrieves only jobs which have no parent"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "projection": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "full",
+          "minimal"
+        ],
+        "optional": true,
+        "description": "Restrict information returned to a set of selected fields"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "stateFilter": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Filter for job state"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "7062ffbea7af921bd7d5244df99517aaea787e3a28e5011f1de69dfe55a418d0"
+  }
+}

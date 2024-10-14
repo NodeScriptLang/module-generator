@@ -1,0 +1,28 @@
+{
+  "moduleName": "Brevo / Companies / Attributes / List",
+  "version": "0.0.0",
+  "description": "Get company attributes",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "d2902fd2acd727dee97552d0dba4f61b9225419ae5a06da7ddc3be4d2887d536"
+  }
+}

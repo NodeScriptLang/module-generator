@@ -1,0 +1,50 @@
+{
+  "moduleName": "Brevo / Contacts / Delete",
+  "version": "0.0.0",
+  "description": "Delete a contact",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "identifier": {
+      "schema": {
+        "type": "any",
+        "description": "Email (urlencoded) OR ID of the contact OR EXT_ID attribute (urlencoded)"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "identifierType": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "email_id",
+          "contact_id",
+          "ext_id"
+        ],
+        "optional": true,
+        "description": "email_id for Email, contact_id for ID of the contact, ext_id for EXT_ID attribute"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "73b6460e8908f8e5599cdd83b3603eb9e2fa1f40010820569eb529b3f78848eb"
+  }
+}

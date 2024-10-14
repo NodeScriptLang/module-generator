@@ -1,0 +1,65 @@
+{
+  "moduleName": "Slack / Calls / Update",
+  "version": "0.0.0",
+  "description": "Updates information about a Call.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "desktopAppJoinUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "When supplied, available Slack clients will attempt to directly launch the 3rd-party Call with this URL."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "`id` returned by the [`calls.add`](/methods/calls.add) method."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "joinUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The URL required for a client to join the Call."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "title": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The name of the Call."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/calls.update",
+    "codeHash": "78e96c660bad9505e82fa8988b56b45916b4732f247df72129943d55a2d8e094"
+  }
+}

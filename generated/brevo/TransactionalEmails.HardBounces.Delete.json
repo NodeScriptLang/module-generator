@@ -1,0 +1,55 @@
+{
+  "moduleName": "Brevo / Transactional Emails / Hard Bounces / Delete",
+  "version": "0.0.0",
+  "description": "Delete hardbounces. To use carefully (e.g. in case of temporary ISP failures)",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "startDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Starting date (YYYY-MM-DD) of the time period for deletion. The hardbounces occurred after this date will be deleted. Must be less than or equal to the endDate"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "endDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Ending date (YYYY-MM-DD) of the time period for deletion. The hardbounces until this date will be deleted. Must be greater than or equal to the startDate"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "contactEmail": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Target a specific email address"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "98fb97b9496410a8a78ece6f1c88fb81e6ab22649a8b09c625d28e643ce1d287"
+  }
+}

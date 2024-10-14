@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Admin Teams / Set Icon",
+  "version": "0.0.0",
+  "description": "Sets the icon of a workspace.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "imageUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Image URL for the icon"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ID for the workspace to set the icon for."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "token": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Authentication token. Requires scope: `admin.teams:write`"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.teams.settings.setIcon",
+    "codeHash": "3b6e9fb818f74ba27ff7e737be253ca87ec3bf2f060bc58c3639413c157b4a3f"
+  }
+}

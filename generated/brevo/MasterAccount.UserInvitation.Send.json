@@ -1,0 +1,67 @@
+{
+  "moduleName": "Brevo / Master Account / User Invitation / Send",
+  "version": "0.0.0",
+  "description": "`This endpoint allows you to invite a member to manage the Admin account\n\nFeatures and their respective permissions are as below:\n\n- `my_plan`:\n  - \"all\"\n- `api`:\n  - \"none\"\n- `user_management`:\n  - \"all\"\n- `app_management` | Not available in ENTv2:\n  - \"all\"\n- `sub_organization_groups`\n  - \"create\"\n  - \"edit_delete\"\n- `create_sub_organizations`\n  - \"all\"\n- `manage_sub_organizations`\n  - \"all\"\n- `analytics`\n  - \"download_data\"\n  - \"create_alerts\"\n- `security`\n  - \"all\"\n\n**Note**:\n- If `all_features_access: false` then only privileges are required otherwise if `true` then it's assumed that all permissions will be there for the invited admin user.\n",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "description": "Email address for the organization"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "allFeaturesAccess": {
+      "schema": {
+        "type": "boolean",
+        "description": "All access to the features"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "groupIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Ids of Group"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "privileges": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "12c1ebee3bfafac603edae432bcb629a180b0cf1013d1a7acd04de52ced0a84d"
+  }
+}

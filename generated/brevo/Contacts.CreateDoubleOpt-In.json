@@ -1,0 +1,84 @@
+{
+  "moduleName": "Brevo / Contacts / Create Double Opt-In",
+  "version": "0.0.0",
+  "description": "Create Contact via DOI (Double-Opt-In) Flow",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "description": "Email address where the confirmation email will be sent. This email address will be the identifier for all other contact attributes."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "attributes": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Pass the set of attributes and their values. **These attributes must be present in your Brevo account**. For eg. **{'FNAME':'Elly', 'LNAME':'Roger', 'COUNTRIES':['India','China']}**\n"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "includeListIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "Lists under user account where contact should be added"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "excludeListIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Lists under user account where contact should not be added"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "templateId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the Double opt-in (DOI) template"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "redirectionUrl": {
+      "schema": {
+        "type": "string",
+        "description": "URL of the web page that user will be redirected to after clicking on the double opt in URL. When editing your DOI template you can reference this URL by using the tag **{{ params.DOIurl }}**.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "d9230d6c7f70e90affce99029af5aa252a8ae2cec1b9a7f171cb404aae4593e1"
+  }
+}

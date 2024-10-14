@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Email Campaigns / Send Now",
+  "version": "0.0.0",
+  "description": "Send an email campaign immediately, based on campaignId",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "campaignId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the campaign"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "0ce751f1f2f4f09f9fd0206b3d0df310cd8e7df9716a39dae32b8828b1ce1657"
+  }
+}

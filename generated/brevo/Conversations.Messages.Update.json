@@ -1,0 +1,44 @@
+{
+  "moduleName": "Brevo / Conversations / Messages / Update",
+  "version": "0.0.0",
+  "description": "Only agents’ messages can be edited.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the message"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "text": {
+      "schema": {
+        "type": "string",
+        "description": "edited message text"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "d9d099e11fc9e69ee4a69153e627f35523fb25163c2c44684e0cd98a35ecc786"
+  }
+}

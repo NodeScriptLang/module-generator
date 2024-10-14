@@ -1,0 +1,47 @@
+{
+  "moduleName": "Brevo / Master Account / Group Unlink / SubAccounts",
+  "version": "0.0.0",
+  "description": "This endpoint allows you to remove a sub-organization from a group.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "groupId": {
+      "schema": {
+        "type": "string",
+        "description": "Group id"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "subAccountIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "List of sub-account ids"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "c4ce0c1c928744dd885d39031b80f51b0e303aae7f386dc7f1e917a05b63f336"
+  }
+}

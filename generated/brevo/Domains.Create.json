@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Domains / Create",
+  "version": "0.0.0",
+  "description": "Create a new domain",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "Domain name"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "fa0d8633308a379e0022c8e34ecf87b768700ed7599eb1d4a1274ab9bebea04a"
+  }
+}

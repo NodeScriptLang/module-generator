@@ -1,0 +1,61 @@
+{
+  "moduleName": "Brevo / Contacts / Folders / List",
+  "version": "0.0.0",
+  "description": "Get all folders",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "10",
+        "minimum": 0,
+        "maximum": 50,
+        "description": "Number of documents per page"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "offset": {
+      "schema": {
+        "type": "number",
+        "default": "0",
+        "description": "Index of the first document of the page"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "default": "desc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "description": "Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "16c7c1d75cf4c32c8fc1365adfb8934be3a74f95609a8fb5fe38cfbab81843c8"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Admin Invite Requests / List Approved",
+  "version": "0.0.0",
+  "description": "List all approved workspace invite requests.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ID for the workspace where the invite requests were made."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "cursor": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Value of the `next_cursor` field sent as part of the previous API response"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The number of results that will be returned by the API on each invocation. Must be between 1 - 1000, both inclusive"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.inviteRequests.approved.list",
+    "codeHash": "0408b0e35ffdc6ea62aea9e587c14698487dd9d078d6a4411672dc1c824d27f7"
+  }
+}

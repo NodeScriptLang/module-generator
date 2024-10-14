@@ -1,0 +1,28 @@
+{
+  "moduleName": "Brevo / Master Account / SubAccount Groups / List",
+  "version": "0.0.0",
+  "description": "This endpoint allows you to list all groups created on your Admin account.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "577f44b9ad2f61edb0fc48135f2dde30df699706fd1b6c227b136116f1cde492"
+  }
+}

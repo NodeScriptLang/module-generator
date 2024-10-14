@@ -1,0 +1,109 @@
+{
+  "moduleName": "Brevo / Contacts / List",
+  "version": "0.0.0",
+  "description": "Get all the contacts",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "50",
+        "minimum": 0,
+        "maximum": 1000,
+        "description": "Number of documents per page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "offset": {
+      "schema": {
+        "type": "number",
+        "default": "0",
+        "description": "Index of the first document of the page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "modifiedSince": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). **Prefer to pass your timezone in date-time format for accurate result.**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "createdSince": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter (urlencoded) the contacts created after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). **Prefer to pass your timezone in date-time format for accurate result.**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "default": "desc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "description": "Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "segmentId": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Id of the segment. **Either listIds or segmentId can be passed.**"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "listIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Ids of the list. **Either listIds or segmentId can be passed.**"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "filter": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter the contacts on the basis of attributes. **Allowed operator: equals. (e.g. filter=equals(FIRSTNAME,\"Antoine\"), filter=equals(B1, true), filter=equals(DOB, \"1989-11-23\"))**\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "57822f4cf4e145fa55ddf8bc887b7183f34a6b8b3de8fe421713846d65a85ca1"
+  }
+}

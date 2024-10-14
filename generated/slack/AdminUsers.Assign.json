@@ -1,0 +1,74 @@
+{
+  "moduleName": "Slack / Admin Users / Assign",
+  "version": "0.0.0",
+  "description": "Add an Enterprise user to a workspace.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channelIds": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Comma separated values of channel IDs to add user in the new workspace."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "isRestricted": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "True if user should be added to the workspace as a guest."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "isUltraRestricted": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "True if user should be added to the workspace as a single-channel guest."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID (`T1234`) of the workspace."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the user to add to the workspace."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.users.assign",
+    "codeHash": "9d0030af140e3556e7a08aa1a3bf56edced8ac8fd8ec19ae4d07d740db8f0245"
+  }
+}

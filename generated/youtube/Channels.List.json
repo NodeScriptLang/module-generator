@@ -1,0 +1,144 @@
+{
+  "moduleName": "YouTube / Channels / List",
+  "version": "0.0.0",
+  "description": "Retrieves a list of resources, possibly filtered.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/youtube` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "part": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "The *part* parameter specifies a comma-separated list of one or more channel resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a channel resource, the contentDetails property contains other properties, such as the uploads properties. As such, if you set *part=contentDetails*, the API response will also contain all of those nested properties."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "categoryId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Return the channels within the specified guide category ID."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "forUsername": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Return the channel associated with a YouTube username."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "hl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Stands for \"host language\". Specifies the localization language of the metadata to be filled into snippet.localized. The field is filled with the default metadata if there is no localization in the specified language. The parameter value must be a language code included in the list returned by the i18nLanguages.list method (e.g. en_US, es_MX)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Return the channels with the specified IDs."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "managedByMe": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Return the channels managed by the authenticated user."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maxResults": {
+      "schema": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 50,
+        "optional": true,
+        "description": "The *maxResults* parameter specifies the maximum number of items that should be returned in the result set."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "mine": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Return the ids of channels owned by the authenticated user."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "mySubscribers": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Return the channels subscribed to the authenticated user"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "onBehalfOfContentOwner": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "e010dde337b90190963ee123b3d342cd1cc38301a432d873935fa6ebb19d6a96"
+  }
+}

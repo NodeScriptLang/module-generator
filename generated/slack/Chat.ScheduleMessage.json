@@ -1,0 +1,137 @@
+{
+  "moduleName": "Slack / Chat / Schedule Message",
+  "version": "0.0.0",
+  "description": "Schedules a message to be sent to a channel.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "asUser": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Pass true to post the message as the authed user, instead of as a bot. Defaults to false. See [chat.postMessage](chat.postMessage#authorship)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "attachments": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A JSON-based array of structured attachments, presented as a URL-encoded string."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "blocks": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A JSON-based array of structured blocks, presented as a URL-encoded string."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Channel, private group, or DM channel to send message to. Can be an encoded ID, or a name. See [below](#channels) for more details."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "linkNames": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Find and link channel names and usernames."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "parse": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Change how messages are treated. Defaults to `none`. See [chat.postMessage](chat.postMessage#formatting)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "postAt": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Unix EPOCH timestamp of time in future to send the message."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "replyBroadcast": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Used in conjunction with `thread_ts` and indicates whether reply should be made visible to everyone in the channel or conversation. Defaults to `false`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "text": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "How this field works and whether it is required depends on other fields you use in your API call. [See below](#text_usage) for more detail."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "threadTs": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Provide another message's `ts` value to make this message a reply. Avoid using a reply's `ts` value; use its parent instead."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "unfurlLinks": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Pass true to enable unfurling of primarily text-based content."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "unfurlMedia": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Pass false to disable unfurling of media content."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/chat.scheduleMessage",
+    "codeHash": "090ae960d8207815962232757073fcb3d0fd44f5eecd5f85f06b702efca54a60"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "moduleName": "Slack / Reminders / List",
+  "version": "0.0.0",
+  "description": "Lists all reminders created by or for a given user.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/reminders.list",
+    "codeHash": "a34d07e1870cd5c8cb76fb10438d6d1f795d68092ac7dae2b807ed310c30ee9a"
+  }
+}

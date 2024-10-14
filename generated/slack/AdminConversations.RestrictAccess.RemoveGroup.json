@@ -1,0 +1,65 @@
+{
+  "moduleName": "Slack / Admin Conversations / Restrict Access / Remove Group",
+  "version": "0.0.0",
+  "description": "Remove a linked IDP group linked from a private channel",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channelId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The channel to remove the linked group from."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "groupId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The [IDP Group](https://slack.com/help/articles/115001435788-Connect-identity-provider-groups-to-your-Enterprise-Grid-org) ID to remove from the private channel."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The workspace where the channel exists. This argument is required for channels only tied to one workspace, and optional for channels that are shared across an organization."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "token": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Authentication token. Requires scope: `admin.conversations:write`"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.conversations.restrictAccess.removeGroup",
+    "codeHash": "d32da6effe5ead12bd147b80b3e182787a3bfd7186455726bd9ea91e5bf75c6e"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Migration / Exchange",
+  "version": "0.0.0",
+  "description": "For Enterprise Grid workspaces, map local user IDs to global user IDs",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "users": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma-separated list of user ids, up to 400 per request"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Specify team_id starts with `T` in case of Org Token"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "toOld": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Specify `true` to convert `W` global user IDs to workspace-specific `U` IDs. Defaults to `false`."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/migration.exchange",
+    "codeHash": "0e163689871d39957e3d859fca0e3df62e29db8ee3c9132e65bb45a6f6e1efa3"
+  }
+}

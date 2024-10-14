@@ -1,0 +1,74 @@
+{
+  "moduleName": "Slack / Chat / List Scheduled Messages",
+  "version": "0.0.0",
+  "description": "Returns a list of scheduled messages.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The channel of the scheduled messages"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "latest": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "A UNIX timestamp of the latest value in the time range"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "oldest": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "A UNIX timestamp of the oldest value in the time range"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Maximum number of original entries to return."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "cursor": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "For pagination purposes, this is the `cursor` value returned from a previous call to `chat.scheduledmessages.list` indicating where you want to start this call from."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/chat.scheduledMessages.list",
+    "codeHash": "a10f764b1c1e726f5d67128efe7b8e048f6884abf931fc81425598562d7bbaa9"
+  }
+}

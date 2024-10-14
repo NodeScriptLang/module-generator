@@ -1,0 +1,48 @@
+{
+  "moduleName": "Brevo / Master Account / User Invitation / Update",
+  "version": "0.0.0",
+  "description": "This endpoint will allow the user to:\n- Resend an admin user invitation\n- Cancel an admin user invitation\n",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "action": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "resend",
+          "cancel"
+        ],
+        "description": "Action to be performed (cancel / resend)"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "description": "Email address of the recipient"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "21529228639a74fbad5196394b96fd2d391ad1e8058adb41465486ef7768f663"
+  }
+}

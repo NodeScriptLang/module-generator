@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Apps / Uninstall",
+  "version": "0.0.0",
+  "description": "Uninstalls your app from a workspace.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "clientId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Issued when you created your application."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "clientSecret": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Issued when you created your application."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/apps.uninstall",
+    "codeHash": "caca5ffafa269284122a4dccd88625869587a5d581fe8ac49b07ffb197713399"
+  }
+}

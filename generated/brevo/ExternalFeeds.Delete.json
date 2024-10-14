@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / External Feeds / Delete",
+  "version": "0.0.0",
+  "description": "This endpoint will delete an external feed.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "uuid": {
+      "schema": {
+        "type": "string",
+        "description": "UUID of the feed to delete"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "f21673e511680a9b15e57bc14470c474497ff9c7d510f2bd5fadb8b943c396d8"
+  }
+}

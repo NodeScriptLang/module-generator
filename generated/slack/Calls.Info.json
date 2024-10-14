@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Calls / Info",
+  "version": "0.0.0",
+  "description": "Returns information about a Call.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "`id` of the Call returned by the [`calls.add`](/methods/calls.add) method."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/calls.info",
+    "codeHash": "41baf672c954feb4685424a647e66400e508a299bab33f1e14292abf84d4f4fc"
+  }
+}

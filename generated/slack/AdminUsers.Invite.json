@@ -1,0 +1,110 @@
+{
+  "moduleName": "Slack / Admin Users / Invite",
+  "version": "0.0.0",
+  "description": "Invite a user to a workspace.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channelIds": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma-separated list of `channel_id`s for this user to join. At least one channel is required."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "customMessage": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An optional message to send to the user in the invite email."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The email address of the person to invite."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "guestExpirationTs": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Timestamp when guest account should be disabled. Only include this timestamp if you are inviting a guest user and you want their account to expire on a certain date."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "isRestricted": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Is this user a multi-channel guest user? (default: false)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "isUltraRestricted": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Is this user a single channel guest user? (default: false)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "realName": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Full name of the user."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "resend": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Allow this invite to be resent in the future if a user has not signed up yet. (default: false)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID (`T1234`) of the workspace."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.users.invite",
+    "codeHash": "4962be386181bd02c8e468502ea19f9679ce8986b8ea4c7a65226d1f8576b742"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "moduleName": "Slack / Users / Set Active",
+  "version": "0.0.0",
+  "description": "Marked a user as active. Deprecated and non-functional.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/users.setActive",
+    "codeHash": "f9947712178535af3b71d36c226cc06683276080e7acc817c186a328fbc43479"
+  }
+}

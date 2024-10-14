@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Deals / Get",
+  "version": "0.0.0",
+  "description": "Get a deal",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "54b49ff4ad50e9faeb9c26f1bb4cafaebca4839692682e89f4d61c373254eb44"
+  }
+}

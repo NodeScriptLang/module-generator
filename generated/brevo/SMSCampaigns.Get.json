@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / SMS Campaigns / Get",
+  "version": "0.0.0",
+  "description": "Get an SMS campaign",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "campaignId": {
+      "schema": {
+        "type": "number",
+        "description": "id of the SMS campaign"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "820e726a876f83fa5706fcc226859b0e8c334d11d014f2ad2e774e0e1e617c89"
+  }
+}

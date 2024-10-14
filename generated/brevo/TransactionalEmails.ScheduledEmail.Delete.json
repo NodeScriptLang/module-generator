@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Transactional Emails / Scheduled Email / Delete",
+  "version": "0.0.0",
+  "description": "Delete scheduled batch of emails by batchId or single scheduled email by messageId",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "identifier": {
+      "schema": {
+        "type": "string",
+        "description": "The `batchId` of scheduled emails batch (Should be a valid UUIDv4) or the `messageId` of scheduled email."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "bafd29462b83152a2dfcd24061a5ceae1b22a92fd7966fb84f008a27b7ed96b7"
+  }
+}

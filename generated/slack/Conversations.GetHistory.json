@@ -1,0 +1,83 @@
+{
+  "moduleName": "Slack / Conversations / Get History",
+  "version": "0.0.0",
+  "description": "Fetches a conversation's history of messages and events.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Conversation ID to fetch history for."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "latest": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "End of time range of messages to include in results."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "oldest": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Start of time range of messages to include in results."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "inclusive": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Include messages with latest or oldest timestamp in results only when either timestamp is specified."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The maximum number of items to return. Fewer than the requested number of items may be returned, even if the end of the users list hasn't been reached."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "cursor": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Paginate through collections of data by setting the `cursor` parameter to a `next_cursor` attribute returned by a previous request's `response_metadata`. Default value fetches the first \"page\" of the collection. See [pagination](/docs/pagination) for more detail."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/conversations.history",
+    "codeHash": "d629721c8e9fe6e555b4f080f94da1aa6e844b32d5c323a3c9e731bf04f94b53"
+  }
+}

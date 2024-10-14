@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Team / Get Billable Info",
+  "version": "0.0.0",
+  "description": "Gets billable users information for the current team.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "user": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A user to retrieve the billable information for. Defaults to all users."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/team.billableInfo",
+    "codeHash": "1f8435fe665e416df17351c8dd2ab5abcd11d5a3dd884c2d3b4e26d0d96869ce"
+  }
+}

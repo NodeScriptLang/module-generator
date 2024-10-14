@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Conversations / Create",
+  "version": "0.0.0",
+  "description": "Initiates a public or private channel-based conversation",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "isPrivate": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Create a private channel instead of a public one"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Name of the public or private channel to create"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/conversations.create",
+    "codeHash": "a6241261bf1ff50ce28e7c5496adfca8feb595b03f9cf13a13eaa308ff815130"
+  }
+}

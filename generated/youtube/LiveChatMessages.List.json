@@ -1,0 +1,97 @@
+{
+  "moduleName": "YouTube / Live Chat Messages / List",
+  "version": "0.0.0",
+  "description": "Retrieves a list of resources, possibly filtered.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/youtube` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "liveChatId": {
+      "schema": {
+        "type": "string",
+        "description": "The id of the live chat for which comments should be returned."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "part": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "The *part* parameter specifies the liveChatComment resource parts that the API response will include. Supported values are id and snippet."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "hl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Specifies the localization language in which the system messages should be returned."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maxResults": {
+      "schema": {
+        "type": "number",
+        "minimum": 200,
+        "maximum": 2000,
+        "optional": true,
+        "description": "The *maxResults* parameter specifies the maximum number of items that should be returned in the result set."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken property identify other pages that could be retrieved."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "profileImageSize": {
+      "schema": {
+        "type": "number",
+        "minimum": 16,
+        "maximum": 720,
+        "optional": true,
+        "description": "Specifies the size of the profile image that should be returned for each user."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "f6bb40dd6187d337de16402f5280eebdc3a6744ca55cb37100d594f7e5bc98a6"
+  }
+}

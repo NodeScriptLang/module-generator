@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Reminders / Complete",
+  "version": "0.0.0",
+  "description": "Marks a reminder as complete.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "reminder": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the reminder to be marked as complete"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/reminders.complete",
+    "codeHash": "e3220635b548d5c4604bf4952ddd3cd45c95ff8fd0e079da780107ef11ef51fb"
+  }
+}

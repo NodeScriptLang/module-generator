@@ -1,0 +1,144 @@
+{
+  "moduleName": "Brevo / Tasks / Update",
+  "version": "0.0.0",
+  "description": "Update a task",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Name of task"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "duration": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Duration of task in milliseconds [1 minute = 60000 ms]"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "taskTypeId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Id for type of task e.g Call / Email / Meeting etc."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "date": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Task date/time"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "notes": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Notes added to a task"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "done": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Task marked as done"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "assignToId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "To assign a task to a user you can use either the account email or ID."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "contactsIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Contact ids for contacts linked to this task"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "dealsIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Deal ids for deals a task is linked to"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "companiesIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Companies ids for companies a task is linked to"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "reminder": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Task reminder date/time for a task"
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "68f84a60e5a852277df456e8591241b244a49e3a0d7d0653576aaf1ce11b4247"
+  }
+}

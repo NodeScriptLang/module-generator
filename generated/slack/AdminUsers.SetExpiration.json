@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Admin Users / Set Expiration",
+  "version": "0.0.0",
+  "description": "Set an expiration for a guest user",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "expirationTs": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Timestamp when guest account should be disabled."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID (`T1234`) of the workspace."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the user to set an expiration for."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.users.setExpiration",
+    "codeHash": "c77f416155cd614757131517e82ada67c0cf246a5e479248882c91c1a175e2ad"
+  }
+}

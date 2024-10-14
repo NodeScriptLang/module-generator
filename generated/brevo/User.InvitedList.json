@@ -1,0 +1,28 @@
+{
+  "moduleName": "Brevo / User / Invited List",
+  "version": "0.0.0",
+  "description": "Get the list of all your users",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "31b03fff8d6577ac31a8b2f0322725482ed405ade9cd71886abe0d239a3c4024"
+  }
+}

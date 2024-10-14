@@ -1,0 +1,28 @@
+{
+  "moduleName": "Brevo / Transactional Emails / Blocked Domains / List",
+  "version": "0.0.0",
+  "description": "Get the list of blocked domains",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "9475c350fa6a14c8401ada08ac1744255fcc6e532aadd44b2682e232db0e880c"
+  }
+}

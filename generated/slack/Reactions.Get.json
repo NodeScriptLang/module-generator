@@ -1,0 +1,74 @@
+{
+  "moduleName": "Slack / Reactions / Get",
+  "version": "0.0.0",
+  "description": "Gets reactions for an item.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Channel where the message to get reactions for was posted."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "file": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "File to get reactions for."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fileComment": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "File comment to get reactions for."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "full": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "If true always return the complete reaction list."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "timestamp": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Timestamp of the message to get reactions for."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/reactions.get",
+    "codeHash": "ef5fbe5dd91838a2d9f0f6b13ae3a2e23ddd3e8c2fe41a1f3201c90c3c6fddb9"
+  }
+}

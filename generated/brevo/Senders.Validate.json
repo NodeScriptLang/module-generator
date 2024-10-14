@@ -1,0 +1,44 @@
+{
+  "moduleName": "Brevo / Senders / Validate",
+  "version": "0.0.0",
+  "description": "Validate Sender using OTP",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "senderId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the sender"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "otp": {
+      "schema": {
+        "type": "number",
+        "description": "6 digit OTP received on email"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "c5cc63e393cc4e5487fec218f13ff84a5bdeea7aa1b46e90476b5df10502dea4"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Files / Get Remote Info",
+  "version": "0.0.0",
+  "description": "Retrieve information about a remote file added to Slack",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "file": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Specify a file by providing its ID."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "externalId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Creator defined GUID for the file."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/files.remote.info",
+    "codeHash": "e5e94387d4c45b7943b26f246101d654daefeb91a1038c974abc90bfa21b0d4f"
+  }
+}

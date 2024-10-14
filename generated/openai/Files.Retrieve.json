@@ -1,0 +1,48 @@
+{
+  "moduleName": "OpenAI / Files / Retrieve",
+  "version": "0.0.0",
+  "description": "Returns information about a specific file.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "optional": false,
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fileId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the file to use for this request."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "codeHash": "9a66fd98d3124e1dbbe967d5328c558d0ef47d1a7ad5c1456b520a9999b46dc2"
+  }
+}

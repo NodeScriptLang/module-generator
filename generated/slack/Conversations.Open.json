@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Conversations / Open",
+  "version": "0.0.0",
+  "description": "Opens or resumes a direct message or multi-person direct message.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Resume a conversation by supplying an `im` or `mpim`'s ID. Or provide the `users` field instead."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "returnIm": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Boolean, indicates you want the full IM channel definition in the response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "users": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Comma separated lists of users. If only one user is included, this creates a 1:1 DM.  The ordering of the users is preserved whenever a multi-person direct message is returned. Supply a `channel` when not supplying `users`."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/conversations.open",
+    "codeHash": "8d7a0ae656cd047d7d090a84fb908971efea8aa650316ccbd92cbeffbf620cc8"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "moduleName": "Slack / Workflows / Update Step",
+  "version": "0.0.0",
+  "description": "Update the configuration for a workflow extension step.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "workflowStepEditId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A context identifier provided with `view_submission` payloads used to call back to `workflows.updateStep`."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "inputs": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A JSON key-value map of inputs required from a user during configuration. This is the data your app expects to receive when the workflow step starts. **Please note**: the embedded variable format is set and replaced by the workflow system. You cannot create custom variables that will be replaced at runtime. [Read more about variables in workflow steps here](/workflows/steps#variables)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "outputs": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An JSON array of output objects used during step execution. This is the data your app agrees to provide when your workflow step was executed."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "stepName": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An optional field that can be used to override the step name that is shown in the Workflow Builder."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "stepImageUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An optional field that can be used to override app image that is shown in the Workflow Builder."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/workflows.updateStep",
+    "codeHash": "dee61e91b8af9d55fa341377cf23ceab70e736b87f01a59ba47df1ffc5a591a1"
+  }
+}

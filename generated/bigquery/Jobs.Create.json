@@ -1,0 +1,120 @@
+{
+  "moduleName": "BigQuery / Jobs / Create",
+  "version": "0.0.0",
+  "description": "Starts a new asynchronous job. Requires the Can View project role.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/cloud-platform` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Project ID of the project that will be billed for the job"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "configuration": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "etag": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] A hash of this resource."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] Opaque ID field of the job"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "jobReference": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "kind": {
+      "schema": {
+        "type": "string",
+        "default": "bigquery#job",
+        "optional": true,
+        "description": "[Output-only] The type of the resource."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "selfLink": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] A URL that can be used to access this resource again."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "statistics": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "status": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "userEmail": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "[Output-only] Email address of the user who ran the job."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "2fca2ffd4ca2dc359b07a47473b569c75acc0e68a2ba7ea375c85e154f0554d3"
+  }
+}

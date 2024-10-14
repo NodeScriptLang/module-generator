@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Email Campaigns / AB Test Result",
+  "version": "0.0.0",
+  "description": "Obtain winning version of an A/B test email campaign",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "campaignId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the A/B test campaign"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "a69972d779c2d5d60b3ff581789f7a4b00363bbe859bc50087f458e0a1064052"
+  }
+}

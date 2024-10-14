@@ -1,0 +1,72 @@
+{
+  "moduleName": "YouTube / Comments / Set Moderation Status",
+  "version": "0.0.0",
+  "description": "Sets the moderation status of one or more comments.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/youtube` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "id": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "Modifies the moderation status of the comments with the given IDs"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "moderationStatus": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "published",
+          "heldForReview",
+          "likelySpam",
+          "rejected"
+        ],
+        "description": "Specifies the requested moderation status. Note, comments can be in statuses, which are not available through this call. For example, this call does not allow to mark a comment as 'likely spam'. Valid values: MODERATION_STATUS_PUBLISHED, MODERATION_STATUS_HELD_FOR_REVIEW, MODERATION_STATUS_REJECTED."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "banAuthor": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "If set to true the author of the comment gets added to the ban list. This means all future comments of the author will autmomatically be rejected. Only valid in combination with STATUS_REJECTED."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "b8a38a5ca7c14bd2e077a73d9501858cdf127ed30e5788b79f9fd1a536641c2e"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "moduleName": "Slack / Apps / Permissions / Get",
+  "version": "0.0.0",
+  "description": "Returns list of permissions this app has on a team.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/apps.permissions.info",
+    "codeHash": "70257ed0bfa5de4897ee9ecc10cf88ccdc9fef5dafe46644867ec4218779a256"
+  }
+}

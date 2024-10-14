@@ -1,0 +1,61 @@
+{
+  "moduleName": "Brevo / SMS Campaigns / Export Recipients",
+  "version": "0.0.0",
+  "description": "It returns the background process ID which on completion calls the notify URL that you have set in the input.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "campaignId": {
+      "schema": {
+        "type": "number",
+        "description": "id of the campaign"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "notifyUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "URL that will be called once the export process is finished. For reference, https://help.brevo.com/hc/en-us/articles/360007666479"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "recipientsType": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "all",
+          "delivered",
+          "answered",
+          "softBounces",
+          "hardBounces",
+          "unsubscribed"
+        ],
+        "description": "Filter the recipients based on how they interacted with the campaign"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "a26a07d95a0b07ffec2b1081d3f6ec011df50fd6dadb14ded82fc78a6069a0c2"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "moduleName": "Brevo / Senders / Update",
+  "version": "0.0.0",
+  "description": "Update a sender",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "senderId": {
+      "schema": {
+        "type": "number",
+        "description": "Id of the sender"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "From Name to update the sender"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "From Email to update the sender"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "ips": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "**Only in case of dedicated IP**. IPs to associate to the sender. If passed, will replace all the existing IPs.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "736e1bd59983a00bb3b4661bf55205b5b63a91677d04eec0f0114f5eb05d5667"
+  }
+}

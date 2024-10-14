@@ -1,0 +1,92 @@
+{
+  "moduleName": "YouTube / Videos / Report Abuse",
+  "version": "0.0.0",
+  "description": "Report abuse for a video.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/youtube` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "onBehalfOfContentOwner": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "comments": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Additional comments regarding the abuse report."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "language": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The language that the content was viewed in."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "reasonId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The high-level, or primary, reason that the content is abusive. The value is an abuse report reason ID."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "secondaryReasonId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The specific, or secondary, reason that this content is abusive (if available). The value is an abuse report reason ID that is a valid secondary reason for the primary reason."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "videoId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID that YouTube uses to uniquely identify the video."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "d97c5dab8be8a6da721d1e3793b2ae57d7ffa606832a5b9a5f9882cc6969551c"
+  }
+}

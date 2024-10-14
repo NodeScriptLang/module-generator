@@ -1,0 +1,137 @@
+{
+  "moduleName": "OpenAI / Images / Generations / Create",
+  "version": "0.0.0",
+  "description": "Creates an image given a prompt.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "optional": false,
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "prompt": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A text description of the desired image(s). The maximum length is 1000 characters for `dall-e-2` and 4000 characters for `dall-e-3`."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "model": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The model to use for image generation."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "n": {
+      "schema": {
+        "type": "number",
+        "default": "1",
+        "minimum": 1,
+        "maximum": 10,
+        "optional": true,
+        "description": "The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "quality": {
+      "schema": {
+        "type": "string",
+        "default": "standard",
+        "enum": [
+          "standard",
+          "hd"
+        ],
+        "optional": true,
+        "description": "The quality of the image that will be generated. `hd` creates images with finer details and greater consistency across the image. This param is only supported for `dall-e-3`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "responseFormat": {
+      "schema": {
+        "type": "string",
+        "default": "url",
+        "enum": [
+          "url",
+          "b64_json"
+        ],
+        "optional": true,
+        "description": "The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "size": {
+      "schema": {
+        "type": "string",
+        "default": "1024x1024",
+        "enum": [
+          "256x256",
+          "512x512",
+          "1024x1024",
+          "1792x1024",
+          "1024x1792"
+        ],
+        "optional": true,
+        "description": "The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`. Must be one of `1024x1024`, `1792x1024`, or `1024x1792` for `dall-e-3` models."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "style": {
+      "schema": {
+        "type": "string",
+        "default": "vivid",
+        "enum": [
+          "vivid",
+          "natural"
+        ],
+        "optional": true,
+        "description": "The style of the generated images. Must be one of `vivid` or `natural`. Vivid causes the model to lean towards generating hyper-real and dramatic images. Natural causes the model to produce more natural, less hyper-real looking images. This param is only supported for `dall-e-3`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "user": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "codeHash": "789529452e47466a954fb997d61f0bbf45f88b3a8498f393a546d891a9ca8ebf"
+  }
+}

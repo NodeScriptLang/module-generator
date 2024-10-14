@@ -1,0 +1,48 @@
+{
+  "moduleName": "OpenAI / Threads / Delete",
+  "version": "0.0.0",
+  "description": "Delete a thread.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "optional": false,
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "threadId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the thread to delete."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "codeHash": "782a799c0f83a99db3d5b20001652ab720fab21e846bd129e5b351d8c0b80654"
+  }
+}

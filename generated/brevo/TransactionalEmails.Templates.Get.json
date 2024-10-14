@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Transactional Emails / Templates / Get",
+  "version": "0.0.0",
+  "description": "Returns the template information",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "templateId": {
+      "schema": {
+        "type": "number",
+        "description": "id of the template"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "12b8dbcf5202eb110814881837d8b6b6b0df25b8cafce63eb6f4d65aac8bec36"
+  }
+}

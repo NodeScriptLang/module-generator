@@ -1,0 +1,37 @@
+{
+  "moduleName": "Brevo / Contacts / Folders / Create",
+  "version": "0.0.0",
+  "description": "Create a folder",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Name of the folder"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "89a9adcfbfe7f0f056cbe108c34f644c70e868cabd83963e9a87631f5e681655"
+  }
+}

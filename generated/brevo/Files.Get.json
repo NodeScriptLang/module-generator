@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Files / Get",
+  "version": "0.0.0",
+  "description": "Download a file",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "File id to download."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "fa768f52974ee97f754f80d1fdd5b716e0a02b4251abe622ed7c246d15f1b6f5"
+  }
+}

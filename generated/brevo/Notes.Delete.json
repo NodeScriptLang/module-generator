@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Notes / Delete",
+  "version": "0.0.0",
+  "description": "Delete a note",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "Note ID to delete"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "080f2ae5fd6d239ed9c1e3917c65aa36d4120e284cead0edd0c34959239abb38"
+  }
+}

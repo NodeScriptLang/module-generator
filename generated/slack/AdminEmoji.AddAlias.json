@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Admin Emoji / Add Alias",
+  "version": "0.0.0",
+  "description": "Add an emoji alias.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "aliasFor": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The alias of the emoji."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The name of the emoji to be aliased. Colons (`:myemoji:`) around the value are not required, although they may be included."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "token": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Authentication token. Requires scope: `admin.teams:write`"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.emoji.addAlias",
+    "codeHash": "a43b107e01ceb3915801c183aa4f35d7e1e915b753e48d383618627e636cf44a"
+  }
+}

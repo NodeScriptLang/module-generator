@@ -1,0 +1,28 @@
+{
+  "moduleName": "Brevo / Account / Get",
+  "version": "0.0.0",
+  "description": "Get your account information, plan and credits details",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "b91c4c3a6c230c7b4a8e2f85e080437036466a46f6f6dbc83101282c7a14db48"
+  }
+}

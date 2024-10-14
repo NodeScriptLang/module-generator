@@ -1,0 +1,47 @@
+{
+  "moduleName": "Brevo / Master Account / SubAccount IP / Associate",
+  "version": "0.0.0",
+  "description": "This endpoint allows to associate an IP to sub-accounts",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "ip": {
+      "schema": {
+        "type": "string",
+        "description": "IP address"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "ids": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "Pass the list of sub-account Ids to be associated with the IP address"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "7c3a953cfc9045a3d3b50123a49ddfed80d174e6d93d14a71f0c988d9e683fdd"
+  }
+}

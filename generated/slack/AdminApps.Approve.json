@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Admin Apps / Approve",
+  "version": "0.0.0",
+  "description": "Approve an app for installation on a workspace.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "appId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The id of the app to approve."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "requestId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The id of the request to approve."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.apps.approve",
+    "codeHash": "bd9d5287400f0e302368e5e783d57c076264b3fd6d7640cd6d4178877fec7744"
+  }
+}

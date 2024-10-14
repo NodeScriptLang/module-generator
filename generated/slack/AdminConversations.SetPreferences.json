@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Admin Conversations / Set Preferences",
+  "version": "0.0.0",
+  "description": "Set the posting permissions for a public or private channel.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channelId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The channel to set the prefs for"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "prefs": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The prefs for this channel in a stringified JSON format."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.conversations.setConversationPrefs",
+    "codeHash": "9004a4e58255469166faafff62babba0175813f200a381296dabfa31af044f26"
+  }
+}

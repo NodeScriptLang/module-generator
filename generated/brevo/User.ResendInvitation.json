@@ -1,0 +1,48 @@
+{
+  "moduleName": "Brevo / User / Resend Invitation",
+  "version": "0.0.0",
+  "description": "Resend / Cancel invitation",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "action": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "resend",
+          "cancel"
+        ],
+        "description": "action"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "description": "Email of the invited user."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "4290e78979bd793a7c298ad82d90fe84da7762ea775e4c0700adc6385c5a88b8"
+  }
+}

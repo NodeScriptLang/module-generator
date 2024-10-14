@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Conversations / Messages / Delete",
+  "version": "0.0.0",
+  "description": "Only agents’ messages can be deleted.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the message"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "f49c9e34ba4567786c803cb25ba9c10912853a84860e92a4220c50047f6e5e37"
+  }
+}

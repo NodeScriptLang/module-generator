@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Auth / Revoke",
+  "version": "0.0.0",
+  "description": "Revokes a token.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "test": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Setting this parameter to `1` triggers a _testing mode_ where the specified token will not actually be revoked."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/auth.revoke",
+    "codeHash": "10550b4ea4c0b2d74835607e69582f1529ffcf43c779cec1a5b076e994bc3323"
+  }
+}

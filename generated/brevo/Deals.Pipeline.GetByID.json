@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Deals / Pipeline / Get By ID",
+  "version": "0.0.0",
+  "description": "Get a pipeline",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "pipelineId": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "8c594aed1a3588bcb1a496cd7c94abd53140f22b98a5c5a18fe4b098f29997b4"
+  }
+}

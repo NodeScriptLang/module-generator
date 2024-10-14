@@ -1,0 +1,86 @@
+{
+  "moduleName": "Brevo / Deals / List",
+  "version": "0.0.0",
+  "description": "Get all deals",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "filters[attributesDealName]": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by attributes. If you have a filter for the owner on your end, please send it as filters[attributes.deal_owner] and utilize the account email for the filtering."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "filters[linkedCompaniesIds]": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by linked companies ids"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "filters[linkedContactsIds]": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by linked companies ids"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "offset": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Index of the first document of the page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Number of documents per page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "optional": true,
+        "description": "Sort the results in the ascending/descending order. Default order is **descending** by creation if `sort` is not passed"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "2b14b4d75595900ee9e391e06b9f32d2ac4fae70a62185aebeb83aa5227f0135"
+  }
+}

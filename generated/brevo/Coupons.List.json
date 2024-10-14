@@ -1,0 +1,76 @@
+{
+  "moduleName": "Brevo / Coupons / List",
+  "version": "0.0.0",
+  "description": "Get all your coupon collections",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "50",
+        "minimum": 0,
+        "maximum": 100,
+        "description": "Number of documents returned per page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "offset": {
+      "schema": {
+        "type": "number",
+        "default": "0",
+        "minimum": 0,
+        "description": "Index of the first document on the page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "default": "desc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "description": "Sort the results by creation time in ascending/descending order"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sortBy": {
+      "schema": {
+        "type": "string",
+        "default": "createdAt",
+        "enum": [
+          "createdAt",
+          "remainingCoupons",
+          "expirationDate"
+        ],
+        "description": "The field used to sort coupon collections"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "ff2d2ce2366608425f9eae8db0dafe810938f45c86324ad404abafcfb5b37313"
+  }
+}

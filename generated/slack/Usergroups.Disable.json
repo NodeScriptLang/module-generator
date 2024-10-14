@@ -1,0 +1,47 @@
+{
+  "moduleName": "Slack / Usergroups / Disable",
+  "version": "0.0.0",
+  "description": "Disable an existing User Group",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "includeCount": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Include the number of users in the User Group."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "usergroup": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The encoded ID of the User Group to disable."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/usergroups.disable",
+    "codeHash": "aff1f0ce4b7c457135b8385ec2772abd9d5f3885578b07d82b30354b7ac0ff56"
+  }
+}

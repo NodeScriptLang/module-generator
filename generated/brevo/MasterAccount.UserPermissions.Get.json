@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Master Account / User Permissions / Get",
+  "version": "0.0.0",
+  "description": "Check admin user permissions",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "description": "Email of the invited user."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "38afbb135de24b4f76a92b319d122ad12ec11722b55c0252c6b7326dd2b49079"
+  }
+}

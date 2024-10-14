@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / WhatsApp Campaigns / Delete",
+  "version": "0.0.0",
+  "description": "Delete a WhatsApp campaign",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "campaignId": {
+      "schema": {
+        "type": "number",
+        "description": "id of the campaign"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "ccaa2e879397371b457981dded96ca1cc7771fd23a68f97c4a45906e2d45b702"
+  }
+}

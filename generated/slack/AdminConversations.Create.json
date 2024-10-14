@@ -1,0 +1,74 @@
+{
+  "moduleName": "Slack / Admin Conversations / Create",
+  "version": "0.0.0",
+  "description": "Create a public or private channel-based conversation.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Description of the public or private channel to create."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "isPrivate": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "When `true`, creates a private channel instead of a public channel"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Name of the public or private channel to create."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "orgWide": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "When `true`, the channel will be available org-wide. Note: if the channel is not `org_wide=true`, you must specify a `team_id` for this channel"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "teamId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The workspace to create the channel in. Note: this argument is required unless you set `org_wide=true`."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.conversations.create",
+    "codeHash": "a7ffa878e2478dc1c8e393ba3baba03999c7d3eae5bf6820940a90980dc61f7a"
+  }
+}

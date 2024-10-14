@@ -1,0 +1,56 @@
+{
+  "moduleName": "Slack / Conversations / Get Info",
+  "version": "0.0.0",
+  "description": "Retrieve information about a conversation.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Conversation ID to learn more about"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includeLocale": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Set this to `true` to receive the locale for this conversation. Defaults to `false`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includeNumMembers": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Set to `true` to include the member count for the specified conversation. Defaults to `false`"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/conversations.info",
+    "codeHash": "f4a94dd377717b31737f7430a7ecc27417e3ecc2d6789b7b3f7edf7e3b1daaf6"
+  }
+}

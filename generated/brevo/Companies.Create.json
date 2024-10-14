@@ -1,0 +1,78 @@
+{
+  "moduleName": "Brevo / Companies / Create",
+  "version": "0.0.0",
+  "description": "Create a company",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "Name of company"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "attributes": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Attributes for company creation"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "countryCode": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Country code if phone_number is passed in attributes."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "linkedContactsIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Contact ids to be linked with company"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "linkedDealsIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Deal ids to be linked with company"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "9ef6c16fca9e3b25b5e0c892e2b363c3aee73df3645d31ca9d1916379759d96e"
+  }
+}

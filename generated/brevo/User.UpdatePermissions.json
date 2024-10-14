@@ -1,0 +1,55 @@
+{
+  "moduleName": "Brevo / User / Update Permissions",
+  "version": "0.0.0",
+  "description": "`Feature` - A Feature represents a specific functionality like Email campaign, Deals, Calls, Automations, etc. on Brevo. While inviting a user, determine which feature you want to manage access to. You must specify the feature accurately to avoid errors.\n\n`Permission` - A Permission defines the level of access or control a user has over a specific feature. While inviting user, decide on the permission level required for the selected feature. Make sure the chosen permission is related to the selected feature.\n\nFeatures and their respective permissions are as below:\n\n- `email_campaigns`:\n  - \"create_edit_delete\"\n  - \"send_schedule_suspend\"\n- `sms_campaigns`:\n  - \"create_edit_delete\"\n  - \"send_schedule_suspend\"\n- `contacts`:\n  - \"view\"\n  - \"create_edit_delete\"\n  - \"import\"\n  - \"export\"\n  - \"list_and_attributes\"\n  - \"forms\"\n- `templates`:\n  - \"create_edit_delete\"\n  - \"activate_deactivate\"\n- `workflows`:\n  - \"create_edit_delete\"\n  - \"activate_deactivate_pause\"\n  - \"settings\"\n- `facebook_ads`:\n  - \"create_edit_delete\"\n  - \"schedule_pause\"\n- `landing_pages`:\n  - \"all\"\n- `transactional_emails`:\n  - \"settings\"\n  - \"logs\"\n- `smtp_api`:\n  - \"smtp\"\n  - \"api_keys\"\n  - \"authorized_ips\"\n- `user_management`:\n  - \"all\"\n- `sales_platform`:\n  - \"manage_owned_deals_tasks\"\n  - \"manage_others_deals_tasks\"\n  - \"reports\"\n  - \"settings\"\n- `phone`:\n  - \"all\"\n- `conversations`:\n  - \"access\"\n  - \"assign\"\n  - \"configure\"\n- `senders_domains_dedicated_ips`:\n  - \"senders_management\"\n  - \"domains_management\"\n  - \"dedicated_ips_management\"\n- `push_notifications`:\n  - \"view\"\n  - \"create_edit_delete\"\n  - \"send\"\n  - \"settings\"\n- `companies`:\n  - \"manage_owned_companies\"\n  - \"manage_other_companies\"\n  - \"settings\"\n\n**Note**:\n- The privileges array remains the same as in the send invitation; the user simply needs to provide the permissions that need to be updated.\n- The availability of feature and its permission depends on your current plan. Please select the features and permissions accordingly.\n",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "description": "Email address for the organization"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "allFeaturesAccess": {
+      "schema": {
+        "type": "boolean",
+        "description": "All access to the features"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "privileges": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "2bd0879402ee6fae57b1f6ebb0b657d44084e36aff504a72158e48aa855637db"
+  }
+}

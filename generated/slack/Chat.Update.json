@@ -1,0 +1,101 @@
+{
+  "moduleName": "Slack / Chat / Update",
+  "version": "0.0.0",
+  "description": "Updates a message.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "asUser": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Pass true to update the message as the authed user. [Bot users](/bot-users) in this context are considered authed users."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "attachments": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A JSON-based array of structured attachments, presented as a URL-encoded string. This field is required when not presenting `text`. If you don't include this field, the message's previous `attachments` will be retained. To remove previous `attachments`, include an empty array for this field."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "blocks": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A JSON-based array of [structured blocks](/block-kit/building), presented as a URL-encoded string. If you don't include this field, the message's previous `blocks` will be retained. To remove previous `blocks`, include an empty array for this field."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Channel containing the message to be updated."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "linkNames": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Find and link channel names and usernames. Defaults to `none`. If you do not specify a value for this field, the original value set for the message will be overwritten with the default, `none`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "parse": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Change how messages are treated. Defaults to `client`, unlike `chat.postMessage`. Accepts either `none` or `full`. If you do not specify a value for this field, the original value set for the message will be overwritten with the default, `client`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "text": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "New text for the message, using the [default formatting rules](/reference/surfaces/formatting). It's not required when presenting `blocks` or `attachments`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "ts": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Timestamp of the message to be updated."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/chat.update",
+    "codeHash": "b6620142b1ee38caabb696ff1c08274fc139ae973d5ddebdad5b8eb232e8fc09"
+  }
+}

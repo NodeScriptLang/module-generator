@@ -1,0 +1,48 @@
+{
+  "moduleName": "OpenAI / Vector Stores / Delete",
+  "version": "0.0.0",
+  "description": "Delete a vector store.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "optional": false,
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "vectorStoreId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the vector store to delete."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "codeHash": "d4bbf366515e768c140360af7f62000431bc68b4e214d6a1e167946ecbea363d"
+  }
+}

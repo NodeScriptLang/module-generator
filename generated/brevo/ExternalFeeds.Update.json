@@ -1,0 +1,127 @@
+{
+  "moduleName": "Brevo / External Feeds / Update",
+  "version": "0.0.0",
+  "description": "This endpoint will update an external feed.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "uuid": {
+      "schema": {
+        "type": "string",
+        "description": "UUID of the feed to update"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Name of the feed"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "url": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "URL of the feed"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "authType": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "basic",
+          "token",
+          "noAuth"
+        ],
+        "optional": true,
+        "description": "Auth type of the feed:\n * `basic`\n * `token`\n * `noAuth`\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "username": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Username for authType `basic`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "password": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Password for authType `basic`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "token": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Token for authType `token`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "headers": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Custom headers for the feed"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maxRetries": {
+      "schema": {
+        "type": "number",
+        "default": "5",
+        "minimum": 0,
+        "maximum": 5,
+        "description": "Maximum number of retries on the feed url"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "cache": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "description": "Toggle caching of feed url response"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "a07d5a8bbc4afc52609444a7efaf2ebeb5e4d27b11f9d780022460ac36ebb196"
+  }
+}

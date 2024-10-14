@@ -1,0 +1,58 @@
+{
+  "moduleName": "Slack / Apps / Permissions / Request",
+  "version": "0.0.0",
+  "description": "Allows an app to request additional scopes",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "scopes": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma separated list of scopes to request for"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "triggerId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Token used to trigger the permissions API"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/apps.permissions.request",
+    "codeHash": "7d6136e30bd8d63d3c60bad5f8d116192a655678f215c4fd6d27b84474d74c2e"
+  }
+}
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/apps.permissions.users.request",
+    "codeHash": "7940d834aa781eb25c082b92f7682bb22b16619de9f989e84630f9e4d76970f4"
+  }
+}

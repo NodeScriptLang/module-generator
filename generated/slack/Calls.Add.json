@@ -1,0 +1,101 @@
+{
+  "moduleName": "Slack / Calls / Add",
+  "version": "0.0.0",
+  "description": "Registers a new Call.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "createdBy": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The valid Slack user ID of the user who created this Call. When this method is called with a user token, the `created_by` field is optional and defaults to the authed user of the token. Otherwise, the field is required."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "dateStart": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Call start time in UTC UNIX timestamp format"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "desktopAppJoinUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "When supplied, available Slack clients will attempt to directly launch the 3rd-party Call with this URL."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "externalDisplayId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An optional, human-readable ID supplied by the 3rd-party Call provider. If supplied, this ID will be displayed in the Call object."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "externalUniqueId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An ID supplied by the 3rd-party Call provider. It must be unique across all Calls from that service."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "joinUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The URL required for a client to join the Call."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "title": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The name of the Call."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "users": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The list of users to register as participants in the Call. [Read more on how to specify users here](/apis/calls#users)."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/calls.add",
+    "codeHash": "ab33f393497c3fe03423c03b41422b16f5ac439718542bbb04caf7573f816a08"
+  }
+}

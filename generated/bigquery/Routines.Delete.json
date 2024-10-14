@@ -1,0 +1,56 @@
+{
+  "moduleName": "BigQuery / Routines / Delete",
+  "version": "0.0.0",
+  "description": "Deletes the routine specified by routineId from the dataset.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/cloud-platform` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. Project ID of the routine to delete"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "datasetId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. Dataset ID of the routine to delete"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "routineId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. Routine ID of the routine to delete"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "02335f11f3fd6c145c7a999110f22ae8e2377581acfac8d84e810bc2507c80dc"
+  }
+}

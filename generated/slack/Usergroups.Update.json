@@ -1,0 +1,83 @@
+{
+  "moduleName": "Slack / Usergroups / Update",
+  "version": "0.0.0",
+  "description": "Update an existing User Group",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channels": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma separated string of encoded channel IDs for which the User Group uses as a default."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A short description of the User Group."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "handle": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A mention handle. Must be unique among channels, users and User Groups."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includeCount": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Include the number of users in the User Group."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A name for the User Group. Must be unique among User Groups."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "usergroup": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The encoded ID of the User Group to update."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/usergroups.update",
+    "codeHash": "a35154e3100b79695dc00889af04d25d7ea31b4ed77d7f602a69acf84e03be34"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "moduleName": "BigQuery / Models / Get",
+  "version": "0.0.0",
+  "description": "Gets the specified model resource by model ID.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/cloud-platform` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. Project ID of the requested model."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "datasetId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. Dataset ID of the requested model."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "modelId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. Model ID of the requested model."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "cc2c9494d4476db62935b0eec03895990212e22420e5895fd91f211047b996a4"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "moduleName": "Brevo / Domains / Authenticate",
+  "version": "0.0.0",
+  "description": "Authenticate a domain",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "domainName": {
+      "schema": {
+        "type": "string",
+        "description": "Domain name"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "c37aa15dd2bed3e65e024cafab8e782560c0db6f2acaa1a66647f565612239d9"
+  }
+}

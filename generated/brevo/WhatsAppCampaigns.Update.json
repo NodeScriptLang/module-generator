@@ -1,0 +1,76 @@
+{
+  "moduleName": "Brevo / WhatsApp Campaigns / Update",
+  "version": "0.0.0",
+  "description": "Update a WhatsApp campaign",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "campaignId": {
+      "schema": {
+        "type": "number",
+        "description": "id of the campaign"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "campaignName": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Name of the campaign"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "campaignStatus": {
+      "schema": {
+        "type": "string",
+        "default": "scheduled",
+        "enum": [
+          "scheduled",
+          "suspended"
+        ],
+        "description": "Status of the campaign"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "rescheduleFor": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Reschedule the sending UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) of campaign. **Prefer to pass your timezone in date-time format for accurate result.For example: **2017-06-01T12:30:00+02:00**\nUse this field to update the scheduledAt of any existing draft or scheduled WhatsApp campaign.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "recipients": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Segment ids and List ids to include/exclude from campaign"
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "b46780d5cd1c5e25240ce340f74441f550dab2eb9d06425716ad5b6eea0fce51"
+  }
+}

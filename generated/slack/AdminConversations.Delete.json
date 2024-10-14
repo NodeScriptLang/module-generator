@@ -1,0 +1,38 @@
+{
+  "moduleName": "Slack / Admin Conversations / Delete",
+  "version": "0.0.0",
+  "description": "Delete a public or private channel.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Any supported Slack token (bot, workflow, user).\nNote: not all operations are supported with different token types.\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channelId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The channel to delete."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://api.slack.com/methods/admin.conversations.delete",
+    "codeHash": "7ab8e4cb88514886842b8fcec105b07c5ec55bc9939614cbab97ee2b1b5b0779"
+  }
+}

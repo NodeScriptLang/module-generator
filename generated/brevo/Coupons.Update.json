@@ -1,0 +1,72 @@
+{
+  "moduleName": "Brevo / Coupons / Update",
+  "version": "0.0.0",
+  "description": "Update a coupon collection by id",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Brevo API key"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "Id of the collection to update"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "defaultCoupon": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A default coupon to be used in case there are no coupons left"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "expirationDate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Specify an expiration date for the coupon collection in RFC3339 format. Use null to remove the expiration date."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "remainingDaysAlert": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Send a notification alert (email) when the remaining days until the expiration date are equal or fall bellow this number. Use null to disable alerts."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "remainingCouponsAlert": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Send a notification alert (email) when the remaining coupons count is equal or fall bellow this number. Use null to disable alerts."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "6524a77bcef2cd15cfd01cb36dfa6b9bf8b0a5c23a77508f3f17be72b9e0e8f4"
+  }
+}
