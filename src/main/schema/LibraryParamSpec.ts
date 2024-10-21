@@ -51,7 +51,7 @@ export const LibraryParamSpecSchema = new Schema<LibraryParamSpec>({
         style: {
             type: 'string',
             optional: true,
-            enum: ['form', 'spaceDelimited', 'pipeDelimited'],
+            enum: ['form', 'simple', 'spaceDelimited', 'pipeDelimited'],
         },
         explode: {
             type: 'boolean',
