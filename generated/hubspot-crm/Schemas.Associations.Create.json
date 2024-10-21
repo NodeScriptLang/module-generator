@@ -1,0 +1,62 @@
+{
+  "moduleName": "Hubspot CRM / Schemas / Associations / Create",
+  "version": "0.0.0",
+  "description": "Defines a new association between the primary schema's object type and other object types.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "objectType": {
+      "schema": {
+        "type": "string",
+        "description": "Fully qualified name or object type ID of your schema."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "fromObjectTypeId": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the primary object type to link from."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A unique name for this association."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "toObjectTypeId": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the target object type to link to."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "88a72a9bf78de1a8cb26a3b606676e8414facc4632fbf658eec0e20f50564a74"
+  }
+}

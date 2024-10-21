@@ -1,0 +1,81 @@
+{
+  "moduleName": "Hubspot CRM / Contacts / Batch / Read",
+  "version": "0.0.0",
+  "description": "Read a batch of contacts by internal ID, or unique property values",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "archived": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether to return only results that have been archived."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "propertiesWithHistory": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idProperty": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "inputs": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "properties": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "bc4d839bd7856c525f13906e62aeffa870813dd5631ac5ab8c3719e7fe2b5113"
+  }
+}

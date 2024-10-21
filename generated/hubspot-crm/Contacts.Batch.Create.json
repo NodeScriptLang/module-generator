@@ -1,0 +1,40 @@
+{
+  "moduleName": "Hubspot CRM / Contacts / Batch / Create",
+  "version": "0.0.0",
+  "description": "Create a batch of contacts",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "inputs": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "2ad0407b96afc9ccd6b1040b1a3455bd3375176c24bb4c169f57b7913da827fd"
+  }
+}

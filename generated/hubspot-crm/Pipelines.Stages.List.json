@@ -1,0 +1,45 @@
+{
+  "moduleName": "Hubspot CRM / Pipelines / Stages / List",
+  "version": "0.0.0",
+  "description": "Return all the stages associated with the pipeline identified by `{pipelineId}`.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "objectType": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "pipelineId": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "3158c1bcb19920d319a255356f0947cecbc3a9b74ae79b2a043245881fa87299"
+  }
+}

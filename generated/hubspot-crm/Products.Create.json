@@ -1,0 +1,50 @@
+{
+  "moduleName": "Hubspot CRM / Products / Create",
+  "version": "0.0.0",
+  "description": "Create a product with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard products is provided.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "associations": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "properties": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "e71293d50b711189b8ffb6057013a2d3074a22687066b4fe84072693114ee910"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "moduleName": "Hubspot CRM / Properties / Batch / Read Properties",
+  "version": "0.0.0",
+  "description": "Read a provided list of properties.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "objectType": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "archived": {
+      "schema": {
+        "type": "boolean",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "inputs": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "5e92a7108ccd70787ae211fad3c20ea6dbdcf19711e8adf982f20266ddd21a36"
+  }
+}

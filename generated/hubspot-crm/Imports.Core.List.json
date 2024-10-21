@@ -1,0 +1,56 @@
+{
+  "moduleName": "Hubspot CRM / Imports / Core / List",
+  "version": "0.0.0",
+  "description": "Returns a paged list of active imports for this account.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "after": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "before": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The maximum number of results to display per page."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "349e266a7728a546754764eb349fdcf875a5f6ba4e716aea681cd7a2d3a409c6"
+  }
+}

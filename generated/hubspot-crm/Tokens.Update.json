@@ -1,0 +1,82 @@
+{
+  "moduleName": "Hubspot CRM / Tokens / Update",
+  "version": "0.0.0",
+  "description": "This will update the existing token on an event template. Name and type can't be changed on existing tokens.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "eventTemplateId": {
+      "schema": {
+        "type": "string",
+        "description": "The event template ID."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "tokenName": {
+      "schema": {
+        "type": "string",
+        "description": "The token name."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "appId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the target app."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "options": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "If type is `enumeration`, we should have a list of options to choose from."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "label": {
+      "schema": {
+        "type": "string",
+        "description": "Used for list segmentation and reporting."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "objectPropertyName": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The name of the CRM object property. This will populate the CRM object property associated with the event. With enough of these, you can fully build CRM objects via the Timeline API."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "aa529eb0a23f0719759d45902c0b4ff97509cc86c39bf50ce7e86ac744fa5edb"
+  }
+}

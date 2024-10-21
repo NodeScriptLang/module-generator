@@ -1,0 +1,39 @@
+{
+  "moduleName": "Hubspot CRM / Schemas / List",
+  "version": "0.0.0",
+  "description": "Returns all object schemas that have been defined for your account.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "archived": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether to return only results that have been archived."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "b864d320bfb55c9ff1d661f84d55ef40425ddc86ddd5716d38caa962fc825214"
+  }
+}

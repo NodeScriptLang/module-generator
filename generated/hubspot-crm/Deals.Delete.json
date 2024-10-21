@@ -1,0 +1,37 @@
+{
+  "moduleName": "Hubspot CRM / Deals / Delete",
+  "version": "0.0.0",
+  "description": "Move an Object identified by `{dealId}` to the recycling bin.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "dealId": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "b7cfe4806760321136e40b834f29fe162b48ad2f42b0fdfe15b6c37175c21282"
+  }
+}

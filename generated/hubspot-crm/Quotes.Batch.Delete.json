@@ -1,0 +1,40 @@
+{
+  "moduleName": "Hubspot CRM / Quotes / Batch / Delete",
+  "version": "0.0.0",
+  "description": "Archive a batch of quotes by ID",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "inputs": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "4a1f83804fa8caca2bb575d420de9ed01871d9e63149a3392afd29c6afe7d1aa"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "moduleName": "Hubspot CRM / Pipelines / Update",
+  "version": "0.0.0",
+  "description": "Perform a partial update of the pipeline identified by `{pipelineId}`. The updated pipeline will be returned in the response.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "objectType": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "pipelineId": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "validateReferencesBeforeDelete": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "validateDealStageUsagesBeforeDelete": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "archived": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether the pipeline is archived. This property should only be provided when restoring an archived pipeline. If it's provided in any other call, the request will fail and a `400 Bad Request` will be returned."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "displayOrder": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The order for displaying this pipeline. If two pipelines have a matching `displayOrder`, they will be sorted alphabetically by label."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "label": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A unique label used to organize pipelines in HubSpot's UI"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "06475a5c6d7234c649bdc1135f9f970578a6beb1d87f374f4413b9154283e6e7"
+  }
+}

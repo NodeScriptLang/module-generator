@@ -1,0 +1,37 @@
+{
+  "moduleName": "Hubspot CRM / Contacts / Archive",
+  "version": "0.0.0",
+  "description": "Move an Object identified by `{contactId}` to the recycling bin.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "contactId": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "c636ce524153f376b4baf591bde6ce90cfb6f98e32dd21ee38ecc8220afcec7a"
+  }
+}

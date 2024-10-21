@@ -1,0 +1,45 @@
+{
+  "moduleName": "Hubspot CRM / Events / Details / Get By ID",
+  "version": "0.0.0",
+  "description": "This will take the `detailTemplate` from the event template and return an object rendering the specified event. If the template references `extraData` that isn't found in the event, it will be ignored and we'll render without it.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "eventTemplateId": {
+      "schema": {
+        "type": "string",
+        "description": "The event template ID."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "eventId": {
+      "schema": {
+        "type": "string",
+        "description": "The event ID."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "52d158c52cca80563cd25e1da45006ae01f919c52481b076e8b6f85c9a64cde2"
+  }
+}

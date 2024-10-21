@@ -1,0 +1,90 @@
+{
+  "moduleName": "Hubspot CRM / Timeline / Templates / Update",
+  "version": "0.0.0",
+  "description": "Updates an existing template and its tokens. This is primarily used to update the headerTemplate/detailTemplate, and those changes will take effect for existing events.\n\nYou can also update or replace all the tokens in the template here instead of doing individual API calls on the `/tokens` endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "eventTemplateId": {
+      "schema": {
+        "type": "string",
+        "description": "The event template ID."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "appId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the target app."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "detailTemplate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "This uses Markdown syntax with Handlebars and event-specific data to render HTML on a timeline when you expand the details."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "The template name."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "tokens": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "A collection of tokens that can be used as custom properties on the event and to create fully fledged CRM objects."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The template ID."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "headerTemplate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "This uses Markdown syntax with Handlebars and event-specific data to render HTML on a timeline as a header."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "3c82161ed991a75bfd21045c3cc1e0cbab7a5dd090c22e5a8d3f5439a69215da"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "moduleName": "Hubspot CRM / Video Conferencing / Settings / Get",
+  "version": "0.0.0",
+  "description": "Return the settings for a video conference application with the specified ID.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "appId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the video conference application. This is the identifier of the application created in your HubSpot developer portal."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "6ad57d814e0afa623a25b89a2c21b835700c58fce2711ebd537d2b472fe42b40"
+  }
+}

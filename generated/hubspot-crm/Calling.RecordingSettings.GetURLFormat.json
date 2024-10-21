@@ -1,0 +1,37 @@
+{
+  "moduleName": "Hubspot CRM / Calling / Recording Settings / Get URL Format",
+  "version": "0.0.0",
+  "description": "Retrieve the recording endpoint configured for a calling extension app.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "appId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the app."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "6179c043e40c8a87de2bf83657f63b29cb5c20715a82ba355e7e3b3ef1d7fbc2"
+  }
+}

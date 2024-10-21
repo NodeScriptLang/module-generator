@@ -1,0 +1,37 @@
+{
+  "moduleName": "Hubspot CRM / Tickets / Delete",
+  "version": "0.0.0",
+  "description": "Move an Object identified by `{ticketId}` to the recycling bin.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "ticketId": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "410c481f95db298bffcba887802757bccacfe50275172a99ad8441c5dbeddc8d"
+  }
+}

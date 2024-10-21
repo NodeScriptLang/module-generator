@@ -1,0 +1,37 @@
+{
+  "moduleName": "Hubspot CRM / Imports / Core / Cancel",
+  "version": "0.0.0",
+  "description": "This allows a developer to cancel an active import.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "importId": {
+      "schema": {
+        "type": "number",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "7a103b4c03aac358cd3509df03b7a6afd07f84a01c34540254e45f2e37136945"
+  }
+}

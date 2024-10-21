@@ -1,0 +1,45 @@
+{
+  "moduleName": "Hubspot CRM / Timeline / Events / Get By ID",
+  "version": "0.0.0",
+  "description": "This returns the previously created event. It contains all existing info for the event, but not necessarily the CRM object.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "eventTemplateId": {
+      "schema": {
+        "type": "string",
+        "description": "The event template ID."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "eventId": {
+      "schema": {
+        "type": "string",
+        "description": "The event ID."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "92a0979cb021eb7b9b653b7b5c04553917c5626faca46ef5e5e1af4c072fe1bf"
+  }
+}

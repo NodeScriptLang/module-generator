@@ -1,0 +1,40 @@
+{
+  "moduleName": "Hubspot CRM / Feedback Submissions / Batch / Archive",
+  "version": "0.0.0",
+  "description": "Archive a batch of feedback submissions by ID",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "inputs": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "d28dc7279ab77059c159e5c190717c4e0cc46132ec244cea99eed1bac27cf6e3"
+  }
+}

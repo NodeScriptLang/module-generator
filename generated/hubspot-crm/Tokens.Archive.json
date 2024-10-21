@@ -1,0 +1,53 @@
+{
+  "moduleName": "Hubspot CRM / Tokens / Archive",
+  "version": "0.0.0",
+  "description": "This will remove the token from an existing template. Existing events and CRM objects will still retain the token and its mapped object properties, but new ones will not.\n\nThe timeline will still display this property for older CRM objects if it's still referenced in the template `Markdown`. New events will not.\n\nAny lists or reports referencing deleted tokens will no longer return new contacts, but old ones will still exist in the lists.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "eventTemplateId": {
+      "schema": {
+        "type": "string",
+        "description": "The event template ID."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "tokenName": {
+      "schema": {
+        "type": "string",
+        "description": "The token name."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "appId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the target app."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "6243a5ea81192d7d00afefb553808197ed14c51fc86fe254eac7e2924da0a884"
+  }
+}

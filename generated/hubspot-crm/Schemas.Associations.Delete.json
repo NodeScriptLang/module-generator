@@ -1,0 +1,45 @@
+{
+  "moduleName": "Hubspot CRM / Schemas / Associations / Delete",
+  "version": "0.0.0",
+  "description": "Removes an existing association from a schema.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "objectType": {
+      "schema": {
+        "type": "string",
+        "description": "Fully qualified name or object type ID of your schema."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "associationIdentifier": {
+      "schema": {
+        "type": "string",
+        "description": "Unique ID of the association to remove."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "6044d2736bb38cc32a35bda00414bc59256c6f7b3460d3ee86eab8d3b7e5474f"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "moduleName": "Hubspot CRM / Calling / Recording Settings / Register URL Format",
+  "version": "0.0.0",
+  "description": "Configure a calling extension app with an external URL that HubSpot will use to retrieve call recordings.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "appId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the app."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "urlToRetrieveAuthedRecording": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "a1c00120ecf7fc7a0d74cc764bd967e9cedbc5cf1614f269713d5ccb2aadb1c5"
+  }
+}

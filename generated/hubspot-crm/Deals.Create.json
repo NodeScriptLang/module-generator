@@ -1,0 +1,48 @@
+{
+  "moduleName": "Hubspot CRM / Deals / Create",
+  "version": "0.0.0",
+  "description": "Create a deal with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard deals is provided.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "associations": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "properties": {
+      "schema": {
+        "type": "any",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "4699533dc17005d616c7012bf778df088ccc2f5b3bb7fe2a15caf57cdd1570e8"
+  }
+}

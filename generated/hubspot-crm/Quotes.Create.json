@@ -1,0 +1,48 @@
+{
+  "moduleName": "Hubspot CRM / Quotes / Create",
+  "version": "0.0.0",
+  "description": "Create a quote with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard quotes is provided.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "associations": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "properties": {
+      "schema": {
+        "type": "any",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "c0edbeeeaec69fdce04bc7fa5448233d1a2bf536f04f9bac03aa118a7c0c01f2"
+  }
+}

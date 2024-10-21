@@ -1,0 +1,82 @@
+{
+  "moduleName": "Hubspot CRM / Timeline / Templates / Create",
+  "version": "0.0.0",
+  "description": "Event templates define the general structure for a custom timeline event. This includes formatted copy for its heading and details, as well as any custom property definitions. The event could be something like viewing a video, registering for a webinar, or filling out a survey. A single app can define multiple event templates.\n\nEvent templates will be created for contacts by default, but they can be created for companies, tickets, and deals as well.\n\nEach event template contains its own set of tokens and `Markdown` templates. These tokens can be associated with any CRM object properties via the `objectPropertyName` field to fully build out CRM objects.\n\nYou must create an event template before you can create events.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "appId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the target app."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "detailTemplate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "This uses Markdown syntax with Handlebars and event-specific data to render HTML on a timeline when you expand the details."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "The template name."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "tokens": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "A collection of tokens that can be used as custom properties on the event and to create fully fledged CRM objects."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "headerTemplate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "This uses Markdown syntax with Handlebars and event-specific data to render HTML on a timeline as a header."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "objectType": {
+      "schema": {
+        "type": "string",
+        "description": "The type of CRM object this template is for. [Contacts, companies, tickets, and deals] are supported."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "cdf80fc60aad8acf4da72b715ebcb357ad74e73dd083987880a0c74182babcb5"
+  }
+}

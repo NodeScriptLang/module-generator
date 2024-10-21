@@ -1,0 +1,37 @@
+{
+  "moduleName": "Hubspot CRM / Schemas / Get By Type",
+  "version": "0.0.0",
+  "description": "Returns an existing object schema.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "objectType": {
+      "schema": {
+        "type": "string",
+        "description": "Fully qualified name or object type ID of your schema."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "e73f018eb0f9a5792f49d77e02acef34f7c43f1ff6d34701fbef8672a0b5e169"
+  }
+}

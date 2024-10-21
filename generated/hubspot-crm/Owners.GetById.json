@@ -1,0 +1,61 @@
+{
+  "moduleName": "Hubspot CRM / Owners / Get By Id",
+  "version": "0.0.0",
+  "description": "Read an owner by given `id` or `userId`",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "ownerId": {
+      "schema": {
+        "type": "number",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idProperty": {
+      "schema": {
+        "type": "string",
+        "default": "id",
+        "enum": [
+          "id",
+          "userId"
+        ],
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "archived": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether to return only results that have been archived."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "296ea41d907ebe58fcb84956254b121c33b121af17d12e417c4d0747bbafd890"
+  }
+}

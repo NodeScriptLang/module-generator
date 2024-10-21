@@ -1,0 +1,63 @@
+{
+  "moduleName": "Hubspot CRM / Properties / Groups / Update",
+  "version": "0.0.0",
+  "description": "Perform a partial update of a property group identified by {groupName}. Provided fields will be overwritten.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "objectType": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "groupName": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "displayOrder": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Property groups are displayed in order starting with the lowest positive integer value. Values of -1 will cause the property group to be displayed after any positive values."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "label": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A human-readable label that will be shown in HubSpot."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "208af843237ccd8b401b2d90406956100524d18707dbd0ddec90e6a91b49551f"
+  }
+}

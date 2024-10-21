@@ -1,0 +1,81 @@
+{
+  "moduleName": "Hubspot CRM / Video Conferencing / Settings / Update",
+  "version": "0.0.0",
+  "description": "Updates the settings for a video conference application with the specified ID.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "appId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the video conference application. This is the identifier of the application created in your HubSpot developer portal."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "userVerifyUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The URL that HubSpot will use to verify that a user exists in the video conference application."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fetchAccountsUri": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "createMeetingUrl": {
+      "schema": {
+        "type": "string",
+        "description": "The URL that HubSpot will send requests to create a new video conference."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "updateMeetingUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The URL that HubSpot will send updates to existing meetings. Typically called when the user changes the topic or times of a meeting."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "deleteMeetingUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The URL that HubSpot will send notifications of meetings that have been deleted in HubSpot."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "78d0014ea4682cbe0d6caad09da0d2c41e88605ae2442ea97d28892799b4627c"
+  }
+}

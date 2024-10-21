@@ -1,0 +1,47 @@
+{
+  "moduleName": "Hubspot CRM / Schemas / Delete By Type",
+  "version": "0.0.0",
+  "description": "Deletes a schema. Any existing records of this schema must be deleted **first**. Otherwise this call will fail.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "objectType": {
+      "schema": {
+        "type": "string",
+        "description": "Fully qualified name or object type ID of your schema."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "archived": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether to return only results that have been archived."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "fbb24fe0c17b47cb23ba3d1a9fc5a8bdec166a5d3903a1c6f582a7ad76e142c9"
+  }
+}

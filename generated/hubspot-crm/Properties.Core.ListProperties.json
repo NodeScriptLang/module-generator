@@ -1,0 +1,56 @@
+{
+  "moduleName": "Hubspot CRM / Properties / Core / List Properties",
+  "version": "0.0.0",
+  "description": "Read all existing properties for the specified object type and HubSpot account.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "objectType": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "archived": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether to return only results that have been archived."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "properties": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "6cc2fa3b53f0153f02a733dd3968532ab33d68a424c6cb370baa38c636339e0e"
+  }
+}

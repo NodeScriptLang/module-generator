@@ -1,0 +1,45 @@
+{
+  "moduleName": "Hubspot CRM / Timeline / Templates / Archive",
+  "version": "0.0.0",
+  "description": "This will delete the event template. All associated events will be removed from search results and the timeline UI.\n\nThis action can't be undone, so it's highly recommended that you stop using any associated events before deleting a template.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "eventTemplateId": {
+      "schema": {
+        "type": "string",
+        "description": "The event template ID."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "appId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the target app."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "4b3250b25aa6fdd46eb43be5abaaf4ddb51dea018b0e59608d798e96cecaa78d"
+  }
+}

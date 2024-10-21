@@ -1,0 +1,37 @@
+{
+  "moduleName": "Hubspot CRM / Products / Delete By Id",
+  "version": "0.0.0",
+  "description": "Move an Object identified by `{productId}` to the recycling bin.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "productId": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "d8306dfe043c8946cc630e559640867d3e1c644279f03a1dba16acfaf0b46f58"
+  }
+}

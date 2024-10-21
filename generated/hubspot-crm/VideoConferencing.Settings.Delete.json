@@ -1,0 +1,37 @@
+{
+  "moduleName": "Hubspot CRM / Video Conferencing / Settings / Delete",
+  "version": "0.0.0",
+  "description": "Deletes the settings for a video conference application with the specified ID.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "appId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the video conference application. This is the identifier of the application created in your HubSpot developer portal."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "2cd771ceb6aa9b219bdb32b175d7d22e8e7d523ab156711e175aac641f4b82ac"
+  }
+}

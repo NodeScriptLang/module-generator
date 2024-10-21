@@ -1,0 +1,92 @@
+{
+  "moduleName": "Hubspot CRM / Pipelines / Replace",
+  "version": "0.0.0",
+  "description": "Replace all the properties of an existing pipeline with the values provided. This will overwrite any existing pipeline stages. The updated pipeline will be returned in the response.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "objectType": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "pipelineId": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "validateReferencesBeforeDelete": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "validateDealStageUsagesBeforeDelete": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "displayOrder": {
+      "schema": {
+        "type": "number",
+        "description": "The order for displaying this pipeline. If two pipelines have a matching `displayOrder`, they will be sorted alphabetically by label."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "stages": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "Pipeline stage inputs used to create the new or replacement pipeline."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "label": {
+      "schema": {
+        "type": "string",
+        "description": "A unique label used to organize pipelines in HubSpot's UI"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "21a02936dd9258b72dfea9cf2d25bef98793a67ea706cebbd8fdf87599021484"
+  }
+}

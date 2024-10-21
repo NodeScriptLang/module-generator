@@ -1,0 +1,98 @@
+{
+  "moduleName": "Hubspot CRM / Calling / Settings / Create",
+  "version": "0.0.0",
+  "description": "Used to set the menu label, target iframe URL, and dimensions for your calling extension.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "appId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the app."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "supportsCustomObjects": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "When true, users will be able to click to dial from custom objects."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "isReady": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "When true, this indicates that your calling app is ready for production. Users will be able to select your calling app as their provider and can then click to dial within HubSpot."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "The name of your calling service to display to users."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "width": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The target width of the iframe that will contain your phone/calling UI."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "supportsInboundCalling": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "When true, this indicates that your calling app supports inbound calling within HubSpot."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "url": {
+      "schema": {
+        "type": "string",
+        "description": "The URL to your phone/calling UI, built with the [Calling SDK](#)."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "height": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The target height of the iframe that will contain your phone/calling UI."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "98ea7ebc48a1ddb92114a0b547daa98f10b2fd4f3d958ca20283f6b1b74b5e9a"
+  }
+}

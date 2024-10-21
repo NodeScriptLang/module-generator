@@ -1,0 +1,78 @@
+{
+  "moduleName": "Hubspot CRM / Pipelines / Stages / Replace",
+  "version": "0.0.0",
+  "description": "Replace all the properties of an existing pipeline stage with the values provided. The updated stage will be returned in the response.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "objectType": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "pipelineId": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "stageId": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "metadata": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "A JSON object containing properties that are not present on all object pipelines.\n\nFor `deals` pipelines, the `probability` field is required (`{ \"probability\": 0.5 }`), and represents the likelihood a deal will close. Possible values are between 0.0 and 1.0 in increments of 0.1.\n\nFor `tickets` pipelines, the `ticketState` field is optional (`{ \"ticketState\": \"OPEN\" }`), and represents whether the ticket remains open or has been closed by a member of your Support team. Possible values are `OPEN` or `CLOSED`."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "displayOrder": {
+      "schema": {
+        "type": "number",
+        "description": "The order for displaying this pipeline stage. If two pipeline stages have a matching `displayOrder`, they will be sorted alphabetically by label."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "label": {
+      "schema": {
+        "type": "string",
+        "description": "A label used to organize pipeline stages in HubSpot's UI. Each pipeline stage's label must be unique within that pipeline."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "934e39b52db3f44ee4989f6623c5241bd0673d31865d8bfd9cc99429c5f6125a"
+  }
+}
