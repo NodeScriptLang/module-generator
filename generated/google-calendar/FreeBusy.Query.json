@@ -1,0 +1,102 @@
+{
+  "moduleName": "Google Calendar / FreeBusy / Query",
+  "version": "0.0.0",
+  "description": "Returns free/busy information for a set of calendars.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/calendar` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "calendarExpansionMax": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Maximal number of calendars for which FreeBusy information is to be provided. Optional. Maximum value is 50."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "groupExpansionMax": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Maximal number of calendar identifiers to be provided for a single group. Optional. An error is returned for a group with more members than this value. Maximum value is 100."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "items": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "List of calendars and/or groups to query."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "timeMax": {
+      "schema": {
+        "type": "string",
+        "description": "The end of the interval for the query formatted as per RFC3339."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "timeMin": {
+      "schema": {
+        "type": "string",
+        "description": "The start of the interval for the query formatted as per RFC3339."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "timeZone": {
+      "schema": {
+        "type": "string",
+        "default": "UTC",
+        "optional": true,
+        "description": "Time zone used in the response. Optional. The default is UTC."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/calendar/api/v3/reference",
+    "codeHash": "b9afd7706125502f7066a25e934246ab3fd279bd82f56bd55e008ccfcfa4d3a8"
+  }
+}

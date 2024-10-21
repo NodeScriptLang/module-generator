@@ -1,0 +1,61 @@
+{
+  "moduleName": "Trello / Members / Board Backgrounds / List",
+  "version": "0.0.0",
+  "description": "Get a member's custom board backgrounds",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID or username of the member"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "filter": {
+      "schema": {
+        "type": "string",
+        "default": "all",
+        "enum": [
+          "all",
+          "custom",
+          "default",
+          "none",
+          "premium"
+        ],
+        "optional": true,
+        "description": "One of: `all`, `custom`, `default`, `none`, `premium`"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "951c99edd7d25dc8a8c7dfe029bf40326bfe7970fbceac090bb6c10c8c4f739a"
+  }
+}

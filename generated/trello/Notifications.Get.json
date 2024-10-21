@@ -1,0 +1,254 @@
+{
+  "moduleName": "Trello / Notifications / Get",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the notification"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "board": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether to include the board object"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "boardFields": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "id",
+          "name",
+          "desc",
+          "descData",
+          "closed",
+          "idMemberCreator",
+          "idOrganization",
+          "pinned",
+          "url",
+          "shortUrl",
+          "prefs",
+          "labelNames",
+          "starred",
+          "limits",
+          "memberships",
+          "enterpriseOwned"
+        ],
+        "optional": true,
+        "description": "`all` or a comma-separated list of board [fields](/cloud/trello/guides/rest-api/object-definitions/)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "card": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether to include the card object"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "cardFields": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "id",
+          "address",
+          "badges",
+          "checkItemStates",
+          "closed",
+          "coordinates",
+          "creationMethod",
+          "dueComplete",
+          "dateLastActivity",
+          "desc",
+          "descData",
+          "due",
+          "dueReminder",
+          "idBoard",
+          "idChecklists",
+          "idLabels",
+          "idList",
+          "idMembers",
+          "idMembersVoted",
+          "idShort",
+          "idAttachmentCover",
+          "labels",
+          "limits",
+          "locationName",
+          "manualCoverAttachment",
+          "name",
+          "pos",
+          "shortLink",
+          "shortUrl",
+          "subscribed",
+          "url",
+          "cover",
+          "isTemplate"
+        ],
+        "optional": true,
+        "description": "`all` or a comma-separated list of card [fields](/cloud/trello/guides/rest-api/object-definitions/)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "display": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether to include the display object with the results"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "entities": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether to include the entities object with the results"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "id",
+          "unread",
+          "type",
+          "date",
+          "dateRead",
+          "data",
+          "card",
+          "board",
+          "idMemberCreator",
+          "idAction",
+          "reactions"
+        ],
+        "optional": true,
+        "description": "`all` or a comma-separated list of notification [fields](/cloud/trello/guides/rest-api/object-definitions/)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "list": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether to include the list object"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "member": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Whether to include the member object"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "memberFields": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "id"
+        ],
+        "optional": true,
+        "description": "`all` or a comma-separated list of member [fields](/cloud/trello/guides/rest-api/object-definitions/)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "memberCreator": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Whether to include the member object of the creator"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "memberCreatorFields": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "id"
+        ],
+        "optional": true,
+        "description": "`all` or a comma-separated list of member [fields](/cloud/trello/guides/rest-api/object-definitions/)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "organization": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether to include the organization object"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "organizationFields": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "id",
+          "name"
+        ],
+        "optional": true,
+        "description": "`all` or a comma-separated list of organization [fields](/cloud/trello/guides/rest-api/object-definitions/)"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "b9d1c64781861437ee988e8a420b321e482150e0e7ed484f29af60035a280ca8"
+  }
+}

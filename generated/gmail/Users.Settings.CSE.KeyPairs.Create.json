@@ -1,0 +1,120 @@
+{
+  "moduleName": "Gmail / Users / Settings / CSE / Key Pairs / Create",
+  "version": "0.0.0",
+  "description": "Creates and uploads a client-side encryption S/MIME public key certificate chain and private key metadata for the authenticated user.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://mail.google.com/` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "The requester's primary email address. To indicate the authenticated user, you can use the special value `me`."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "disableTime": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Output only. If a key pair is set to `DISABLED`, the time that the key pair's state changed from `ENABLED` to `DISABLED`. This field is present only when the key pair is in state `DISABLED`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "enablementState": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "stateUnspecified",
+          "enabled",
+          "disabled"
+        ],
+        "optional": true,
+        "description": "Output only. The current state of the key pair."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "keyPairId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Output only. The immutable ID for the client-side encryption S/MIME key pair."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pem": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Output only. The public key and its certificate chain, in [PEM](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) format."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pkcs7": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Input only. The public key and its certificate chain. The chain must be in [PKCS#7](https://en.wikipedia.org/wiki/PKCS_7) format and use PEM encoding and ASCII armor."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "privateKeyMetadata": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Metadata for instances of this key pair's private key."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "subjectEmailAddresses": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Output only. The email address identities that are specified on the leaf certificate."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/gmail/api/reference/rest",
+    "codeHash": "e92f09e9d9ff6423d99fa2dad38cef048f2643b8f5c10929c4ee67d63de4e817"
+  }
+}

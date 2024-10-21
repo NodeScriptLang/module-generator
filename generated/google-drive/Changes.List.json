@@ -1,0 +1,168 @@
+{
+  "moduleName": "Google Drive / Changes / List",
+  "version": "0.0.0",
+  "description": "Lists the changes for a user or shared drive.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/drive` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "alt": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "json"
+        ],
+        "optional": true,
+        "description": "Data format for the response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "quotaUser": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "description": "The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response or to the response from the getStartPageToken method."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "driveId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The shared drive from which changes are returned. If specified the change IDs will be reflective of the shared drive; use the combined drive ID and change ID as an identifier."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includeCorpusRemovals": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether changes should include the file resource if the file is still accessible by the user at the time of the request, even when a file was removed from the list of changes and there will be no further change entries for this file."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includeItemsFromAllDrives": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether both My Drive and shared drive items should be included in results."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includeLabels": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma-separated list of IDs of labels to include in the labelInfo part of the response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includePermissionsForView": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Specifies which additional view's permissions to include in the response. Only 'published' is supported."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includeRemoved": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether to include changes indicating that items have been removed from the list of changes, for example by deletion or loss of access."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageSize": {
+      "schema": {
+        "type": "number",
+        "minimum": 1,
+        "maximum": 1000,
+        "optional": true,
+        "description": "The maximum number of changes to return per page."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "restrictToMyDrive": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether to restrict the results to changes inside the My Drive hierarchy. This omits changes to files such as those in the Application Data folder or shared files which have not been added to My Drive."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "spaces": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma-separated list of spaces to query within the corpora. Supported values are 'drive' and 'appDataFolder'."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "supportsAllDrives": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether the requesting application supports both My Drives and shared drives."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/drive/api/reference/rest/v3",
+    "codeHash": "5618b2e542d65e9c6e4a45fcff22312e46d041da8207b87b026699264094ea74"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "moduleName": "Trello / Organizations / Delete",
+  "version": "0.0.0",
+  "description": "Delete an Organization",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID or name of the Organization"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "7a5e9202caafc99147d922ad772688b58e48c6bdf0f3216e021610abc705c9a0"
+  }
+}

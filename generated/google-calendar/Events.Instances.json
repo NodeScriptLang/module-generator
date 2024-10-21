@@ -1,0 +1,137 @@
+{
+  "moduleName": "Google Calendar / Events / Instances",
+  "version": "0.0.0",
+  "description": "Returns instances of the specified recurring event.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/calendar` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "calendarId": {
+      "schema": {
+        "type": "string",
+        "description": "Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \"primary\" keyword."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "eventId": {
+      "schema": {
+        "type": "string",
+        "description": "Recurring event identifier."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "maxAttendees": {
+      "schema": {
+        "type": "number",
+        "minimum": 1,
+        "optional": true,
+        "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maxResults": {
+      "schema": {
+        "type": "number",
+        "minimum": 1,
+        "optional": true,
+        "description": "Maximum number of events returned on one result page. By default the value is 250 events. The page size can never be larger than 2500 events. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "originalStart": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The original start time of the instance in the result. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Token specifying which result page to return. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "showDeleted": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether to include deleted events (with status equals \"cancelled\") in the result. Cancelled instances of recurring events will still be included if singleEvents is False. Optional. The default is False."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "timeMax": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Upper bound (exclusive) for an event's start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "timeMin": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Lower bound (inclusive) for an event's end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "timeZone": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Time zone used in the response. Optional. The default is the time zone of the calendar."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/calendar/api/v3/reference",
+    "codeHash": "974fb769382f5f5c1db074de806bf3570b66e738f39765a2553268b8f9c6cf0e"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "moduleName": "Google People / Contact Groups / List",
+  "version": "0.0.0",
+  "description": "List all contact groups owned by the authenticated user. Members of the contact groups are not populated.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/contacts` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "groupFields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional. A field mask to restrict which fields on the group are returned. Defaults to `metadata`, `groupType`, `memberCount`, and `name` if not set or set to empty. Valid fields are: * clientData * groupType * memberCount * metadata * name"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageSize": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Optional. The maximum number of resources to return. Valid values are between 1 and 1000, inclusive. Defaults to 30 if not set or set to 0."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional. The next_page_token value returned from a previous call to [ListContactGroups](/people/api/rest/v1/contactgroups/list). Requests the next page of resources."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "syncToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional. A sync token, returned by a previous call to `contactgroups.list`. Only resources changed since the sync token was created will be returned."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/people/api/rest",
+    "codeHash": "81bd9f74814d87d56bc0978c3e39a803a00232e0ab134d30011f64149263dfe5"
+  }
+}

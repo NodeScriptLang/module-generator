@@ -1,0 +1,96 @@
+{
+  "moduleName": "Google Drive / Files / List Labels",
+  "version": "0.0.0",
+  "description": "Lists the labels on a file.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/drive` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "alt": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "json"
+        ],
+        "optional": true,
+        "description": "Data format for the response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "quotaUser": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fileId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the file."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "maxResults": {
+      "schema": {
+        "type": "number",
+        "minimum": 1,
+        "maximum": 100,
+        "optional": true,
+        "description": "The maximum number of labels to return per page. When not set, this defaults to 100."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/drive/api/reference/rest/v3",
+    "codeHash": "03d71a40d8ada7e5f4c8917063c6ddeab28eb2805f54bb28a605f8472369d0b6"
+  }
+}

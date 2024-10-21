@@ -1,0 +1,243 @@
+{
+  "moduleName": "Google Calendar / CalendarList / Update Partial",
+  "version": "0.0.0",
+  "description": "Updates an existing calendar on the user's calendar list. This method supports patch semantics.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/calendar` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "calendarId": {
+      "schema": {
+        "type": "string",
+        "description": "Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \"primary\" keyword."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "colorRgbFormat": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether to use the foregroundColor and backgroundColor fields to write the calendar colors (RGB). If this feature is used, the index-based colorId field will be set to the best matching option automatically. Optional. The default is False."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "accessRole": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The effective access role that the authenticated user has on the calendar. Read-only. Possible values are:  \n- \"freeBusyReader\" - Provides read access to free/busy information. \n- \"reader\" - Provides read access to the calendar. Private events will appear to users with reader access, but event details will be hidden. \n- \"writer\" - Provides read and write access to the calendar. Private events will appear to users with writer access, and event details will be visible. \n- \"owner\" - Provides ownership of the calendar. This role has all of the permissions of the writer role with the additional ability to see and manipulate ACLs."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "backgroundColor": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The main color of the calendar in the hexadecimal format \"#0088aa\". This property supersedes the index-based colorId property. To set or change this property, you need to specify colorRgbFormat=true in the parameters of the insert, update and patch methods. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "colorId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The color of the calendar. This is an ID referring to an entry in the calendar section of the colors definition (see the colors endpoint). This property is superseded by the backgroundColor and foregroundColor properties and can be ignored when using these properties. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "conferenceProperties": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "defaultReminders": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The default reminders that the authenticated user has for this calendar."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "deleted": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether this calendar list entry has been deleted from the calendar list. Read-only. Optional. The default is False."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Description of the calendar. Optional. Read-only."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "etag": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ETag of the resource."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "foregroundColor": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The foreground color of the calendar in the hexadecimal format \"#ffffff\". This property supersedes the index-based colorId property. To set or change this property, you need to specify colorRgbFormat=true in the parameters of the insert, update and patch methods. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "hidden": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether the calendar has been hidden from the list. Optional. The attribute is only returned when the calendar is hidden, in which case the value is true."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Identifier of the calendar."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "kind": {
+      "schema": {
+        "type": "string",
+        "default": "calendar#calendarListEntry",
+        "optional": true,
+        "description": "Type of the resource (\"calendar#calendarListEntry\")."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "location": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Geographic location of the calendar as free-form text. Optional. Read-only."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "notificationSettings": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The notifications that the authenticated user is receiving for this calendar."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "primary": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether the calendar is the primary calendar of the authenticated user. Read-only. Optional. The default is False."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "selected": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether the calendar content shows up in the calendar UI. Optional. The default is False."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "summary": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Title of the calendar. Read-only."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "summaryOverride": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The summary that the authenticated user has set for this calendar. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "timeZone": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The time zone of the calendar. Optional. Read-only."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/calendar/api/v3/reference",
+    "codeHash": "ba7ff627d5355254027e0ba4d71f770b9a49ac2f78982e8ec8ff3a74b0e4d653"
+  }
+}

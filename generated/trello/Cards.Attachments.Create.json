@@ -1,0 +1,90 @@
+{
+  "moduleName": "Trello / Cards / Attachments / Create",
+  "version": "0.0.0",
+  "description": "Create an Attachment to a Card. See https://glitch.com/~trello-attachments-api for code examples. You may need to remix the project in order to view it.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the Card"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The name of the attachment. Max length 256."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "file": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The file to attach, as multipart/form-data"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "mimeType": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The mimeType of the attachment. Max length 256"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "url": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A URL to attach. Must start with `http://` or `https://`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "setCover": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Determines whether to use the new attachment as a cover for the Card."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "48c1052af6b3fa6c3786871baea03d8772cb7c6a858c4bef43220021cc4c8fce"
+  }
+}

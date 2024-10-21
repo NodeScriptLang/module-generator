@@ -1,0 +1,53 @@
+{
+  "moduleName": "Trello / Lists / Closed / Update",
+  "version": "0.0.0",
+  "description": "Archive or unarchive a list",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the list"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "value": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Set to true to close (archive) the list"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "577615be773cf6c06e12ec66ade2e36d70aa716a42c8a8ebdcd87b77abc97781"
+  }
+}

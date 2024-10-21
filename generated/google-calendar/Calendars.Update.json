@@ -1,0 +1,127 @@
+{
+  "moduleName": "Google Calendar / Calendars / Update",
+  "version": "0.0.0",
+  "description": "Updates metadata for a calendar.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/calendar` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "calendarId": {
+      "schema": {
+        "type": "string",
+        "description": "Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \"primary\" keyword."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "conferenceProperties": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Description of the calendar. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "etag": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ETag of the resource."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Identifier of the calendar. To retrieve IDs call the calendarList.list() method."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "kind": {
+      "schema": {
+        "type": "string",
+        "default": "calendar#calendar",
+        "optional": true,
+        "description": "Type of the resource (\"calendar#calendar\")."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "location": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Geographic location of the calendar as free-form text. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "summary": {
+      "schema": {
+        "type": "string",
+        "description": "Title of the calendar."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "timeZone": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The time zone of the calendar. (Formatted as an IANA Time Zone Database name, e.g. \"Europe/Zurich\".) Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/calendar/api/v3/reference",
+    "codeHash": "08bf04ad620ad20f12100123419e3d7d07d79dcc3579d939cc9b9d21e86c0478"
+  }
+}

@@ -1,0 +1,451 @@
+{
+  "moduleName": "Google People / People / Update Contact",
+  "version": "0.0.0",
+  "description": "Update contact data for an existing contact person. Any non-contact data will not be modified. Any non-contact data in the person to update will be ignored. All fields specified in the `update_mask` will be replaced. The server returns a 400 error if `person.metadata.sources` is not specified for the contact to be updated or if there is no contact source. The server returns a 400 error with reason `\"failedPrecondition\"` if `person.metadata.sources.etag` is different than the contact's etag, which indicates the contact has changed since its data was read. Clients should get the latest person and merge their updates into the latest person. The server returns a 400 error if `memberships` are being updated and there are no contact group memberships specified on the person. The server returns a 400 error if more than one field is specified on a field that is a singleton for contact sources: * biographies * birthdays * genders * names Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/contacts` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "resourceName": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The resource name for the person, assigned by the server. An ASCII string in the form of `people/{person_id}`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "personFields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Defaults to all fields if not set. Valid values are: * addresses * ageRanges * biographies * birthdays * calendarUrls * clientData * coverPhotos * emailAddresses * events * externalIds * genders * imClients * interests * locales * locations * memberships * metadata * miscKeywords * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * sipAddresses * skills * urls * userDefined"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sources": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Optional. A mask of what source types to return. Defaults to READ_SOURCE_TYPE_CONTACT and READ_SOURCE_TYPE_PROFILE if not set."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "updatePersonFields": {
+      "schema": {
+        "type": "string",
+        "description": "Required. A field mask to restrict which fields on the person are updated. Multiple fields can be specified by separating them with commas. All updated fields will be replaced. Valid values are: * addresses * biographies * birthdays * calendarUrls * clientData * emailAddresses * events * externalIds * genders * imClients * interests * locales * locations * memberships * miscKeywords * names * nicknames * occupations * organizations * phoneNumbers * relations * sipAddresses * urls * userDefined"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "addresses": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's street addresses."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "ageRanges": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Output only. The person's age ranges."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "biographies": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's biographies. This field is a singleton for contact sources."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "birthdays": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's birthdays. This field is a singleton for contact sources."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "calendarUrls": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's calendar URLs."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "clientData": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's client data."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "coverPhotos": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Output only. The person's cover photos."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "emailAddresses": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's email addresses. For `people.connections.list` and `otherContacts.list` the number of email addresses is limited to 100. If a Person has more email addresses the entire set can be obtained by calling GetPeople."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "etag": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The [HTTP entity tag](https://en.wikipedia.org/wiki/HTTP_ETag) of the resource. Used for web cache validation."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "events": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's events."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "externalIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's external IDs."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fileAses": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's file-ases."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "genders": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's genders. This field is a singleton for contact sources."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "imClients": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's instant messaging clients."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "interests": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's interests."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "locales": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's locale preferences."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "locations": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's locations."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "memberships": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's group memberships."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "metadata": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The metadata about a person."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "miscKeywords": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's miscellaneous keywords."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "names": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's names. This field is a singleton for contact sources."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "nicknames": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's nicknames."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "occupations": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's occupations."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "organizations": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's past or current organizations."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "phoneNumbers": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's phone numbers. For `people.connections.list` and `otherContacts.list` the number of phone numbers is limited to 100. If a Person has more phone numbers the entire set can be obtained by calling GetPeople."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "photos": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Output only. The person's photos."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "relations": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's relations."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sipAddresses": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's SIP addresses."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "skills": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's skills."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "urls": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's associated URLs."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "userDefined": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The person's user defined data."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/people/api/rest",
+    "codeHash": "c54105023bfe98ffcf2845eb69a6dc0d73166600bb003f3dfaf3101af819d72f"
+  }
+}

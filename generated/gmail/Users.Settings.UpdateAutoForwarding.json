@@ -1,0 +1,80 @@
+{
+  "moduleName": "Gmail / Users / Settings / Update Auto Forwarding",
+  "version": "0.0.0",
+  "description": "Updates the auto-forwarding setting for the specified account. A verified forwarding address must be specified when auto-forwarding is enabled. This method is only available to service account clients that have been delegated domain-wide authority.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://mail.google.com/` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "User's email address. The special value \"me\" can be used to indicate the authenticated user."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "disposition": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "dispositionUnspecified",
+          "leaveInInbox",
+          "archive",
+          "trash",
+          "markRead"
+        ],
+        "optional": true,
+        "description": "The state that a message should be left in after it has been forwarded."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "emailAddress": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Email address to which all incoming messages are forwarded. This email address must be a verified member of the forwarding addresses."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "enabled": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether all incoming mail is automatically forwarded to another address."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/gmail/api/reference/rest",
+    "codeHash": "7cc2d81f745af5c1de28004e5e90211f00cd3712fa21858491bd8ac3d662bb8f"
+  }
+}

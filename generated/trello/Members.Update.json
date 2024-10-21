@@ -1,0 +1,121 @@
+{
+  "moduleName": "Trello / Members / Update",
+  "version": "0.0.0",
+  "description": "Update a Member",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID or username of the member"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "fullName": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "New name for the member. Cannot begin or end with a space."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "initials": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "New initials for the member. 1-4 characters long."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "username": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "New username for the member. At least 3 characters long, only lowercase letters, underscores, and numbers. Must be unique."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "bio": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "avatarSource": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "gravatar",
+          "none",
+          "upload"
+        ],
+        "optional": true,
+        "description": "One of: `gravatar`, `none`, `upload`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "prefs/colorBlind": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "prefs/locale": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "prefs/minutesBetweenSummaries": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "`-1` for disabled, `1`, or `60`"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "f310245a4735e7b720681136e2b3777daee789f45c2352854b58b2b153aa645c"
+  }
+}

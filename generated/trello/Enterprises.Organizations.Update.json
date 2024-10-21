@@ -1,0 +1,52 @@
+{
+  "moduleName": "Trello / Enterprises / Organizations / Update",
+  "version": "0.0.0",
+  "description": "Transfer an organization to an enterprise.\n\n NOTE: For enterprises that have opted in to user management via AdminHub, this endpoint will result in the organization being added to the enterprise asynchronously. A 200 response only indicates receipt of the request, it does not indicate successful addition to the enterprise.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the Enterprise to retrieve."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idOrganization": {
+      "schema": {
+        "type": "string",
+        "description": "ID of Organization to be transferred to Enterprise."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "d9faccb28bc9e756d2946fac7997cb7fc6d5c508b9fad8d7cb36c92228507b15"
+  }
+}

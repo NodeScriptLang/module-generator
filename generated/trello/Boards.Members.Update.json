@@ -1,0 +1,76 @@
+{
+  "moduleName": "Trello / Boards / Members / Update",
+  "version": "0.0.0",
+  "description": "Invite a Member to a Board via their email address.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the board"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "description": "The email address of a user to add as a member of the board."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "type": {
+      "schema": {
+        "type": "string",
+        "default": "normal",
+        "enum": [
+          "admin",
+          "normal",
+          "observer"
+        ],
+        "optional": true,
+        "description": "Valid values: admin, normal, observer. Determines what type of member the user being added should be of the board."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fullName": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The full name of the user to as a member of the board. Must have a length of at least 1 and cannot begin nor end with a space."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "5141f8926bea14cd244ec7d4081781ae03479a3c4b5cff20df508c66726a597a"
+  }
+}

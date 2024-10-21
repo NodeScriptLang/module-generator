@@ -1,0 +1,60 @@
+{
+  "moduleName": "Trello / Enterprises / Members / Update Licensed",
+  "version": "0.0.0",
+  "description": "This endpoint is used to update whether the provided Member should use one of the Enterprise's available licenses or not. Revoking a license will deactivate a Member of an Enterprise. \n\n NOTE: Revoking of licenses is not possible for enterprises that have opted in to user management via AdminHub.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the Enterprise."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idMember": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the Member"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "value": {
+      "schema": {
+        "type": "boolean",
+        "description": "Boolean value to determine whether the user should be given an Enterprise license (true) or not (false)."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "9babfc25765aebe0d113aacd01e470d349c89a6ab9e3f7661ba03433d191f04f"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "moduleName": "Gmail / Users / Settings / CSE / Key Pairs / Disable",
+  "version": "0.0.0",
+  "description": "Turns off a client-side encryption key pair. The authenticated user can no longer use the key pair to decrypt incoming CSE message texts or sign outgoing CSE mail. To regain access, use the EnableCseKeyPair to turn on the key pair. After 30 days, you can permanently delete the key pair by using the ObliterateCseKeyPair method.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://mail.google.com/` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "The requester's primary email address. To indicate the authenticated user, you can use the special value `me`."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "keyPairId": {
+      "schema": {
+        "type": "string",
+        "description": "The identifier of the key pair to turn off."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/gmail/api/reference/rest",
+    "codeHash": "99e3aea90334e740a22af7cf86254cf7c0b7f5ae41e90fe05dc0fa31bc47c7b5"
+  }
+}

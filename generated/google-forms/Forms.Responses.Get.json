@@ -1,0 +1,63 @@
+{
+  "moduleName": "Google Forms / Forms / Responses / Get",
+  "version": "0.0.0",
+  "description": "Get one response from the form.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/forms` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "formId": {
+      "schema": {
+        "type": "string",
+        "description": "Required. The form ID."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "responseId": {
+      "schema": {
+        "type": "string",
+        "description": "Required. The response ID within the form."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/forms/api/reference/rest",
+    "codeHash": "6db319bfb774c06d2c28970109e88c345540d047593fddb79b1e23e71e0bbff3"
+  }
+}

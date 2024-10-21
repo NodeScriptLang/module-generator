@@ -1,0 +1,58 @@
+{
+  "moduleName": "Trello / Checklists / Board / Get By ID",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "ID of a checklist."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "default": "all",
+        "enum": [
+          "all",
+          "name"
+        ],
+        "optional": true,
+        "description": "`all` or a comma-separated list of board [fields](/cloud/trello/guides/rest-api/object-definitions/)"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "c699ea4587f071a4b82d1d22b446cf153c818c696404cdc5a9b49abf355fdfb1"
+  }
+}

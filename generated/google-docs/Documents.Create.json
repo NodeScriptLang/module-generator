@@ -1,0 +1,215 @@
+{
+  "moduleName": "Google Docs / Documents / Create",
+  "version": "0.0.0",
+  "description": "Creates a blank document using the title given in the request. Other fields in the request, including any provided content, are ignored. Returns the created document.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/documents` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "uploadProtocol": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Upload protocol for media (e.g. \"raw\", \"multipart\")."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "uploadType": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "body": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The document body. The body typically contains the full document contents except for headers, footers, and footnotes."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "documentId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Output only. The ID of the document."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "documentStyle": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The style of the document."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "footers": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Output only. The footers in the document, keyed by footer ID."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "footnotes": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Output only. The footnotes in the document, keyed by footnote ID."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "headers": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Output only. The headers in the document, keyed by header ID."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "inlineObjects": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Output only. The inline objects in the document, keyed by object ID."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "lists": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Output only. The lists in the document, keyed by list ID."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "namedRanges": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Output only. The named ranges in the document, keyed by name."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "namedStyles": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The named styles. Paragraphs in the document can inherit their TextStyle and ParagraphStyle from these named styles."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "positionedObjects": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Output only. The positioned objects in the document, keyed by object ID."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "revisionId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Output only. The revision ID of the document. Can be used in update requests to specify which revision of a document to apply updates to and how the request should behave if the document has been edited since that revision. Only populated if the user has edit access to the document. The revision ID is not a sequential number but an opaque string. The format of the revision ID might change over time. A returned revision ID is only guaranteed to be valid for 24 hours after it has been returned and cannot be shared across users. If the revision ID is unchanged between calls, then the document has not changed. Conversely, a changed ID (for the same document and user) usually means the document has been updated. However, a changed ID can also be due to internal factors such as ID format changes."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "suggestedDocumentStyleChanges": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Output only. The suggested changes to the style of the document, keyed by suggestion ID."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "suggestedNamedStylesChanges": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Output only. The suggested changes to the named styles of the document, keyed by suggestion ID."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "suggestionsViewMode": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "DEFAULT_FOR_CURRENT_ACCESS",
+          "SUGGESTIONS_INLINE",
+          "PREVIEW_SUGGESTIONS_ACCEPTED",
+          "PREVIEW_WITHOUT_SUGGESTIONS"
+        ],
+        "optional": true,
+        "description": "Output only. The suggestions view mode applied to the document. Note: When editing a document, changes must be based on a document with SUGGESTIONS_INLINE."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "title": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The title of the document."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/docs/api/reference/rest",
+    "codeHash": "20c09127f4ea6865315b2e231b1cb97adbfc6d585425e0a74e469afb14ff9424"
+  }
+}

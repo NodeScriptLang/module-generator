@@ -1,0 +1,105 @@
+{
+  "moduleName": "Trello / Custom Fields / Create",
+  "version": "0.0.0",
+  "description": "Create a new Custom Field on a board.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idModel": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "modelType": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "board"
+        ],
+        "description": "The type of model that the Custom Field is being defined on. This should always be `board`."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the Custom Field"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "type": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "checkbox",
+          "list",
+          "number",
+          "text",
+          "date"
+        ],
+        "description": "The type of Custom Field to create."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "options": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "If the type is `checkbox` "
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pos": {
+      "schema": {
+        "type": "any",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "displayCardFront": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Whether this Custom Field should be shown on the front of Cards"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "b3d8d9bfdbe0e79bea4ba1fec358f9b1b56bc51b2804dc0e9f30b5f3845d39b8"
+  }
+}

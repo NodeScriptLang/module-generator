@@ -1,0 +1,75 @@
+{
+  "moduleName": "Trello / Boards / Members / Update By ID",
+  "version": "0.0.0",
+  "description": "Add a member to the board.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The id of the board to update"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idMember": {
+      "schema": {
+        "type": "string",
+        "description": "The id of the member to add to the board."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "type": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "admin",
+          "normal",
+          "observer"
+        ],
+        "description": "One of: admin, normal, observer. Determines the type of member this user will be on the board."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "allowBillableGuest": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Optional param that allows organization admins to add multi-board guests onto a board."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "4d8df9817b87c9b4c0cedba0c080919a2a952298819856d6ed13a803c293b23f"
+  }
+}

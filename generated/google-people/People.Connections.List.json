@@ -1,0 +1,134 @@
+{
+  "moduleName": "Google People / People / Connections / List",
+  "version": "0.0.0",
+  "description": "Provides a list of the authenticated user's contacts. Sync tokens expire 7 days after the full sync. A request with an expired sync token will get an error with an [google.rpc.ErrorInfo](https://cloud.google.com/apis/design/errors#error_info) with reason \"EXPIRED_SYNC_TOKEN\". In the case of such an error clients should make a full sync request without a `sync_token`. The first page of a full sync request has an additional quota. If the quota is exceeded, a 429 error will be returned. This quota is fixed and can not be increased. When the `sync_token` is specified, resources deleted since the last sync will be returned as a person with `PersonMetadata.deleted` set to true. When the `page_token` or `sync_token` is specified, all other request parameters must match the first call. Writes may have a propagation delay of several minutes for sync requests. Incremental syncs are not intended for read-after-write use cases. See example usage at [List the user's contacts that have changed](/people/v1/contacts#list_the_users_contacts_that_have_changed).",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/contacts` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "resourceName": {
+      "schema": {
+        "type": "string",
+        "description": "Required. The resource name to return connections for. Only `people/me` is valid."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "pageSize": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Optional. The number of connections to include in the response. Valid values are between 1 and 1000, inclusive. Defaults to 100 if not set or set to 0."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional. A page token, received from a previous response `next_page_token`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `people.connections.list` must match the first call that provided the page token."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "personFields": {
+      "schema": {
+        "type": "string",
+        "description": "Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * addresses * ageRanges * biographies * birthdays * calendarUrls * clientData * coverPhotos * emailAddresses * events * externalIds * genders * imClients * interests * locales * locations * memberships * metadata * miscKeywords * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * sipAddresses * skills * urls * userDefined"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "requestMaskIncludeField": {
+      "schema": {
+        "type": "string",
+        "description": "Required. Comma-separated list of person fields to be included in the response. Each path should start with `person.`: for example, `person.names` or `person.photos`."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "requestSyncToken": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Optional. Whether the response should return `next_sync_token` on the last page of results. It can be used to get incremental changes since the last request by setting it on the request `sync_token`. More details about sync behavior at `people.connections.list`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sortOrder": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "LAST_MODIFIED_ASCENDING",
+          "LAST_MODIFIED_DESCENDING",
+          "FIRST_NAME_ASCENDING",
+          "LAST_NAME_ASCENDING"
+        ],
+        "optional": true,
+        "description": "Optional. The order in which the connections should be sorted. Defaults to `LAST_MODIFIED_ASCENDING`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sources": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Optional. A mask of what source types to return. Defaults to READ_SOURCE_TYPE_CONTACT and READ_SOURCE_TYPE_PROFILE if not set."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "syncToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional. A sync token, received from a previous response `next_sync_token` Provide this to retrieve only the resources changed since the last request. When syncing, all other parameters provided to `people.connections.list` must match the first call that provided the sync token. More details about sync behavior at `people.connections.list`."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/people/api/rest",
+    "codeHash": "ad589b77f9b2d199bbd5268f26e559ef519e4a851dfd14adafc0ea23d063dad8"
+  }
+}

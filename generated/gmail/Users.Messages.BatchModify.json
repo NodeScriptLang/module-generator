@@ -1,0 +1,82 @@
+{
+  "moduleName": "Gmail / Users / Messages / Batch Modify",
+  "version": "0.0.0",
+  "description": "Modifies the labels on the specified messages.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://mail.google.com/` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "The user's email address. The special value `me` can be used to indicate the authenticated user."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "addLabelIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "A list of label IDs to add to messages."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "ids": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The IDs of the messages to modify. There is a limit of 1000 ids per request."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "removeLabelIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "A list of label IDs to remove from messages."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/gmail/api/reference/rest",
+    "codeHash": "81dcb62a2dcebc43928b2bd1422261b36087b14282e5d9e06b169c63a93c4400"
+  }
+}

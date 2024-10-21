@@ -1,0 +1,77 @@
+{
+  "moduleName": "Google Calendar / Events / Quick Add",
+  "version": "0.0.0",
+  "description": "Creates an event based on a simple text string.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/calendar` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "calendarId": {
+      "schema": {
+        "type": "string",
+        "description": "Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \"primary\" keyword."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "text": {
+      "schema": {
+        "type": "string",
+        "description": "The text describing the event to be created."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "sendUpdates": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "all",
+          "externalOnly",
+          "none"
+        ],
+        "optional": true,
+        "description": "Guests who should receive notifications about the creation of the new event."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/calendar/api/v3/reference",
+    "codeHash": "50d2e44f9c8306a60cc93ac9bb791a8095d31e2d439d3aa510b75519215519f8"
+  }
+}

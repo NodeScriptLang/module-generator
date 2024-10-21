@@ -1,0 +1,82 @@
+{
+  "moduleName": "Google People / Contact Groups / Update",
+  "version": "0.0.0",
+  "description": "Update the name of an existing contact group owned by the authenticated user. Updated contact group names must be unique to the users contact groups. Attempting to create a group with a duplicate name will return a HTTP 409 error. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/contacts` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "resourceName": {
+      "schema": {
+        "type": "string",
+        "description": "The resource name for the contact group, assigned by the server. An ASCII string, in the form of `contactGroups/{contact_group_id}`."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "contactGroup": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "A contact group."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "readGroupFields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional. A field mask to restrict which fields on the group are returned. Defaults to `metadata`, `groupType`, and `name` if not set or set to empty. Valid fields are: * clientData * groupType * memberCount * metadata * name"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "updateGroupFields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional. A field mask to restrict which fields on the group are updated. Multiple fields can be specified by separating them with commas. Defaults to `name` if not set or set to empty. Updated fields are replaced. Valid values are: * clientData * name"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/people/api/rest",
+    "codeHash": "1b18122420ca1177d4764b086bd9fc50f4f3f3eca2968e2db87858ce1baea273"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "moduleName": "Google Drive / Files / Modify Labels",
+  "version": "0.0.0",
+  "description": "Modifies the set of labels on a file.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/drive` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "alt": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "json"
+        ],
+        "optional": true,
+        "description": "Data format for the response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "quotaUser": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fileId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the file for which the labels are modified."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "kind": {
+      "schema": {
+        "type": "string",
+        "default": "drive#modifyLabelsRequest",
+        "optional": true,
+        "description": "This is always drive#modifyLabelsRequest"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "labelModifications": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The list of modifications to apply to the labels on the file."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/drive/api/reference/rest/v3",
+    "codeHash": "b24a3803d1afdc92613673c9e386035b5961e4d00a9643831e048405697464c9"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "moduleName": "Google Calendar / Events / Move",
+  "version": "0.0.0",
+  "description": "Moves an event to another calendar, i.e. changes an event's organizer.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/calendar` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "calendarId": {
+      "schema": {
+        "type": "string",
+        "description": "Calendar identifier of the source calendar where the event currently is on."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "eventId": {
+      "schema": {
+        "type": "string",
+        "description": "Event identifier."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "destination": {
+      "schema": {
+        "type": "string",
+        "description": "Calendar identifier of the target calendar where the event is to be moved to."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "sendUpdates": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "all",
+          "externalOnly",
+          "none"
+        ],
+        "optional": true,
+        "description": "Guests who should receive notifications about the change of the event's organizer."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/calendar/api/v3/reference",
+    "codeHash": "dc69737c51326d1255d754179aaa920ef9dbe15b18e39ebed8534dcdc0b57863"
+  }
+}

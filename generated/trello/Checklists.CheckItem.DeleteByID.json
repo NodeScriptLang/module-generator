@@ -1,0 +1,52 @@
+{
+  "moduleName": "Trello / Checklists / Check Item / Delete By ID",
+  "version": "0.0.0",
+  "description": "Remove an item from a checklist",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "ID of a checklist."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idCheckItem": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the check item to retrieve."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "fd37475edf8748c1d786473920f6bc3fcda8800a6b70ad1b87f340d728ee5d43"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "moduleName": "Trello / Enterprises / Pending Organizations",
+  "version": "0.0.0",
+  "description": "Get the Workspaces that are pending for the enterprise by ID.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the enterprise to retrieve"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "activeSince": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Date in YYYY-MM-DD format indicating the date to search up to for activeness of workspace"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "inactiveSince": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Date in YYYY-MM-DD format indicating the date to search up to for inactiveness of workspace"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "90298284817627c2068aa8a6b7fb484f7f51c3c17f0c81799d4ffea0af9ec811"
+  }
+}

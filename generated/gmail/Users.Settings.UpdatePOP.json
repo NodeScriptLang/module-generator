@@ -1,0 +1,77 @@
+{
+  "moduleName": "Gmail / Users / Settings / Update POP",
+  "version": "0.0.0",
+  "description": "Updates POP settings.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://mail.google.com/` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "User's email address. The special value \"me\" can be used to indicate the authenticated user."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessWindow": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "accessWindowUnspecified",
+          "disabled",
+          "fromNowOn",
+          "allMail"
+        ],
+        "optional": true,
+        "description": "The range of messages which are accessible via POP."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "disposition": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "dispositionUnspecified",
+          "leaveInInbox",
+          "archive",
+          "trash",
+          "markRead"
+        ],
+        "optional": true,
+        "description": "The action that will be executed on a message after it has been fetched via POP."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/gmail/api/reference/rest",
+    "codeHash": "f23a07b0dad6280d39789761d3a371aa3895833fe501c9356ca561fda7d384da"
+  }
+}

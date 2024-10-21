@@ -1,0 +1,44 @@
+{
+  "moduleName": "Trello / Organizations / Prefs / Delete Associated Domain",
+  "version": "0.0.0",
+  "description": "Remove the associated Google Apps domain from a Workspace",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID or name of the organization"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "848d3cc62fc086fb03ff61dd3c5cb2b36e647bcf20ea19cbd76f18cab3fbe3ca"
+  }
+}

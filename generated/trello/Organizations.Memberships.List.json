@@ -1,0 +1,72 @@
+{
+  "moduleName": "Trello / Organizations / Memberships / List",
+  "version": "0.0.0",
+  "description": "List the memberships of a Workspace",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID or name of the organization"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "filter": {
+      "schema": {
+        "type": "string",
+        "default": "all",
+        "enum": [
+          "all",
+          "active",
+          "admin",
+          "deactivated",
+          "me",
+          "normal"
+        ],
+        "optional": true,
+        "description": "`all` or a comma-separated list of: `active`, `admin`, `deactivated`, `me`, `normal`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "member": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether to include the Member objects with the Memberships"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "d6e0db5731c73e3997015a04b86ed76e1d068fa4bf535075178b525fd0d08857"
+  }
+}

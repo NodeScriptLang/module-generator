@@ -1,0 +1,64 @@
+{
+  "moduleName": "Google People / Contact Groups / Delete",
+  "version": "0.0.0",
+  "description": "Delete an existing contact group owned by the authenticated user by specifying a contact group resource name. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/contacts` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "resourceName": {
+      "schema": {
+        "type": "string",
+        "description": "Required. The resource name of the contact group to delete."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "deleteContacts": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Optional. Set to true to also delete the contacts in the specified group."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/people/api/rest",
+    "codeHash": "076ad5081bc4c1888d6bd69f512febf38e0dda4e14cb760e3de4db0abc5f2f15"
+  }
+}

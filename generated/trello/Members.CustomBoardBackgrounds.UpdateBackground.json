@@ -1,0 +1,75 @@
+{
+  "moduleName": "Trello / Members / Custom Board Backgrounds / Update Background",
+  "version": "0.0.0",
+  "description": "Update a specific custom board background",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "any",
+        "description": "The ID or username of the member"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "idBackground": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the custom background"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "brightness": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "dark",
+          "light",
+          "unknown"
+        ],
+        "optional": true,
+        "description": "One of: `dark`, `light`, `unknown`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "tile": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether to tile the background"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "43f8f69cef864a3f3531a17d66b44de64478f873be10df1079d3372d851d548e"
+  }
+}

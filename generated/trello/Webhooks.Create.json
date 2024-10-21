@@ -1,0 +1,70 @@
+{
+  "moduleName": "Trello / Webhooks / Create",
+  "version": "0.0.0",
+  "description": "Create a new webhook.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A string with a length from `0` to `16384`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "callbackUrl": {
+      "schema": {
+        "type": "string",
+        "description": "A valid URL that is reachable with a `HEAD` and `POST` request."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idModel": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the model to be monitored"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "active": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Determines whether the webhook is active and sending `POST` requests."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "a91089a2f46b3a429a333be66f07e37c1868ad4e82b0c91d441faace86f29d81"
+  }
+}

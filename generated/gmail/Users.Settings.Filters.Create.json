@@ -1,0 +1,73 @@
+{
+  "moduleName": "Gmail / Users / Settings / Filters / Create",
+  "version": "0.0.0",
+  "description": "Creates a filter. Note: you can only create a maximum of 1,000 filters.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://mail.google.com/` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "User's email address. The special value \"me\" can be used to indicate the authenticated user."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "action": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "A set of actions to perform on a message."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "criteria": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Message matching criteria."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The server assigned ID of the filter."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/gmail/api/reference/rest",
+    "codeHash": "9c4b7c44648fe31225be1341b133badfb16a441cfa759d0641fa7e3b1c49c6e5"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "moduleName": "Gmail / Users / Threads / Modify",
+  "version": "0.0.0",
+  "description": "Modifies the labels applied to the thread. This applies to all messages in the thread.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://mail.google.com/` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "The user's email address. The special value `me` can be used to indicate the authenticated user."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the thread to modify."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "addLabelIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "A list of IDs of labels to add to this thread. You can add up to 100 labels with each update."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "removeLabelIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "A list of IDs of labels to remove from this thread. You can remove up to 100 labels with each update."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/gmail/api/reference/rest",
+    "codeHash": "0bcffa6bd96e18e3eafd679d44f62874ead24fb472d041590e9be4b83140819a"
+  }
+}

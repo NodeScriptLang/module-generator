@@ -1,0 +1,80 @@
+{
+  "moduleName": "Gmail / Users / Watch",
+  "version": "0.0.0",
+  "description": "Set up or update a push notification watch on the given user mailbox.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://mail.google.com/` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "The user's email address. The special value `me` can be used to indicate the authenticated user."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "labelFilterAction": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "include",
+          "exclude"
+        ],
+        "optional": true,
+        "description": "Filtering behavior of labelIds list specified."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "labelIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "List of label_ids to restrict notifications about. By default, if unspecified, all changes are pushed out. If specified then dictates which labels are required for a push notification to be generated."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "topicName": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A fully qualified Google Cloud Pub/Sub API topic name to publish the events to. This topic name **must** already exist in Cloud Pub/Sub and you **must** have already granted gmail \"publish\" permission on it. For example, \"projects/my-project-identifier/topics/my-topic-name\" (using the Cloud Pub/Sub \"v1\" topic naming format). Note that the \"my-project-identifier\" portion must exactly match your Google developer project id (the one executing this watch request)."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/gmail/api/reference/rest",
+    "codeHash": "a2802d3a976ce0e4c89c75cff073ed012e7dcbf0ac59a4e5d8b57ac319dc58a5"
+  }
+}

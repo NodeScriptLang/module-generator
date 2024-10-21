@@ -1,0 +1,54 @@
+{
+  "moduleName": "Trello / Lists / Get By ID",
+  "version": "0.0.0",
+  "description": "Get information about a List",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the list"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "default": "name,closed,idBoard,pos",
+        "optional": true,
+        "description": "`all` or a comma separated list of List field names."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "8efac3213b8956a1d5fc15b62f474534337184e5892eb31a52b1f4d0a34c3c4a"
+  }
+}

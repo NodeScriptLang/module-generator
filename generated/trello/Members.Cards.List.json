@@ -1,0 +1,61 @@
+{
+  "moduleName": "Trello / Members / Cards / List",
+  "version": "0.0.0",
+  "description": "Gets the cards a member is on",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID or username of the member"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "filter": {
+      "schema": {
+        "type": "string",
+        "default": "visible",
+        "enum": [
+          "all",
+          "closed",
+          "none",
+          "open",
+          "visible"
+        ],
+        "optional": true,
+        "description": "One of: `all`, `closed`, `none`, `open`, `visible`"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "7074042a7afb79072a70088b9dd7e5064cb1f9bb496da06f098d6abd99f59f96"
+  }
+}

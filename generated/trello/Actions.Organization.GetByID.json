@@ -1,0 +1,57 @@
+{
+  "moduleName": "Trello / Actions / Organization / Get By ID",
+  "version": "0.0.0",
+  "description": "Get the Organization of an Action",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the action"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "id",
+          "name"
+        ],
+        "optional": true,
+        "description": "`all` or a comma-separated list of organization fields"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "877c1c27109cad6914d8cb9c5d99e1a0407fb04cb3f1cbae5c4ea7c718c6088a"
+  }
+}

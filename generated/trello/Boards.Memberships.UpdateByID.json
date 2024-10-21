@@ -1,0 +1,90 @@
+{
+  "moduleName": "Trello / Boards / Memberships / Update By ID",
+  "version": "0.0.0",
+  "description": "Update an existing board by id",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The id of the board to update"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idMembership": {
+      "schema": {
+        "type": "string",
+        "description": "The id of a membership that should be added to this board."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "type": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "admin",
+          "normal",
+          "observer"
+        ],
+        "description": "One of: admin, normal, observer. Determines the type of member that this membership will be to this board."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "memberFields": {
+      "schema": {
+        "type": "string",
+        "default": "fullName, username",
+        "enum": [
+          "all",
+          "avatarHash",
+          "bio",
+          "bioData",
+          "confirmed",
+          "fullName",
+          "idPremOrgsAdmin",
+          "initials",
+          "memberType",
+          "products",
+          "status",
+          "url",
+          "username"
+        ],
+        "optional": true,
+        "description": "Valid values: all, avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "c9b583b10a69dd27d024f899fc6c534e4ae1c30de4795ea87e1006a527a93f97"
+  }
+}

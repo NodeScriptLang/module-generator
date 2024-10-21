@@ -1,0 +1,52 @@
+{
+  "moduleName": "Trello / Boards / My Prefs / Show List Guide",
+  "version": "0.0.0",
+  "description": "Update showListGuide Pref on a Board",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The id of the board to update"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "value": {
+      "schema": {
+        "type": "boolean",
+        "description": "Determines whether to show the list guide."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "c2a94f994e97da272505660a71bb0a8373675e29cf198d44a8fcc2092142fa11"
+  }
+}

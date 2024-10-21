@@ -1,0 +1,68 @@
+{
+  "moduleName": "Trello / Cards / Custom Field / Update By ID",
+  "version": "0.0.0",
+  "description": "Setting, updating, and removing the value for a Custom Field on a card. For more details on updating custom fields check out the [Getting Started With Custom Fields](/cloud/trello/guides/rest-api/getting-started-with-custom-fields/)",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idCard": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the card that the Custom Field value should be set/updated for"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idCustomField": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the Custom Field on the card."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idValue": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the Custom Field value on the card."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "value": {
+      "schema": {
+        "type": "any",
+        "description": "Object containing option values e.g { text: 'option1' }"
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "1db456d388cd453d474aafaad443a7eb7e185bf1548557164a01c7020ed5e959"
+  }
+}

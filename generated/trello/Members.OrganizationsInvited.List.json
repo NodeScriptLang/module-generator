@@ -1,0 +1,57 @@
+{
+  "moduleName": "Trello / Members / Organizations Invited / List",
+  "version": "0.0.0",
+  "description": "Get a member's Workspaces they have been invited to",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID or username of the member"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "id",
+          "name"
+        ],
+        "optional": true,
+        "description": "`all` or a comma-separated list of organization [fields](/cloud/trello/guides/rest-api/object-definitions/)"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "5de92e8775d82fd3dad05eee51ca00f90a3354683cbb5764e7a09e380c44eb11"
+  }
+}

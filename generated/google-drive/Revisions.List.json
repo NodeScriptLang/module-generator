@@ -1,0 +1,96 @@
+{
+  "moduleName": "Google Drive / Revisions / List",
+  "version": "0.0.0",
+  "description": "Lists a file's revisions.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/drive` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "alt": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "json"
+        ],
+        "optional": true,
+        "description": "Data format for the response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "quotaUser": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fileId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the file."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "pageSize": {
+      "schema": {
+        "type": "number",
+        "minimum": 1,
+        "maximum": 1000,
+        "optional": true,
+        "description": "The maximum number of revisions to return per page."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/drive/api/reference/rest/v3",
+    "codeHash": "898ef3b3ead8fd63977c5ebdb99e1cc58a3aa6363e167617369a46d80b739c18"
+  }
+}

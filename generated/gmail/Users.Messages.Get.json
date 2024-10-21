@@ -1,0 +1,81 @@
+{
+  "moduleName": "Gmail / Users / Messages / Get",
+  "version": "0.0.0",
+  "description": "Gets the specified message.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://mail.google.com/` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "The user's email address. The special value `me` can be used to indicate the authenticated user."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the message to retrieve. This ID is usually retrieved using `messages.list`. The ID is also contained in the result when a message is inserted (`messages.insert`) or imported (`messages.import`)."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "format": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "minimal",
+          "full",
+          "raw",
+          "metadata"
+        ],
+        "optional": true,
+        "description": "The format to return the message in."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "metadataHeaders": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "When given and format is `METADATA`, only include headers specified."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/gmail/api/reference/rest",
+    "codeHash": "ceaaa4d8a40cf3a9f0cd4b901f54a061b32abea228e54a868a7b5dc24cec6384"
+  }
+}
