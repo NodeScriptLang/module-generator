@@ -14,7 +14,7 @@ commonParams:
     required: false
     advanced: false
     attributes:
-      integrationTemplateId: google-sheets
+      oauthAppId: kpmk4j8z41vx3k16
   - paramName: apiKey
     paramKey: key
     in: query
