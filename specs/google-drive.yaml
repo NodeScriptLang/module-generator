@@ -14,6 +14,8 @@ commonParams:
     description: OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/drive` scope. Google Auth / Service Account Token can be used to obtain a valid access token.
     required: false
     advanced: false
+    attributes:
+      oauthAppId: vpvdwpswx02ec4i5
   - paramName: apiKey
     paramKey: key
     in: query
