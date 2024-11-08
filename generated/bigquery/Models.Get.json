@@ -13,12 +13,14 @@
         "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/cloud-platform` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
       },
       "advanced": false,
-      "hideValue": true
+      "hideValue": true,
+      "attributes": {
+        "oauthAppId": "t185qoo5fa72ut9u"
+      }
     },
     "projectId": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "Required. Project ID of the requested model."
       },
       "advanced": false,
@@ -27,7 +29,6 @@
     "datasetId": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "Required. Dataset ID of the requested model."
       },
       "advanced": false,
@@ -36,7 +37,6 @@
     "modelId": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "Required. Model ID of the requested model."
       },
       "advanced": false,
