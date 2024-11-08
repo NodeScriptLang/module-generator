@@ -13,7 +13,10 @@
         "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/youtube` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
       },
       "advanced": false,
-      "hideValue": true
+      "hideValue": true,
+      "attributes": {
+        "oauthAppId": "bejp7r572gy5wu9a"
+      }
     },
     "apiKey": {
       "schema": {
@@ -75,6 +78,7 @@
       "schema": {
         "type": "string",
         "default": "youtube#playlistItem",
+        "optional": true,
         "description": "Identifies what kind of resource this is. Value: the fixed string \"youtube#playlistItem\"."
       },
       "advanced": true,
