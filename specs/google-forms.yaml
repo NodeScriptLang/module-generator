@@ -13,6 +13,8 @@ commonParams:
     description: OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/forms` scope. Google Auth / Service Account Token can be used to obtain a valid access token.
     required: false
     advanced: false
+    attributes:
+      oauthAppId: iwx5dsujtpm0nu5q
   - paramName: apiKey
     paramKey: key
     in: query
