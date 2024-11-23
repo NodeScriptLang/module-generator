@@ -862,7 +862,7 @@ modules:
         schema:
           type: string
         required: true
-  - moduleName: Issues / List
+  - moduleName: Issues / List All
     method: get
     path: /issues
     description: >-
@@ -3916,7 +3916,7 @@ modules:
           type: number
           default: 1
         required: false
-  - moduleName: Issues / Org / List
+  - moduleName: Org / Issues / List
     method: get
     path: /orgs/{org}/issues
     description: >-
@@ -10062,7 +10062,7 @@ modules:
             - pr_merge
             - merge_queue_merge
         required: false
-  - moduleName: Issues / Assignees / List
+  - moduleName: Issues / List Assignees
     method: get
     path: /repos/{owner}/{repo}/assignees
     description: Lists the [available
@@ -10105,7 +10105,7 @@ modules:
           type: number
           default: 1
         required: false
-  - moduleName: Issues / Assignee / Check
+  - moduleName: Issues / Check Repo Assignee
     method: get
     path: /repos/{owner}/{repo}/assignees/{assignee}
     description: >-
@@ -17878,7 +17878,7 @@ modules:
         schema:
           type: number
         required: true
-  - moduleName: Issues / Repo / List
+  - moduleName: Issues / List
     method: get
     path: /repos/{owner}/{repo}/issues
     description: >-
@@ -18036,7 +18036,7 @@ modules:
           type: number
           default: 1
         required: false
-  - moduleName: Issues / Repo / Create
+  - moduleName: Issues / Create
     method: post
     path: /repos/{owner}/{repo}/issues
     description: >-
@@ -18145,7 +18145,7 @@ modules:
             type: any
         required: false
     requestBodyType: json
-  - moduleName: Issues / Repo Comments / List
+  - moduleName: Issues / List Comments
     method: get
     path: /repos/{owner}/{repo}/issues/comments
     description: >-
@@ -18243,7 +18243,7 @@ modules:
           type: number
           default: 1
         required: false
-  - moduleName: Issues / Repo Comment / Get
+  - moduleName: Issues / Get Comment
     method: get
     path: /repos/{owner}/{repo}/issues/comments/{comment_id}
     description: >-
@@ -18293,7 +18293,7 @@ modules:
         schema:
           type: number
         required: true
-  - moduleName: Issues / Repo Comment / Update
+  - moduleName: Issues / Update Comment
     method: patch
     path: /repos/{owner}/{repo}/issues/comments/{comment_id}
     description: >-
@@ -18351,7 +18351,7 @@ modules:
           type: string
         required: true
     requestBodyType: json
-  - moduleName: Issues / Repo Comment / Delete
+  - moduleName: Issues / Delete Comment
     method: delete
     path: /repos/{owner}/{repo}/issues/comments/{comment_id}
     description: You can use the REST API to delete comments on issues and pull
@@ -18542,7 +18542,7 @@ modules:
         schema:
           type: number
         required: true
-  - moduleName: Issues / Repo Events / List
+  - moduleName: Issues / List Events
     method: get
     path: /repos/{owner}/{repo}/issues/events
     description: Lists events for a repository.
@@ -18583,7 +18583,7 @@ modules:
           type: number
           default: 1
         required: false
-  - moduleName: Issues / Repo Event / Get
+  - moduleName: Issues / Get Event
     method: get
     path: /repos/{owner}/{repo}/issues/events/{event_id}
     description: Gets a single event by the event id.
@@ -18611,7 +18611,7 @@ modules:
         schema:
           type: number
         required: true
-  - moduleName: Issues / Repo Issue / Get
+  - moduleName: Issues / Get
     method: get
     path: /repos/{owner}/{repo}/issues/{issue_number}
     description: >-
@@ -18689,7 +18689,7 @@ modules:
         schema:
           type: number
         required: true
-  - moduleName: Issues / Repo Issue / Update
+  - moduleName: Issues /Update
     method: patch
     path: /repos/{owner}/{repo}/issues/{issue_number}
     description: >-
@@ -18814,7 +18814,7 @@ modules:
             type: any
         required: false
     requestBodyType: json
-  - moduleName: Issues / Assignees / Add
+  - moduleName: Issues / Add Assignee
     method: post
     path: /repos/{owner}/{repo}/issues/{issue_number}/assignees
     description: Adds up to 10 assignees to an issue. Users already assigned to an
@@ -18855,7 +18855,7 @@ modules:
             type: any
         required: false
     requestBodyType: json
-  - moduleName: Issues / Assignees / Remove
+  - moduleName: Issues / Remove Assignee
     method: delete
     path: /repos/{owner}/{repo}/issues/{issue_number}/assignees
     description: Removes one or more assignees from an issue.
@@ -18895,7 +18895,7 @@ modules:
             type: any
         required: false
     requestBodyType: json
-  - moduleName: Issues / User Assignment / Check
+  - moduleName: Issues / Check Issue Assignee
     method: get
     path: /repos/{owner}/{repo}/issues/{issue_number}/assignees/{assignee}
     description: >-
@@ -18938,7 +18938,7 @@ modules:
         schema:
           type: string
         required: true
-  - moduleName: Issues / Comments / List
+  - moduleName: Issues / List Comments
     method: get
     path: /repos/{owner}/{repo}/issues/{issue_number}/comments
     description: >-
@@ -19021,7 +19021,7 @@ modules:
           type: number
           default: 1
         required: false
-  - moduleName: Issues / Comment / Create
+  - moduleName: Issues / Create Comment
     method: post
     path: /repos/{owner}/{repo}/issues/{issue_number}/comments
     description: >-
@@ -19092,7 +19092,7 @@ modules:
           type: string
         required: true
     requestBodyType: json
-  - moduleName: Issues / Events / List
+  - moduleName: Issues / List Events
     method: get
     path: /repos/{owner}/{repo}/issues/{issue_number}/events
     description: Lists all events for an issue.
@@ -19140,7 +19140,7 @@ modules:
           type: number
           default: 1
         required: false
-  - moduleName: Issues / Labels On Issue / List
+  - moduleName: Issues / List Labels
     method: get
     path: /repos/{owner}/{repo}/issues/{issue_number}/labels
     description: Lists all labels for an issue.
@@ -19188,7 +19188,7 @@ modules:
           type: number
           default: 1
         required: false
-  - moduleName: Issues / Labels / Add
+  - moduleName: Issues / Add Label
     method: post
     path: /repos/{owner}/{repo}/issues/{issue_number}/labels
     description: "Adds labels to an issue. If you provide an empty array of labels,
@@ -19225,7 +19225,7 @@ modules:
           type: any
         required: true
     requestBodyType: json
-  - moduleName: Issues / Labels / Set
+  - moduleName: Issues / Set Labels
     method: put
     path: /repos/{owner}/{repo}/issues/{issue_number}/labels
     description: Removes any previous labels and sets the new labels for an issue.
@@ -19261,7 +19261,7 @@ modules:
           type: any
         required: true
     requestBodyType: json
-  - moduleName: Issues / Labels / Remove All
+  - moduleName: Issues / Remove Labels
     method: delete
     path: /repos/{owner}/{repo}/issues/{issue_number}/labels
     description: Removes all labels from an issue.
@@ -19569,7 +19569,7 @@ modules:
         schema:
           type: number
         required: true
-  - moduleName: Issues / Timeline / List Events
+  - moduleName: Issues / List Timeline Events
     method: get
     path: /repos/{owner}/{repo}/issues/{issue_number}/timeline
     description: List all timeline events for an issue.
@@ -19768,7 +19768,7 @@ modules:
         schema:
           type: number
         required: true
-  - moduleName: Issues / Repo Labels / List
+  - moduleName: Labels / List
     method: get
     path: /repos/{owner}/{repo}/labels
     description: Lists all labels for a repository.
@@ -19809,7 +19809,7 @@ modules:
           type: number
           default: 1
         required: false
-  - moduleName: Issues / Repo Label / Create
+  - moduleName: Labels / Create
     method: post
     path: /repos/{owner}/{repo}/labels
     description: Creates a label for the specified repository with the given name
@@ -19860,7 +19860,7 @@ modules:
           type: string
         required: false
     requestBodyType: json
-  - moduleName: Issues / Repo Label / Get
+  - moduleName: Labels / Get
     method: get
     path: /repos/{owner}/{repo}/labels/{name}
     description: Gets a label using the given name.
@@ -19888,7 +19888,7 @@ modules:
         schema:
           type: string
         required: true
-  - moduleName: Issues / Repo Label / Update
+  - moduleName: Labels / Update
     method: patch
     path: /repos/{owner}/{repo}/labels/{name}
     description: Updates a label using the given label name.
@@ -19944,7 +19944,7 @@ modules:
           type: string
         required: false
     requestBodyType: json
-  - moduleName: Issues / Repo Label / Delete
+  - moduleName: Labels / Delete
     method: delete
     path: /repos/{owner}/{repo}/labels/{name}
     description: Deletes a label using the given label name.
@@ -20068,7 +20068,7 @@ modules:
           type: string
         required: false
     requestBodyType: json
-  - moduleName: Issues / Milestones / List
+  - moduleName: Milestones / List
     method: get
     path: /repos/{owner}/{repo}/milestones
     description: Lists milestones for a repository.
@@ -20143,7 +20143,7 @@ modules:
           type: number
           default: 1
         required: false
-  - moduleName: Issues / Milestone / Create
+  - moduleName: Milestones / Create
     method: post
     path: /repos/{owner}/{repo}/milestones
     description: Creates a milestone.
@@ -20199,7 +20199,7 @@ modules:
           type: string
         required: false
     requestBodyType: json
-  - moduleName: Issues / Milestone / Get
+  - moduleName: Milestones / Get
     method: get
     path: /repos/{owner}/{repo}/milestones/{milestone_number}
     description: Gets a milestone using the given milestone number.
@@ -20227,7 +20227,7 @@ modules:
         schema:
           type: number
         required: true
-  - moduleName: Issues / Milestone / Update
+  - moduleName: Milestones / Update
     method: patch
     path: /repos/{owner}/{repo}/milestones/{milestone_number}
     description: ""
@@ -20290,7 +20290,7 @@ modules:
           type: string
         required: false
     requestBodyType: json
-  - moduleName: Issues / Milestone / Delete
+  - moduleName: Milestones / Delete
     method: delete
     path: /repos/{owner}/{repo}/milestones/{milestone_number}
     description: Deletes a milestone using the given milestone number.
@@ -20318,7 +20318,7 @@ modules:
         schema:
           type: number
         required: true
-  - moduleName: Issues / Labels For Milestone / List
+  - moduleName: Milestones / Get Labels
     method: get
     path: /repos/{owner}/{repo}/milestones/{milestone_number}/labels
     description: Lists labels for issues in a milestone.
@@ -27085,7 +27085,7 @@ modules:
         schema:
           type: number
         required: true
-  - moduleName: Issues / Authenticated User / List
+  - moduleName: Issues / User / Issues / List
     method: get
     path: /user/issues
     description: >-
