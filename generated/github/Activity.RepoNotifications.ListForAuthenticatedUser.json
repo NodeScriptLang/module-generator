@@ -1,0 +1,102 @@
+{
+  "moduleName": "GitHub / Activity / Repo Notifications / List For Authenticated User",
+  "version": "0.0.0",
+  "description": "Lists all notifications for the current user in the specified repository.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "all": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "If `true`, show notifications marked as read."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "participating": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "If `true`, only shows notifications in which the user is directly participating or mentioned."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "since": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "before": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "perPage": {
+      "schema": {
+        "type": "number",
+        "default": "30",
+        "optional": true,
+        "description": "The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "number",
+        "default": "1",
+        "optional": true,
+        "description": "The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user",
+    "codeHash": "602e01b6eedf32e1b6c3b6c8b8b8d99fac9d5e8c2c6ea4615320b521f7c663bf"
+  }
+}

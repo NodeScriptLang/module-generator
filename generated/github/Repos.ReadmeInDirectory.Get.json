@@ -1,0 +1,61 @@
+{
+  "moduleName": "GitHub / Repos / Readme In Directory / Get",
+  "version": "0.0.0",
+  "description": "Gets the README from a repository directory.\n\nThis endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\"\n\n- **`application/vnd.github.raw+json`**: Returns the raw file contents. This is the default if you do not specify a media type.\n- **`application/vnd.github.html+json`**: Returns the README in HTML. Markup languages are rendered to HTML using GitHub's open-source [Markup library](https://github.com/github/markup).",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "dir": {
+      "schema": {
+        "type": "string",
+        "description": "The alternate path to look for a README file"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "ref": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The name of the commit/branch/tag. Default: the repository’s default branch."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/repos/contents#get-a-repository-readme-for-a-directory",
+    "codeHash": "1b1d139a3f9640ffebd8d97db9ba49e991cf8631cf0ba6dd4e87ee547fb82c14"
+  }
+}

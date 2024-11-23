@@ -1,0 +1,72 @@
+{
+  "moduleName": "GitHub / Issues / Labels For Milestone / List",
+  "version": "0.0.0",
+  "description": "Lists labels for issues in a milestone.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "milestoneNumber": {
+      "schema": {
+        "type": "number",
+        "description": "The number that identifies the milestone."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "perPage": {
+      "schema": {
+        "type": "number",
+        "default": "30",
+        "optional": true,
+        "description": "The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "number",
+        "default": "1",
+        "optional": true,
+        "description": "The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/issues/labels#list-labels-for-issues-in-a-milestone",
+    "codeHash": "d61b2bdfd55515a053f5578eab1322b6fe021db76c3a004d3fef9b97904a73c9"
+  }
+}

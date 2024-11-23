@@ -1,0 +1,52 @@
+{
+  "moduleName": "GitHub / Repos / Deployment / Delete",
+  "version": "0.0.0",
+  "description": "If the repository only has one deployment, you can delete the deployment regardless of its status. If the repository has more than one deployment, you can only delete inactive deployments. This ensures that repositories with multiple deployments will always have an active deployment.\n\nTo set a deployment as inactive, you must:\n\n*   Create a new deployment that is active so that the system has a record of the current state, then delete the previously active deployment.\n*   Mark the active deployment as inactive by adding any non-successful deployment status.\n\nFor more information, see \"[Create a deployment](https://docs.github.com/rest/deployments/deployments/#create-a-deployment)\" and \"[Create a deployment status](https://docs.github.com/rest/deployments/statuses#create-a-deployment-status).\"\n\nOAuth app tokens and personal access tokens (classic) need the `repo` or `repo_deployment` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "deploymentId": {
+      "schema": {
+        "type": "number",
+        "description": "deployment_id parameter"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/deployments/deployments#delete-a-deployment",
+    "codeHash": "4d7aafb06d7f8611bc1a38364066995eb1843500db68fe70edb531e191e2e862"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Repos / Traffic / Top Paths",
+  "version": "0.0.0",
+  "description": "Get the top 10 popular contents over the last 14 days.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/metrics/traffic#get-top-referral-paths",
+    "codeHash": "02622554799e2885f3e07f787c99a66ff1bc8458a600d5c16bdaa89e921355e2"
+  }
+}

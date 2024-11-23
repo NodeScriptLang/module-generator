@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Projects / Column / Get",
+  "version": "0.0.0",
+  "description": "Gets information about a project column.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "columnId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the column."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/projects/columns#get-a-project-column",
+    "codeHash": "abb99ef3f9111d408493e5bc019cfe17fbe77aa4aa20352193bf64fdd18ded01"
+  }
+}

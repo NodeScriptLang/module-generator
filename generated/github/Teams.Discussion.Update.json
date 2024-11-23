@@ -1,0 +1,70 @@
+{
+  "moduleName": "GitHub / Teams / Discussion / Update",
+  "version": "0.0.0",
+  "description": "Edits the title and body text of a discussion post. Only the parameters you provide are updated.\n\n> [!NOTE]\n> You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.\n\nOAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamSlug": {
+      "schema": {
+        "type": "string",
+        "description": "The slug of the team name."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "discussionNumber": {
+      "schema": {
+        "type": "number",
+        "description": "The number that identifies the discussion."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "title": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The discussion post's title."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "body": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The discussion post's body text."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/teams/discussions#update-a-discussion",
+    "codeHash": "b5c163da6e2350ecef2a61992b0f83a6a43b836f8598181ed7b65878e2c9751f"
+  }
+}

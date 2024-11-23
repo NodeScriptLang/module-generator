@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Projects / Delete",
+  "version": "0.0.0",
+  "description": "Deletes a project board. Returns a `404 Not Found` status if projects are disabled.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the project."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/projects/projects#delete-a-project",
+    "codeHash": "5f536adc75033b9f3c6699ee4ef6a31f762643308051e655e805941b3411804b"
+  }
+}

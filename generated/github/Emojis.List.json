@@ -1,0 +1,28 @@
+{
+  "moduleName": "GitHub / Emojis / List",
+  "version": "0.0.0",
+  "description": "Lists all the emojis available to use on GitHub.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/emojis/emojis#get-emojis",
+    "codeHash": "38e84989d8b08e41b268ac343cda3ec78a2639221eb57559732f0ce0ed792752"
+  }
+}

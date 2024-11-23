@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Gists / Delete",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "gistId": {
+      "schema": {
+        "type": "string",
+        "description": "The unique identifier of the gist."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/gists/gists#delete-a-gist",
+    "codeHash": "73e0f5b1ec56d9962d89be69f03fe4e754eb2af5994d2ea088c9c8d93b6661e0"
+  }
+}

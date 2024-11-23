@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Activity / Thread / Mark As Read",
+  "version": "0.0.0",
+  "description": "Marks a thread as \"read.\" Marking a thread as \"read\" is equivalent to clicking a notification in your notification inbox on GitHub: https://github.com/notifications.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "threadId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the notification thread. This corresponds to the value returned in the `id` field when you retrieve notifications (for example with the [`GET /notifications` operation](https://docs.github.com/rest/activity/notifications#list-notifications-for-the-authenticated-user))."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/activity/notifications#mark-a-thread-as-read",
+    "codeHash": "87248c813712f55ca1780003bd9e72adab1ea7124963ad1a8d408cff880b614e"
+  }
+}

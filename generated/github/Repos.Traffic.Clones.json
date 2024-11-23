@@ -1,0 +1,58 @@
+{
+  "moduleName": "GitHub / Repos / Traffic / Clones",
+  "version": "0.0.0",
+  "description": "Get the total number of clones and breakdown per day or week for the last 14 days. Timestamps are aligned to UTC midnight of the beginning of the day or week. Week begins on Monday.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "per": {
+      "schema": {
+        "type": "string",
+        "default": "day",
+        "enum": [
+          "day",
+          "week"
+        ],
+        "optional": true,
+        "description": "The time frame to display results for."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/metrics/traffic#get-repository-clones",
+    "codeHash": "00343303147c0ab36e12d32be21ee445fd60a594c30f3833be08b372c06e7934"
+  }
+}

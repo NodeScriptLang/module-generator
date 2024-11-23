@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Projects / Column / Update",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "columnId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the column."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "Name of the project column"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/projects/columns#update-an-existing-project-column",
+    "codeHash": "9fe60e1f70bcfaf112b1203e9a62e855a90a8f79425c337c7295d5e008b2b13d"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "moduleName": "GitHub / Teams / Discussion Comment / Update",
+  "version": "0.0.0",
+  "description": "Edits the body text of a discussion comment.\n\n> [!NOTE]\n> You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.\n\nOAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamSlug": {
+      "schema": {
+        "type": "string",
+        "description": "The slug of the team name."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "discussionNumber": {
+      "schema": {
+        "type": "number",
+        "description": "The number that identifies the discussion."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "commentNumber": {
+      "schema": {
+        "type": "number",
+        "description": "The number that identifies the comment."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "body": {
+      "schema": {
+        "type": "string",
+        "description": "The discussion comment's body text."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/teams/discussion-comments#update-a-discussion-comment",
+    "codeHash": "43ce30dc6d3efb1196da3340294380988a84d625da06faa6fa9dd8643761d463"
+  }
+}

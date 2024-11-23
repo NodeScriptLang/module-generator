@@ -1,0 +1,52 @@
+{
+  "moduleName": "GitHub / Repos / Pages Deployment / Cancel",
+  "version": "0.0.0",
+  "description": "Cancels a GitHub Pages deployment.\n\nThe authenticated user must have write permissions for the GitHub Pages site.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "pagesDeploymentId": {
+      "schema": {
+        "type": "any",
+        "description": "The ID of the Pages deployment. You can also give the commit SHA of the deployment."
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/pages/pages#cancel-a-github-pages-deployment",
+    "codeHash": "df6650bf9c041e9c41dc44df65924cc1d2f949b4ceade0e767634213eaba1d8c"
+  }
+}

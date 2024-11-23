@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Orgs / Role / Revoke All Users",
+  "version": "0.0.0",
+  "description": "Revokes all assigned organization roles from a user. For more information on organization roles, see \"[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles).\"\n\nThe authenticated user must be an administrator for the organization to use this endpoint.\n\nOAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "username": {
+      "schema": {
+        "type": "string",
+        "description": "The handle for the GitHub user account."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/organization-roles#remove-all-organization-roles-for-a-user",
+    "codeHash": "7d0356a8ae3b2e27a62c5a14a395604cc8d61ba7f9ca991ae4b5e135a24758fe"
+  }
+}

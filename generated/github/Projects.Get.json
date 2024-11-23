@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Projects / Get",
+  "version": "0.0.0",
+  "description": "Gets a project by its `id`. Returns a `404 Not Found` status if projects are disabled. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the project."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/projects/projects#get-a-project",
+    "codeHash": "9ee72f5ed9bc6052fa35c19af763ea7247c628a71b94037845748140ee4872ce"
+  }
+}

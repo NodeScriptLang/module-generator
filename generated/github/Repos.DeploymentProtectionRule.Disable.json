@@ -1,0 +1,60 @@
+{
+  "moduleName": "GitHub / Repos / Deployment Protection Rule / Disable",
+  "version": "0.0.0",
+  "description": "Disables a custom deployment protection rule for an environment.\n\nThe authenticated user must have admin or owner permissions to the repository to use this endpoint.\n\nOAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "environmentName": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "protectionRuleId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the protection rule."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/deployments/protection-rules#disable-a-custom-protection-rule-for-an-environment",
+    "codeHash": "c03313ca43dc994ee1731b786ba681534b03bfcafc785cc8a831e31adbd0c420"
+  }
+}

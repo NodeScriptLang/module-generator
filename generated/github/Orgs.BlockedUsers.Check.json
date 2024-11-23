@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Orgs / Blocked Users / Check",
+  "version": "0.0.0",
+  "description": "Returns a 204 if the given user is blocked by the given organization. Returns a 404 if the organization is not blocking the user, or if the user account has been identified as spam by GitHub.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "username": {
+      "schema": {
+        "type": "string",
+        "description": "The handle for the GitHub user account."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/blocking#check-if-a-user-is-blocked-by-an-organization",
+    "codeHash": "77a3ca2c61bd4b9c9283c357b78b44019986c232085e3b341e29e7adcdd982cd"
+  }
+}

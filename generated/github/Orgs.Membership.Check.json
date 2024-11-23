@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Orgs / Membership / Check",
+  "version": "0.0.0",
+  "description": "Check if a user is, publicly or privately, a member of the organization.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "username": {
+      "schema": {
+        "type": "string",
+        "description": "The handle for the GitHub user account."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/members#check-organization-membership-for-a-user",
+    "codeHash": "af9f3097f76788766200a7afebed330d1bc3b2887342c76dd0c4c445432d1e15"
+  }
+}

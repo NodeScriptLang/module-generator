@@ -1,0 +1,52 @@
+{
+  "moduleName": "GitHub / Pulls / Merged / Check",
+  "version": "0.0.0",
+  "description": "Checks if a pull request has been merged into the base branch. The HTTP status of the response indicates whether or not the pull request has been merged; the response body is empty.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "pullNumber": {
+      "schema": {
+        "type": "number",
+        "description": "The number that identifies the pull request."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/pulls/pulls#check-if-a-pull-request-has-been-merged",
+    "codeHash": "546a537dfd0e9739b0ed759be94d7593227c98a8b202274b990e831d8fa24519"
+  }
+}

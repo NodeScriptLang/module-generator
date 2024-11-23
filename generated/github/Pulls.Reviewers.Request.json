@@ -1,0 +1,76 @@
+{
+  "moduleName": "GitHub / Pulls / Reviewers / Request",
+  "version": "0.0.0",
+  "description": "Requests reviews for a pull request from a given set of users and/or teams.\nThis endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see \"[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)\" and \"[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api).\"",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "pullNumber": {
+      "schema": {
+        "type": "number",
+        "description": "The number that identifies the pull request."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "reviewers": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "An array of user `login`s that will be requested."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "teamReviewers": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "An array of team `slug`s that will be requested."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/pulls/review-requests#request-reviewers-for-a-pull-request",
+    "codeHash": "0c511387b25d39b78bb269dbcdc99cd2c12764e2b047b897285a05d1d2f4c439"
+  }
+}

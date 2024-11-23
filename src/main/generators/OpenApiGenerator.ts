@@ -65,7 +65,6 @@ export class OpenApiGenerator {
         for (const ep of this.traverseEndpoints()) {
             try {
                 const inferredModuleName = this.inferredModuleNames.get([ep.method, ep.path].join(' ')) ?? '';
-                // const endpointServer = ep.endpointServers ? normalizeServerUrl(ep.endpointServers[0]?.url) : undefined;
                 const paramSpecs = [...this.parseParameters(ep.parameters)];
                 let requestBodyType: 'json' | 'form' | undefined;
                 if (ep.opSpec.requestBody) {

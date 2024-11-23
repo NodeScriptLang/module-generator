@@ -1,0 +1,40 @@
+{
+  "moduleName": "GitHub / Users / Authenticated / Set Primary Email Visibility",
+  "version": "0.0.0",
+  "description": "Sets the visibility for your primary email addresses.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "visibility": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "public",
+          "private"
+        ],
+        "description": "Denotes whether an email is publicly visible."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/users/emails#set-primary-email-visibility-for-the-authenticated-user",
+    "codeHash": "cc7954c500800e5e592752d57f55d9637c29b79aabeaa1b12bb30fbd324ed58e"
+  }
+}

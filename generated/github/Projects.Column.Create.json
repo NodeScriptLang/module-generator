@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Projects / Column / Create",
+  "version": "0.0.0",
+  "description": "Creates a new project column.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the project."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "Name of the project column"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/projects/columns#create-a-project-column",
+    "codeHash": "618871a6954ba70500a584488abea7972290a955edb92a32ebbc552edbd3922c"
+  }
+}

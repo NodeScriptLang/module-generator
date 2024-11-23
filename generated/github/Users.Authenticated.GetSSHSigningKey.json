@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Users / Authenticated / Get SSH Signing Key",
+  "version": "0.0.0",
+  "description": "Gets extended details for an SSH signing key.\n\nOAuth app tokens and personal access tokens (classic) need the `read:ssh_signing_key` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "sshSigningKeyId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the SSH signing key."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/users/ssh-signing-keys#get-an-ssh-signing-key-for-the-authenticated-user",
+    "codeHash": "762cf00e1b0f294cba5f2c43fc5764b1a4e18a5452e807d8ccbe7a9f54d676ed"
+  }
+}

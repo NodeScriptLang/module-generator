@@ -1,0 +1,47 @@
+{
+  "moduleName": "GitHub / Orgs / Authenticated User / Update Membership",
+  "version": "0.0.0",
+  "description": "Converts the authenticated user to an active member of the organization, if that user has a pending invitation from the organization.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "state": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "active"
+        ],
+        "description": "The state that the membership should be in. Only `\"active\"` will be accepted."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/members#update-an-organization-membership-for-the-authenticated-user",
+    "codeHash": "4e4ef30dfab8380537d9a7bc86984bead66852e98e8b8abd3e77ad6c42b2f277"
+  }
+}

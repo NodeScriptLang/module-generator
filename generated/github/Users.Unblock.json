@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Users / Unblock",
+  "version": "0.0.0",
+  "description": "Unblocks the given user and returns a 204.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "username": {
+      "schema": {
+        "type": "string",
+        "description": "The handle for the GitHub user account."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/users/blocking#unblock-a-user",
+    "codeHash": "059dbaa75ae6f214b73decec6266d4c724c17c5ec06560617f47e4c1ef45e9a8"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "moduleName": "GitHub / Teams / Create",
+  "version": "0.0.0",
+  "description": "To create a team, the authenticated user must be a member or owner of `{org}`. By default, organization members can create teams. Organization owners can limit team creation to organization owners. For more information, see \"[Setting team creation permissions](https://docs.github.com/articles/setting-team-creation-permissions-in-your-organization).\"\n\nWhen you create a new team, you automatically become a team maintainer without explicitly adding yourself to the optional array of `maintainers`. For more information, see \"[About teams](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/about-teams)\".",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the team."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The description of the team."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maintainers": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "List GitHub IDs for organization members who will become team maintainers."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "repoNames": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The full name (e.g., \"organization-name/repository-name\") of repositories to add the team to."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "privacy": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "secret",
+          "closed"
+        ],
+        "optional": true,
+        "description": "The level of privacy this team should have. The options are:\n**For a non-nested team:**\n * `secret` - only visible to organization owners and members of this team.\n * `closed` - visible to all members of this organization.\nDefault: `secret`\n**For a parent or child team:**\n * `closed` - visible to all members of this organization.\nDefault for child team: `closed`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "notificationSetting": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "notifications_enabled",
+          "notifications_disabled"
+        ],
+        "optional": true,
+        "description": "The notification setting the team has chosen. The options are:\n * `notifications_enabled` - team members receive notifications when the team is @mentioned.\n * `notifications_disabled` - no one receives notifications.\nDefault: `notifications_enabled`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "permission": {
+      "schema": {
+        "type": "string",
+        "default": "pull",
+        "enum": [
+          "pull",
+          "push"
+        ],
+        "optional": true,
+        "description": "**Closing down notice**. The permission that new repositories will be added to the team with when none is specified."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "parentTeamId": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The ID of a team to set as the parent team."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/teams/teams#create-a-team",
+    "codeHash": "7193552692e2a698bc1262ce2b2e968506ee6cbb099b018923037be94b966121"
+  }
+}

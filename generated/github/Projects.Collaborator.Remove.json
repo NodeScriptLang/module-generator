@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Projects / Collaborator / Remove",
+  "version": "0.0.0",
+  "description": "Removes a collaborator from an organization project. You must be an organization owner or a project `admin` to remove a collaborator.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the project."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "username": {
+      "schema": {
+        "type": "string",
+        "description": "The handle for the GitHub user account."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/projects/collaborators#remove-user-as-a-collaborator",
+    "codeHash": "8c04fe6091b3e8f39ad18ad3181dda1484e978437a492ca4452875365dd434d6"
+  }
+}

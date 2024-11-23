@@ -1,0 +1,62 @@
+{
+  "moduleName": "GitHub / Repos / Repo Ruleset / Get",
+  "version": "0.0.0",
+  "description": "Get a ruleset for a repository.\n\n**Note:** To prevent leaking sensitive information, the `bypass_actors` property is only returned if the user\nmaking the API request has write access to the ruleset.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "rulesetId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the ruleset."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "includesParents": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Include rulesets configured at higher levels that apply to this repository"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/repos/rules#get-a-repository-ruleset",
+    "codeHash": "9243e77de3a5e8be95ccabbc29c8aacaf15372470e2365208a49ebfac1bef164"
+  }
+}

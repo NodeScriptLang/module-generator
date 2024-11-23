@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Users / Authenticated / Delete GPG Key",
+  "version": "0.0.0",
+  "description": "Removes a GPG key from the authenticated user's GitHub account.\n\nOAuth app tokens and personal access tokens (classic) need the `admin:gpg_key` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "gpgKeyId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the GPG key."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/users/gpg-keys#delete-a-gpg-key-for-the-authenticated-user",
+    "codeHash": "f4d97925572a56a081223990d4ad24b8075f46d5cdec32f7e56d41f79ff545ab"
+  }
+}

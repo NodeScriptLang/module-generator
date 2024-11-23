@@ -1,0 +1,80 @@
+{
+  "moduleName": "GitHub / Orgs / Webhook Config / Update",
+  "version": "0.0.0",
+  "description": "Updates the webhook configuration for an organization. To update more information about the webhook, including the `active` state and `events`, use \"[Update an organization webhook ](/rest/orgs/webhooks#update-an-organization-webhook).\"\n\nYou must be an organization owner to use this endpoint.\n\nOAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit\nwebhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "hookId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "url": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The URL to which the payloads will be delivered."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "contentType": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "secret": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "insecureSsl": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/webhooks#update-a-webhook-configuration-for-an-organization",
+    "codeHash": "5592365564944a85a30e15dbf7cc509e3eaaa552da1ac664d197eefa52fc8ad7"
+  }
+}

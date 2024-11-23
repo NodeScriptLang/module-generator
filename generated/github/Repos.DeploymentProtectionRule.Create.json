@@ -1,0 +1,61 @@
+{
+  "moduleName": "GitHub / Repos / Deployment Protection Rule / Create",
+  "version": "0.0.0",
+  "description": "Enable a custom deployment protection rule for an environment.\n\nThe authenticated user must have admin or owner permissions to the repository to use this endpoint.\n\nFor more information about the app that is providing this custom deployment rule, see the [documentation for the `GET /apps/{app_slug}` endpoint](https://docs.github.com/rest/apps/apps#get-an-app).\n\nOAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "environmentName": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "integrationId": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The ID of the custom app that will be enabled on the environment."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/deployments/protection-rules#create-a-custom-deployment-protection-rule-on-an-environment",
+    "codeHash": "eee1814dfad2d4d73a6ae8a1ca696dea9b6078304208e8e560a728f4ace8ee79"
+  }
+}

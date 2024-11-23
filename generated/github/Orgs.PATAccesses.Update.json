@@ -1,0 +1,58 @@
+{
+  "moduleName": "GitHub / Orgs / PAT Accesses / Update",
+  "version": "0.0.0",
+  "description": "Updates the access organization members have to organization resources via fine-grained personal access tokens. Limited to revoking a token's existing access.\n\nOnly GitHub Apps can use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "action": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "revoke"
+        ],
+        "description": "Action to apply to the fine-grained personal access token."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "patIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "The IDs of the fine-grained personal access tokens."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/personal-access-tokens#update-the-access-to-organization-resources-via-fine-grained-personal-access-tokens",
+    "codeHash": "0d55f8a1730d5bc49048d70941fb771a8cf1b2b30b29ae083f6cd6d7be8ca2aa"
+  }
+}

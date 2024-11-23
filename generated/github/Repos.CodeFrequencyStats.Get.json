@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Repos / Code Frequency Stats / Get",
+  "version": "0.0.0",
+  "description": "Returns a weekly aggregate of the number of additions and deletions pushed to a repository.\n\n> [!NOTE]\n> This endpoint can only be used for repositories with fewer than 10,000 commits. If the repository contains 10,000 or more commits, a 422 status code will be returned.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/metrics/statistics#get-the-weekly-commit-activity",
+    "codeHash": "cc9d420f20e24a71c10fbf65ef512c9972437996ff6e43fb1bfb9e5e9a0c78e8"
+  }
+}

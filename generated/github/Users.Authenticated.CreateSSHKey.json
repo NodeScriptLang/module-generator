@@ -1,0 +1,45 @@
+{
+  "moduleName": "GitHub / Users / Authenticated / Create SSH Key",
+  "version": "0.0.0",
+  "description": "Adds a public SSH key to the authenticated user's GitHub account.\n\nOAuth app tokens and personal access tokens (classic) need the `write:gpg_key` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "title": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A descriptive name for the new key."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "key": {
+      "schema": {
+        "type": "string",
+        "description": "The public SSH key to add to your GitHub account."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/users/keys#create-a-public-ssh-key-for-the-authenticated-user",
+    "codeHash": "59600202c92269cdb97ec5fa2869d0003e1f5602a1e74a0244da045a7e8c0cec"
+  }
+}

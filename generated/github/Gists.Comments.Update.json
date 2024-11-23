@@ -1,0 +1,52 @@
+{
+  "moduleName": "GitHub / Gists / Comments / Update",
+  "version": "0.0.0",
+  "description": "Updates a comment on a gist.\n\nThis endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\"\n\n- **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.\n- **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "gistId": {
+      "schema": {
+        "type": "string",
+        "description": "The unique identifier of the gist."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "commentId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the comment."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "body": {
+      "schema": {
+        "type": "string",
+        "description": "The comment text."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/gists/comments#update-a-gist-comment",
+    "codeHash": "fc500ea9893f7c116de16e086c0c26038c0356b02a0c1b3da6d7ce90f006f22a"
+  }
+}

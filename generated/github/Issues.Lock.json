@@ -1,0 +1,67 @@
+{
+  "moduleName": "GitHub / Issues / Lock",
+  "version": "0.0.0",
+  "description": "Users with push access can lock an issue or pull request's conversation.\n\nNote that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method).\"",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "issueNumber": {
+      "schema": {
+        "type": "number",
+        "description": "The number that identifies the issue."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "lockReason": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "off-topic",
+          "too heated",
+          "resolved",
+          "spam"
+        ],
+        "optional": true,
+        "description": "The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons:\n * `off-topic`\n * `too heated`\n * `resolved`\n * `spam`"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/issues/issues#lock-an-issue",
+    "codeHash": "56ba48a68bd5d51a4828957d729f78c76799b92d5f01df9d67d32b97c09abe0c"
+  }
+}

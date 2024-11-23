@@ -1,0 +1,75 @@
+{
+  "moduleName": "GitHub / Pulls / Reviewers / Remove",
+  "version": "0.0.0",
+  "description": "Removes review requests from a pull request for a given set of users and/or teams.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "pullNumber": {
+      "schema": {
+        "type": "number",
+        "description": "The number that identifies the pull request."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "reviewers": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "An array of user `login`s that will be removed."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamReviewers": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "An array of team `slug`s that will be removed."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/pulls/review-requests#remove-requested-reviewers-from-a-pull-request",
+    "codeHash": "896af7b65aed49107a2372ac5e52ef37a3799e171426c4bb846fc8af9c26d8df"
+  }
+}

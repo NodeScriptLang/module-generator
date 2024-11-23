@@ -1,0 +1,104 @@
+{
+  "moduleName": "GitHub / Repos / File Contents / Create Or Update",
+  "version": "0.0.0",
+  "description": "Creates a new file or replaces an existing file in a repository.\n\n> [!NOTE]\n> If you use this endpoint and the \"[Delete a file](https://docs.github.com/rest/repos/contents/#delete-a-file)\" endpoint in parallel, the concurrent requests will conflict and you will receive errors. You must use these endpoints serially instead.\n\nOAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. The `workflow` scope is also required in order to modify files in the `.github/workflows` directory.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "path": {
+      "schema": {
+        "type": "string",
+        "description": "path parameter"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "message": {
+      "schema": {
+        "type": "string",
+        "description": "The commit message."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "content": {
+      "schema": {
+        "type": "string",
+        "description": "The new file content, using Base64 encoding."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "sha": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "**Required if you are updating a file**. The blob SHA of the file being replaced."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "branch": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The branch name. Default: the repository’s default branch."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "committer": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The person that committed the file. Default: the authenticated user."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "author": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The author of the file. Default: The `committer` or the authenticated user if you omit `committer`."
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/repos/contents#create-or-update-file-contents",
+    "codeHash": "cc40a9078c98c3babfcce6c66d4a25cf415608d95e3708b64b5b51cbce5d3373"
+  }
+}

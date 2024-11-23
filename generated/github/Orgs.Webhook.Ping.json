@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Orgs / Webhook / Ping",
+  "version": "0.0.0",
+  "description": "This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event)\nto be sent to the hook.\n\nYou must be an organization owner to use this endpoint.\n\nOAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit\nwebhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "hookId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/webhooks#ping-an-organization-webhook",
+    "codeHash": "bc449fce23fdef56ae2c8e3cfb792d03f02514c9f902ad6f2ae4e352f230a83f"
+  }
+}

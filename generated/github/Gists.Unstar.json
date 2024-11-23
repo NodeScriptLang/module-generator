@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Gists / Unstar",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "gistId": {
+      "schema": {
+        "type": "string",
+        "description": "The unique identifier of the gist."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/gists/gists#unstar-a-gist",
+    "codeHash": "e8d78176efb8e80ee556082493c39c04e9813f816bd6ce692e1d2fddf3d41cee"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Users / Authenticated / Add Email",
+  "version": "0.0.0",
+  "description": "OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "requestBody": {
+      "schema": {
+        "type": "any",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/users/emails#add-an-email-address-for-the-authenticated-user",
+    "codeHash": "33956cb3cb20aaa5baae052b19403c04d160108314b537fe60b479f53109ef74"
+  }
+}

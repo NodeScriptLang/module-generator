@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Users / Follow",
+  "version": "0.0.0",
+  "description": "Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP verbs](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method).\"\n\nOAuth app tokens and personal access tokens (classic) need the `user:follow` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "username": {
+      "schema": {
+        "type": "string",
+        "description": "The handle for the GitHub user account."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/users/followers#follow-a-user",
+    "codeHash": "74b4f5bc712a32916b8fb54be2ea249cbf68182ff56bc2610147d9bc0d90d723"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "moduleName": "GitHub / Users / Authenticated / Delete Social Account",
+  "version": "0.0.0",
+  "description": "Deletes one or more social accounts from the authenticated user's profile.\n\nOAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "accountUrls": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "Full URLs for the social media profiles to delete."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/users/social-accounts#delete-social-accounts-for-the-authenticated-user",
+    "codeHash": "b43f5ea6b172585b7eb672908e86e0dec4e01c6d3013d84f58b3c17a6205fdde"
+  }
+}

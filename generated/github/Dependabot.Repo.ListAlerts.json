@@ -1,0 +1,191 @@
+{
+  "moduleName": "GitHub / Dependabot / Repo / List Alerts",
+  "version": "0.0.0",
+  "description": "OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "state": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma-separated list of states. If specified, only alerts with these states will be returned.\n\nCan be: `auto_dismissed`, `dismissed`, `fixed`, `open`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "severity": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma-separated list of severities. If specified, only alerts with these severities will be returned.\n\nCan be: `low`, `medium`, `high`, `critical`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "ecosystem": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma-separated list of ecosystems. If specified, only alerts for these ecosystems will be returned.\n\nCan be: `composer`, `go`, `maven`, `npm`, `nuget`, `pip`, `pub`, `rubygems`, `rust`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "package": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma-separated list of package names. If specified, only alerts for these packages will be returned."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "manifest": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma-separated list of full manifest paths. If specified, only alerts for these manifests will be returned."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "scope": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "development",
+          "runtime"
+        ],
+        "optional": true,
+        "description": "The scope of the vulnerable dependency. If specified, only alerts with this scope will be returned."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "default": "created",
+        "enum": [
+          "created",
+          "updated"
+        ],
+        "optional": true,
+        "description": "The property by which to sort the results.\n`created` means when the alert was created.\n`updated` means when the alert's state last changed."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "direction": {
+      "schema": {
+        "type": "string",
+        "default": "desc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "optional": true,
+        "description": "The direction to sort the results by."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "number",
+        "default": "1",
+        "optional": true,
+        "description": "**Closing down notice**. Page number of the results to fetch. Use cursor-based pagination with `before` or `after` instead."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "perPage": {
+      "schema": {
+        "type": "number",
+        "default": "30",
+        "optional": true,
+        "description": "The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "before": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "after": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "first": {
+      "schema": {
+        "type": "number",
+        "default": "30",
+        "minimum": 1,
+        "maximum": 100,
+        "optional": true,
+        "description": "**Deprecated**. The number of results per page (max 100), starting from the first matching result.\nThis parameter must not be used in combination with `last`.\nInstead, use `per_page` in combination with `after` to fetch the first page of results."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "last": {
+      "schema": {
+        "type": "number",
+        "minimum": 1,
+        "maximum": 100,
+        "optional": true,
+        "description": "**Deprecated**. The number of results per page (max 100), starting from the last matching result.\nThis parameter must not be used in combination with `first`.\nInstead, use `per_page` in combination with `before` to fetch the last page of results."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/dependabot/alerts#list-dependabot-alerts-for-a-repository",
+    "codeHash": "fcc52c421ac8375b525364ca050269deb43906c4785304f2bfd5db8476296dda"
+  }
+}

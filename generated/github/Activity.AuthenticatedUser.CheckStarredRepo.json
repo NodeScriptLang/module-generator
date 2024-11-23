@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Activity / Authenticated User / Check Starred Repo",
+  "version": "0.0.0",
+  "description": "Whether the authenticated user has starred the repository.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/activity/starring#check-if-a-repository-is-starred-by-the-authenticated-user",
+    "codeHash": "e6420b15545d5af19e9c4f0201609f620a7a2521f341499c1833e99eb498dc79"
+  }
+}

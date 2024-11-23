@@ -1,0 +1,46 @@
+{
+  "moduleName": "GitHub / Activity / Notifications / Mark As Read",
+  "version": "0.0.0",
+  "description": "Marks all notifications as \"read\" for the current user. If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as \"read.\" To check whether any \"unread\" notifications remain, you can use the [List notifications for the authenticated user](https://docs.github.com/rest/activity/notifications#list-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "lastReadAt": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "read": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether the notification has been read."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/activity/notifications#mark-notifications-as-read",
+    "codeHash": "fe1298f3e4cc01d837bd65e7df0d1c63ee46ea17fb0f80f9be2086d49956704e"
+  }
+}

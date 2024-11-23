@@ -1,0 +1,68 @@
+{
+  "moduleName": "GitHub / Repos / Invitation / Update",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "invitationId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the invitation."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "permissions": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "read",
+          "write",
+          "maintain",
+          "triage",
+          "admin"
+        ],
+        "optional": true,
+        "description": "The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, and `admin`."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/collaborators/invitations#update-a-repository-invitation",
+    "codeHash": "9cb5fe76502ba99fe3677b8f34f3c83cf27d4e3dec9d4417438b5335b670b5d5"
+  }
+}

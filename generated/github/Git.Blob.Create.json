@@ -1,0 +1,62 @@
+{
+  "moduleName": "GitHub / Git / Blob / Create",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "content": {
+      "schema": {
+        "type": "string",
+        "description": "The new blob's content."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "encoding": {
+      "schema": {
+        "type": "string",
+        "default": "utf-8",
+        "optional": true,
+        "description": "The encoding used for `content`. Currently, `\"utf-8\"` and `\"base64\"` are supported."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/git/blobs#create-a-blob",
+    "codeHash": "0f37924dfd4d894199b2629e9fe6f43cc84e2f8af7d657d97cda65f230e2ab70"
+  }
+}

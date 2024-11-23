@@ -1,0 +1,60 @@
+{
+  "moduleName": "GitHub / Teams / Discussion Comment / Delete",
+  "version": "0.0.0",
+  "description": "Deletes a comment on a team discussion.\n\n> [!NOTE]\n> You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.\n\nOAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamSlug": {
+      "schema": {
+        "type": "string",
+        "description": "The slug of the team name."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "discussionNumber": {
+      "schema": {
+        "type": "number",
+        "description": "The number that identifies the discussion."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "commentNumber": {
+      "schema": {
+        "type": "number",
+        "description": "The number that identifies the comment."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/teams/discussion-comments#delete-a-discussion-comment",
+    "codeHash": "99a6f644b89529a9f4b2f47af84b5e47be152a8457a9c28495db6efeb8161af1"
+  }
+}

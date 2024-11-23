@@ -1,0 +1,52 @@
+{
+  "moduleName": "GitHub / Repos / Tag Protection / Delete",
+  "version": "0.0.0",
+  "description": "> [!WARNING]\n> **Closing down notice:** This operation is closing down and will be removed after August 30, 2024. Use the \"[Repository Rulesets](https://docs.github.com/rest/repos/rules#delete-a-repository-ruleset)\" endpoint instead.\n\nThis deletes a tag protection state for a repository.\nThis endpoint is only available to repository administrators.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "tagProtectionId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the tag protection."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/repos/tags#closing-down---delete-a-tag-protection-state-for-a-repository",
+    "codeHash": "1b7902821cf1fc6e5bace262b3467b964618494771ed00be9d63db67c90d1774"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "moduleName": "GitHub / Projects / Collaborator / Add",
+  "version": "0.0.0",
+  "description": "Adds a collaborator to an organization project and sets their permission level. You must be an organization owner or a project `admin` to add a collaborator.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the project."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "username": {
+      "schema": {
+        "type": "string",
+        "description": "The handle for the GitHub user account."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "permission": {
+      "schema": {
+        "type": "string",
+        "default": "write",
+        "enum": [
+          "read",
+          "write",
+          "admin"
+        ],
+        "optional": true,
+        "description": "The permission to grant the collaborator."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/projects/collaborators#add-project-collaborator",
+    "codeHash": "ca22a5d3dafb790e5d2e5b4589299018ddfcb09ba8a2c4f684ba68c13032300f"
+  }
+}

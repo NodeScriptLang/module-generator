@@ -1,0 +1,52 @@
+{
+  "moduleName": "GitHub / Teams / Project / Check Permissions",
+  "version": "0.0.0",
+  "description": "Checks whether a team has `read`, `write`, or `admin` permissions for an organization project. The response includes projects inherited from a parent team.\n\n> [!NOTE]\n> You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/projects/{project_id}`.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamSlug": {
+      "schema": {
+        "type": "string",
+        "description": "The slug of the team name."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "projectId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the project."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/teams/teams#check-team-permissions-for-a-project",
+    "codeHash": "1f0d65cbf4fe14502a3edac0a5d187fdca833687429626f833ecec49f409e4b1"
+  }
+}

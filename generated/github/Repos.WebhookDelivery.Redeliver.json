@@ -1,0 +1,60 @@
+{
+  "moduleName": "GitHub / Repos / Webhook Delivery / Redeliver",
+  "version": "0.0.0",
+  "description": "Redeliver a webhook delivery for a webhook configured in a repository.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "hookId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "deliveryId": {
+      "schema": {
+        "type": "number",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/repos/webhooks#redeliver-a-delivery-for-a-repository-webhook",
+    "codeHash": "eeeb8f698b114da8f97d40a05dbbe41957df5258fb617b970c181fded38d0230"
+  }
+}

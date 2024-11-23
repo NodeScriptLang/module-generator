@@ -1,0 +1,60 @@
+{
+  "moduleName": "GitHub / Repos / Branch / Rename",
+  "version": "0.0.0",
+  "description": "Renames a branch in a repository.\n\n> [!NOTE]\n> Although the API responds immediately, the branch rename process might take some extra time to complete in the background. You won't be able to push to the old branch name while the rename process is in progress. For more information, see \"[Renaming a branch](https://docs.github.com/github/administering-a-repository/renaming-a-branch)\".\n\nThe authenticated user must have push access to the branch. If the branch is the default branch, the authenticated user must also have admin or owner permissions.\n\nIn order to rename the default branch, fine-grained access tokens also need the `administration:write` repository permission.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "branch": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use [the GraphQL API](https://docs.github.com/graphql)."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "newName": {
+      "schema": {
+        "type": "string",
+        "description": "The new name of the branch."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/branches/branches#rename-a-branch",
+    "codeHash": "3604b4905d5e8c3e448b3e55c868c924f1a5d47c7c64a5a55572451ce4a50e46"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "moduleName": "GitHub / Repos / Custom Properties Values / Update",
+  "version": "0.0.0",
+  "description": "Create new or update existing custom property values for a repository.\nUsing a value of `null` for a custom property will remove or 'unset' the property value from the repository.\n\nRepository admins and other users with the repository-level \"edit custom property values\" fine-grained permission can use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "properties": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "A list of custom property names and associated values to apply to the repositories."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/repos/custom-properties#create-or-update-custom-property-values-for-a-repository",
+    "codeHash": "e38394a599f519a3b7a1e208493d0d77879044c20d887e3982f0472c3c13e243"
+  }
+}

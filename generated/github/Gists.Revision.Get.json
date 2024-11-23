@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Gists / Revision / Get",
+  "version": "0.0.0",
+  "description": "Gets a specified gist revision.\n\nThis endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\"\n\n- **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.\n- **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "gistId": {
+      "schema": {
+        "type": "string",
+        "description": "The unique identifier of the gist."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "sha": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/gists/gists#get-a-gist-revision",
+    "codeHash": "ffe53a7892efa5afcc1110f8595e47104378b3796964bb21eaa062398f262407"
+  }
+}

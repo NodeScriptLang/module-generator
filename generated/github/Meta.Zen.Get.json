@@ -1,0 +1,28 @@
+{
+  "moduleName": "GitHub / Meta / Zen / Get",
+  "version": "0.0.0",
+  "description": "Get a random sentence from the Zen of GitHub",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/meta/meta#get-the-zen-of-github",
+    "codeHash": "14413c69c9b9228266ed49c4ab8bd3b88762fd89017020fce1f70ced88c33e96"
+  }
+}

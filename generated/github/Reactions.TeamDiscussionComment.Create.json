@@ -1,0 +1,78 @@
+{
+  "moduleName": "GitHub / Reactions / Team Discussion Comment / Create",
+  "version": "0.0.0",
+  "description": "Create a reaction to a [team discussion comment](https://docs.github.com/rest/teams/discussion-comments#get-a-discussion-comment).\n\nA response with an HTTP `200` status means that you already added the reaction type to this team discussion comment.\n\n> [!NOTE]\n> You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments/:comment_number/reactions`.\n\nOAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamSlug": {
+      "schema": {
+        "type": "string",
+        "description": "The slug of the team name."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "discussionNumber": {
+      "schema": {
+        "type": "number",
+        "description": "The number that identifies the discussion."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "commentNumber": {
+      "schema": {
+        "type": "number",
+        "description": "The number that identifies the comment."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "content": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "+1",
+          "-1",
+          "laugh",
+          "confused",
+          "heart",
+          "hooray",
+          "rocket",
+          "eyes"
+        ],
+        "description": "The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the team discussion comment."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/reactions/reactions#create-reaction-for-a-team-discussion-comment",
+    "codeHash": "08bc8f4e12f2cfda1835668466fb2665a06b4565c05969fde159e526e002f777"
+  }
+}

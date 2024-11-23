@@ -1,0 +1,52 @@
+{
+  "moduleName": "GitHub / Repos / Release Asset / Get",
+  "version": "0.0.0",
+  "description": "To download the asset's binary content:\n\n- If within a browser, fetch the location specified in the `browser_download_url` key provided in the response.\n- Alternatively, set the `Accept` header of the request to\n  [`application/octet-stream`](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\n  The API will either redirect the client to the location, or stream it directly if possible.\n  API clients should handle both a `200` or `302` response.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "assetId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the asset."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/releases/assets#get-a-release-asset",
+    "codeHash": "03f1904eabfb47c50d14d258cc5ca12a23e8941f74ef73e676b6ad17b6a8e7f1"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Activity / Subscription / Get",
+  "version": "0.0.0",
+  "description": "Gets information about whether the authenticated user is subscribed to the repository.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/activity/watching#get-a-repository-subscription",
+    "codeHash": "9c0969f5427873fe71e4dcc4b76ae0e8b7e0de16eaefb49a19f3f257e58857f9"
+  }
+}

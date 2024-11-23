@@ -1,0 +1,84 @@
+{
+  "moduleName": "GitHub / Issues / Milestone / Create",
+  "version": "0.0.0",
+  "description": "Creates a milestone.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "title": {
+      "schema": {
+        "type": "string",
+        "description": "The title of the milestone."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "state": {
+      "schema": {
+        "type": "string",
+        "default": "open",
+        "enum": [
+          "open",
+          "closed"
+        ],
+        "optional": true,
+        "description": "The state of the milestone. Either `open` or `closed`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A description of the milestone."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "dueOn": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The milestone due date. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/issues/milestones#create-a-milestone",
+    "codeHash": "f7c0bdd232c151cf6551de0a2485f9246b6774cb8bc77e04464d48d2bdec3179"
+  }
+}

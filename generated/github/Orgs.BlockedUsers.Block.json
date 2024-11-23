@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Orgs / Blocked Users / Block",
+  "version": "0.0.0",
+  "description": "Blocks the given user on behalf of the specified organization and returns a 204. If the organization cannot block the given user a 422 is returned.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "username": {
+      "schema": {
+        "type": "string",
+        "description": "The handle for the GitHub user account."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/blocking#block-a-user-from-an-organization",
+    "codeHash": "07c87d8affb0ba9c9e3e45308410f284464bd132df80c0c8530407ba719e6bb7"
+  }
+}

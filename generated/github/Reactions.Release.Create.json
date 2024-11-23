@@ -1,0 +1,68 @@
+{
+  "moduleName": "GitHub / Reactions / Release / Create",
+  "version": "0.0.0",
+  "description": "Create a reaction to a [release](https://docs.github.com/rest/releases/releases#get-a-release). A response with a `Status: 200 OK` means that you already added the reaction type to this release.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "releaseId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the release."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "content": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "+1",
+          "laugh",
+          "heart",
+          "hooray",
+          "rocket",
+          "eyes"
+        ],
+        "description": "The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the release."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/reactions/reactions#create-reaction-for-a-release",
+    "codeHash": "3d5880f7afbb8250b1f91b86b58311df3556b57bb47655715748fca4e27cfcf4"
+  }
+}

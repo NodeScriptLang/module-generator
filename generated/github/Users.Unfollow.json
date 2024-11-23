@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Users / Unfollow",
+  "version": "0.0.0",
+  "description": "OAuth app tokens and personal access tokens (classic) need the `user:follow` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "username": {
+      "schema": {
+        "type": "string",
+        "description": "The handle for the GitHub user account."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/users/followers#unfollow-a-user",
+    "codeHash": "c81e3af4cafcf91de5a669bc74b185f70c7079133196438b4cf1eb5d07b17865"
+  }
+}

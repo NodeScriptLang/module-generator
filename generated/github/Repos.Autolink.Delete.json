@@ -1,0 +1,52 @@
+{
+  "moduleName": "GitHub / Repos / Autolink / Delete",
+  "version": "0.0.0",
+  "description": "This deletes a single autolink reference by ID that was configured for the given repository.\n\nInformation about autolinks are only available to repository administrators.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "autolinkId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the autolink."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/repos/autolinks#delete-an-autolink-reference-from-a-repository",
+    "codeHash": "e04df624eb37a54ec2b1cbd88d29135335d1a071704215a415bb11c588cedc4e"
+  }
+}

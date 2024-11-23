@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Projects / Card / Delete",
+  "version": "0.0.0",
+  "description": "Deletes a project card",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "cardId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the card."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/projects/cards#delete-a-project-card",
+    "codeHash": "a3da295b4541314ed17c9eea9fb2c426ae85c0382004a025c16b6121867e3a16"
+  }
+}

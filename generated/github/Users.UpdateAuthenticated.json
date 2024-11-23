@@ -1,0 +1,100 @@
+{
+  "moduleName": "GitHub / Users / Update Authenticated",
+  "version": "0.0.0",
+  "description": "**Note:** If your email is set to private and you send an `email` parameter as part of this request to update your profile, your privacy settings are still enforced: the email address will not be displayed on your public profile or via the API.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The new name of the user."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The publicly visible email address of the user."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "blog": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The new blog URL of the user."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "twitterUsername": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The new Twitter username of the user."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "company": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The new company of the user."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "location": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The new location of the user."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "hireable": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "The new hiring availability of the user."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "bio": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The new short biography of the user."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/users/users#update-the-authenticated-user",
+    "codeHash": "69cb6c083bb482bf49b1eb31d1e5c530f22d98a21c6959f55e92a98f01950599"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "moduleName": "GitHub / Teams / Update",
+  "version": "0.0.0",
+  "description": "To edit a team, the authenticated user must either be an organization owner or a team maintainer.\n\n> [!NOTE]\n> You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}`.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamSlug": {
+      "schema": {
+        "type": "string",
+        "description": "The slug of the team name."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The name of the team."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The description of the team."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "privacy": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "secret",
+          "closed"
+        ],
+        "optional": true,
+        "description": "The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. When a team is nested, the `privacy` for parent teams cannot be `secret`. The options are:\n**For a non-nested team:**\n * `secret` - only visible to organization owners and members of this team.\n * `closed` - visible to all members of this organization.\n**For a parent or child team:**\n * `closed` - visible to all members of this organization."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "notificationSetting": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "notifications_enabled",
+          "notifications_disabled"
+        ],
+        "optional": true,
+        "description": "The notification setting the team has chosen. Editing teams without specifying this parameter leaves `notification_setting` intact. The options are:\n * `notifications_enabled` - team members receive notifications when the team is @mentioned.\n * `notifications_disabled` - no one receives notifications."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "permission": {
+      "schema": {
+        "type": "string",
+        "default": "pull",
+        "enum": [
+          "pull",
+          "push",
+          "admin"
+        ],
+        "optional": true,
+        "description": "**Closing down notice**. The permission that new repositories will be added to the team with when none is specified."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "parentTeamId": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The ID of a team to set as the parent team."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/teams/teams#update-a-team",
+    "codeHash": "90477e5dd7a5369a91e8fe344a69ba11ea7a8d06b1991d9f01bdb2a9aa398649"
+  }
+}

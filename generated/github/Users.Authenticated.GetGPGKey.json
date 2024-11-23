@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Users / Authenticated / Get GPG Key",
+  "version": "0.0.0",
+  "description": "View extended details for a single GPG key.\n\nOAuth app tokens and personal access tokens (classic) need the `read:gpg_key` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "gpgKeyId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the GPG key."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/users/gpg-keys#get-a-gpg-key-for-the-authenticated-user",
+    "codeHash": "c85f64e526b5f4deb70e29b2054548335adbd32e5c506b59c9f233bebd045e44"
+  }
+}

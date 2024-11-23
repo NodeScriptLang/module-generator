@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Orgs / Custom Property / Remove",
+  "version": "0.0.0",
+  "description": "Removes a custom property that is defined for an organization.\n\nTo use this endpoint, the authenticated user must be one of:\n  - An administrator for the organization.\n  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "customPropertyName": {
+      "schema": {
+        "type": "string",
+        "description": "The custom property name"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/custom-properties#remove-a-custom-property-for-an-organization",
+    "codeHash": "a0bd109612b7670ad779fc7ea28c5f3ffeceb4f017a563fcac9cf0e64bacc1ad"
+  }
+}

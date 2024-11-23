@@ -1,0 +1,52 @@
+{
+  "moduleName": "GitHub / Repos / Tarball / Download",
+  "version": "0.0.0",
+  "description": "Gets a redirect URL to download a tar archive for a repository. If you omit `:ref`, the repository’s default branch (usually\n`main`) will be used. Please make sure your HTTP framework is configured to follow redirects or you will need to use\nthe `Location` header to make a second `GET` request.\n\n> [!NOTE]\n> For private repositories, these links are temporary and expire after five minutes.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "ref": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/repos/contents#download-a-repository-archive-tar",
+    "codeHash": "069c4203423405a68125f6c2cfee5327da3546ccfb7f4e57255f8fe4adc40472"
+  }
+}

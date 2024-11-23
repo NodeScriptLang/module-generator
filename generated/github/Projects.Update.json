@@ -1,0 +1,87 @@
+{
+  "moduleName": "GitHub / Projects / Update",
+  "version": "0.0.0",
+  "description": "Updates a project board's information. Returns a `404 Not Found` status if projects are disabled. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "projectId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the project."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Name of the project"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "body": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Body of the project"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "state": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "State of the project; either 'open' or 'closed'"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "organizationPermission": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "read",
+          "write",
+          "admin",
+          "none"
+        ],
+        "optional": true,
+        "description": "The baseline permission that all organization members have on this project"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "private": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether or not this project can be seen by everyone."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/projects/projects#update-a-project",
+    "codeHash": "ca1b8e24334d54f6920a9e4e400ddcb54250d3ec0b729f953cb0fafd4a064b39"
+  }
+}

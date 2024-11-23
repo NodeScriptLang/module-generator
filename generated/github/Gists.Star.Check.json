@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Gists / Star / Check",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "gistId": {
+      "schema": {
+        "type": "string",
+        "description": "The unique identifier of the gist."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/gists/gists#check-if-a-gist-is-starred",
+    "codeHash": "e4f07a6ed7c4110b34c1b7d9d95e7437447387cf4e9a033a4fbb909d57bffa30"
+  }
+}

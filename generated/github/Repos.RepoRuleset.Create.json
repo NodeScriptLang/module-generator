@@ -1,0 +1,113 @@
+{
+  "moduleName": "GitHub / Repos / Repo Ruleset / Create",
+  "version": "0.0.0",
+  "description": "Create a ruleset for a repository.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the ruleset."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "target": {
+      "schema": {
+        "type": "string",
+        "default": "branch",
+        "enum": [
+          "branch",
+          "tag",
+          "push"
+        ],
+        "optional": true,
+        "description": "The target of the ruleset"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "enforcement": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "disabled",
+          "active",
+          "evaluate"
+        ],
+        "description": "The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise)."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "bypassActors": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The actors that can bypass the rules in this ruleset"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "conditions": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Parameters for a repository ruleset ref name condition"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "rules": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "An array of rules within the ruleset."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/repos/rules#create-a-repository-ruleset",
+    "codeHash": "90d76568035d21fdacca95e18945d421efc47c0d97463846f6093bac6aa48b30"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Repos / Org / Ruleset / Delete",
+  "version": "0.0.0",
+  "description": "Delete a ruleset for an organization.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "rulesetId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the ruleset."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/rules#delete-an-organization-repository-ruleset",
+    "codeHash": "ac9f21659a46f582acf09eeccc346830f528794cd1d054d75ded61a5f21467b5"
+  }
+}

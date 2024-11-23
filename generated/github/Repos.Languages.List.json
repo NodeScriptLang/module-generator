@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Repos / Languages / List",
+  "version": "0.0.0",
+  "description": "Lists languages for the specified repository. The value shown for each language is the number of bytes of code written in that language.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/repos/repos#list-repository-languages",
+    "codeHash": "88c44dbe7d6a0065f4f8727c9467aa97ba9560b1e4dab7829b69bc4be959fa4c"
+  }
+}

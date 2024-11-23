@@ -1,0 +1,104 @@
+{
+  "moduleName": "GitHub / Repos / Deployments / List",
+  "version": "0.0.0",
+  "description": "Simple filtering of deployments is available via query parameters:",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "sha": {
+      "schema": {
+        "type": "string",
+        "default": "none",
+        "optional": true,
+        "description": "The SHA recorded at creation time."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "ref": {
+      "schema": {
+        "type": "string",
+        "default": "none",
+        "optional": true,
+        "description": "The name of the ref. This can be a branch, tag, or SHA."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "task": {
+      "schema": {
+        "type": "string",
+        "default": "none",
+        "optional": true,
+        "description": "The name of the task for the deployment (e.g., `deploy` or `deploy:migrations`)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "environment": {
+      "schema": {
+        "type": "string",
+        "default": "none",
+        "optional": true,
+        "description": "The name of the environment that was deployed to (e.g., `staging` or `production`)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "perPage": {
+      "schema": {
+        "type": "number",
+        "default": "30",
+        "optional": true,
+        "description": "The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "number",
+        "default": "1",
+        "optional": true,
+        "description": "The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/deployments/deployments#list-deployments",
+    "codeHash": "9e72e0ecec4ace9e983aa62946d93d4fa561fb32df00a3719b6602341054b0f5"
+  }
+}

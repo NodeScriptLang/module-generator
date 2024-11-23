@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Users / Authenticated / Delete SSH Key",
+  "version": "0.0.0",
+  "description": "Removes a public SSH key from the authenticated user's GitHub account.\n\nOAuth app tokens and personal access tokens (classic) need the `admin:public_key` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "keyId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the key."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/users/keys#delete-a-public-ssh-key-for-the-authenticated-user",
+    "codeHash": "27a5b9226b0273d43cc3cf35952453274e51d07cb08f43352158acd7785cbb42"
+  }
+}

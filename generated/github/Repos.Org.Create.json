@@ -1,0 +1,295 @@
+{
+  "moduleName": "GitHub / Repos / Org / Create",
+  "version": "0.0.0",
+  "description": "Creates a new repository in the specified organization. The authenticated user must be a member of the organization.\n\nOAuth app tokens and personal access tokens (classic) need the `public_repo` or `repo` scope to create a public repository, and `repo` scope to create a private repository.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A short description of the repository."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "homepage": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A URL with more information about the repository."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "private": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether the repository is private."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "visibility": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "public",
+          "private"
+        ],
+        "optional": true,
+        "description": "The visibility of the repository."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "hasIssues": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Either `true` to enable issues for this repository or `false` to disable them."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "hasProjects": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Either `true` to enable projects for this repository or `false` to disable them. **Note:** If you're creating a repository in an organization that has disabled repository projects, the default is `false`, and if you pass `true`, the API returns an error."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "hasWiki": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Either `true` to enable the wiki for this repository or `false` to disable it."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "hasDownloads": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Whether downloads are enabled."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "isTemplate": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Either `true` to make this repo available as a template repository or `false` to prevent it."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "teamId": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "autoInit": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Pass `true` to create an initial commit with empty README."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "gitignoreTemplate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Desired language or platform [.gitignore template](https://github.com/github/gitignore) to apply. Use the name of the template without the extension. For example, \"Haskell\"."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "licenseTemplate": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Choose an [open source license template](https://choosealicense.com/) that best suits your needs, and then use the [license keyword](https://docs.github.com/articles/licensing-a-repository/#searching-github-by-license-type) as the `license_template` string. For example, \"mit\" or \"mpl-2.0\"."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "allowSquashMerge": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Either `true` to allow squash-merging pull requests, or `false` to prevent squash-merging."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "allowMergeCommit": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Either `true` to allow merging pull requests with a merge commit, or `false` to prevent merging pull requests with merge commits."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "allowRebaseMerge": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Either `true` to allow rebase-merging pull requests, or `false` to prevent rebase-merging."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "allowAutoMerge": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Either `true` to allow auto-merge on pull requests, or `false` to disallow auto-merge."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "deleteBranchOnMerge": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Either `true` to allow automatically deleting head branches when pull requests are merged, or `false` to prevent automatic deletion. **The authenticated user must be an organization owner to set this property to `true`.**"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "useSquashPrTitleAsDefault": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property is closing down. Please use `squash_merge_commit_title` instead."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "squashMergeCommitTitle": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "PR_TITLE",
+          "COMMIT_OR_PR_TITLE"
+        ],
+        "optional": true,
+        "description": "Required when using `squash_merge_commit_message`.\n\nThe default value for a squash merge commit title:\n\n- `PR_TITLE` - default to the pull request's title.\n- `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "squashMergeCommitMessage": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "PR_BODY",
+          "COMMIT_MESSAGES",
+          "BLANK"
+        ],
+        "optional": true,
+        "description": "The default value for a squash merge commit message:\n\n- `PR_BODY` - default to the pull request's body.\n- `COMMIT_MESSAGES` - default to the branch's commit messages.\n- `BLANK` - default to a blank commit message."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "mergeCommitTitle": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "PR_TITLE",
+          "MERGE_MESSAGE"
+        ],
+        "optional": true,
+        "description": "Required when using `merge_commit_message`.\n\nThe default value for a merge commit title.\n\n- `PR_TITLE` - default to the pull request's title.\n- `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "mergeCommitMessage": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "PR_BODY",
+          "PR_TITLE",
+          "BLANK"
+        ],
+        "optional": true,
+        "description": "The default value for a merge commit message.\n\n- `PR_TITLE` - default to the pull request's title.\n- `PR_BODY` - default to the pull request's body.\n- `BLANK` - default to a blank commit message."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "customProperties": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The custom properties for the new repository. The keys are the custom property names, and the values are the corresponding custom property values."
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/repos/repos#create-an-organization-repository",
+    "codeHash": "5262d12d2a4f4bec0bd2f0bc5305ea8c459190ff4836c6f2417e54aad4c0f2b2"
+  }
+}

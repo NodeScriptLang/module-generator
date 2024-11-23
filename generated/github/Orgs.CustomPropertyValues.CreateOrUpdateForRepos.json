@@ -1,0 +1,58 @@
+{
+  "moduleName": "GitHub / Orgs / Custom Property Values / Create Or Update For Repos",
+  "version": "0.0.0",
+  "description": "Create new or update existing custom property values for repositories in a batch that belong to an organization.\nEach target repository will have its custom property values updated to match the values provided in the request.\n\nA maximum of 30 repositories can be updated in a single request.\n\nUsing a value of `null` for a custom property will remove or 'unset' the property value from the repository.\n\nTo use this endpoint, the authenticated user must be one of:\n  - An administrator for the organization.\n  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_values_editor` in the organization.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repositoryNames": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "The names of repositories that the custom property values will be applied to."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "properties": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "List of custom property names and associated values to apply to the repositories."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/custom-properties#create-or-update-custom-property-values-for-organization-repositories",
+    "codeHash": "5aefacae6d9aa41551a61754d380f1ced3cbf0f06d879cf85053b725d1021b83"
+  }
+}

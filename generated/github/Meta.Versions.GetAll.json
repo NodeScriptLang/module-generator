@@ -1,0 +1,28 @@
+{
+  "moduleName": "GitHub / Meta / Versions / Get All",
+  "version": "0.0.0",
+  "description": "Get all supported GitHub API versions.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/meta/meta#get-all-api-versions",
+    "codeHash": "fcc0a775dd5a3c134fe00f4ad02e98babfc5fb23672efd84ca40aec3610daafd"
+  }
+}

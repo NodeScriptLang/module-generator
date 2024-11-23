@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Users / Authenticated / Delete SSH Signing Key",
+  "version": "0.0.0",
+  "description": "Deletes an SSH signing key from the authenticated user's GitHub account.\n\nOAuth app tokens and personal access tokens (classic) need the `admin:ssh_signing_key` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "sshSigningKeyId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the SSH signing key."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/users/ssh-signing-keys#delete-an-ssh-signing-key-for-the-authenticated-user",
+    "codeHash": "6a6cb65493be2d50db9ed9a914a3b0e40ff6c189bca15590865a399f6bf0f214"
+  }
+}

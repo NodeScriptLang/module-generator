@@ -1,0 +1,45 @@
+{
+  "moduleName": "GitHub / Users / Authenticated / Create SSH Signing Key",
+  "version": "0.0.0",
+  "description": "Creates an SSH signing key for the authenticated user's GitHub account.\n\nOAuth app tokens and personal access tokens (classic) need the `write:ssh_signing_key` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "title": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A descriptive name for the new key."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "key": {
+      "schema": {
+        "type": "string",
+        "description": "The public SSH key to add to your GitHub account. For more information, see \"[Checking for existing SSH keys](https://docs.github.com/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys).\""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/users/ssh-signing-keys#create-a-ssh-signing-key-for-the-authenticated-user",
+    "codeHash": "f04b0cf0861cce702eedd046635020a5bdb3fb5065c641059407a14453d0a33b"
+  }
+}

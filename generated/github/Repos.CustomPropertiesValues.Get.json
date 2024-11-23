@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Repos / Custom Properties Values / Get",
+  "version": "0.0.0",
+  "description": "Gets all custom property values that are set for a repository.\nUsers with read access to the repository can use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/repos/custom-properties#get-all-custom-property-values-for-a-repository",
+    "codeHash": "d851acf3679e50b16d6cf7fd6b5edea1acd6134f5ad7e67d14092bbaf79cdf13"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "moduleName": "GitHub / Repos / Webhook / Update",
+  "version": "0.0.0",
+  "description": "Updates a webhook configured in a repository. If you previously had a `secret` set, you must provide the same `secret` or set a new `secret` or the secret will be removed. If you are only updating individual webhook `config` properties, use \"[Update a webhook configuration for a repository](/rest/webhooks/repo-config#update-a-webhook-configuration-for-a-repository).\"",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "hookId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "config": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Configuration object of the webhook"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "events": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "addEvents": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Determines a list of events to be added to the list of events that the Hook triggers for."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "removeEvents": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Determines a list of events to be removed from the list of events that the Hook triggers for."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "active": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/repos/webhooks#update-a-repository-webhook",
+    "codeHash": "5dea1fc15ea0303f435da240e3037a50395f06d1a48d4667532b757be779dde9"
+  }
+}

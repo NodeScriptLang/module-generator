@@ -1,0 +1,45 @@
+{
+  "moduleName": "GitHub / Users / Authenticated / Create GPG Key",
+  "version": "0.0.0",
+  "description": "Adds a GPG key to the authenticated user's GitHub account.\n\nOAuth app tokens and personal access tokens (classic) need the `write:gpg_key` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A descriptive name for the new key."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "armoredPublicKey": {
+      "schema": {
+        "type": "string",
+        "description": "A GPG key in ASCII-armored format."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/users/gpg-keys#create-a-gpg-key-for-the-authenticated-user",
+    "codeHash": "e80ccbca3c1cdc2d400696c4c4e817c81371f8592e847b36e6e324f3ec578594"
+  }
+}

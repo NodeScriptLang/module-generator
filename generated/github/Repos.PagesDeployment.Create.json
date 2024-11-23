@@ -1,0 +1,89 @@
+{
+  "moduleName": "GitHub / Repos / Pages Deployment / Create",
+  "version": "0.0.0",
+  "description": "Create a GitHub Pages deployment for a repository.\n\nThe authenticated user must have write permission to the repository.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "artifactId": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The ID of an artifact that contains the .zip or .tar of static assets to deploy. The artifact belongs to the repository. Either `artifact_id` or `artifact_url` are required."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "artifactUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The URL of an artifact that contains the .zip or .tar of static assets to deploy. The artifact belongs to the repository. Either `artifact_id` or `artifact_url` are required."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "environment": {
+      "schema": {
+        "type": "string",
+        "default": "github-pages",
+        "optional": true,
+        "description": "The target environment for this GitHub Pages deployment."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pagesBuildVersion": {
+      "schema": {
+        "type": "string",
+        "default": "GITHUB_SHA",
+        "description": "A unique string that represents the version of the build for this deployment."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "oidcToken": {
+      "schema": {
+        "type": "string",
+        "description": "The OIDC token issued by GitHub Actions certifying the origin of the deployment."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/pages/pages#create-a-github-pages-deployment",
+    "codeHash": "973a16329f950a0e6a477bbd590d09202d63eb14eba8f088fbf07eac6dc98f45"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "moduleName": "GitHub / Repos / Environment / Delete",
+  "version": "0.0.0",
+  "description": "OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "environmentName": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/deployments/environments#delete-an-environment",
+    "codeHash": "d921c2b0f45aaeb6278b60a3d69d299f0f4db6da6500ede30cba70908b1b7aec"
+  }
+}

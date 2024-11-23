@@ -1,0 +1,306 @@
+{
+  "moduleName": "GitHub / Repos / Update",
+  "version": "0.0.0",
+  "description": "**Note**: To edit a repository's topics, use the [Replace all repository topics](https://docs.github.com/rest/repos/repos#replace-all-repository-topics) endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The name of the repository."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A short description of the repository."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "homepage": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A URL with more information about the repository."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "private": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Either `true` to make the repository private or `false` to make it public. Default: `false`.\n**Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://docs.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "visibility": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "public",
+          "private"
+        ],
+        "optional": true,
+        "description": "The visibility of the repository."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "securityAndAnalysis": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Specify which security and analysis features to enable or disable for the repository.\n\nTo use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \"[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).\"\n\nFor example, to enable GitHub Advanced Security, use this data in the body of the `PATCH` request:\n`{ \"security_and_analysis\": {\"advanced_security\": { \"status\": \"enabled\" } } }`.\n\nYou can check which security and analysis features are currently enabled by using a `GET /repos/{owner}/{repo}` request."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "hasIssues": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Either `true` to enable issues for this repository or `false` to disable them."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "hasProjects": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Either `true` to enable projects for this repository or `false` to disable them. **Note:** If you're creating a repository in an organization that has disabled repository projects, the default is `false`, and if you pass `true`, the API returns an error."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "hasWiki": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Either `true` to enable the wiki for this repository or `false` to disable it."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "isTemplate": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Either `true` to make this repo available as a template repository or `false` to prevent it."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "defaultBranch": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Updates the default branch for this repository."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "allowSquashMerge": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Either `true` to allow squash-merging pull requests, or `false` to prevent squash-merging."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "allowMergeCommit": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Either `true` to allow merging pull requests with a merge commit, or `false` to prevent merging pull requests with merge commits."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "allowRebaseMerge": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Either `true` to allow rebase-merging pull requests, or `false` to prevent rebase-merging."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "allowAutoMerge": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Either `true` to allow auto-merge on pull requests, or `false` to disallow auto-merge."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "deleteBranchOnMerge": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Either `true` to allow automatically deleting head branches when pull requests are merged, or `false` to prevent automatic deletion."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "allowUpdateBranch": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Either `true` to always allow a pull request head branch that is behind its base branch to be updated even if it is not required to be up to date before merging, or false otherwise."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "useSquashPrTitleAsDefault": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property is closing down. Please use `squash_merge_commit_title` instead."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "squashMergeCommitTitle": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "PR_TITLE",
+          "COMMIT_OR_PR_TITLE"
+        ],
+        "optional": true,
+        "description": "Required when using `squash_merge_commit_message`.\n\nThe default value for a squash merge commit title:\n\n- `PR_TITLE` - default to the pull request's title.\n- `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "squashMergeCommitMessage": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "PR_BODY",
+          "COMMIT_MESSAGES",
+          "BLANK"
+        ],
+        "optional": true,
+        "description": "The default value for a squash merge commit message:\n\n- `PR_BODY` - default to the pull request's body.\n- `COMMIT_MESSAGES` - default to the branch's commit messages.\n- `BLANK` - default to a blank commit message."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "mergeCommitTitle": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "PR_TITLE",
+          "MERGE_MESSAGE"
+        ],
+        "optional": true,
+        "description": "Required when using `merge_commit_message`.\n\nThe default value for a merge commit title.\n\n- `PR_TITLE` - default to the pull request's title.\n- `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "mergeCommitMessage": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "PR_BODY",
+          "PR_TITLE",
+          "BLANK"
+        ],
+        "optional": true,
+        "description": "The default value for a merge commit message.\n\n- `PR_TITLE` - default to the pull request's title.\n- `PR_BODY` - default to the pull request's body.\n- `BLANK` - default to a blank commit message."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "archived": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether to archive this repository. `false` will unarchive a previously archived repository."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "allowForking": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Either `true` to allow private forks, or `false` to prevent private forks."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "webCommitSignoffRequired": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Either `true` to require contributors to sign off on web-based commits, or `false` to not require contributors to sign off on web-based commits."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/repos/repos#update-a-repository",
+    "codeHash": "b28f50e002d049349f815e5eb8e62f70e9c9175d48fc8a0c0c3ca49f377c5dd3"
+  }
+}

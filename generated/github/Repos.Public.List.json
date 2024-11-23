@@ -1,0 +1,37 @@
+{
+  "moduleName": "GitHub / Repos / Public / List",
+  "version": "0.0.0",
+  "description": "Lists all public repositories in the order that they were created.\n\nNote:\n- For GitHub Enterprise Server, this endpoint will only list repositories available to all users on the enterprise.\n- Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of repositories.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "since": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "A repository ID. Only return repositories with an ID greater than this ID."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/repos/repos#list-public-repositories",
+    "codeHash": "6689d5e962980b31910bbfe56ac781d793325626e233f55cd61aaa3d8748f16f"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "moduleName": "GitHub / Reactions / Team Discussion Comment / Delete",
+  "version": "0.0.0",
+  "description": "> [!NOTE]\n> You can also specify a team or organization with `team_id` and `org_id` using the route `DELETE /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments/:comment_number/reactions/:reaction_id`.\n\nDelete a reaction to a [team discussion comment](https://docs.github.com/rest/teams/discussion-comments#get-a-discussion-comment).\n\nOAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamSlug": {
+      "schema": {
+        "type": "string",
+        "description": "The slug of the team name."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "discussionNumber": {
+      "schema": {
+        "type": "number",
+        "description": "The number that identifies the discussion."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "commentNumber": {
+      "schema": {
+        "type": "number",
+        "description": "The number that identifies the comment."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "reactionId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the reaction."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/reactions/reactions#delete-team-discussion-comment-reaction",
+    "codeHash": "2710919e6d7f4794eac32afe7e10f569b3343572ee17d7d5d9fafdc55b43ba0f"
+  }
+}

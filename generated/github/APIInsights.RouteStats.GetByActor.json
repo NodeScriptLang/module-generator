@@ -1,0 +1,122 @@
+{
+  "moduleName": "GitHub / API Insights / Route Stats / Get By Actor",
+  "version": "0.0.0",
+  "description": "Get API request count statistics for an actor broken down by route within a specified time frame.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "actorType": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "installations",
+          "classic_pats",
+          "fine_grained_pats",
+          "oauth_apps",
+          "github_apps_user_to_server"
+        ],
+        "description": "The type of the actor"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "actorId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the actor"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "minTimestamp": {
+      "schema": {
+        "type": "string",
+        "description": "The minimum timestamp to query for stats. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "maxTimestamp": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The maximum timestamp to query for stats. Defaults to the time 30 days ago. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "number",
+        "default": "1",
+        "optional": true,
+        "description": "The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "perPage": {
+      "schema": {
+        "type": "number",
+        "default": "30",
+        "optional": true,
+        "description": "The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "direction": {
+      "schema": {
+        "type": "string",
+        "default": "desc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "optional": true,
+        "description": "The direction to sort the results by."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The property to sort the results by."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/api-insights#get-route-stats-by-actor",
+    "codeHash": "e7126d1f368f12eb756a6cd5eb39f5f61c82a20989ee126500b79b89d08b9cd7"
+  }
+}

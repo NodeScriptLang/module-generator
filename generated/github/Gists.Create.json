@@ -1,0 +1,54 @@
+{
+  "moduleName": "GitHub / Gists / Create",
+  "version": "0.0.0",
+  "description": "Allows you to add a new gist with one or more files.\n\n> [!NOTE]\n> Don't name your files \"gistfile\" with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Description of the gist"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "files": {
+      "schema": {
+        "type": "any",
+        "description": "Names and content for the files that make up the gist"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "public": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/gists/gists#create-a-gist",
+    "codeHash": "cd184c4f92532ecf6442873e9e1822805ad3854efcfc2136ba77420a3b8cc786"
+  }
+}

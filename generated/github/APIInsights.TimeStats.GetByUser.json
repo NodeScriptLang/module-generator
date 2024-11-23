@@ -1,0 +1,69 @@
+{
+  "moduleName": "GitHub / API Insights / Time Stats / Get By User",
+  "version": "0.0.0",
+  "description": "Get the number of API requests and rate-limited requests made within an organization by a specific user over a specified time period.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the user to query for stats"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "minTimestamp": {
+      "schema": {
+        "type": "string",
+        "description": "The minimum timestamp to query for stats. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "maxTimestamp": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The maximum timestamp to query for stats. Defaults to the time 30 days ago. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "timestampIncrement": {
+      "schema": {
+        "type": "string",
+        "description": "The increment of time used to breakdown the query results (5m, 10m, 1h, etc.)"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/api-insights#get-time-stats-by-user",
+    "codeHash": "b3602547b69410b71a4fb48e78406ac42a2874d6d6b82dfe8284d632fd9f02d1"
+  }
+}

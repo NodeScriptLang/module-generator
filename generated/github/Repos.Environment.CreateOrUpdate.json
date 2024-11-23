@@ -1,0 +1,91 @@
+{
+  "moduleName": "GitHub / Repos / Environment / Create Or Update",
+  "version": "0.0.0",
+  "description": "Create or update an environment with protection rules, such as required reviewers. For more information about environment protection rules, see \"[Environments](/actions/reference/environments#environment-protection-rules).\"\n\n> [!NOTE]\n> To create or update name patterns that branches must match in order to deploy to this environment, see \"[Deployment branch policies](/rest/deployments/branch-policies).\"\n\n> [!NOTE]\n> To create or update secrets for an environment, see \"[GitHub Actions secrets](/rest/actions/secrets).\"\n\nOAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "environmentName": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "waitTimer": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The amount of time to delay a job after the job is initially triggered. The time (in minutes) must be an integer between 0 and 43,200 (30 days)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "preventSelfReview": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether or not a user who created the job is prevented from approving their own job."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "reviewers": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The people or teams that may review jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "deploymentBranchPolicy": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`."
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/deployments/environments#create-or-update-an-environment",
+    "codeHash": "f8fafd7dbfc05a026c53b405bd9d1dab6f81c76a363fe8f377d852307743f00f"
+  }
+}

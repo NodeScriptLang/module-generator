@@ -1,0 +1,73 @@
+{
+  "moduleName": "GitHub / Orgs / Security Product / Enable Or Disable",
+  "version": "0.0.0",
+  "description": "> [!WARNING]\n> **Closing down notice:** The ability to enable or disable a security feature for all eligible repositories in an organization is closing down. Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead. For more information, see the [changelog](https://github.blog/changelog/2024-07-22-deprecation-of-api-endpoint-to-enable-or-disable-a-security-feature-for-an-organization/).\n\nEnables or disables the specified security feature for all eligible repositories in an organization. For more information, see \"[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).\"\n\nThe authenticated user must be an organization owner or be member of a team with the security manager role to use this endpoint.\n\nOAuth app tokens and personal access tokens (classic) need the `admin:org`, `write:org`, or `repo` scopes to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "securityProduct": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "dependency_graph",
+          "dependabot_alerts",
+          "dependabot_security_updates",
+          "advanced_security",
+          "code_scanning_default_setup",
+          "secret_scanning",
+          "secret_scanning_push_protection"
+        ],
+        "description": "The security feature to enable or disable."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "enablement": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "enable_all",
+          "disable_all"
+        ],
+        "description": "The action to take.\n\n`enable_all` means to enable the specified security feature for all repositories in the organization.\n`disable_all` means to disable the specified security feature for all repositories in the organization."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "requestBody": {
+      "schema": {
+        "type": "any",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/orgs#enable-or-disable-a-security-feature-for-an-organization",
+    "codeHash": "0dd73a2c14831c910b443ada177e704934bee1dd88365a97a215df337dc4d543"
+  }
+}

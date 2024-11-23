@@ -1,0 +1,88 @@
+{
+  "moduleName": "GitHub / Orgs / Invitations / List",
+  "version": "0.0.0",
+  "description": "The return hash contains a `role` field which refers to the Organization\nInvitation role and will be one of the following values: `direct_member`, `admin`,\n`billing_manager`, or `hiring_manager`. If the invitee is not a GitHub\nmember, the `login` field in the return hash will be `null`.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "perPage": {
+      "schema": {
+        "type": "number",
+        "default": "30",
+        "optional": true,
+        "description": "The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "number",
+        "default": "1",
+        "optional": true,
+        "description": "The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "role": {
+      "schema": {
+        "type": "string",
+        "default": "all",
+        "enum": [
+          "all",
+          "admin",
+          "direct_member",
+          "billing_manager",
+          "hiring_manager"
+        ],
+        "optional": true,
+        "description": "Filter invitations by their member role."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "invitationSource": {
+      "schema": {
+        "type": "string",
+        "default": "all",
+        "enum": [
+          "all",
+          "member",
+          "scim"
+        ],
+        "optional": true,
+        "description": "Filter invitations by their invitation source."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/members#list-pending-organization-invitations",
+    "codeHash": "b23e8ed018ba31b66a9ba93d2ee551dae65abbb9135ead28bbe3ba8d52eb4de9"
+  }
+}

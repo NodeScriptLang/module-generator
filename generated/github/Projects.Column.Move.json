@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Projects / Column / Move",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "columnId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the column."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "position": {
+      "schema": {
+        "type": "string",
+        "description": "The position of the column in a project. Can be one of: `first`, `last`, or `after:<column_id>` to place after the specified column."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/projects/columns#move-a-project-column",
+    "codeHash": "9587e46e3c4ef0bebeb1adf18999bc51194f55547aa9bd970969b64e06ab46ed"
+  }
+}

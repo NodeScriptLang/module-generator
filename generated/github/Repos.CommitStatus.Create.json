@@ -1,0 +1,94 @@
+{
+  "moduleName": "GitHub / Repos / Commit Status / Create",
+  "version": "0.0.0",
+  "description": "Users with push access in a repository can create commit statuses for a given SHA.\n\nNote: there is a limit of 1000 statuses per `sha` and `context` within a repository. Attempts to create more than 1000 statuses will result in a validation error.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "sha": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "state": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "error",
+          "failure",
+          "pending",
+          "success"
+        ],
+        "description": "The state of the status."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "targetUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The target URL to associate with this status. This URL will be linked from the GitHub UI to allow users to easily see the source of the status.\nFor example, if your continuous integration system is posting build status, you would want to provide the deep link for the build output for this specific SHA:\n`http://ci.example.com/user/repo/build/sha`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A short description of the status."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "context": {
+      "schema": {
+        "type": "string",
+        "default": "default",
+        "optional": true,
+        "description": "A string label to differentiate this status from the status of other systems. This field is case-insensitive."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/commits/statuses#create-a-commit-status",
+    "codeHash": "daee6f82c597cbe01a762ff8c930a7bb60edc486ddf7ac25793fec8c188935d2"
+  }
+}

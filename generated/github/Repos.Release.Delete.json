@@ -1,0 +1,52 @@
+{
+  "moduleName": "GitHub / Repos / Release / Delete",
+  "version": "0.0.0",
+  "description": "Users with push access to the repository can delete a release.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "releaseId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the release."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/releases/releases#delete-a-release",
+    "codeHash": "d6ba081561ee9bb74f6974c9bc519d02549066c3416b8df8f0fd591872af30b4"
+  }
+}

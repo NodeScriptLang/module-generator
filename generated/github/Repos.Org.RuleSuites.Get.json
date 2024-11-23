@@ -1,0 +1,115 @@
+{
+  "moduleName": "GitHub / Repos / Org / Rule Suites / Get",
+  "version": "0.0.0",
+  "description": "Lists suites of rule evaluations at the organization level.\nFor more information, see \"[Managing rulesets for repositories in your organization](https://docs.github.com/organizations/managing-organization-settings/managing-rulesets-for-repositories-in-your-organization#viewing-insights-for-rulesets).\"",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "ref": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The name of the ref. Cannot contain wildcard characters. Optionally prefix with `refs/heads/` to limit to branches or `refs/tags/` to limit to tags. Omit the prefix to search across all refs. When specified, only rule evaluations triggered for this ref will be returned."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "repositoryName": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The name of the repository to filter on. When specified, only rule evaluations from this repository will be returned."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "timePeriod": {
+      "schema": {
+        "type": "string",
+        "default": "day",
+        "enum": [
+          "hour",
+          "day",
+          "week",
+          "month"
+        ],
+        "optional": true,
+        "description": "The time period to filter by.\n\nFor example, `day` will filter for rule suites that occurred in the past 24 hours, and `week` will filter for insights that occurred in the past 7 days (168 hours)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "actorName": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The handle for the GitHub user account to filter on. When specified, only rule evaluations triggered by this actor will be returned."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "ruleSuiteResult": {
+      "schema": {
+        "type": "string",
+        "default": "all",
+        "enum": [
+          "pass",
+          "fail",
+          "bypass",
+          "all"
+        ],
+        "optional": true,
+        "description": "The rule results to filter on. When specified, only suites with this result will be returned."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "perPage": {
+      "schema": {
+        "type": "number",
+        "default": "30",
+        "optional": true,
+        "description": "The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "number",
+        "default": "1",
+        "optional": true,
+        "description": "The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/rule-suites#list-organization-rule-suites",
+    "codeHash": "37dcceb85ee2df8f8d6b889c696cd10082e55dc20083b671fb272b339003e48b"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "moduleName": "GitHub / API Insights / Summary Stats / Get By Actor",
+  "version": "0.0.0",
+  "description": "Get overall statistics of API requests within the organization made by a specific actor. Actors can be GitHub App installations, OAuth apps or other tokens on behalf of a user.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "minTimestamp": {
+      "schema": {
+        "type": "string",
+        "description": "The minimum timestamp to query for stats. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "maxTimestamp": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The maximum timestamp to query for stats. Defaults to the time 30 days ago. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "actorType": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "installations",
+          "classic_pats",
+          "fine_grained_pats",
+          "oauth_apps",
+          "github_apps_user_to_server"
+        ],
+        "description": "The type of the actor"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "actorId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the actor"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/api-insights#get-summary-stats-by-actor",
+    "codeHash": "bdddcbc3e1956efadf8086485bbad69d4410252a497a3805d8ce88a4f60ae3c6"
+  }
+}

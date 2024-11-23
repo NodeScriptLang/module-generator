@@ -1,0 +1,28 @@
+{
+  "moduleName": "GitHub / Meta / Root",
+  "version": "0.0.0",
+  "description": "Get Hypermedia links to resources accessible in GitHub's REST API",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/meta/meta#github-api-root",
+    "codeHash": "cfcfa18fe60f4515ec9bc280138a3c52a08659adc3d61c9c10e43ecb09d5f9e5"
+  }
+}

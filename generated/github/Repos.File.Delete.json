@@ -1,0 +1,95 @@
+{
+  "moduleName": "GitHub / Repos / File / Delete",
+  "version": "0.0.0",
+  "description": "Deletes a file in a repository.\n\nYou can provide an additional `committer` parameter, which is an object containing information about the committer. Or, you can provide an `author` parameter, which is an object containing information about the author.\n\nThe `author` section is optional and is filled in with the `committer` information if omitted. If the `committer` information is omitted, the authenticated user's information is used.\n\nYou must provide values for both `name` and `email`, whether you choose to use `author` or `committer`. Otherwise, you'll receive a `422` status code.\n\n> [!NOTE]\n> If you use this endpoint and the \"[Create or update file contents](https://docs.github.com/rest/repos/contents/#create-or-update-file-contents)\" endpoint in parallel, the concurrent requests will conflict and you will receive errors. You must use these endpoints serially instead.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "path": {
+      "schema": {
+        "type": "string",
+        "description": "path parameter"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "message": {
+      "schema": {
+        "type": "string",
+        "description": "The commit message."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "sha": {
+      "schema": {
+        "type": "string",
+        "description": "The blob SHA of the file being deleted."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "branch": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The branch name. Default: the repository’s default branch"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "committer": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "object containing information about the committer."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "author": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "object containing information about the author."
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/repos/contents#delete-a-file",
+    "codeHash": "1800592bce68eeda63e9e85866f37e3ab2edc071b3c0e45f9692909998b5a887"
+  }
+}

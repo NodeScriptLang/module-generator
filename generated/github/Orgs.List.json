@@ -1,0 +1,47 @@
+{
+  "moduleName": "GitHub / Orgs / List",
+  "version": "0.0.0",
+  "description": "Lists all organizations, in the order that they were created.\n\n> [!NOTE]\n> Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of organizations.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "since": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "An organization ID. Only return organizations with an ID greater than this ID."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "perPage": {
+      "schema": {
+        "type": "number",
+        "default": "30",
+        "optional": true,
+        "description": "The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/orgs#list-organizations",
+    "codeHash": "8810fc72a13b157f0a554f66bf1b22d31bcfd4dd0008fb817a2a365b67baf779"
+  }
+}

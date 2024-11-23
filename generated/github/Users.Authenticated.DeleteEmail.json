@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Users / Authenticated / Delete Email",
+  "version": "0.0.0",
+  "description": "OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "requestBody": {
+      "schema": {
+        "type": "any",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/users/emails#delete-an-email-address-for-the-authenticated-user",
+    "codeHash": "5e2f50dbc601b4aa33c6c9b0083a2bd7989a72d7154d5dc5d142b3c914263533"
+  }
+}

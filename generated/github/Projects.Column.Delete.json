@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Projects / Column / Delete",
+  "version": "0.0.0",
+  "description": "Deletes a project column.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "columnId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the column."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/projects/columns#delete-a-project-column",
+    "codeHash": "83edf4bbf61178c2e4c0ce5a597fd3b87bd22ba6e9d386f61079188675908688"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "moduleName": "GitHub / Repos / Transfer",
+  "version": "0.0.0",
+  "description": "A transfer request will need to be accepted by the new owner when transferring a personal repository to another user. The response will contain the original `owner`, and the transfer will continue asynchronously. For more details on the requirements to transfer personal and organization-owned repositories, see [about repository transfers](https://docs.github.com/articles/about-repository-transfers/).",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "newOwner": {
+      "schema": {
+        "type": "string",
+        "description": "The username or organization name the repository will be transferred to."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "newName": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The new name to be given to the repository."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "teamIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "ID of the team or teams to add to the repository. Teams can only be added to organization-owned repositories."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/repos/repos#transfer-a-repository",
+    "codeHash": "731db0e6d7f5b6b038b910f4c906f509df66ef88d66bd94e47352f59f8b9e068"
+  }
+}

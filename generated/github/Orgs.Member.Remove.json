@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Orgs / Member / Remove",
+  "version": "0.0.0",
+  "description": "Removing a user from this list will remove them from all teams and they will no longer have any access to the organization's repositories.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "username": {
+      "schema": {
+        "type": "string",
+        "description": "The handle for the GitHub user account."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/members#remove-an-organization-member",
+    "codeHash": "81e20e0f47e85779eced665a99327bc6015fc12f86045bde233cd343118af3b3"
+  }
+}

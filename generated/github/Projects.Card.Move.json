@@ -1,0 +1,53 @@
+{
+  "moduleName": "GitHub / Projects / Card / Move",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "cardId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the card."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "position": {
+      "schema": {
+        "type": "string",
+        "description": "The position of the card in a column. Can be one of: `top`, `bottom`, or `after:<card_id>` to place after the specified card."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "columnId": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The unique identifier of the column the card should be moved to"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/projects/cards#move-a-project-card",
+    "codeHash": "aae576eb522248b91010d35c1151e8cd5c4e3c2175ef9b08c4b2749780313347"
+  }
+}

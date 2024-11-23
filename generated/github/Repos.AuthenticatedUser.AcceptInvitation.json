@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Repos / Authenticated User / Accept Invitation",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "invitationId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the invitation."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/collaborators/invitations#accept-a-repository-invitation",
+    "codeHash": "583a5d437a8a1b150729ecb4c908fae16a0dd65078c48258666d7464989aeb1f"
+  }
+}

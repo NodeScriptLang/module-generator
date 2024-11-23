@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Users / Authenticated / Get SSH Key",
+  "version": "0.0.0",
+  "description": "View extended details for a single public SSH key.\n\nOAuth app tokens and personal access tokens (classic) need the `read:public_key` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "keyId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the key."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/users/keys#get-a-public-ssh-key-for-the-authenticated-user",
+    "codeHash": "937bf07344c3b07a8e64191c10b53f21842ecb063e92f9008fabef57e3db63e6"
+  }
+}

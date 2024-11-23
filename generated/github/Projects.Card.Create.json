@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Projects / Card / Create",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "columnId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the column."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "requestBody": {
+      "schema": {
+        "type": "any",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/projects/cards#create-a-project-card",
+    "codeHash": "a9713f15988525a059b951f639b01f4cb8128e6c279d56d5a6a87ccce2a91dff"
+  }
+}

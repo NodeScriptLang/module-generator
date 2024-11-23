@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Activity / Authenticated User / Unstar Repo",
+  "version": "0.0.0",
+  "description": "Unstar a repository that the authenticated user has previously starred.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/activity/starring#unstar-a-repository-for-the-authenticated-user",
+    "codeHash": "a773f71582db3786e9ebca7c98bcd539bda5b40d608d5e68e504d32262bc040c"
+  }
+}

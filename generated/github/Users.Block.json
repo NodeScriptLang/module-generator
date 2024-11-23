@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Users / Block",
+  "version": "0.0.0",
+  "description": "Blocks the given user and returns a 204. If the authenticated user cannot block the given user a 422 is returned.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "username": {
+      "schema": {
+        "type": "string",
+        "description": "The handle for the GitHub user account."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/users/blocking#block-a-user",
+    "codeHash": "12265f91358025ac79068a1064eb5c1c8f44bafd3495ae78549dd333b8f9592d"
+  }
+}

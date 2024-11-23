@@ -1,0 +1,131 @@
+{
+  "moduleName": "GitHub / Orgs / PAT Grants / List",
+  "version": "0.0.0",
+  "description": "Lists approved fine-grained personal access tokens owned by organization members that can access organization resources.\n\nOnly GitHub Apps can use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "perPage": {
+      "schema": {
+        "type": "number",
+        "default": "30",
+        "optional": true,
+        "description": "The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "number",
+        "default": "1",
+        "optional": true,
+        "description": "The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "default": "created_at",
+        "enum": [
+          "created_at"
+        ],
+        "optional": true,
+        "description": "The property by which to sort the results."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "direction": {
+      "schema": {
+        "type": "string",
+        "default": "desc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "optional": true,
+        "description": "The direction to sort the results by."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "owner": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "A list of owner usernames to use to filter the results."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "repository": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The name of the repository to use to filter the results."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "permission": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The permission to use to filter the results."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "lastUsedBefore": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Only show fine-grained personal access tokens used before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "lastUsedAfter": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Only show fine-grained personal access tokens used after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/personal-access-tokens#list-fine-grained-personal-access-tokens-with-access-to-organization-resources",
+    "codeHash": "e160b0ca797020ef7238917a77a6c8372a632937706f2f06713e25dbcda34683"
+  }
+}

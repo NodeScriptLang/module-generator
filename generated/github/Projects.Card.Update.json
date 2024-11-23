@@ -1,0 +1,54 @@
+{
+  "moduleName": "GitHub / Projects / Card / Update",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "cardId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the card."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "note": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The project card's note"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "archived": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether or not the card is archived"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/projects/cards#update-an-existing-project-card",
+    "codeHash": "a2b7512d010eef2a6626ceaad7d74256bf6207974135adc816f04be7c08ce244"
+  }
+}

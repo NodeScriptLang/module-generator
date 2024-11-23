@@ -1,0 +1,60 @@
+{
+  "moduleName": "GitHub / Repos / Deployment Status / Get",
+  "version": "0.0.0",
+  "description": "Users with pull access can view a deployment status for a deployment:",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "deploymentId": {
+      "schema": {
+        "type": "number",
+        "description": "deployment_id parameter"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "statusId": {
+      "schema": {
+        "type": "number",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/deployments/statuses#get-a-deployment-status",
+    "codeHash": "0657b61b5408ec386e1f23a6a51a1cfe408952814177e6b6a612fe5f3254b057"
+  }
+}

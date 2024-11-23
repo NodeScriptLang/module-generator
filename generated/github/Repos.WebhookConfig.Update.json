@@ -1,0 +1,88 @@
+{
+  "moduleName": "GitHub / Repos / Webhook Config / Update",
+  "version": "0.0.0",
+  "description": "Updates the webhook configuration for a repository. To update more information about the webhook, including the `active` state and `events`, use \"[Update a repository webhook](/rest/webhooks/repos#update-a-repository-webhook).\"\n\nOAuth app tokens and personal access tokens (classic) need the `write:repo_hook` or `repo` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "hookId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "url": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The URL to which the payloads will be delivered."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "contentType": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "secret": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "insecureSsl": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/repos/webhooks#update-a-webhook-configuration-for-a-repository",
+    "codeHash": "0eb0dd8d51ed080ac2fa5a9f799f8a43d0b068f5b817a94c922740073b235331"
+  }
+}

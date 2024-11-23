@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Orgs / Outside Collaborator / Remove",
+  "version": "0.0.0",
+  "description": "Removing a user from this list will remove them from all the organization's repositories.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "username": {
+      "schema": {
+        "type": "string",
+        "description": "The handle for the GitHub user account."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/outside-collaborators#remove-outside-collaborator-from-an-organization",
+    "codeHash": "7494394b6b636eaf43424986059c7609cac6f642ed6f68f561ac2ab519905dc6"
+  }
+}

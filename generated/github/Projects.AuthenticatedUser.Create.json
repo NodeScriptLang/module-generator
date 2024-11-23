@@ -1,0 +1,45 @@
+{
+  "moduleName": "GitHub / Projects / Authenticated User / Create",
+  "version": "0.0.0",
+  "description": "Creates a user project board. Returns a `410 Gone` status if the user does not have existing classic projects. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "Name of the project"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "body": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Body of the project"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/projects/projects#create-a-user-project",
+    "codeHash": "70eb470359337c023a1d4f0c62cfb32df9ef80e99bf7f8c60e19ae4b17773a0e"
+  }
+}

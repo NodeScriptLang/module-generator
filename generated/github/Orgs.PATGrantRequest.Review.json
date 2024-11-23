@@ -1,0 +1,65 @@
+{
+  "moduleName": "GitHub / Orgs / PAT Grant Request / Review",
+  "version": "0.0.0",
+  "description": "Approves or denies a pending request to access organization resources via a fine-grained personal access token.\n\nOnly GitHub Apps can use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "patRequestId": {
+      "schema": {
+        "type": "number",
+        "description": "Unique identifier of the request for access via fine-grained personal access token."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "action": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "approve",
+          "deny"
+        ],
+        "description": "Action to apply to the request."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "reason": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Reason for approving or denying the request. Max 1024 characters."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/personal-access-tokens#review-a-request-to-access-organization-resources-with-a-fine-grained-personal-access-token",
+    "codeHash": "50b8a81b987180791079445de1751b50773f8ce8cfdd41cd1ba0ce9e3a69972a"
+  }
+}

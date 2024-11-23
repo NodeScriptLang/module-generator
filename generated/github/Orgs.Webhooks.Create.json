@@ -1,0 +1,74 @@
+{
+  "moduleName": "GitHub / Orgs / Webhooks / Create",
+  "version": "0.0.0",
+  "description": "Create a hook that posts payloads in JSON format.\n\nYou must be an organization owner to use this endpoint.\n\nOAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or\nedit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "Must be passed as \"web\"."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "config": {
+      "schema": {
+        "type": "any",
+        "description": "Key/value pairs to provide settings for this webhook."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "events": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. Set to `[\"*\"]` to receive all possible events."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "active": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/webhooks#create-an-organization-webhook",
+    "codeHash": "8f9d87ecb49264559bcb096e21e7c8c6b8e1cade12fcf93dc34aeb3f119bdf36"
+  }
+}

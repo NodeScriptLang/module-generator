@@ -1,0 +1,60 @@
+{
+  "moduleName": "GitHub / Reactions / Pull Request Comment / Delete",
+  "version": "0.0.0",
+  "description": "> [!NOTE]\n> You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/pulls/comments/:comment_id/reactions/:reaction_id.`\n\nDelete a reaction to a [pull request review comment](https://docs.github.com/rest/pulls/comments#get-a-review-comment-for-a-pull-request).",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "commentId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the comment."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "reactionId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the reaction."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/reactions/reactions#delete-a-pull-request-comment-reaction",
+    "codeHash": "a513925ca203bcdd6ab67e5ff5bb1e62654c0420936b6f1d9daca76913e9a121"
+  }
+}

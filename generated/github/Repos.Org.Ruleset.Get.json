@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Repos / Org / Ruleset / Get",
+  "version": "0.0.0",
+  "description": "Get a repository ruleset for an organization.\n\n**Note:** To prevent leaking sensitive information, the `bypass_actors` property is only returned if the user\nmaking the API request has write access to the ruleset.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "rulesetId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the ruleset."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/rules#get-an-organization-repository-ruleset",
+    "codeHash": "46aa42e773294e90d3cdc362673b9397e8f09b39aaff0257fa537db01b90f221"
+  }
+}

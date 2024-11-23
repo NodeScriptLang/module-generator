@@ -1,0 +1,47 @@
+{
+  "moduleName": "GitHub / Orgs / Custom Properties / Create Or Update",
+  "version": "0.0.0",
+  "description": "Creates new or updates existing custom properties defined for an organization in a batch.\n\nTo use this endpoint, the authenticated user must be one of:\n  - An administrator for the organization.\n  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "properties": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "The array of custom properties to create or update."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/custom-properties#create-or-update-custom-properties-for-an-organization",
+    "codeHash": "2687be2d83307d8d4466e826f345c4b7dc37afb2a8f6122b41e739579fe2e805"
+  }
+}

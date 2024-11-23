@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Orgs / Invitation / Cancel",
+  "version": "0.0.0",
+  "description": "Cancel an organization invitation. In order to cancel an organization invitation, the authenticated user must be an organization owner.\n\nThis endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications).",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "invitationId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the invitation."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/members#cancel-an-organization-invitation",
+    "codeHash": "0c2c1d7a968489b12e852fa571ca30c6407e2e36a4381f833a787c7ae05234a2"
+  }
+}

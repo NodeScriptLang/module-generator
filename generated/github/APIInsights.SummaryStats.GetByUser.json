@@ -1,0 +1,61 @@
+{
+  "moduleName": "GitHub / API Insights / Summary Stats / Get By User",
+  "version": "0.0.0",
+  "description": "Get overall statistics of API requests within the organization for a user.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the user to query for stats"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "minTimestamp": {
+      "schema": {
+        "type": "string",
+        "description": "The minimum timestamp to query for stats. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "maxTimestamp": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The maximum timestamp to query for stats. Defaults to the time 30 days ago. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/api-insights#get-summary-stats-by-user",
+    "codeHash": "4bd78824dde54d77912295b1919be20b43d59faad5c59a0077c6b30dfbf9258a"
+  }
+}

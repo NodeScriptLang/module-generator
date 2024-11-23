@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Orgs / Blocked Users / Unblock",
+  "version": "0.0.0",
+  "description": "Unblocks the given user on behalf of the specified organization.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "username": {
+      "schema": {
+        "type": "string",
+        "description": "The handle for the GitHub user account."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/blocking#unblock-a-user-from-an-organization",
+    "codeHash": "662222a58abe1124b226d1c817fea5699a03d7b68638493d4633061efadebf95"
+  }
+}

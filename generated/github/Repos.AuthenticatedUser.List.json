@@ -1,0 +1,137 @@
+{
+  "moduleName": "GitHub / Repos / Authenticated User / List",
+  "version": "0.0.0",
+  "description": "Lists repositories that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access.\n\nThe authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "visibility": {
+      "schema": {
+        "type": "string",
+        "default": "all",
+        "enum": [
+          "all",
+          "public",
+          "private"
+        ],
+        "optional": true,
+        "description": "Limit results to repositories with the specified visibility."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "affiliation": {
+      "schema": {
+        "type": "string",
+        "default": "owner,collaborator,organization_member",
+        "optional": true,
+        "description": "Comma-separated list of values. Can include:\n * `owner`: Repositories that are owned by the authenticated user.\n * `collaborator`: Repositories that the user has been added to as a collaborator.\n * `organization_member`: Repositories that the user has access to through being a member of an organization. This includes every repository on every team that the user is on."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "type": {
+      "schema": {
+        "type": "string",
+        "default": "all",
+        "enum": [
+          "all",
+          "owner",
+          "public",
+          "private",
+          "member"
+        ],
+        "optional": true,
+        "description": "Limit results to repositories of the specified type. Will cause a `422` error if used in the same request as **visibility** or **affiliation**."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "default": "full_name",
+        "enum": [
+          "created",
+          "updated",
+          "pushed",
+          "full_name"
+        ],
+        "optional": true,
+        "description": "The property to sort the results by."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "direction": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "optional": true,
+        "description": "The order to sort by. Default: `asc` when using `full_name`, otherwise `desc`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "perPage": {
+      "schema": {
+        "type": "number",
+        "default": "30",
+        "optional": true,
+        "description": "The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "number",
+        "default": "1",
+        "optional": true,
+        "description": "The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "since": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Only show repositories updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "before": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Only show repositories updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/repos/repos#list-repositories-for-the-authenticated-user",
+    "codeHash": "53fbe66687c9bf34fdbae26bd6ae8a6c07ffe0266635d502b67affda596ef899"
+  }
+}

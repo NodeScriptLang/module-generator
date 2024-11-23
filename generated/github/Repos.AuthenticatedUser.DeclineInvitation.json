@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Repos / Authenticated User / Decline Invitation",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "invitationId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the invitation."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/collaborators/invitations#decline-a-repository-invitation",
+    "codeHash": "a70504deb339c11ebade4545494f436c107110d75053c481060524d7fff06e6e"
+  }
+}

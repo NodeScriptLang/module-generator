@@ -1,0 +1,68 @@
+{
+  "moduleName": "GitHub / Packages / Get Package Version For Org",
+  "version": "0.0.0",
+  "description": "Gets a specific package version in an organization.\n\nOAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see \"[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages).\"",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "packageType": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "npm",
+          "maven",
+          "rubygems",
+          "docker",
+          "nuget",
+          "container"
+        ],
+        "description": "The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "packageName": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the package."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "packageVersionId": {
+      "schema": {
+        "type": "number",
+        "description": "Unique identifier of the package version."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/packages/packages#get-a-package-version-for-an-organization",
+    "codeHash": "891e9d069fc86a0d25f4044cd76150363dc54d713b3504a2cf07056e09bded14"
+  }
+}

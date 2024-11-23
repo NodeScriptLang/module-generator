@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Users / Authenticated / Check Following Person",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "username": {
+      "schema": {
+        "type": "string",
+        "description": "The handle for the GitHub user account."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/users/followers#check-if-a-person-is-followed-by-the-authenticated-user",
+    "codeHash": "44b870b059e0db0e47f9b0575b39f6dec9401f44908f77a2e21b4af89a32c620"
+  }
+}

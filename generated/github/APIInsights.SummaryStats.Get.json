@@ -1,0 +1,53 @@
+{
+  "moduleName": "GitHub / API Insights / Summary Stats / Get",
+  "version": "0.0.0",
+  "description": "Get overall statistics of API requests made within an organization by all users and apps within a specified time frame.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "minTimestamp": {
+      "schema": {
+        "type": "string",
+        "description": "The minimum timestamp to query for stats. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "maxTimestamp": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The maximum timestamp to query for stats. Defaults to the time 30 days ago. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/api-insights#get-summary-stats",
+    "codeHash": "60b98cd8fa16dc1cde35529b2ffc2dd216c08aab8e90a00f7198098dc318f414"
+  }
+}

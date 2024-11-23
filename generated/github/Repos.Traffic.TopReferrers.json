@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Repos / Traffic / Top Referrers",
+  "version": "0.0.0",
+  "description": "Get the top 10 referrers over the last 14 days.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/metrics/traffic#get-top-referral-sources",
+    "codeHash": "5811ae59c899e5825d27aaade05f69a9797d7ead1949ce003e0c82e146334b77"
+  }
+}

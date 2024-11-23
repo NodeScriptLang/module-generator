@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Orgs / Custom Properties / Get",
+  "version": "0.0.0",
+  "description": "Gets all custom properties defined for an organization.\nOrganization members can read these properties.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/custom-properties#get-all-custom-properties-for-an-organization",
+    "codeHash": "ab04c887d3814297a0d08fa594ce39b17ffb5479ef90652a920c9f6b19c8049e"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "moduleName": "GitHub / Repos / Release Asset / Update",
+  "version": "0.0.0",
+  "description": "Users with push access to the repository can edit a release asset.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "assetId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the asset."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The file name of the asset."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "label": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An alternate short description of the asset. Used in place of the filename."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "state": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/releases/assets#update-a-release-asset",
+    "codeHash": "51df6b125691734289bb44997359558a3497fc6e214dafca91a1f9d9fcb1d22e"
+  }
+}

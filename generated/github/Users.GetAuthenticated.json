@@ -1,0 +1,28 @@
+{
+  "moduleName": "GitHub / Users / Get Authenticated",
+  "version": "0.0.0",
+  "description": "OAuth app tokens and personal access tokens (classic) need the `user` scope in order for the response to include private profile information.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/users/users#get-the-authenticated-user",
+    "codeHash": "46afe0cdfe98517109798486189fe383592ceefd57784619982480975de059e9"
+  }
+}

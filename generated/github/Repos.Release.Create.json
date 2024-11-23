@@ -1,0 +1,133 @@
+{
+  "moduleName": "GitHub / Repos / Release / Create",
+  "version": "0.0.0",
+  "description": "Users with push access to the repository can create a release.\n\nThis endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see \"[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)\" and \"[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api).\"",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "tagName": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the tag."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "targetCommitish": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. Unused if the Git tag already exists. Default: the repository's default branch."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The name of the release."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "body": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Text describing the contents of the tag."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "draft": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "`true` to create a draft (unpublished) release, `false` to create a published one."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "prerelease": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "`true` to identify the release as a prerelease. `false` to identify the release as a full release."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "discussionCategoryName": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "If specified, a discussion of the specified category is created and linked to the release. The value must be a category that already exists in the repository. For more information, see \"[Managing categories for discussions in your repository](https://docs.github.com/discussions/managing-discussions-for-your-community/managing-categories-for-discussions-in-your-repository).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "generateReleaseNotes": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether to automatically generate the name and body for this release. If `name` is specified, the specified name will be used; otherwise, a name will be automatically generated. If `body` is specified, the body will be pre-pended to the automatically generated notes."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "makeLatest": {
+      "schema": {
+        "type": "string",
+        "default": "true",
+        "enum": [
+          "true",
+          "false",
+          "legacy"
+        ],
+        "optional": true,
+        "description": "Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/releases/releases#create-a-release",
+    "codeHash": "966e14bfb4c71b142f993a44f110af5fd9338ad7a8aa7dc4e90e3931bc647f9f"
+  }
+}

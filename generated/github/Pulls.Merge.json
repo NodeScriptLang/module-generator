@@ -1,0 +1,93 @@
+{
+  "moduleName": "GitHub / Pulls / Merge",
+  "version": "0.0.0",
+  "description": "Merges a pull request into the base branch.\nThis endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see \"[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)\" and \"[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api).\"",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "pullNumber": {
+      "schema": {
+        "type": "number",
+        "description": "The number that identifies the pull request."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "commitTitle": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Title for the automatic commit message."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "commitMessage": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Extra detail to append to automatic commit message."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sha": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "SHA that pull request head must match to allow merge."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "mergeMethod": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "merge",
+          "squash",
+          "rebase"
+        ],
+        "optional": true,
+        "description": "The merge method to use."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/pulls/pulls#merge-a-pull-request",
+    "codeHash": "c8cf8eee0ea2343eb30198289b1089da109eb59a2ab3dd0ec0e53255ecd0b1fd"
+  }
+}

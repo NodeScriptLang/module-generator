@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Users / Blocks / Check",
+  "version": "0.0.0",
+  "description": "Returns a 204 if the given user is blocked by the authenticated user. Returns a 404 if the given user is not blocked by the authenticated user, or if the given user account has been identified as spam by GitHub.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "username": {
+      "schema": {
+        "type": "string",
+        "description": "The handle for the GitHub user account."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/users/blocking#check-if-a-user-is-blocked-by-the-authenticated-user",
+    "codeHash": "63089c1c0cc2e47e6b31d41f207e201b013e6fa8d723ce2b94f35ccb4e8f616a"
+  }
+}

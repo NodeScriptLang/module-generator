@@ -1,0 +1,36 @@
+{
+  "moduleName": "GitHub / Orgs / Delete",
+  "version": "0.0.0",
+  "description": "Deletes an organization and all its repositories.\n\nThe organization login will be unavailable for 90 days after deletion.\n\nPlease review the Terms of Service regarding account deletion before using this endpoint:\n\nhttps://docs.github.com/site-policy/github-terms/github-terms-of-service",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "org": {
+      "schema": {
+        "type": "string",
+        "description": "The organization name. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/orgs/orgs#delete-an-organization",
+    "codeHash": "a10e2bf8c8a4cb06f02e453b1573a8b95e35bddecfcd74d0950518bf77f25623"
+  }
+}

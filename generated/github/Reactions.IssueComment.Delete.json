@@ -1,0 +1,60 @@
+{
+  "moduleName": "GitHub / Reactions / Issue Comment / Delete",
+  "version": "0.0.0",
+  "description": "> [!NOTE]\n> You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/issues/comments/:comment_id/reactions/:reaction_id`.\n\nDelete a reaction to an [issue comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment).",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "commentId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the comment."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "reactionId": {
+      "schema": {
+        "type": "number",
+        "description": "The unique identifier of the reaction."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/reactions/reactions#delete-an-issue-comment-reaction",
+    "codeHash": "c6e55387df53bed299ba81840d046dcf3f8a808579253615aee023fb812543fb"
+  }
+}

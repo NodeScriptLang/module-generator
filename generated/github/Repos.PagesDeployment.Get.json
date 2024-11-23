@@ -1,0 +1,52 @@
+{
+  "moduleName": "GitHub / Repos / Pages Deployment / Get",
+  "version": "0.0.0",
+  "description": "Gets the current status of a GitHub Pages deployment.\n\nThe authenticated user must have read permission for the GitHub Pages site.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "pagesDeploymentId": {
+      "schema": {
+        "type": "any",
+        "description": "The ID of the Pages deployment. You can also give the commit SHA of the deployment."
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/pages/pages#get-the-status-of-a-github-pages-deployment",
+    "codeHash": "7143d04e46368147892ac3fb3758563ff0f07b5e2ef66e63ba09b7775e21c49e"
+  }
+}

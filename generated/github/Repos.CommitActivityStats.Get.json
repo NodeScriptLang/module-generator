@@ -1,0 +1,44 @@
+{
+  "moduleName": "GitHub / Repos / Commit Activity Stats / Get",
+  "version": "0.0.0",
+  "description": "Returns the last year of commit activity grouped by week. The `days` array is a group of commits per day, starting on `Sunday`.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/metrics/statistics#get-the-last-year-of-commit-activity",
+    "codeHash": "b7910140117cb27fc99c3f25c209eba987227be40bc3b3a4f78a51c5ba400d05"
+  }
+}

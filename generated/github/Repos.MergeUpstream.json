@@ -1,0 +1,52 @@
+{
+  "moduleName": "GitHub / Repos / Merge Upstream",
+  "version": "0.0.0",
+  "description": "Sync a branch of a forked repository to keep it up-to-date with the upstream repository.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "branch": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the branch which should be updated to match upstream."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository",
+    "codeHash": "dfdb92acbaa46b944dde7b7f140702f344c210b318689caa9e6c5231a942db6b"
+  }
+}

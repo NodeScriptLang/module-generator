@@ -1,0 +1,38 @@
+{
+  "moduleName": "GitHub / Packages / Docker / List Conflicts",
+  "version": "0.0.0",
+  "description": "Lists all packages that are in a specific user's namespace, that the requesting user has access to, and that encountered a conflict during Docker migration.\n\nOAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "username": {
+      "schema": {
+        "type": "string",
+        "description": "The handle for the GitHub user account."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/packages/packages#get-list-of-conflicting-packages-during-docker-migration-for-user",
+    "codeHash": "740718cda1a0752992987dd2dcf3649dfc691c6a5fec029312b5e72f24da2640"
+  }
+}496974"
+  }
+}

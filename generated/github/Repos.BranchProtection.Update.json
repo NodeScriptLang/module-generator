@@ -1,0 +1,149 @@
+{
+  "moduleName": "GitHub / Repos / Branch Protection / Update",
+  "version": "0.0.0",
+  "description": "Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nProtecting a branch requires admin or owner permissions to the repository.\n\n> [!NOTE]\n> Passing new arrays of `users` and `teams` replaces their previous values.\n\n> [!NOTE]\n> The list of users, apps, and teams in total is limited to 100 items.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "branch": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use [the GraphQL API](https://docs.github.com/graphql)."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "requiredStatusChecks": {
+      "schema": {
+        "type": "any",
+        "description": "Require status checks to pass before merging. Set to `null` to disable."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "enforceAdmins": {
+      "schema": {
+        "type": "boolean",
+        "description": "Enforce all configured restrictions for administrators. Set to `true` to enforce required status checks for repository administrators. Set to `null` to disable."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "requiredPullRequestReviews": {
+      "schema": {
+        "type": "any",
+        "description": "Require at least one approving review on a pull request, before merging. Set to `null` to disable."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "restrictions": {
+      "schema": {
+        "type": "any",
+        "description": "Restrict who can push to the protected branch. User, app, and team `restrictions` are only available for organization-owned repositories. Set to `null` to disable."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "requiredLinearHistory": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Enforces a linear commit Git history, which prevents anyone from pushing merge commits to a branch. Set to `true` to enforce a linear commit history. Set to `false` to disable a linear commit Git history. Your repository must allow squash merging or rebase merging before you can enable a linear commit history. Default: `false`. For more information, see \"[Requiring a linear commit history](https://docs.github.com/github/administering-a-repository/requiring-a-linear-commit-history)\" in the GitHub Help documentation."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "allowForcePushes": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Permits force pushes to the protected branch by anyone with write access to the repository. Set to `true` to allow force pushes. Set to `false` or `null` to block force pushes. Default: `false`. For more information, see \"[Enabling force pushes to a protected branch](https://docs.github.com/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)\" in the GitHub Help documentation.\""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "allowDeletions": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Allows deletion of the protected branch by anyone with write access to the repository. Set to `false` to prevent deletion of the protected branch. Default: `false`. For more information, see \"[Enabling force pushes to a protected branch](https://docs.github.com/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)\" in the GitHub Help documentation."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "blockCreations": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "If set to `true`, the `restrictions` branch protection settings which limits who can push will also block pushes which create new branches, unless the push is initiated by a user, team, or app which has the ability to push. Set to `true` to restrict new branch creation. Default: `false`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "requiredConversationResolution": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Requires all conversations on code to be resolved before a pull request can be merged into a branch that matches this rule. Set to `false` to disable. Default: `false`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "lockBranch": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether to set the branch as read-only. If this is true, users will not be able to push to the branch. Default: `false`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "allowForkSyncing": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing. Default: `false`."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/branches/branch-protection#update-branch-protection",
+    "codeHash": "e8260ee777ff8951f1e301c25ecc353b7ba84cf3dab1ae25340223a986e4d9a6"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "moduleName": "GitHub / Repos / Repo Ruleset / Delete",
+  "version": "0.0.0",
+  "description": "Delete a ruleset for a repository.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "rulesetId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the ruleset."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/repos/rules#delete-a-repository-ruleset",
+    "codeHash": "29b5ab1b606cf4c3c00ac9a6beaf202c4cfa4c9170c2070f2c60c7000bec8e87"
+  }
+}
