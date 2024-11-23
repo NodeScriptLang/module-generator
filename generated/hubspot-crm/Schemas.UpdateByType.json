@@ -1,0 +1,118 @@
+{
+  "moduleName": "Hubspot CRM / Schemas / Update By Type",
+  "version": "0.0.0",
+  "description": "Update the details for an existing object schema.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "objectType": {
+      "schema": {
+        "type": "string",
+        "description": "Fully qualified name or object type ID of your schema."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "secondaryDisplayProperties": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The names of secondary properties for this object. These will be displayed as secondary on the HubSpot record page for this object type."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "requiredProperties": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The names of properties that should be **required** when creating an object of this type."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "searchableProperties": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Names of properties that will be indexed for this object type in by HubSpot's product search."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "clearDescription": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "primaryDisplayProperty": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The name of the primary property for this object. This will be displayed as primary on the HubSpot record page for this object type."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "restorable": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "labels": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Singular and plural labels for the object. Used in CRM display."
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "2304b1ac9da3fe528da7fa19986e5d743d8b9b2f22b6b0db3c95e1cb050432a8"
+  }
+}

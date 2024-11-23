@@ -1,0 +1,37 @@
+{
+  "moduleName": "Hubspot CRM / Line Items / Delete",
+  "version": "0.0.0",
+  "description": "Move an Object identified by `{lineItemId}` to the recycling bin.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "lineItemId": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "5fd832e862d9afc1a4fb2f54f3dffd23a4a8fc118c73eb14de43c224aa30ee1d"
+  }
+}

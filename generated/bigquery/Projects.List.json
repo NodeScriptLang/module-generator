@@ -13,7 +13,10 @@
         "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/cloud-platform` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
       },
       "advanced": false,
-      "hideValue": true
+      "hideValue": true,
+      "attributes": {
+        "oauthAppId": "t185qoo5fa72ut9u"
+      }
     },
     "maxResults": {
       "schema": {

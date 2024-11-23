@@ -1,0 +1,40 @@
+{
+  "moduleName": "Hubspot CRM / Tickets / Batch / Delete",
+  "version": "0.0.0",
+  "description": "Archive a batch of tickets by ID",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "inputs": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "e15eab9cc4e3e640faf1d94296e3ec5b0ccf2a5c689c605938efa23fdbc1a085"
+  }
+}

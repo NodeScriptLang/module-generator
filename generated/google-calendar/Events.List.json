@@ -1,0 +1,226 @@
+{
+  "moduleName": "Google Calendar / Events / List",
+  "version": "0.0.0",
+  "description": "Returns events on the specified calendar.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/calendar` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true,
+      "attributes": {
+        "oauthAppId": "nk1zwvh9fbmqjiiu"
+      }
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "calendarId": {
+      "schema": {
+        "type": "string",
+        "description": "Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \"primary\" keyword."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "eventTypes": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Event types to return. Optional. Possible values are: \n- \"default\" \n- \"focusTime\" \n- \"outOfOffice\"This parameter can be repeated multiple times to return events of different types. Currently, this is the only allowed value for this field: \n- [\"default\", \"focusTime\", \"outOfOffice\"] This value will be the default.\n\nIf you're enrolled in the Working Location developer preview program, in addition to the default value above you can also set the \"workingLocation\" event type: \n- [\"default\", \"focusTime\", \"outOfOffice\", \"workingLocation\"] \n- [\"workingLocation\"] Additional combinations of these 4 event types will be made available in later releases. Developer Preview."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "iCalUid": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Specifies an event ID in the iCalendar format to be provided in the response. Optional. Use this if you want to search for an event by its iCalendar ID."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maxAttendees": {
+      "schema": {
+        "type": "number",
+        "minimum": 1,
+        "optional": true,
+        "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maxResults": {
+      "schema": {
+        "type": "number",
+        "minimum": 1,
+        "optional": true,
+        "description": "Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "orderBy": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "startTime",
+          "updated"
+        ],
+        "optional": true,
+        "description": "The order of the events returned in the result. Optional. The default is an unspecified, stable order."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Token specifying which result page to return. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "privateExtendedProperty": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Extended properties constraint specified as propertyName=value. Matches only private properties. This parameter might be repeated multiple times to return events that match all given constraints."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "q": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Free text search terms to find events that match these terms in the following fields: summary, description, location, attendee's displayName, attendee's email. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sharedExtendedProperty": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Extended properties constraint specified as propertyName=value. Matches only shared properties. This parameter might be repeated multiple times to return events that match all given constraints."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "showDeleted": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether to include deleted events (with status equals \"cancelled\") in the result. Cancelled instances of recurring events (but not the underlying recurring event) will still be included if showDeleted and singleEvents are both False. If showDeleted and singleEvents are both True, only single instances of deleted events (but not the underlying recurring events) are returned. Optional. The default is False."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "showHiddenInvitations": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether to include hidden invitations in the result. Optional. The default is False."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "singleEvents": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether to expand recurring events into instances and only return single one-off events and instances of recurring events, but not the underlying recurring events themselves. Optional. The default is False."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "syncToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All events deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False.\nThere are several query parameters that cannot be specified together with nextSyncToken to ensure consistency of the client state.\n\nThese are: \n- iCalUID \n- orderBy \n- privateExtendedProperty \n- q \n- sharedExtendedProperty \n- timeMin \n- timeMax \n- updatedMin If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.\nOptional. The default is to return all entries."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "timeMax": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Upper bound (exclusive) for an event's start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMin is set, timeMax must be greater than timeMin."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "timeMin": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Lower bound (exclusive) for an event's end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMax is set, timeMin must be smaller than timeMax."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "timeZone": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Time zone used in the response. Optional. The default is the time zone of the calendar."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "updatedMin": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Lower bound for an event's last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/calendar/api/v3/reference",
+    "codeHash": "93c1bb19354a827fd33027ab6a672fa92cecb3cd9b522a7c7d1ddb64b3fc0dfd"
+  }
+}

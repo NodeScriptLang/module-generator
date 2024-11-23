@@ -13,12 +13,14 @@
         "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/cloud-platform` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
       },
       "advanced": false,
-      "hideValue": true
+      "hideValue": true,
+      "attributes": {
+        "oauthAppId": "t185qoo5fa72ut9u"
+      }
     },
     "projectId": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "Required. Project ID of the job for which metadata is to be deleted."
       },
       "advanced": false,
@@ -27,7 +29,6 @@
     "jobId": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "Required. Job ID of the job for which metadata is to be deleted. If this is a parent job which has child jobs, the metadata from all child jobs will be deleted as well. Direct deletion of the metadata of child jobs is not allowed."
       },
       "advanced": false,

@@ -1,0 +1,92 @@
+{
+  "moduleName": "Trello / Cards / Stickers / Create",
+  "version": "0.0.0",
+  "description": "Add a sticker to a card",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the Card"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "image": {
+      "schema": {
+        "type": "string",
+        "description": "For custom stickers, the id of the sticker. For default stickers, the string identifier (like 'taco-cool', see below)"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "top": {
+      "schema": {
+        "type": "number",
+        "minimum": -60,
+        "maximum": 100,
+        "description": "The top position of the sticker, from -60 to 100"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "left": {
+      "schema": {
+        "type": "number",
+        "minimum": -60,
+        "maximum": 100,
+        "description": "The left position of the sticker, from -60 to 100"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "zIndex": {
+      "schema": {
+        "type": "number",
+        "description": "The z-index of the sticker"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "rotate": {
+      "schema": {
+        "type": "number",
+        "default": "0",
+        "minimum": 0,
+        "maximum": 360,
+        "optional": true,
+        "description": "The rotation of the sticker"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "75bc073e474715fe39b86899615b7847f103f25f877075d463c86c49bfafde07"
+  }
+}

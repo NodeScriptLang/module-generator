@@ -1,0 +1,62 @@
+{
+  "moduleName": "Trello / Checklists / Update By ID",
+  "version": "0.0.0",
+  "description": "Update an existing checklist.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "ID of a checklist."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Name of the new checklist being created. Should be length of 1 to 16384."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pos": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Determines the position of the checklist on the card. One of: `top`, `bottom`, or a positive number."
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "295a80f1be37376d0566711b895da5a118073470e53dcda4dc875c92c7786433"
+  }
+}

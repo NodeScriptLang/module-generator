@@ -1,0 +1,62 @@
+{
+  "moduleName": "Hubspot CRM / Properties / Groups / Create",
+  "version": "0.0.0",
+  "description": "Create and return a copy of a new property group.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "objectType": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "The internal property group name, which must be used when referencing the property group via the API."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "displayOrder": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Property groups are displayed in order starting with the lowest positive integer value. Values of -1 will cause the property group to be displayed after any positive values."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "label": {
+      "schema": {
+        "type": "string",
+        "description": "A human-readable label that will be shown in HubSpot."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "5a14045a7188fa93c241e0dbe554a11521cc08565cda9bff656dce4234b2df03"
+  }
+}

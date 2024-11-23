@@ -1,0 +1,119 @@
+{
+  "moduleName": "Google Calendar / ACL / Update Rule Partial",
+  "version": "0.0.0",
+  "description": "Updates an access control rule. This method supports patch semantics.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/calendar` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true,
+      "attributes": {
+        "oauthAppId": "nk1zwvh9fbmqjiiu"
+      }
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "calendarId": {
+      "schema": {
+        "type": "string",
+        "description": "Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \"primary\" keyword."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "ruleId": {
+      "schema": {
+        "type": "string",
+        "description": "ACL rule identifier."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "sendNotifications": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether to send notifications about the calendar sharing change. Note that there are no notifications on access removal. Optional. The default is True."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "etag": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ETag of the resource."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Identifier of the Access Control List (ACL) rule. See Sharing calendars."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "kind": {
+      "schema": {
+        "type": "string",
+        "default": "calendar#aclRule",
+        "optional": true,
+        "description": "Type of the resource (\"calendar#aclRule\")."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "role": {
+      "schema": {
+        "type": "string",
+        "description": "The role assigned to the scope. Possible values are:  \n- \"none\" - Provides no access. \n- \"freeBusyReader\" - Provides read access to free/busy information. \n- \"reader\" - Provides read access to the calendar. Private events will appear to users with reader access, but event details will be hidden. \n- \"writer\" - Provides read and write access to the calendar. Private events will appear to users with writer access, and event details will be visible. \n- \"owner\" - Provides ownership of the calendar. This role has all of the permissions of the writer role with the additional ability to see and manipulate ACLs."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "scope": {
+      "schema": {
+        "type": "any",
+        "description": "The extent to which calendar access is granted by this ACL rule."
+      },
+      "advanced": false,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/calendar/api/v3/reference",
+    "codeHash": "aa1abba5e1df2f34babefa0245089203fb2ebea511b82d90d79fa20ed5b84311"
+  }
+}

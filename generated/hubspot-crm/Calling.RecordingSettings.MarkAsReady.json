@@ -1,0 +1,37 @@
+{
+  "moduleName": "Hubspot CRM / Calling / Recording Settings / Mark As Ready",
+  "version": "0.0.0",
+  "description": "Mark a call recording as ready for transcription, specifying the call by its ID (`engagementid`).",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "engagementId": {
+      "schema": {
+        "type": "number",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "3a79260836faf7fc61df75e28620e7abcced3c5136dd9aa70a4648cddad7c63b"
+  }
+}

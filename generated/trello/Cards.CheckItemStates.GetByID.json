@@ -1,0 +1,54 @@
+{
+  "moduleName": "Trello / Cards / Check Item States / Get By ID",
+  "version": "0.0.0",
+  "description": "Get the completed checklist items on a card",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the Card"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "default": "all",
+        "optional": true,
+        "description": "`all` or a comma-separated list of: `idCheckItem`, `state`"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "cf53fabcb04d3eb20cf0d79ba146d6d881f5f1a8867b06a983d10ae87578f7b4"
+  }
+}

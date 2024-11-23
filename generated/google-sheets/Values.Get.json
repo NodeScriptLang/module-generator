@@ -15,7 +15,7 @@
       "advanced": false,
       "hideValue": true,
       "attributes": {
-        "integrationTemplateId": "google-sheets"
+        "oauthAppId": "kpmk4j8z41vx3k16"
       }
     },
     "apiKey": {

@@ -1,0 +1,172 @@
+{
+  "moduleName": "Google Drive / Files / List",
+  "version": "0.0.0",
+  "description": "Lists or searches files.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/drive` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true,
+      "attributes": {
+        "oauthAppId": "vpvdwpswx02ec4i5"
+      }
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "alt": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "json"
+        ],
+        "optional": true,
+        "description": "Data format for the response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "quotaUser": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "corpora": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Groupings of files to which the query applies. Supported groupings are: 'user' (files created by, opened by, or shared directly with the user), 'drive' (files in the specified shared drive as indicated by the 'driveId'), 'domain' (files shared to the user's domain), and 'allDrives' (A combination of 'user' and 'drive' for all drives where the user is a member). When able, use 'user' or 'drive', instead of 'allDrives', for efficiency."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "driveId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ID of the shared drive to search."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includeItemsFromAllDrives": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether both My Drive and shared drive items should be included in results."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includeLabels": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma-separated list of IDs of labels to include in the labelInfo part of the response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includePermissionsForView": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Specifies which additional view's permissions to include in the response. Only 'published' is supported."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "orderBy": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma-separated list of sort keys. Valid keys are 'createdTime', 'folder', 'modifiedByMeTime', 'modifiedTime', 'name', 'name_natural', 'quotaBytesUsed', 'recency', 'sharedWithMeTime', 'starred', and 'viewedByMeTime'. Each key sorts ascending by default, but may be reversed with the 'desc' modifier. Example usage: ?orderBy=folder,modifiedTime desc,name. Please note that there is a current limitation for users with approximately one million files in which the requested sort order is ignored."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageSize": {
+      "schema": {
+        "type": "number",
+        "minimum": 1,
+        "maximum": 1000,
+        "optional": true,
+        "description": "The maximum number of files to return per page. Partial or empty result pages are possible even before the end of the files list has been reached."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "q": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A query for filtering the file results. See the \"Search for Files\" guide for supported syntax."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "spaces": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma-separated list of spaces to query within the corpora. Supported values are 'drive' and 'appDataFolder'."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "supportsAllDrives": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether the requesting application supports both My Drives and shared drives."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/drive/api/reference/rest/v3",
+    "codeHash": "6e79e21206d9ffa76d2d33564cdfb76f41d5183bfeca71d276ac756616729392"
+  }
+}

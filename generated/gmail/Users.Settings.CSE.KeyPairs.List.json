@@ -1,0 +1,64 @@
+{
+  "moduleName": "Gmail / Users / Settings / CSE / Key Pairs / List",
+  "version": "0.0.0",
+  "description": "Lists client-side encryption key pairs for an authenticated user.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://mail.google.com/` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "The requester's primary email address. To indicate the authenticated user, you can use the special value `me`."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "pageSize": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The number of key pairs to return. If not provided, the page size will default to 20 entries."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Pagination token indicating which page of key pairs to return. If the token is not supplied, then the API will return the first page of results."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/gmail/api/reference/rest",
+    "codeHash": "70ad8ea6b6bee94e5f7534a603d53ab9d14f2c5f7085773609720755de0b432b"
+  }
+}

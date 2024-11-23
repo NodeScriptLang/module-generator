@@ -1,0 +1,262 @@
+{
+  "moduleName": "Google Drive / Changes / Watch",
+  "version": "0.0.0",
+  "description": "Subscribes to changes for a user. To use this method, you must include the pageToken query parameter.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/drive` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true,
+      "attributes": {
+        "oauthAppId": "vpvdwpswx02ec4i5"
+      }
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "alt": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "json"
+        ],
+        "optional": true,
+        "description": "Data format for the response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "quotaUser": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "description": "The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response or to the response from the getStartPageToken method."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "driveId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The shared drive from which changes are returned. If specified the change IDs will be reflective of the shared drive; use the combined drive ID and change ID as an identifier."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includeCorpusRemovals": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether changes should include the file resource if the file is still accessible by the user at the time of the request, even when a file was removed from the list of changes and there will be no further change entries for this file."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includeItemsFromAllDrives": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether both My Drive and shared drive items should be included in results."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includeLabels": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma-separated list of IDs of labels to include in the labelInfo part of the response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includePermissionsForView": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Specifies which additional view's permissions to include in the response. Only 'published' is supported."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includeRemoved": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether to include changes indicating that items have been removed from the list of changes, for example by deletion or loss of access."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageSize": {
+      "schema": {
+        "type": "number",
+        "minimum": 1,
+        "maximum": 1000,
+        "optional": true,
+        "description": "The maximum number of changes to return per page."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "restrictToMyDrive": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether to restrict the results to changes inside the My Drive hierarchy. This omits changes to files such as those in the Application Data folder or shared files which have not been added to My Drive."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "spaces": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma-separated list of spaces to query within the corpora. Supported values are 'drive' and 'appDataFolder'."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "supportsAllDrives": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether the requesting application supports both My Drives and shared drives."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "address": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The address where notifications are delivered for this channel."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "expiration": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Date and time of notification channel expiration, expressed as a Unix timestamp, in milliseconds. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A UUID or similar unique string that identifies this channel."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "kind": {
+      "schema": {
+        "type": "string",
+        "default": "api#channel",
+        "optional": true,
+        "description": "Identifies this as a notification channel used to watch for changes to a resource, which is \"api#channel\"."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "params": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Additional parameters controlling delivery channel behavior. Optional."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "payload": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "A Boolean value to indicate whether payload is wanted. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "resourceId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An opaque ID that identifies the resource being watched on this channel. Stable across different API versions."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "resourceUri": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A version-specific identifier for the watched resource."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "token": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An arbitrary string delivered to the target address with each notification delivered over this channel. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "type": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The type of delivery mechanism used for this channel. Valid values are \"web_hook\" (or \"webhook\"). Both values refer to a channel where Http requests are used to deliver messages."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/drive/api/reference/rest/v3",
+    "codeHash": "c19e6874700cc8a14ad6fe028d15766fd9be173885ceeaab9e1336f53cf807d8"
+  }
+}

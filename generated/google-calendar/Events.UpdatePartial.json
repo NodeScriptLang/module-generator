@@ -1,0 +1,491 @@
+{
+  "moduleName": "Google Calendar / Events / Update Partial",
+  "version": "0.0.0",
+  "description": "Updates an event. This method supports patch semantics.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/calendar` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true,
+      "attributes": {
+        "oauthAppId": "nk1zwvh9fbmqjiiu"
+      }
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "calendarId": {
+      "schema": {
+        "type": "string",
+        "description": "Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \"primary\" keyword."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "eventId": {
+      "schema": {
+        "type": "string",
+        "description": "Event identifier."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "conferenceDataVersion": {
+      "schema": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1,
+        "optional": true,
+        "description": "Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maxAttendees": {
+      "schema": {
+        "type": "number",
+        "minimum": 1,
+        "optional": true,
+        "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sendUpdates": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "all",
+          "externalOnly",
+          "none"
+        ],
+        "optional": true,
+        "description": "Guests who should receive notifications about the event update (for example, title changes, etc.)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "supportsAttachments": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether API client performing operation supports event attachments. Optional. The default is False."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "anyoneCanAddSelf": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether anyone can invite themselves to the event (deprecated). Optional. The default is False."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "attachments": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "File attachments for the event.\nIn order to modify attachments the supportsAttachments request parameter should be set to true.\nThere can be at most 25 attachments per event,"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "attendees": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The attendees of the event. See the Events with attendees guide for more information on scheduling events with other calendar users. Service accounts need to use domain-wide delegation of authority to populate the attendee list."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "attendeesOmitted": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether attendees may have been omitted from the event's representation. When retrieving an event, this may be due to a restriction specified by the maxAttendee query parameter. When updating an event, this can be used to only update the participant's response. Optional. The default is False."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "colorId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The color of the event. This is an ID referring to an entry in the event section of the colors definition (see the  colors endpoint). Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "conferenceData": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "created": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Creation time of the event (as a RFC3339 timestamp). Read-only."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "creator": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The creator of the event. Read-only."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Description of the event. Can contain HTML. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "end": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "End object of the event, including timeZone and either date or dateTime properties"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "endTimeUnspecified": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether the end time is actually unspecified. An end time is still provided for compatibility reasons, even if this attribute is set to True. The default is False."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "etag": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ETag of the resource."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "eventType": {
+      "schema": {
+        "type": "string",
+        "default": "default",
+        "optional": true,
+        "description": "Specific type of the event. Read-only. Possible values are:  \n- \"default\" - A regular event or not further specified. \n- \"outOfOffice\" - An out-of-office event. \n- \"focusTime\" - A focus-time event. \n- \"workingLocation\" - A working location event. Developer Preview."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "extendedProperties": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Extended properties of the event."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "gadget": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "A gadget that extends this event. Gadgets are deprecated; this structure is instead only used for returning birthday calendar metadata."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "guestsCanInviteOthers": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Whether attendees other than the organizer can invite others to the event. Optional. The default is True."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "guestsCanModify": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether attendees other than the organizer can modify the event. Optional. The default is False."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "guestsCanSeeOtherGuests": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Whether attendees other than the organizer can see who the event's attendees are. Optional. The default is True."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "hangoutLink": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An absolute link to the Google Hangout associated with this event. Read-only."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "htmlLink": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An absolute link to this event in the Google Calendar Web UI. Read-only."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "iCalUid": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Event unique identifier as defined in RFC5545. It is used to uniquely identify events accross calendaring systems and must be supplied when importing events via the import method.\nNote that the iCalUID and the id are not identical and only one of them should be supplied at event creation time. One difference in their semantics is that in recurring events, all occurrences of one event have different ids while they all share the same iCalUIDs. To retrieve an event using its iCalUID, call the events.list method using the iCalUID parameter. To retrieve an event using its id, call the events.get method."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Opaque identifier of the event. When creating new single or recurring events, you can specify their IDs. Provided IDs must follow these rules:  \n- characters allowed in the ID are those used in base32hex encoding, i.e. lowercase letters a-v and digits 0-9, see section 3.1.2 in RFC2938 \n- the length of the ID must be between 5 and 1024 characters \n- the ID must be unique per calendar  Due to the globally distributed nature of the system, we cannot guarantee that ID collisions will be detected at event creation time. To minimize the risk of collisions we recommend using an established UUID algorithm such as one described in RFC4122.\nIf you do not specify an ID, it will be automatically generated by the server.\nNote that the icalUID and the id are not identical and only one of them should be supplied at event creation time. One difference in their semantics is that in recurring events, all occurrences of one event have different ids while they all share the same icalUIDs."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "kind": {
+      "schema": {
+        "type": "string",
+        "default": "calendar#event",
+        "optional": true,
+        "description": "Type of the resource (\"calendar#event\")."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "location": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Geographic location of the event as free-form text. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "locked": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether this is a locked event copy where no changes can be made to the main event fields \"summary\", \"description\", \"location\", \"start\", \"end\" or \"recurrence\". The default is False. Read-Only."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "organizer": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The organizer of the event. If the organizer is also an attendee, this is indicated with a separate entry in attendees with the organizer field set to True. To change the organizer, use the move operation. Read-only, except when importing an event."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "originalStartTime": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "privateCopy": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "If set to True, Event propagation is disabled. Note that it is not the same thing as Private event properties. Optional. Immutable. The default is False."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "recurrence": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "List of RRULE, EXRULE, RDATE and EXDATE lines for a recurring event, as specified in RFC5545. Note that DTSTART and DTEND lines are not allowed in this field; event start and end times are specified in the start and end fields. This field is omitted for single events or instances of recurring events."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "recurringEventId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "For an instance of a recurring event, this is the id of the recurring event to which this instance belongs. Immutable."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "reminders": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Information about the event's reminders for the authenticated user."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "sequence": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Sequence number as per iCalendar."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "source": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Source from which the event was created. For example, a web page, an email message or any document identifiable by an URL with HTTP or HTTPS scheme. Can only be seen or modified by the creator of the event."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "start": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Start object of the event, including timeZone and either date or dateTime properties"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "status": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Status of the event. Optional. Possible values are:  \n- \"confirmed\" - The event is confirmed. This is the default status. \n- \"tentative\" - The event is tentatively confirmed. \n- \"cancelled\" - The event is cancelled (deleted). The list method returns cancelled events only on incremental sync (when syncToken or updatedMin are specified) or if the showDeleted flag is set to true. The get method always returns them.\nA cancelled status represents two different states depending on the event type:  \n- Cancelled exceptions of an uncancelled recurring event indicate that this instance should no longer be presented to the user. Clients should store these events for the lifetime of the parent recurring event.\nCancelled exceptions are only guaranteed to have values for the id, recurringEventId and originalStartTime fields populated. The other fields might be empty.  \n- All other cancelled events represent deleted events. Clients should remove their locally synced copies. Such cancelled events will eventually disappear, so do not rely on them being available indefinitely.\nDeleted events are only guaranteed to have the id field populated.   On the organizer's calendar, cancelled events continue to expose event details (summary, location, etc.) so that they can be restored (undeleted). Similarly, the events to which the user was invited and that they manually removed continue to provide details. However, incremental sync requests with showDeleted set to false will not return these details.\nIf an event changes its organizer (for example via the move operation) and the original organizer is not on the attendee list, it will leave behind a cancelled event where only the id field is guaranteed to be populated."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "summary": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Title of the event."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "transparency": {
+      "schema": {
+        "type": "string",
+        "default": "opaque",
+        "optional": true,
+        "description": "Whether the event blocks time on the calendar. Optional. Possible values are:  \n- \"opaque\" - Default value. The event does block time on the calendar. This is equivalent to setting Show me as to Busy in the Calendar UI. \n- \"transparent\" - The event does not block time on the calendar. This is equivalent to setting Show me as to Available in the Calendar UI."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "updated": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Last modification time of the event (as a RFC3339 timestamp). Read-only."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "visibility": {
+      "schema": {
+        "type": "string",
+        "default": "default",
+        "optional": true,
+        "description": "Visibility of the event. Optional. Possible values are:  \n- \"default\" - Uses the default visibility for events on the calendar. This is the default value. \n- \"public\" - The event is public and event details are visible to all readers of the calendar. \n- \"private\" - The event is private and only event attendees may view event details. \n- \"confidential\" - The event is private. This value is provided for compatibility reasons."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "workingLocationProperties": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/calendar/api/v3/reference",
+    "codeHash": "c4d760b6cb2e94d5c89a92d7ee1f9422d39ca6c45e392990276be4f78b3c3b94"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "moduleName": "Hubspot CRM / Timeline / Events / Render / Get By ID",
+  "version": "0.0.0",
+  "description": "This will take either the `headerTemplate` or `detailTemplate` from the event template and render for the specified event as HTML. If the template references `extraData` that isn't found in the event, it will be ignored and we'll render without it.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "eventTemplateId": {
+      "schema": {
+        "type": "string",
+        "description": "The event template ID."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "eventId": {
+      "schema": {
+        "type": "string",
+        "description": "The event ID."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "detail": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Set to 'true', we want to render the `detailTemplate` instead of the `headerTemplate`."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "828eaed560f4b8af048f9a23370def3ead568bd41e43340e8aa1e1ba2435ea6b"
+  }
+}

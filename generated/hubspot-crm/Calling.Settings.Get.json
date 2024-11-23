@@ -1,0 +1,37 @@
+{
+  "moduleName": "Hubspot CRM / Calling / Settings / Get",
+  "version": "0.0.0",
+  "description": "Returns the calling extension settings configured for your app.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "appId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the app."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "c7d75583be5edf221c0d2f9f3329228ef708178f580c263e3036962d11a63943"
+  }
+}

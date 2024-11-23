@@ -1,0 +1,37 @@
+{
+  "moduleName": "Hubspot CRM / Feedback Submissions / Delete",
+  "version": "0.0.0",
+  "description": "Move an Object identified by `{feedbackSubmissionId}` to the recycling bin.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "feedbackSubmissionId": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "bfc46b41ea8038f13606da6c23a8a42a7a5d6d191d58ee29db8452db36bdf9e6"
+  }
+}

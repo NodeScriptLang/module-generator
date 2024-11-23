@@ -1,0 +1,175 @@
+{
+  "moduleName": "Google Drive / Replies / Update",
+  "version": "0.0.0",
+  "description": "Updates a reply with patch semantics.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/drive` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true,
+      "attributes": {
+        "oauthAppId": "vpvdwpswx02ec4i5"
+      }
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "alt": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "json"
+        ],
+        "optional": true,
+        "description": "Data format for the response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "quotaUser": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fileId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the file."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "commentId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the comment."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "replyId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the reply."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "action": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The action the reply performed to the parent comment. Valid values are:  \n- resolve \n- reopen"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "author": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "content": {
+      "schema": {
+        "type": "string",
+        "description": "The plain text content of the reply. This field is used for setting the content, while htmlContent should be displayed. This is required on creates if no action is specified."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "createdTime": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The time at which the reply was created (RFC 3339 date-time)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "deleted": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether the reply has been deleted. A deleted reply has no content."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "htmlContent": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The content of the reply with HTML formatting."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the reply."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "kind": {
+      "schema": {
+        "type": "string",
+        "default": "drive#reply",
+        "optional": true,
+        "description": "Identifies what kind of resource this is. Value: the fixed string \"drive#reply\"."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "modifiedTime": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The last time the reply was modified (RFC 3339 date-time)."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/drive/api/reference/rest/v3",
+    "codeHash": "ea4b6203b3e2b3940ccaf8ae6dcea38afa980ed1d84a16ac6090dee7474428ad"
+  }
+}

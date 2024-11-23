@@ -1,0 +1,69 @@
+{
+  "moduleName": "Trello / Tokens / Webhooks / Create",
+  "version": "0.0.0",
+  "description": "Create a new webhook for a Token.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "token": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A description to be displayed when retrieving information about the webhook."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "callbackUrl": {
+      "schema": {
+        "type": "string",
+        "description": "The URL that the webhook should POST information to."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idModel": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the object to create a webhook on."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "c84f330a2a82ad9123662b8b056efa4467e2807b89fc8e5c11a65cd84357716b"
+  }
+}

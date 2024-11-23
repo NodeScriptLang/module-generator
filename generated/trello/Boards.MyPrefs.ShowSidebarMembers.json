@@ -1,0 +1,52 @@
+{
+  "moduleName": "Trello / Boards / My Prefs / Show Sidebar Members",
+  "version": "0.0.0",
+  "description": "Update showSidebarMembers Pref on a Board",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The id of the board to update"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "value": {
+      "schema": {
+        "type": "boolean",
+        "description": "Determines whether to show members of the board in the sidebar."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "727e57e3c9b48ee11855f7446bc7294c5ecb1a1b75de42d81add3b5111253e70"
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "moduleName": "Google Drive / Files / Watch",
+  "version": "0.0.0",
+  "description": "Subscribes to changes to a file.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/drive` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true,
+      "attributes": {
+        "oauthAppId": "vpvdwpswx02ec4i5"
+      }
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "alt": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "json"
+        ],
+        "optional": true,
+        "description": "Data format for the response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "quotaUser": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fileId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the file."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "acknowledgeAbuse": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether the user is acknowledging the risk of downloading known malware or other abusive files. This is only applicable when alt=media."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includeLabels": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma-separated list of IDs of labels to include in the labelInfo part of the response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includePermissionsForView": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Specifies which additional view's permissions to include in the response. Only 'published' is supported."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "supportsAllDrives": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether the requesting application supports both My Drives and shared drives."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "address": {
+      "schema": {
+        "type": "string",
+        "description": "The address where notifications are delivered for this channel."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "expiration": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Date and time of notification channel expiration, expressed as a Unix timestamp, in milliseconds. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "A UUID or similar unique string that identifies this channel."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "kind": {
+      "schema": {
+        "type": "string",
+        "default": "api#channel",
+        "optional": true,
+        "description": "Identifies this as a notification channel used to watch for changes to a resource, which is \"api#channel\"."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "params": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Additional parameters controlling delivery channel behavior. Optional."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "payload": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "A Boolean value to indicate whether payload is wanted. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "resourceId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An opaque ID that identifies the resource being watched on this channel. Stable across different API versions."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "resourceUri": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A version-specific identifier for the watched resource."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "token": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An arbitrary string delivered to the target address with each notification delivered over this channel. Optional."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "type": {
+      "schema": {
+        "type": "string",
+        "description": "The type of delivery mechanism used for this channel. Valid values are \"web_hook\" (or \"webhook\"). Both values refer to a channel where Http requests are used to deliver messages."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/drive/api/reference/rest/v3",
+    "codeHash": "6f0cecefc4345626f054dffde4c8e8620f7c835ba976019f02f0a88100fb6829"
+  }
+}

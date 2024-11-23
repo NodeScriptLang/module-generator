@@ -1,0 +1,88 @@
+{
+  "moduleName": "Gmail / Users / Settings / Update IMAP",
+  "version": "0.0.0",
+  "description": "Updates IMAP settings.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://mail.google.com/` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "User's email address. The special value \"me\" can be used to indicate the authenticated user."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "autoExpunge": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "If this value is true, Gmail will immediately expunge a message when it is marked as deleted in IMAP. Otherwise, Gmail will wait for an update from the client before expunging messages marked as deleted."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "enabled": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether IMAP is enabled for the account."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "expungeBehavior": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "expungeBehaviorUnspecified",
+          "archive",
+          "trash",
+          "deleteForever"
+        ],
+        "optional": true,
+        "description": "The action that will be executed on a message when it is marked as deleted and expunged from the last visible IMAP folder."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maxFolderSize": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "An optional limit on the number of messages that an IMAP folder may contain. Legal values are 0, 1000, 2000, 5000 or 10000. A value of zero is interpreted to mean that there is no limit."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/gmail/api/reference/rest",
+    "codeHash": "64499a2a1080e7e760c28aa12d4ad038eb51e5fc6835b49f0a0ad484fec48896"
+  }
+}

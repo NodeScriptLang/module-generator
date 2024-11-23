@@ -1,0 +1,45 @@
+{
+  "moduleName": "Hubspot CRM / Pipelines / Stage Audits / Get",
+  "version": "0.0.0",
+  "description": "Return a reverse chronological list of all mutations that have occurred on the pipeline stage identified by `{stageId}`.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "objectType": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "stageId": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "c7abae285d06580aac4c80103eef06ea51bc64ad3abef774eef2962e19e0227d"
+  }
+}

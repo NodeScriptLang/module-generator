@@ -1,0 +1,55 @@
+{
+  "moduleName": "Trello / Members / Notifications Channel Settings / Get Channel",
+  "version": "0.0.0",
+  "description": "Get blocked notification keys of Member on a specific channel",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "any",
+        "description": "The ID or username of the member"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "channel": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "email"
+        ],
+        "description": "Channel to block notifications on"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "0f652e9f2c466f0c76c658155e4a89c1539b8b3a3d3c3bcb14835326276d27fc"
+  }
+}

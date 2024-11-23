@@ -1,0 +1,102 @@
+{
+  "moduleName": "Trello / Boards / Memberships / Get By ID",
+  "version": "0.0.0",
+  "description": "Get information about the memberships users have to the board.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the board"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "filter": {
+      "schema": {
+        "type": "string",
+        "default": "all",
+        "enum": [
+          "admins",
+          "all",
+          "none",
+          "normal"
+        ],
+        "optional": true,
+        "description": "One of `admins`, `all`, `none`, `normal`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "activity": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Works for premium organizations only."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "orgMemberType": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Shows the type of member to the org the user is. For instance, an org admin will have a `orgMemberType` of `admin`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "member": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Determines whether to include a [nested member object](/cloud/trello/guides/rest-api/nested-resources/)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "memberFields": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "id"
+        ],
+        "optional": true,
+        "description": "Fields to show if `member=true`. Valid values: [nested member resource fields](/cloud/trello/guides/rest-api/nested-resources/)."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "c70cf2e975aac816d259e31e96ba2f32a50aa93a26a373ab53004ddcd89c564d"
+  }
+}

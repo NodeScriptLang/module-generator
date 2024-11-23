@@ -1,0 +1,37 @@
+{
+  "moduleName": "Hubspot CRM / Companies / Basic / Delete",
+  "version": "0.0.0",
+  "description": "Move an Object identified by `{companyId}` to the recycling bin.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "companyId": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "fd1cf2a72366ca2ad104abadcfd24b4a8c327ef34fc6a3208ab0245f5cc7c8b9"
+  }
+}

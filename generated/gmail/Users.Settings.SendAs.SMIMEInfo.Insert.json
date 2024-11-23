@@ -1,0 +1,117 @@
+{
+  "moduleName": "Gmail / Users / Settings / Send As / SMIME Info / Insert",
+  "version": "0.0.0",
+  "description": "Insert (upload) the given S/MIME config for the specified send-as alias. Note that pkcs12 format is required for the key.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://mail.google.com/` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "The user's email address. The special value `me` can be used to indicate the authenticated user."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "sendAsEmail": {
+      "schema": {
+        "type": "string",
+        "description": "The email address that appears in the \"From:\" header for mail sent using this alias."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "encryptedKeyPassword": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Encrypted key password, when key is encrypted."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "expiration": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "When the certificate expires (in milliseconds since epoch)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The immutable ID for the SmimeInfo."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "isDefault": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether this SmimeInfo is the default one for this user's send-as address."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "issuerCn": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The S/MIME certificate issuer's common name."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pem": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "PEM formatted X509 concatenated certificate string (standard base64 encoding). Format used for returning key, which includes public key as well as certificate chain (not private key)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pkcs12": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "PKCS#12 format containing a single private/public key pair and certificate chain. This format is only accepted from client for creating a new SmimeInfo and is never returned, because the private key is not intended to be exported. PKCS#12 may be encrypted, in which case encryptedKeyPassword should be set appropriately."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/gmail/api/reference/rest",
+    "codeHash": "b8e837586c26bed3f744cbc430894310dca3d7ab9e8a6eaf44b315d06417a86a"
+  }
+}

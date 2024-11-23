@@ -1,0 +1,115 @@
+{
+  "moduleName": "Hubspot CRM / Timeline / Tokens / Create",
+  "version": "0.0.0",
+  "description": "Once you've defined an event template, it's likely that you'll want to define tokens for it as well. You can do this on the event template itself or update individual tokens here.\n\nEvent type tokens allow you to attach custom data to events displayed in a timeline or used for list segmentation.\n\nYou can also use `objectPropertyName` to associate any CRM object properties. This will allow you to fully build out CRM objects.\n\nToken names should be unique across the template.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "eventTemplateId": {
+      "schema": {
+        "type": "string",
+        "description": "The event template ID."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "appId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the target app."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "createdAt": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The date and time that the Event Template Token was created, as an ISO 8601 timestamp. Will be null if the template was created before Feb 18th, 2020."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "options": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "If type is `enumeration`, we should have a list of options to choose from."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the token referenced in the templates. This must be unique for the specific template. It may only contain alphanumeric characters, periods, dashes, or underscores (. - _)."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "label": {
+      "schema": {
+        "type": "string",
+        "description": "Used for list segmentation and reporting."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "objectPropertyName": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The name of the CRM object property. This will populate the CRM object property associated with the event. With enough of these, you can fully build CRM objects via the Timeline API."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "type": {
+      "schema": {
+        "type": "string",
+        "default": "string",
+        "enum": [
+          "date",
+          "enumeration",
+          "number",
+          "string"
+        ],
+        "description": "The data type of the token. You can currently choose from [string, number, date, enumeration]."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "updatedAt": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The date and time that the Event Template Token was last updated, as an ISO 8601 timestamp. Will be null if the template was created before Feb 18th, 2020."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "fbd17adfbf93ce55e69a7520ef9bd46a445679b8c39a2a2c4757c29c60dfd1f2"
+  }
+}

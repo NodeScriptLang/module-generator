@@ -1,0 +1,114 @@
+{
+  "moduleName": "Trello / Actions / Get By ID",
+  "version": "0.0.0",
+  "description": "Get an Action",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the Action"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "display": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "entities": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "default": "all",
+        "optional": true,
+        "description": "`all` or a comma-separated list of action [fields](/cloud/trello/guides/rest-api/object-definitions/#action-object)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "member": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "memberFields": {
+      "schema": {
+        "type": "string",
+        "default": "avatarHash,fullName,initials,username",
+        "optional": true,
+        "description": "`all` or a comma-separated list of member [fields](/cloud/trello/guides/rest-api/object-definitions/)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "memberCreator": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Whether to include the member object for the creator of the action"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "memberCreatorFields": {
+      "schema": {
+        "type": "string",
+        "default": "avatarHash,fullName,initials,username",
+        "optional": true,
+        "description": "`all` or a comma-separated list of member [fields](/cloud/trello/guides/rest-api/object-definitions/)"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "d4a41025489a6aa88261f478e28e732549f2381776801e0dec9ae431f1cbea5d"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "moduleName": "Google Forms / Forms / Create",
+  "version": "0.0.0",
+  "description": "Create a new form using the title given in the provided form message in the request. *Important:* Only the form.info.title and form.info.document_title fields are copied to the new form. All other fields including the form description, items and settings are disallowed. To create a new form and add items, you must first call forms.create to create an empty form with a title and (optional) document title, and then call forms.update to add the items.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/forms` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true,
+      "attributes": {
+        "oauthAppId": "iwx5dsujtpm0nu5q"
+      }
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "formId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Output only. The form ID."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "info": {
+      "schema": {
+        "type": "any",
+        "description": "The general information for a form."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "items": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Required. A list of the form's items, which can include section headers, questions, embedded media, etc."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "linkedSheetId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Output only. The ID of the linked Google Sheet which is accumulating responses from this Form (if such a Sheet exists)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "responderUri": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Output only. The form URI to share with responders. This opens a page that allows the user to submit responses but not edit the questions."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "revisionId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Output only. The revision ID of the form. Used in the WriteControl in update requests to identify the revision on which the changes are based. The format of the revision ID may change over time, so it should be treated opaquely. A returned revision ID is only guaranteed to be valid for 24 hours after it has been returned and cannot be shared across users. If the revision ID is unchanged between calls, then the form has not changed. Conversely, a changed ID (for the same form and user) usually means the form has been updated; however, a changed ID can also be due to internal factors such as ID format changes."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "settings": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "A form's settings."
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/forms/api/reference/rest",
+    "codeHash": "69f53dd657ef14ac28b1ee250e47bddabd247cc0f5896226ab390e1fd0371bc6"
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "moduleName": "Hubspot CRM / Events / Create",
+  "version": "0.0.0",
+  "description": "Creates an instance of a timeline event based on an event template. Once created, this event is immutable on the object timeline and cannot be modified. If the event template was configured to update object properties via `objectPropertyName`, this call will also attempt to updates those properties, or add them if they don't exist.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "eventTemplateId": {
+      "schema": {
+        "type": "string",
+        "description": "The event template ID."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "extraData": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Additional event-specific data that can be interpreted by the template's markdown."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "timelineIframe": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "domain": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The event domain (often paired with utk)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "tokens": {
+      "schema": {
+        "type": "any",
+        "description": "A collection of token keys and values associated with the template tokens."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Identifier for the event. This is optional, and we recommend you do not pass this in. We will create one for you if you omit this. You can also use `{{uuid}}` anywhere in the ID to generate a unique string, guaranteeing uniqueness."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "utk": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Use the `utk` parameter to associate an event with a contact by `usertoken`. This is recommended if you don't know a user's email, but have an identifying user token in your cookie."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "email": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The email address used for contact-specific events. This can be used to identify existing contacts, create new ones, or change the email for an existing contact (if paired with the `objectId`)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "objectId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The CRM object identifier. This is required for every event other than contacts (where utk or email can be used)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "timestamp": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The time the event occurred. If not passed in, the curren time will be assumed. This is used to determine where an event is shown on a CRM object's timeline."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "0728faa36e6371d29e7e4c68b0f4b860298dc28d37b8bd0d8110376584fd5790"
+  }
+}

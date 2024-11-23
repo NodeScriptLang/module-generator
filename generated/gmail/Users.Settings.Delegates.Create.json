@@ -1,0 +1,71 @@
+{
+  "moduleName": "Gmail / Users / Settings / Delegates / Create",
+  "version": "0.0.0",
+  "description": "Adds a delegate with its verification status set directly to `accepted`, without sending any verification email. The delegate user must be a member of the same Google Workspace organization as the delegator user. Gmail imposes limitations on the number of delegates and delegators each user in a Google Workspace organization can have. These limits depend on your organization, but in general each user can have up to 25 delegates and up to 10 delegators. Note that a delegate user must be referred to by their primary email address, and not an email alias. Also note that when a new delegate is created, there may be up to a one minute delay before the new delegate is available for use. This method is only available to service account clients that have been delegated domain-wide authority.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://mail.google.com/` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "User's email address. The special value \"me\" can be used to indicate the authenticated user."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "delegateEmail": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The email address of the delegate."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "verificationStatus": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "verificationStatusUnspecified",
+          "accepted",
+          "pending",
+          "rejected",
+          "expired"
+        ],
+        "optional": true,
+        "description": "Indicates whether this address has been verified and can act as a delegate for the account. Read-only."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/gmail/api/reference/rest",
+    "codeHash": "f75e1f3fc4509fd528eb5a62126e4c868a4459fc4cd14ee8b7cce83266459a5e"
+  }
+}

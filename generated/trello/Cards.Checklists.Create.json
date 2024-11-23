@@ -1,0 +1,71 @@
+{
+  "moduleName": "Trello / Cards / Checklists / Create",
+  "version": "0.0.0",
+  "description": "Create a new checklist on a card",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the Card"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The name of the checklist"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "idChecklistSource": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of a source checklist to copy into the new one"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pos": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The position of the checklist on the card. One of: `top`, `bottom`, or a positive number."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "1cbf148ecba44ff83294f3c3d80a23fa80de25353e1bc4600647451ae844702c"
+  }
+}

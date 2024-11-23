@@ -1,0 +1,73 @@
+{
+  "moduleName": "Trello / Checklists / Check Item / Get By ID",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "ID of a checklist."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idCheckItem": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the check item to retrieve."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "default": "name, nameData, pos, state, due, dueReminder, idMember",
+        "enum": [
+          "all",
+          "name",
+          "nameData",
+          "pos",
+          "state",
+          "type",
+          "due",
+          "dueReminder",
+          "idMember"
+        ],
+        "optional": true,
+        "description": "One of: `all`, `name`, `nameData`, `pos`, `state`, `type`, `due`, `dueReminder`, `idMember`,."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "dfb89030d56e0e52cebf2c0faf27032c02f8937e43881d79eb840b983de97f72"
+  }
+}

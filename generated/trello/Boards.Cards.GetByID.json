@@ -1,0 +1,176 @@
+{
+  "moduleName": "Trello / Boards / Cards / Get By ID",
+  "version": "0.0.0",
+  "description": "Get a single Card on a Board.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the board"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idCard": {
+      "schema": {
+        "type": "string",
+        "description": "The id the card to retrieve."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The fields to be returned for the Actions. [See Action fields here](/cloud/trello/guides/rest-api/object-definitions/#action-object)."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "filter": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma-separated list of [action types](/cloud/trello/guides/rest-api/action-types/)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "format": {
+      "schema": {
+        "type": "string",
+        "default": "list",
+        "optional": true,
+        "description": "The format of the returned Actions. Either list or count."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "idModels": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A comma-separated list of idModels. Only actions related to these models will be returned."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "50",
+        "optional": true,
+        "description": "The limit of the number of responses, between 0 and 1000."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "member": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Whether to return the member object for each action."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "memberFields": {
+      "schema": {
+        "type": "string",
+        "default": "activityBlocked,avatarHash,avatarUrl,fullName,idMemberReferrer,initials,nonPublic,nonPublicAvailable,username",
+        "optional": true,
+        "description": "The fields of the [member](/cloud/trello/guides/rest-api/object-definitions/#member-object) to return."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "memberCreator": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Whether to return the memberCreator object for each action."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "memberCreatorFields": {
+      "schema": {
+        "type": "string",
+        "default": "activityBlocked,avatarHash,avatarUrl,fullName,idMemberReferrer,initials,nonPublic,nonPublicAvailable,username",
+        "optional": true,
+        "description": "The fields of the [member](/cloud/trello/guides/rest-api/object-definitions/#member-object) creator to return"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "number",
+        "default": "0",
+        "optional": true,
+        "description": "The page of results for actions."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "reactions": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether to show reactions on comments or not."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "before": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An Action ID"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "since": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An Action ID"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "577c570fa0a732e53580e22c7e01a49b6719a6a3f833641a435f9d57f65f666e"
+  }
+}

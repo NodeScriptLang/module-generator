@@ -1,0 +1,118 @@
+{
+  "moduleName": "Gmail / Users / Settings / Update Vacation",
+  "version": "0.0.0",
+  "description": "Updates vacation responder settings.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://mail.google.com/` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "User's email address. The special value \"me\" can be used to indicate the authenticated user."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "enableAutoReply": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Flag that controls whether Gmail automatically replies to messages."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "endTime": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An optional end time for sending auto-replies (epoch ms). When this is specified, Gmail will automatically reply only to messages that it receives before the end time. If both `startTime` and `endTime` are specified, `startTime` must precede `endTime`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "responseBodyHtml": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Response body in HTML format. Gmail will sanitize the HTML before storing it. If both `response_body_plain_text` and `response_body_html` are specified, `response_body_html` will be used."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "responseBodyPlainText": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Response body in plain text format. If both `response_body_plain_text` and `response_body_html` are specified, `response_body_html` will be used."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "responseSubject": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional text to prepend to the subject line in vacation responses. In order to enable auto-replies, either the response subject or the response body must be nonempty."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "restrictToContacts": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Flag that determines whether responses are sent to recipients who are not in the user's list of contacts."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "restrictToDomain": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Flag that determines whether responses are sent to recipients who are outside of the user's domain. This feature is only available for Google Workspace users."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "startTime": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An optional start time for sending auto-replies (epoch ms). When this is specified, Gmail will automatically reply only to messages that it receives after the start time. If both `startTime` and `endTime` are specified, `startTime` must precede `endTime`."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/gmail/api/reference/rest",
+    "codeHash": "fe7bd21cd512d19bcc7e383e40f9ec55cfa489377ca2cbadeaf1533a55bb2496"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "moduleName": "Google Forms / Forms / Batch Update",
+  "version": "0.0.0",
+  "description": "Change the form with a batch of updates.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/forms` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true,
+      "attributes": {
+        "oauthAppId": "iwx5dsujtpm0nu5q"
+      }
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "formId": {
+      "schema": {
+        "type": "string",
+        "description": "Required. The form ID."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "includeFormInResponse": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether to return an updated version of the model in the response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "requests": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "Required. The update requests of this batch."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "writeControl": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Provides control over how write requests are executed."
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/forms/api/reference/rest",
+    "codeHash": "164379c84e305b9faf1c8d0714cc7b8ca50d2aaf7b613310bd1e904b5fa8e759"
+  }
+}

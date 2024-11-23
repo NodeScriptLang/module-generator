@@ -1,0 +1,40 @@
+{
+  "moduleName": "Hubspot CRM / Feedback Submissions / Batch / Create",
+  "version": "0.0.0",
+  "description": "Create a batch of feedback submissions",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "inputs": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "a6ccc4ba51c75498ce667e9ef74e8c74d59f00d7844954f12fcf92c17ad078d9"
+  }
+}

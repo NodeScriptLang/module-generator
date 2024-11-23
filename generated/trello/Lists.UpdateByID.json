@@ -1,0 +1,89 @@
+{
+  "moduleName": "Trello / Lists / Update By ID",
+  "version": "0.0.0",
+  "description": "Update the properties of a List",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the list"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "New name for the list"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "closed": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether the list should be closed (archived)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "idBoard": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "ID of a board the list should be moved to"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pos": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "New position for the list: `top`, `bottom`, or a positive floating point number"
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "subscribed": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether the active member is subscribed to this list"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "f9a469fc4edba4ad86726ead7e5c58a9895d5f478e24ac1d80f514ddcc0a7d2e"
+  }
+}

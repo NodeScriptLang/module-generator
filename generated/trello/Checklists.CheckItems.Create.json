@@ -1,0 +1,98 @@
+{
+  "moduleName": "Trello / Checklists / Check Items / Create",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "ID of a checklist."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the new check item on the checklist. Should be a string of length 1 to 16384."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "pos": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The position of the check item in the checklist. One of: `top`, `bottom`, or a positive number."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "checked": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Determines whether the check item is already checked when created."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "due": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A due date for the checkitem"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "dueReminder": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "A dueReminder for the due date on the checkitem"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "idMember": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An ID of a member resource."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "d9493ae57412d093c28b088e88f801329daacc23f6b6c1b76d5f734c97eea574"
+  }
+}

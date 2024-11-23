@@ -1,0 +1,80 @@
+{
+  "moduleName": "Gmail / Users / Threads / Get",
+  "version": "0.0.0",
+  "description": "Gets the specified thread.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://mail.google.com/` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "The user's email address. The special value `me` can be used to indicate the authenticated user."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the thread to retrieve."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "format": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "full",
+          "metadata",
+          "minimal"
+        ],
+        "optional": true,
+        "description": "The format to return the messages in."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "metadataHeaders": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "When given and format is METADATA, only include headers specified."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/gmail/api/reference/rest",
+    "codeHash": "b9adb43d9bddf1c251ff3802e27d35e5d1d886122801a5aa2407e15c70ba44eb"
+  }
+}

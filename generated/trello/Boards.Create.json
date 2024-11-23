@@ -1,0 +1,239 @@
+{
+  "moduleName": "Trello / Boards / Create",
+  "version": "0.0.0",
+  "description": "Create a new board.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "The new name for the board. 1 to 16384 characters long."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "defaultLabels": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Determines whether to use the default set of labels."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "defaultLists": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Determines whether to add the default set of lists to a board (To Do, Doing, Done). It is ignored if `idBoardSource` is provided."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "desc": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A new description for the board, 0 to 16384 characters long"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "idOrganization": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The id or name of the Workspace the board should belong to."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "idBoardSource": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The id of a board to copy into the new board."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "keepFromSource": {
+      "schema": {
+        "type": "string",
+        "default": "none",
+        "enum": [
+          "cards",
+          "none"
+        ],
+        "optional": true,
+        "description": "To keep cards from the original board pass in the value `cards`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "powerUps": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "all",
+          "calendar",
+          "cardAging",
+          "recap",
+          "voting"
+        ],
+        "optional": true,
+        "description": "The Power-Ups that should be enabled on the new board. One of: `all`, `calendar`, `cardAging`, `recap`, `voting`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "prefsPermissionLevel": {
+      "schema": {
+        "type": "string",
+        "default": "private",
+        "enum": [
+          "org",
+          "private",
+          "public"
+        ],
+        "optional": true,
+        "description": "The permissions level of the board. One of: `org`, `private`, `public`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "prefsVoting": {
+      "schema": {
+        "type": "string",
+        "default": "disabled",
+        "enum": [
+          "disabled",
+          "members",
+          "observers",
+          "org",
+          "public"
+        ],
+        "optional": true,
+        "description": "Who can vote on this board. One of `disabled`, `members`, `observers`, `org`, `public`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "prefsComments": {
+      "schema": {
+        "type": "string",
+        "default": "members",
+        "enum": [
+          "disabled",
+          "members",
+          "observers",
+          "org",
+          "public"
+        ],
+        "optional": true,
+        "description": "Who can comment on cards on this board. One of: `disabled`, `members`, `observers`, `org`, `public`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "prefsInvitations": {
+      "schema": {
+        "type": "string",
+        "default": "members",
+        "enum": [
+          "members",
+          "admins"
+        ],
+        "optional": true,
+        "description": "Determines what types of members can invite users to join. One of: `admins`, `members`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "prefsSelfJoin": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Determines whether users can join the boards themselves or whether they have to be invited."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "prefsCardCovers": {
+      "schema": {
+        "type": "boolean",
+        "default": "true",
+        "optional": true,
+        "description": "Determines whether card covers are enabled."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "prefsBackground": {
+      "schema": {
+        "type": "string",
+        "default": "blue",
+        "enum": [
+          "blue",
+          "orange",
+          "green",
+          "red",
+          "purple",
+          "pink",
+          "lime",
+          "sky",
+          "grey"
+        ],
+        "optional": true,
+        "description": "The id of a custom background or one of: `blue`, `orange`, `green`, `red`, `purple`, `pink`, `lime`, `sky`, `grey`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "prefsCardAging": {
+      "schema": {
+        "type": "string",
+        "default": "regular",
+        "enum": [
+          "pirate",
+          "regular"
+        ],
+        "optional": true,
+        "description": "Determines the type of card aging that should take place on the board if card aging is enabled. One of: `pirate`, `regular`."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "08d348f4f7c3c8575c0397fb8eba478a92c3fed9b9b6f3a7b5e555be21a405de"
+  }
+}

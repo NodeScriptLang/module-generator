@@ -1,0 +1,46 @@
+{
+  "moduleName": "Hubspot CRM / Calling / Recording Settings / Update URL Format",
+  "version": "0.0.0",
+  "description": "Update the URL that HubSpot will use to retrieve call recordings for a calling extension app.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "appId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the app."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "urlToRetrieveAuthedRecording": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "ca26d7f4d8727812f7044bcd42c0791a0f3475d9ec49bf6923acc33aedbc6849"
+  }
+}

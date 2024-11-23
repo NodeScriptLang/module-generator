@@ -1,0 +1,37 @@
+{
+  "moduleName": "Hubspot CRM / Pipelines / List",
+  "version": "0.0.0",
+  "description": "Return all pipelines for the object type specified by `{objectType}`.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "objectType": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "dcf668244d6c16a58af76d4f1942667c4c832b71dd713eb2dee0438565f8aa10"
+  }
+}

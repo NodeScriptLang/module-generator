@@ -1,0 +1,37 @@
+{
+  "moduleName": "Hubspot CRM / Calling / Settings / Delete",
+  "version": "0.0.0",
+  "description": "Deletes this calling extension. This will remove your service as an option for all connected accounts.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "appId": {
+      "schema": {
+        "type": "number",
+        "description": "The ID of the app."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "af9b514bc2833dd895b59a4e9a7145ab7cd7dee53fae395d41e0dd7876d3b9e5"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "moduleName": "Gmail / Users / Settings / CSE / Identities / Create",
+  "version": "0.0.0",
+  "description": "Creates and configures a client-side encryption identity that's authorized to send mail from the user account. Google publishes the S/MIME certificate to a shared domain-wide directory so that people within a Google Workspace organization can encrypt and send mail to the identity.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://mail.google.com/` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "The requester's primary email address. To indicate the authenticated user, you can use the special value `me`."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "emailAddress": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The email address for the sending identity. The email address must be the primary email address of the authenticated user."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "primaryKeyPairId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "If a key pair is associated, the identifier of the key pair, CseKeyPair."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/gmail/api/reference/rest",
+    "codeHash": "f2859f63cbfeb56354ebf6fd51b9e432c45ed364483311c68611113558fcb165"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "moduleName": "Trello / Enterprises / Transferrable / Bulk",
+  "version": "0.0.0",
+  "description": "Get a list of organizations that can be transferred to an enterprise when given a bulk list of organizations.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the Enterprise to retrieve."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idOrganizations": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "An array of IDs of an Organization resource."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "7c957466498bfc094bed76deac58149eb5359ed8e8a7b4e4120e72441b1c9898"
+  }
+}

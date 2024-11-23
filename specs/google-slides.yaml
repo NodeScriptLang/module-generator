@@ -13,6 +13,8 @@ commonParams:
     description: OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/presentations` scope. Google Auth / Service Account Token can be used to obtain a valid access token.
     required: false
     advanced: false
+    attributes:
+      oauthAppId: 8k5wzizo7iy0386a
   - paramName: apiKey
     paramKey: key
     in: query

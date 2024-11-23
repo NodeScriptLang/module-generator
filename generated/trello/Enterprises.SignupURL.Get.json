@@ -1,0 +1,83 @@
+{
+  "moduleName": "Trello / Enterprises / Signup URL / Get",
+  "version": "0.0.0",
+  "description": "Get the signup URL for an enterprise.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the enterprise to retrieve."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "authenticate": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "confirmationAccepted": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "returnUrl": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Any valid URL."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "tosAccepted": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Designates whether the user has seen/consented to the Trello ToS prior to being redirected to the enterprise signup page/their IdP."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "f0e66b9431ada6d2636d34540295bf63b5e87129b5a142d8f80a7f39a3e9ec8c"
+  }
+}

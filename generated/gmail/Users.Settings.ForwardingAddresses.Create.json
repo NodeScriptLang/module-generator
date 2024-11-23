@@ -1,0 +1,69 @@
+{
+  "moduleName": "Gmail / Users / Settings / Forwarding Addresses / Create",
+  "version": "0.0.0",
+  "description": "Creates a forwarding address. If ownership verification is required, a message will be sent to the recipient and the resource's verification status will be set to `pending`; otherwise, the resource will be created with verification status set to `accepted`. This method is only available to service account clients that have been delegated domain-wide authority.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://mail.google.com/` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "User's email address. The special value \"me\" can be used to indicate the authenticated user."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "forwardingEmail": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An email address to which messages can be forwarded."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "verificationStatus": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "verificationStatusUnspecified",
+          "accepted",
+          "pending"
+        ],
+        "optional": true,
+        "description": "Indicates whether this address has been verified and is usable for forwarding. Read-only."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/gmail/api/reference/rest",
+    "codeHash": "a77dac79071315654d77f83bdea45d8e844d56385e6a861bd7c481083a3bb044"
+  }
+}

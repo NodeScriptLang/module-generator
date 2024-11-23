@@ -1,0 +1,73 @@
+{
+  "moduleName": "Gmail / Users / Messages / Insert",
+  "version": "0.0.0",
+  "description": "Directly inserts a message into only this user's mailbox similar to IMAP APPEND, bypassing most scanning and classification. Does not send a message.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://mail.google.com/` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. This method doesn't perform SPF checks, so it might not work for some spam messages, such as those attempting to perform domain spoofing. This method does not send a message."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "internalDateSource": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Source for Gmail's internal date of the message."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "deleted": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for Google Workspace accounts."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "raw": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "raw email base64-encoded string. Must comply with RFC2822 format."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/gmail/api/reference/rest",
+    "codeHash": "1b56d5fbd16df1adf770e18acf4252be35ee0407a899f53556f4dce5474753fd"
+  }
+}

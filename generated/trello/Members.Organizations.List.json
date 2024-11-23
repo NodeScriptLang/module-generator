@@ -1,0 +1,83 @@
+{
+  "moduleName": "Trello / Members / Organizations / List",
+  "version": "0.0.0",
+  "description": "Get a member's Workspaces",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID or username of the member"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "filter": {
+      "schema": {
+        "type": "string",
+        "default": "all",
+        "enum": [
+          "all",
+          "members",
+          "none",
+          "public"
+        ],
+        "optional": true,
+        "description": "One of: `all`, `members`, `none`, `public` (Note: `members` filters to only private Workspaces)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "id",
+          "name"
+        ],
+        "optional": true,
+        "description": "`all` or a comma-separated list of organization [fields](/cloud/trello/guides/rest-api/object-definitions/)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "paidAccount": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether or not to include paid account information in the returned workspace object"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "89972f315fef05c2adc0ebd4b3a432860252713b387028ab4984cc5ff304ee81"
+  }
+}

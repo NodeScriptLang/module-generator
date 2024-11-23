@@ -1,0 +1,197 @@
+{
+  "moduleName": "Google Drive / Comments / Update",
+  "version": "0.0.0",
+  "description": "Updates a comment with patch semantics.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/drive` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true,
+      "attributes": {
+        "oauthAppId": "vpvdwpswx02ec4i5"
+      }
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "alt": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "json"
+        ],
+        "optional": true,
+        "description": "Data format for the response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "quotaUser": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fileId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the file."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "commentId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the comment."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "anchor": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A region of the document represented as a JSON string. For details on defining anchor properties, refer to  Add comments and replies."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "author": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Information about a Drive user."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "content": {
+      "schema": {
+        "type": "string",
+        "description": "The plain text content of the comment. This field is used for setting the content, while htmlContent should be displayed."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "createdTime": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The time at which the comment was created (RFC 3339 date-time)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "deleted": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether the comment has been deleted. A deleted comment has no content."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "htmlContent": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The content of the comment with HTML formatting."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the comment."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "kind": {
+      "schema": {
+        "type": "string",
+        "default": "drive#comment",
+        "optional": true,
+        "description": "Identifies what kind of resource this is. Value: the fixed string \"drive#comment\"."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "modifiedTime": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The last time the comment or any of its replies was modified (RFC 3339 date-time)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "quotedFileContent": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The file content to which the comment refers, typically within the anchor region. For a text file, for example, this would be the text at the location of the comment."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "replies": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "The full list of replies to the comment in chronological order."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "resolved": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether the comment has been resolved by one of its replies."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/drive/api/reference/rest/v3",
+    "codeHash": "fa45a9cbcf45320f9d341798cf4dfab3f7343dd6faa2cefb31032f292f4088e4"
+  }
+}

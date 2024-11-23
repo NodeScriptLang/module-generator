@@ -1,0 +1,282 @@
+{
+  "moduleName": "Google Drive / Permissions / Create",
+  "version": "0.0.0",
+  "description": "Creates a permission for a file or shared drive. For more information on creating permissions, see Share files, folders & drives.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/drive` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true,
+      "attributes": {
+        "oauthAppId": "vpvdwpswx02ec4i5"
+      }
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "alt": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "json"
+        ],
+        "optional": true,
+        "description": "Data format for the response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "quotaUser": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fileId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the file or shared drive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "emailMessage": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A plain text custom message to include in the notification email."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "enforceSingleParent": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Deprecated. See moveToNewOwnersRoot for details."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "moveToNewOwnersRoot": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "This parameter will only take effect if the item is not in a shared drive and the request is attempting to transfer the ownership of the item. If set to true, the item will be moved to the new owner's My Drive root folder and all prior parents removed. If set to false, parents are not changed."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sendNotificationEmail": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether to send a notification email when sharing to users or groups. This defaults to true for users and groups, and is not allowed for other requests. It must not be disabled for ownership transfers."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "supportsAllDrives": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether the requesting application supports both My Drives and shared drives."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "transferOwnership": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether to transfer ownership to the specified user and downgrade the current owner to a writer. This parameter is required as an acknowledgement of the side effect. File owners can only transfer ownership of files existing on My Drive. Files existing in a shared drive are owned by the organization that owns that shared drive. Ownership transfers are not supported for files and folders in shared drives. Organizers of a shared drive can move items from that shared drive into their My Drive which transfers the ownership to them."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "useDomainAdminAccess": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a shared drive and the requester is an administrator of the domain to which the shared drive belongs."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "allowFileDiscovery": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether the permission allows the file to be discovered through search. This is only applicable for permissions of type domain or anyone."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "deleted": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether the account associated with this permission has been deleted. This field only pertains to user and group permissions."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "displayName": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The \"pretty\" name of the value of the permission. The following is a list of examples for each type of permission:  \n- user - User's full name, as defined for their Google Account, such as \"Joe Smith.\" \n- group - Name of the Google Group, such as \"The Company Administrators.\" \n- domain - String domain name, such as \"your-company.com.\" \n- anyone - No displayName is present."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "domain": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The domain to which this permission refers. The following options are currently allowed:  \n- The entire domain, such as \"your-company.com.\" \n- A target audience, such as \"ID.audience.googledomains.com.\""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "emailAddress": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The email address of the user or group to which this permission refers."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "expirationTime": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The time at which this permission will expire (RFC 3339 date-time). Expiration times have the following restrictions:  \n- They cannot be set on shared drive items. \n- They can only be set on user and group permissions. \n- The time must be in the future. \n- The time cannot be more than one year in the future."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of this permission. This is a unique identifier for the grantee, and is published in User resources as permissionId. IDs should be treated as opaque values."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "kind": {
+      "schema": {
+        "type": "string",
+        "default": "drive#permission",
+        "optional": true,
+        "description": "Identifies what kind of resource this is. Value: the fixed string \"drive#permission\"."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pendingOwner": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether the account associated with this permission is a pending owner. Only populated for user type permissions for files that aren't in a shared drive."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "permissionDetails": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Details of whether the permissions on this shared drive item are inherited or are directly on this item. This is an output-only field that's present only for shared drive items."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "photoLink": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A link to the user's profile photo, if available."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "role": {
+      "schema": {
+        "type": "string",
+        "description": "The role granted by this permission. While new values may be supported in the future, the following are currently allowed:  \n- owner \n- organizer \n- fileOrganizer \n- writer \n- commenter \n- reader"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "teamDrivePermissionDetails": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Deprecated - use permissionDetails instead."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "type": {
+      "schema": {
+        "type": "string",
+        "description": "The type of the grantee. Valid values are:  \n- user \n- group \n- domain \n- anyone  When creating a permission, if type is user or group, you must provide an emailAddress for the user or group. When type is domain, you must provide a domain. There isn't extra information required for the anyone type."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "view": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Indicates the view for this permission. Only populated for permissions that belong to a view. published is the only supported value."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/drive/api/reference/rest/v3",
+    "codeHash": "3bcb8ae83338590b05237f51529320892eac8ac7da7fbc303338a26f2a5ef9c1"
+  }
+}

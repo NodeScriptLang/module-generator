@@ -1,0 +1,37 @@
+{
+  "moduleName": "Hubspot CRM / Quotes / Delete",
+  "version": "0.0.0",
+  "description": "Move an Object identified by `{quoteId}` to the recycling bin.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "quoteId": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "3002e5b6603a3cb7168d7fc5a46f6eae278ccf7d1898629a3b0db3936cfad8c8"
+  }
+}

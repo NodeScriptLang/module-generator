@@ -1,0 +1,219 @@
+{
+  "moduleName": "Trello / Cards / Get By ID",
+  "version": "0.0.0",
+  "description": "Get a card by its ID",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the Card"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "`all` or a comma-separated list of [fields](/cloud/trello/guides/rest-api/object-definitions/). **Defaults**: `badges, checkItemStates, closed, dateLastActivity, desc, descData, due, start, idBoard, idChecklists, idLabels, idList, idMembers, idShort, idAttachmentCover, manualCoverAttachment, labels, name, pos, shortUrl, url`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "actions": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "See the [Actions Nested Resource](/cloud/trello/guides/rest-api/nested-resources/#actions-nested-resource)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "attachments": {
+      "schema": {
+        "type": "string",
+        "default": "false",
+        "optional": true,
+        "description": "`true`, `false`, or `cover`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "attachmentFields": {
+      "schema": {
+        "type": "string",
+        "default": "all",
+        "optional": true,
+        "description": "`all` or a comma-separated list of attachment [fields](/cloud/trello/guides/rest-api/object-definitions/)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "members": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether to return member objects for members on the card"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "memberFields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "`all` or a comma-separated list of member [fields](/cloud/trello/guides/rest-api/object-definitions/). **Defaults**: `avatarHash, fullName, initials, username`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "membersVoted": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether to return member objects for members who voted on the card"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "memberVotedFields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "`all` or a comma-separated list of member [fields](/cloud/trello/guides/rest-api/object-definitions/). **Defaults**: `avatarHash, fullName, initials, username`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "checkItemStates": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "checklists": {
+      "schema": {
+        "type": "string",
+        "default": "none",
+        "optional": true,
+        "description": "Whether to return the checklists on the card. `all` or `none`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "checklistFields": {
+      "schema": {
+        "type": "string",
+        "default": "all",
+        "optional": true,
+        "description": "`all` or a comma-separated list of `idBoard,idCard,name,pos`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "board": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether to return the board object the card is on"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "boardFields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "`all` or a comma-separated list of board [fields](/cloud/trello/guides/rest-api/object-definitions/#board-object). **Defaults**: `name, desc, descData, closed, idOrganization, pinned, url, prefs`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "list": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "See the [Lists Nested Resource](/cloud/trello/guides/rest-api/nested-resources/)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pluginData": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether to include pluginData on the card with the response"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "stickers": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether to include sticker models with the response"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "stickerFields": {
+      "schema": {
+        "type": "string",
+        "default": "all",
+        "optional": true,
+        "description": "`all` or a comma-separated list of sticker [fields](/cloud/trello/guides/rest-api/object-definitions/)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "customFieldItems": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Whether to include the customFieldItems"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "0bcded41585213b4d163f63ac584bb5af7ad56eeb41cbb0f3626cd73b235a1e8"
+  }
+}

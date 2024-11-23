@@ -1,0 +1,187 @@
+{
+  "moduleName": "Google Drive / Shared Drives / Create",
+  "version": "0.0.0",
+  "description": "Creates a shared drive.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/drive` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
+      },
+      "advanced": false,
+      "hideValue": true,
+      "attributes": {
+        "oauthAppId": "vpvdwpswx02ec4i5"
+      }
+    },
+    "apiKey": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "API key can be generated in Google Developer Console in APIs & Services section. Leave blank if OAuth access token is used."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "alt": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "json"
+        ],
+        "optional": true,
+        "description": "Data format for the response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "quotaUser": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "requestId": {
+      "schema": {
+        "type": "string",
+        "description": "An ID, such as a random UUID, which uniquely identifies this user's request for idempotent creation of a shared drive. A repeated request by the same user and with the same request ID will avoid creating duplicates by attempting to create the same shared drive. If the shared drive already exists a 409 error will be returned."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "backgroundImageFile": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "An image file and cropping parameters from which a background image for this shared drive is set. This is a write-only field; it can only be set on drive.drives.update requests that don't set themeId. When specified, all fields of the backgroundImageFile must be set."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "backgroundImageLink": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A short-lived link to this shared drive's background image."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "capabilities": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Capabilities the current user has on this shared drive."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "colorRgb": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The color of this shared drive as an RGB hex string. It can only be set on drive.drives.update requests that don't set themeId."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "createdTime": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The time at which the shared drive was created (RFC 3339 date-time)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "hidden": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether the shared drive is hidden from default view."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of this shared drive which is also the ID of the top level folder of this shared drive."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "kind": {
+      "schema": {
+        "type": "string",
+        "default": "drive#drive",
+        "optional": true,
+        "description": "Identifies what kind of resource this is. Value: the fixed string \"drive#drive\"."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "The name of this shared drive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "orgUnitId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The organizational unit of this shared drive. This field is only populated on drives.list responses when the useDomainAdminAccess parameter is set to true."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "restrictions": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "A set of restrictions that apply to this shared drive or items inside this shared drive."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "themeId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The ID of the theme from which the background image and color are set. The set of possible driveThemes can be retrieved from a drive.about.get response. When not specified on a drive.drives.create request, a random theme is chosen from which the background image and color are set. This is a write-only field; it can only be set on requests that don't set colorRgb or backgroundImageFile."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.google.com/drive/api/reference/rest/v3",
+    "codeHash": "ee81438e737703adb2bb4e734ad4c30c0e8529bdbef687afa6e47cfcbbd0af7a"
+  }
+}

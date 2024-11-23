@@ -1,0 +1,40 @@
+{
+  "moduleName": "Hubspot CRM / Feedback Submissions / Batch / Update",
+  "version": "0.0.0",
+  "description": "Update a batch of feedback submissions",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "inputs": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "b24d63df442c1caaf6b3fb59dc1f2cc3d476d7c2bad5eaed47da99cd720a3325"
+  }
+}

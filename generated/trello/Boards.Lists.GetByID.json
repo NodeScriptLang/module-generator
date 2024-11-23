@@ -1,0 +1,94 @@
+{
+  "moduleName": "Trello / Boards / Lists / Get By ID",
+  "version": "0.0.0",
+  "description": "Get the Lists on a Board",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the board"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "cards": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "all",
+          "closed",
+          "none",
+          "open"
+        ],
+        "optional": true,
+        "description": "Filter to apply to Cards."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "cardFields": {
+      "schema": {
+        "type": "string",
+        "default": "all",
+        "optional": true,
+        "description": "`all` or a comma-separated list of card [fields](/cloud/trello/guides/rest-api/object-definitions/#card-object)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "filter": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "all",
+          "closed",
+          "none",
+          "open"
+        ],
+        "optional": true,
+        "description": "Filter to apply to Lists"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "default": "all",
+        "optional": true,
+        "description": "`all` or a comma-separated list of list [fields](/cloud/trello/guides/rest-api/object-definitions/)"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "64260c611d49066357e008f0d0262c698af1f01599fcaafb29cda323bc187713"
+  }
+}

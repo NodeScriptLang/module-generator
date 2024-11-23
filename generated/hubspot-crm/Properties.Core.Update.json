@@ -1,0 +1,158 @@
+{
+  "moduleName": "Hubspot CRM / Properties / Core / Update",
+  "version": "0.0.0",
+  "description": "Perform a partial update of a property identified by {propertyName}. Provided fields will be overwritten.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "OAuth 2 or Private App access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "objectType": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "propertyName": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "groupName": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The name of the property group the property belongs to."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "hidden": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "If true, the property won't be visible and can't be used in HubSpot."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "options": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "A list of valid options for the property."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "displayOrder": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Properties are displayed in order starting with the lowest positive integer value. Values of -1 will cause the Property to be displayed after any positive values."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A description of the property that will be shown as help text in HubSpot."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "calculationFormula": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Represents a formula that is used to compute a calculated property."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "label": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A human-readable property label that will be shown in HubSpot."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "type": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "string",
+          "number",
+          "date",
+          "datetime",
+          "enumeration",
+          "bool"
+        ],
+        "optional": true,
+        "description": "The data type of the property."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fieldType": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "textarea",
+          "text",
+          "date",
+          "file",
+          "number",
+          "select",
+          "radio",
+          "checkbox",
+          "booleancheckbox",
+          "calculation_equation"
+        ],
+        "optional": true,
+        "description": "Controls how the property appears in HubSpot."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "formField": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether or not the property can be used in a HubSpot form."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developers.hubspot.com/beta-docs/reference/api",
+    "codeHash": "bb1bef124c35d0d96357edcb034ddc1395fe185c229caf057a2062f7368f4d96"
+  }
+}

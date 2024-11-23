@@ -1,0 +1,134 @@
+{
+  "moduleName": "Trello / Enterprises / Members / Query",
+  "version": "0.0.0",
+  "description": "Get an enterprise's users. You can choose to retrieve licensed members, board guests, etc.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Api Key - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "description": "Trello Access Token - created in the Trello console."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the enterprise to retrieve."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "licensed": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "When true, returns members who possess a license for the corresponding Trello Enterprise; when false, returns members who do not. If unspecified, both licensed and unlicensed members will be returned."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "deactivated": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "When true, returns members who have been deactivated for the corresponding Trello Enterprise; when false, returns members who have not. If unspecified, both active and deactivated members will be returned."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "collaborator": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "When true, returns members who are guests on one or more boards in the corresponding Trello Enterprise (but do not possess a license); when false, returns members who are not. If unspecified, both guests and non-guests will be returned."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "managed": {
+      "schema": {
+        "type": "boolean",
+        "default": "none",
+        "optional": true,
+        "description": "When true, returns members who are managed by the corresponding Trello Enterprise; when false, returns members who are not. If unspecified, both managed and unmanaged members will be returned."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "admin": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "When true, returns members who are administrators of the corresponding Trello Enterprise; when false, returns members who are not. If unspecified, both admin and non-admin members will be returned."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "activeSince": {
+      "schema": {
+        "type": "string",
+        "default": "none",
+        "optional": true,
+        "description": "Returns only Trello users active since this date (inclusive)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "inactiveSince": {
+      "schema": {
+        "type": "string",
+        "default": "none",
+        "optional": true,
+        "description": "Returns only Trello users active since this date (inclusive)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "search": {
+      "schema": {
+        "type": "string",
+        "default": "none",
+        "optional": true,
+        "description": "Returns members with email address or full name that start with the search value."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "startIndex": {
+      "schema": {
+        "type": "string",
+        "default": "none",
+        "optional": true,
+        "description": "Cursor to return next set of results"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.atlassian.com/cloud/trello/rest",
+    "codeHash": "913fbd7f3f99af3ad839f087cd1c95ca17deef7e2d79213c2b48a8d11fe7a91f"
+  }
+}
