@@ -1,22 +1,15 @@
 export async function compute(params, ctx) {
   let url = new URL(
-    "https://api.github.com/repos/{owner}/{repo}/issues"
+    "https://api.github.com/repos/{owner}/{repo}/issues/{issue_number}/comments"
       .replace("{owner}", params["owner"])
       .replace("{repo}", params["repo"])
+      .replace("{issue_number}", params["issueNumber"])
   );
   const headers = {};
   const addQueryParam = (key, val) => { if (val != null) url.searchParams.append(key, val) };
   if (params["accessToken"] != null) {
     headers["Authorization"] = ("Bearer" + " " + params["accessToken"].replace(/^Bearer\s*/gi, ''));
   }
-  addQueryParam("milestone", params["milestone"]);
-  addQueryParam("state", params["state"]);
-  addQueryParam("assignee", params["assignee"]);
-  addQueryParam("creator", params["creator"]);
-  addQueryParam("mentioned", params["mentioned"]);
-  addQueryParam("labels", params["labels"]);
-  addQueryParam("sort", params["sort"]);
-  addQueryParam("direction", params["direction"]);
   addQueryParam("since", params["since"]);
   addQueryParam("per_page", params["perPage"]);
   addQueryParam("page", params["page"]);
@@ -45,4 +38,6 @@ export async function compute(params, ctx) {
     throw error;
   }
   return ctx.lib.parseJson(responseBodyText) ?? responseBodyText;
+}
+ responseBodyText;
 }

@@ -1,0 +1,107 @@
+{
+  "moduleName": "GitHub / Milestones / List",
+  "version": "0.0.0",
+  "description": "Lists milestones for a repository.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "state": {
+      "schema": {
+        "type": "string",
+        "default": "open",
+        "enum": [
+          "open",
+          "closed",
+          "all"
+        ],
+        "optional": true,
+        "description": "The state of the milestone. Either `open`, `closed`, or `all`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sort": {
+      "schema": {
+        "type": "string",
+        "default": "due_on",
+        "enum": [
+          "due_on",
+          "completeness"
+        ],
+        "optional": true,
+        "description": "What to sort results by. Either `due_on` or `completeness`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "direction": {
+      "schema": {
+        "type": "string",
+        "default": "asc",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "optional": true,
+        "description": "The direction of the sort. Either `asc` or `desc`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "perPage": {
+      "schema": {
+        "type": "number",
+        "default": "30",
+        "optional": true,
+        "description": "The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "number",
+        "default": "1",
+        "optional": true,
+        "description": "The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/issues/milestones#list-milestones",
+    "codeHash": "41675b9781ee322386430152638eb89224e12936a90f22448b679d96219afcd4"
+  }
+}

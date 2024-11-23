@@ -1,0 +1,64 @@
+{
+  "moduleName": "GitHub / Issues / Add Assignee",
+  "version": "0.0.0",
+  "description": "Adds up to 10 assignees to an issue. Users already assigned to an issue are not replaced.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "issueNumber": {
+      "schema": {
+        "type": "number",
+        "description": "The number that identifies the issue."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "assignees": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Usernames of people to assign this issue to. _NOTE: Only users with push access can add assignees to an issue. Assignees are silently ignored otherwise._"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/issues/assignees#add-assignees-to-an-issue",
+    "codeHash": "b86b63a3d8d470fe20639e1016c84e51bcdb9f6b08adbef5069622bdbe721c60"
+  }
+}

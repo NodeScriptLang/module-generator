@@ -1,23 +1,22 @@
 export async function compute(params, ctx) {
   let url = new URL(
-    "https://api.github.com/repos/{owner}/{repo}/issues"
-      .replace("{owner}", params["owner"])
-      .replace("{repo}", params["repo"])
+    "https://api.github.com/issues"
   );
   const headers = {};
   const addQueryParam = (key, val) => { if (val != null) url.searchParams.append(key, val) };
   if (params["accessToken"] != null) {
     headers["Authorization"] = ("Bearer" + " " + params["accessToken"].replace(/^Bearer\s*/gi, ''));
   }
-  addQueryParam("milestone", params["milestone"]);
+  addQueryParam("filter", params["filter"]);
   addQueryParam("state", params["state"]);
-  addQueryParam("assignee", params["assignee"]);
-  addQueryParam("creator", params["creator"]);
-  addQueryParam("mentioned", params["mentioned"]);
   addQueryParam("labels", params["labels"]);
   addQueryParam("sort", params["sort"]);
   addQueryParam("direction", params["direction"]);
   addQueryParam("since", params["since"]);
+  addQueryParam("collab", params["collab"]);
+  addQueryParam("orgs", params["orgs"]);
+  addQueryParam("owned", params["owned"]);
+  addQueryParam("pulls", params["pulls"]);
   addQueryParam("per_page", params["perPage"]);
   addQueryParam("page", params["page"]);
   const body = undefined;

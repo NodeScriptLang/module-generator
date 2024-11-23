@@ -862,7 +862,7 @@ modules:
         schema:
           type: string
         required: true
-  - moduleName: Issues / List All
+  - moduleName: Issues / Authenticated User / List All
     method: get
     path: /issues
     description: >-
@@ -5964,7 +5964,7 @@ modules:
         schema:
           type: string
         required: true
-  - moduleName: Orgs / Custom Property Values / List For Repos
+  - moduleName: Orgs / List Repos By Properties
     method: get
     path: /orgs/{org}/properties/values
     description: |-
@@ -16649,7 +16649,7 @@ modules:
         schema:
           type: string
         required: true
-  - moduleName: Git / Matching Refs / List
+  - moduleName: Git / Refs / List Matched
     method: get
     path: /repos/{owner}/{repo}/git/matching-refs/{ref}
     description: >-
@@ -18689,7 +18689,7 @@ modules:
         schema:
           type: number
         required: true
-  - moduleName: Issues /Update
+  - moduleName: Issues / Update
     method: patch
     path: /repos/{owner}/{repo}/issues/{issue_number}
     description: >-
@@ -20366,7 +20366,7 @@ modules:
           type: number
           default: 1
         required: false
-  - moduleName: Activity / Repo Notifications / List For Authenticated User
+  - moduleName: Activity / Authenticated User / Repo Notifications
     method: get
     path: /repos/{owner}/{repo}/notifications
     description: Lists all notifications for the current user in the specified repository.
@@ -27085,7 +27085,7 @@ modules:
         schema:
           type: number
         required: true
-  - moduleName: Issues / User / Issues / List
+  - moduleName: Issues / Authenticated User / List
     method: get
     path: /user/issues
     description: >-
@@ -27388,7 +27388,7 @@ modules:
             - active
         required: true
     requestBodyType: json
-  - moduleName: Orgs / List For Authenticated User
+  - moduleName: Orgs / Authenticated User / List
     method: get
     path: /user/orgs
     description: >-
@@ -29747,7 +29747,7 @@ modules:
         schema:
           type: number
         required: true
-  - moduleName: Projects / For User / List
+  - moduleName: User / Projects / List
     method: get
     path: /users/{username}/projects
     description: Lists projects for a user.
@@ -29792,7 +29792,7 @@ modules:
           type: number
           default: 1
         required: false
-  - moduleName: Activity / Received Events / List For User
+  - moduleName: Activity / User / Received Events
     method: get
     path: /users/{username}/received_events
     description: >-
@@ -29836,7 +29836,7 @@ modules:
           type: number
           default: 1
         required: false
-  - moduleName: Activity / Public Received Events / List For User
+  - moduleName: Activity / User / Public Received Events
     method: get
     path: /users/{username}/received_events/public
     description: >-

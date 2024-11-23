@@ -1,0 +1,139 @@
+{
+  "moduleName": "GitHub / Issues / Update",
+  "version": "0.0.0",
+  "description": "Issue owners and users with push access or Triage role can edit an issue.\n\nThis endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\"\n\n- **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.\n- **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.\n- **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.\n- **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "issueNumber": {
+      "schema": {
+        "type": "number",
+        "description": "The number that identifies the issue."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "title": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The title of the issue."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "body": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The contents of the issue."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "assignee": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Username to assign to this issue. **This field is closing down.**"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "state": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "open",
+          "closed"
+        ],
+        "optional": true,
+        "description": "The open or closed state of the issue."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "stateReason": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "completed",
+          "not_planned",
+          "reopened"
+        ],
+        "optional": true,
+        "description": "The reason for the state change. Ignored unless `state` is changed."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "milestone": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "labels": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Labels to associate with this issue. Pass one or more labels to _replace_ the set of labels on this issue. Send an empty array (`[]`) to clear all labels from the issue. Only users with push access can set labels for issues. Without push access to the repository, label changes are silently dropped."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "assignees": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Usernames to assign to this issue. Pass one or more user logins to _replace_ the set of assignees on this issue. Send an empty array (`[]`) to clear all assignees from the issue. Only users with push access can set assignees for new issues. Without push access to the repository, assignee changes are silently dropped."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/issues/issues#update-an-issue",
+    "codeHash": "086ca98eba89e407c393e6a7632ae13a48280c2a6e3cce2f4794468a64bcecd5"
+  }
+}

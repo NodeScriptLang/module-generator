@@ -1,0 +1,52 @@
+{
+  "moduleName": "GitHub / Issues / Remove Labels",
+  "version": "0.0.0",
+  "description": "Removes all labels from an issue.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "GitHub Access Token"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "owner": {
+      "schema": {
+        "type": "string",
+        "description": "The account owner of the repository. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repo": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the repository without the `.git` extension. The name is not case sensitive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "issueNumber": {
+      "schema": {
+        "type": "number",
+        "description": "The number that identifies the issue."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://docs.github.com/rest/issues/labels#remove-all-labels-from-an-issue",
+    "codeHash": "fc0c8ede885db58b5196455b255ec2ac9ee1032e7cd122409e53e789e75ff45e"
+  }
+}
