@@ -7,9 +7,7 @@ export async function compute(params, ctx) {
   if (params["auth"] != null) {
     headers["Authorization"] = ("Bearer" + " " + params["auth"].replace(/^Bearer\s*/gi, ''));
   }
-  if (params["notionVersion"] != null) {
-    headers["Notion-Version"] = params["notionVersion"];
-  }
+  headers["Notion-Version"] = params["notionVersion"] ?? "2022-06-28";
   addQueryParam("block_id", params["blockId"]);
   addQueryParam("page_size", params["pageSize"]);
   headers["content-type"] = "application/x-www-form-urlencoded";

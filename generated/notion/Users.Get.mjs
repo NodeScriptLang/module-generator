@@ -8,9 +8,7 @@ export async function compute(params, ctx) {
   if (params["auth"] != null) {
     headers["Authorization"] = ("Bearer" + " " + params["auth"].replace(/^Bearer\s*/gi, ''));
   }
-  if (params["notionVersion"] != null) {
-    headers["Notion-Version"] = params["notionVersion"];
-  }
+  headers["Notion-Version"] = params["notionVersion"] ?? "2022-06-28";
   headers["content-type"] = "application/x-www-form-urlencoded";
   let body = new URLSearchParams();
   const addBodyParam = (key, val) => { if (val !== undefined) body.append(key, val) };

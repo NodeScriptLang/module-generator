@@ -1,7 +1,7 @@
 id: notion
 displayName: Notion
 workspaceId:
-  development: ""
+  development: jETbcdMOP89uwDc3
   production: 5nSUXxACmPQWw66N
 baseUrl: https://api.notion.com
 description:

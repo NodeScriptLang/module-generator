@@ -139,13 +139,23 @@ export class LibraryGenerator {
         const prefix = pspec.prefix;
         const paramName = JSON.stringify(pspec.paramName);
         const paramKey = JSON.stringify(pspec.paramKey);
-        code.block(`if (params[${paramName}] != null) {`, `}`, () => {
-            let valueExpr = `params[${paramName}]`;
-            if (prefix) {
-                valueExpr = `(${JSON.stringify(pspec.prefix)} + " " + ${valueExpr}.replace(/^${escapeStringRegexp(prefix)}\\s*/gi, ''))`;
-            }
+        const defaultValue = pspec.schema.default ? JSON.stringify(pspec.schema.default) : null;
+
+        let valueExpr = defaultValue
+            ? `params[${paramName}] ?? ${defaultValue}`
+            : `params[${paramName}]`;
+
+        if (prefix) {
+            valueExpr = `(${JSON.stringify(prefix)} + " " + ${valueExpr}.replace(/^${escapeStringRegexp(prefix)}\\s*/gi, ''))`;
+        }
+
+        if (defaultValue) {
             code.line(`headers[${paramKey}] = ${valueExpr};`);
-        });
+        } else {
+            code.block(`if (params[${paramName}] != null) {`, `}`, () => {
+                code.line(`headers[${paramKey}] = ${valueExpr};`);
+            });
+        }
     }
 
     private emitRequestBodyJson(code: CodeBuilder, mspec: LibraryModuleSpec) {
