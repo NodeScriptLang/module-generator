@@ -10,15 +10,19 @@
       "schema": {
         "type": "any",
         "optional": true,
-        "description": "Notion API key.\n"
+        "description": "Notion API key or access token.\n"
       },
       "advanced": true,
-      "hideValue": true
+      "hideValue": true,
+      "attributes": {
+        "oauthAppId": "gai0i8law5nxqtv1"
+      }
     },
     "notionVersion": {
       "schema": {
         "type": "string",
         "default": "2022-06-28",
+        "optional": true,
         "description": ""
       },
       "advanced": true,
@@ -50,6 +54,6 @@
   },
   "attributes": {
     "externalDocs": "https://developers.notion.com/reference/update-a-block",
-    "codeHash": "0d0a701935a61d0489ddb234b43ec0430bd6de053bc17ae326c348956bb69fc3"
+    "codeHash": "169bfa07b7cb3e3afbf06d87fd7ac17d662ba435dc08034c94d0edc627fe1183"
   }
 }

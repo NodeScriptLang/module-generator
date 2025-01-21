@@ -3,13 +3,18 @@ export async function compute(params, ctx) {
     "https://api.notion.com/v1/users/{id}"
       .replace("{id}", params["id"])
   );
-  const addQueryParam = (key, val) => { if (val !== undefined) url.searchParams.append(key, val) };
   const headers = {};
-  headers["Authorization"] = ("Bearer" + " " + params["auth"].replace(/^Bearer\s+/gi, ''));
-  headers["Notion-Version"] = params["notionVersion"];
+  const addQueryParam = (key, val) => { if (val != null) url.searchParams.append(key, val) };
+  if (params["auth"] != null) {
+    headers["Authorization"] = ("Bearer" + " " + params["auth"].replace(/^Bearer\s*/gi, ''));
+  }
+  if (params["notionVersion"] != null) {
+    headers["Notion-Version"] = params["notionVersion"];
+  }
   headers["content-type"] = "application/x-www-form-urlencoded";
-  const body = new URLSearchParams();
+  let body = new URLSearchParams();
   const addBodyParam = (key, val) => { if (val !== undefined) body.append(key, val) };
+  body = body.toString()
   const res = await ctx.lib.fetch({
     method: "GET",
     url: url.href,
