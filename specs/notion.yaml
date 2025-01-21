@@ -11,7 +11,9 @@ commonParams:
     in: header
     prefix: Bearer
     description: |
-      Notion API key.
+      Notion API key or access token.
+    attributes:
+      oauthAppId: gai0i8law5nxqtv1
   - paramName: notionVersion
     paramKey: Notion-Version
     required: false
