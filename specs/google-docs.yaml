@@ -1,8 +1,8 @@
 id: google-docs
 displayName: Google Docs
 workspaceId:
-  development: "BBpuJYsdDsGDklzV"
-  production: "QzyGl9Nz6s8Y7ixs"
+  development: BBpuJYsdDsGDklzV
+  production: QzyGl9Nz6s8Y7ixs
 baseUrl: https://docs.googleapis.com
 description: Reads and writes Google Docs documents.
 commonParams:
@@ -13,6 +13,8 @@ commonParams:
     description: OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/documents` scope. Google Auth / Service Account Token can be used to obtain a valid access token.
     required: false
     advanced: false
+    attributes:
+      oauthAppId: 5inls6zwmv34cgim
   - paramName: apiKey
     paramKey: key
     in: query
