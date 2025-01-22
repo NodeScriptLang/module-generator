@@ -1,5 +1,5 @@
 {
-  "moduleName": "Google / User Info / Retrieve",
+  "moduleName": "Google Auth / User Info / Retrieve",
   "version": "0.0.0",
   "description": "",
   "keywords": [],
@@ -102,6 +102,6 @@
   },
   "attributes": {
     "externalDocs": "",
-    "codeHash": "ba787e30f34080783325cfccaa26eb38cbe56e90e17eb635d4f7c4e77d001db8"
+    "codeHash": "a67ed1b2f81679019eb876bd682074542bfcc3275635abcb1b3a66ccac9dd6c3"
   }
 }

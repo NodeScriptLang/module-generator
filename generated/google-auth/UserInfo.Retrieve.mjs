@@ -32,7 +32,7 @@ export async function compute(params, ctx) {
     error.status = res.status;
     error.stack = "";
     error.details = {
-      service: "Google",
+      service: "Google Auth",
       method: "get",
       url: url.href,
       ...details,
