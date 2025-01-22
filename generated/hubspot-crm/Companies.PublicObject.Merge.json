@@ -13,7 +13,10 @@
         "description": "OAuth 2 or Private App access token."
       },
       "advanced": false,
-      "hideValue": true
+      "hideValue": true,
+      "attributes": {
+        "oauthAppId": "c6g0wn1vgu5parya"
+      }
     },
     "objectIdToMerge": {
       "schema": {

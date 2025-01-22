@@ -1,8 +1,8 @@
 id: hubspot-crm
 displayName: Hubspot CRM
 workspaceId:
-  development: "jWOtOfz4599NAuRa"
-  production: "22uopICJF01IPoPp"
+  development: jWOtOfz4599NAuRa
+  production: 22uopICJF01IPoPp
 baseUrl: https://api.hubapi.com
 description: ""
 commonParams:
@@ -13,6 +13,8 @@ commonParams:
     description: OAuth 2 or Private App access token.
     required: false
     advanced: false
+    attributes:
+      oauthAppId: c6g0wn1vgu5parya
 modules:
   - moduleName: Contacts / Batch / Read
     method: post
