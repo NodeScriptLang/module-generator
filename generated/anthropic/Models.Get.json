@@ -1,0 +1,54 @@
+{
+  "moduleName": "Anthropic / Models / Get",
+  "version": "0.0.0",
+  "description": "Get a specific model.\n\nThe Models API response can be used to determine information about a specific model or resolve a model alias to a model ID.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "Anthropic API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "modelId": {
+      "schema": {
+        "type": "string",
+        "description": "Model identifier or alias."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "anthropicVersion": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "xApiKey": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "b04cd98dd1c0afc5ee8562f55294393833adbbb93241dc79fd82e76b4fd80e69"
+  }
+}

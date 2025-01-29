@@ -1,0 +1,48 @@
+{
+  "moduleName": "Anthropic / Message Batches / Create",
+  "version": "0.0.0",
+  "description": "Send a batch of Message creation requests.\n\nThe Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "Anthropic API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "anthropicVersion": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "requests": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "List of requests for prompt completion. Each is an individual request to create a Message."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "26e5b320a9ee15f193ee1f73bcf68619228f5c04be110001f1f1fdb0f4a75c8d"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "moduleName": "Anthropic / Text Completions / Complete",
+  "version": "0.0.0",
+  "description": "[Legacy] Create a Text Completion.\n\nThe Text Completions API is a legacy API. We recommend using the [Messages API](https://docs.anthropic.com/en/api/messages) going forward.\n\nFuture models and features will not be compatible with Text Completions. See our [migration guide](https://docs.anthropic.com/en/api/migrating-from-text-completions-to-messages) for guidance in migrating from Text Completions to Messages.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "Anthropic API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "anthropicVersion": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "model": {
+      "schema": {
+        "type": "any",
+        "description": "The model that will complete your prompt.\\n\\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "prompt": {
+      "schema": {
+        "type": "string",
+        "description": "The prompt that you want Claude to complete.\n\nFor proper response generation you will need to format your prompt using alternating `\\n\\nHuman:` and `\\n\\nAssistant:` conversational turns. For example:\n\n```\n\"\\n\\nHuman: {userQuestion}\\n\\nAssistant:\"\n```\n\nSee [prompt validation](https://docs.anthropic.com/en/api/prompt-validation) and our guide to [prompt design](https://docs.anthropic.com/en/docs/intro-to-prompting) for more details."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "maxTokensToSample": {
+      "schema": {
+        "type": "number",
+        "minimum": 1,
+        "description": "The maximum number of tokens to generate before stopping.\n\nNote that our models may stop _before_ reaching this maximum. This parameter only specifies the absolute maximum number of tokens to generate."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "stopSequences": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Sequences that will cause the model to stop generating.\n\nOur models stop on `\"\\n\\nHuman:\"`, and may include additional built-in stop sequences in the future. By providing the stop_sequences parameter, you may include additional strings that will cause the model to stop generating."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "temperature": {
+      "schema": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1,
+        "optional": true,
+        "description": "Amount of randomness injected into the response.\n\nDefaults to `1.0`. Ranges from `0.0` to `1.0`. Use `temperature` closer to `0.0` for analytical / multiple choice, and closer to `1.0` for creative and generative tasks.\n\nNote that even with `temperature` of `0.0`, the results will not be fully deterministic."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "topP": {
+      "schema": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1,
+        "optional": true,
+        "description": "Use nucleus sampling.\n\nIn nucleus sampling, we compute the cumulative distribution over all the options for each subsequent token in decreasing probability order and cut it off once it reaches a particular probability specified by `top_p`. You should either alter `temperature` or `top_p`, but not both.\n\nRecommended for advanced use cases only. You usually only need to use `temperature`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "topK": {
+      "schema": {
+        "type": "number",
+        "minimum": 0,
+        "optional": true,
+        "description": "Only sample from the top K options for each subsequent token.\n\nUsed to remove \"long tail\" low probability responses. [Learn more technical details here](https://towardsdatascience.com/how-to-sample-from-language-models-682bceb97277).\n\nRecommended for advanced use cases only. You usually only need to use `temperature`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "metadata": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "An object describing metadata about the request."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "stream": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Whether to incrementally stream the response using server-sent events.\n\nSee [streaming](https://docs.anthropic.com/en/api/streaming) for details."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "e2dc991b9eb0d459ca537a66e6b63b6fddc9a476350ed8295e80c02fab9b9d7b"
+  }
+}
