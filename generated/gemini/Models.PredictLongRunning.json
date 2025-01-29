@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Models / Predict Long Running",
   "version": "0.0.0",
   "description": "Same as Predict but returns an LRO.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Models / Count Message Tokens",
   "version": "0.0.0",
   "description": "Runs a model's tokenizer on a string and returns the token count.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

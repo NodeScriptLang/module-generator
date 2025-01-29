@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Corpora / Documents / Create",
   "version": "0.0.0",
   "description": "Creates an empty `Document`.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

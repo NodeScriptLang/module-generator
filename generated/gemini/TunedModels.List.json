@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Tuned Models / List",
   "version": "0.0.0",
   "description": "Lists created tuned models.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Models / Batch Embed Text",
   "version": "0.0.0",
   "description": "Generates multiple embeddings from the model given input text in a synchronous call.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Models / Generate Message",
   "version": "0.0.0",
   "description": "Generates a response from the model given an input `MessagePrompt`.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

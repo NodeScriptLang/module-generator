@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Corpora / Documents / Query",
   "version": "0.0.0",
   "description": "Performs semantic search over a `Document`.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Tuned Models / Permissions / Delete",
   "version": "0.0.0",
   "description": "Deletes the permission.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

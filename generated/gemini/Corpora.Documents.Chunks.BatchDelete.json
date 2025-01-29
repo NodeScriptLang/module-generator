@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Corpora / Documents / Chunks / Batch Delete",
   "version": "0.0.0",
   "description": "Batch delete `Chunk`s.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

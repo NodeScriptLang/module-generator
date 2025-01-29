@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Models / Generate Answer",
   "version": "0.0.0",
   "description": "Generates a grounded answer from the model given an input `GenerateAnswerRequest`.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Files / Get",
   "version": "0.0.0",
   "description": "Gets the metadata for the given `File`.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

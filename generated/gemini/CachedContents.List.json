@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Cached Contents / List",
   "version": "0.0.0",
   "description": "Lists CachedContents.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Corpora / List",
   "version": "0.0.0",
   "description": "Lists all `Corpora` owned by the user.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {
