@@ -6,6 +6,9 @@
 
 https://apis.guru/
 
+* Gemini: https://generativelanguage.googleapis.com/v1beta/cachedContents
+
+
 ## How to
 
 [Squad ADA docs](https://github.com/ubio/squad-nodescript/blob/main/docs/Third%20Party%20Libraries%20Module%20Generator.md)
