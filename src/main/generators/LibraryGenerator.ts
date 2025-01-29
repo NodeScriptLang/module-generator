@@ -16,7 +16,7 @@ export class LibraryGenerator {
             moduleName: [this.librarySpec.displayName, mspec.moduleName].join(' / '),
             version: '0.0.0',
             description: mspec.description,
-            keywords: [],
+            keywords: [...(this.librarySpec.commonKeywords || [])],
             cacheMode: 'always',
             evalMode: 'manual',
             params: this.generateParamDefs(mspec),
