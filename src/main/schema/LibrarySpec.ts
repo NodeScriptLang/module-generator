@@ -10,6 +10,7 @@ export interface LibrarySpec {
     baseUrl: string;
     description: string;
     commonParams?: LibraryParamSpec[];
+    commonKeywords?: string[];
     auth?: {
         name: string;
         in: 'header' | 'query';
@@ -33,6 +34,11 @@ export const LibrarySpecSchema = new Schema<LibrarySpec>({
         commonParams: {
             type: 'array',
             items: LibraryParamSpecSchema.schema,
+            optional: true,
+        },
+        commonKeywords: {
+            type: 'array',
+            items: { type: 'string' },
             optional: true,
         },
         auth: {
