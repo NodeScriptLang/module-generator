@@ -2,7 +2,10 @@
   "moduleName": "Anthropic / Message Batches / Create",
   "version": "0.0.0",
   "description": "Send a batch of Message creation requests.\n\nThe Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "claude"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

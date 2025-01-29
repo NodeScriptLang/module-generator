@@ -2,7 +2,10 @@
   "moduleName": "Anthropic / Models / Get",
   "version": "0.0.0",
   "description": "Get a specific model.\n\nThe Models API response can be used to determine information about a specific model or resolve a model alias to a model ID.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "claude"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

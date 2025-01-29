@@ -2,7 +2,10 @@
   "moduleName": "Anthropic / Messages / Create",
   "version": "0.0.0",
   "description": "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "claude"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

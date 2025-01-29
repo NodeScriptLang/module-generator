@@ -2,7 +2,10 @@
   "moduleName": "Anthropic / Message Batches / Delete",
   "version": "0.0.0",
   "description": "Delete a Message Batch.\n\nMessage Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "claude"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

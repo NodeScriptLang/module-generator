@@ -2,7 +2,10 @@
   "moduleName": "Anthropic / Message Batches / List",
   "version": "0.0.0",
   "description": "List all Message Batches within a Workspace. Most recently created batches are returned first.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "claude"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

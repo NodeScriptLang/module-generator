@@ -2,7 +2,10 @@
   "moduleName": "Anthropic / Models / List",
   "version": "0.0.0",
   "description": "List available models.\n\nThe Models API response can be used to determine which models are available for use in the API. More recently released models are listed first.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "claude"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

@@ -2,7 +2,10 @@
   "moduleName": "Anthropic / Message Batches / Retrieve",
   "version": "0.0.0",
   "description": "This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "claude"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

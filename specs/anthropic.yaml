@@ -5,6 +5,9 @@ workspaceId:
   production: FYDlsYvxQXxqwgvB
 baseUrl: https://api.anthropic.com
 description: The Anthropic REST API. Please see https://api.anthropic.com for more details.
+commonKeywords:
+  - ai
+  - claude
 commonParams:
   - paramName: auth
     paramKey: Authorization
