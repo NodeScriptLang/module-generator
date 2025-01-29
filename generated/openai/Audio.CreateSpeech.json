@@ -1,0 +1,102 @@
+{
+  "moduleName": "OpenAI / Audio / Create Speech",
+  "version": "0.0.0",
+  "description": "Generates audio from the input text.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "model": {
+      "schema": {
+        "type": "any",
+        "description": "One of the available [TTS models](/docs/models#tts): `tts-1` or `tts-1-hd`\n"
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "input": {
+      "schema": {
+        "type": "string",
+        "description": "The text to generate audio for. The maximum length is 4096 characters."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "voice": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "alloy",
+          "ash",
+          "coral",
+          "echo",
+          "fable",
+          "onyx",
+          "nova",
+          "sage",
+          "shimmer"
+        ],
+        "description": "The voice to use when generating the audio. Supported voices are `alloy`, `ash`, `coral`, `echo`, `fable`, `onyx`, `nova`, `sage` and `shimmer`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech#voice-options)."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "responseFormat": {
+      "schema": {
+        "type": "string",
+        "default": "mp3",
+        "enum": [
+          "mp3",
+          "opus",
+          "aac",
+          "flac",
+          "wav",
+          "pcm"
+        ],
+        "optional": true,
+        "description": "The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "speed": {
+      "schema": {
+        "type": "number",
+        "default": "1",
+        "minimum": 0.25,
+        "maximum": 4,
+        "optional": true,
+        "description": "The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "d4524c2b36d32bbf6717bd8fc390573beab96caee6b824df489c4d01bc21c873"
+  }
+}

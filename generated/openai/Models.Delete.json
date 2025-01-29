@@ -9,7 +9,6 @@
     "auth": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "OpenAI API key.\n"
       },
       "advanced": false,
@@ -18,7 +17,6 @@
     "betaAccess": {
       "schema": {
         "type": "string",
-        "optional": false,
         "default": "assistants=v2",
         "description": "Adds OpenAI-Beta for access to new and experimental features."
       },
@@ -28,7 +26,6 @@
     "model": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "The model to delete"
       },
       "advanced": false,
@@ -42,7 +39,7 @@
     "async": true
   },
   "attributes": {
-    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "externalDocs": "",
     "codeHash": "82f18859e63995b9d844b4c458cd60194829f8d1ad0d5b40efe3c5951788bdf9"
   }
 }

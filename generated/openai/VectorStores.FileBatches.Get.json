@@ -1,0 +1,53 @@
+{
+  "moduleName": "OpenAI / Vector Stores / File Batches / Get",
+  "version": "0.0.0",
+  "description": "Retrieves a vector store file batch.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "vectorStoreId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the vector store that the file batch belongs to."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "batchId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the file batch being retrieved."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "93c14a37490602de9cf350c2533d423d49c3ea3853530699f2285b156024bc3d"
+  }
+}

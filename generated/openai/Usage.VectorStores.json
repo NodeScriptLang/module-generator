@@ -1,0 +1,111 @@
+{
+  "moduleName": "OpenAI / Usage / Vector Stores",
+  "version": "0.0.0",
+  "description": "Get vector stores usage details for the organization.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "startTime": {
+      "schema": {
+        "type": "number",
+        "description": "Start time (Unix seconds) of the query time range, inclusive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "endTime": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "End time (Unix seconds) of the query time range, exclusive."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "bucketWidth": {
+      "schema": {
+        "type": "string",
+        "default": "1d",
+        "enum": [
+          "1m",
+          "1h",
+          "1d"
+        ],
+        "optional": true,
+        "description": "Width of each time bucket in response. Currently `1m`, `1h` and `1d` are supported, default to `1d`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "projectIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Return only usage for these projects."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "groupBy": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Group the usage data by the specified fields. Support fields include `project_id`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Specifies the number of buckets to return.\n- `bucket_width=1d`: default: 7, max: 31\n- `bucket_width=1h`: default: 24, max: 168\n- `bucket_width=1m`: default: 60, max: 1440\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A cursor for use in pagination. Corresponding to the `next_page` field from the previous response."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "ff46aa8a976c7241fdbaf042bae6ed5f65b21f5073105d99393d298c6104d4e6"
+  }
+}

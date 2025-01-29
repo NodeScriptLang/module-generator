@@ -9,7 +9,6 @@
     "auth": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "OpenAI API key.\n"
       },
       "advanced": false,
@@ -18,7 +17,6 @@
     "betaAccess": {
       "schema": {
         "type": "string",
-        "optional": false,
         "default": "assistants=v2",
         "description": "Adds OpenAI-Beta for access to new and experimental features."
       },
@@ -28,7 +26,6 @@
     "fileId": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "The ID of the file to use for this request."
       },
       "advanced": false,
@@ -42,7 +39,7 @@
     "async": true
   },
   "attributes": {
-    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "externalDocs": "",
     "codeHash": "ff149a371e4f884b8ffae9a0afbe709b9249568b3ade97dd0621718f8a8bc5ba"
   }
 }

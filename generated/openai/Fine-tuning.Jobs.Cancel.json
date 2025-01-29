@@ -1,0 +1,45 @@
+{
+  "moduleName": "OpenAI / Fine-tuning / Jobs / Cancel",
+  "version": "0.0.0",
+  "description": "Immediately cancel a fine-tune job.\n",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fineTuningJobId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the fine-tuning job to cancel.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "5b843bc1115c60acebf58bbcec9775e1038499502c73827638d66fd8350b37ee"
+  }
+}

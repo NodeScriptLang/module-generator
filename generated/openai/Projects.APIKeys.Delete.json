@@ -1,0 +1,53 @@
+{
+  "moduleName": "OpenAI / Projects / API Keys / Delete",
+  "version": "0.0.0",
+  "description": "Deletes an API key from the project.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the project."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "keyId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the API key."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "04825ee616b1b117bf3e5c1e9f831c3f29b8a5b1da62480571aa14ea7e569a2f"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "moduleName": "OpenAI / Organization / Admin API Keys / Delete",
+  "version": "0.0.0",
+  "description": "Delete the specified admin API key.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "keyId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the API key to be deleted."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "a351347f70ec6edc1eda9aa43f787e7b75a1b210559cdd7b02660063e5b43936"
+  }
+}

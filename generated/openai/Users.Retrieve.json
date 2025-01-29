@@ -1,0 +1,45 @@
+{
+  "moduleName": "OpenAI / Users / Retrieve",
+  "version": "0.0.0",
+  "description": "Retrieves a user by their identifier.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the user."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "af951b449efe80fa0178b55d23f494605e47e2ef216bbc6559361088f46f9402"
+  }
+}

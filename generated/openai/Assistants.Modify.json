@@ -9,7 +9,6 @@
     "auth": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "OpenAI API key.\n"
       },
       "advanced": false,
@@ -18,7 +17,6 @@
     "betaAccess": {
       "schema": {
         "type": "string",
-        "optional": false,
         "default": "assistants=v2",
         "description": "Adds OpenAI-Beta for access to new and experimental features."
       },
@@ -28,7 +26,6 @@
     "assistantId": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "The ID of the assistant to modify."
       },
       "advanced": false,
@@ -36,13 +33,12 @@
     },
     "model": {
       "schema": {
-        "type": "string",
-        "default": "gpt-4o",
+        "type": "any",
         "optional": true,
-        "description": "ID of the model to use.\n"
+        "description": "ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.\n"
       },
       "advanced": true,
-      "hideValue": false
+      "hideValue": true
     },
     "name": {
       "schema": {
@@ -96,7 +92,7 @@
       "schema": {
         "type": "any",
         "optional": true,
-        "description": "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.\n"
+        "description": "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
       },
       "advanced": true,
       "hideValue": true
@@ -129,7 +125,7 @@
       "schema": {
         "type": "any",
         "optional": true,
-        "description": "Specifies the format that the model must output. Compatible with GPT-4o, GPT-4 Turbo, and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.\nSetting to `{ \"type\": \"json_object\" }` enables JSON mode, which guarantees the message the model generates is valid JSON.\n**Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly \"stuck\" request. Also note that the message content may be partially cut off if `finish_reason=\"length\"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.\n"
+        "description": ""
       },
       "advanced": true,
       "hideValue": true
@@ -142,7 +138,7 @@
     "async": true
   },
   "attributes": {
-    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "externalDocs": "",
     "codeHash": "ce58eb97ad00197ea02fe4d286f8a01f61db52eda64c1ddbc7e86803cbc37730"
   }
 }

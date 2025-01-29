@@ -1,0 +1,53 @@
+{
+  "moduleName": "OpenAI / Projects / API Keys / Retrieve",
+  "version": "0.0.0",
+  "description": "Retrieves an API key in the project.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the project."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "keyId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the API key."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "aa117eb3d73f5b88f85d6e5ec4edb35910027aab7aeb36dbce8c0a3c9cacbd95"
+  }
+}

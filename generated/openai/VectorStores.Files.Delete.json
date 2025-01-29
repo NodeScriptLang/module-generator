@@ -1,7 +1,7 @@
 {
   "moduleName": "OpenAI / Vector Stores / Files / Delete",
   "version": "0.0.0",
-  "description": "Delete a vector store file. This will remove the file from the vector store but the file itself will not be deleted. To delete the file, use the delete endpoint.",
+  "description": "Delete a vector store file. This will remove the file from the vector store but the file itself will not be deleted. To delete the file, use the [delete file](/docs/api-reference/files/delete) endpoint.",
   "keywords": [],
   "cacheMode": "always",
   "evalMode": "manual",
@@ -9,7 +9,6 @@
     "auth": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "OpenAI API key.\n"
       },
       "advanced": false,
@@ -18,7 +17,6 @@
     "betaAccess": {
       "schema": {
         "type": "string",
-        "optional": false,
         "default": "assistants=v2",
         "description": "Adds OpenAI-Beta for access to new and experimental features."
       },
@@ -28,7 +26,6 @@
     "vectorStoreId": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "The ID of the vector store that the file belongs to."
       },
       "advanced": false,
@@ -37,7 +34,6 @@
     "fileId": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "The ID of the file to delete."
       },
       "advanced": false,
@@ -51,7 +47,7 @@
     "async": true
   },
   "attributes": {
-    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "externalDocs": "",
     "codeHash": "590eac3c7e41e1d158f642c5bd6746ecae7f7b0e5249a4497d61f56001619877"
   }
 }
