@@ -1,0 +1,193 @@
+{
+  "moduleName": "Gemini / Tuned Models / Permissions / Update",
+  "version": "0.0.0",
+  "description": "Updates the permission.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "Gemini API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "$Xgafv": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "1",
+          "2"
+        ],
+        "optional": true,
+        "description": "V1 error format."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OAuth access token."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "alt": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "json",
+          "media",
+          "proto"
+        ],
+        "optional": true,
+        "description": "Data format for response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "callback": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "JSONP"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "key": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "oauthToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OAuth 2.0 token for the current user."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "prettyPrint": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Returns response with indentations and line breaks."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "quotaUser": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "uploadProtocol": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Upload protocol for media (e.g. \"raw\", \"multipart\")."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "uploadType": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Output only. Identifier. The permission name. A unique name will be generated on create. Examples: tunedModels/{tuned_model}/permissions/{permission} corpora/{corpus}/permissions/{permission} Output only."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "updateMask": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. The list of fields to update. Accepted ones: - role (`Permission.role` field)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "emailAddress": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional. Immutable. The email address of the user of group which this permission refers. Field is not set when permission's grantee type is EVERYONE."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "granteeType": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "GRANTEE_TYPE_UNSPECIFIED",
+          "USER",
+          "GROUP",
+          "EVERYONE"
+        ],
+        "optional": true,
+        "description": "Optional. Immutable. The type of the grantee."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "role": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "ROLE_UNSPECIFIED",
+          "OWNER",
+          "WRITER",
+          "READER"
+        ],
+        "optional": true,
+        "description": "Required. The role granted by this permission."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "a8e5ca4577ae8e9d3dd68df39e5dcae380d78b08009fad2589f3cac95db7e957"
+  }
+}

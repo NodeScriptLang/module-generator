@@ -1,0 +1,171 @@
+{
+  "moduleName": "Gemini / Models / Operations / List",
+  "version": "0.0.0",
+  "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "Gemini API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "$Xgafv": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "1",
+          "2"
+        ],
+        "optional": true,
+        "description": "V1 error format."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OAuth access token."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "alt": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "json",
+          "media",
+          "proto"
+        ],
+        "optional": true,
+        "description": "Data format for response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "callback": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "JSONP"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "key": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "oauthToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OAuth 2.0 token for the current user."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "prettyPrint": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Returns response with indentations and line breaks."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "quotaUser": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "uploadProtocol": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Upload protocol for media (e.g. \"raw\", \"multipart\")."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "uploadType": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "The name of the operation's parent resource."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "filter": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The standard list filter."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageSize": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The standard list page size."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The standard list page token."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "68555596e7c269bef45d9ece30e0ca2d2d32154105ef7281d6f90abfbbdd3e2a"
+  }
+}

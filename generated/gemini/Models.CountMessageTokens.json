@@ -1,0 +1,153 @@
+{
+  "moduleName": "Gemini / Models / Count Message Tokens",
+  "version": "0.0.0",
+  "description": "Runs a model's tokenizer on a string and returns the token count.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "Gemini API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "$Xgafv": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "1",
+          "2"
+        ],
+        "optional": true,
+        "description": "V1 error format."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OAuth access token."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "alt": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "json",
+          "media",
+          "proto"
+        ],
+        "optional": true,
+        "description": "Data format for response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "callback": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "JSONP"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "key": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "oauthToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OAuth 2.0 token for the current user."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "prettyPrint": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Returns response with indentations and line breaks."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "quotaUser": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "uploadProtocol": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Upload protocol for media (e.g. \"raw\", \"multipart\")."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "uploadType": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "model": {
+      "schema": {
+        "type": "string",
+        "description": "Required. The model's resource name. This serves as an ID for the Model to use. This name should match a model name returned by the `ListModels` method. Format: `models/{model}`"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "prompt": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "All of the structured input text passed to the model as a prompt. A `MessagePrompt` contains a structured set of fields that provide context for the conversation, examples of user input/model output message pairs that prime the model to respond in different ways, and the conversation history or list of messages representing the alternating turns of the conversation between the user and the model."
+      },
+      "advanced": true,
+      "hideValue": true
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "15bb823da1f4c12ef2147fb7926a7089ee04a3d314fe25f51e8c72fe4e299e34"
+  }
+}

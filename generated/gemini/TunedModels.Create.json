@@ -1,0 +1,271 @@
+{
+  "moduleName": "Gemini / Tuned Models / Create",
+  "version": "0.0.0",
+  "description": "Creates a tuned model. Check intermediate tuning progress (if any) through the [google.longrunning.Operations] service. Access status and results through the Operations service. Example: GET /v1/tunedModels/az2mb0bpw6i/operations/000-111-222",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "Gemini API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "$Xgafv": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "1",
+          "2"
+        ],
+        "optional": true,
+        "description": "V1 error format."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OAuth access token."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "alt": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "json",
+          "media",
+          "proto"
+        ],
+        "optional": true,
+        "description": "Data format for response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "callback": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "JSONP"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "key": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "oauthToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OAuth 2.0 token for the current user."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "prettyPrint": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Returns response with indentations and line breaks."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "quotaUser": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "uploadProtocol": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Upload protocol for media (e.g. \"raw\", \"multipart\")."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "uploadType": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "tunedModelId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional. The unique id for the tuned model if specified. This value should be up to 40 characters, the first character must be a letter, the last could be a letter or a number. The id must match the regular expression: `[a-z]([a-z0-9-]{0,38}[a-z0-9])?`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "baseModel": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Immutable. The name of the `Model` to tune. Example: `models/gemini-1.5-flash-001`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "createTime": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Output only. The timestamp when this model was created."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional. A short description of this model."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "displayName": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional. The name to display for this model in user interfaces. The display name must be up to 40 characters including spaces."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Output only. The tuned model name. A unique name will be generated on create. Example: `tunedModels/az2mb0bpw6i` If display_name is set on create, the id portion of the name will be set by concatenating the words of the display_name with hyphens and adding a random portion for uniqueness. Example: * display_name = `Sentence Translator` * name = `tunedModels/sentence-translator-u3b7m`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "readerProjectNumbers": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Optional. List of project numbers that have read access to the tuned model."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "state": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "STATE_UNSPECIFIED",
+          "CREATING",
+          "ACTIVE",
+          "FAILED"
+        ],
+        "optional": true,
+        "description": "Output only. The state of the tuned model."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "temperature": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Optional. Controls the randomness of the output. Values can range over `[0.0,1.0]`, inclusive. A value closer to `1.0` will produce responses that are more varied, while a value closer to `0.0` will typically result in less surprising responses from the model. This value specifies default to be the one used by the base model while creating the model."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "topK": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Optional. For Top-k sampling. Top-k sampling considers the set of `top_k` most probable tokens. This value specifies default to be used by the backend while making the call to the model. This value specifies default to be the one used by the base model while creating the model."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "topP": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Optional. For Nucleus sampling. Nucleus sampling considers the smallest set of tokens whose probability sum is at least `top_p`. This value specifies default to be the one used by the base model while creating the model."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "tunedModelSource": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Tuned model as a source for training a new model."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "tuningTask": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Tuning tasks that create tuned models."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "updateTime": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Output only. The timestamp when this model was updated."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "8332308234f6326845944dfe733e67d01d43df2a13f7a3c4150ac23c3b842ae8"
+  }
+}

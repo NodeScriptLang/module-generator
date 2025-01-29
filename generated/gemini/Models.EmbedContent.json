@@ -1,0 +1,191 @@
+{
+  "moduleName": "Gemini / Models / Embed Content",
+  "version": "0.0.0",
+  "description": "Generates a text embedding vector from the input `Content` using the specified [Gemini Embedding model](https://ai.google.dev/gemini-api/docs/models/gemini#text-embedding).",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "Gemini API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "$Xgafv": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "1",
+          "2"
+        ],
+        "optional": true,
+        "description": "V1 error format."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "accessToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OAuth access token."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "alt": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "json",
+          "media",
+          "proto"
+        ],
+        "optional": true,
+        "description": "Data format for response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "callback": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "JSONP"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fields": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Selector specifying which fields to include in a partial response."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "key": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "oauthToken": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "OAuth 2.0 token for the current user."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "prettyPrint": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Returns response with indentations and line breaks."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "quotaUser": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "uploadProtocol": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Upload protocol for media (e.g. \"raw\", \"multipart\")."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "uploadType": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "model": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Required. The model's resource name. This serves as an ID for the Model to use. This name should match a model name returned by the `ListModels` method. Format: `models/{model}`"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "content": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "The base structured datatype containing multi-part content of a message. A `Content` includes a `role` field designating the producer of the `Content` and a `parts` field containing multi-part data that contains the content of the message turn."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "outputDimensionality": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Optional. Optional reduced dimension for the output embedding. If set, excessive values in the output embedding are truncated from the end. Supported by newer models since 2024 only. You cannot set this value if using the earlier model (`models/embedding-001`)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "taskType": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "TASK_TYPE_UNSPECIFIED",
+          "RETRIEVAL_QUERY",
+          "RETRIEVAL_DOCUMENT",
+          "SEMANTIC_SIMILARITY",
+          "CLASSIFICATION",
+          "CLUSTERING",
+          "QUESTION_ANSWERING",
+          "FACT_VERIFICATION"
+        ],
+        "optional": true,
+        "description": "Optional. Optional task type for which the embeddings will be used. Can only be set for `models/embedding-001`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "title": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional. An optional title for the text. Only applicable when TaskType is `RETRIEVAL_DOCUMENT`. Note: Specifying a `title` for `RETRIEVAL_DOCUMENT` provides better quality embeddings for retrieval."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "f034bd6606902814ea33257ffb4e447fe9d567cea8118c0a2e6cc5ca1308d856"
+  }
+}
