@@ -40,10 +40,13 @@ const files = (await readdir(targetDir))
     .filter(_ => _.endsWith('.json'))
     .map(_ => path.join(targetDir, _));
 
+const tokenJson = JSON.parse(await readFile(`./secrets/${env}.json`, 'utf-8'));
+const token = tokenJson[id];
+
 const nsApi = new NodeScriptApi(
     process.env.NODESCRIPT_API_URL,
     process.env.NODESCRIPT_REGISTRY_URL,
-    process.env.NODESCRIPT_API_TOKEN,
+    token,
 );
 const forcePublish = process.env.FORCE_PUBLISH === 'true';
 

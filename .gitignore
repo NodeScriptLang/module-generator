@@ -8,6 +8,7 @@ yarn.lock
 !.env.example
 !.env.test
 !.env.openapi
+secrets/*.json
 
 out/
 .tmp*
