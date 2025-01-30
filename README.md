@@ -43,11 +43,14 @@ Both in production and development, you will need to set up a service account in
 
 ```
 {
-    "<module title>": "<key>"
+    "<module title>": {
+        "workspaceId": "<workspaceId>"
+        "key": "<key>"
+    }
 }
 ```
 
-Add your module title as per the spec filename from `./specs`, omitting the file extension, and set the value to your generated key from NodeScript. Save the file.
+Add your module title as per the spec filename from `./specs`, omitting the file extension, and set the value to your generated key from NodeScript as well as the target workspace ID. Save the file.
 
 2. Run the publish command outlined in [How to](#how-to), setting the `NODE_ENV` to `development`.
 
@@ -58,9 +61,18 @@ Add your module title as per the spec filename from `./specs`, omitting the file
 
 ```
 {
-    "google-docs": "<key>",
-    "bigquery": "<key>",
-    "youtube": "<key>",
+    "google-docs": {
+        "workspaceId": "<workspaceId>"
+        "key": "<key>"
+    },
+    "bigquery": {
+        "workspaceId": "<workspaceId>"
+        "key": "<key>"
+    },
+    "youtube": {
+        "workspaceId": "<workspaceId>"
+        "key": "<key>"
+    },
     // ...etc
 }
 ```
