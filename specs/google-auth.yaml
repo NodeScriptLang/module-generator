@@ -1,7 +1,7 @@
 id: google-auth
 displayName: Google Auth
 workspaceId:
-  development: ""
+  development: YI2YftEWevABst6y
   production: LC4NOVe3NK6Qon9y
 baseUrl: https://www.googleapis.com
 description: Obtains end-user authorization grants for use with other Google APIs.
@@ -24,66 +24,12 @@ modules:
   - moduleName: OAuth2 / Token Info / Create
     method: post
     path: /oauth2/v2/tokeninfo
-    description: ""
-    externalDocs: ""
+    description: Retrieves information about an OAuth 2.0 token, such as its validity, associated scopes, and expiration time. Useful for debugging and verifying token details.
+    externalDocs: https://developers.google.com/identity/protocols/oauth2
     params:
-      - paramName: alt
-        description: Data format for the response.
-        paramKey: alt
-        in: query
-        schema:
-          type: string
-          enum:
-            - json
-        required: false
-      - paramName: fields
-        description: Selector specifying which fields to include in a partial response.
-        paramKey: fields
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: key
-        description: API key. Your API key identifies your project and provides you with
-          API access, quota, and reports. Required unless you provide an OAuth
-          2.0 token.
-        paramKey: key
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: oauthToken
-        description: OAuth 2.0 token for the current user.
-        paramKey: oauth_token
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: prettyPrint
-        description: Returns response with indentations and line breaks.
-        paramKey: prettyPrint
-        in: query
-        schema:
-          type: boolean
-        required: false
-      - paramName: quotaUser
-        description: An opaque string that represents a user for quota purposes. Must
-          not exceed 40 characters.
-        paramKey: quotaUser
-        in: query
-        schema:
-          type: string
-        required: false
       - paramName: userIp
         description: Deprecated. Please use quotaUser instead.
         paramKey: userIp
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: accessToken
-        description: ""
-        paramKey: access_token
         in: query
         schema:
           type: string
@@ -98,56 +44,9 @@ modules:
   - moduleName: User Info / Retrieve
     method: get
     path: /oauth2/v2/userinfo
-    description: ""
-    externalDocs: ""
+    description: Fetches basic profile information about the authenticated user, such as their name, email, and profile picture. This endpoint requires a valid OAuth 2.0 access token.
+    externalDocs: https://developers.google.com/identity/protocols/oauth2
     params:
-      - paramName: alt
-        description: Data format for the response.
-        paramKey: alt
-        in: query
-        schema:
-          type: string
-          enum:
-            - json
-        required: false
-      - paramName: fields
-        description: Selector specifying which fields to include in a partial response.
-        paramKey: fields
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: key
-        description: API key. Your API key identifies your project and provides you with
-          API access, quota, and reports. Required unless you provide an OAuth
-          2.0 token.
-        paramKey: key
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: oauthToken
-        description: OAuth 2.0 token for the current user.
-        paramKey: oauth_token
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: prettyPrint
-        description: Returns response with indentations and line breaks.
-        paramKey: prettyPrint
-        in: query
-        schema:
-          type: boolean
-        required: false
-      - paramName: quotaUser
-        description: An opaque string that represents a user for quota purposes. Must
-          not exceed 40 characters.
-        paramKey: quotaUser
-        in: query
-        schema:
-          type: string
-        required: false
       - paramName: userIp
         description: Deprecated. Please use quotaUser instead.
         paramKey: userIp
@@ -158,56 +57,9 @@ modules:
   - moduleName: User Info / Retrieve V2
     method: get
     path: /userinfo/v2/me
-    description: ""
-    externalDocs: ""
+    description: Retrieves detailed profile information about the authenticated user, including additional fields compared to the v1 endpoint. Requires a valid OAuth 2.0 access token.
+    externalDocs: https://developers.google.com/identity/protocols/oauth2
     params:
-      - paramName: alt
-        description: Data format for the response.
-        paramKey: alt
-        in: query
-        schema:
-          type: string
-          enum:
-            - json
-        required: false
-      - paramName: fields
-        description: Selector specifying which fields to include in a partial response.
-        paramKey: fields
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: key
-        description: API key. Your API key identifies your project and provides you with
-          API access, quota, and reports. Required unless you provide an OAuth
-          2.0 token.
-        paramKey: key
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: oauthToken
-        description: OAuth 2.0 token for the current user.
-        paramKey: oauth_token
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: prettyPrint
-        description: Returns response with indentations and line breaks.
-        paramKey: prettyPrint
-        in: query
-        schema:
-          type: boolean
-        required: false
-      - paramName: quotaUser
-        description: An opaque string that represents a user for quota purposes. Must
-          not exceed 40 characters.
-        paramKey: quotaUser
-        in: query
-        schema:
-          type: string
-        required: false
       - paramName: userIp
         description: Deprecated. Please use quotaUser instead.
         paramKey: userIp
