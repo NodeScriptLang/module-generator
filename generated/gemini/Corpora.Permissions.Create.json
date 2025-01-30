@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Corpora / Permissions / Create",
   "version": "0.0.0",
   "description": "Create a permission to a specific resource.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

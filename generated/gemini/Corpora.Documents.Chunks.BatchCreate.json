@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Corpora / Documents / Chunks / Batch Create",
   "version": "0.0.0",
   "description": "Batch create `Chunk`s.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

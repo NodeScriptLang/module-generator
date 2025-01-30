@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Models / Predict",
   "version": "0.0.0",
   "description": "Performs a prediction request.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Corpora / Documents / List",
   "version": "0.0.0",
   "description": "Lists all `Document`s in a `Corpus`.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

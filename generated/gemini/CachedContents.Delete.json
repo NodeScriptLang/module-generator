@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Cached Contents / Delete",
   "version": "0.0.0",
   "description": "Deletes CachedContent resource.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

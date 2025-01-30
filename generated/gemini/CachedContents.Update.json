@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Cached Contents / Update",
   "version": "0.0.0",
   "description": "Updates CachedContent resource (only expiration is updatable).",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

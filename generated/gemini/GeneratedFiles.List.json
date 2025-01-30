@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Generated Files / List",
   "version": "0.0.0",
   "description": "Lists the generated files owned by the requesting project.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

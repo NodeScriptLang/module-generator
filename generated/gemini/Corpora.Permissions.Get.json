@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Corpora / Permissions / Get",
   "version": "0.0.0",
   "description": "Gets information about a specific Permission.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

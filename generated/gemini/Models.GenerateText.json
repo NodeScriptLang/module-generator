@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Models / Generate Text",
   "version": "0.0.0",
   "description": "Generates a response from the model given an input message.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

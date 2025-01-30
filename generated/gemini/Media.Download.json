@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Media / Download",
   "version": "0.0.0",
   "description": "Gets a generated file. When calling this method via REST, only the metadata of the generated file is returned. To retrieve the file content via REST, add alt=media as a query parameter.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

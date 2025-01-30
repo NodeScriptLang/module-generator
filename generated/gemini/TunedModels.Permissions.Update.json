@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Tuned Models / Permissions / Update",
   "version": "0.0.0",
   "description": "Updates the permission.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

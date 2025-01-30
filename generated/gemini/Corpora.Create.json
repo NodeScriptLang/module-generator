@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Corpora / Create",
   "version": "0.0.0",
   "description": "Creates an empty `Corpus`.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

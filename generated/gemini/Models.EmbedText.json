@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Models / Embed Text",
   "version": "0.0.0",
   "description": "Generates an embedding from the model given an input message.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

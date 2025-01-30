@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Cached Contents / Create",
   "version": "0.0.0",
   "description": "Creates CachedContent resource.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

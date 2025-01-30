@@ -2,7 +2,10 @@
   "moduleName": "Gemini / Corpora / Documents / Chunks / Create",
   "version": "0.0.0",
   "description": "Creates a `Chunk`.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "google"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {
