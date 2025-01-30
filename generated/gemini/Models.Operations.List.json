@@ -9,12 +9,22 @@
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {
-    "auth": {
+    "accessToken": {
       "schema": {
         "type": "string",
-        "description": "Gemini API key.\n"
+        "optional": true,
+        "description": "OAuth access token."
       },
-      "advanced": false,
+      "advanced": true,
+      "hideValue": false
+    },
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "API key. Your API key identifies your project and provides you with\nAPI access, quota, and reports. Required unless you provide an OAuth 2.0 token.\n"
+      },
+      "advanced": true,
       "hideValue": false
     },
     "$Xgafv": {
@@ -26,15 +36,6 @@
         ],
         "optional": true,
         "description": "V1 error format."
-      },
-      "advanced": true,
-      "hideValue": false
-    },
-    "accessToken": {
-      "schema": {
-        "type": "string",
-        "optional": true,
-        "description": "OAuth access token."
       },
       "advanced": true,
       "hideValue": false
@@ -169,6 +170,6 @@
   },
   "attributes": {
     "externalDocs": "",
-    "codeHash": "68555596e7c269bef45d9ece30e0ca2d2d32154105ef7281d6f90abfbbdd3e2a"
+    "codeHash": "b61c61a6d6db7e17e0f817a8a75565e6734095b84de482e0287d9b6c9674c445"
   }
 }

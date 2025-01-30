@@ -9,12 +9,22 @@
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {
-    "auth": {
+    "accessToken": {
       "schema": {
         "type": "string",
-        "description": "Gemini API key.\n"
+        "optional": true,
+        "description": "OAuth access token."
       },
-      "advanced": false,
+      "advanced": true,
+      "hideValue": false
+    },
+    "apiKey": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "API key. Your API key identifies your project and provides you with\nAPI access, quota, and reports. Required unless you provide an OAuth 2.0 token.\n"
+      },
+      "advanced": true,
       "hideValue": false
     },
     "$Xgafv": {
@@ -26,15 +36,6 @@
         ],
         "optional": true,
         "description": "V1 error format."
-      },
-      "advanced": true,
-      "hideValue": false
-    },
-    "accessToken": {
-      "schema": {
-        "type": "string",
-        "optional": true,
-        "description": "OAuth access token."
       },
       "advanced": true,
       "hideValue": false
@@ -67,24 +68,6 @@
         "type": "string",
         "optional": true,
         "description": "Selector specifying which fields to include in a partial response."
-      },
-      "advanced": true,
-      "hideValue": false
-    },
-    "key": {
-      "schema": {
-        "type": "string",
-        "optional": true,
-        "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."
-      },
-      "advanced": true,
-      "hideValue": false
-    },
-    "oauthToken": {
-      "schema": {
-        "type": "string",
-        "optional": true,
-        "description": "OAuth 2.0 token for the current user."
       },
       "advanced": true,
       "hideValue": false
@@ -160,6 +143,6 @@
   },
   "attributes": {
     "externalDocs": "",
-    "codeHash": "dcf492e1c9dbe109e9893f0da80e0d0820d085d006a18e3c26a31c727523116a"
+    "codeHash": "534bfd734751e14652d336246bd7270da43ea5456a6a67e8d484dd6a17c05f52"
   }
 }

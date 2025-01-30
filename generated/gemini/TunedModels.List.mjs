@@ -4,9 +4,8 @@ export async function compute(params, ctx) {
   );
   const headers = {};
   const addQueryParam = (key, val) => { if (val != null) url.searchParams.append(key, val) };
-  if (params["auth"] != null) {
-    headers["Authorization"] = ("Bearer" + " " + params["auth"].replace(/^Bearer\s*/gi, ''));
-  }
+  addQueryParam("oauth_token", params["accessToken"]);
+  addQueryParam("key", params["apiKey"]);
   addQueryParam("$.xgafv", params["$Xgafv"]);
   addQueryParam("access_token", params["accessToken"]);
   addQueryParam("alt", params["alt"]);
