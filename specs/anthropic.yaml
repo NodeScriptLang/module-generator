@@ -9,15 +9,22 @@ commonKeywords:
   - ai
   - claude
 commonParams:
-  - paramName: auth
-    paramKey: Authorization
-    in: header
+  - paramName: xApiKey
+    paramKey: x-api-key
     prefix: Bearer
     description: |
-      Anthropic API key.
-    required: true
+      Your unique API key for authentication. 
+
+
+            This key is required in the header of all API requests, to
+            authenticate your account and access Anthropic's services. Get your
+            API key through the
+            [Console](https://console.anthropic.com/settings/keys). Each key is
+            scoped to a Workspace.
+    in: header
     schema:
       type: string
+    required: false
 modules:
   - moduleName: Messages / Create
     method: post
@@ -792,21 +799,6 @@ modules:
         schema:
           type: string
         required: false
-      - paramName: xApiKey
-        description: >-
-          Your unique API key for authentication. 
-
-
-          This key is required in the header of all API requests, to
-          authenticate your account and access Anthropic's services. Get your
-          API key through the
-          [Console](https://console.anthropic.com/settings/keys). Each key is
-          scoped to a Workspace.
-        paramKey: x-api-key
-        in: header
-        schema:
-          type: string
-        required: false
   - moduleName: Models / Get
     method: get
     path: /v1/models/{model_id}
@@ -833,21 +825,6 @@ modules:
           Read more about versioning and our version history
           [here](https://docs.anthropic.com/en/api/versioning).
         paramKey: anthropic-version
-        in: header
-        schema:
-          type: string
-        required: false
-      - paramName: xApiKey
-        description: >-
-          Your unique API key for authentication. 
-
-
-          This key is required in the header of all API requests, to
-          authenticate your account and access Anthropic's services. Get your
-          API key through the
-          [Console](https://console.anthropic.com/settings/keys). Each key is
-          scoped to a Workspace.
-        paramKey: x-api-key
         in: header
         schema:
           type: string
@@ -935,21 +912,6 @@ modules:
         schema:
           type: string
         required: false
-      - paramName: xApiKey
-        description: >-
-          Your unique API key for authentication. 
-
-
-          This key is required in the header of all API requests, to
-          authenticate your account and access Anthropic's services. Get your
-          API key through the
-          [Console](https://console.anthropic.com/settings/keys). Each key is
-          scoped to a Workspace.
-        paramKey: x-api-key
-        in: header
-        schema:
-          type: string
-        required: false
   - moduleName: Message Batches / Retrieve
     method: get
     path: /v1/messages/batches/{message_batch_id}
@@ -973,21 +935,6 @@ modules:
           Read more about versioning and our version history
           [here](https://docs.anthropic.com/en/api/versioning).
         paramKey: anthropic-version
-        in: header
-        schema:
-          type: string
-        required: false
-      - paramName: xApiKey
-        description: >-
-          Your unique API key for authentication. 
-
-
-          This key is required in the header of all API requests, to
-          authenticate your account and access Anthropic's services. Get your
-          API key through the
-          [Console](https://console.anthropic.com/settings/keys). Each key is
-          scoped to a Workspace.
-        paramKey: x-api-key
         in: header
         schema:
           type: string
@@ -1018,21 +965,6 @@ modules:
           Read more about versioning and our version history
           [here](https://docs.anthropic.com/en/api/versioning).
         paramKey: anthropic-version
-        in: header
-        schema:
-          type: string
-        required: false
-      - paramName: xApiKey
-        description: >-
-          Your unique API key for authentication. 
-
-
-          This key is required in the header of all API requests, to
-          authenticate your account and access Anthropic's services. Get your
-          API key through the
-          [Console](https://console.anthropic.com/settings/keys). Each key is
-          scoped to a Workspace.
-        paramKey: x-api-key
         in: header
         schema:
           type: string
@@ -1099,21 +1031,6 @@ modules:
           Read more about versioning and our version history
           [here](https://docs.anthropic.com/en/api/versioning).
         paramKey: anthropic-version
-        in: header
-        schema:
-          type: string
-        required: false
-      - paramName: xApiKey
-        description: >-
-          Your unique API key for authentication. 
-
-
-          This key is required in the header of all API requests, to
-          authenticate your account and access Anthropic's services. Get your
-          API key through the
-          [Console](https://console.anthropic.com/settings/keys). Each key is
-          scoped to a Workspace.
-        paramKey: x-api-key
         in: header
         schema:
           type: string
@@ -1949,21 +1866,6 @@ modules:
         schema:
           type: string
         required: false
-      - paramName: xApiKey
-        description: >-
-          Your unique API key for authentication. 
-
-
-          This key is required in the header of all API requests, to
-          authenticate your account and access Anthropic's services. Get your
-          API key through the
-          [Console](https://console.anthropic.com/settings/keys). Each key is
-          scoped to a Workspace.
-        paramKey: x-api-key
-        in: header
-        schema:
-          type: string
-        required: false
   - moduleName: Models / Get Beta
     method: get
     path: /v1/models/{model_id}?beta=true
@@ -1990,21 +1892,6 @@ modules:
           Read more about versioning and our version history
           [here](https://docs.anthropic.com/en/api/versioning).
         paramKey: anthropic-version
-        in: header
-        schema:
-          type: string
-        required: false
-      - paramName: xApiKey
-        description: >-
-          Your unique API key for authentication. 
-
-
-          This key is required in the header of all API requests, to
-          authenticate your account and access Anthropic's services. Get your
-          API key through the
-          [Console](https://console.anthropic.com/settings/keys). Each key is
-          scoped to a Workspace.
-        paramKey: x-api-key
         in: header
         schema:
           type: string
@@ -2116,21 +2003,6 @@ modules:
         schema:
           type: string
         required: false
-      - paramName: xApiKey
-        description: >-
-          Your unique API key for authentication. 
-
-
-          This key is required in the header of all API requests, to
-          authenticate your account and access Anthropic's services. Get your
-          API key through the
-          [Console](https://console.anthropic.com/settings/keys). Each key is
-          scoped to a Workspace.
-        paramKey: x-api-key
-        in: header
-        schema:
-          type: string
-        required: false
   - moduleName: Message Batches / Retrieve Beta
     method: get
     path: /v1/messages/batches/{message_batch_id}?beta=true
@@ -2166,21 +2038,6 @@ modules:
           Read more about versioning and our version history
           [here](https://docs.anthropic.com/en/api/versioning).
         paramKey: anthropic-version
-        in: header
-        schema:
-          type: string
-        required: false
-      - paramName: xApiKey
-        description: >-
-          Your unique API key for authentication. 
-
-
-          This key is required in the header of all API requests, to
-          authenticate your account and access Anthropic's services. Get your
-          API key through the
-          [Console](https://console.anthropic.com/settings/keys). Each key is
-          scoped to a Workspace.
-        paramKey: x-api-key
         in: header
         schema:
           type: string
@@ -2223,21 +2080,6 @@ modules:
           Read more about versioning and our version history
           [here](https://docs.anthropic.com/en/api/versioning).
         paramKey: anthropic-version
-        in: header
-        schema:
-          type: string
-        required: false
-      - paramName: xApiKey
-        description: >-
-          Your unique API key for authentication. 
-
-
-          This key is required in the header of all API requests, to
-          authenticate your account and access Anthropic's services. Get your
-          API key through the
-          [Console](https://console.anthropic.com/settings/keys). Each key is
-          scoped to a Workspace.
-        paramKey: x-api-key
         in: header
         schema:
           type: string
@@ -2328,21 +2170,6 @@ modules:
           Read more about versioning and our version history
           [here](https://docs.anthropic.com/en/api/versioning).
         paramKey: anthropic-version
-        in: header
-        schema:
-          type: string
-        required: false
-      - paramName: xApiKey
-        description: >-
-          Your unique API key for authentication. 
-
-
-          This key is required in the header of all API requests, to
-          authenticate your account and access Anthropic's services. Get your
-          API key through the
-          [Console](https://console.anthropic.com/settings/keys). Each key is
-          scoped to a Workspace.
-        paramKey: x-api-key
         in: header
         schema:
           type: string

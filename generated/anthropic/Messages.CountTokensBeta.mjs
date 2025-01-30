@@ -1,21 +1,28 @@
 export async function compute(params, ctx) {
   let url = new URL(
-    "https://api.anthropic.com/v1/messages/batches"
+    "https://api.anthropic.com/v1/messages/count_tokens?beta=true"
   );
   const headers = {};
   const addQueryParam = (key, val) => { if (val != null) url.searchParams.append(key, val) };
   if (params["xApiKey"] != null) {
     headers["x-api-key"] = ("Bearer" + " " + params["xApiKey"].replace(/^Bearer\s*/gi, ''));
   }
-  addQueryParam("before_id", params["beforeId"]);
-  addQueryParam("after_id", params["afterId"]);
-  addQueryParam("limit", params["limit"]);
+  if (params["anthropicBeta"] != null) {
+    headers["anthropic-beta"] = params["anthropicBeta"];
+  }
   if (params["anthropicVersion"] != null) {
     headers["anthropic-version"] = params["anthropicVersion"];
   }
-  const body = undefined;
+  headers["content-type"] = "application/json";
+  let body = {};
+  body["tool_choice"] = params["toolChoice"];
+  body["tools"] = params["tools"];
+  body["messages"] = params["messages"];
+  body["system"] = params["system"];
+  body["model"] = params["model"];
+  body = JSON.stringify(body);
   const res = await ctx.lib.fetch({
-    method: "GET",
+    method: "POST",
     url: url.href,
     headers,
   }, body);
@@ -31,7 +38,7 @@ export async function compute(params, ctx) {
     error.stack = "";
     error.details = {
       service: "Anthropic",
-      method: "get",
+      method: "post",
       url: url.href,
       ...details,
     };

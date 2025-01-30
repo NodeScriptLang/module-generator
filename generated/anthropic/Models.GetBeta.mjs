@@ -1,15 +1,13 @@
 export async function compute(params, ctx) {
   let url = new URL(
-    "https://api.anthropic.com/v1/messages/batches"
+    "https://api.anthropic.com/v1/models/{model_id}?beta=true"
+      .replace("{model_id}", params["modelId"])
   );
   const headers = {};
   const addQueryParam = (key, val) => { if (val != null) url.searchParams.append(key, val) };
   if (params["xApiKey"] != null) {
     headers["x-api-key"] = ("Bearer" + " " + params["xApiKey"].replace(/^Bearer\s*/gi, ''));
   }
-  addQueryParam("before_id", params["beforeId"]);
-  addQueryParam("after_id", params["afterId"]);
-  addQueryParam("limit", params["limit"]);
   if (params["anthropicVersion"] != null) {
     headers["anthropic-version"] = params["anthropicVersion"];
   }

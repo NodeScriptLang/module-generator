@@ -1,5 +1,5 @@
 {
-  "moduleName": "Anthropic / Messages / Create",
+  "moduleName": "Anthropic / Messages / Create Beta",
   "version": "0.0.0",
   "description": "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.",
   "keywords": [
@@ -14,6 +14,15 @@
         "type": "string",
         "optional": true,
         "description": "Your unique API key for authentication. \n\n\n      This key is required in the header of all API requests, to\n      authenticate your account and access Anthropic's services. Get your\n      API key through the\n      [Console](https://console.anthropic.com/settings/keys). Each key is\n      scoped to a Workspace.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "anthropicBeta": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
       },
       "advanced": true,
       "hideValue": false
@@ -156,6 +165,6 @@
   },
   "attributes": {
     "externalDocs": "",
-    "codeHash": "1597f63eb627b1219ca9b6473dbecbff95354fa62ad297de30d65b6d756fd179"
+    "codeHash": "44417bffb6dcbfa907bc27839960ce905a28347bbe479ab5cfb79e80f517aa1d"
   }
 }

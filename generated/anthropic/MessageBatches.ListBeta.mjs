@@ -1,6 +1,6 @@
 export async function compute(params, ctx) {
   let url = new URL(
-    "https://api.anthropic.com/v1/messages/batches"
+    "https://api.anthropic.com/v1/messages/batches?beta=true"
   );
   const headers = {};
   const addQueryParam = (key, val) => { if (val != null) url.searchParams.append(key, val) };
@@ -10,6 +10,9 @@ export async function compute(params, ctx) {
   addQueryParam("before_id", params["beforeId"]);
   addQueryParam("after_id", params["afterId"]);
   addQueryParam("limit", params["limit"]);
+  if (params["anthropicBeta"] != null) {
+    headers["anthropic-beta"] = params["anthropicBeta"];
+  }
   if (params["anthropicVersion"] != null) {
     headers["anthropic-version"] = params["anthropicVersion"];
   }

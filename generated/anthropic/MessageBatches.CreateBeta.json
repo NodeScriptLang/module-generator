@@ -1,7 +1,7 @@
 {
-  "moduleName": "Anthropic / Message Batches / Cancel",
+  "moduleName": "Anthropic / Message Batches / Create Beta",
   "version": "0.0.0",
-  "description": "Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.\n\nThe number of canceled requests is specified in `request_counts`. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible.",
+  "description": "Send a batch of Message creation requests.\n\nThe Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.",
   "keywords": [
     "ai",
     "claude"
@@ -18,12 +18,13 @@
       "advanced": true,
       "hideValue": false
     },
-    "messageBatchId": {
+    "anthropicBeta": {
       "schema": {
         "type": "string",
-        "description": "ID of the Message Batch."
+        "optional": true,
+        "description": "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
       },
-      "advanced": false,
+      "advanced": true,
       "hideValue": false
     },
     "anthropicVersion": {
@@ -33,6 +34,17 @@
         "description": "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
       },
       "advanced": true,
+      "hideValue": false
+    },
+    "requests": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "description": "List of requests for prompt completion. Each is an individual request to create a Message."
+      },
+      "advanced": false,
       "hideValue": false
     }
   },
@@ -44,6 +56,6 @@
   },
   "attributes": {
     "externalDocs": "",
-    "codeHash": "26ad02d109059dc17718a8a17edcd685d9f772fce62c1430b105754bd3dbdd8d"
+    "codeHash": "f6093494c34932a88e4ed522f97cdb8199fcaf5c3c18413e2feebe2a8e88b07e"
   }
 }

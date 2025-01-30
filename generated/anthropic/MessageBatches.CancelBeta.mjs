@@ -1,21 +1,22 @@
 export async function compute(params, ctx) {
   let url = new URL(
-    "https://api.anthropic.com/v1/messages/batches"
+    "https://api.anthropic.com/v1/messages/batches/{message_batch_id}/cancel?beta=true"
+      .replace("{message_batch_id}", params["messageBatchId"])
   );
   const headers = {};
   const addQueryParam = (key, val) => { if (val != null) url.searchParams.append(key, val) };
   if (params["xApiKey"] != null) {
     headers["x-api-key"] = ("Bearer" + " " + params["xApiKey"].replace(/^Bearer\s*/gi, ''));
   }
-  addQueryParam("before_id", params["beforeId"]);
-  addQueryParam("after_id", params["afterId"]);
-  addQueryParam("limit", params["limit"]);
+  if (params["anthropicBeta"] != null) {
+    headers["anthropic-beta"] = params["anthropicBeta"];
+  }
   if (params["anthropicVersion"] != null) {
     headers["anthropic-version"] = params["anthropicVersion"];
   }
   const body = undefined;
   const res = await ctx.lib.fetch({
-    method: "GET",
+    method: "POST",
     url: url.href,
     headers,
   }, body);
@@ -31,7 +32,7 @@ export async function compute(params, ctx) {
     error.stack = "";
     error.details = {
       service: "Anthropic",
-      method: "get",
+      method: "post",
       url: url.href,
       ...details,
     };

@@ -1,7 +1,7 @@
 {
-  "moduleName": "Anthropic / Message Batches / Cancel",
+  "moduleName": "Anthropic / Models / Get Beta",
   "version": "0.0.0",
-  "description": "Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.\n\nThe number of canceled requests is specified in `request_counts`. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible.",
+  "description": "Get a specific model.\n\nThe Models API response can be used to determine information about a specific model or resolve a model alias to a model ID.",
   "keywords": [
     "ai",
     "claude"
@@ -18,10 +18,10 @@
       "advanced": true,
       "hideValue": false
     },
-    "messageBatchId": {
+    "modelId": {
       "schema": {
         "type": "string",
-        "description": "ID of the Message Batch."
+        "description": "Model identifier or alias."
       },
       "advanced": false,
       "hideValue": false
@@ -44,6 +44,6 @@
   },
   "attributes": {
     "externalDocs": "",
-    "codeHash": "26ad02d109059dc17718a8a17edcd685d9f772fce62c1430b105754bd3dbdd8d"
+    "codeHash": "5e041a29cc5fba8efcd0176124f89ea11a9a329fbaf6e83e16275a864c96a08f"
   }
 }

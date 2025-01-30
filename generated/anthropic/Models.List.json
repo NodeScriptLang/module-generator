@@ -9,12 +9,13 @@
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {
-    "auth": {
+    "xApiKey": {
       "schema": {
         "type": "string",
-        "description": "Anthropic API key.\n"
+        "optional": true,
+        "description": "Your unique API key for authentication. \n\n\n      This key is required in the header of all API requests, to\n      authenticate your account and access Anthropic's services. Get your\n      API key through the\n      [Console](https://console.anthropic.com/settings/keys). Each key is\n      scoped to a Workspace.\n"
       },
-      "advanced": false,
+      "advanced": true,
       "hideValue": false
     },
     "beforeId": {
@@ -55,15 +56,6 @@
       },
       "advanced": true,
       "hideValue": false
-    },
-    "xApiKey": {
-      "schema": {
-        "type": "string",
-        "optional": true,
-        "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
-      },
-      "advanced": true,
-      "hideValue": false
     }
   },
   "result": {
@@ -74,6 +66,6 @@
   },
   "attributes": {
     "externalDocs": "",
-    "codeHash": "d88dd27f8f3178922f4d1611915447ac54850392fd5d62a6e9bd34c25e49be0d"
+    "codeHash": "4a2622c875e59c89c6360d541797e3e5198cfdaf5568ba0256959548553d8c6c"
   }
 }

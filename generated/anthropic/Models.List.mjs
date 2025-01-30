@@ -4,17 +4,14 @@ export async function compute(params, ctx) {
   );
   const headers = {};
   const addQueryParam = (key, val) => { if (val != null) url.searchParams.append(key, val) };
-  if (params["auth"] != null) {
-    headers["Authorization"] = ("Bearer" + " " + params["auth"].replace(/^Bearer\s*/gi, ''));
+  if (params["xApiKey"] != null) {
+    headers["x-api-key"] = ("Bearer" + " " + params["xApiKey"].replace(/^Bearer\s*/gi, ''));
   }
   addQueryParam("before_id", params["beforeId"]);
   addQueryParam("after_id", params["afterId"]);
   addQueryParam("limit", params["limit"]);
   if (params["anthropicVersion"] != null) {
     headers["anthropic-version"] = params["anthropicVersion"];
-  }
-  if (params["xApiKey"] != null) {
-    headers["x-api-key"] = params["xApiKey"];
   }
   const body = undefined;
   const res = await ctx.lib.fetch({

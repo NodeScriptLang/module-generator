@@ -1,5 +1,5 @@
 {
-  "moduleName": "Anthropic / Message Batches / List",
+  "moduleName": "Anthropic / Message Batches / List Beta",
   "version": "0.0.0",
   "description": "List all Message Batches within a Workspace. Most recently created batches are returned first.",
   "keywords": [
@@ -48,6 +48,15 @@
       "advanced": true,
       "hideValue": false
     },
+    "anthropicBeta": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
     "anthropicVersion": {
       "schema": {
         "type": "string",
@@ -66,6 +75,6 @@
   },
   "attributes": {
     "externalDocs": "",
-    "codeHash": "c5b51d8621862063b8ad175c16e1451c22bd04f702657d8975e5ce22ec33a85e"
+    "codeHash": "28c5feec233313ec5d346885f49e6ec977bcc5300a7b843a00460913c2f2545c"
   }
 }

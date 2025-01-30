@@ -9,12 +9,13 @@
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {
-    "auth": {
+    "xApiKey": {
       "schema": {
         "type": "string",
-        "description": "Anthropic API key.\n"
+        "optional": true,
+        "description": "Your unique API key for authentication. \n\n\n      This key is required in the header of all API requests, to\n      authenticate your account and access Anthropic's services. Get your\n      API key through the\n      [Console](https://console.anthropic.com/settings/keys). Each key is\n      scoped to a Workspace.\n"
       },
-      "advanced": false,
+      "advanced": true,
       "hideValue": false
     },
     "anthropicVersion": {
@@ -122,6 +123,6 @@
   },
   "attributes": {
     "externalDocs": "",
-    "codeHash": "e2dc991b9eb0d459ca537a66e6b63b6fddc9a476350ed8295e80c02fab9b9d7b"
+    "codeHash": "f50143142b28f14a779d62c25c3bbb4db051a3089682b6ecddd885062a7a45e8"
   }
 }
