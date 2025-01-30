@@ -5,8 +5,8 @@ export async function compute(params, ctx) {
   );
   const headers = {};
   const addQueryParam = (key, val) => { if (val != null) url.searchParams.append(key, val) };
-  if (params["xApiKey"] != null) {
-    headers["x-api-key"] = ("Bearer" + " " + params["xApiKey"].replace(/^Bearer\s*/gi, ''));
+  if (params["apiKey"] != null) {
+    headers["x-api-key"] = ("Bearer" + " " + params["apiKey"].replace(/^Bearer\s*/gi, ''));
   }
   if (params["anthropicVersion"] != null) {
     headers["anthropic-version"] = params["anthropicVersion"];

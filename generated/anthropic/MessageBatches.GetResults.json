@@ -9,7 +9,7 @@
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {
-    "xApiKey": {
+    "apiKey": {
       "schema": {
         "type": "string",
         "optional": true,
@@ -44,6 +44,6 @@
   },
   "attributes": {
     "externalDocs": "",
-    "codeHash": "77785431255a4715dbe26cea4c479ce545bc7f055d0995491415ad24e002f288"
+    "codeHash": "e3bc43c38eae1021490b998aa57a0bd3c6fa900706651b9dae6f39db31ca836e"
   }
 }

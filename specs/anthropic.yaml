@@ -9,18 +9,16 @@ commonKeywords:
   - ai
   - claude
 commonParams:
-  - paramName: xApiKey
+  - paramName: apiKey
     paramKey: x-api-key
     prefix: Bearer
     description: |
       Your unique API key for authentication. 
-
-
-            This key is required in the header of all API requests, to
-            authenticate your account and access Anthropic's services. Get your
-            API key through the
-            [Console](https://console.anthropic.com/settings/keys). Each key is
-            scoped to a Workspace.
+      This key is required in the header of all API requests, to
+      authenticate your account and access Anthropic's services. Get your
+      API key through the
+      [Console](https://console.anthropic.com/settings/keys). Each key is
+      scoped to a Workspace.
     in: header
     schema:
       type: string
