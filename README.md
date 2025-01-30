@@ -4,10 +4,10 @@
 
 ## Sources of API specifications:
 
-https://apis.guru/
+* [API's Guru](https://apis.guru/)
 
-* Gemini: https://generativelanguage.googleapis.com/v1beta/cachedContents
-
+* [Gemini](https://generativelanguage.googleapis.com/v1beta/cachedContents)
+* [Anthropic](https://github.com/tryAGI/Anthropic/blob/main/src/libs/Anthropic/openapi.yaml)
 
 ## How to
 
