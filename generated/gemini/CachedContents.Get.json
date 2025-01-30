@@ -13,7 +13,7 @@
       "schema": {
         "type": "string",
         "optional": true,
-        "description": "OAuth access token."
+        "description": "OAuth 2.0 token for the current user."
       },
       "advanced": true,
       "hideValue": false
@@ -23,105 +23,6 @@
         "type": "string",
         "optional": true,
         "description": "API key. Your API key identifies your project and provides you with\nAPI access, quota, and reports. Required unless you provide an OAuth 2.0 token.\n"
-      },
-      "advanced": true,
-      "hideValue": false
-    },
-    "$Xgafv": {
-      "schema": {
-        "type": "string",
-        "enum": [
-          "1",
-          "2"
-        ],
-        "optional": true,
-        "description": "V1 error format."
-      },
-      "advanced": true,
-      "hideValue": false
-    },
-    "alt": {
-      "schema": {
-        "type": "string",
-        "enum": [
-          "json",
-          "media",
-          "proto"
-        ],
-        "optional": true,
-        "description": "Data format for response."
-      },
-      "advanced": true,
-      "hideValue": false
-    },
-    "callback": {
-      "schema": {
-        "type": "string",
-        "optional": true,
-        "description": "JSONP"
-      },
-      "advanced": true,
-      "hideValue": false
-    },
-    "fields": {
-      "schema": {
-        "type": "string",
-        "optional": true,
-        "description": "Selector specifying which fields to include in a partial response."
-      },
-      "advanced": true,
-      "hideValue": false
-    },
-    "key": {
-      "schema": {
-        "type": "string",
-        "optional": true,
-        "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."
-      },
-      "advanced": true,
-      "hideValue": false
-    },
-    "oauthToken": {
-      "schema": {
-        "type": "string",
-        "optional": true,
-        "description": "OAuth 2.0 token for the current user."
-      },
-      "advanced": true,
-      "hideValue": false
-    },
-    "prettyPrint": {
-      "schema": {
-        "type": "boolean",
-        "optional": true,
-        "description": "Returns response with indentations and line breaks."
-      },
-      "advanced": true,
-      "hideValue": false
-    },
-    "quotaUser": {
-      "schema": {
-        "type": "string",
-        "optional": true,
-        "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."
-      },
-      "advanced": true,
-      "hideValue": false
-    },
-    "uploadProtocol": {
-      "schema": {
-        "type": "string",
-        "optional": true,
-        "description": "Upload protocol for media (e.g. \"raw\", \"multipart\")."
-      },
-      "advanced": true,
-      "hideValue": false
-    },
-    "uploadType": {
-      "schema": {
-        "type": "string",
-        "optional": true,
-        "description": "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."
       },
       "advanced": true,
       "hideValue": false
@@ -143,6 +44,6 @@
   },
   "attributes": {
     "externalDocs": "",
-    "codeHash": "e9f0c9dd60f740c34915720f5c8d5cb38fd168aec92f0c9400da6d886b22fc0c"
+    "codeHash": "72612c9da9f97e37005e115b1e6c5e4e83a4697d389e64e015090b86399750f6"
   }
 }
