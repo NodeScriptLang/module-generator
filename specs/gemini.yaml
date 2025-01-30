@@ -15,15 +15,22 @@ commonKeywords:
   - ai
   - google
 commonParams:
-  - paramName: auth
-    paramKey: Authorization
-    in: header
-    prefix: Bearer
-    description: |
-      Gemini API key.
-    required: true
+  - paramName: accessToken
+    description: OAuth 2.0 token for the current user.
+    paramKey: oauth_token
+    in: query
     schema:
       type: string
+    required: false
+  - paramName: apiKey
+    description: |
+      API key. Your API key identifies your project and provides you with
+      API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    paramKey: key
+    in: query
+    schema:
+      type: string
+    required: false
 modules:
   - moduleName: Cached Contents / Create
     method: post
@@ -69,22 +76,6 @@ modules:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
         paramKey: fields
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: key
-        description: API key. Your API key identifies your project and provides you with
-          API access, quota, and reports. Required unless you provide an OAuth
-          2.0 token.
-        paramKey: key
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: oauthToken
-        description: OAuth 2.0 token for the current user.
-        paramKey: oauth_token
         in: query
         schema:
           type: string
@@ -7136,22 +7127,6 @@ modules:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
         paramKey: fields
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: key
-        description: API key. Your API key identifies your project and provides you with
-          API access, quota, and reports. Required unless you provide an OAuth
-          2.0 token.
-        paramKey: key
-        in: query
-        schema:
-          type: string
-        required: false
-      - paramName: oauthToken
-        description: OAuth 2.0 token for the current user.
-        paramKey: oauth_token
         in: query
         schema:
           type: string
