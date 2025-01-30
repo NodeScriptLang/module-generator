@@ -8,12 +8,6 @@ export async function compute(params, ctx) {
     headers["Authorization"] = ("Bearer" + " " + params["accessToken"].replace(/^Bearer\s*/gi, ''));
   }
   addQueryParam("key", params["apiKey"]);
-  addQueryParam("alt", params["alt"]);
-  addQueryParam("fields", params["fields"]);
-  addQueryParam("key", params["key"]);
-  addQueryParam("oauth_token", params["oauthToken"]);
-  addQueryParam("prettyPrint", params["prettyPrint"]);
-  addQueryParam("quotaUser", params["quotaUser"]);
   addQueryParam("userIp", params["userIp"]);
   const body = undefined;
   const res = await ctx.lib.fetch({

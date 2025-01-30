@@ -1,19 +1,22 @@
 {
   "moduleName": "Google Auth / OAuth2 / Token Info / Create",
   "version": "0.0.0",
-  "description": "",
+  "description": "Retrieves information about an OAuth 2.0 token, such as its validity, associated scopes, and expiration time. Useful for debugging and verifying token details.",
   "keywords": [],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {
     "accessToken": {
       "schema": {
-        "type": "string",
+        "type": "any",
         "optional": true,
-        "description": ""
+        "description": "OAuth 2 access token. Most APIs require `https://www.googleapis.com/auth/documents` scope. Google Auth / Service Account Token can be used to obtain a valid access token."
       },
-      "advanced": true,
-      "hideValue": false
+      "advanced": false,
+      "hideValue": true,
+      "attributes": {
+        "oauthAppId": "y3wgu2zz522x3zl7"
+      }
     },
     "apiKey": {
       "schema": {
@@ -23,63 +26,6 @@
       },
       "advanced": true,
       "hideValue": true
-    },
-    "alt": {
-      "schema": {
-        "type": "string",
-        "enum": [
-          "json"
-        ],
-        "optional": true,
-        "description": "Data format for the response."
-      },
-      "advanced": true,
-      "hideValue": false
-    },
-    "fields": {
-      "schema": {
-        "type": "string",
-        "optional": true,
-        "description": "Selector specifying which fields to include in a partial response."
-      },
-      "advanced": true,
-      "hideValue": false
-    },
-    "key": {
-      "schema": {
-        "type": "string",
-        "optional": true,
-        "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."
-      },
-      "advanced": true,
-      "hideValue": false
-    },
-    "oauthToken": {
-      "schema": {
-        "type": "string",
-        "optional": true,
-        "description": "OAuth 2.0 token for the current user."
-      },
-      "advanced": true,
-      "hideValue": false
-    },
-    "prettyPrint": {
-      "schema": {
-        "type": "boolean",
-        "optional": true,
-        "description": "Returns response with indentations and line breaks."
-      },
-      "advanced": true,
-      "hideValue": false
-    },
-    "quotaUser": {
-      "schema": {
-        "type": "string",
-        "optional": true,
-        "description": "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."
-      },
-      "advanced": true,
-      "hideValue": false
     },
     "userIp": {
       "schema": {
@@ -107,7 +53,7 @@
     "async": true
   },
   "attributes": {
-    "externalDocs": "",
-    "codeHash": "c0f5ca20129ea3ec1ac0f36e3ca4e1c6ab4f5527768f17c0f04ceb07203bb38e"
+    "externalDocs": "https://developers.google.com/identity/protocols/oauth2",
+    "codeHash": "09c914e01a576f92b1833f1ef919629b8758e299c9908462ab73249fdd4172b2"
   }
 }
