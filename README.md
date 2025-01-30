@@ -39,7 +39,7 @@ Both in production and development, you will need to set up a service account in
 
 ### Local dev:
 
-1. Create/update a file in `./secrets/development/` directory named `keys.json`, then inside create/update the object following this format:
+1. Create/update a file in `./secrets/development/` directory named `config.json`, then inside create/update the object following this format:
 
 ```
 {
@@ -54,7 +54,7 @@ Add your module title as per the spec filename from `./specs`, omitting the file
 ### Production:
 
 1. Ensure you have sops installed (See [Sops](#sops) for more info.)
-2. There should already be a file in `./secrets/production` named `keys.json`, which is encrypted. Edit the file using [Sops](#sops). While editing you should see file contents in this format:
+2. There should already be a file in `./secrets/production` named `config.json`, which is encrypted. Edit the file using [Sops](#sops). While editing you should see file contents in this format:
 
 ```
 {
@@ -91,5 +91,5 @@ Secrets are managed using [SOPS](https://github.com/getsops/sops). Installing SO
 3. Edit the secrets file with sops:
 
     ```
-    sops ./secrets/production/keys.json
+    sops ./secrets/production/config.json
     ```

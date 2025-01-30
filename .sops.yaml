@@ -1,4 +1,5 @@
 creation_rules:
   # Production
-  - path_regex: secrets/production/keys.json
+  - path_regex: secrets/production/config.json
     gcp_kms: projects/nodescript-production/locations/europe-west1/keyRings/module-generator/cryptoKeys/module-generator-secrets-01
+    encrypted_regex: '^(key|encrypted)$'
