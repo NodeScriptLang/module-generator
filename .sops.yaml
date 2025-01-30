@@ -1,0 +1,4 @@
+creation_rules:
+  # Production
+  - path_regex: secrets/production/keys.json
+    gcp_kms: projects/nodescript-production/locations/europe-west1/keyRings/module-generator/cryptoKeys/module-generator-secrets-01

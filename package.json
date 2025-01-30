@@ -19,8 +19,6 @@
         "lint": "eslint --ext=.js,.ts,.vue --cache .",
         "version": "npm run compile",
         "postversion": "npm publish --access=public && git push --tags origin main",
-        "secrets:encrypt": "gpg --symmetric --cipher-algo AES256 --passphrase '$GPG_PASSPHRASE' --batch --yes ./secrets/production.json && rm ./secrets/production.json",
-        "secrets:decrypt": "gpg --decrypt --passphrase '$GPG_PASSPHRASE' --batch --output ./secrets/production.json ./secrets/production.json.gpg",
         "generate:openapi": "node out/bin/generate-openapi.js",
         "generate:library": "node out/bin/generate-library.js",
         "publish:library": "node out/bin/publish-library.js"

@@ -2,6 +2,7 @@
 import { ModuleSpecSchema } from '@nodescript/core/schema';
 import arg from 'arg';
 import chalk from 'chalk';
+import { execSync } from 'child_process';
 import { createHash } from 'crypto';
 import { configDotenv } from 'dotenv';
 import { readdir, readFile } from 'fs/promises';
@@ -40,13 +41,27 @@ const files = (await readdir(targetDir))
     .filter(_ => _.endsWith('.json'))
     .map(_ => path.join(targetDir, _));
 
-const tokenJson = JSON.parse(await readFile(`./secrets/${env}.json`, 'utf-8'));
-const token = tokenJson[id];
+
+let keyJson: Record<string, string> = {};
+if (env === 'production') {
+    try {
+        keyJson = JSON.parse(execSync('sops -d ./secrets/production/keys.json', { encoding: 'utf-8' }));
+        console.info(chalk.green('✔️'), 'Key file decrypted successfully');
+    } catch (error) {
+        console.error(chalk.red('✗'), 'Failed to decrypt key file');
+        console.error(error);
+        process.exit(1);
+    }
+} else if (env === 'development') {
+    keyJson = JSON.parse(await readFile(`./secrets/development/keys.json`, 'utf-8'));
+} else {
+    throw new Error(`NODE_ENV not set`);
+}
 
 const nsApi = new NodeScriptApi(
     process.env.NODESCRIPT_API_URL,
     process.env.NODESCRIPT_REGISTRY_URL,
-    token,
+    keyJson[id],
 );
 const forcePublish = process.env.FORCE_PUBLISH === 'true';
 
