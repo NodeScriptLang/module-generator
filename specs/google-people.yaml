@@ -1,8 +1,5 @@
 id: google-people
 displayName: Google People
-workspaceId:
-  development: "Mnv1tFutdmj8dpTT"
-  production: "Ssn1YPt03HaUm1wR"
 baseUrl: https://people.googleapis.com
 description: Provides access to information about profiles and contacts.
 commonParams:

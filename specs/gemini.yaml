@@ -1,8 +1,5 @@
 id: gemini
 displayName: Gemini
-workspaceId:
-  development: 0q8TMVJAEKlQgQ3T
-  production: fR5QbcWaRwIr9feE
 baseUrl: https://generativelanguage.googleapis.com
 description: The Gemini API allows developers to build generative AI
   applications using Gemini models. Gemini is our most capable model, built from

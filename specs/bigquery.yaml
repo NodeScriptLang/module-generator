@@ -1,8 +1,5 @@
 id: bigquery
 displayName: BigQuery
-workspaceId:
-  development: VpXPs0nntyHqNR6s
-  production: 7hrP0fGEU5pLPGtf
 baseUrl: https://bigquery.googleapis.com/bigquery/v2
 description: A data platform for customers to create, manage, share and query data.
 commonParams:

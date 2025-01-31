@@ -1,8 +1,5 @@
 id: google-slides
 displayName: Google Slides
-workspaceId:
-  development: "2pax1XJWi94t8rRU"
-  production: "vM8wVmZ7jSi7rGJt"
 baseUrl: https://slides.googleapis.com
 description: Reads and writes Google Slides presentations.
 commonParams:

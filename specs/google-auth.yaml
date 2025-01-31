@@ -1,8 +1,5 @@
 id: google-auth
 displayName: Google Auth
-workspaceId:
-  development: YI2YftEWevABst6y
-  production: LC4NOVe3NK6Qon9y
 baseUrl: https://www.googleapis.com
 description: Obtains end-user authorization grants for use with other Google APIs.
 commonParams:

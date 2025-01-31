@@ -1,8 +1,5 @@
 id: brevo
 displayName: Brevo
-workspaceId:
-  development: ""
-  production: 02jAH5NhIIwmxnuE
 baseUrl: https://api.brevo.com/v3
 commonParams:
   - paramName: apiKey

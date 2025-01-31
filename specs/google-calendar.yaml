@@ -1,8 +1,5 @@
 id: google-calendar
 displayName: Google Calendar
-workspaceId:
-  development: "ik0sEQBQuTYmlbYU"
-  production: "RewY07hJ4rw9Wnou"
 baseUrl: https://www.googleapis.com/calendar/v3
 description: Manipulates events and other calendar data.
 commonParams:

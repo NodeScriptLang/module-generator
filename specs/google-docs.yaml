@@ -1,8 +1,5 @@
 id: google-docs
 displayName: Google Docs
-workspaceId:
-  development: BBpuJYsdDsGDklzV
-  production: QzyGl9Nz6s8Y7ixs
 baseUrl: https://docs.googleapis.com
 description: Reads and writes Google Docs documents.
 commonParams:

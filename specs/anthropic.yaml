@@ -1,8 +1,5 @@
 id: anthropic
 displayName: Anthropic
-workspaceId:
-  development: OFKKsRincNQbdzFP
-  production: FYDlsYvxQXxqwgvB
 baseUrl: https://api.anthropic.com
 description: The Anthropic REST API. Please see https://api.anthropic.com for more details.
 commonKeywords:
