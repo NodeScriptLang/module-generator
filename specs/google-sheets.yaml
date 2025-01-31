@@ -1,8 +1,5 @@
 id: google-sheets
 displayName: Google Sheets
-workspaceId:
-  development: ""
-  production: EPNXWt2GHezJM2hK
 baseUrl: https://sheets.googleapis.com
 description: Reads and writes Google Sheets.
 commonParams:

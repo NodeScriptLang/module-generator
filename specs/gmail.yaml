@@ -1,8 +1,5 @@
 id: gmail
 displayName: Gmail
-workspaceId:
-  development: "Zjaq0nUZuEpY6jDe"
-  production: "vp247gvVCkiPnNZH"
 baseUrl: https://gmail.googleapis.com
 description: The Gmail API lets you view and manage Gmail mailbox data like threads, messages, and labels.
 commonParams:

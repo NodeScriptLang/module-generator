@@ -1,8 +1,5 @@
 id: trello
 displayName: Trello
-workspaceId:
-  development: "kD9g29KdnFtMqeVH"
-  production: "yHLakKK7VZWh18Qw"
 baseUrl: https://api.trello.com/1
 description: "The Trello API allows you to control every aspect of your Trello account, including organizations, boards, cards, members and much more."
 commonParams:

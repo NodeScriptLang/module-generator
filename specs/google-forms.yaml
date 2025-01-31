@@ -1,8 +1,5 @@
 id: google-forms
 displayName: Google Forms
-workspaceId:
-  development: "Ua0vbFAN0exHCI7O"
-  production: "UcqAQezCDhYzBDVb"
 baseUrl: https://forms.googleapis.com
 description: Reads and writes Google Forms and responses.
 commonParams:

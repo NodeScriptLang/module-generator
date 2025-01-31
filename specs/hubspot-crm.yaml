@@ -1,8 +1,5 @@
 id: hubspot-crm
 displayName: Hubspot CRM
-workspaceId:
-  development: jWOtOfz4599NAuRa
-  production: 22uopICJF01IPoPp
 baseUrl: https://api.hubapi.com
 description: ""
 commonParams:

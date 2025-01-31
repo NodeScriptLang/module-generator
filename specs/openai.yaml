@@ -1,8 +1,5 @@
 id: openai
 displayName: OpenAI
-workspaceId:
-  development: ""
-  production: zB3iBCbkwUnACwj8
 baseUrl: https://api.openai.com/v1
 description: The OpenAI REST API. Please see
   https://platform.openai.com/docs/api-reference for more details.

@@ -6,7 +6,6 @@ import { LibraryParamSpec, LibraryParamSpecSchema } from './LibraryParamSpec.js'
 export interface LibrarySpec {
     id: string;
     displayName: string;
-    workspaceId: Record<string, string>;
     baseUrl: string;
     description: string;
     commonParams?: LibraryParamSpec[];
@@ -24,11 +23,6 @@ export const LibrarySpecSchema = new Schema<LibrarySpec>({
     properties: {
         id: { type: 'string' },
         displayName: { type: 'string' },
-        workspaceId: {
-            type: 'object',
-            properties: {},
-            additionalProperties: { type: 'string' },
-        },
         baseUrl: { type: 'string' },
         description: { type: 'string' },
         commonParams: {

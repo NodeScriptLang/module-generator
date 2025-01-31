@@ -51,10 +51,6 @@ export class OpenApiGenerator {
         return {
             id: this.id,
             displayName: this.inferredServiceName,
-            workspaceId: {
-                development: '',
-                production: '',
-            },
             baseUrl,
             description,
             modules: [...this.generateModuleSpecs()],

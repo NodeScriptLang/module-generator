@@ -1,8 +1,5 @@
 id: github.stripped
 displayName: GitHub
-workspaceId:
-  development: ""
-  production: yasuWM51ktSz098e
 baseUrl: https://api.github.com
 description: GitHub's v3 REST API.
 commonParams:

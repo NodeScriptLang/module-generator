@@ -1,8 +1,5 @@
 id: notion
 displayName: Notion
-workspaceId:
-  development: ""
-  production: 5nSUXxACmPQWw66N
 baseUrl: https://api.notion.com
 description:
 commonParams:

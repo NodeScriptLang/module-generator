@@ -1,8 +1,5 @@
 id: google-drive
 displayName: Google Drive
-workspaceId:
-  development: "7ODoihe61yUyQWvj"
-  production: "8KDDtolL7PBUuQrY"
 baseUrl: https://www.googleapis.com/drive/v3
 description: Manages files in Drive including uploading, downloading, searching,
   detecting changes, and updating sharing permissions.

@@ -1,8 +1,5 @@
 id: slack
 displayName: Slack
-workspaceId:
-  development: 7sKYY74OlRqRY1iK
-  production: Y9Mmif5WBIbGp6FX
 baseUrl: https://slack.com/api
 description: One way to interact with the Slack platform is its HTTP RPC-based
   Web API, a collection of methods requiring OAuth 2.0-based user, bot, or
