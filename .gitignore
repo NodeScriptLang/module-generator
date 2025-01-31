@@ -9,6 +9,8 @@ yarn.lock
 !.env.test
 !.env.openapi
 
+secrets/development/*
+
 out/
 .tmp*
 *.tsbuildinfo

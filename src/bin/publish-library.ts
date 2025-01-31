@@ -2,14 +2,13 @@
 import { ModuleSpecSchema } from '@nodescript/core/schema';
 import arg from 'arg';
 import chalk from 'chalk';
+import { execSync } from 'child_process';
 import { createHash } from 'crypto';
 import { configDotenv } from 'dotenv';
 import { readdir, readFile } from 'fs/promises';
 import path from 'path';
 import semver from 'semver';
-import yaml from 'yaml';
 
-import { LibrarySpecSchema } from '../main/schema/LibrarySpec.js';
 import { NodeScriptApi } from '../main/services/NodeScriptApi.js';
 
 // Use .env to configure keys and generation options
@@ -27,23 +26,47 @@ const sourceFile = args['--in'];
 if (!sourceFile) {
     throw new Error('Usage: --in=<spec file>');
 }
-const librarySpec = LibrarySpecSchema.decode(yaml.parse(await readFile(sourceFile, 'utf-8')));
-const id = path.basename(sourceFile).replace(/\.(json|yaml)$/gi, '');
 
-const workspaceId = librarySpec.workspaceId[env];
-if (!workspaceId) {
-    throw new Error(`Missing workspaceId in ${sourceFile}`);
-}
+const id = path.basename(sourceFile).replace(/\.(json|yaml)$/gi, '');
 
 const targetDir = path.join('generated', id);
 const files = (await readdir(targetDir))
     .filter(_ => _.endsWith('.json'))
     .map(_ => path.join(targetDir, _));
 
+
+let configJson: Record<string, any> = {};
+
+if (env === 'production') {
+    try {
+        configJson = JSON.parse(execSync('sops -d ./secrets/production/config.json', { encoding: 'utf-8' }));
+        console.info(chalk.green('✔️'), 'Key file decrypted successfully');
+    } catch (error) {
+        console.error(chalk.red('✗'), 'Failed to decrypt key file');
+        console.error(error);
+        process.exit(1);
+    }
+} else if (env === 'development') {
+    configJson = JSON.parse(await readFile(`./secrets/development/config.json`, 'utf-8'));
+} else {
+    throw new Error(`NODE_ENV not set`);
+}
+
+const config = configJson[id];
+if (!config) {
+    throw new Error(`Missing config for ${id} in config.json`);
+}
+
+const workspaceId = config.workspaceId;
+if (!workspaceId) {
+    throw new Error(`Missing workspaceId in config.json`);
+}
+
+
 const nsApi = new NodeScriptApi(
     process.env.NODESCRIPT_API_URL,
     process.env.NODESCRIPT_REGISTRY_URL,
-    process.env.NODESCRIPT_API_TOKEN,
+    config.key,
 );
 const forcePublish = process.env.FORCE_PUBLISH === 'true';
 
