@@ -1,7 +1,7 @@
 {
   "moduleName": "OpenAI / Vector Stores / Files / Create",
   "version": "0.0.0",
-  "description": "Create a vector store file by attaching a File to a vector store.",
+  "description": "Create a vector store file by attaching a [File](/docs/api-reference/files) to a [vector store](/docs/api-reference/vector-stores/object).",
   "keywords": [],
   "cacheMode": "always",
   "evalMode": "manual",
@@ -9,7 +9,6 @@
     "auth": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "OpenAI API key.\n"
       },
       "advanced": false,
@@ -18,7 +17,6 @@
     "betaAccess": {
       "schema": {
         "type": "string",
-        "optional": false,
         "default": "assistants=v2",
         "description": "Adds OpenAI-Beta for access to new and experimental features."
       },
@@ -28,7 +26,6 @@
     "vectorStoreId": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "The ID of the vector store for which to create a File.\n"
       },
       "advanced": false,
@@ -37,8 +34,7 @@
     "fileId": {
       "schema": {
         "type": "string",
-        "optional": true,
-        "description": "A File ID that the vector store should use. Useful for tools like `file_search` that can access files."
+        "description": "A [File](/docs/api-reference/files) ID that the vector store should use. Useful for tools like `file_search` that can access files."
       },
       "advanced": false,
       "hideValue": false
@@ -60,7 +56,7 @@
     "async": true
   },
   "attributes": {
-    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "externalDocs": "",
     "codeHash": "89fba900f9021c577be6d7714f374a32779304ae558c9afac5aed7bed360036b"
   }
 }

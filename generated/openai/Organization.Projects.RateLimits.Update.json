@@ -1,0 +1,107 @@
+{
+  "moduleName": "OpenAI / Organization / Projects / Rate Limits / Update",
+  "version": "0.0.0",
+  "description": "Updates a project rate limit.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the project."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "rateLimitId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the rate limit."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "maxRequestsPer1Minute": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The maximum requests per minute."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maxTokensPer1Minute": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The maximum tokens per minute."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maxImagesPer1Minute": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The maximum images per minute. Only relevant for certain models."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maxAudioMegabytesPer1Minute": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The maximum audio megabytes per minute. Only relevant for certain models."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "maxRequestsPer1Day": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The maximum requests per day. Only relevant for certain models."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "batch1DayMaxInputTokens": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The maximum batch input tokens per day. Only relevant for certain models."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "66a304ba691549c66e670b7904077bd7304b909a2cc830c6af178e0532ee8477"
+  }
+}

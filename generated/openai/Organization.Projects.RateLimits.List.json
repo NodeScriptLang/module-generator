@@ -1,0 +1,73 @@
+{
+  "moduleName": "OpenAI / Organization / Projects / Rate Limits / List",
+  "version": "0.0.0",
+  "description": "Returns the rate limits per model for a project.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the project."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "100",
+        "optional": true,
+        "description": "A limit on the number of objects to be returned. The default is 100.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "after": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A cursor for use in pagination. `after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include after=obj_foo in order to fetch the next page of the list.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "before": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, beginning with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "922dda2484397e1965640cbecdc7961f07010c14b834e787a72cabda1243bff6"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "moduleName": "OpenAI / Files / Download",
+  "version": "0.0.0",
+  "description": "Returns the contents of the specified file.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fileId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the file to use for this request."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "f351df901db65c14f44908ea043f22959b6c80bc05b5cbbb3b5387d78222306f"
+  }
+}

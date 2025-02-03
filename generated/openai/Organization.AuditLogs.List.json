@@ -1,0 +1,134 @@
+{
+  "moduleName": "OpenAI / Organization / Audit Logs / List",
+  "version": "0.0.0",
+  "description": "List user actions and configuration changes within this organization.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "effectiveAt": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": "Return only events whose `effective_at` (Unix seconds) is in this range."
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "projectIds[]": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Return only events for these projects."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "eventTypes[]": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Return only events with a `type` in one of these values. For example, `project.created`. For all options, see the documentation for the [audit log object](/docs/api-reference/audit-logs/object)."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "actorIds[]": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Return only events performed by these actors. Can be a user ID, a service account ID, or an api key tracking ID."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "actorEmails[]": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Return only events performed by users with these emails."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "resourceIds[]": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Return only events performed on these targets. For example, a project ID updated."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "20",
+        "optional": true,
+        "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "after": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A cursor for use in pagination. `after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include after=obj_foo in order to fetch the next page of the list.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "before": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "bf225c93040ded150cc8bef1cdb038957ecd29ce91f8b81661c90ca5fbb8d5df"
+  }
+}

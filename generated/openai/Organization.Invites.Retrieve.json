@@ -1,0 +1,45 @@
+{
+  "moduleName": "OpenAI / Organization / Invites / Retrieve",
+  "version": "0.0.0",
+  "description": "Retrieves an invite.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "inviteId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the invite to retrieve."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "7647dab62efbbca966b6dfa8d3c770d98bf2e04d346133d4116093e1d0ea99fe"
+  }
+}

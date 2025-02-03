@@ -1,0 +1,147 @@
+{
+  "moduleName": "OpenAI / Organization / Usage / Audio Speeches",
+  "version": "0.0.0",
+  "description": "Get audio speeches usage details for the organization.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "startTime": {
+      "schema": {
+        "type": "number",
+        "description": "Start time (Unix seconds) of the query time range, inclusive."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "endTime": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "End time (Unix seconds) of the query time range, exclusive."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "bucketWidth": {
+      "schema": {
+        "type": "string",
+        "default": "1d",
+        "enum": [
+          "1m",
+          "1h",
+          "1d"
+        ],
+        "optional": true,
+        "description": "Width of each time bucket in response. Currently `1m`, `1h` and `1d` are supported, default to `1d`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "projectIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Return only usage for these projects."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "userIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Return only usage for these users."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "apiKeyIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Return only usage for these API keys."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "models": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Return only usage for these models."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "groupBy": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Group the usage data by the specified fields. Support fields include `project_id`, `user_id`, `api_key_id`, `model` or any combination of them."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Specifies the number of buckets to return.\n- `bucket_width=1d`: default: 7, max: 31\n- `bucket_width=1h`: default: 24, max: 168\n- `bucket_width=1m`: default: 60, max: 1440\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A cursor for use in pagination. Corresponding to the `next_page` field from the previous response."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "15dc510db224ef33365210dc028ebfff92cf2fb8a5ec72c96cdec90d8c1a5bb8"
+  }
+}

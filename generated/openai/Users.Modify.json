@@ -1,0 +1,57 @@
+{
+  "moduleName": "OpenAI / Users / Modify",
+  "version": "0.0.0",
+  "description": "Modifies a user's role in the organization.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "userId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the user."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "role": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "owner",
+          "reader"
+        ],
+        "description": "`owner` or `reader`"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "83551b3ecf0f409586d304c5954d6a700aefa8c8d6afed957e493b99273173e3"
+  }
+}

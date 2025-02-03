@@ -1,0 +1,64 @@
+{
+  "moduleName": "OpenAI / Fine-tuning / List Checkpoints",
+  "version": "0.0.0",
+  "description": "List checkpoints for a fine-tuning job.\n",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "fineTuningJobId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the fine-tuning job to get checkpoints for.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "after": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Identifier for the last checkpoint ID from the previous pagination request."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "limit": {
+      "schema": {
+        "type": "number",
+        "default": "10",
+        "optional": true,
+        "description": "Number of checkpoints to retrieve."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "6b4ccb669fbe8b3757093477a81f8180f07245d88a2c762156337faea2585b04"
+  }
+}

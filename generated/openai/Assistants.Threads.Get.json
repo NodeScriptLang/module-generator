@@ -1,0 +1,45 @@
+{
+  "moduleName": "OpenAI / Assistants / Threads / Get",
+  "version": "0.0.0",
+  "description": "Retrieves a thread.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "threadId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the thread to retrieve."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "3aa489970c6821b15b04b71c29c7a93e7893325feb148b431cde411a501486b4"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "moduleName": "OpenAI / Uploads / Complete",
   "version": "0.0.0",
-  "description": "Completes the Upload.\nWithin the returned Upload object, there is a nested File object that is ready to use in the rest of the platform.\nYou can specify the order of the Parts by passing in an ordered list of the Part IDs.\nThe number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No Parts may be added after an Upload is completed.\n",
+  "description": "Completes the [Upload](/docs/api-reference/uploads/object). \n\nWithin the returned Upload object, there is a nested [File](/docs/api-reference/files/object) object that is ready to use in the rest of the platform.\n\nYou can specify the order of the Parts by passing in an ordered list of the Part IDs.\n\nThe number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No Parts may be added after an Upload is completed.\n",
   "keywords": [],
   "cacheMode": "always",
   "evalMode": "manual",
@@ -9,7 +9,6 @@
     "auth": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "OpenAI API key.\n"
       },
       "advanced": false,
@@ -18,7 +17,6 @@
     "betaAccess": {
       "schema": {
         "type": "string",
-        "optional": false,
         "default": "assistants=v2",
         "description": "Adds OpenAI-Beta for access to new and experimental features."
       },
@@ -28,7 +26,6 @@
     "uploadId": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "The ID of the Upload.\n"
       },
       "advanced": false,
@@ -40,7 +37,6 @@
         "items": {
           "type": "any"
         },
-        "optional": true,
         "description": "The ordered list of Part IDs.\n"
       },
       "advanced": false,
@@ -63,7 +59,7 @@
     "async": true
   },
   "attributes": {
-    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "externalDocs": "",
     "codeHash": "bb6039e783f13a95d6dbdc763845a16b5d4788269d698310b0a4d1c7b1a3f824"
   }
 }

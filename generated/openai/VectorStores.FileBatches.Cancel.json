@@ -9,7 +9,6 @@
     "auth": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "OpenAI API key.\n"
       },
       "advanced": false,
@@ -18,7 +17,6 @@
     "betaAccess": {
       "schema": {
         "type": "string",
-        "optional": false,
         "default": "assistants=v2",
         "description": "Adds OpenAI-Beta for access to new and experimental features."
       },
@@ -28,7 +26,6 @@
     "vectorStoreId": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "The ID of the vector store that the file batch belongs to."
       },
       "advanced": false,
@@ -37,7 +34,6 @@
     "batchId": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "The ID of the file batch to cancel."
       },
       "advanced": false,
@@ -51,7 +47,7 @@
     "async": true
   },
   "attributes": {
-    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "externalDocs": "",
     "codeHash": "e4990353f21e343c4f43becb620bbc23c5071c6b4e0ac2158b19793d59ca13fa"
   }
 }

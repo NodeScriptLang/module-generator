@@ -9,7 +9,6 @@
     "auth": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "OpenAI API key.\n"
       },
       "advanced": false,
@@ -18,7 +17,6 @@
     "betaAccess": {
       "schema": {
         "type": "string",
-        "optional": false,
         "default": "assistants=v2",
         "description": "Adds OpenAI-Beta for access to new and experimental features."
       },
@@ -28,7 +26,6 @@
     "vectorStoreId": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "The ID of the vector store for which to create a File Batch.\n"
       },
       "advanced": false,
@@ -40,8 +37,7 @@
         "items": {
           "type": "any"
         },
-        "optional": true,
-        "description": "A list of File IDs that the vector store should use. Useful for tools like `file_search` that can access files."
+        "description": "A list of [File](/docs/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files."
       },
       "advanced": false,
       "hideValue": false
@@ -63,7 +59,7 @@
     "async": true
   },
   "attributes": {
-    "externalDocs": "https://platform.openai.com/docs/api-reference",
+    "externalDocs": "",
     "codeHash": "b6f3ba6e8fa878851a02374053f7838a154730dea9fa2149ad3b215b88c8bb1b"
   }
 }
