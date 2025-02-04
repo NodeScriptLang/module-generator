@@ -1,0 +1,53 @@
+{
+  "moduleName": "OpenAI / Organization / Projects / Modify",
+  "version": "0.0.0",
+  "description": "Modifies a project in the organization.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the project."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "The updated name of the project, this name appears in reports."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "2de5cb1afeb3d1e6fa85dd9c4cf07d8f6fc62e491eeb4126a26a7406f5825764"
+  }
+}

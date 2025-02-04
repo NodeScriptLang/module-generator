@@ -26,7 +26,7 @@
     "model": {
       "schema": {
         "type": "any",
-        "description": "One of the available TTS models: `tts-1` or `tts-1-hd`\n"
+        "description": "One of the available [TTS models](/docs/models#tts): `tts-1` or `tts-1-hd`\n"
       },
       "advanced": false,
       "hideValue": true
@@ -50,7 +50,7 @@
           "nova",
           "shimmer"
         ],
-        "description": "The voice to use when generating the audio. Supported voices are `alloy`, `echo`, `fable`, `onyx`, `nova`, and `shimmer`."
+        "description": "The voice to use when generating the audio. Supported voices are `alloy`, `ash`, `coral`, `echo`, `fable`, `onyx`, `nova`, `sage` and `shimmer`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech#voice-options)."
       },
       "advanced": false,
       "hideValue": false

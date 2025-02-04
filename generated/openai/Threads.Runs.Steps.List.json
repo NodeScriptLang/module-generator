@@ -76,7 +76,19 @@
       "schema": {
         "type": "string",
         "optional": true,
-        "description": "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
+        "description": "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "include[]": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "A list of additional fields to include in the response. Currently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content.\n\nSee the [file search tool documentation](/docs/assistants/tools/file-search#customizing-file-search-settings) for more information.\n"
       },
       "advanced": true,
       "hideValue": false
@@ -90,6 +102,6 @@
   },
   "attributes": {
     "externalDocs": "https://platform.openai.com/docs/api-reference",
-    "codeHash": "cc27aecf1b72d8af0d11db89db8525ca332301b6983520eb42398bd05c2ab90f"
+    "codeHash": "882e4f0ea4e4adfb3b9aea8d2d22b0158f41e529b8187c73da0f6190ea41dbac"
   }
 }

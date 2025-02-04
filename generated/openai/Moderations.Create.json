@@ -26,7 +26,7 @@
     "input": {
       "schema": {
         "type": "any",
-        "description": "The input text to classify"
+        "description": "Input (or inputs) to classify. Can be a single string, an array of strings, or\nan array of multi-modal input objects similar to other models.\n"
       },
       "advanced": false,
       "hideValue": true
@@ -35,7 +35,7 @@
       "schema": {
         "type": "any",
         "optional": true,
-        "description": "Two content moderations models are available: `text-moderation-stable` and `text-moderation-latest`.\nThe default is `text-moderation-latest` which will be automatically upgraded over time. This ensures you are always using our most accurate model. If you use `text-moderation-stable`, we will provide advanced notice before updating the model. Accuracy of `text-moderation-stable` may be slightly lower than for `text-moderation-latest`.\n"
+        "description": "The content moderation model you would like to use. Learn more in\n[the moderation guide](/docs/guides/moderation), and learn about\navailable models [here](/docs/models#moderation).\n"
       },
       "advanced": true,
       "hideValue": true

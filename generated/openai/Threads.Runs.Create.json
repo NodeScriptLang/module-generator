@@ -31,10 +31,22 @@
       "advanced": false,
       "hideValue": false
     },
+    "include[]": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "A list of additional fields to include in the response. Currently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content.\n\nSee the [file search tool documentation](/docs/assistants/tools/file-search#customizing-file-search-settings) for more information.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
     "assistantId": {
       "schema": {
         "type": "string",
-        "description": "The ID of the assistant to use to execute this run."
+        "description": "The ID of the [assistant](/docs/api-reference/assistants) to use to execute this run."
       },
       "advanced": false,
       "hideValue": false
@@ -43,7 +55,7 @@
       "schema": {
         "type": "any",
         "optional": true,
-        "description": "The ID of the model to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used."
+        "description": "The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used."
       },
       "advanced": true,
       "hideValue": true
@@ -52,7 +64,7 @@
       "schema": {
         "type": "string",
         "optional": true,
-        "description": "Overrides the instructions of the assistant. This is useful for modifying the behavior on a per-run basis."
+        "description": "Overrides the [instructions](/docs/api-reference/assistants/createAssistant) of the assistant. This is useful for modifying the behavior on a per-run basis."
       },
       "advanced": true,
       "hideValue": false
@@ -94,7 +106,7 @@
       "schema": {
         "type": "any",
         "optional": true,
-        "description": "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.\n"
+        "description": "Set of 16 key-value pairs that can be attached to an object. This can be\nuseful for storing additional information about the object in a structured\nformat, and querying for objects via API or the dashboard. \n\nKeys are strings with a maximum length of 64 characters. Values are strings\nwith a maximum length of 512 characters.\n"
       },
       "advanced": true,
       "hideValue": true
@@ -174,7 +186,7 @@
       "schema": {
         "type": "boolean",
         "optional": true,
-        "description": "Whether to enable parallel function calling during tool use."
+        "description": "Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use."
       },
       "advanced": true,
       "hideValue": false
@@ -197,6 +209,6 @@
   },
   "attributes": {
     "externalDocs": "https://platform.openai.com/docs/api-reference",
-    "codeHash": "97a525e5de6fa8f069f9023b9f5e143939d9a9f97b334dc64edc54ef946d5df2"
+    "codeHash": "66eaeb9d4cb5bc37f04cc4d34ad2a76cfc4577da9800aecac6d9d999e014e452"
   }
 }

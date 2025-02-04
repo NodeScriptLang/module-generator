@@ -1,0 +1,45 @@
+{
+  "moduleName": "OpenAI / Organization / Projects / Archive",
+  "version": "0.0.0",
+  "description": "Archives a project in the organization. Archived projects cannot be used or updated.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "projectId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the project."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "ed75070b15afa82a66968144eaec5715e5adb3923c283196e66820eebc39d1e3"
+  }
+}

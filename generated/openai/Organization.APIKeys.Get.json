@@ -1,0 +1,45 @@
+{
+  "moduleName": "OpenAI / Organization / API Keys / Get",
+  "version": "0.0.0",
+  "description": "Get details for a specific organization API key by its ID.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "keyId": {
+      "schema": {
+        "type": "string",
+        "description": "The ID of the API key."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "beffbad2c989d7f0b967eb3ddffdfba6671563a1e980bfd59de9260d319d2421"
+  }
+}

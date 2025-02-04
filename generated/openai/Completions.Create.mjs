@@ -24,6 +24,8 @@ export async function compute(params, ctx) {
   body["presence_penalty"] = params["presencePenalty"];
   body["seed"] = params["seed"];
   body["stop"] = params["stop"];
+  body["stream"] = params["stream"];
+  body["stream_options"] = params["streamOptions"];
   body["suffix"] = params["suffix"];
   body["temperature"] = params["temperature"];
   body["top_p"] = params["topP"];

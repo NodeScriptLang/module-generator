@@ -34,7 +34,7 @@
     "fileId": {
       "schema": {
         "type": "string",
-        "description": "A File ID that the vector store should use. Useful for tools like `file_search` that can access files."
+        "description": "A [File](/docs/api-reference/files) ID that the vector store should use. Useful for tools like `file_search` that can access files."
       },
       "advanced": false,
       "hideValue": false

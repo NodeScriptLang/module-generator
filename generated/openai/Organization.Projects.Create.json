@@ -1,0 +1,45 @@
+{
+  "moduleName": "OpenAI / Organization / Projects / Create",
+  "version": "0.0.0",
+  "description": "Create a new project in the organization. Projects can be created and archived, but cannot be deleted.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "description": "The friendly name of the project, this name appears in reports."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "d394c5eff08990c28141487b3f01dd439eb31dd9dd640fc0dd200f53a6642678"
+  }
+}
