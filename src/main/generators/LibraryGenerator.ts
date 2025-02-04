@@ -95,6 +95,7 @@ export class LibraryGenerator {
             const schema: SchemaSpec = { ...pspec.schema };
             const optional = schema.optional ?? !pspec.required;
             schema.optional = optional;
+            schema.optional = optional === true ? true : undefined;
             schema.description = pspec.description ?? '';
             params[pspec.paramName] = {
                 schema: schema as UnknownSchemaDef,

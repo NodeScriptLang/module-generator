@@ -191,7 +191,6 @@ export class OpenApiGenerator {
                     type: 'string',
                     default: schema.default,
                     enum: schema.enum,
-                    optional: !schema.required,
                 };
             case 'integer':
             case 'number':
@@ -200,25 +199,21 @@ export class OpenApiGenerator {
                     minimum: schema.minimum,
                     maximum: schema.maximum,
                     default: schema.default,
-                    optional: !schema.required,
                 };
             case 'boolean':
                 return {
                     type: 'boolean',
                     default: schema.default,
-                    optional: !schema.required,
                 };
             case 'array':
                 return {
                     type: 'array',
                     items: { type: 'any' },
-                    optional: !schema.required,
                 };
             case 'object':
             default:
                 return {
                     type: 'any',
-                    optional: !schema.required,
                 };
         }
     }
