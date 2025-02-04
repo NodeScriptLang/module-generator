@@ -83,6 +83,7 @@ export class OpenApiGenerator {
                     path: normalizePath(ep.path),
                     description: ep.opSpec.description ?? ep.opSpec.summary ?? '',
                     externalDocs: ep.opSpec.externalDocs?.url ?? '',
+                    operationId: ep.opSpec.operationId ?? '',
                     params: paramSpecs,
                     requestBodyType,
                 };
