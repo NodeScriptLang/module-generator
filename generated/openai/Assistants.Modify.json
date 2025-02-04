@@ -9,7 +9,6 @@
     "auth": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "OpenAI API key.\n"
       },
       "advanced": false,
@@ -18,7 +17,6 @@
     "betaAccess": {
       "schema": {
         "type": "string",
-        "optional": false,
         "default": "assistants=v2",
         "description": "Adds OpenAI-Beta for access to new and experimental features."
       },
@@ -28,7 +26,6 @@
     "assistantId": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "The ID of the assistant to modify."
       },
       "advanced": false,

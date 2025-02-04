@@ -9,7 +9,6 @@
     "auth": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "OpenAI API key.\n"
       },
       "advanced": false,
@@ -18,7 +17,6 @@
     "betaAccess": {
       "schema": {
         "type": "string",
-        "optional": false,
         "default": "assistants=v2",
         "description": "Adds OpenAI-Beta for access to new and experimental features."
       },
@@ -28,7 +26,6 @@
     "threadId": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "The ID of the thread the run and run steps belong to."
       },
       "advanced": false,
@@ -37,7 +34,6 @@
     "runId": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "The ID of the run the run steps belong to."
       },
       "advanced": false,

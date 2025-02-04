@@ -9,7 +9,6 @@
     "auth": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "OpenAI API key.\n"
       },
       "advanced": false,
@@ -18,7 +17,6 @@
     "betaAccess": {
       "schema": {
         "type": "string",
-        "optional": false,
         "default": "assistants=v2",
         "description": "Adds OpenAI-Beta for access to new and experimental features."
       },
@@ -28,7 +26,6 @@
     "uploadId": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "The ID of the Upload.\n"
       },
       "advanced": false,
@@ -40,7 +37,6 @@
         "items": {
           "type": "any"
         },
-        "optional": true,
         "description": "The ordered list of Part IDs.\n"
       },
       "advanced": false,

@@ -9,7 +9,6 @@
     "auth": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "OpenAI API key.\n"
       },
       "advanced": false,
@@ -18,7 +17,6 @@
     "betaAccess": {
       "schema": {
         "type": "string",
-        "optional": false,
         "default": "assistants=v2",
         "description": "Adds OpenAI-Beta for access to new and experimental features."
       },
@@ -28,7 +26,6 @@
     "filename": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "The name of the file to upload.\n"
       },
       "advanced": false,
@@ -43,7 +40,6 @@
           "fine-tune",
           "vision"
         ],
-        "optional": true,
         "description": "The intended purpose of the uploaded file.\n"
       },
       "advanced": false,
@@ -52,7 +48,6 @@
     "bytes": {
       "schema": {
         "type": "number",
-        "optional": true,
         "description": "The number of bytes in the file you are uploading.\n"
       },
       "advanced": false,
@@ -61,7 +56,6 @@
     "mimeType": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "The MIME type of the file. This must fall within the supported MIME types for your file purpose. See the supported MIME types for assistants and vision.\n"
       },
       "advanced": false,

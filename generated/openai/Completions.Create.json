@@ -9,7 +9,6 @@
     "auth": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "OpenAI API key.\n"
       },
       "advanced": false,
@@ -18,7 +17,6 @@
     "betaAccess": {
       "schema": {
         "type": "string",
-        "optional": false,
         "default": "assistants=v2",
         "description": "Adds OpenAI-Beta for access to new and experimental features."
       },
@@ -29,7 +27,6 @@
       "schema": {
         "type": "string",
         "default": "gpt-4o",
-        "optional": true,
         "description": "ID of the model to use.\n"
       },
       "advanced": false,
@@ -38,7 +35,6 @@
     "prompt": {
       "schema": {
         "type": "any",
-        "optional": true,
         "description": "The prompt(s) to generate completions for, encoded as a string, array of strings, array of tokens, or array of token arrays.\nNote that <|endoftext|> is the document separator that the model sees during training, so if a prompt is not specified the model will generate as if from the beginning of a new document.\n"
       },
       "advanced": false,

@@ -9,7 +9,6 @@
     "auth": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "OpenAI API key.\n"
       },
       "advanced": false,
@@ -18,7 +17,6 @@
     "betaAccess": {
       "schema": {
         "type": "string",
-        "optional": false,
         "default": "assistants=v2",
         "description": "Adds OpenAI-Beta for access to new and experimental features."
       },
@@ -28,7 +26,6 @@
     "model": {
       "schema": {
         "type": "any",
-        "optional": true,
         "description": "The name of the model to fine-tune. You can select one of the\n"
       },
       "advanced": false,
@@ -37,7 +34,6 @@
     "trainingFile": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "The ID of an uploaded file that contains training data.\nYour dataset must be formatted as a JSONL file. Additionally, you must upload your file with the purpose `fine-tune`.\nThe contents of the file should differ depending on if the model uses the chat or completions format.\nSee the fine-tuning for more details.\n"
       },
       "advanced": false,

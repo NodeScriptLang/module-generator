@@ -9,7 +9,6 @@
     "auth": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "OpenAI API key.\n"
       },
       "advanced": false,
@@ -18,7 +17,6 @@
     "betaAccess": {
       "schema": {
         "type": "string",
-        "optional": false,
         "default": "assistants=v2",
         "description": "Adds OpenAI-Beta for access to new and experimental features."
       },
@@ -28,7 +26,6 @@
     "inputFileId": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "The ID of an uploaded file that contains requests for the new batch.\nSee upload file for how to upload a file.\nYour input file must be formatted as a JSONL, and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests, and can be up to 100 MB in size.\n"
       },
       "advanced": false,
@@ -42,7 +39,6 @@
           "/v1/embeddings",
           "/v1/completions"
         ],
-        "optional": true,
         "description": "The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions`, `/v1/embeddings`, and `/v1/completions` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch."
       },
       "advanced": false,
@@ -54,7 +50,6 @@
         "enum": [
           "24h"
         ],
-        "optional": true,
         "description": "The time frame within which the batch should be processed. Currently only `24h` is supported."
       },
       "advanced": false,
