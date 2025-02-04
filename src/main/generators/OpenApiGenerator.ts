@@ -86,13 +86,27 @@ export class OpenApiGenerator {
                 const existingModule = existingModules.find(mod => mod.operationId === ep.opSpec.operationId);
 
                 if (existingModule) {
+                    const mergedParams = paramSpecs.map(newParam => {
+                        const existingParam = existingModule.params.find(p => p.paramName === newParam.paramName);
+                        if (!existingParam) {
+                            return newParam;
+                        }
+                        return {
+                            ...existingParam,
+                            description: newParam.description || existingParam.description,
+                            schema: existingParam.schema,
+                            required: existingParam.required,
+                            paramKey: newParam.paramKey || existingParam.paramKey,
+                        };
+                    });
+
                     yield {
                         ...existingModule,
                         method: ep.method,
                         path: normalizePath(ep.path),
                         description: ep.opSpec.description || existingModule.description,
                         externalDocs: ep.opSpec.externalDocs?.url || existingModule.externalDocs,
-                        params: paramSpecs,
+                        params: mergedParams,
                         requestBodyType,
                     };
                 } else {
