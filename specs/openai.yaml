@@ -23,6 +23,7 @@ commonParams:
       optional: false
 modules:
   - moduleName: Chat / Completions / Create
+    operationId: createChatCompletion
     method: post
     path: /chat/completions
     description: Creates a model response for the given chat conversation.
@@ -318,6 +319,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName: Completions / Create
+    operationId: createCompletion
     method: post
     path: /completions
     description: Creates a completion for the provided prompt and parameters.
@@ -543,6 +545,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName: Images / Generations / Create
+    operationId: createImage
     method: post
     path: /images/generations
     description: Creates an image given a prompt.
@@ -642,6 +645,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName: Embeddings / Create
+    operationId: createEmbedding
     method: post
     path: /embeddings
     description: Creates an embedding vector representing the input text.
@@ -700,6 +704,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName: Audio / Speech / Create
+    operationId: createSpeech
     method: post
     path: /audio/speech
     description: Generates audio from the input text.
@@ -764,6 +769,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName: Files / List
+    operationId: listFiles
     method: get
     path: /files
     description: Returns a list of files that belong to the user's organization.
@@ -777,6 +783,7 @@ modules:
           type: string
         required: false
   - moduleName: Files / Delete
+    operationId: deleteFile
     method: delete
     path: /files/{file_id}
     description: Delete a file.
@@ -790,6 +797,7 @@ modules:
           type: string
         required: true
   - moduleName: Files / Retrieve
+    operationId: retrieveFile
     method: get
     path: /files/{file_id}
     description: Returns information about a specific file.
@@ -803,6 +811,7 @@ modules:
           type: string
         required: true
   - moduleName: Files / Content / Retrieve
+    operationId: downloadFile
     method: get
     path: /files/{file_id}/content
     description: Returns the contents of the specified file.
@@ -816,6 +825,7 @@ modules:
           type: string
         required: true
   - moduleName: Uploads / Create
+    operationId: createUpload
     method: post
     path: /uploads
     description: >
@@ -869,6 +879,7 @@ modules:
         required: true
     requestBodyType: json
   - moduleName: Uploads / Complete
+    operationId: completeUpload
     method: post
     path: /uploads/{upload_id}/complete
     description: >
@@ -915,6 +926,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName: Uploads / Cancel
+    operationId: cancelUpload
     method: post
     path: /uploads/{upload_id}/cancel
     description: |
@@ -930,6 +942,7 @@ modules:
           type: string
         required: true
   - moduleName: Fine Tuning / Jobs / Create
+    operationId: createFineTuningJob
     method: post
     path: /fine_tuning/jobs
     description: >
@@ -1029,6 +1042,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName: Fine Tuning / Jobs / List
+    operationId: listPaginatedFineTuningJobs
     method: get
     path: /fine_tuning/jobs
     description: |
@@ -1051,6 +1065,7 @@ modules:
           default: 20
         required: false
   - moduleName: Fine Tuning / Jobs / Retrieve
+    operationId: retrieveFineTuningJob
     method: get
     path: /fine_tuning/jobs/{fine_tuning_job_id}
     description: |
@@ -1066,6 +1081,7 @@ modules:
           type: string
         required: true
   - moduleName: Fine Tuning / Jobs / Events / List
+    operationId: listFineTuningEvents
     method: get
     path: /fine_tuning/jobs/{fine_tuning_job_id}/events
     description: |
@@ -1096,6 +1112,7 @@ modules:
           default: 20
         required: false
   - moduleName: Fine Tuning / Jobs / Cancel
+    operationId: cancelFineTuningJob
     method: post
     path: /fine_tuning/jobs/{fine_tuning_job_id}/cancel
     description: |
@@ -1111,6 +1128,7 @@ modules:
           type: string
         required: true
   - moduleName: Fine Tuning / Jobs / Checkpoints / List
+    operationId: listFineTuningJobCheckpoints
     method: get
     path: /fine_tuning/jobs/{fine_tuning_job_id}/checkpoints
     description: |
@@ -1142,6 +1160,7 @@ modules:
           default: 10
         required: false
   - moduleName: Models / List
+    operationId: listModels
     method: get
     path: /models
     description: Lists the currently available models, and provides basic
@@ -1149,6 +1168,7 @@ modules:
     externalDocs: https://platform.openai.com/docs/api-reference
     params: []
   - moduleName: Models / Retrieve
+    operationId: retrieveModel
     method: get
     path: /models/{model}
     description: Retrieves a model instance, providing basic information about the
@@ -1163,6 +1183,7 @@ modules:
           type: string
         required: true
   - moduleName: Models / Delete
+    operationId: deleteModel
     method: delete
     path: /models/{model}
     description: Delete a fine-tuned model. You must have the Owner role in your
@@ -1177,6 +1198,7 @@ modules:
           type: string
         required: true
   - moduleName: Moderations / Create
+    operationId: createModeration
     method: post
     path: /moderations
     description: Classifies if text is potentially harmful.
@@ -1207,6 +1229,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName: Assistants / List
+    operationId: listAssistants
     method: get
     path: /assistants
     description: Returns a list of assistants.
@@ -1259,6 +1282,7 @@ modules:
           type: string
         required: false
   - moduleName: Assistants / Create
+    operationId: createAssistant
     method: post
     path: /assistants
     description: Create an assistant with a model and instructions.
@@ -1385,6 +1409,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName: Assistants / Retrieve
+    operationId: getAssistant
     method: get
     path: /assistants/{assistant_id}
     description: Retrieves an assistant.
@@ -1398,6 +1423,7 @@ modules:
           type: string
         required: true
   - moduleName: Assistants / Modify
+    operationId: modifyAssistant
     method: post
     path: /assistants/{assistant_id}
     description: Modifies an assistant.
@@ -1531,6 +1557,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName: Assistants / Delete
+    operationId: deleteAssistant
     method: delete
     path: /assistants/{assistant_id}
     description: Delete an assistant.
@@ -1544,6 +1571,7 @@ modules:
           type: string
         required: true
   - moduleName: Threads / Create
+    operationId: createThread
     method: post
     path: /threads
     description: Create a thread.
@@ -1583,6 +1611,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName: Threads / Retrieve
+    operationId: getThread
     method: get
     path: /threads/{thread_id}
     description: Retrieves a thread.
@@ -1596,6 +1625,7 @@ modules:
           type: string
         required: true
   - moduleName: Threads / Modify
+    operationId: modifyThread
     method: post
     path: /threads/{thread_id}
     description: Modifies a thread.
@@ -1632,6 +1662,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName: Threads / Delete
+    operationId: deleteThread
     method: delete
     path: /threads/{thread_id}
     description: Delete a thread.
@@ -1645,6 +1676,7 @@ modules:
           type: string
         required: true
   - moduleName: Threads / Messages / List
+    operationId: listMessages
     method: get
     path: /threads/{thread_id}/messages
     description: Returns a list of messages for a given thread.
@@ -1713,6 +1745,7 @@ modules:
           type: string
         required: false
   - moduleName:  Threads / Messages / Create
+    operationId: createMessage
     method: post
     path: /threads/{thread_id}/messages
     description: Create a message.
@@ -1775,6 +1808,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName:  Threads / Messages / Retrieve
+    operationId: getMessage
     method: get
     path: /threads/{thread_id}/messages/{message_id}
     description: Retrieve a message.
@@ -1796,6 +1830,7 @@ modules:
           type: string
         required: true
   - moduleName:  Threads / Messages / Modify
+    operationId: modifyMessage
     method: post
     path: /threads/{thread_id}/messages/{message_id}
     description: Modifies a message.
@@ -1828,6 +1863,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName:  Threads / Messages / Delete
+    operationId: deleteMessage
     method: delete
     path: /threads/{thread_id}/messages/{message_id}
     description: Deletes a message.
@@ -1848,6 +1884,7 @@ modules:
           type: string
         required: true
   - moduleName:  Threads / Runs / Create And Run
+    operationId: createThreadAndRun
     method: post
     path: /threads/runs
     description: Create a thread and run it in one request.
@@ -2043,6 +2080,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName:  Threads / Runs / List
+    operationId: listRuns
     method: get
     path: /threads/{thread_id}/runs
     description: Returns a list of runs belonging to a thread.
@@ -2102,6 +2140,7 @@ modules:
           type: string
         required: false
   - moduleName:  Threads / Runs / Create
+    operationId: createRun
     method: post
     path: /threads/{thread_id}/runs
     description: Create a run.
@@ -2304,6 +2343,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName:  Threads / Runs / Retrieve
+    operationId: getRun
     method: get
     path: /threads/{thread_id}/runs/{run_id}
     description: Retrieves a run.
@@ -2324,6 +2364,7 @@ modules:
           type: string
         required: true
   - moduleName:  Threads / Runs / Modify
+    operationId: modifyRun
     method: post
     path: /threads/{thread_id}/runs/{run_id}
     description: Modifies a run.
@@ -2356,6 +2397,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName:  Threads / Runs / Submit Tool Outputs
+    operationId: submitToolOutputsToRun
     method: post
     path: /threads/{thread_id}/runs/{run_id}/submit_tool_outputs
     description: >
@@ -2401,6 +2443,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName:  Threads / Runs / Cancel
+    operationId: cancelRun
     method: post
     path: /threads/{thread_id}/runs/{run_id}/cancel
     description: Cancels a run that is `in_progress`.
@@ -2421,6 +2464,7 @@ modules:
           type: string
         required: true
   - moduleName:  Threads / Runs / Steps / List
+    operationId: listRunSteps
     method: get
     path: /threads/{thread_id}/runs/{run_id}/steps
     description: Returns a list of run steps belonging to a run.
@@ -2487,6 +2531,7 @@ modules:
           type: string
         required: false
   - moduleName:  Threads / Runs / Steps / Retrieve
+    operationId: getRunStep
     method: get
     path: /threads/{thread_id}/runs/{run_id}/steps/{step_id}
     description: Retrieves a run step.
@@ -2514,6 +2559,7 @@ modules:
           type: string
         required: true
   - moduleName: Vector Stores / List
+    operationId: listVectorStores
     method: get
     path: /vector_stores
     description: Returns a list of vector stores.
@@ -2566,6 +2612,7 @@ modules:
           type: string
         required: false
   - moduleName: Vector Stores / Create
+    operationId: createVectorStore
     method: post
     path: /vector_stores
     description: Create a vector store.
@@ -2617,6 +2664,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName: Vector Stores / Retrieve
+    operationId: getVectorStore
     method: get
     path: /vector_stores/{vector_store_id}
     description: Retrieves a vector store.
@@ -2630,6 +2678,7 @@ modules:
           type: string
         required: true
   - moduleName: Vector Stores / Modify
+    operationId: modifyVectorStore
     method: post
     path: /vector_stores/{vector_store_id}
     description: Modifies a vector store.
@@ -2669,6 +2718,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName: Vector Stores / Delete
+    operationId: deleteVectorStore
     method: delete
     path: /vector_stores/{vector_store_id}
     description: Delete a vector store.
@@ -2682,6 +2732,7 @@ modules:
           type: string
         required: true
   - moduleName: Vector Stores / Files / List
+    operationId: listVectorStoreFiles
     method: get
     path: /vector_stores/{vector_store_id}/files
     description: Returns a list of vector store files.
@@ -2754,6 +2805,7 @@ modules:
             - cancelled
         required: false
   - moduleName: Vector Stores / Files / Create
+    operationId: createVectorStoreFile
     method: post
     path: /vector_stores/{vector_store_id}/files
     description: Create a vector store file by attaching a
@@ -2786,6 +2838,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName: Vector Stores / Files / Retrieve
+    operationId: getVectorStoreFile
     method: get
     path: /vector_stores/{vector_store_id}/files/{file_id}
     description: Retrieves a vector store file.
@@ -2806,6 +2859,7 @@ modules:
           type: string
         required: true
   - moduleName: Vector Stores / Files / Delete
+    operationId: deleteVectorStoreFile
     method: delete
     path: /vector_stores/{vector_store_id}/files/{file_id}
     description: Delete a vector store file. This will remove the file from the
@@ -2828,6 +2882,7 @@ modules:
           type: string
         required: true
   - moduleName: Vector Stores / File Batches / Create
+    operationId: createVectorStoreFileBatch
     method: post
     path: /vector_stores/{vector_store_id}/file_batches
     description: Create a vector store file batch.
@@ -2862,6 +2917,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName: Vector Stores / File Batches / Retrieve
+    operationId: getVectorStoreFileBatch
     method: get
     path: /vector_stores/{vector_store_id}/file_batches/{batch_id}
     description: Retrieves a vector store file batch.
@@ -2882,6 +2938,7 @@ modules:
           type: string
         required: true
   - moduleName: Vector Stores / File Batches / Cancel
+    operationId: cancelVectorStoreFileBatch
     method: post
     path: /vector_stores/{vector_store_id}/file_batches/{batch_id}/cancel
     description: Cancel a vector store file batch. This attempts to cancel the
@@ -2903,6 +2960,7 @@ modules:
           type: string
         required: true
   - moduleName: Vector Stores / File Batches / List Files
+    operationId: listVectorStoreFileBatchFiles
     method: get
     path: /vector_stores/{vector_store_id}/file_batches/{batch_id}/files
     description: Returns a list of vector store files in a batch.
@@ -2982,6 +3040,7 @@ modules:
             - cancelled
         required: false
   - moduleName: Batches / Create
+    operationId: createBatch
     method: post
     path: /batches
     description: Creates and executes a batch from an uploaded file of requests
@@ -3034,6 +3093,7 @@ modules:
         required: false
     requestBodyType: json
   - moduleName: Batches / List
+    operationId: listBatches
     method: get
     path: /batches
     description: List your organization's batches.
@@ -3061,6 +3121,7 @@ modules:
           default: 20
         required: false
   - moduleName: Batches / Retrieve
+    operationId: retrieveBatch
     method: get
     path: /batches/{batch_id}
     description: Retrieves a batch.
@@ -3074,6 +3135,7 @@ modules:
           type: string
         required: true
   - moduleName: Batches / Cancel
+    operationId: cancelBatch
     method: post
     path: /batches/{batch_id}/cancel
     description: Cancels an in-progress batch. The batch will be in status
