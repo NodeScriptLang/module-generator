@@ -1,6 +1,8 @@
 import { SchemaSpec } from '@nodescript/core/types';
 import { get } from '@nodescript/pointer';
 import camelcase from 'camelcase';
+import fs from 'fs';
+import yaml from 'yaml';
 
 import { InvalidAiResponseError, InvalidSpecError, UnsupportedFeatureError } from '../errors.js';
 import { LibraryModuleSpec } from '../schema/LibraryModuleSpec.js';
@@ -58,6 +60,9 @@ export class OpenApiGenerator {
     }
 
     *generateModuleSpecs(): Iterable<LibraryModuleSpec> {
+        const existingSpecs = yaml.parse(fs.readFileSync(`specs/${this.id}.yaml`, 'utf8')) as LibrarySpec;
+        const existingModules = existingSpecs?.modules || [];
+
         for (const ep of this.traverseEndpoints()) {
             try {
                 const inferredModuleName = this.inferredModuleNames.get([ep.method, ep.path].join(' ')) ?? '';
@@ -77,16 +82,31 @@ export class OpenApiGenerator {
                         throw new UnsupportedFeatureError('Unsupported request body content');
                     }
                 }
-                yield {
-                    moduleName: inferredModuleName,
-                    method: ep.method,
-                    path: normalizePath(ep.path),
-                    description: ep.opSpec.description ?? ep.opSpec.summary ?? '',
-                    externalDocs: ep.opSpec.externalDocs?.url ?? '',
-                    operationId: ep.opSpec.operationId ?? '',
-                    params: paramSpecs,
-                    requestBodyType,
-                };
+
+                const existingModule = existingModules.find(mod => mod.operationId === ep.opSpec.operationId);
+
+                if (existingModule) {
+                    yield {
+                        ...existingModule,
+                        method: ep.method,
+                        path: normalizePath(ep.path),
+                        description: ep.opSpec.description || existingModule.description,
+                        externalDocs: ep.opSpec.externalDocs?.url || existingModule.externalDocs,
+                        params: paramSpecs,
+                        requestBodyType,
+                    };
+                } else {
+                    yield {
+                        moduleName: inferredModuleName,
+                        method: ep.method,
+                        path: normalizePath(ep.path),
+                        description: ep.opSpec.description ?? ep.opSpec.summary ?? '',
+                        externalDocs: ep.opSpec.externalDocs?.url ?? '',
+                        operationId: ep.opSpec.operationId ?? '',
+                        params: paramSpecs,
+                        requestBodyType,
+                    };
+                }
             } catch (err) {
                 if (!this.options.skipInvalid) {
                     throw err;
