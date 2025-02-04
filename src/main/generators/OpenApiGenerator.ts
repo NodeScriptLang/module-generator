@@ -86,13 +86,27 @@ export class OpenApiGenerator {
                 const existingModule = existingModules.find(mod => mod.operationId === ep.opSpec.operationId);
 
                 if (existingModule) {
+                    const mergedParams = paramSpecs.map(newParam => {
+                        const existingParam = existingModule.params.find(p => p.paramName === newParam.paramName);
+                        if (!existingParam) {
+                            return newParam;
+                        }
+                        return {
+                            ...existingParam,
+                            description: newParam.description || existingParam.description,
+                            schema: existingParam.schema,
+                            required: existingParam.required,
+                            paramKey: newParam.paramKey || existingParam.paramKey,
+                        };
+                    });
+
                     yield {
                         ...existingModule,
                         method: ep.method,
                         path: normalizePath(ep.path),
                         description: ep.opSpec.description || existingModule.description,
                         externalDocs: ep.opSpec.externalDocs?.url || existingModule.externalDocs,
-                        params: paramSpecs,
+                        params: mergedParams,
                         requestBodyType,
                     };
                 } else {
@@ -177,6 +191,7 @@ export class OpenApiGenerator {
                     type: 'string',
                     default: schema.default,
                     enum: schema.enum,
+                    optional: !schema.required,
                 };
             case 'integer':
             case 'number':
@@ -185,21 +200,25 @@ export class OpenApiGenerator {
                     minimum: schema.minimum,
                     maximum: schema.maximum,
                     default: schema.default,
+                    optional: !schema.required,
                 };
             case 'boolean':
                 return {
                     type: 'boolean',
                     default: schema.default,
+                    optional: !schema.required,
                 };
             case 'array':
                 return {
                     type: 'array',
                     items: { type: 'any' },
+                    optional: !schema.required,
                 };
             case 'object':
             default:
                 return {
                     type: 'any',
+                    optional: !schema.required,
                 };
         }
     }
