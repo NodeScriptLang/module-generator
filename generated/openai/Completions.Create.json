@@ -25,12 +25,11 @@
     },
     "model": {
       "schema": {
-        "type": "string",
-        "default": "gpt-4o",
+        "type": "any",
         "description": "ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.\n"
       },
       "advanced": false,
-      "hideValue": false
+      "hideValue": true
     },
     "prompt": {
       "schema": {
@@ -132,8 +131,6 @@
     "seed": {
       "schema": {
         "type": "number",
-        "minimum": -9223372036854776000,
-        "maximum": 9223372036854776000,
         "optional": true,
         "description": "If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result.\n\nDeterminism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.\n"
       },

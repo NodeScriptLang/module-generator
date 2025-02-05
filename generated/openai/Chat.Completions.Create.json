@@ -36,12 +36,11 @@
     },
     "model": {
       "schema": {
-        "type": "string",
-        "default": "gpt-4o",
+        "type": "any",
         "description": "ID of the model to use. See the [model endpoint compatibility](/docs/models#model-endpoint-compatibility) table for details on which models work with the Chat API."
       },
       "advanced": false,
-      "hideValue": false
+      "hideValue": true
     },
     "store": {
       "schema": {
@@ -203,8 +202,6 @@
     "seed": {
       "schema": {
         "type": "number",
-        "minimum": -9223372036854776000,
-        "maximum": 9223372036854776000,
         "optional": true,
         "description": "This feature is in Beta.\nIf specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result.\nDeterminism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.\n"
       },
@@ -214,6 +211,7 @@
     "serviceTier": {
       "schema": {
         "type": "string",
+        "default": "auto",
         "enum": [
           "auto",
           "default"
@@ -300,6 +298,7 @@
     "parallelToolCalls": {
       "schema": {
         "type": "boolean",
+        "default": "true",
         "optional": true,
         "description": "Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use."
       },

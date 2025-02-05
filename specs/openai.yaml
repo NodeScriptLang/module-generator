@@ -91,8 +91,7 @@ modules:
         paramKey: model
         in: body
         schema:
-          type: string
-          default: gpt-4o
+          type: any
         required: true
       - paramName: name
         description: |
@@ -243,8 +242,7 @@ modules:
         paramKey: model
         in: body
         schema:
-          type: string
-          default: gpt-4o
+          type: any
         required: false
       - paramName: name
         description: |
@@ -415,10 +413,13 @@ modules:
           type: string
           enum:
             - alloy
+            - ash
+            - coral
             - echo
             - fable
             - onyx
             - nova
+            - sage
             - shimmer
         required: true
       - paramName: responseFormat
@@ -609,8 +610,7 @@ modules:
         paramKey: model
         in: body
         schema:
-          type: string
-          default: gpt-4o
+          type: any
         required: true
       - paramName: store
         description: >
@@ -908,8 +908,6 @@ modules:
         in: body
         schema:
           type: number
-          minimum: -9223372036854776000
-          maximum: 9223372036854776000
         required: false
       - paramName: serviceTier
         description: >
@@ -924,7 +922,7 @@ modules:
         in: body
         schema:
           type: string
-          default: null
+          default: auto
           enum:
             - auto
             - default
@@ -1040,6 +1038,7 @@ modules:
         in: body
         schema:
           type: boolean
+          default: true
         required: false
       - paramName: user
         description: >
@@ -1115,8 +1114,7 @@ modules:
         paramKey: model
         in: body
         schema:
-          type: string
-          default: gpt-4o
+          type: any
         required: true
       - paramName: prompt
         description: >
@@ -1285,8 +1283,6 @@ modules:
         in: body
         schema:
           type: number
-          minimum: -9223372036854776000
-          maximum: 9223372036854776000
         required: false
       - paramName: stop
         description: >
@@ -1407,8 +1403,7 @@ modules:
         paramKey: model
         in: body
         schema:
-          type: string
-          default: gpt-4o
+          type: any
         required: true
       - paramName: encodingFormat
         description: The format to return the embeddings in. Can be either `float` or
@@ -4126,6 +4121,7 @@ modules:
         in: body
         schema:
           type: boolean
+          default: true
         required: false
       - paramName: responseFormat
         description: >
@@ -4722,6 +4718,7 @@ modules:
         in: body
         schema:
           type: boolean
+          default: true
         required: false
       - paramName: responseFormat
         description: >
