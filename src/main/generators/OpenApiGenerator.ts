@@ -94,8 +94,8 @@ export class OpenApiGenerator {
                         return {
                             ...existingParam,
                             description: newParam.description || existingParam.description,
-                            schema: existingParam.schema,
-                            required: existingParam.required,
+                            schema: newParam.schema || existingParam.schema,
+                            required: newParam.required || existingParam.required,
                             paramKey: newParam.paramKey || existingParam.paramKey,
                         };
                     });
