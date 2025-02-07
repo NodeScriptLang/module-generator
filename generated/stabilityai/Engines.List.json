@@ -2,7 +2,10 @@
   "moduleName": "StabilityAI / Engines / List",
   "version": "0.0.0",
   "description": "List all engines available to your organization/user",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "stable diffusion"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

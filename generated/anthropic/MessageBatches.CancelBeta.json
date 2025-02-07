@@ -1,7 +1,7 @@
 {
-  "moduleName": "Anthropic / Message Batches / Delete",
+  "moduleName": "Anthropic / Message Batches / Cancel Beta",
   "version": "0.0.0",
-  "description": "Delete a Message Batch.\n\nMessage Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it.",
+  "description": "Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.\n\nThe number of canceled requests is specified in `request_counts`. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible.",
   "keywords": [
     "ai",
     "claude"
@@ -26,6 +26,15 @@
       "advanced": false,
       "hideValue": false
     },
+    "anthropicBeta": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
     "anthropicVersion": {
       "schema": {
         "type": "string",
@@ -44,6 +53,6 @@
   },
   "attributes": {
     "externalDocs": "",
-    "codeHash": "cb25a2d3ec2f1d973257f8b374de1590a15ee2c51962dd10db4468ee3cdf51c6"
+    "codeHash": "fda64fcd5d14843440e7f5e54c8285402f9494db853dfa8b8aa8620cba0d95e9"
   }
 }

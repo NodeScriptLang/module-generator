@@ -2,7 +2,10 @@
   "moduleName": "StabilityAI / User / Balance / Get",
   "version": "0.0.0",
   "description": "Get the credit balance of the account/organization associated with the API key",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "stable diffusion"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

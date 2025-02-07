@@ -2,7 +2,10 @@
   "moduleName": "StabilityAI / User / Account / Get",
   "version": "0.0.0",
   "description": "Get information about the account associated with the provided API key",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "stable diffusion"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

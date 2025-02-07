@@ -55,6 +55,9 @@ description: >-
 
   To see the health of our APIs, please check our [Status
   Page](https://stabilityai.instatus.com/).
+commonKeywords:
+  - ai
+  - stable diffusion
 commonParams:
   - paramName: auth
     description: Your [Stability API

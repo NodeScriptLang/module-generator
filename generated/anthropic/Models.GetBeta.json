@@ -1,7 +1,7 @@
 {
-  "moduleName": "Anthropic / Message Batches / Delete",
+  "moduleName": "Anthropic / Models / Get Beta",
   "version": "0.0.0",
-  "description": "Delete a Message Batch.\n\nMessage Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it.",
+  "description": "Get a specific model.\n\nThe Models API response can be used to determine information about a specific model or resolve a model alias to a model ID.",
   "keywords": [
     "ai",
     "claude"
@@ -18,10 +18,10 @@
       "advanced": true,
       "hideValue": false
     },
-    "messageBatchId": {
+    "modelId": {
       "schema": {
         "type": "string",
-        "description": "ID of the Message Batch."
+        "description": "Model identifier or alias."
       },
       "advanced": false,
       "hideValue": false
@@ -44,6 +44,6 @@
   },
   "attributes": {
     "externalDocs": "",
-    "codeHash": "cb25a2d3ec2f1d973257f8b374de1590a15ee2c51962dd10db4468ee3cdf51c6"
+    "codeHash": "37c9bba757c001b2e2574a49b4a2798cbc550eecc847de45f61e4c15c81e11b1"
   }
 }

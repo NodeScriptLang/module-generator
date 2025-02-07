@@ -32,6 +32,7 @@ modules:
       The Messages API can be used for either single queries or stateless
       multi-turn conversations.
     externalDocs: ""
+    operationId: messages_post
     params:
       - paramName: anthropicVersion
         description: >-
@@ -487,7 +488,7 @@ modules:
               role: user
           model: claude-3-5-sonnet-20241022
     requestBodyType: json
-  - moduleName: Text Completions / Complete
+  - moduleName: Text Completions / Generate
     method: post
     path: /v1/complete
     description: >-
@@ -503,6 +504,7 @@ modules:
       guide](https://docs.anthropic.com/en/api/migrating-from-text-completions-to-messages)
       for guidance in migrating from Text Completions to Messages.
     externalDocs: ""
+    operationId: complete_post
     params:
       - paramName: anthropicVersion
         description: >-
@@ -752,6 +754,7 @@ modules:
       available for use in the API. More recently released models are listed
       first.
     externalDocs: ""
+    operationId: models_list
     params:
       - paramName: beforeId
         description: ID of the object to use as a cursor for pagination. When provided,
@@ -804,6 +807,7 @@ modules:
       The Models API response can be used to determine information about a
       specific model or resolve a model alias to a model ID.
     externalDocs: ""
+    operationId: models_get
     params:
       - paramName: modelId
         description: Model identifier or alias.
@@ -835,6 +839,7 @@ modules:
       requests at once. Once a Message Batch is created, it begins processing
       immediately. Batches can take up to 24 hours to complete.
     externalDocs: ""
+    operationId: message_batches_post
     params:
       - paramName: anthropicVersion
         description: >-
@@ -865,6 +870,7 @@ modules:
     description: List all Message Batches within a Workspace. Most recently created
       batches are returned first.
     externalDocs: ""
+    operationId: message_batches_list
     params:
       - paramName: beforeId
         description: ID of the object to use as a cursor for pagination. When provided,
@@ -914,6 +920,7 @@ modules:
       Batch completion. To access the results of a Message Batch, make a request
       to the `results_url` field in the response.
     externalDocs: ""
+    operationId: message_batches_retrieve
     params:
       - paramName: messageBatchId
         description: ID of the Message Batch.
@@ -944,6 +951,7 @@ modules:
       Message Batches can only be deleted once they've finished processing. If
       you'd like to delete an in-progress batch, you must first cancel it.
     externalDocs: ""
+    operationId: message_batches_delete
     params:
       - paramName: messageBatchId
         description: ID of the Message Batch.
@@ -979,6 +987,7 @@ modules:
       within the batch. Note that cancellation may not result in any canceled
       requests if they were non-interruptible.
     externalDocs: ""
+    operationId: message_batches_cancel
     params:
       - paramName: messageBatchId
         description: ID of the Message Batch.
@@ -1010,6 +1019,7 @@ modules:
       request in the Message Batch. Results are not guaranteed to be in the same
       order as requests. Use the `custom_id` field to match results to requests.
     externalDocs: ""
+    operationId: message_batches_results
     params:
       - paramName: messageBatchId
         description: ID of the Message Batch.
@@ -1040,6 +1050,7 @@ modules:
       The Token Count API can be used to count the number of tokens in a
       Message, including tools, images, and documents, without creating it.
     externalDocs: ""
+    operationId: messages_count_tokens_post
     params:
       - paramName: anthropicVersion
         description: >-
@@ -1341,6 +1352,7 @@ modules:
       The Messages API can be used for either single queries or stateless
       multi-turn conversations.
     externalDocs: ""
+    operationId: beta_messages_post
     params:
       - paramName: anthropicBeta
         description: >-
@@ -1819,6 +1831,7 @@ modules:
       available for use in the API. More recently released models are listed
       first.
     externalDocs: ""
+    operationId: beta_models_list
     params:
       - paramName: beforeId
         description: ID of the object to use as a cursor for pagination. When provided,
@@ -1871,6 +1884,7 @@ modules:
       The Models API response can be used to determine information about a
       specific model or resolve a model alias to a model ID.
     externalDocs: ""
+    operationId: beta_models_get
     params:
       - paramName: modelId
         description: Model identifier or alias.
@@ -1902,6 +1916,7 @@ modules:
       requests at once. Once a Message Batch is created, it begins processing
       immediately. Batches can take up to 24 hours to complete.
     externalDocs: ""
+    operationId: beta_message_batches_post
     params:
       - paramName: anthropicBeta
         description: >-
@@ -1944,6 +1959,7 @@ modules:
     description: List all Message Batches within a Workspace. Most recently created
       batches are returned first.
     externalDocs: ""
+    operationId: beta_message_batches_list
     params:
       - paramName: beforeId
         description: ID of the object to use as a cursor for pagination. When provided,
@@ -2005,6 +2021,7 @@ modules:
       Batch completion. To access the results of a Message Batch, make a request
       to the `results_url` field in the response.
     externalDocs: ""
+    operationId: beta_message_batches_retrieve
     params:
       - paramName: messageBatchId
         description: ID of the Message Batch.
@@ -2047,6 +2064,7 @@ modules:
       Message Batches can only be deleted once they've finished processing. If
       you'd like to delete an in-progress batch, you must first cancel it.
     externalDocs: ""
+    operationId: beta_message_batches_delete
     params:
       - paramName: messageBatchId
         description: ID of the Message Batch.
@@ -2094,6 +2112,7 @@ modules:
       within the batch. Note that cancellation may not result in any canceled
       requests if they were non-interruptible.
     externalDocs: ""
+    operationId: beta_message_batches_cancel
     params:
       - paramName: messageBatchId
         description: ID of the Message Batch.
@@ -2137,6 +2156,7 @@ modules:
       request in the Message Batch. Results are not guaranteed to be in the same
       order as requests. Use the `custom_id` field to match results to requests.
     externalDocs: ""
+    operationId: beta_message_batches_results
     params:
       - paramName: messageBatchId
         description: ID of the Message Batch.
@@ -2179,6 +2199,7 @@ modules:
       The Token Count API can be used to count the number of tokens in a
       Message, including tools, images, and documents, without creating it.
     externalDocs: ""
+    operationId: beta_messages_count_tokens_post
     params:
       - paramName: anthropicBeta
         description: >-
