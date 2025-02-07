@@ -1,0 +1,85 @@
+{
+  "moduleName": "StabilityAI / Image To Video / Get Result",
+  "version": "0.0.0",
+  "description": "Fetch the result of an image-to-video generation by ID.\n\nMake sure to use the same API key to fetch the generation result that you used to create the generation, \notherwise you will receive a `404` response.\n\n### How to use\nPlease invoke this endpoint with a `GET` request.\n\nThe headers of the request must include an API key in the `authorization` field and the ID\nof your generation must be in the path.\n\n### How is progress reported?\nYour generation is either `in-progress` (i.e. status code `202`) or it is complete (i.e. status code `200`). \nWe may add more fine-grained progress reporting in the future (e.g. a numerical progress).\n\n### How long are results stored?\nResults are stored for 24 hours after generation. After that, the results are deleted and you will need to \nre-generate your video.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "Your [Stability API key](https://platform.stability.ai/account/keys), used to authenticate your requests. Although you may have multiple keys in your account, you should use the same key for all requests to this API."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The `id` of a generation, typically used for async generations, that can be used to check the status of the generation or retrieve the result."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "authorization": {
+      "schema": {
+        "type": "string",
+        "description": "Your [Stability API key](https://platform.stability.ai/account/keys), used to authenticate your requests. Although you may have multiple keys in your account, you should use the same key for all requests to this API."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accept": {
+      "schema": {
+        "type": "string",
+        "default": "video/*",
+        "enum": [
+          "video/*",
+          "application/json"
+        ],
+        "optional": true,
+        "description": "Specify `video/*` to receive the bytes of the video directly. Otherwise specify `application/json` to receive the video as base64 encoded JSON."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "stabilityClientId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The name of your application, used to help us communicate app-specific debugging or moderation issues to you."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "stabilityClientUserId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A unique identifier for your end user. Used to help us communicate user-specific debugging or moderation issues to you. Feel free to obfuscate this value to protect user privacy."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "stabilityClientVersion": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The version of your application, used to help us communicate version-specific debugging or moderation issues to you."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "e0a701e54c5e0ee6a4be0b420786cd55e3e548b7739325903126b1b9635ad015"
+  }
+}
