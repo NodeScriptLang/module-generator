@@ -8,6 +8,7 @@ export interface LibraryModuleSpec {
     path: string;
     description: string;
     externalDocs: string;
+    operationId?: string;
     requestBodyType?: 'json' | 'form';
     params: LibraryParamSpec[];
     attributes?: Record<string, any>;
@@ -21,6 +22,7 @@ export const LibraryModuleSpecSchema = new Schema<LibraryModuleSpec>({
         path: { type: 'string' },
         description: { type: 'string' },
         externalDocs: { type: 'string' },
+        operationId: { type: 'string', optional: true },
         requestBodyType: {
             type: 'string',
             enum: ['json', 'form'],
