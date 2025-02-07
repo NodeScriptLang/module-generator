@@ -9,7 +9,6 @@
     "auth": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "OpenAI API key.\n"
       },
       "advanced": false,
@@ -18,7 +17,6 @@
     "betaAccess": {
       "schema": {
         "type": "string",
-        "optional": false,
         "default": "assistants=v2",
         "description": "Adds OpenAI-Beta for access to new and experimental features."
       },
@@ -28,21 +26,18 @@
     "input": {
       "schema": {
         "type": "any",
-        "optional": true,
-        "description": "Input text to embed, encoded as a string or array of tokens. To embed multiple inputs in a single request, pass an array of strings or array of token arrays. The input must not exceed the max input tokens for the model (8192 tokens for `text-embedding-ada-002`), cannot be an empty string, and any array must be 2048 dimensions or less.\n"
+        "description": "Input text to embed, encoded as a string or array of tokens. To embed multiple inputs in a single request, pass an array of strings or array of token arrays. The input must not exceed the max input tokens for the model (8192 tokens for `text-embedding-ada-002`), cannot be an empty string, and any array must be 2048 dimensions or less. [Example Python code](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken) for counting tokens. Some models may also impose a limit on total number of tokens summed across inputs.\n"
       },
       "advanced": false,
       "hideValue": true
     },
     "model": {
       "schema": {
-        "type": "string",
-        "default": "gpt-4o",
-        "optional": true,
-        "description": "ID of the model to use.\n"
+        "type": "any",
+        "description": "ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.\n"
       },
       "advanced": false,
-      "hideValue": false
+      "hideValue": true
     },
     "encodingFormat": {
       "schema": {
@@ -53,7 +48,7 @@
           "base64"
         ],
         "optional": true,
-        "description": "The format to return the embeddings in."
+        "description": "The format to return the embeddings in. Can be either `float` or [`base64`](https://pypi.org/project/pybase64/)."
       },
       "advanced": true,
       "hideValue": false
@@ -72,7 +67,7 @@
       "schema": {
         "type": "string",
         "optional": true,
-        "description": "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse.\n"
+        "description": "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).\n"
       },
       "advanced": true,
       "hideValue": false

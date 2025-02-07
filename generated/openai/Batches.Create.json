@@ -9,7 +9,6 @@
     "auth": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "OpenAI API key.\n"
       },
       "advanced": false,
@@ -18,7 +17,6 @@
     "betaAccess": {
       "schema": {
         "type": "string",
-        "optional": false,
         "default": "assistants=v2",
         "description": "Adds OpenAI-Beta for access to new and experimental features."
       },
@@ -28,8 +26,7 @@
     "inputFileId": {
       "schema": {
         "type": "string",
-        "optional": true,
-        "description": "The ID of an uploaded file that contains requests for the new batch.\nSee upload file for how to upload a file.\nYour input file must be formatted as a JSONL, and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests, and can be up to 100 MB in size.\n"
+        "description": "The ID of an uploaded file that contains requests for the new batch.\n\nSee [upload file](/docs/api-reference/files/create) for how to upload a file.\n\nYour input file must be formatted as a [JSONL file](/docs/api-reference/batch/request-input), and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests, and can be up to 200 MB in size.\n"
       },
       "advanced": false,
       "hideValue": false
@@ -42,7 +39,6 @@
           "/v1/embeddings",
           "/v1/completions"
         ],
-        "optional": true,
         "description": "The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions`, `/v1/embeddings`, and `/v1/completions` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch."
       },
       "advanced": false,
@@ -54,7 +50,6 @@
         "enum": [
           "24h"
         ],
-        "optional": true,
         "description": "The time frame within which the batch should be processed. Currently only `24h` is supported."
       },
       "advanced": false,
@@ -64,7 +59,7 @@
       "schema": {
         "type": "any",
         "optional": true,
-        "description": "Optional custom metadata for the batch."
+        "description": "Set of 16 key-value pairs that can be attached to an object. This can be\nuseful for storing additional information about the object in a structured\nformat, and querying for objects via API or the dashboard. \n\nKeys are strings with a maximum length of 64 characters. Values are strings\nwith a maximum length of 512 characters.\n"
       },
       "advanced": true,
       "hideValue": true

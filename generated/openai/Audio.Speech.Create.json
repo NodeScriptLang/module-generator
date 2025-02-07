@@ -9,7 +9,6 @@
     "auth": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "OpenAI API key.\n"
       },
       "advanced": false,
@@ -18,7 +17,6 @@
     "betaAccess": {
       "schema": {
         "type": "string",
-        "optional": false,
         "default": "assistants=v2",
         "description": "Adds OpenAI-Beta for access to new and experimental features."
       },
@@ -28,8 +26,7 @@
     "model": {
       "schema": {
         "type": "any",
-        "optional": true,
-        "description": "One of the available TTS models: `tts-1` or `tts-1-hd`\n"
+        "description": "One of the available [TTS models](/docs/models#tts): `tts-1` or `tts-1-hd`\n"
       },
       "advanced": false,
       "hideValue": true
@@ -37,7 +34,6 @@
     "input": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "The text to generate audio for. The maximum length is 4096 characters."
       },
       "advanced": false,
@@ -48,14 +44,16 @@
         "type": "string",
         "enum": [
           "alloy",
+          "ash",
+          "coral",
           "echo",
           "fable",
           "onyx",
           "nova",
+          "sage",
           "shimmer"
         ],
-        "optional": true,
-        "description": "The voice to use when generating the audio. Supported voices are `alloy`, `echo`, `fable`, `onyx`, `nova`, and `shimmer`."
+        "description": "The voice to use when generating the audio. Supported voices are `alloy`, `ash`, `coral`, `echo`, `fable`, `onyx`, `nova`, `sage` and `shimmer`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech#voice-options)."
       },
       "advanced": false,
       "hideValue": false

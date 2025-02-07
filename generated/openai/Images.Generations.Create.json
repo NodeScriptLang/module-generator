@@ -9,7 +9,6 @@
     "auth": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "OpenAI API key.\n"
       },
       "advanced": false,
@@ -18,7 +17,6 @@
     "betaAccess": {
       "schema": {
         "type": "string",
-        "optional": false,
         "default": "assistants=v2",
         "description": "Adds OpenAI-Beta for access to new and experimental features."
       },
@@ -28,7 +26,6 @@
     "prompt": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "A text description of the desired image(s). The maximum length is 1000 characters for `dall-e-2` and 4000 characters for `dall-e-3`."
       },
       "advanced": false,
@@ -118,7 +115,7 @@
       "schema": {
         "type": "string",
         "optional": true,
-        "description": "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse.\n"
+        "description": "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).\n"
       },
       "advanced": true,
       "hideValue": false

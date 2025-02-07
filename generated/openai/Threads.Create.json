@@ -9,7 +9,6 @@
     "auth": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "OpenAI API key.\n"
       },
       "advanced": false,
@@ -18,7 +17,6 @@
     "betaAccess": {
       "schema": {
         "type": "string",
-        "optional": false,
         "default": "assistants=v2",
         "description": "Adds OpenAI-Beta for access to new and experimental features."
       },
@@ -32,7 +30,7 @@
           "type": "any"
         },
         "optional": true,
-        "description": "A list of messages to start the thread with."
+        "description": "A list of [messages](/docs/api-reference/messages) to start the thread with."
       },
       "advanced": true,
       "hideValue": false

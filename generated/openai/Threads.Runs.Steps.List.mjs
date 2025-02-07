@@ -16,6 +16,7 @@ export async function compute(params, ctx) {
   addQueryParam("order", params["order"]);
   addQueryParam("after", params["after"]);
   addQueryParam("before", params["before"]);
+  addQueryParam("include[]", params["include[]"].join(","));
   const body = undefined;
   const res = await ctx.lib.fetch({
     method: "GET",

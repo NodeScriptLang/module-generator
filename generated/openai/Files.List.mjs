@@ -11,6 +11,9 @@ export async function compute(params, ctx) {
     headers["OpenAI-Beta"] = params["betaAccess"];
   }
   addQueryParam("purpose", params["purpose"]);
+  addQueryParam("limit", params["limit"]);
+  addQueryParam("order", params["order"]);
+  addQueryParam("after", params["after"]);
   const body = undefined;
   const res = await ctx.lib.fetch({
     method: "GET",

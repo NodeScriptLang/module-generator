@@ -9,7 +9,6 @@
     "auth": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "OpenAI API key.\n"
       },
       "advanced": false,
@@ -18,7 +17,6 @@
     "betaAccess": {
       "schema": {
         "type": "string",
-        "optional": false,
         "default": "assistants=v2",
         "description": "Adds OpenAI-Beta for access to new and experimental features."
       },
@@ -27,13 +25,11 @@
     },
     "model": {
       "schema": {
-        "type": "string",
-        "default": "gpt-4o",
-        "optional": true,
-        "description": "ID of the model to use.\n"
+        "type": "any",
+        "description": "ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.\n"
       },
       "advanced": false,
-      "hideValue": false
+      "hideValue": true
     },
     "name": {
       "schema": {

@@ -19,6 +19,7 @@ export async function compute(params, ctx) {
   body["validation_file"] = params["validationFile"];
   body["integrations"] = params["integrations"];
   body["seed"] = params["seed"];
+  body["method"] = params["method"];
   body = JSON.stringify(body);
   const res = await ctx.lib.fetch({
     method: "POST",
