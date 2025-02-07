@@ -1,0 +1,77 @@
+{
+  "moduleName": "StabilityAI / Generation / Text To Image",
+  "version": "0.0.0",
+  "description": "Generate an image from a text prompt. \n### Using SDXL 1.0\nUse `stable-diffusion-xl-1024-v1-0` as the `engine_id` of your request and pass in `height` & `width` as one of the following combinations:\n- 1024x1024 (default)\n- 1152x896\n- 896x1152\n- 1216x832\n- 1344x768\n- 768x1344\n- 1536x640\n- 640x1536 \n\n### SDXL 1.0 Pricing\nWhen specifying 30 steps or fewer, generation costs 0.9 credits.\n\nWhen specifying above 30 steps, generation cost is determiend using the following formula:\n\n `cost = 0.9 * (steps / 30)`\n\n### Using SD 1.6\nSD1.6 is a flexible-resolution base model allowing you to generate non-standard aspect ratios. The model is optimized for a resolution of 512 x 512 pixels. To generate 1 megapixel outputs, we recommend using SDXL 1.0, which is available at the same price.\n\nPass in `stable-diffusion-v1-6` as the `engine_id` of your request and ensure the `height` & `width` you pass in adhere to the following restrictions:\n- No dimension can be less than 320 pixels\n- No dimension can be greater than 1536 pixels\n- Height and width must be specified in increments of 64\n- The default resolution is 512 x 512\n",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "Your [Stability API key](https://platform.stability.ai/account/keys), used to authenticate your requests. Although you may have multiple keys in your account, you should use the same key for all requests to this API."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "engineId": {
+      "schema": {
+        "type": "string",
+        "description": ""
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accept": {
+      "schema": {
+        "type": "string",
+        "default": "application/json",
+        "enum": [
+          "application/json",
+          "image/png"
+        ],
+        "optional": true,
+        "description": "The format of the response.  Leave blank for JSON, or set to 'image/png' for a PNG image."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "organization": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Allows for requests to be scoped to an organization other than the user's default.  If not provided, the user's default organization will be used."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "stabilityClientId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Used to identify the source of requests, such as the client application or sub-organization. Optional, but recommended for organizational clarity."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "stabilityClientVersion": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Used to identify the version of the application or service making the requests. Optional, but recommended for organizational clarity."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "87101383e71a77f5875a9fa2a93181259b22c0ee277bc8b27ed896ea08af90c7"
+  }
+}

@@ -1,0 +1,661 @@
+id: stabilityai
+displayName: StabilityAI
+baseUrl: https://api.stability.ai
+description: >-
+  Welcome to the Stability Platform API. As of March 2024, we are building the
+  REST v2beta API service to be the primary API service for the Stability
+  Platform. 
+
+  All AI services on other APIs (gRPC, REST v1, RESTv2alpha) will continue to be
+  maintained, however they will not receive
+
+  new features or parameters.
+
+
+  If you are a REST v2alpha user, we strongly recommend that you adjust the URL
+  calls for the specific services that you are using over to the equivalent REST
+  v2beta URL. Normally, this means simply replacing "v2alpha" with "v2beta". We
+  are not deprecating v2alpha URLs at this time for users that are currently
+  using them.
+
+
+  #### Authentication
+
+
+  You will need your [Stability API
+  key](https://platform.stability.ai/account/keys) in order to make requests to
+  this API.
+
+  Make sure you never share your API key with anyone, and you never commit it to
+  a public repository. Include this key in 
+
+  the `Authorization` header of your requests.
+
+
+  #### Rate limiting
+
+
+  This API is rate-limited to 150 requests every 10 seconds. If you exceed this
+  limit, you will receive a `429` response
+
+  and be timed out for 60 seconds. If you find this limit too restrictive,
+  please reach out to us via [this
+  form](https://stabilityplatform.freshdesk.com/support/home).
+
+
+  #### Support
+
+
+  Please see our [FAQ](https://platform.stability.ai/faq) for answers to common
+  questions. If you have any other questions or concerns,
+
+  please reach out to us via [this
+  form](https://stabilityplatform.freshdesk.com/support/tickets/new).
+
+
+  To see the health of our APIs, please check our [Status
+  Page](https://stabilityai.instatus.com/).
+commonParams:
+  - paramName: auth
+    description: Your [Stability API
+      key](https://platform.stability.ai/account/keys), used to authenticate
+      your requests. Although you may have multiple keys in your account,
+      you should use the same key for all requests to this API.
+    paramKey: authorization
+    in: header
+    schema:
+      type: string
+    required: true
+modules:
+  - moduleName: V2Alpha Generation / Image To Video / Get Result
+    method: get
+    path: /v2alpha/generation/image-to-video/result/{id}
+    description: >-
+      Fetch the result of an image-to-video generation by ID. Make sure you use
+      the same API key that you used to
+
+      generate the video, otherwise you will receive a `404` response.
+
+
+      ### How is progress reported?
+
+      Your generation is either `in-progress` (i.e. status code `202`) or it is
+      complete (i.e. status code `200`). 
+
+      We may add more fine-grained progress reporting in the future (e.g. a
+      numerical progress).
+
+
+      ### How long are results stored?
+
+      Results are stored for 24 hours after generation. After that, the results
+      are deleted and you will need to 
+
+      re-generate your video.
+    externalDocs: ""
+    operationId: ""
+    params:
+      - paramName: id
+        description: The `id` of a generation, typically used for async generations,
+          that can be used to check the status of the generation or retrieve the
+          result.
+        paramKey: id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: authorization
+        description: Your [Stability API
+          key](https://platform.stability.ai/account/keys), used to authenticate
+          your requests. Although you may have multiple keys in your account,
+          you should use the same key for all requests to this API.
+        paramKey: authorization
+        in: header
+        schema:
+          type: string
+        required: true
+      - paramName: accept
+        description: Specify `video/*` to get the video bytes directly. Otherwise
+          specify `application/json` to receive the video as base64 encoded
+          JSON.
+        paramKey: accept
+        in: header
+        schema:
+          type: string
+          default: video/*
+          enum:
+            - video/*
+            - application/json
+        required: false
+  - moduleName: V2Alpha Generation / Stable Image / Get Upscale Result
+    method: get
+    path: /v2alpha/generation/stable-image/upscale/result/{id}
+    description: >-
+      Fetch the result of an upscale generation by ID. Make sure to use the same
+      API key to fetch the generation result
+
+      that you used to create the generation, otherwise you will receive a `404`
+      response.
+
+
+      ### How is progress reported?
+
+      Your generation is either `in-progress` (i.e. status code `202`) or it is
+      complete (i.e. status code `200`). 
+
+      We may add more fine-grained progress reporting in the future (e.g. a
+      numerical progress).
+
+
+      ### How long are results stored?
+
+      Results are stored for 24 hours after generation. After that, the results
+      are deleted.
+    externalDocs: ""
+    operationId: ""
+    params:
+      - paramName: id
+        description: The `id` of a generation, typically used for async generations,
+          that can be used to check the status of the generation or retrieve the
+          result.
+        paramKey: id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: authorization
+        description: Your [Stability API
+          key](https://platform.stability.ai/account/keys), used to authenticate
+          your requests. Although you may have multiple keys in your account,
+          you should use the same key for all requests to this API.
+        paramKey: authorization
+        in: header
+        schema:
+          type: string
+        required: true
+      - paramName: accept
+        description: Specify `image/*` to get the image bytes directly. Otherwise
+          specify `application/json` to receive the image as base64 encoded
+          JSON.
+        paramKey: accept
+        in: header
+        schema:
+          type: string
+          default: image/*
+          enum:
+            - image/*
+            - application/json
+        required: false
+  - moduleName: Image To Video / Get Result
+    method: get
+    path: /v2beta/image-to-video/result/{id}
+    description: >-
+      Fetch the result of an image-to-video generation by ID.
+
+
+      Make sure to use the same API key to fetch the generation result that you
+      used to create the generation, 
+
+      otherwise you will receive a `404` response.
+
+
+      ### How to use
+
+      Please invoke this endpoint with a `GET` request.
+
+
+      The headers of the request must include an API key in the `authorization`
+      field and the ID
+
+      of your generation must be in the path.
+
+
+      ### How is progress reported?
+
+      Your generation is either `in-progress` (i.e. status code `202`) or it is
+      complete (i.e. status code `200`). 
+
+      We may add more fine-grained progress reporting in the future (e.g. a
+      numerical progress).
+
+
+      ### How long are results stored?
+
+      Results are stored for 24 hours after generation. After that, the results
+      are deleted and you will need to 
+
+      re-generate your video.
+    externalDocs: ""
+    operationId: ""
+    params:
+      - paramName: id
+        description: The `id` of a generation, typically used for async generations,
+          that can be used to check the status of the generation or retrieve the
+          result.
+        paramKey: id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: authorization
+        description: Your [Stability API
+          key](https://platform.stability.ai/account/keys), used to authenticate
+          your requests. Although you may have multiple keys in your account,
+          you should use the same key for all requests to this API.
+        paramKey: authorization
+        in: header
+        schema:
+          type: string
+        required: true
+      - paramName: accept
+        description: Specify `video/*` to receive the bytes of the video directly.
+          Otherwise specify `application/json` to receive the video as base64
+          encoded JSON.
+        paramKey: accept
+        in: header
+        schema:
+          type: string
+          default: video/*
+          enum:
+            - video/*
+            - application/json
+        required: false
+      - paramName: stabilityClientId
+        description: The name of your application, used to help us communicate
+          app-specific debugging or moderation issues to you.
+        paramKey: stability-client-id
+        in: header
+        schema:
+          type: string
+        required: false
+      - paramName: stabilityClientUserId
+        description: A unique identifier for your end user. Used to help us communicate
+          user-specific debugging or moderation issues to you. Feel free to
+          obfuscate this value to protect user privacy.
+        paramKey: stability-client-user-id
+        in: header
+        schema:
+          type: string
+        required: false
+      - paramName: stabilityClientVersion
+        description: The version of your application, used to help us communicate
+          version-specific debugging or moderation issues to you.
+        paramKey: stability-client-version
+        in: header
+        schema:
+          type: string
+        required: false
+  - moduleName: Results / Get
+    method: get
+    path: /v2beta/results/{id}
+    description: >-
+      Fetch the result of a generation by ID. 
+
+
+      Make sure to use the same API key to fetch the generation result that you
+      used to create the generation, 
+
+      otherwise you will receive a `404` response.
+
+
+      ### How to use
+
+      Please invoke this endpoint with a `GET` request.
+
+
+      The headers of the request must include an API key in the `authorization`
+      field and the ID
+
+      of your generation must be in the path.
+
+
+      ### How is progress reported?
+
+      Your generation is either `in-progress` (i.e. status code `202`) or it is
+      complete (i.e. status code `200`). 
+
+      We may add more fine-grained progress reporting in the future (e.g. a
+      numerical progress).
+
+
+      ### How long are results stored?
+
+      Results are stored for 24 hours after generation. After that, the results
+      are deleted.
+    externalDocs: ""
+    operationId: ""
+    params:
+      - paramName: id
+        description: The `id` of a generation, typically used for async generations,
+          that can be used to check the status of the generation or retrieve the
+          result.
+        paramKey: id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: authorization
+        description: Your [Stability API
+          key](https://platform.stability.ai/account/keys), used to authenticate
+          your requests. Although you may have multiple keys in your account,
+          you should use the same key for all requests to this API.
+        paramKey: authorization
+        in: header
+        schema:
+          type: string
+        required: true
+      - paramName: accept
+        description: Specify `*/*` to receive the bytes of the result directly.
+          Otherwise specify `application/json` to receive the result as base64
+          encoded JSON.
+        paramKey: accept
+        in: header
+        schema:
+          type: string
+          default: "*/*"
+          enum:
+            - "*/*"
+            - application/json
+        required: false
+      - paramName: stabilityClientId
+        description: The name of your application, used to help us communicate
+          app-specific debugging or moderation issues to you.
+        paramKey: stability-client-id
+        in: header
+        schema:
+          type: string
+        required: false
+      - paramName: stabilityClientUserId
+        description: A unique identifier for your end user. Used to help us communicate
+          user-specific debugging or moderation issues to you. Feel free to
+          obfuscate this value to protect user privacy.
+        paramKey: stability-client-user-id
+        in: header
+        schema:
+          type: string
+        required: false
+      - paramName: stabilityClientVersion
+        description: The version of your application, used to help us communicate
+          version-specific debugging or moderation issues to you.
+        paramKey: stability-client-version
+        in: header
+        schema:
+          type: string
+        required: false
+  - moduleName: Upscale / Creative / Get Result
+    method: get
+    path: /v2beta/stable-image/upscale/creative/result/{id}
+    description: >-
+      Fetch the result of an upscale generation by ID. 
+
+
+      Make sure to use the same API key to fetch the generation result that you
+      used to create the generation, 
+
+      otherwise you will receive a `404` response.
+
+
+      ### How to use
+
+      Please invoke this endpoint with a `GET` request.
+
+
+      The headers of the request must include an API key in the `authorization`
+      field and the ID
+
+      of your generation must be in the path.
+
+
+      ### How is progress reported?
+
+      Your generation is either `in-progress` (i.e. status code `202`) or it is
+      complete (i.e. status code `200`). 
+
+      We may add more fine-grained progress reporting in the future (e.g. a
+      numerical progress).
+
+
+      ### How long are results stored?
+
+      Results are stored for 24 hours after generation. After that, the results
+      are deleted.
+    externalDocs: ""
+    operationId: ""
+    params:
+      - paramName: id
+        description: The `id` of a generation, typically used for async generations,
+          that can be used to check the status of the generation or retrieve the
+          result.
+        paramKey: id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: authorization
+        description: Your [Stability API
+          key](https://platform.stability.ai/account/keys), used to authenticate
+          your requests. Although you may have multiple keys in your account,
+          you should use the same key for all requests to this API.
+        paramKey: authorization
+        in: header
+        schema:
+          type: string
+        required: true
+      - paramName: accept
+        description: Specify `image/*` to receive the bytes of the image directly.
+          Otherwise specify `application/json` to receive the image as base64
+          encoded JSON.
+        paramKey: accept
+        in: header
+        schema:
+          type: string
+          default: image/*
+          enum:
+            - image/*
+            - application/json
+        required: false
+      - paramName: stabilityClientId
+        description: The name of your application, used to help us communicate
+          app-specific debugging or moderation issues to you.
+        paramKey: stability-client-id
+        in: header
+        schema:
+          type: string
+        required: false
+      - paramName: stabilityClientUserId
+        description: A unique identifier for your end user. Used to help us communicate
+          user-specific debugging or moderation issues to you. Feel free to
+          obfuscate this value to protect user privacy.
+        paramKey: stability-client-user-id
+        in: header
+        schema:
+          type: string
+        required: false
+      - paramName: stabilityClientVersion
+        description: The version of your application, used to help us communicate
+          version-specific debugging or moderation issues to you.
+        paramKey: stability-client-version
+        in: header
+        schema:
+          type: string
+        required: false
+  - moduleName: Generation / Text To Image
+    method: post
+    path: /v1/generation/{engine_id}/text-to-image
+    description: >
+      Generate an image from a text prompt. 
+
+      ### Using SDXL 1.0
+
+      Use `stable-diffusion-xl-1024-v1-0` as the `engine_id` of your request and
+      pass in `height` & `width` as one of the following combinations:
+
+      - 1024x1024 (default)
+
+      - 1152x896
+
+      - 896x1152
+
+      - 1216x832
+
+      - 1344x768
+
+      - 768x1344
+
+      - 1536x640
+
+      - 640x1536 
+
+
+      ### SDXL 1.0 Pricing
+
+      When specifying 30 steps or fewer, generation costs 0.9 credits.
+
+
+      When specifying above 30 steps, generation cost is determiend using the
+      following formula:
+
+       `cost = 0.9 * (steps / 30)`
+
+      ### Using SD 1.6
+
+      SD1.6 is a flexible-resolution base model allowing you to generate
+      non-standard aspect ratios. The model is optimized for a resolution of 512
+      x 512 pixels. To generate 1 megapixel outputs, we recommend using SDXL
+      1.0, which is available at the same price.
+
+
+      Pass in `stable-diffusion-v1-6` as the `engine_id` of your request and
+      ensure the `height` & `width` you pass in adhere to the following
+      restrictions:
+
+      - No dimension can be less than 320 pixels
+
+      - No dimension can be greater than 1536 pixels
+
+      - Height and width must be specified in increments of 64
+
+      - The default resolution is 512 x 512
+    externalDocs: ""
+    operationId: textToImage
+    params:
+      - paramName: engineId
+        description: ""
+        paramKey: engine_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: accept
+        description: The format of the response.  Leave blank for JSON, or set to
+          'image/png' for a PNG image.
+        paramKey: Accept
+        in: header
+        schema:
+          type: string
+          default: application/json
+          enum:
+            - application/json
+            - image/png
+        required: false
+      - paramName: organization
+        description: Allows for requests to be scoped to an organization other than the
+          user's default.  If not provided, the user's default organization will
+          be used.
+        paramKey: Organization
+        in: header
+        schema:
+          type: string
+        required: false
+      - paramName: stabilityClientId
+        description: Used to identify the source of requests, such as the client
+          application or sub-organization. Optional, but recommended for
+          organizational clarity.
+        paramKey: Stability-Client-ID
+        in: header
+        schema:
+          type: string
+        required: false
+      - paramName: stabilityClientVersion
+        description: Used to identify the version of the application or service making
+          the requests. Optional, but recommended for organizational clarity.
+        paramKey: Stability-Client-Version
+        in: header
+        schema:
+          type: string
+        required: false
+    requestBodyType: json
+  - moduleName: Engines / List
+    method: get
+    path: /v1/engines/list
+    description: List all engines available to your organization/user
+    externalDocs: ""
+    operationId: listEngines
+    params:
+      - paramName: organization
+        description: Allows for requests to be scoped to an organization other than the
+          user's default.  If not provided, the user's default organization will
+          be used.
+        paramKey: Organization
+        in: header
+        schema:
+          type: string
+        required: false
+      - paramName: stabilityClientId
+        description: Used to identify the source of requests, such as the client
+          application or sub-organization. Optional, but recommended for
+          organizational clarity.
+        paramKey: Stability-Client-ID
+        in: header
+        schema:
+          type: string
+        required: false
+      - paramName: stabilityClientVersion
+        description: Used to identify the version of the application or service making
+          the requests. Optional, but recommended for organizational clarity.
+        paramKey: Stability-Client-Version
+        in: header
+        schema:
+          type: string
+        required: false
+  - moduleName: User / Account / Get
+    method: get
+    path: /v1/user/account
+    description: Get information about the account associated with the provided API key
+    externalDocs: ""
+    operationId: userAccount
+    params: []
+  - moduleName: User / Balance / Get
+    method: get
+    path: /v1/user/balance
+    description: Get the credit balance of the account/organization associated with
+      the API key
+    externalDocs: ""
+    operationId: userBalance
+    params:
+      - paramName: organization
+        description: Allows for requests to be scoped to an organization other than the
+          user's default.  If not provided, the user's default organization will
+          be used.
+        paramKey: Organization
+        in: header
+        schema:
+          type: string
+        required: false
+      - paramName: stabilityClientId
+        description: Used to identify the source of requests, such as the client
+          application or sub-organization. Optional, but recommended for
+          organizational clarity.
+        paramKey: Stability-Client-ID
+        in: header
+        schema:
+          type: string
+        required: false
+      - paramName: stabilityClientVersion
+        description: Used to identify the version of the application or service making
+          the requests. Optional, but recommended for organizational clarity.
+        paramKey: Stability-Client-Version
+        in: header
+        schema:
+          type: string
+        required: false

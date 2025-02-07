@@ -1,0 +1,58 @@
+{
+  "moduleName": "StabilityAI / V2Alpha Generation / Stable Image / Get Upscale Result",
+  "version": "0.0.0",
+  "description": "Fetch the result of an upscale generation by ID. Make sure to use the same API key to fetch the generation result\nthat you used to create the generation, otherwise you will receive a `404` response.\n\n### How is progress reported?\nYour generation is either `in-progress` (i.e. status code `202`) or it is complete (i.e. status code `200`). \nWe may add more fine-grained progress reporting in the future (e.g. a numerical progress).\n\n### How long are results stored?\nResults are stored for 24 hours after generation. After that, the results are deleted.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "Your [Stability API key](https://platform.stability.ai/account/keys), used to authenticate your requests. Although you may have multiple keys in your account, you should use the same key for all requests to this API."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "id": {
+      "schema": {
+        "type": "string",
+        "description": "The `id` of a generation, typically used for async generations, that can be used to check the status of the generation or retrieve the result."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "authorization": {
+      "schema": {
+        "type": "string",
+        "description": "Your [Stability API key](https://platform.stability.ai/account/keys), used to authenticate your requests. Although you may have multiple keys in your account, you should use the same key for all requests to this API."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accept": {
+      "schema": {
+        "type": "string",
+        "default": "image/*",
+        "enum": [
+          "image/*",
+          "application/json"
+        ],
+        "optional": true,
+        "description": "Specify `image/*` to get the image bytes directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "e7dc6922dd36f60f8bb7af422151496b0c76c6a2eda7acd99d306a586fa1d67b"
+  }
+}
