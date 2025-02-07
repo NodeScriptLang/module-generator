@@ -2,7 +2,10 @@
   "moduleName": "StabilityAI / Generation / Text To Image",
   "version": "0.0.0",
   "description": "Generate an image from a text prompt. \n### Using SDXL 1.0\nUse `stable-diffusion-xl-1024-v1-0` as the `engine_id` of your request and pass in `height` & `width` as one of the following combinations:\n- 1024x1024 (default)\n- 1152x896\n- 896x1152\n- 1216x832\n- 1344x768\n- 768x1344\n- 1536x640\n- 640x1536 \n\n### SDXL 1.0 Pricing\nWhen specifying 30 steps or fewer, generation costs 0.9 credits.\n\nWhen specifying above 30 steps, generation cost is determiend using the following formula:\n\n `cost = 0.9 * (steps / 30)`\n\n### Using SD 1.6\nSD1.6 is a flexible-resolution base model allowing you to generate non-standard aspect ratios. The model is optimized for a resolution of 512 x 512 pixels. To generate 1 megapixel outputs, we recommend using SDXL 1.0, which is available at the same price.\n\nPass in `stable-diffusion-v1-6` as the `engine_id` of your request and ensure the `height` & `width` you pass in adhere to the following restrictions:\n- No dimension can be less than 320 pixels\n- No dimension can be greater than 1536 pixels\n- Height and width must be specified in increments of 64\n- The default resolution is 512 x 512\n",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "stable diffusion"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

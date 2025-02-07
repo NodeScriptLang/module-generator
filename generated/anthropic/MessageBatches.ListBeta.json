@@ -1,7 +1,7 @@
 {
-  "moduleName": "Anthropic / Models / List",
+  "moduleName": "Anthropic / Message Batches / List Beta",
   "version": "0.0.0",
-  "description": "List available models.\n\nThe Models API response can be used to determine which models are available for use in the API. More recently released models are listed first.",
+  "description": "List all Message Batches within a Workspace. Most recently created batches are returned first.",
   "keywords": [
     "ai",
     "claude"
@@ -48,6 +48,15 @@
       "advanced": true,
       "hideValue": false
     },
+    "anthropicBeta": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
     "anthropicVersion": {
       "schema": {
         "type": "string",
@@ -66,6 +75,6 @@
   },
   "attributes": {
     "externalDocs": "",
-    "codeHash": "ae80d75e769a694748c0dc6bfe3c71f31992e7b701396e581d12c751eed8c2f4"
+    "codeHash": "b8acc8baec1df60a501651a375ee332fa513f303efdc3f0f0862ab6291ac73f0"
   }
 }

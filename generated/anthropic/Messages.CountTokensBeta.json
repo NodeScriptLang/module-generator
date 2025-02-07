@@ -1,5 +1,5 @@
 {
-  "moduleName": "Anthropic / Messages / Count Tokens",
+  "moduleName": "Anthropic / Messages / Count Tokens Beta",
   "version": "0.0.0",
   "description": "Count the number of tokens in a Message.\n\nThe Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.",
   "keywords": [
@@ -14,6 +14,15 @@
         "type": "string",
         "optional": true,
         "description": "Your unique API key for authentication. \nThis key is required in the header of all API requests, to\nauthenticate your account and access Anthropic's services. Get your\nAPI key through the\n[Console](https://console.anthropic.com/settings/keys). Each key is\nscoped to a Workspace.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "anthropicBeta": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
       },
       "advanced": true,
       "hideValue": false
@@ -85,6 +94,6 @@
   },
   "attributes": {
     "externalDocs": "",
-    "codeHash": "0db73be4d525d7c5233d4c606859955753a7126ba50edf35b50937485e9b6e29"
+    "codeHash": "386d678ca816f2b952b8d183fc99a5240589c482b2a94623999fe63b2a32cc41"
   }
 }

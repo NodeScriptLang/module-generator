@@ -1,5 +1,5 @@
 {
-  "moduleName": "Anthropic / Models / List",
+  "moduleName": "Anthropic / Models / List Beta",
   "version": "0.0.0",
   "description": "List available models.\n\nThe Models API response can be used to determine which models are available for use in the API. More recently released models are listed first.",
   "keywords": [
@@ -66,6 +66,6 @@
   },
   "attributes": {
     "externalDocs": "",
-    "codeHash": "ae80d75e769a694748c0dc6bfe3c71f31992e7b701396e581d12c751eed8c2f4"
+    "codeHash": "966df05ab630c827f17ed5ea64fc62dcf0c20f702be956e1b68681545264e967"
   }
 }

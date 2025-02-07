@@ -2,7 +2,10 @@
   "moduleName": "StabilityAI / Upscale / Creative / Get Result",
   "version": "0.0.0",
   "description": "Fetch the result of an upscale generation by ID. \n\nMake sure to use the same API key to fetch the generation result that you used to create the generation, \notherwise you will receive a `404` response.\n\n### How to use\nPlease invoke this endpoint with a `GET` request.\n\nThe headers of the request must include an API key in the `authorization` field and the ID\nof your generation must be in the path.\n\n### How is progress reported?\nYour generation is either `in-progress` (i.e. status code `202`) or it is complete (i.e. status code `200`). \nWe may add more fine-grained progress reporting in the future (e.g. a numerical progress).\n\n### How long are results stored?\nResults are stored for 24 hours after generation. After that, the results are deleted.",
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "stable diffusion"
+  ],
   "cacheMode": "always",
   "evalMode": "manual",
   "params": {

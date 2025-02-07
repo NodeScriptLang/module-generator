@@ -1,7 +1,7 @@
 {
-  "moduleName": "Anthropic / Message Batches / Delete",
+  "moduleName": "Anthropic / Message Batches / Get Results Beta",
   "version": "0.0.0",
-  "description": "Delete a Message Batch.\n\nMessage Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it.",
+  "description": "Streams the results of a Message Batch as a `.jsonl` file.\n\nEach line in the file is a JSON object containing the result of a single request in the Message Batch. Results are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.",
   "keywords": [
     "ai",
     "claude"
@@ -26,6 +26,15 @@
       "advanced": false,
       "hideValue": false
     },
+    "anthropicBeta": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
     "anthropicVersion": {
       "schema": {
         "type": "string",
@@ -44,6 +53,6 @@
   },
   "attributes": {
     "externalDocs": "",
-    "codeHash": "cb25a2d3ec2f1d973257f8b374de1590a15ee2c51962dd10db4468ee3cdf51c6"
+    "codeHash": "c6d5608c0f0bf2eced8efee76b33b292a042f8d18449dd4ab4c033bc4b9b86ef"
   }
 }
