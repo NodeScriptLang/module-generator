@@ -25,6 +25,7 @@ modules:
       Other fields in the request, including any provided content, are ignored.
       Returns the created document.
     externalDocs: "https://developers.google.com/docs/api/reference/rest"
+    operationId: docs.documents.create
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -188,6 +189,7 @@ modules:
     path: /v1/documents/{documentId}
     description: Gets the latest version of the specified document.
     externalDocs: "https://developers.google.com/docs/api/reference/rest"
+    operationId: docs.documents.get
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -249,6 +251,7 @@ modules:
       reflect your changes. In any case, the updates in your request are
       guaranteed to be applied together atomically."
     externalDocs: "https://developers.google.com/docs/api/reference/rest"
+    operationId: docs.documents.batchUpdate
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
