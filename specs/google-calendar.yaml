@@ -23,6 +23,7 @@ modules:
     path: /calendars
     description: Creates a secondary calendar.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.calendars.insert
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -97,6 +98,7 @@ modules:
     description: Deletes a secondary calendar. Use calendars.clear for clearing all
       events on primary calendars.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.calendars.delete
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -119,6 +121,7 @@ modules:
     path: /calendars/{calendarId}
     description: Returns metadata for a calendar.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.calendars.get
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -141,6 +144,7 @@ modules:
     path: /calendars/{calendarId}
     description: Updates metadata for a calendar. This method supports patch semantics.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.calendars.patch
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -218,11 +222,12 @@ modules:
           type: string
         required: false
     requestBodyType: json
-  - moduleName: Calendars / Update
+  - moduleName: Calendars / Replace
     method: put
     path: /calendars/{calendarId}
     description: Updates metadata for a calendar.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.calendars.update
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -305,6 +310,7 @@ modules:
     path: /calendars/{calendarId}/acl
     description: Returns the rules in the access control list for the calendar.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.acl.list
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -360,6 +366,8 @@ modules:
           response code and the client should clear its storage and perform a
           full synchronization without any syncToken.
 
+          Learn more about incremental synchronization.
+
           Optional. The default is to return all entries.
         paramKey: syncToken
         in: query
@@ -371,6 +379,7 @@ modules:
     path: /calendars/{calendarId}/acl
     description: Creates an access control rule.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.acl.insert
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -455,6 +464,7 @@ modules:
     path: /calendars/{calendarId}/acl/watch
     description: Watch for changes to ACL resources.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.acl.watch
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -599,6 +609,7 @@ modules:
     path: /calendars/{calendarId}/acl/{ruleId}
     description: Deletes an access control rule.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.acl.delete
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -628,6 +639,7 @@ modules:
     path: /calendars/{calendarId}/acl/{ruleId}
     description: Returns an access control rule.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.acl.get
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -657,6 +669,7 @@ modules:
     path: /calendars/{calendarId}/acl/{ruleId}
     description: Updates an access control rule. This method supports patch semantics.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.acl.patch
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -749,6 +762,7 @@ modules:
     path: /calendars/{calendarId}/acl/{ruleId}
     description: Updates an access control rule.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.acl.update
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -842,6 +856,7 @@ modules:
     description: Clears a primary calendar. This operation deletes all events
       associated with the primary calendar of an account.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.calendars.clear
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -864,6 +879,7 @@ modules:
     path: /calendars/{calendarId}/events
     description: Returns events on the specified calendar.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.events.list
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -1114,6 +1130,7 @@ modules:
     path: /calendars/{calendarId}/events
     description: Creates an event.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.events.insert
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -1610,6 +1627,7 @@ modules:
     description: Imports an event. This operation is used to add a private copy of
       an existing event to a calendar.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.events.import
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -2093,6 +2111,7 @@ modules:
     path: /calendars/{calendarId}/events/quickAdd
     description: Creates an event based on a simple text string.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.events.quickAdd
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -2134,6 +2153,7 @@ modules:
     path: /calendars/{calendarId}/events/watch
     description: Watch for changes to Events resources.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.events.watch
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -2462,6 +2482,7 @@ modules:
     path: /calendars/{calendarId}/events/{eventId}
     description: Deletes an event.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.events.delete
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -2505,6 +2526,7 @@ modules:
       event using its iCalendar ID, call the events.list method using the
       iCalUID parameter.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.events.get
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -2552,6 +2574,7 @@ modules:
     path: /calendars/{calendarId}/events/{eventId}
     description: Updates an event. This method supports patch semantics.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.events.patch
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -3064,6 +3087,7 @@ modules:
     path: /calendars/{calendarId}/events/{eventId}
     description: Updates an event.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.events.update
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -3576,6 +3600,7 @@ modules:
     path: /calendars/{calendarId}/events/{eventId}/instances
     description: Returns instances of the specified recurring event.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.events.instances
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -3674,6 +3699,7 @@ modules:
     path: /calendars/{calendarId}/events/{eventId}/move
     description: Moves an event to another calendar, i.e. changes an event's organizer.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.events.move
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -3722,6 +3748,7 @@ modules:
     path: /channels/stop
     description: Stop watching resources through this channel
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.channels.stop
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -3813,6 +3840,7 @@ modules:
     path: /colors
     description: Returns the color definitions for calendars and events.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.colors.get
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -3826,6 +3854,7 @@ modules:
     path: /freeBusy
     description: Returns free/busy information for a set of calendars.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.freebusy.query
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -3888,6 +3917,7 @@ modules:
     path: /users/me/calendarList
     description: Returns the calendars on the user's calendar list.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.calendarList.list
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -3969,6 +3999,7 @@ modules:
     path: /users/me/calendarList
     description: Inserts an existing calendar into the user's calendar list.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.calendarList.insert
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -4168,6 +4199,7 @@ modules:
     path: /users/me/calendarList/watch
     description: Watch for changes to CalendarList resources.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.calendarList.watch
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -4327,6 +4359,7 @@ modules:
     path: /users/me/calendarList/{calendarId}
     description: Removes a calendar from the user's calendar list.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.calendarList.delete
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -4349,6 +4382,7 @@ modules:
     path: /users/me/calendarList/{calendarId}
     description: Returns a calendar from the user's calendar list.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.calendarList.get
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -4372,6 +4406,7 @@ modules:
     description: Updates an existing calendar on the user's calendar list. This
       method supports patch semantics.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.calendarList.patch
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -4580,6 +4615,7 @@ modules:
     path: /users/me/calendarList/{calendarId}
     description: Updates an existing calendar on the user's calendar list.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.calendarList.update
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -4788,6 +4824,7 @@ modules:
     path: /users/me/settings
     description: Returns all user settings for the authenticated user.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.settings.list
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -4834,6 +4871,7 @@ modules:
     path: /users/me/settings/watch
     description: Watch for changes to Settings resources.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.settings.watch
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -4958,6 +4996,7 @@ modules:
     path: /users/me/settings/{setting}
     description: Returns a single user setting.
     externalDocs: "https://developers.google.com/calendar/api/v3/reference"
+    operationId: calendar.settings.get
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
