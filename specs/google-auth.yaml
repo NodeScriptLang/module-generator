@@ -23,6 +23,7 @@ modules:
     path: /oauth2/v2/tokeninfo
     description: Retrieves information about an OAuth 2.0 token, such as its validity, associated scopes, and expiration time. Useful for debugging and verifying token details.
     externalDocs: https://developers.google.com/identity/protocols/oauth2
+    operationId: oauth2.tokeninfo
     params:
       - paramName: userIp
         description: Deprecated. Please use quotaUser instead.
@@ -43,6 +44,7 @@ modules:
     path: /oauth2/v2/userinfo
     description: Fetches basic profile information about the authenticated user, such as their name, email, and profile picture. This endpoint requires a valid OAuth 2.0 access token.
     externalDocs: https://developers.google.com/identity/protocols/oauth2
+    operationId: oauth2.userinfo.get
     params:
       - paramName: userIp
         description: Deprecated. Please use quotaUser instead.
@@ -56,6 +58,7 @@ modules:
     path: /userinfo/v2/me
     description: Retrieves detailed profile information about the authenticated user, including additional fields compared to the v1 endpoint. Requires a valid OAuth 2.0 access token.
     externalDocs: https://developers.google.com/identity/protocols/oauth2
+    operationId: oauth2.userinfo.v2.me.get
     params:
       - paramName: userIp
         description: Deprecated. Please use quotaUser instead.
