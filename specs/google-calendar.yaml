@@ -222,7 +222,7 @@ modules:
           type: string
         required: false
     requestBodyType: json
-  - moduleName: Calendars / Replace
+  - moduleName: Calendars / Update
     method: put
     path: /calendars/{calendarId}
     description: Updates metadata for a calendar.
