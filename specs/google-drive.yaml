@@ -24,6 +24,7 @@ modules:
     path: /about
     description: Gets information about the user, the user's Drive, and system capabilities.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.about.get
     params:
       - paramName: alt
         description: Data format for the response.
@@ -54,6 +55,7 @@ modules:
     path: /changes
     description: Lists the changes for a user or shared drive.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.changes.list
     params:
       - paramName: alt
         description: Data format for the response.
@@ -179,6 +181,7 @@ modules:
     path: /changes/startPageToken
     description: Gets the starting pageToken for listing future changes.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.changes.getStartPageToken
     params:
       - paramName: alt
         description: Data format for the response.
@@ -226,6 +229,7 @@ modules:
     description: Subscribes to changes for a user. To use this method, you must
       include the pageToken query parameter.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.changes.watch
     params:
       - paramName: alt
         description: Data format for the response.
@@ -429,6 +433,7 @@ modules:
     path: /channels/stop
     description: Stop watching resources through this channel
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.channels.stop
     params:
       - paramName: alt
         description: Data format for the response.
@@ -537,6 +542,7 @@ modules:
     path: /drives
     description: Lists the user's shared drives.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.drives.list
     params:
       - paramName: alt
         description: Data format for the response.
@@ -599,6 +605,7 @@ modules:
     path: /drives
     description: Creates a shared drive.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.drives.create
     params:
       - paramName: alt
         description: Data format for the response.
@@ -741,6 +748,7 @@ modules:
     description: Permanently deletes a shared drive for which the user is an
       organizer. The shared drive cannot contain any untrashed items.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.drives.delete
     params:
       - paramName: alt
         description: Data format for the response.
@@ -796,6 +804,7 @@ modules:
     path: /drives/{driveId}
     description: Gets a shared drive's metadata by ID.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.drives.get
     params:
       - paramName: alt
         description: Data format for the response.
@@ -842,6 +851,7 @@ modules:
     path: /drives/{driveId}
     description: Updates the metadata for a shared drive.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.drives.update
     params:
       - paramName: alt
         description: Data format for the response.
@@ -988,6 +998,7 @@ modules:
     path: /drives/{driveId}/hide
     description: Hides a shared drive from the default view.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.drives.hide
     params:
       - paramName: alt
         description: Data format for the response.
@@ -1025,6 +1036,7 @@ modules:
     path: /drives/{driveId}/unhide
     description: Restores a shared drive to the default view.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.drives.unhide
     params:
       - paramName: alt
         description: Data format for the response.
@@ -1062,6 +1074,7 @@ modules:
     path: /files
     description: Lists or searches files.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.files.list
     params:
       - paramName: alt
         description: Data format for the response.
@@ -1195,6 +1208,7 @@ modules:
     description: Generates a set of file IDs which can be provided in create or copy
       requests.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.files.generateIds
     params:
       - paramName: alt
         description: Data format for the response.
@@ -1251,6 +1265,7 @@ modules:
     path: /files/trash
     description: Permanently deletes all of the user's trashed files.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.files.emptyTrash
     params:
       - paramName: alt
         description: Data format for the response.
@@ -1300,6 +1315,7 @@ modules:
       organizer on the parent. If the target is a folder, all descendants owned
       by the user are also deleted.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.files.delete
     params:
       - paramName: alt
         description: Data format for the response.
@@ -1354,6 +1370,7 @@ modules:
     path: /files/{fileId}
     description: Gets a file's metadata or content by ID.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.files.get
     params:
       - paramName: alt
         description: Data format for the response.
@@ -1424,6 +1441,7 @@ modules:
     path: /files/{fileId}/comments
     description: Lists a file's comments.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.comments.list
     params:
       - paramName: alt
         description: Data format for the response.
@@ -1495,6 +1513,7 @@ modules:
     path: /files/{fileId}/comments
     description: Creates a comment on a file.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.comments.create
     params:
       - paramName: alt
         description: Data format for the response.
@@ -1626,6 +1645,7 @@ modules:
     path: /files/{fileId}/comments/{commentId}
     description: Deletes a comment.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.comments.delete
     params:
       - paramName: alt
         description: Data format for the response.
@@ -1670,6 +1690,7 @@ modules:
     path: /files/{fileId}/comments/{commentId}
     description: Gets a comment by ID.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.comments.get
     params:
       - paramName: alt
         description: Data format for the response.
@@ -1722,6 +1743,7 @@ modules:
     path: /files/{fileId}/comments/{commentId}
     description: Updates a comment with patch semantics.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.comments.update
     params:
       - paramName: alt
         description: Data format for the response.
@@ -1860,6 +1882,7 @@ modules:
     path: /files/{fileId}/comments/{commentId}/replies
     description: Lists a comment's replies.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.replies.list
     params:
       - paramName: alt
         description: Data format for the response.
@@ -1930,6 +1953,7 @@ modules:
     path: /files/{fileId}/comments/{commentId}/replies
     description: Creates a reply to a comment.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.replies.create
     params:
       - paramName: alt
         description: Data format for the response.
@@ -2048,6 +2072,7 @@ modules:
     path: /files/{fileId}/comments/{commentId}/replies/{replyId}
     description: Deletes a reply.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.replies.delete
     params:
       - paramName: alt
         description: Data format for the response.
@@ -2099,6 +2124,7 @@ modules:
     path: /files/{fileId}/comments/{commentId}/replies/{replyId}
     description: Gets a reply by ID.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.replies.get
     params:
       - paramName: alt
         description: Data format for the response.
@@ -2158,6 +2184,7 @@ modules:
     path: /files/{fileId}/comments/{commentId}/replies/{replyId}
     description: Updates a reply with patch semantics.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.replies.update
     params:
       - paramName: alt
         description: Data format for the response.
@@ -2284,6 +2311,7 @@ modules:
     description: Creates a copy of a file and applies any requested updates with
       patch semantics. Folders cannot be copied.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.files.copy
     params:
       - paramName: alt
         description: Data format for the response.
@@ -2926,6 +2954,7 @@ modules:
       returns exported byte content. Note that the exported content is limited
       to 10MB.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.files.export
     params:
       - paramName: alt
         description: Data format for the response.
@@ -2970,6 +2999,7 @@ modules:
     path: /files/{fileId}/listLabels
     description: Lists the labels on a file.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.files.listLabels
     params:
       - paramName: alt
         description: Data format for the response.
@@ -3026,6 +3056,7 @@ modules:
     path: /files/{fileId}/modifyLabels
     description: Modifies the set of labels on a file.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.files.modifyLabels
     params:
       - paramName: alt
         description: Data format for the response.
@@ -3081,6 +3112,7 @@ modules:
     path: /files/{fileId}/permissions
     description: Lists a file's or shared drive's permissions.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.permissions.list
     params:
       - paramName: alt
         description: Data format for the response.
@@ -3166,6 +3198,7 @@ modules:
     description: Creates a permission for a file or shared drive. For more
       information on creating permissions, see Share files, folders & drives.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.permissions.create
     params:
       - paramName: alt
         description: Data format for the response.
@@ -3446,6 +3479,7 @@ modules:
     path: /files/{fileId}/permissions/{permissionId}
     description: Deletes a permission.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.permissions.delete
     params:
       - paramName: alt
         description: Data format for the response.
@@ -3508,6 +3542,7 @@ modules:
     path: /files/{fileId}/permissions/{permissionId}
     description: Gets a permission by ID.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.permissions.get
     params:
       - paramName: alt
         description: Data format for the response.
@@ -3570,6 +3605,7 @@ modules:
     path: /files/{fileId}/permissions/{permissionId}
     description: Updates a permission with patch semantics.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.permissions.update
     params:
       - paramName: alt
         description: Data format for the response.
@@ -3830,6 +3866,7 @@ modules:
     path: /files/{fileId}/revisions
     description: Lists a file's revisions.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.revisions.list
     params:
       - paramName: alt
         description: Data format for the response.
@@ -3888,6 +3925,7 @@ modules:
       Revisions for other files, like Google Docs or Sheets, and the last
       remaining file version can't be deleted.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.revisions.delete
     params:
       - paramName: alt
         description: Data format for the response.
@@ -3932,6 +3970,7 @@ modules:
     path: /files/{fileId}/revisions/{revisionId}
     description: Gets a revision's metadata or content by ID.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.revisions.get
     params:
       - paramName: alt
         description: Data format for the response.
@@ -3985,6 +4024,7 @@ modules:
     path: /files/{fileId}/revisions/{revisionId}
     description: Updates a revision with patch semantics.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.revisions.update
     params:
       - paramName: alt
         description: Data format for the response.
@@ -4143,6 +4183,7 @@ modules:
     path: /files/{fileId}/watch
     description: Subscribes to changes to a file.
     externalDocs: "https://developers.google.com/drive/api/reference/rest/v3"
+    operationId: drive.files.watch
     params:
       - paramName: alt
         description: Data format for the response.
