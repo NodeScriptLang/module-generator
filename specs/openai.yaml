@@ -22,6 +22,562 @@ commonParams:
       default: assistants=v2
       optional: false
 modules:
+  - moduleName: Assistants / List
+    operationId: listAssistants
+    method: get
+    path: /assistants
+    description: Returns a list of assistants.
+    externalDocs: https://platform.openai.com/docs/api-reference
+    params:
+      - paramName: limit
+        description: >
+          A limit on the number of objects to be returned. Limit can range
+          between 1 and 100, and the default is 20.
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+          default: 20
+        required: false
+      - paramName: order
+        description: >
+          Sort order by the `created_at` timestamp of the objects. `asc` for
+          ascending order and `desc` for descending order.
+        paramKey: order
+        in: query
+        schema:
+          type: string
+          default: desc
+          enum:
+            - asc
+            - desc
+        required: false
+      - paramName: after
+        description: >
+          A cursor for use in pagination. `after` is an object ID that defines
+          your place in the list. For instance, if you make a list request and
+          receive 100 objects, ending with obj_foo, your subsequent call can
+          include after=obj_foo in order to fetch the next page of the list.
+        paramKey: after
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: before
+        description: >
+          A cursor for use in pagination. `before` is an object ID that defines
+          your place in the list. For instance, if you make a list request and
+          receive 100 objects, starting with obj_foo, your subsequent call can
+          include before=obj_foo in order to fetch the previous page of the
+          list.
+        paramKey: before
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Assistants / Create
+    operationId: createAssistant
+    method: post
+    path: /assistants
+    description: Create an assistant with a model and instructions.
+    externalDocs: https://platform.openai.com/docs/api-reference
+    params:
+      - paramName: model
+        description: >
+          ID of the model to use. You can use the [List
+          models](/docs/api-reference/models/list) API to see all of your
+          available models, or see our [Model overview](/docs/models) for
+          descriptions of them.
+        paramKey: model
+        in: body
+        schema:
+          type: any
+        required: true
+      - paramName: name
+        description: |
+          The name of the assistant. The maximum length is 256 characters.
+        paramKey: name
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: description
+        description: >
+          The description of the assistant. The maximum length is 512 characters.
+        paramKey: description
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: instructions
+        description: >
+          The system instructions that the assistant uses. The maximum length is
+          256,000 characters.
+        paramKey: instructions
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: tools
+        description: >
+          A list of tool enabled on the assistant. There can be a maximum of 128
+          tools per assistant. Tools can be of types `code_interpreter`,
+          `file_search`, or `function`.
+        paramKey: tools
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: toolResources
+        description: >
+          A set of resources that are used by the assistant's tools. The
+          resources are specific to the type of tool. For example, the
+          `code_interpreter` tool requires a list of file IDs, while the
+          `file_search` tool requires a list of vector store IDs.
+        paramKey: tool_resources
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: metadata
+        description: >
+          Set of 16 key-value pairs that can be attached to an object. This can
+          be useful for storing additional information about the object in a
+          structured format. Keys can be a maximum of 64 characters long and
+          values can be a maxium of 512 characters long.
+        paramKey: metadata
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: temperature
+        description: >
+          What sampling temperature to use, between 0 and 2. Higher values like
+          0.8 will make the output more random, while lower values like 0.2 will
+          make it more focused and deterministic.
+        paramKey: temperature
+        in: body
+        schema:
+          type: number
+          minimum: 0
+          maximum: 2
+          default: 1
+        required: false
+      - paramName: topP
+        description: >
+          An alternative to sampling with temperature, called nucleus sampling,
+          where the model considers the results of the tokens with top_p
+          probability mass. So 0.1 means only the tokens comprising the top 10%
+          probability mass are considered.
+
+
+          We generally recommend altering this or temperature but not both.
+        paramKey: top_p
+        in: body
+        schema:
+          type: number
+          minimum: 0
+          maximum: 1
+          default: 1
+        required: false
+      - paramName: responseFormat
+        description: >
+          Specifies the format that the model must output. Compatible with
+          GPT-4o, GPT-4 Turbo, and all GPT-3.5 Turbo models since
+          `gpt-3.5-turbo-1106`.
+
+          Setting to `{ "type": "json_object" }` enables JSON mode, which
+          guarantees the message the model generates is valid JSON.
+
+          **Important:** when using JSON mode, you **must** also instruct the
+          model to produce JSON yourself via a system or user message. Without
+          this, the model may generate an unending stream of whitespace until
+          the generation reaches the token limit, resulting in a long-running
+          and seemingly "stuck" request. Also note that the message content may
+          be partially cut off if `finish_reason="length"`, which indicates the
+          generation exceeded `max_tokens` or the conversation exceeded the max
+          context length.
+        paramKey: response_format
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Assistants / Retrieve
+    operationId: getAssistant
+    method: get
+    path: /assistants/{assistant_id}
+    description: Retrieves an assistant.
+    externalDocs: https://platform.openai.com/docs/api-reference
+    params:
+      - paramName: assistantId
+        description: The ID of the assistant to retrieve.
+        paramKey: assistant_id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Assistants / Modify
+    operationId: modifyAssistant
+    method: post
+    path: /assistants/{assistant_id}
+    description: Modifies an assistant.
+    externalDocs: https://platform.openai.com/docs/api-reference
+    params:
+      - paramName: assistantId
+        description: The ID of the assistant to modify.
+        paramKey: assistant_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: model
+        description: >
+          ID of the model to use. You can use the [List
+          models](/docs/api-reference/models/list) API to see all of your
+          available models, or see our [Model overview](/docs/models) for
+          descriptions of them.
+        paramKey: model
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: name
+        description: |
+          The name of the assistant. The maximum length is 256 characters.
+        paramKey: name
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: description
+        description: >
+          The description of the assistant. The maximum length is 512 characters.
+        paramKey: description
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: instructions
+        description: >
+          The system instructions that the assistant uses. The maximum length is
+          256,000 characters.
+        paramKey: instructions
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: tools
+        description: >
+          A list of tool enabled on the assistant. There can be a maximum of 128
+          tools per assistant. Tools can be of types `code_interpreter`,
+          `file_search`, or `function`.
+        paramKey: tools
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: toolResources
+        description: >
+          A set of resources that are used by the assistant's tools. The
+          resources are specific to the type of tool. For example, the
+          `code_interpreter` tool requires a list of file IDs, while the
+          `file_search` tool requires a list of vector store IDs.
+        paramKey: tool_resources
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: metadata
+        description: >
+          Set of 16 key-value pairs that can be attached to an object. This can
+          be
+
+          useful for storing additional information about the object in a
+          structured
+
+          format, and querying for objects via API or the dashboard. 
+
+
+          Keys are strings with a maximum length of 64 characters. Values are
+          strings
+
+          with a maximum length of 512 characters.
+        paramKey: metadata
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: temperature
+        description: >
+          What sampling temperature to use, between 0 and 2. Higher values like
+          0.8 will make the output more random, while lower values like 0.2 will
+          make it more focused and deterministic.
+        paramKey: temperature
+        in: body
+        schema:
+          type: number
+          minimum: 0
+          maximum: 2
+          default: 1
+        required: false
+      - paramName: topP
+        description: >
+          An alternative to sampling with temperature, called nucleus sampling,
+          where the model considers the results of the tokens with top_p
+          probability mass. So 0.1 means only the tokens comprising the top 10%
+          probability mass are considered.
+
+
+          We generally recommend altering this or temperature but not both.
+        paramKey: top_p
+        in: body
+        schema:
+          type: number
+          minimum: 0
+          maximum: 1
+          default: 1
+        required: false
+      - paramName: responseFormat
+        description: >
+          Specifies the format that the model must output. Compatible with
+          GPT-4o, GPT-4 Turbo, and all GPT-3.5 Turbo models since
+          `gpt-3.5-turbo-1106`.
+
+          Setting to `{ "type": "json_object" }` enables JSON mode, which
+          guarantees the message the model generates is valid JSON.
+
+          **Important:** when using JSON mode, you **must** also instruct the
+          model to produce JSON yourself via a system or user message. Without
+          this, the model may generate an unending stream of whitespace until
+          the generation reaches the token limit, resulting in a long-running
+          and seemingly "stuck" request. Also note that the message content may
+          be partially cut off if `finish_reason="length"`, which indicates the
+          generation exceeded `max_tokens` or the conversation exceeded the max
+          context length.
+        paramKey: response_format
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Assistants / Delete
+    operationId: deleteAssistant
+    method: delete
+    path: /assistants/{assistant_id}
+    description: Delete an assistant.
+    externalDocs: https://platform.openai.com/docs/api-reference
+    params:
+      - paramName: assistantId
+        description: The ID of the assistant to delete.
+        paramKey: assistant_id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Audio / Speech / Create
+    operationId: createSpeech
+    method: post
+    path: /audio/speech
+    description: Generates audio from the input text.
+    externalDocs: https://platform.openai.com/docs/api-reference
+    params:
+      - paramName: model
+        description: >
+          One of the available [TTS models](/docs/models#tts): `tts-1` or
+          `tts-1-hd`
+        paramKey: model
+        in: body
+        schema:
+          type: any
+        required: true
+      - paramName: input
+        description: The text to generate audio for. The maximum length is 4096 characters.
+        paramKey: input
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: voice
+        description: The voice to use when generating the audio. Supported voices are
+          `alloy`, `ash`, `coral`, `echo`, `fable`, `onyx`, `nova`, `sage` and
+          `shimmer`. Previews of the voices are available in the [Text to speech
+          guide](/docs/guides/text-to-speech#voice-options).
+        paramKey: voice
+        in: body
+        schema:
+          type: string
+          enum:
+            - alloy
+            - ash
+            - coral
+            - echo
+            - fable
+            - onyx
+            - nova
+            - sage
+            - shimmer
+        required: true
+      - paramName: responseFormat
+        description: The format to audio in. Supported formats are `mp3`, `opus`, `aac`,
+          `flac`, `wav`, and `pcm`.
+        paramKey: response_format
+        in: body
+        schema:
+          type: string
+          default: mp3
+          enum:
+            - mp3
+            - opus
+            - aac
+            - flac
+            - wav
+            - pcm
+        required: false
+      - paramName: speed
+        description: The speed of the generated audio. Select a value from `0.25` to
+          `4.0`. `1.0` is the default.
+        paramKey: speed
+        in: body
+        schema:
+          type: number
+          minimum: 0.25
+          maximum: 4
+          default: 1
+        required: false
+    requestBodyType: json
+  - moduleName: Batches / Create
+    operationId: createBatch
+    method: post
+    path: /batches
+    description: Creates and executes a batch from an uploaded file of requests
+    externalDocs: https://platform.openai.com/docs/api-reference
+    params:
+      - paramName: inputFileId
+        description: >
+          The ID of an uploaded file that contains requests for the new batch.
+
+
+          See [upload file](/docs/api-reference/files/create) for how to upload
+          a file.
+
+
+          Your input file must be formatted as a [JSONL
+          file](/docs/api-reference/batch/request-input), and must be uploaded
+          with the purpose `batch`. The file can contain up to 50,000 requests,
+          and can be up to 200 MB in size.
+        paramKey: input_file_id
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: endpoint
+        description: The endpoint to be used for all requests in the batch. Currently
+          `/v1/chat/completions`, `/v1/embeddings`, and `/v1/completions` are
+          supported. Note that `/v1/embeddings` batches are also restricted to a
+          maximum of 50,000 embedding inputs across all requests in the batch.
+        paramKey: endpoint
+        in: body
+        schema:
+          type: string
+          enum:
+            - /v1/chat/completions
+            - /v1/embeddings
+            - /v1/completions
+        required: true
+      - paramName: completionWindow
+        description: The time frame within which the batch should be processed.
+          Currently only `24h` is supported.
+        paramKey: completion_window
+        in: body
+        schema:
+          type: string
+          enum:
+            - 24h
+        required: true
+      - paramName: metadata
+        description: >
+          Set of 16 key-value pairs that can be attached to an object. This can
+          be
+
+          useful for storing additional information about the object in a
+          structured
+
+          format, and querying for objects via API or the dashboard. 
+
+
+          Keys are strings with a maximum length of 64 characters. Values are
+          strings
+
+          with a maximum length of 512 characters.
+        paramKey: metadata
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Batches / List
+    operationId: listBatches
+    method: get
+    path: /batches
+    description: List your organization's batches.
+    externalDocs: https://platform.openai.com/docs/api-reference
+    params:
+      - paramName: after
+        description: >
+          A cursor for use in pagination. `after` is an object ID that defines
+          your place in the list. For instance, if you make a list request and
+          receive 100 objects, ending with obj_foo, your subsequent call can
+          include after=obj_foo in order to fetch the next page of the list.
+        paramKey: after
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: limit
+        description: >
+          A limit on the number of objects to be returned. Limit can range
+          between 1 and 100, and the default is 20.
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+          default: 20
+        required: false
+  - moduleName: Batches / Retrieve
+    operationId: retrieveBatch
+    method: get
+    path: /batches/{batch_id}
+    description: Retrieves a batch.
+    externalDocs: https://platform.openai.com/docs/api-reference
+    params:
+      - paramName: batchId
+        description: The ID of the batch to retrieve.
+        paramKey: batch_id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Batches / Cancel
+    operationId: cancelBatch
+    method: post
+    path: /batches/{batch_id}/cancel
+    description: Cancels an in-progress batch. The batch will be in status
+      `cancelling` for up to 10 minutes, before changing to `cancelled`, where
+      it will have partial results (if any) available in the output file.
+    externalDocs: https://platform.openai.com/docs/api-reference
+    params:
+      - paramName: batchId
+        description: The ID of the batch to cancel.
+        paramKey: batch_id
+        in: path
+        schema:
+          type: string
+        required: true
   - moduleName: Chat / Completions / Create
     operationId: createChatCompletion
     method: post
@@ -30,7 +586,16 @@ modules:
     externalDocs: https://platform.openai.com/docs/api-reference
     params:
       - paramName: messages
-        description: A list of messages comprising the conversation so far.
+        description: >
+          A list of messages comprising the conversation so far. Depending on
+          the
+
+          [model](/docs/models) you use, different message types (modalities)
+          are
+
+          supported, like [text](/docs/guides/text-generation),
+
+          [images](/docs/guides/vision), and [audio](/docs/guides/audio).
         paramKey: messages
         in: body
         schema:
@@ -39,17 +604,75 @@ modules:
             type: any
         required: true
       - paramName: model
-        description: ID of the model to use.
+        description: ID of the model to use. See the [model endpoint
+          compatibility](/docs/models#model-endpoint-compatibility) table for
+          details on which models work with the Chat API.
         paramKey: model
         in: body
         schema:
           type: string
           default: gpt-4o
         required: true
+      - paramName: store
+        description: >
+          Whether or not to store the output of this chat completion request
+          for 
+
+          use in our [model distillation](/docs/guides/distillation) or
+
+          [evals](/docs/guides/evals) products.
+        paramKey: store
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: reasoningEffort
+        description: |
+          **o1 models only** 
+
+          Constrains effort on reasoning for 
+          [reasoning models](https://platform.openai.com/docs/guides/reasoning).
+          Currently supported values are `low`, `medium`, and `high`. Reducing
+          reasoning effort can result in faster responses and fewer tokens used
+          on reasoning in a response.
+        paramKey: reasoning_effort
+        in: body
+        schema:
+          type: string
+          default: medium
+          enum:
+            - low
+            - medium
+            - high
+        required: false
+      - paramName: metadata
+        description: >
+          Set of 16 key-value pairs that can be attached to an object. This can
+          be
+
+          useful for storing additional information about the object in a
+          structured
+
+          format, and querying for objects via API or the dashboard. 
+
+
+          Keys are strings with a maximum length of 64 characters. Values are
+          strings
+
+          with a maximum length of 512 characters.
+        paramKey: metadata
+        in: body
+        schema:
+          type: any
+        required: false
       - paramName: frequencyPenalty
         description: >
           Number between -2.0 and 2.0. Positive values penalize new tokens based
-          on their existing frequency in the text so far, decreasing the model's
+          on
+
+          their existing frequency in the text so far, decreasing the model's
+
           likelihood to repeat the same line verbatim.
         paramKey: frequency_penalty
         in: body
@@ -62,22 +685,36 @@ modules:
       - paramName: logitBias
         description: >
           Modify the likelihood of specified tokens appearing in the completion.
+
+
           Accepts a JSON object that maps tokens (specified by their token ID in
-          the tokenizer) to an associated bias value from -100 to 100.
-          Mathematically, the bias is added to the logits generated by the model
-          prior to sampling. The exact effect will vary per model, but values
-          between -1 and 1 should decrease or increase likelihood of selection;
-          values like -100 or 100 should result in a ban or exclusive selection
-          of the relevant token.
+          the
+
+          tokenizer) to an associated bias value from -100 to 100.
+          Mathematically,
+
+          the bias is added to the logits generated by the model prior to
+          sampling.
+
+          The exact effect will vary per model, but values between -1 and 1
+          should
+
+          decrease or increase likelihood of selection; values like -100 or 100
+
+          should result in a ban or exclusive selection of the relevant token.
         paramKey: logit_bias
         in: body
         schema:
           type: any
         required: false
       - paramName: logprobs
-        description: Whether to return log probabilities of the output tokens or not. If
-          true, returns the log probabilities of each output token returned in
-          the `content` of `message`.
+        description: >
+          Whether to return log probabilities of the output tokens or not. If
+          true,
+
+          returns the log probabilities of each output token returned in the
+
+          `content` of `message`.
         paramKey: logprobs
         in: body
         schema:
@@ -85,10 +722,14 @@ modules:
           default: false
         required: false
       - paramName: topLogprobs
-        description: An integer between 0 and 20 specifying the number of most likely
-          tokens to return at each token position, each with an associated log
-          probability. `logprobs` must be set to `true` if this parameter is
-          used.
+        description: >
+          An integer between 0 and 20 specifying the number of most likely
+          tokens to
+
+          return at each token position, each with an associated log
+          probability.
+
+          `logprobs` must be set to `true` if this parameter is used.
         paramKey: top_logprobs
         in: body
         schema:
@@ -98,12 +739,29 @@ modules:
         required: false
       - paramName: maxTokens
         description: >
-          The maximum number of tokens that can be generated in
-          the chat completion.
+          The maximum number of [tokens](/tokenizer) that can be generated in
+          the
 
-          The total length of input tokens and generated tokens is limited by
-          the model's context length.
+          chat completion. This value can be used to control
+
+          [costs](https://openai.com/api/pricing/) for text generated via API.
+
+
+          This value is now deprecated in favor of `max_completion_tokens`, and
+          is
+
+          not compatible with [o1 series models](/docs/guides/reasoning).
         paramKey: max_tokens
+        in: body
+        schema:
+          type: number
+        required: false
+      - paramName: maxCompletionTokens
+        description: >
+          An upper bound for the number of tokens that can be generated for a
+          completion, including visible output tokens and [reasoning
+          tokens](/docs/guides/reasoning).
+        paramKey: max_completion_tokens
         in: body
         schema:
           type: number
@@ -121,11 +779,69 @@ modules:
           maximum: 128
           default: 1
         required: false
+      - paramName: modalities
+        description: >
+          Output types that you would like the model to generate for this
+          request.
+
+          Most models are capable of generating text, which is the default:
+
+
+          `["text"]`
+
+
+          The `gpt-4o-audio-preview` model can also be used to [generate
+          audio](/docs/guides/audio). To
+
+          request that this model generate both text and audio responses, you
+          can
+
+          use:
+
+
+          `["text", "audio"]`
+        paramKey: modalities
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: prediction
+        description: >
+          Configuration for a [Predicted
+          Output](/docs/guides/predicted-outputs),
+
+          which can greatly improve response times when large parts of the model
+
+          response are known ahead of time. This is most common when you are
+
+          regenerating a file with only minor changes to most of the content.
+        paramKey: prediction
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: audio
+        description: >
+          Parameters for audio output. Required when audio output is requested
+          with
+
+          `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
+        paramKey: audio
+        in: body
+        schema:
+          type: any
+        required: false
       - paramName: presencePenalty
         description: >
           Number between -2.0 and 2.0. Positive values penalize new tokens based
-          on whether they appear in the text so far, increasing the model's
-          likelihood to talk about new topics.
+          on
+
+          whether they appear in the text so far, increasing the model's
+          likelihood
+
+          to talk about new topics.
         paramKey: presence_penalty
         in: body
         schema:
@@ -136,21 +852,43 @@ modules:
         required: false
       - paramName: responseFormat
         description: >
-          An object specifying the format that the model must output. Compatible
-          with GPT-4 Turbo and all GPT-3.5
-          Turbo models newer than `gpt-3.5-turbo-1106`.
+          An object specifying the format that the model must output.
+
+
+          Setting to `{ "type": "json_schema", "json_schema": {...} }` enables
+
+          Structured Outputs which ensures the model will match your supplied
+          JSON
+
+          schema. Learn more in the [Structured Outputs
+
+          guide](/docs/guides/structured-outputs).
+
 
           Setting to `{ "type": "json_object" }` enables JSON mode, which
-          guarantees the message the model generates is valid JSON.
+          ensures
+
+          the message the model generates is valid JSON.
+
 
           **Important:** when using JSON mode, you **must** also instruct the
-          model to produce JSON yourself via a system or user message. Without
-          this, the model may generate an unending stream of whitespace until
-          the generation reaches the token limit, resulting in a long-running
-          and seemingly "stuck" request. Also note that the message content may
-          be partially cut off if `finish_reason="length"`, which indicates the
-          generation exceeded `max_tokens` or the conversation exceeded the max
-          context length.
+          model
+
+          to produce JSON yourself via a system or user message. Without this,
+          the
+
+          model may generate an unending stream of whitespace until the
+          generation
+
+          reaches the token limit, resulting in a long-running and seemingly
+          "stuck"
+
+          request. Also note that the message content may be partially cut off
+          if
+
+          `finish_reason="length"`, which indicates the generation exceeded
+
+          `max_tokens` or the conversation exceeded the max context length.
         paramKey: response_format
         in: body
         schema:
@@ -179,8 +917,9 @@ modules:
           Specifies the latency tier to use for processing the request. This
           parameter is relevant for customers subscribed to the scale tier
           service:
-            - If set to 'auto', the system will utilize scale tier credits until they are exhausted.
-            - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.
+            - If set to 'auto', and the Project is Scale tier enabled, the system will utilize scale tier credits until they are exhausted.
+            - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.
+            - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.
             - When not set, the default behavior is 'auto'.
 
             When this parameter is set, the response body will include the `service_tier` utilized.
@@ -197,6 +936,29 @@ modules:
         description: |
           Up to 4 sequences where the API will stop generating further tokens.
         paramKey: stop
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: stream
+        description: >
+          If set, partial message deltas will be sent, like in ChatGPT. Tokens
+          will be sent as data-only [server-sent
+          events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format)
+          as they become available, with the stream terminated by a `data:
+          [DONE]` message. [Example Python
+          code](https://cookbook.openai.com/examples/how_to_stream_completions).
+        paramKey: stream
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: streamOptions
+        description: >
+          Options for streaming response. Only set this when you set `stream:
+          true`.
+        paramKey: stream_options
         in: body
         schema:
           type: any
@@ -219,8 +981,14 @@ modules:
         description: >
           An alternative to sampling with temperature, called nucleus sampling,
           where the model considers the results of the tokens with top_p
-          probability mass. So 0.1 means only the tokens comprising the top 10%
-          probability mass are considered.
+          probability
+
+          mass. So 0.1 means only the tokens comprising the top 10% probability
+          mass
+
+          are considered.
+
+
           We generally recommend altering this or `temperature` but not both.
         paramKey: top_p
         in: body
@@ -266,7 +1034,9 @@ modules:
           type: any
         required: false
       - paramName: parallelToolCalls
-        description: Whether to enable parallel function calling during tool use.
+        description: Whether to enable [parallel function
+          calling](/docs/guides/function-calling#configuring-parallel-function-calling)
+          during tool use.
         paramKey: parallel_tool_calls
         in: body
         schema:
@@ -275,7 +1045,8 @@ modules:
       - paramName: user
         description: >
           A unique identifier representing your end-user, which can help OpenAI
-          to monitor and detect abuse.
+          to monitor and detect abuse. [Learn
+          more](/docs/guides/safety-best-practices#end-user-ids).
         paramKey: user
         in: body
         schema:
@@ -288,18 +1059,29 @@ modules:
 
           Controls which (if any) function is called by the model.
 
+
           `none` means the model will not call a function and instead generates
-          a message.
+          a
+
+          message.
+
 
           `auto` means the model can pick between generating a message or
-          calling a function.
+          calling a
+
+          function.
+
 
           Specifying a particular function via `{"name": "my_function"}` forces
-          the model to call that function.
+          the
+
+          model to call that function.
 
 
           `none` is the default when no functions are present. `auto` is the
-          default if functions are present.
+          default
+
+          if functions are present.
         paramKey: function_call
         in: body
         schema:
@@ -327,7 +1109,10 @@ modules:
     params:
       - paramName: model
         description: >
-          ID of the model to use.
+          ID of the model to use. You can use the [List
+          models](/docs/api-reference/models/list) API to see all of your
+          available models, or see our [Model overview](/docs/models) for
+          descriptions of them.
         paramKey: model
         in: body
         schema:
@@ -338,6 +1123,7 @@ modules:
         description: >
           The prompt(s) to generate completions for, encoded as a string, array
           of strings, array of tokens, or array of token arrays.
+
 
           Note that <|endoftext|> is the document separator that the model sees
           during training, so if a prompt is not specified the model will
@@ -384,6 +1170,10 @@ modules:
           Number between -2.0 and 2.0. Positive values penalize new tokens based
           on their existing frequency in the text so far, decreasing the model's
           likelihood to repeat the same line verbatim.
+
+
+          [See more information about frequency and presence
+          penalties.](/docs/guides/text-generation)
         paramKey: frequency_penalty
         in: body
         schema:
@@ -396,14 +1186,16 @@ modules:
         description: >
           Modify the likelihood of specified tokens appearing in the completion.
 
+
           Accepts a JSON object that maps tokens (specified by their token ID in
           the GPT tokenizer) to an associated bias value from -100 to 100. You
-          can use tokenizer to convert text to token IDs.
-          Mathematically, the bias is added to the logits generated
+          can use this [tokenizer tool](/tokenizer?view=bpe) to convert text to
+          token IDs. Mathematically, the bias is added to the logits generated
           by the model prior to sampling. The exact effect will vary per model,
           but values between -1 and 1 should decrease or increase likelihood of
           selection; values like -100 or 100 should result in a ban or exclusive
           selection of the relevant token.
+
 
           As an example, you can pass `{"50256": -100}` to prevent the
           <|endoftext|> token from being generated.
@@ -419,6 +1211,8 @@ modules:
           the API will return a list of the 5 most likely tokens. The API will
           always return the `logprob` of the sampled token, so there may be up
           to `logprobs+1` elements in the response.
+
+
           The maximum value for `logprobs` is 5.
         paramKey: logprobs
         in: body
@@ -430,10 +1224,14 @@ modules:
         required: false
       - paramName: maxTokens
         description: >
-          The maximum number of tikens that can be generated in
+          The maximum number of [tokens](/tokenizer) that can be generated in
           the completion.
+
+
           The token count of your prompt plus `max_tokens` cannot exceed the
-          model's context length.
+          model's context length. [Example Python
+          code](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken)
+          for counting tokens.
         paramKey: max_tokens
         in: body
         schema:
@@ -444,6 +1242,8 @@ modules:
       - paramName: n
         description: >
           How many completions to generate for each prompt.
+
+
           **Note:** Because this parameter generates many completions, it can
           quickly consume your token quota. Use carefully and ensure that you
           have reasonable settings for `max_tokens` and `stop`.
@@ -460,6 +1260,10 @@ modules:
           Number between -2.0 and 2.0. Positive values penalize new tokens based
           on whether they appear in the text so far, increasing the model's
           likelihood to talk about new topics.
+
+
+          [See more information about frequency and presence
+          penalties.](/docs/guides/text-generation)
         paramKey: presence_penalty
         in: body
         schema:
@@ -494,6 +1298,29 @@ modules:
         schema:
           type: any
         required: false
+      - paramName: stream
+        description: >
+          Whether to stream back partial progress. If set, tokens will be sent
+          as data-only [server-sent
+          events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format)
+          as they become available, with the stream terminated by a `data:
+          [DONE]` message. [Example Python
+          code](https://cookbook.openai.com/examples/how_to_stream_completions).
+        paramKey: stream
+        in: body
+        schema:
+          type: boolean
+          default: false
+        required: false
+      - paramName: streamOptions
+        description: >
+          Options for streaming response. Only set this when you set `stream:
+          true`.
+        paramKey: stream_options
+        in: body
+        schema:
+          type: any
+        required: false
       - paramName: suffix
         description: |
           The suffix that comes after a completion of inserted text.
@@ -510,6 +1337,8 @@ modules:
           What sampling temperature to use, between 0 and 2. Higher values like
           0.8 will make the output more random, while lower values like 0.2 will
           make it more focused and deterministic.
+
+
           We generally recommend altering this or `top_p` but not both.
         paramKey: temperature
         in: body
@@ -525,6 +1354,8 @@ modules:
           where the model considers the results of the tokens with top_p
           probability mass. So 0.1 means only the tokens comprising the top 10%
           probability mass are considered.
+
+
           We generally recommend altering this or `temperature` but not both.
         paramKey: top_p
         in: body
@@ -657,7 +1488,11 @@ modules:
           multiple inputs in a single request, pass an array of strings or array
           of token arrays. The input must not exceed the max input tokens for
           the model (8192 tokens for `text-embedding-ada-002`), cannot be an
-          empty string, and any array must be 2048 dimensions or less.
+          empty string, and any array must be 2048 dimensions or less. [Example
+          Python
+          code](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken)
+          for counting tokens. Some models may also impose a limit on total
+          number of tokens summed across inputs.
         paramKey: input
         in: body
         schema:
@@ -665,7 +1500,10 @@ modules:
         required: true
       - paramName: model
         description: >
-          ID of the model to use.
+          ID of the model to use. You can use the [List
+          models](/docs/api-reference/models/list) API to see all of your
+          available models, or see our [Model overview](/docs/models) for
+          descriptions of them.
         paramKey: model
         in: body
         schema:
@@ -673,7 +1511,8 @@ modules:
           default: gpt-4o
         required: true
       - paramName: encodingFormat
-        description: The format to return the embeddings in.
+        description: The format to return the embeddings in. Can be either `float` or
+          [`base64`](https://pypi.org/project/pybase64/).
         paramKey: encoding_format
         in: body
         schema:
@@ -696,7 +1535,8 @@ modules:
       - paramName: user
         description: >
           A unique identifier representing your end-user, which can help OpenAI
-          to monitor and detect abuse.
+          to monitor and detect abuse. [Learn
+          more](/docs/guides/safety-best-practices#end-user-ids).
         paramKey: user
         in: body
         schema:
@@ -778,6 +1618,40 @@ modules:
       - paramName: purpose
         description: Only return files with the given purpose.
         paramKey: purpose
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: limit
+        description: >
+          A limit on the number of objects to be returned. Limit can range
+          between 1 and 10,000, and the default is 10,000.
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+          default: 10000
+        required: false
+      - paramName: order
+        description: >
+          Sort order by the `created_at` timestamp of the objects. `asc` for
+          ascending order and `desc` for descending order.
+        paramKey: order
+        in: query
+        schema:
+          type: string
+          default: desc
+          enum:
+            - asc
+            - desc
+        required: false
+      - paramName: after
+        description: >
+          A cursor for use in pagination. `after` is an object ID that defines
+          your place in the list. For instance, if you make a list request and
+          receive 100 objects, ending with obj_foo, your subsequent call can
+          include after=obj_foo in order to fetch the next page of the list.
+        paramKey: after
         in: query
         schema:
           type: string
@@ -956,6 +1830,9 @@ modules:
       - paramName: model
         description: >
           The name of the model to fine-tune. You can select one of the
+
+          [supported
+          models](/docs/guides/fine-tuning#which-models-can-be-fine-tuned).
         paramKey: model
         in: body
         schema:
@@ -965,13 +1842,23 @@ modules:
         description: >
           The ID of an uploaded file that contains training data.
 
+
+          See [upload file](/docs/api-reference/files/create) for how to upload
+          a file.
+
+
           Your dataset must be formatted as a JSONL file. Additionally, you must
           upload your file with the purpose `fine-tune`.
 
-          The contents of the file should differ depending on if the model uses
-          the chat or completions format.
 
-          See the fine-tuning for more
+          The contents of the file should differ depending on if the model uses
+          the [chat](/docs/api-reference/fine-tuning/chat-input),
+          [completions](/docs/api-reference/fine-tuning/completions-input)
+          format, or if the fine-tuning method uses the
+          [preference](/docs/api-reference/fine-tuning/preference-input) format.
+
+
+          See the [fine-tuning guide](/docs/guides/fine-tuning) for more
           details.
         paramKey: training_file
         in: body
@@ -979,7 +1866,11 @@ modules:
           type: string
         required: true
       - paramName: hyperparameters
-        description: The hyperparameters used for the fine-tuning job.
+        description: >
+          The hyperparameters used for the fine-tuning job.
+
+          This value is now deprecated in favor of `method`, and should be
+          passed in under the `method` parameter.
         paramKey: hyperparameters
         in: body
         schema:
@@ -987,12 +1878,12 @@ modules:
         required: false
       - paramName: suffix
         description: >
-          A string of up to 18 characters that will be added to your fine-tuned
+          A string of up to 64 characters that will be added to your fine-tuned
           model name.
 
 
           For example, a `suffix` of "custom-model-name" would produce a model
-          name like `ft:gpt-3.5-turbo:openai:custom-model-name:7p4lURel`.
+          name like `ft:gpt-4o-mini:openai:custom-model-name:7p4lURel`.
         paramKey: suffix
         in: body
         schema:
@@ -1003,15 +1894,24 @@ modules:
         description: >
           The ID of an uploaded file that contains validation data.
 
-          If you provide this file, the data is used to generate validation metrics periodically during fine-tuning. These metrics can be viewed
-          in the fine-tuning results file.
+
+          If you provide this file, the data is used to generate validation
+
+          metrics periodically during fine-tuning. These metrics can be viewed
+          in
+
+          the fine-tuning results file.
 
           The same data should not be present in both train and validation
           files.
 
+
           Your dataset must be formatted as a JSONL file. You must upload your
           file with the purpose `fine-tune`.
 
+
+          See the [fine-tuning guide](/docs/guides/fine-tuning) for more
+          details.
         paramKey: validation_file
         in: body
         schema:
@@ -1039,6 +1939,13 @@ modules:
           type: number
           minimum: 0
           maximum: 2147483647
+        required: false
+      - paramName: method
+        description: The method used for fine-tuning.
+        paramKey: method
+        in: body
+        schema:
+          type: any
         required: false
     requestBodyType: json
   - moduleName: Fine Tuning / Jobs / List
@@ -1159,6 +2066,138 @@ modules:
           type: number
           default: 10
         required: false
+  - moduleName: Fine Tuning / Jobs / Events / List
+    operationId: listFineTuningEvents
+    method: get
+    path: /fine_tuning/jobs/{fine_tuning_job_id}/events
+    description: |
+      Get status updates for a fine-tuning job.
+    externalDocs: https://platform.openai.com/docs/api-reference
+    params:
+      - paramName: fineTuningJobId
+        description: |
+          The ID of the fine-tuning job to get events for.
+        paramKey: fine_tuning_job_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: after
+        description: Identifier for the last event from the previous pagination request.
+        paramKey: after
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: limit
+        description: Number of events to retrieve.
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+          default: 20
+        required: false
+  - moduleName: Images / Generations / Create
+    operationId: createImage
+    method: post
+    path: /images/generations
+    description: Creates an image given a prompt.
+    externalDocs: https://platform.openai.com/docs/api-reference
+    params:
+      - paramName: prompt
+        description: A text description of the desired image(s). The maximum length is
+          1000 characters for `dall-e-2` and 4000 characters for `dall-e-3`.
+        paramKey: prompt
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: model
+        description: The model to use for image generation.
+        paramKey: model
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: n
+        description: The number of images to generate. Must be between 1 and 10. For
+          `dall-e-3`, only `n=1` is supported.
+        paramKey: n
+        in: body
+        schema:
+          type: number
+          minimum: 1
+          maximum: 10
+          default: 1
+        required: false
+      - paramName: quality
+        description: The quality of the image that will be generated. `hd` creates
+          images with finer details and greater consistency across the image.
+          This param is only supported for `dall-e-3`.
+        paramKey: quality
+        in: body
+        schema:
+          type: string
+          default: standard
+          enum:
+            - standard
+            - hd
+        required: false
+      - paramName: responseFormat
+        description: The format in which the generated images are returned. Must be one
+          of `url` or `b64_json`. URLs are only valid for 60 minutes after the
+          image has been generated.
+        paramKey: response_format
+        in: body
+        schema:
+          type: string
+          default: url
+          enum:
+            - url
+            - b64_json
+        required: false
+      - paramName: size
+        description: The size of the generated images. Must be one of `256x256`,
+          `512x512`, or `1024x1024` for `dall-e-2`. Must be one of `1024x1024`,
+          `1792x1024`, or `1024x1792` for `dall-e-3` models.
+        paramKey: size
+        in: body
+        schema:
+          type: string
+          default: 1024x1024
+          enum:
+            - 256x256
+            - 512x512
+            - 1024x1024
+            - 1792x1024
+            - 1024x1792
+        required: false
+      - paramName: style
+        description: The style of the generated images. Must be one of `vivid` or
+          `natural`. Vivid causes the model to lean towards generating
+          hyper-real and dramatic images. Natural causes the model to produce
+          more natural, less hyper-real looking images. This param is only
+          supported for `dall-e-3`.
+        paramKey: style
+        in: body
+        schema:
+          type: string
+          default: vivid
+          enum:
+            - vivid
+            - natural
+        required: false
+      - paramName: user
+        description: >
+          A unique identifier representing your end-user, which can help OpenAI
+          to monitor and detect abuse. [Learn
+          more](/docs/guides/safety-best-practices#end-user-ids).
+        paramKey: user
+        in: body
+        schema:
+          type: string
+        required: false
+    requestBodyType: json
   - moduleName: Models / List
     operationId: listModels
     method: get
@@ -1205,36 +2244,167 @@ modules:
     externalDocs: https://platform.openai.com/docs/api-reference
     params:
       - paramName: input
-        description: The input text to classify
+        description: >
+          Input (or inputs) to classify. Can be a single string, an array of
+          strings, or
+
+          an array of multi-modal input objects similar to other models.
         paramKey: input
         in: body
         schema:
           type: any
         required: true
       - paramName: model
-        description: >
-          Two content moderations models are available: `text-moderation-stable`
-          and `text-moderation-latest`.
-
-          The default is `text-moderation-latest` which will be automatically
-          upgraded over time. This ensures you are always using our most
-          accurate model. If you use `text-moderation-stable`, we will provide
-          advanced notice before updating the model. Accuracy of
-          `text-moderation-stable` may be slightly lower than for
-          `text-moderation-latest`.
+        description: |
+          The content moderation model you would like to use. Learn more in
+          [the moderation guide](/docs/guides/moderation), and learn about
+          available models [here](/docs/models#moderation).
         paramKey: model
         in: body
         schema:
           type: any
         required: false
     requestBodyType: json
-  - moduleName: Assistants / List
-    operationId: listAssistants
+  - moduleName: Organization / API Keys / List
     method: get
-    path: /assistants
-    description: Returns a list of assistants.
-    externalDocs: https://platform.openai.com/docs/api-reference
+    path: /organization/admin_api_keys
+    description: Retrieve a paginated list of organization admin API keys.
+    externalDocs: ""
+    operationId: admin-api-keys-list
     params:
+      - paramName: after
+        description: Return keys with IDs that come after this ID in the pagination order.
+        paramKey: after
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: order
+        description: Order results by creation time, ascending or descending.
+        paramKey: order
+        in: query
+        schema:
+          type: string
+          default: asc
+          enum:
+            - asc
+            - desc
+        required: false
+      - paramName: limit
+        description: Maximum number of keys to return.
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+          default: 20
+        required: false
+  - moduleName: Organization / API Keys / Create
+    method: post
+    path: /organization/admin_api_keys
+    description: Create a new admin-level API key for the organization.
+    externalDocs: ""
+    operationId: admin-api-keys-create
+    params:
+      - paramName: name
+        description: ""
+        paramKey: name
+        in: body
+        schema:
+          type: string
+        required: true
+    requestBodyType: json
+  - moduleName: Organization / API Keys / Get
+    method: get
+    path: /organization/admin_api_keys/{key_id}
+    description: Get details for a specific organization API key by its ID.
+    externalDocs: ""
+    operationId: admin-api-keys-get
+    params:
+      - paramName: keyId
+        description: The ID of the API key.
+        paramKey: key_id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Organization / API Keys / Delete
+    method: delete
+    path: /organization/admin_api_keys/{key_id}
+    description: Delete the specified admin API key.
+    externalDocs: ""
+    operationId: admin-api-keys-delete
+    params:
+      - paramName: keyId
+        description: The ID of the API key to be deleted.
+        paramKey: key_id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Organization / Audit Logs / List
+    method: get
+    path: /organization/audit_logs
+    description: List user actions and configuration changes within this organization.
+    externalDocs: ""
+    operationId: list-audit-logs
+    params:
+      - paramName: effectiveAt
+        description: Return only events whose `effective_at` (Unix seconds) is in this
+          range.
+        paramKey: effective_at
+        in: query
+        schema:
+          type: any
+        required: false
+      - paramName: projectIds[]
+        description: Return only events for these projects.
+        paramKey: project_ids[]
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: eventTypes[]
+        description: Return only events with a `type` in one of these values. For
+          example, `project.created`. For all options, see the documentation for
+          the [audit log object](/docs/api-reference/audit-logs/object).
+        paramKey: event_types[]
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: actorIds[]
+        description: Return only events performed by these actors. Can be a user ID, a
+          service account ID, or an api key tracking ID.
+        paramKey: actor_ids[]
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: actorEmails[]
+        description: Return only events performed by users with these emails.
+        paramKey: actor_emails[]
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: resourceIds[]
+        description: Return only events performed on these targets. For example, a
+          project ID updated.
+        paramKey: resource_ids[]
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
       - paramName: limit
         description: >
           A limit on the number of objects to be returned. Limit can range
@@ -1244,19 +2414,6 @@ modules:
         schema:
           type: number
           default: 20
-        required: false
-      - paramName: order
-        description: >
-          Sort order by the `created_at` timestamp of the objects. `asc` for
-          ascending order and `desc` for descending order.
-        paramKey: order
-        in: query
-        schema:
-          type: string
-          default: desc
-          enum:
-            - asc
-            - desc
         required: false
       - paramName: after
         description: >
@@ -1273,7 +2430,7 @@ modules:
         description: >
           A cursor for use in pagination. `before` is an object ID that defines
           your place in the list. For instance, if you make a list request and
-          receive 100 objects, ending with obj_foo, your subsequent call can
+          receive 100 objects, starting with obj_foo, your subsequent call can
           include before=obj_foo in order to fetch the previous page of the
           list.
         paramKey: before
@@ -1281,52 +2438,1739 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName: Assistants / Create
-    operationId: createAssistant
-    method: post
-    path: /assistants
-    description: Create an assistant with a model and instructions.
-    externalDocs: https://platform.openai.com/docs/api-reference
+  - moduleName: Organization / Costs / List
+    method: get
+    path: /organization/costs
+    description: Get costs details for the organization.
+    externalDocs: ""
+    operationId: usage-costs
     params:
-      - paramName: model
+      - paramName: startTime
+        description: Start time (Unix seconds) of the query time range, inclusive.
+        paramKey: start_time
+        in: query
+        schema:
+          type: number
+        required: true
+      - paramName: endTime
+        description: End time (Unix seconds) of the query time range, exclusive.
+        paramKey: end_time
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: bucketWidth
+        description: Width of each time bucket in response. Currently only `1d` is
+          supported, default to `1d`.
+        paramKey: bucket_width
+        in: query
+        schema:
+          type: string
+          default: 1d
+          enum:
+            - 1d
+        required: false
+      - paramName: projectIds
+        description: Return only costs for these projects.
+        paramKey: project_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: groupBy
+        description: Group the costs by the specified fields. Support fields include
+          `project_id`, `line_item` and any combination of them.
+        paramKey: group_by
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: limit
         description: >
-          ID of the model to use.
-        paramKey: model
+          A limit on the number of buckets to be returned. Limit can range
+          between 1 and 180, and the default is 7.
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+          default: 7
+        required: false
+      - paramName: page
+        description: A cursor for use in pagination. Corresponding to the `next_page`
+          field from the previous response.
+        paramKey: page
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Organization / Invites / List
+    method: get
+    path: /organization/invites
+    description: Returns a list of invites in the organization.
+    externalDocs: ""
+    operationId: list-invites
+    params:
+      - paramName: limit
+        description: >
+          A limit on the number of objects to be returned. Limit can range
+          between 1 and 100, and the default is 20.
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+          default: 20
+        required: false
+      - paramName: after
+        description: >
+          A cursor for use in pagination. `after` is an object ID that defines
+          your place in the list. For instance, if you make a list request and
+          receive 100 objects, ending with obj_foo, your subsequent call can
+          include after=obj_foo in order to fetch the next page of the list.
+        paramKey: after
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Organization / Invites / Invite User
+    method: post
+    path: /organization/invites
+    description: Create an invite for a user to the organization. The invite must be
+      accepted by the user before they have access to the organization.
+    externalDocs: ""
+    operationId: inviteUser
+    params:
+      - paramName: email
+        description: Send an email to this address
+        paramKey: email
         in: body
         schema:
           type: string
-          default: 'gpt-4o'
         required: true
+      - paramName: role
+        description: "`owner` or `reader`"
+        paramKey: role
+        in: body
+        schema:
+          type: string
+          enum:
+            - reader
+            - owner
+        required: true
+      - paramName: projects
+        description: An array of projects to which membership is granted at the same
+          time the org invite is accepted. If omitted, the user will be invited
+          to the default project for compatibility with legacy behavior.
+        paramKey: projects
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Organization / Invites / Retrieve
+    method: get
+    path: /organization/invites/{invite_id}
+    description: Retrieves an invite.
+    externalDocs: ""
+    operationId: retrieve-invite
+    params:
+      - paramName: inviteId
+        description: The ID of the invite to retrieve.
+        paramKey: invite_id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Organization / Invites / Delete
+    method: delete
+    path: /organization/invites/{invite_id}
+    description: Delete an invite. If the invite has already been accepted, it
+      cannot be deleted.
+    externalDocs: ""
+    operationId: delete-invite
+    params:
+      - paramName: inviteId
+        description: The ID of the invite to delete.
+        paramKey: invite_id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Organization / Projects / List
+    method: get
+    path: /organization/projects
+    description: Returns a list of projects.
+    externalDocs: ""
+    operationId: list-projects
+    params:
+      - paramName: limit
+        description: >
+          A limit on the number of objects to be returned. Limit can range
+          between 1 and 100, and the default is 20.
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+          default: 20
+        required: false
+      - paramName: after
+        description: >
+          A cursor for use in pagination. `after` is an object ID that defines
+          your place in the list. For instance, if you make a list request and
+          receive 100 objects, ending with obj_foo, your subsequent call can
+          include after=obj_foo in order to fetch the next page of the list.
+        paramKey: after
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: includeArchived
+        description: If `true` returns all projects including those that have been
+          `archived`. Archived projects are not included by default.
+        paramKey: include_archived
+        in: query
+        schema:
+          type: boolean
+          default: false
+        required: false
+  - moduleName: Organization / Projects / Create
+    method: post
+    path: /organization/projects
+    description: Create a new project in the organization. Projects can be created
+      and archived, but cannot be deleted.
+    externalDocs: ""
+    operationId: create-project
+    params:
       - paramName: name
-        description: |
-          The name of the assistant. The maximum length is 256 characters.
+        description: The friendly name of the project, this name appears in reports.
         paramKey: name
         in: body
         schema:
           type: string
-        required: false
-      - paramName: description
-        description: >
-          The description of the assistant. The maximum length is 512 characters.
-        paramKey: description
+        required: true
+    requestBodyType: json
+  - moduleName: Organization / Projects / Retrieve
+    method: get
+    path: /organization/projects/{project_id}
+    description: Retrieves a project.
+    externalDocs: ""
+    operationId: retrieve-project
+    params:
+      - paramName: projectId
+        description: The ID of the project.
+        paramKey: project_id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Organization / Projects / Modify
+    method: post
+    path: /organization/projects/{project_id}
+    description: Modifies a project in the organization.
+    externalDocs: ""
+    operationId: modify-project
+    params:
+      - paramName: projectId
+        description: The ID of the project.
+        paramKey: project_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: name
+        description: The updated name of the project, this name appears in reports.
+        paramKey: name
         in: body
         schema:
           type: string
+        required: true
+    requestBodyType: json
+  - moduleName: Organization / Projects / API Keys / List
+    method: get
+    path: /organization/projects/{project_id}/api_keys
+    description: Returns a list of API keys in the project.
+    externalDocs: ""
+    operationId: list-project-api-keys
+    params:
+      - paramName: projectId
+        description: The ID of the project.
+        paramKey: project_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: limit
+        description: >
+          A limit on the number of objects to be returned. Limit can range
+          between 1 and 100, and the default is 20.
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+          default: 20
+        required: false
+      - paramName: after
+        description: >
+          A cursor for use in pagination. `after` is an object ID that defines
+          your place in the list. For instance, if you make a list request and
+          receive 100 objects, ending with obj_foo, your subsequent call can
+          include after=obj_foo in order to fetch the next page of the list.
+        paramKey: after
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Organization / Projects / API Keys / Retrieve
+    method: get
+    path: /organization/projects/{project_id}/api_keys/{key_id}
+    description: Retrieves an API key in the project.
+    externalDocs: ""
+    operationId: retrieve-project-api-key
+    params:
+      - paramName: projectId
+        description: The ID of the project.
+        paramKey: project_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: keyId
+        description: The ID of the API key.
+        paramKey: key_id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Organization / Projects / API Keys / Delete
+    method: delete
+    path: /organization/projects/{project_id}/api_keys/{key_id}
+    description: Deletes an API key from the project.
+    externalDocs: ""
+    operationId: delete-project-api-key
+    params:
+      - paramName: projectId
+        description: The ID of the project.
+        paramKey: project_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: keyId
+        description: The ID of the API key.
+        paramKey: key_id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Organization / Projects / Archive
+    method: post
+    path: /organization/projects/{project_id}/archive
+    description: Archives a project in the organization. Archived projects cannot be
+      used or updated.
+    externalDocs: ""
+    operationId: archive-project
+    params:
+      - paramName: projectId
+        description: The ID of the project.
+        paramKey: project_id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Organization / Projects / Rate Limits / List
+    method: get
+    path: /organization/projects/{project_id}/rate_limits
+    description: Returns the rate limits per model for a project.
+    externalDocs: ""
+    operationId: list-project-rate-limits
+    params:
+      - paramName: projectId
+        description: The ID of the project.
+        paramKey: project_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: limit
+        description: |
+          A limit on the number of objects to be returned. The default is 100.
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+          default: 100
+        required: false
+      - paramName: after
+        description: >
+          A cursor for use in pagination. `after` is an object ID that defines
+          your place in the list. For instance, if you make a list request and
+          receive 100 objects, ending with obj_foo, your subsequent call can
+          include after=obj_foo in order to fetch the next page of the list.
+        paramKey: after
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: before
+        description: >
+          A cursor for use in pagination. `before` is an object ID that defines
+          your place in the list. For instance, if you make a list request and
+          receive 100 objects, beginning with obj_foo, your subsequent call can
+          include before=obj_foo in order to fetch the previous page of the
+          list.
+        paramKey: before
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Organization / Projects / Rate Limits / Update
+    method: post
+    path: /organization/projects/{project_id}/rate_limits/{rate_limit_id}
+    description: Updates a project rate limit.
+    externalDocs: ""
+    operationId: update-project-rate-limits
+    params:
+      - paramName: projectId
+        description: The ID of the project.
+        paramKey: project_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: rateLimitId
+        description: The ID of the rate limit.
+        paramKey: rate_limit_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: maxRequestsPer1Minute
+        description: The maximum requests per minute.
+        paramKey: max_requests_per_1_minute
+        in: body
+        schema:
+          type: number
+        required: false
+      - paramName: maxTokensPer1Minute
+        description: The maximum tokens per minute.
+        paramKey: max_tokens_per_1_minute
+        in: body
+        schema:
+          type: number
+        required: false
+      - paramName: maxImagesPer1Minute
+        description: The maximum images per minute. Only relevant for certain models.
+        paramKey: max_images_per_1_minute
+        in: body
+        schema:
+          type: number
+        required: false
+      - paramName: maxAudioMegabytesPer1Minute
+        description: The maximum audio megabytes per minute. Only relevant for certain
+          models.
+        paramKey: max_audio_megabytes_per_1_minute
+        in: body
+        schema:
+          type: number
+        required: false
+      - paramName: maxRequestsPer1Day
+        description: The maximum requests per day. Only relevant for certain models.
+        paramKey: max_requests_per_1_day
+        in: body
+        schema:
+          type: number
+        required: false
+      - paramName: batch1DayMaxInputTokens
+        description: The maximum batch input tokens per day. Only relevant for certain
+          models.
+        paramKey: batch_1_day_max_input_tokens
+        in: body
+        schema:
+          type: number
+        required: false
+    requestBodyType: json
+  - moduleName: Organization / Projects / Service Accounts / List
+    method: get
+    path: /organization/projects/{project_id}/service_accounts
+    description: Returns a list of service accounts in the project.
+    externalDocs: ""
+    operationId: list-project-service-accounts
+    params:
+      - paramName: projectId
+        description: The ID of the project.
+        paramKey: project_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: limit
+        description: >
+          A limit on the number of objects to be returned. Limit can range
+          between 1 and 100, and the default is 20.
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+          default: 20
+        required: false
+      - paramName: after
+        description: >
+          A cursor for use in pagination. `after` is an object ID that defines
+          your place in the list. For instance, if you make a list request and
+          receive 100 objects, ending with obj_foo, your subsequent call can
+          include after=obj_foo in order to fetch the next page of the list.
+        paramKey: after
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Organization / Projects / Service Accounts / Create
+    method: post
+    path: /organization/projects/{project_id}/service_accounts
+    description: Creates a new service account in the project. This also returns an
+      unredacted API key for the service account.
+    externalDocs: ""
+    operationId: create-project-service-account
+    params:
+      - paramName: projectId
+        description: The ID of the project.
+        paramKey: project_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: name
+        description: The name of the service account being created.
+        paramKey: name
+        in: body
+        schema:
+          type: string
+        required: true
+    requestBodyType: json
+  - moduleName: Organization / Projects / Service Accounts / Retrieve
+    method: get
+    path: /organization/projects/{project_id}/service_accounts/{service_account_id}
+    description: Retrieves a service account in the project.
+    externalDocs: ""
+    operationId: retrieve-project-service-account
+    params:
+      - paramName: projectId
+        description: The ID of the project.
+        paramKey: project_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: serviceAccountId
+        description: The ID of the service account.
+        paramKey: service_account_id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Organization / Projects / Service Accounts / Delete
+    method: delete
+    path: /organization/projects/{project_id}/service_accounts/{service_account_id}
+    description: Deletes a service account from the project.
+    externalDocs: ""
+    operationId: delete-project-service-account
+    params:
+      - paramName: projectId
+        description: The ID of the project.
+        paramKey: project_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: serviceAccountId
+        description: The ID of the service account.
+        paramKey: service_account_id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Organization / Projects / Users / List
+    method: get
+    path: /organization/projects/{project_id}/users
+    description: Returns a list of users in the project.
+    externalDocs: ""
+    operationId: list-project-users
+    params:
+      - paramName: projectId
+        description: The ID of the project.
+        paramKey: project_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: limit
+        description: >
+          A limit on the number of objects to be returned. Limit can range
+          between 1 and 100, and the default is 20.
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+          default: 20
+        required: false
+      - paramName: after
+        description: >
+          A cursor for use in pagination. `after` is an object ID that defines
+          your place in the list. For instance, if you make a list request and
+          receive 100 objects, ending with obj_foo, your subsequent call can
+          include after=obj_foo in order to fetch the next page of the list.
+        paramKey: after
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Organization / Projects / Users / Create
+    method: post
+    path: /organization/projects/{project_id}/users
+    description: Adds a user to the project. Users must already be members of the
+      organization to be added to a project.
+    externalDocs: ""
+    operationId: create-project-user
+    params:
+      - paramName: projectId
+        description: The ID of the project.
+        paramKey: project_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: userId
+        description: The ID of the user.
+        paramKey: user_id
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: role
+        description: "`owner` or `member`"
+        paramKey: role
+        in: body
+        schema:
+          type: string
+          enum:
+            - owner
+            - member
+        required: true
+    requestBodyType: json
+  - moduleName: Organization / Projects / Users / Retrieve
+    method: get
+    path: /organization/projects/{project_id}/users/{user_id}
+    description: Retrieves a user in the project.
+    externalDocs: ""
+    operationId: retrieve-project-user
+    params:
+      - paramName: projectId
+        description: The ID of the project.
+        paramKey: project_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: userId
+        description: The ID of the user.
+        paramKey: user_id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Organization / Projects / Users / Modify
+    method: post
+    path: /organization/projects/{project_id}/users/{user_id}
+    description: Modifies a user's role in the project.
+    externalDocs: ""
+    operationId: modify-project-user
+    params:
+      - paramName: projectId
+        description: The ID of the project.
+        paramKey: project_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: userId
+        description: The ID of the user.
+        paramKey: user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: role
+        description: "`owner` or `member`"
+        paramKey: role
+        in: body
+        schema:
+          type: string
+          enum:
+            - owner
+            - member
+        required: true
+    requestBodyType: json
+  - moduleName: Organization / Projects / Users / Delete
+    method: delete
+    path: /organization/projects/{project_id}/users/{user_id}
+    description: Deletes a user from the project.
+    externalDocs: ""
+    operationId: delete-project-user
+    params:
+      - paramName: projectId
+        description: The ID of the project.
+        paramKey: project_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: userId
+        description: The ID of the user.
+        paramKey: user_id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Organization / Usage / Audio Speeches
+    method: get
+    path: /organization/usage/audio_speeches
+    description: Get audio speeches usage details for the organization.
+    externalDocs: ""
+    operationId: usage-audio-speeches
+    params:
+      - paramName: startTime
+        description: Start time (Unix seconds) of the query time range, inclusive.
+        paramKey: start_time
+        in: query
+        schema:
+          type: number
+        required: true
+      - paramName: endTime
+        description: End time (Unix seconds) of the query time range, exclusive.
+        paramKey: end_time
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: bucketWidth
+        description: Width of each time bucket in response. Currently `1m`, `1h` and
+          `1d` are supported, default to `1d`.
+        paramKey: bucket_width
+        in: query
+        schema:
+          type: string
+          default: 1d
+          enum:
+            - 1m
+            - 1h
+            - 1d
+        required: false
+      - paramName: projectIds
+        description: Return only usage for these projects.
+        paramKey: project_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: userIds
+        description: Return only usage for these users.
+        paramKey: user_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: apiKeyIds
+        description: Return only usage for these API keys.
+        paramKey: api_key_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: models
+        description: Return only usage for these models.
+        paramKey: models
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: groupBy
+        description: Group the usage data by the specified fields. Support fields
+          include `project_id`, `user_id`, `api_key_id`, `model` or any
+          combination of them.
+        paramKey: group_by
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: limit
+        description: |
+          Specifies the number of buckets to return.
+          - `bucket_width=1d`: default: 7, max: 31
+          - `bucket_width=1h`: default: 24, max: 168
+          - `bucket_width=1m`: default: 60, max: 1440
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: page
+        description: A cursor for use in pagination. Corresponding to the `next_page`
+          field from the previous response.
+        paramKey: page
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Organization / Usage / Audio Transcriptions
+    method: get
+    path: /organization/usage/audio_transcriptions
+    description: Get audio transcriptions usage details for the organization.
+    externalDocs: ""
+    operationId: usage-audio-transcriptions
+    params:
+      - paramName: startTime
+        description: Start time (Unix seconds) of the query time range, inclusive.
+        paramKey: start_time
+        in: query
+        schema:
+          type: number
+        required: true
+      - paramName: endTime
+        description: End time (Unix seconds) of the query time range, exclusive.
+        paramKey: end_time
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: bucketWidth
+        description: Width of each time bucket in response. Currently `1m`, `1h` and
+          `1d` are supported, default to `1d`.
+        paramKey: bucket_width
+        in: query
+        schema:
+          type: string
+          default: 1d
+          enum:
+            - 1m
+            - 1h
+            - 1d
+        required: false
+      - paramName: projectIds
+        description: Return only usage for these projects.
+        paramKey: project_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: userIds
+        description: Return only usage for these users.
+        paramKey: user_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: apiKeyIds
+        description: Return only usage for these API keys.
+        paramKey: api_key_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: models
+        description: Return only usage for these models.
+        paramKey: models
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: groupBy
+        description: Group the usage data by the specified fields. Support fields
+          include `project_id`, `user_id`, `api_key_id`, `model` or any
+          combination of them.
+        paramKey: group_by
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: limit
+        description: |
+          Specifies the number of buckets to return.
+          - `bucket_width=1d`: default: 7, max: 31
+          - `bucket_width=1h`: default: 24, max: 168
+          - `bucket_width=1m`: default: 60, max: 1440
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: page
+        description: A cursor for use in pagination. Corresponding to the `next_page`
+          field from the previous response.
+        paramKey: page
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Organization / Usage / Code Interpreter Sessions
+    method: get
+    path: /organization/usage/code_interpreter_sessions
+    description: Get code interpreter sessions usage details for the organization.
+    externalDocs: ""
+    operationId: usage-code-interpreter-sessions
+    params:
+      - paramName: startTime
+        description: Start time (Unix seconds) of the query time range, inclusive.
+        paramKey: start_time
+        in: query
+        schema:
+          type: number
+        required: true
+      - paramName: endTime
+        description: End time (Unix seconds) of the query time range, exclusive.
+        paramKey: end_time
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: bucketWidth
+        description: Width of each time bucket in response. Currently `1m`, `1h` and
+          `1d` are supported, default to `1d`.
+        paramKey: bucket_width
+        in: query
+        schema:
+          type: string
+          default: 1d
+          enum:
+            - 1m
+            - 1h
+            - 1d
+        required: false
+      - paramName: projectIds
+        description: Return only usage for these projects.
+        paramKey: project_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: groupBy
+        description: Group the usage data by the specified fields. Support fields
+          include `project_id`.
+        paramKey: group_by
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: limit
+        description: |
+          Specifies the number of buckets to return.
+          - `bucket_width=1d`: default: 7, max: 31
+          - `bucket_width=1h`: default: 24, max: 168
+          - `bucket_width=1m`: default: 60, max: 1440
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: page
+        description: A cursor for use in pagination. Corresponding to the `next_page`
+          field from the previous response.
+        paramKey: page
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Organization / Usage / Completions
+    method: get
+    path: /organization/usage/completions
+    description: Get completions usage details for the organization.
+    externalDocs: ""
+    operationId: usage-completions
+    params:
+      - paramName: startTime
+        description: Start time (Unix seconds) of the query time range, inclusive.
+        paramKey: start_time
+        in: query
+        schema:
+          type: number
+        required: true
+      - paramName: endTime
+        description: End time (Unix seconds) of the query time range, exclusive.
+        paramKey: end_time
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: bucketWidth
+        description: Width of each time bucket in response. Currently `1m`, `1h` and
+          `1d` are supported, default to `1d`.
+        paramKey: bucket_width
+        in: query
+        schema:
+          type: string
+          default: 1d
+          enum:
+            - 1m
+            - 1h
+            - 1d
+        required: false
+      - paramName: projectIds
+        description: Return only usage for these projects.
+        paramKey: project_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: userIds
+        description: Return only usage for these users.
+        paramKey: user_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: apiKeyIds
+        description: Return only usage for these API keys.
+        paramKey: api_key_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: models
+        description: Return only usage for these models.
+        paramKey: models
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: batch
+        description: >
+          If `true`, return batch jobs only. If `false`, return non-batch jobs
+          only. By default, return both.
+        paramKey: batch
+        in: query
+        schema:
+          type: boolean
+        required: false
+      - paramName: groupBy
+        description: Group the usage data by the specified fields. Support fields
+          include `project_id`, `user_id`, `api_key_id`, `model`, `batch` or any
+          combination of them.
+        paramKey: group_by
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: limit
+        description: |
+          Specifies the number of buckets to return.
+          - `bucket_width=1d`: default: 7, max: 31
+          - `bucket_width=1h`: default: 24, max: 168
+          - `bucket_width=1m`: default: 60, max: 1440
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: page
+        description: A cursor for use in pagination. Corresponding to the `next_page`
+          field from the previous response.
+        paramKey: page
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Organization / Usage / Embeddings
+    method: get
+    path: /organization/usage/embeddings
+    description: Get embeddings usage details for the organization.
+    externalDocs: ""
+    operationId: usage-embeddings
+    params:
+      - paramName: startTime
+        description: Start time (Unix seconds) of the query time range, inclusive.
+        paramKey: start_time
+        in: query
+        schema:
+          type: number
+        required: true
+      - paramName: endTime
+        description: End time (Unix seconds) of the query time range, exclusive.
+        paramKey: end_time
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: bucketWidth
+        description: Width of each time bucket in response. Currently `1m`, `1h` and
+          `1d` are supported, default to `1d`.
+        paramKey: bucket_width
+        in: query
+        schema:
+          type: string
+          default: 1d
+          enum:
+            - 1m
+            - 1h
+            - 1d
+        required: false
+      - paramName: projectIds
+        description: Return only usage for these projects.
+        paramKey: project_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: userIds
+        description: Return only usage for these users.
+        paramKey: user_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: apiKeyIds
+        description: Return only usage for these API keys.
+        paramKey: api_key_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: models
+        description: Return only usage for these models.
+        paramKey: models
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: groupBy
+        description: Group the usage data by the specified fields. Support fields
+          include `project_id`, `user_id`, `api_key_id`, `model` or any
+          combination of them.
+        paramKey: group_by
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: limit
+        description: |
+          Specifies the number of buckets to return.
+          - `bucket_width=1d`: default: 7, max: 31
+          - `bucket_width=1h`: default: 24, max: 168
+          - `bucket_width=1m`: default: 60, max: 1440
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: page
+        description: A cursor for use in pagination. Corresponding to the `next_page`
+          field from the previous response.
+        paramKey: page
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Organization / Usage / Images
+    method: get
+    path: /organization/usage/images
+    description: Get images usage details for the organization.
+    externalDocs: ""
+    operationId: usage-images
+    params:
+      - paramName: startTime
+        description: Start time (Unix seconds) of the query time range, inclusive.
+        paramKey: start_time
+        in: query
+        schema:
+          type: number
+        required: true
+      - paramName: endTime
+        description: End time (Unix seconds) of the query time range, exclusive.
+        paramKey: end_time
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: bucketWidth
+        description: Width of each time bucket in response. Currently `1m`, `1h` and
+          `1d` are supported, default to `1d`.
+        paramKey: bucket_width
+        in: query
+        schema:
+          type: string
+          default: 1d
+          enum:
+            - 1m
+            - 1h
+            - 1d
+        required: false
+      - paramName: sources
+        description: Return only usages for these sources. Possible values are
+          `image.generation`, `image.edit`, `image.variation` or any combination
+          of them.
+        paramKey: sources
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: sizes
+        description: Return only usages for these image sizes. Possible values are
+          `256x256`, `512x512`, `1024x1024`, `1792x1792`, `1024x1792` or any
+          combination of them.
+        paramKey: sizes
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: projectIds
+        description: Return only usage for these projects.
+        paramKey: project_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: userIds
+        description: Return only usage for these users.
+        paramKey: user_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: apiKeyIds
+        description: Return only usage for these API keys.
+        paramKey: api_key_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: models
+        description: Return only usage for these models.
+        paramKey: models
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: groupBy
+        description: Group the usage data by the specified fields. Support fields
+          include `project_id`, `user_id`, `api_key_id`, `model`, `size`,
+          `source` or any combination of them.
+        paramKey: group_by
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: limit
+        description: |
+          Specifies the number of buckets to return.
+          - `bucket_width=1d`: default: 7, max: 31
+          - `bucket_width=1h`: default: 24, max: 168
+          - `bucket_width=1m`: default: 60, max: 1440
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: page
+        description: A cursor for use in pagination. Corresponding to the `next_page`
+          field from the previous response.
+        paramKey: page
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Organization / Usage / Moderations
+    method: get
+    path: /organization/usage/moderations
+    description: Get moderations usage details for the organization.
+    externalDocs: ""
+    operationId: usage-moderations
+    params:
+      - paramName: startTime
+        description: Start time (Unix seconds) of the query time range, inclusive.
+        paramKey: start_time
+        in: query
+        schema:
+          type: number
+        required: true
+      - paramName: endTime
+        description: End time (Unix seconds) of the query time range, exclusive.
+        paramKey: end_time
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: bucketWidth
+        description: Width of each time bucket in response. Currently `1m`, `1h` and
+          `1d` are supported, default to `1d`.
+        paramKey: bucket_width
+        in: query
+        schema:
+          type: string
+          default: 1d
+          enum:
+            - 1m
+            - 1h
+            - 1d
+        required: false
+      - paramName: projectIds
+        description: Return only usage for these projects.
+        paramKey: project_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: userIds
+        description: Return only usage for these users.
+        paramKey: user_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: apiKeyIds
+        description: Return only usage for these API keys.
+        paramKey: api_key_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: models
+        description: Return only usage for these models.
+        paramKey: models
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: groupBy
+        description: Group the usage data by the specified fields. Support fields
+          include `project_id`, `user_id`, `api_key_id`, `model` or any
+          combination of them.
+        paramKey: group_by
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: limit
+        description: |
+          Specifies the number of buckets to return.
+          - `bucket_width=1d`: default: 7, max: 31
+          - `bucket_width=1h`: default: 24, max: 168
+          - `bucket_width=1m`: default: 60, max: 1440
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: page
+        description: A cursor for use in pagination. Corresponding to the `next_page`
+          field from the previous response.
+        paramKey: page
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Organization / Usage / Vector Stores
+    method: get
+    path: /organization/usage/vector_stores
+    description: Get vector stores usage details for the organization.
+    externalDocs: ""
+    operationId: usage-vector-stores
+    params:
+      - paramName: startTime
+        description: Start time (Unix seconds) of the query time range, inclusive.
+        paramKey: start_time
+        in: query
+        schema:
+          type: number
+        required: true
+      - paramName: endTime
+        description: End time (Unix seconds) of the query time range, exclusive.
+        paramKey: end_time
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: bucketWidth
+        description: Width of each time bucket in response. Currently `1m`, `1h` and
+          `1d` are supported, default to `1d`.
+        paramKey: bucket_width
+        in: query
+        schema:
+          type: string
+          default: 1d
+          enum:
+            - 1m
+            - 1h
+            - 1d
+        required: false
+      - paramName: projectIds
+        description: Return only usage for these projects.
+        paramKey: project_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: groupBy
+        description: Group the usage data by the specified fields. Support fields
+          include `project_id`.
+        paramKey: group_by
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: limit
+        description: |
+          Specifies the number of buckets to return.
+          - `bucket_width=1d`: default: 7, max: 31
+          - `bucket_width=1h`: default: 24, max: 168
+          - `bucket_width=1m`: default: 60, max: 1440
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+        required: false
+      - paramName: page
+        description: A cursor for use in pagination. Corresponding to the `next_page`
+          field from the previous response.
+        paramKey: page
+        in: query
+        schema:
+          type: string
+        required: false
+  - moduleName: Users / List
+    method: get
+    path: /organization/users
+    description: Lists all of the users in the organization.
+    externalDocs: ""
+    operationId: list-users
+    params:
+      - paramName: limit
+        description: >
+          A limit on the number of objects to be returned. Limit can range
+          between 1 and 100, and the default is 20.
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+          default: 20
+        required: false
+      - paramName: after
+        description: >
+          A cursor for use in pagination. `after` is an object ID that defines
+          your place in the list. For instance, if you make a list request and
+          receive 100 objects, ending with obj_foo, your subsequent call can
+          include after=obj_foo in order to fetch the next page of the list.
+        paramKey: after
+        in: query
+        schema:
+          type: string
+        required: false
+      - paramName: emails
+        description: Filter by the email address of users.
+        paramKey: emails
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+  - moduleName: Users / Retrieve
+    method: get
+    path: /organization/users/{user_id}
+    description: Retrieves a user by their identifier.
+    externalDocs: ""
+    operationId: retrieve-user
+    params:
+      - paramName: userId
+        description: The ID of the user.
+        paramKey: user_id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Users / Modify
+    method: post
+    path: /organization/users/{user_id}
+    description: Modifies a user's role in the organization.
+    externalDocs: ""
+    operationId: modify-user
+    params:
+      - paramName: userId
+        description: The ID of the user.
+        paramKey: user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: role
+        description: "`owner` or `reader`"
+        paramKey: role
+        in: body
+        schema:
+          type: string
+          enum:
+            - owner
+            - reader
+        required: true
+    requestBodyType: json
+  - moduleName: Users / Delete
+    method: delete
+    path: /organization/users/{user_id}
+    description: Deletes a user from the organization.
+    externalDocs: ""
+    operationId: delete-user
+    params:
+      - paramName: userId
+        description: The ID of the user.
+        paramKey: user_id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Realtime / Create Session
+    method: post
+    path: /realtime/sessions
+    description: >
+      Create an ephemeral API token for use in client-side applications with the
+
+      Realtime API. Can be configured with the same session parameters as the
+
+      `session.update` client event.
+
+
+      It responds with a session object, plus a `client_secret` key which
+      contains
+
+      a usable ephemeral API token that can be used to authenticate browser
+      clients
+
+      for the Realtime API.
+    externalDocs: ""
+    operationId: create-realtime-session
+    params:
+      - paramName: modalities
+        description: |
+          The set of modalities the model can respond with. To disable audio,
+          set this to ["text"].
+        paramKey: modalities
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: model
+        description: |
+          The Realtime model used for this session.
+        paramKey: model
+        in: body
+        schema:
+          type: string
+          enum:
+            - gpt-4o-realtime-preview
+            - gpt-4o-realtime-preview-2024-10-01
+            - gpt-4o-realtime-preview-2024-12-17
+            - gpt-4o-mini-realtime-preview
+            - gpt-4o-mini-realtime-preview-2024-12-17
         required: false
       - paramName: instructions
         description: >
-          The system instructions that the assistant uses. The maximum length is
-          256,000 characters.
+          The default system instructions (i.e. system message) prepended to
+          model 
+
+          calls. This field allows the client to guide the model on desired 
+
+          responses. The model can be instructed on response content and
+          format, 
+
+          (e.g. "be extremely succinct", "act friendly", "here are examples of
+          good 
+
+          responses") and on audio behavior (e.g. "talk quickly", "inject
+          emotion 
+
+          into your voice", "laugh frequently"). The instructions are not
+          guaranteed 
+
+          to be followed by the model, but they provide guidance to the model on
+          the 
+
+          desired behavior.
+
+
+          Note that the server sets default instructions which will be used if
+          this 
+
+          field is not set and are visible in the `session.created` event at
+          the 
+
+          start of the session.
         paramKey: instructions
         in: body
         schema:
           type: string
         required: false
-      - paramName: tools
+      - paramName: voice
         description: >
-          A list of tool enabled on the assistant. There can be a maximum of 128
-          tools per assistant. Tools can be of types `code_interpreter`,
-          `file_search`, or `function`.
+          The voice the model uses to respond. Voice cannot be changed during
+          the 
+
+          session once the model has responded with audio at least once.
+          Current 
+
+          voice options are `alloy`, `ash`, `ballad`, `coral`, `echo` `sage`, 
+
+          `shimmer` and `verse`.
+        paramKey: voice
+        in: body
+        schema:
+          type: string
+          enum:
+            - alloy
+            - ash
+            - ballad
+            - coral
+            - echo
+            - sage
+            - shimmer
+            - verse
+        required: false
+      - paramName: inputAudioFormat
+        description: >
+          The format of input audio. Options are `pcm16`, `g711_ulaw`, or
+          `g711_alaw`.
+
+          For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate, 
+
+          single channel (mono), and little-endian byte order.
+        paramKey: input_audio_format
+        in: body
+        schema:
+          type: string
+          enum:
+            - pcm16
+            - g711_ulaw
+            - g711_alaw
+        required: false
+      - paramName: outputAudioFormat
+        description: >
+          The format of output audio. Options are `pcm16`, `g711_ulaw`, or
+          `g711_alaw`.
+
+          For `pcm16`, output audio is sampled at a rate of 24kHz.
+        paramKey: output_audio_format
+        in: body
+        schema:
+          type: string
+          enum:
+            - pcm16
+            - g711_ulaw
+            - g711_alaw
+        required: false
+      - paramName: inputAudioTranscription
+        description: >
+          Configuration for input audio transcription, defaults to off and can
+          be  set to `null` to turn off once on. Input audio transcription is
+          not native to the model, since the model consumes audio directly.
+          Transcription runs  asynchronously through [OpenAI Whisper
+          transcription](https://platform.openai.com/docs/api-reference/audio/createTranscription)
+          and should be treated as rough guidance rather than the representation
+          understood by the model. The client can optionally set the language
+          and prompt for transcription, these fields will be passed to the
+          Whisper API.
+        paramKey: input_audio_transcription
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: turnDetection
+        description: >
+          Configuration for turn detection. Can be set to `null` to turn off.
+          Server 
+
+          VAD means that the model will detect the start and end of speech based
+          on 
+
+          audio volume and respond at the end of user speech.
+        paramKey: turn_detection
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: tools
+        description: Tools (functions) available to the model.
         paramKey: tools
         in: body
         schema:
@@ -1334,147 +4178,125 @@ modules:
           items:
             type: any
         required: false
-      - paramName: toolResources
+      - paramName: toolChoice
         description: >
-          A set of resources that are used by the assistant's tools. The
-          resources are specific to the type of tool. For example, the
-          `code_interpreter` tool requires a list of file IDs, while the
-          `file_search` tool requires a list of vector store IDs.
-        paramKey: tool_resources
+          How the model chooses tools. Options are `auto`, `none`, `required`,
+          or 
+
+          specify a function.
+        paramKey: tool_choice
         in: body
         schema:
-          type: any
-        required: false
-      - paramName: metadata
-        description: >
-          Set of 16 key-value pairs that can be attached to an object. This can
-          be useful for storing additional information about the object in a
-          structured format. Keys can be a maximum of 64 characters long and
-          values can be a maxium of 512 characters long.
-        paramKey: metadata
-        in: body
-        schema:
-          type: any
+          type: string
         required: false
       - paramName: temperature
         description: >
-          What sampling temperature to use, between 0 and 2. Higher values like
-          0.8 will make the output more random, while lower values like 0.2 will
-          make it more focused and deterministic.
+          Sampling temperature for the model, limited to [0.6, 1.2]. Defaults to
+          0.8.
         paramKey: temperature
         in: body
         schema:
           type: number
-          minimum: 0
-          maximum: 2
-          default: 1
         required: false
-      - paramName: topP
-        description: >
-          An alternative to sampling with temperature, called nucleus sampling,
-          where the model considers the results of the tokens with top_p
-          probability mass. So 0.1 means only the tokens comprising the top 10%
-          probability mass are considered.
-
-
-          We generally recommend altering this or temperature but not both.
-        paramKey: top_p
-        in: body
-        schema:
-          type: number
-          minimum: 0
-          maximum: 1
-          default: 1
-        required: false
-      - paramName: responseFormat
-        description: >
-          Specifies the format that the model must output. Compatible with
-          GPT-4o, GPT-4 Turbo, and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
-
-          Setting to `{ "type": "json_object" }` enables JSON mode, which
-          guarantees the message the model generates is valid JSON.
-
-          **Important:** when using JSON mode, you **must** also instruct the
-          model to produce JSON yourself via a system or user message. Without
-          this, the model may generate an unending stream of whitespace until
-          the generation reaches the token limit, resulting in a long-running
-          and seemingly "stuck" request. Also note that the message content may
-          be partially cut off if `finish_reason="length"`, which indicates the
-          generation exceeded `max_tokens` or the conversation exceeded the max
-          context length.
-        paramKey: response_format
+      - paramName: maxResponseOutputTokens
+        description: |
+          Maximum number of output tokens for a single assistant response,
+          inclusive of tool calls. Provide an integer between 1 and 4096 to
+          limit output tokens, or `inf` for the maximum available tokens for a
+          given model. Defaults to `inf`.
+        paramKey: max_response_output_tokens
         in: body
         schema:
           type: any
         required: false
     requestBodyType: json
-  - moduleName: Assistants / Retrieve
-    operationId: getAssistant
-    method: get
-    path: /assistants/{assistant_id}
-    description: Retrieves an assistant.
-    externalDocs: https://platform.openai.com/docs/api-reference
-    params:
-      - paramName: assistantId
-        description: The ID of the assistant to retrieve.
-        paramKey: assistant_id
-        in: path
-        schema:
-          type: string
-        required: true
-  - moduleName: Assistants / Modify
-    operationId: modifyAssistant
+  - moduleName: Threads / Create
+    operationId: createThread
     method: post
-    path: /assistants/{assistant_id}
-    description: Modifies an assistant.
+    path: /threads
+    description: Create a thread.
+    externalDocs: https://platform.openai.com/docs/api-reference
+    params:
+      - paramName: messages
+        description: A list of [messages](/docs/api-reference/messages) to start the
+          thread with.
+        paramKey: messages
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+      - paramName: toolResources
+        description: >
+          A set of resources that are made available to the assistant's tools in
+          this thread. The resources are specific to the type of tool. For
+          example, the `code_interpreter` tool requires a list of file IDs,
+          while the `file_search` tool requires a list of vector store IDs.
+        paramKey: tool_resources
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: metadata
+        description: >
+          Set of 16 key-value pairs that can be attached to an object. This can
+          be useful for storing additional information about the object in a
+          structured format. Keys can be a maximum of 64 characters long and
+          values can be a maxium of 512 characters long.
+        paramKey: metadata
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Threads / Runs / Create And Run
+    operationId: createThreadAndRun
+    method: post
+    path: /threads/runs
+    description: Create a thread and run it in one request.
     externalDocs: https://platform.openai.com/docs/api-reference
     params:
       - paramName: assistantId
-        description: The ID of the assistant to modify.
+        description: The ID of the [assistant](/docs/api-reference/assistants) to use to
+          execute this run.
         paramKey: assistant_id
-        in: path
+        in: body
         schema:
           type: string
         required: true
-      - paramName: model
+      - paramName: thread
         description: >
-          ID of the model to use.
+          Options to create a new thread. If no thread is provided when running
+          a 
+
+          request, an empty thread will be created.
+        paramKey: thread
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: model
+        description: The ID of the [Model](/docs/api-reference/models) to be used to
+          execute this run. If a value is provided here, it will override the
+          model associated with the assistant. If not, the model associated with
+          the assistant will be used.
         paramKey: model
         in: body
         schema:
-          type: string
-          default: gpt-4o
-        required: false
-      - paramName: name
-        description: |
-          The name of the assistant. The maximum length is 256 characters.
-        paramKey: name
-        in: body
-        schema:
-          type: string
-        required: false
-      - paramName: description
-        description: >
-          The description of the assistant. The maximum length is 512 characters.
-        paramKey: description
-        in: body
-        schema:
-          type: string
+          type: any
         required: false
       - paramName: instructions
-        description: >
-          The system instructions that the assistant uses. The maximum length is
-          256,000 characters.
+        description: Override the default system message of the assistant. This is
+          useful for modifying the behavior on a per-run basis.
         paramKey: instructions
         in: body
         schema:
           type: string
         required: false
       - paramName: tools
-        description: >
-          A list of tool enabled on the assistant. There can be a maximum of 128
-          tools per assistant. Tools can be of types `code_interpreter`,
-          `file_search`, or `function`.
+        description: Override the tools the assistant can use for this run. This is
+          useful for modifying the behavior on a per-run basis.
         paramKey: tools
         in: body
         schema:
@@ -1496,9 +4318,18 @@ modules:
       - paramName: metadata
         description: >
           Set of 16 key-value pairs that can be attached to an object. This can
-          be useful for storing additional information about the object in a
-          structured format. Keys can be a maximum of 64 characters long and
-          values can be a maxium of 512 characters long.
+          be
+
+          useful for storing additional information about the object in a
+          structured
+
+          format, and querying for objects via API or the dashboard. 
+
+
+          Keys are strings with a maximum length of 64 characters. Values are
+          strings
+
+          with a maximum length of 512 characters.
         paramKey: metadata
         in: body
         schema:
@@ -1534,10 +4365,87 @@ modules:
           maximum: 1
           default: 1
         required: false
+      - paramName: stream
+        description: >
+          If `true`, returns a stream of events that happen during the Run as
+          server-sent events, terminating when the Run enters a terminal state
+          with a `data: [DONE]` message.
+        paramKey: stream
+        in: body
+        schema:
+          type: boolean
+        required: false
+      - paramName: maxPromptTokens
+        description: >
+          The maximum number of prompt tokens that may be used over the course
+          of the run. The run will make a best effort to use only the number of
+          prompt tokens specified, across multiple turns of the run. If the run
+          exceeds the number of prompt tokens specified, the run will end with
+          status `incomplete`. See `incomplete_details` for more info.
+        paramKey: max_prompt_tokens
+        in: body
+        schema:
+          type: number
+          minimum: 256
+        required: false
+      - paramName: maxCompletionTokens
+        description: >
+          The maximum number of completion tokens that may be used over the
+          course of the run. The run will make a best effort to use only the
+          number of completion tokens specified, across multiple turns of the
+          run. If the run exceeds the number of completion tokens specified, the
+          run will end with status `incomplete`. See `incomplete_details` for
+          more info.
+        paramKey: max_completion_tokens
+        in: body
+        schema:
+          type: number
+          minimum: 256
+        required: false
+      - paramName: truncationStrategy
+        description: Controls for how a thread will be truncated prior to the run. Use
+          this to control the intial context window of the run.
+        paramKey: truncation_strategy
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: toolChoice
+        description: >
+          Controls which (if any) tool is called by the model.
+
+          `none` means the model will not call any tools and instead generates a
+          message.
+
+          `auto` is the default value and means the model can pick between
+          generating a message or calling one or more tools.
+
+          `required` means the model must call one or more tools before
+          responding to the user.
+
+          Specifying a particular tool like `{"type": "file_search"}` or
+          `{"type": "function", "function": {"name": "my_function"}}` forces the
+          model to call that tool.
+        paramKey: tool_choice
+        in: body
+        schema:
+          type: any
+        required: false
+      - paramName: parallelToolCalls
+        description: Whether to enable [parallel function
+          calling](/docs/guides/function-calling#configuring-parallel-function-calling)
+          during tool use.
+        paramKey: parallel_tool_calls
+        in: body
+        schema:
+          type: boolean
+          default: true
+        required: false
       - paramName: responseFormat
         description: >
           Specifies the format that the model must output. Compatible with
-          GPT-4o, GPT-4 Turbo, and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+          GPT-4o, GPT-4 Turbo, and all GPT-3.5 Turbo models since
+          `gpt-3.5-turbo-1106`.
 
           Setting to `{ "type": "json_object" }` enables JSON mode, which
           guarantees the message the model generates is valid JSON.
@@ -1652,9 +4560,18 @@ modules:
       - paramName: metadata
         description: >
           Set of 16 key-value pairs that can be attached to an object. This can
-          be useful for storing additional information about the object in a
-          structured format. Keys can be a maximum of 64 characters long and
-          values can be a maxium of 512 characters long.
+          be
+
+          useful for storing additional information about the object in a
+          structured
+
+          format, and querying for objects via API or the dashboard. 
+
+
+          Keys are strings with a maximum length of 64 characters. Values are
+          strings
+
+          with a maximum length of 512 characters.
         paramKey: metadata
         in: body
         schema:
@@ -1683,7 +4600,7 @@ modules:
     externalDocs: https://platform.openai.com/docs/api-reference
     params:
       - paramName: threadId
-        description: The ID of the threads the messages
+        description: The ID of the [thread](/docs/api-reference/threads) the messages
           belong to.
         paramKey: thread_id
         in: path
@@ -1728,7 +4645,7 @@ modules:
         description: >
           A cursor for use in pagination. `before` is an object ID that defines
           your place in the list. For instance, if you make a list request and
-          receive 100 objects, ending with obj_foo, your subsequent call can
+          receive 100 objects, starting with obj_foo, your subsequent call can
           include before=obj_foo in order to fetch the previous page of the
           list.
         paramKey: before
@@ -1744,7 +4661,7 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName:  Threads / Messages / Create
+  - moduleName: Threads / Messages / Create
     operationId: createMessage
     method: post
     path: /threads/{thread_id}/messages
@@ -1752,7 +4669,7 @@ modules:
     externalDocs: https://platform.openai.com/docs/api-reference
     params:
       - paramName: threadId
-        description: The ID of the threads to create a
+        description: The ID of the [thread](/docs/api-reference/threads) to create a
           message for.
         paramKey: thread_id
         in: path
@@ -1798,16 +4715,25 @@ modules:
       - paramName: metadata
         description: >
           Set of 16 key-value pairs that can be attached to an object. This can
-          be useful for storing additional information about the object in a
-          structured format. Keys can be a maximum of 64 characters long and
-          values can be a maxium of 512 characters long.
+          be
+
+          useful for storing additional information about the object in a
+          structured
+
+          format, and querying for objects via API or the dashboard. 
+
+
+          Keys are strings with a maximum length of 64 characters. Values are
+          strings
+
+          with a maximum length of 512 characters.
         paramKey: metadata
         in: body
         schema:
           type: any
         required: false
     requestBodyType: json
-  - moduleName:  Threads / Messages / Retrieve
+  - moduleName: Threads / Messages / Retrieve
     operationId: getMessage
     method: get
     path: /threads/{thread_id}/messages/{message_id}
@@ -1815,7 +4741,7 @@ modules:
     externalDocs: https://platform.openai.com/docs/api-reference
     params:
       - paramName: threadId
-        description: The ID of the threads to which this
+        description: The ID of the [thread](/docs/api-reference/threads) to which this
           message belongs.
         paramKey: thread_id
         in: path
@@ -1829,7 +4755,7 @@ modules:
         schema:
           type: string
         required: true
-  - moduleName:  Threads / Messages / Modify
+  - moduleName: Threads / Messages / Modify
     operationId: modifyMessage
     method: post
     path: /threads/{thread_id}/messages/{message_id}
@@ -1853,16 +4779,25 @@ modules:
       - paramName: metadata
         description: >
           Set of 16 key-value pairs that can be attached to an object. This can
-          be useful for storing additional information about the object in a
-          structured format. Keys can be a maximum of 64 characters long and
-          values can be a maxium of 512 characters long.
+          be
+
+          useful for storing additional information about the object in a
+          structured
+
+          format, and querying for objects via API or the dashboard. 
+
+
+          Keys are strings with a maximum length of 64 characters. Values are
+          strings
+
+          with a maximum length of 512 characters.
         paramKey: metadata
         in: body
         schema:
           type: any
         required: false
     requestBodyType: json
-  - moduleName:  Threads / Messages / Delete
+  - moduleName: Threads / Messages / Delete
     operationId: deleteMessage
     method: delete
     path: /threads/{thread_id}/messages/{message_id}
@@ -1883,203 +4818,7 @@ modules:
         schema:
           type: string
         required: true
-  - moduleName:  Threads / Runs / Create And Run
-    operationId: createThreadAndRun
-    method: post
-    path: /threads/runs
-    description: Create a thread and run it in one request.
-    externalDocs: https://platform.openai.com/docs/api-reference
-    params:
-      - paramName: assistantId
-        description: The ID of the assistant to use to execute this run.
-        paramKey: assistant_id
-        in: body
-        schema:
-          type: string
-        required: true
-      - paramName: thread
-        description: ""
-        paramKey: thread
-        in: body
-        schema:
-          type: any
-        required: false
-      - paramName: model
-        description: The ID of the model to be used to
-          execute this run. If a value is provided here, it will override the
-          model associated with the assistant. If not, the model associated with
-          the assistant will be used.
-        paramKey: model
-        in: body
-        schema:
-          type: any
-        required: false
-      - paramName: instructions
-        description: Override the default system message of the assistant. This is
-          useful for modifying the behavior on a per-run basis.
-        paramKey: instructions
-        in: body
-        schema:
-          type: string
-        required: false
-      - paramName: tools
-        description: Override the tools the assistant can use for this run. This is
-          useful for modifying the behavior on a per-run basis.
-        paramKey: tools
-        in: body
-        schema:
-          type: array
-          items:
-            type: any
-        required: false
-      - paramName: toolResources
-        description: >
-          A set of resources that are used by the assistant's tools. The
-          resources are specific to the type of tool. For example, the
-          `code_interpreter` tool requires a list of file IDs, while the
-          `file_search` tool requires a list of vector store IDs.
-        paramKey: tool_resources
-        in: body
-        schema:
-          type: any
-        required: false
-      - paramName: metadata
-        description: >
-          Set of 16 key-value pairs that can be attached to an object. This can
-          be useful for storing additional information about the object in a
-          structured format. Keys can be a maximum of 64 characters long and
-          values can be a maxium of 512 characters long.
-        paramKey: metadata
-        in: body
-        schema:
-          type: any
-        required: false
-      - paramName: temperature
-        description: >
-          What sampling temperature to use, between 0 and 2. Higher values like
-          0.8 will make the output more random, while lower values like 0.2 will
-          make it more focused and deterministic.
-        paramKey: temperature
-        in: body
-        schema:
-          type: number
-          minimum: 0
-          maximum: 2
-          default: 1
-        required: false
-      - paramName: topP
-        description: >
-          An alternative to sampling with temperature, called nucleus sampling,
-          where the model considers the results of the tokens with top_p
-          probability mass. So 0.1 means only the tokens comprising the top 10%
-          probability mass are considered.
-
-
-          We generally recommend altering this or temperature but not both.
-        paramKey: top_p
-        in: body
-        schema:
-          type: number
-          minimum: 0
-          maximum: 1
-          default: 1
-        required: false
-      - paramName: stream
-        description: >
-          If `true`, returns a stream of events that happen during the Run as
-          server-sent events, terminating when the Run enters a terminal state
-          with a `data: [DONE]` message.
-        paramKey: stream
-        in: body
-        schema:
-          type: boolean
-        required: false
-      - paramName: maxPromptTokens
-        description: >
-          The maximum number of prompt tokens that may be used over the course
-          of the run. The run will make a best effort to use only the number of
-          prompt tokens specified, across multiple turns of the run. If the run
-          exceeds the number of prompt tokens specified, the run will end with
-          status `incomplete`. See `incomplete_details` for more info.
-        paramKey: max_prompt_tokens
-        in: body
-        schema:
-          type: number
-          minimum: 256
-        required: false
-      - paramName: maxCompletionTokens
-        description: >
-          The maximum number of completion tokens that may be used over the
-          course of the run. The run will make a best effort to use only the
-          number of completion tokens specified, across multiple turns of the
-          run. If the run exceeds the number of completion tokens specified, the
-          run will end with status `incomplete`. See `incomplete_details` for
-          more info.
-        paramKey: max_completion_tokens
-        in: body
-        schema:
-          type: number
-          minimum: 256
-        required: false
-      - paramName: truncationStrategy
-        description: Controls for how a thread will be truncated prior to the run. Use
-          this to control the intial context window of the run.
-        paramKey: truncation_strategy
-        in: body
-        schema:
-          type: any
-        required: false
-      - paramName: toolChoice
-        description: >
-          Controls which (if any) tool is called by the model.
-
-          `none` means the model will not call any tools and instead generates a
-          message.
-
-          `auto` is the default value and means the model can pick between
-          generating a message or calling one or more tools.
-
-          `required` means the model must call one or more tools before
-          responding to the user.
-
-          Specifying a particular tool like `{"type": "file_search"}` or
-          `{"type": "function", "function": {"name": "my_function"}}` forces the
-          model to call that tool.
-        paramKey: tool_choice
-        in: body
-        schema:
-          type: any
-        required: false
-      - paramName: parallelToolCalls
-        description: Whether to enable parallel function calling during tool use.
-        paramKey: parallel_tool_calls
-        in: body
-        schema:
-          type: boolean
-        required: false
-      - paramName: responseFormat
-        description: >
-          Specifies the format that the model must output. Compatible with
-          GPT-4o, GPT-4 Turbo, and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
-
-          Setting to `{ "type": "json_object" }` enables JSON mode, which
-          guarantees the message the model generates is valid JSON.
-
-          **Important:** when using JSON mode, you **must** also instruct the
-          model to produce JSON yourself via a system or user message. Without
-          this, the model may generate an unending stream of whitespace until
-          the generation reaches the token limit, resulting in a long-running
-          and seemingly "stuck" request. Also note that the message content may
-          be partially cut off if `finish_reason="length"`, which indicates the
-          generation exceeded `max_tokens` or the conversation exceeded the max
-          context length.
-        paramKey: response_format
-        in: body
-        schema:
-          type: any
-        required: false
-    requestBodyType: json
-  - moduleName:  Threads / Runs / List
+  - moduleName: Threads / Runs / List
     operationId: listRuns
     method: get
     path: /threads/{thread_id}/runs
@@ -2131,7 +4870,7 @@ modules:
         description: >
           A cursor for use in pagination. `before` is an object ID that defines
           your place in the list. For instance, if you make a list request and
-          receive 100 objects, ending with obj_foo, your subsequent call can
+          receive 100 objects, starting with obj_foo, your subsequent call can
           include before=obj_foo in order to fetch the previous page of the
           list.
         paramKey: before
@@ -2139,7 +4878,7 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName:  Threads / Runs / Create
+  - moduleName: Threads / Runs / Create
     operationId: createRun
     method: post
     path: /threads/{thread_id}/runs
@@ -2153,8 +4892,26 @@ modules:
         schema:
           type: string
         required: true
+      - paramName: include[]
+        description: >
+          A list of additional fields to include in the response. Currently the
+          only supported value is
+          `step_details.tool_calls[*].file_search.results[*].content` to fetch
+          the file search result content.
+
+
+          See the [file search tool
+          documentation](/docs/assistants/tools/file-search#customizing-file-search-settings)
+          for more information.
+        paramKey: include[]
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
       - paramName: assistantId
-        description: The ID of the assistant to use to
+        description: The ID of the [assistant](/docs/api-reference/assistants) to use to
           execute this run.
         paramKey: assistant_id
         in: body
@@ -2162,7 +4919,7 @@ modules:
           type: string
         required: true
       - paramName: model
-        description: The ID of the model to be used to
+        description: The ID of the [Model](/docs/api-reference/models) to be used to
           execute this run. If a value is provided here, it will override the
           model associated with the assistant. If not, the model associated with
           the assistant will be used.
@@ -2172,7 +4929,10 @@ modules:
           type: any
         required: false
       - paramName: instructions
-        description: Overrides the instructions of the assistant. This is useful for modifying the behavior on a per-run basis.
+        description: Overrides the
+          [instructions](/docs/api-reference/assistants/createAssistant) of the
+          assistant. This is useful for modifying the behavior on a per-run
+          basis.
         paramKey: instructions
         in: body
         schema:
@@ -2209,9 +4969,18 @@ modules:
       - paramName: metadata
         description: >
           Set of 16 key-value pairs that can be attached to an object. This can
-          be useful for storing additional information about the object in a
-          structured format. Keys can be a maximum of 64 characters long and
-          values can be a maxium of 512 characters long.
+          be
+
+          useful for storing additional information about the object in a
+          structured
+
+          format, and querying for objects via API or the dashboard. 
+
+
+          Keys are strings with a maximum length of 64 characters. Values are
+          strings
+
+          with a maximum length of 512 characters.
         paramKey: metadata
         in: body
         schema:
@@ -2314,16 +5083,20 @@ modules:
           type: any
         required: false
       - paramName: parallelToolCalls
-        description: Whether to enable parallel function calling during tool use.
+        description: Whether to enable [parallel function
+          calling](/docs/guides/function-calling#configuring-parallel-function-calling)
+          during tool use.
         paramKey: parallel_tool_calls
         in: body
         schema:
           type: boolean
+          default: true
         required: false
       - paramName: responseFormat
         description: >
           Specifies the format that the model must output. Compatible with
-          GPT-4o, GPT-4 Turbo, and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+          GPT-4o, GPT-4 Turbo, and all GPT-3.5 Turbo models since
+          `gpt-3.5-turbo-1106`.
 
           Setting to `{ "type": "json_object" }` enables JSON mode, which
           guarantees the message the model generates is valid JSON.
@@ -2342,7 +5115,7 @@ modules:
           type: any
         required: false
     requestBodyType: json
-  - moduleName:  Threads / Runs / Retrieve
+  - moduleName: Threads / Runs / Retrieve
     operationId: getRun
     method: get
     path: /threads/{thread_id}/runs/{run_id}
@@ -2350,7 +5123,7 @@ modules:
     externalDocs: https://platform.openai.com/docs/api-reference
     params:
       - paramName: threadId
-        description: The ID of the thread that was run.
+        description: The ID of the [thread](/docs/api-reference/threads) that was run.
         paramKey: thread_id
         in: path
         schema:
@@ -2363,7 +5136,7 @@ modules:
         schema:
           type: string
         required: true
-  - moduleName:  Threads / Runs / Modify
+  - moduleName: Threads / Runs / Modify
     operationId: modifyRun
     method: post
     path: /threads/{thread_id}/runs/{run_id}
@@ -2371,7 +5144,7 @@ modules:
     externalDocs: https://platform.openai.com/docs/api-reference
     params:
       - paramName: threadId
-        description: The ID of the thread that was run.
+        description: The ID of the [thread](/docs/api-reference/threads) that was run.
         paramKey: thread_id
         in: path
         schema:
@@ -2387,62 +5160,25 @@ modules:
       - paramName: metadata
         description: >
           Set of 16 key-value pairs that can be attached to an object. This can
-          be useful for storing additional information about the object in a
-          structured format. Keys can be a maximum of 64 characters long and
-          values can be a maxium of 512 characters long.
+          be
+
+          useful for storing additional information about the object in a
+          structured
+
+          format, and querying for objects via API or the dashboard. 
+
+
+          Keys are strings with a maximum length of 64 characters. Values are
+          strings
+
+          with a maximum length of 512 characters.
         paramKey: metadata
         in: body
         schema:
           type: any
         required: false
     requestBodyType: json
-  - moduleName:  Threads / Runs / Submit Tool Outputs
-    operationId: submitToolOutputsToRun
-    method: post
-    path: /threads/{thread_id}/runs/{run_id}/submit_tool_outputs
-    description: >
-      When a run has the `status: "requires_action"` and `required_action.type`
-      is `submit_tool_outputs`, this endpoint can be used to submit the outputs
-      from the tool calls once they're all completed. All outputs must be
-      submitted in a single request.
-    externalDocs: https://platform.openai.com/docs/api-reference
-    params:
-      - paramName: threadId
-        description: The ID of the thread to which this
-          run belongs.
-        paramKey: thread_id
-        in: path
-        schema:
-          type: string
-        required: true
-      - paramName: runId
-        description: The ID of the run that requires the tool output submission.
-        paramKey: run_id
-        in: path
-        schema:
-          type: string
-        required: true
-      - paramName: toolOutputs
-        description: A list of tools for which the outputs are being submitted.
-        paramKey: tool_outputs
-        in: body
-        schema:
-          type: array
-          items:
-            type: any
-        required: true
-      - paramName: stream
-        description: >
-          If `true`, returns a stream of events that happen during the Run as
-          server-sent events, terminating when the Run enters a terminal state
-          with a `data: [DONE]` message.
-        paramKey: stream
-        in: body
-        schema:
-          type: boolean
-        required: false
-    requestBodyType: json
-  - moduleName:  Threads / Runs / Cancel
+  - moduleName: Threads / Runs / Cancel
     operationId: cancelRun
     method: post
     path: /threads/{thread_id}/runs/{run_id}/cancel
@@ -2463,7 +5199,7 @@ modules:
         schema:
           type: string
         required: true
-  - moduleName:  Threads / Runs / Steps / List
+  - moduleName: Threads / Runs / Steps / List
     operationId: listRunSteps
     method: get
     path: /threads/{thread_id}/runs/{run_id}/steps
@@ -2522,7 +5258,7 @@ modules:
         description: >
           A cursor for use in pagination. `before` is an object ID that defines
           your place in the list. For instance, if you make a list request and
-          receive 100 objects, ending with obj_foo, your subsequent call can
+          receive 100 objects, starting with obj_foo, your subsequent call can
           include before=obj_foo in order to fetch the previous page of the
           list.
         paramKey: before
@@ -2530,7 +5266,25 @@ modules:
         schema:
           type: string
         required: false
-  - moduleName:  Threads / Runs / Steps / Retrieve
+      - paramName: include[]
+        description: >
+          A list of additional fields to include in the response. Currently the
+          only supported value is
+          `step_details.tool_calls[*].file_search.results[*].content` to fetch
+          the file search result content.
+
+
+          See the [file search tool
+          documentation](/docs/assistants/tools/file-search#customizing-file-search-settings)
+          for more information.
+        paramKey: include[]
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+  - moduleName: Threads / Runs / Steps / Retrieve
     operationId: getRunStep
     method: get
     path: /threads/{thread_id}/runs/{run_id}/steps/{step_id}
@@ -2558,6 +5312,190 @@ modules:
         schema:
           type: string
         required: true
+      - paramName: include[]
+        description: >
+          A list of additional fields to include in the response. Currently the
+          only supported value is
+          `step_details.tool_calls[*].file_search.results[*].content` to fetch
+          the file search result content.
+
+
+          See the [file search tool
+          documentation](/docs/assistants/tools/file-search#customizing-file-search-settings)
+          for more information.
+        paramKey: include[]
+        in: query
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+  - moduleName: Assistants / Threads / Runs / Submit Tool Outputs
+    method: post
+    path: /threads/{thread_id}/runs/{run_id}/submit_tool_outputs
+    description: >
+      When a run has the `status: "requires_action"` and `required_action.type`
+      is `submit_tool_outputs`, this endpoint can be used to submit the outputs
+      from the tool calls once they're all completed. All outputs must be
+      submitted in a single request.
+    externalDocs: ""
+    operationId: submitToolOuputsToRun
+    params:
+      - paramName: threadId
+        description: The ID of the [thread](/docs/api-reference/threads) to which this
+          run belongs.
+        paramKey: thread_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: runId
+        description: The ID of the run that requires the tool output submission.
+        paramKey: run_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: toolOutputs
+        description: A list of tools for which the outputs are being submitted.
+        paramKey: tool_outputs
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+      - paramName: stream
+        description: >
+          If `true`, returns a stream of events that happen during the Run as
+          server-sent events, terminating when the Run enters a terminal state
+          with a `data: [DONE]` message.
+        paramKey: stream
+        in: body
+        schema:
+          type: boolean
+        required: false
+    requestBodyType: json
+  - moduleName: Uploads / Create
+    operationId: createUpload
+    method: post
+    path: /uploads
+    description: >
+      Creates an intermediate Upload object that you can add Parts to.
+      Currently, an Upload can accept at most 8 GB in total and expires after an
+      hour after you create it. Once you complete the Upload, we will create a
+      File object that contains all the parts you uploaded. This File is usable
+      in the rest of our platform as a regular File object.
+    externalDocs: https://platform.openai.com/docs/api-reference
+    params:
+      - paramName: filename
+        description: |
+          The name of the file to upload.
+        paramKey: filename
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: purpose
+        description: >
+          The intended purpose of the uploaded file.
+
+
+          See the [documentation on File
+          purposes](/docs/api-reference/files/create#files-create-purpose).
+        paramKey: purpose
+        in: body
+        schema:
+          type: string
+          enum:
+            - assistants
+            - batch
+            - fine-tune
+            - vision
+        required: true
+      - paramName: bytes
+        description: |
+          The number of bytes in the file you are uploading.
+        paramKey: bytes
+        in: body
+        schema:
+          type: number
+        required: true
+      - paramName: mimeType
+        description: >
+          The MIME type of the file.
+
+
+          This must fall within the supported MIME types for your file purpose.
+          See the supported MIME types for assistants and vision.
+        paramKey: mime_type
+        in: body
+        schema:
+          type: string
+        required: true
+    requestBodyType: json
+  - moduleName: Uploads / Cancel
+    operationId: cancelUpload
+    method: post
+    path: /uploads/{upload_id}/cancel
+    description: |
+      Cancels the Upload. No Parts may be added after an Upload is cancelled.
+    externalDocs: https://platform.openai.com/docs/api-reference
+    params:
+      - paramName: uploadId
+        description: |
+          The ID of the Upload.
+        paramKey: upload_id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Uploads / Complete
+    operationId: completeUpload
+    method: post
+    path: /uploads/{upload_id}/complete
+    description: >
+      Completes the Upload.
+
+      Within the returned Upload object, there is a nested File object that is
+      ready to use in the rest of the platform.
+
+      You can specify the order of the Parts by passing in an ordered list of
+      the Part IDs.
+
+      The number of bytes uploaded upon completion must match the number of
+      bytes initially specified when creating the Upload object. No Parts may be
+      added after an Upload is completed.
+    externalDocs: https://platform.openai.com/docs/api-reference
+    params:
+      - paramName: uploadId
+        description: |
+          The ID of the Upload.
+        paramKey: upload_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: partIds
+        description: |
+          The ordered list of Part IDs.
+        paramKey: part_ids
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: true
+      - paramName: md5
+        description: >
+          The optional md5 checksum for the file contents to verify if the bytes
+          uploaded matches what you expect.
+        paramKey: md5
+        in: body
+        schema:
+          type: string
+        required: false
+    requestBodyType: json
   - moduleName: Vector Stores / List
     operationId: listVectorStores
     method: get
@@ -2603,7 +5541,7 @@ modules:
         description: >
           A cursor for use in pagination. `before` is an object ID that defines
           your place in the list. For instance, if you make a list request and
-          receive 100 objects, ending with obj_foo, your subsequent call can
+          receive 100 objects, starting with obj_foo, your subsequent call can
           include before=obj_foo in order to fetch the previous page of the
           list.
         paramKey: before
@@ -2619,7 +5557,7 @@ modules:
     externalDocs: https://platform.openai.com/docs/api-reference
     params:
       - paramName: fileIds
-        description: A list of File IDs that the vector
+        description: A list of [File](/docs/api-reference/files) IDs that the vector
           store should use. Useful for tools like `file_search` that can access
           files.
         paramKey: file_ids
@@ -2654,9 +5592,18 @@ modules:
       - paramName: metadata
         description: >
           Set of 16 key-value pairs that can be attached to an object. This can
-          be useful for storing additional information about the object in a
-          structured format. Keys can be a maximum of 64 characters long and
-          values can be a maxium of 512 characters long.
+          be
+
+          useful for storing additional information about the object in a
+          structured
+
+          format, and querying for objects via API or the dashboard. 
+
+
+          Keys are strings with a maximum length of 64 characters. Values are
+          strings
+
+          with a maximum length of 512 characters.
         paramKey: metadata
         in: body
         schema:
@@ -2708,9 +5655,18 @@ modules:
       - paramName: metadata
         description: >
           Set of 16 key-value pairs that can be attached to an object. This can
-          be useful for storing additional information about the object in a
-          structured format. Keys can be a maximum of 64 characters long and
-          values can be a maxium of 512 characters long.
+          be
+
+          useful for storing additional information about the object in a
+          structured
+
+          format, and querying for objects via API or the dashboard. 
+
+
+          Keys are strings with a maximum length of 64 characters. Values are
+          strings
+
+          with a maximum length of 512 characters.
         paramKey: metadata
         in: body
         schema:
@@ -2897,7 +5853,7 @@ modules:
           type: string
         required: true
       - paramName: fileIds
-        description: A list of File IDs that the vector
+        description: A list of [File](/docs/api-reference/files) IDs that the vector
           store should use. Useful for tools like `file_search` that can access
           files.
         paramKey: file_ids
@@ -3018,7 +5974,7 @@ modules:
         description: >
           A cursor for use in pagination. `before` is an object ID that defines
           your place in the list. For instance, if you make a list request and
-          receive 100 objects, ending with obj_foo, your subsequent call can
+          receive 100 objects, starting with obj_foo, your subsequent call can
           include before=obj_foo in order to fetch the previous page of the
           list.
         paramKey: before
@@ -3039,66 +5995,43 @@ modules:
             - failed
             - cancelled
         required: false
-  - moduleName: Batches / Create
-    operationId: createBatch
-    method: post
-    path: /batches
-    description: Creates and executes a batch from an uploaded file of requests
-    externalDocs: https://platform.openai.com/docs/api-reference
-    params:
-      - paramName: inputFileId
-        description: >
-          The ID of an uploaded file that contains requests for the new batch.
-
-          See upload file for how to upload a file.
-
-          Your input file must be formatted as a JSONL, and must be uploaded
-          with the purpose `batch`. The file can contain up to 50,000 requests,
-          and can be up to 100 MB in size.
-        paramKey: input_file_id
-        in: body
-        schema:
-          type: string
-        required: true
-      - paramName: endpoint
-        description: The endpoint to be used for all requests in the batch. Currently
-          `/v1/chat/completions`, `/v1/embeddings`, and `/v1/completions` are
-          supported. Note that `/v1/embeddings` batches are also restricted to a
-          maximum of 50,000 embedding inputs across all requests in the batch.
-        paramKey: endpoint
-        in: body
-        schema:
-          type: string
-          enum:
-            - /v1/chat/completions
-            - /v1/embeddings
-            - /v1/completions
-        required: true
-      - paramName: completionWindow
-        description: The time frame within which the batch should be processed.
-          Currently only `24h` is supported.
-        paramKey: completion_window
-        in: body
-        schema:
-          type: string
-          enum:
-            - 24h
-        required: true
-      - paramName: metadata
-        description: Optional custom metadata for the batch.
-        paramKey: metadata
-        in: body
-        schema:
-          type: any
-        required: false
-    requestBodyType: json
-  - moduleName: Batches / List
-    operationId: listBatches
+  - moduleName: Vector Stores / Files / List
+    operationId: listVectorStoreFiles
     method: get
-    path: /batches
-    description: List your organization's batches.
+    path: /vector_stores/{vector_store_id}/files
+    description: Returns a list of vector store files.
     externalDocs: https://platform.openai.com/docs/api-reference
     params:
+      - paramName: vectorStoreId
+        description: The ID of the vector store that the files belong to.
+        paramKey: vector_store_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: limit
+        description: >
+          A limit on the number of objects to be returned. Limit can range
+          between 1 and 100, and the default is 20.
+        paramKey: limit
+        in: query
+        schema:
+          type: number
+          default: 20
+        required: false
+      - paramName: order
+        description: >
+          Sort order by the `created_at` timestamp of the objects. `asc` for
+          ascending order and `desc` for descending order.
+        paramKey: order
+        in: query
+        schema:
+          type: string
+          default: desc
+          enum:
+            - asc
+            - desc
+        required: false
       - paramName: after
         description: >
           A cursor for use in pagination. `after` is an object ID that defines
@@ -3110,44 +6043,104 @@ modules:
         schema:
           type: string
         required: false
-      - paramName: limit
+      - paramName: before
         description: >
-          A limit on the number of objects to be returned. Limit can range
-          between 1 and 100, and the default is 20.
-        paramKey: limit
+          A cursor for use in pagination. `before` is an object ID that defines
+          your place in the list. For instance, if you make a list request and
+          receive 100 objects, starting with obj_foo, your subsequent call can
+          include before=obj_foo in order to fetch the previous page of the
+          list.
+        paramKey: before
         in: query
         schema:
-          type: number
-          default: 20
+          type: string
         required: false
-  - moduleName: Batches / Retrieve
-    operationId: retrieveBatch
-    method: get
-    path: /batches/{batch_id}
-    description: Retrieves a batch.
-    externalDocs: https://platform.openai.com/docs/api-reference
-    params:
-      - paramName: batchId
-        description: The ID of the batch to retrieve.
-        paramKey: batch_id
-        in: path
+      - paramName: filter
+        description: Filter by file status. One of `in_progress`, `completed`, `failed`,
+          `cancelled`.
+        paramKey: filter
+        in: query
         schema:
           type: string
-        required: true
-  - moduleName: Batches / Cancel
-    operationId: cancelBatch
+          enum:
+            - in_progress
+            - completed
+            - failed
+            - cancelled
+        required: false
+  - moduleName: Vector Stores / Files / Create
+    operationId: createVectorStoreFile
     method: post
-    path: /batches/{batch_id}/cancel
-    description: Cancels an in-progress batch. The batch will be in status
-      `cancelling` for up to 10 minutes, before changing to `cancelled`, where
-      it will have partial results (if any) available in the output file.
+    path: /vector_stores/{vector_store_id}/files
+    description: Create a vector store file by attaching a File to a vector store.
     externalDocs: https://platform.openai.com/docs/api-reference
     params:
-      - paramName: batchId
-        description: The ID of the batch to cancel.
-        paramKey: batch_id
+      - paramName: vectorStoreId
+        description: |
+          The ID of the vector store for which to create a File.
+        paramKey: vector_store_id
         in: path
         schema:
           type: string
         required: true
-  
+      - paramName: fileId
+        description: A [File](/docs/api-reference/files) ID that the vector store should
+          use. Useful for tools like `file_search` that can access files.
+        paramKey: file_id
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: chunkingStrategy
+        description: The chunking strategy used to chunk the file(s). If not set, will
+          use the `auto` strategy.
+        paramKey: chunking_strategy
+        in: body
+        schema:
+          type: any
+        required: false
+    requestBodyType: json
+  - moduleName: Vector Stores / Files / Retrieve
+    operationId: getVectorStoreFile
+    method: get
+    path: /vector_stores/{vector_store_id}/files/{file_id}
+    description: Retrieves a vector store file.
+    externalDocs: https://platform.openai.com/docs/api-reference
+    params:
+      - paramName: vectorStoreId
+        description: The ID of the vector store that the file belongs to.
+        paramKey: vector_store_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: fileId
+        description: The ID of the file being retrieved.
+        paramKey: file_id
+        in: path
+        schema:
+          type: string
+        required: true
+  - moduleName: Vector Stores / Files / Delete
+    operationId: deleteVectorStoreFile
+    method: delete
+    path: /vector_stores/{vector_store_id}/files/{file_id}
+    description: Delete a vector store file. This will remove the file from the
+      vector store but the file itself will not be deleted. To delete the file,
+      use the delete endpoint.
+    externalDocs: https://platform.openai.com/docs/api-reference
+    params:
+      - paramName: vectorStoreId
+        description: The ID of the vector store that the file belongs to.
+        paramKey: vector_store_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: fileId
+        description: The ID of the file to delete.
+        paramKey: file_id
+        in: path
+        schema:
+          type: string
+        required: true
