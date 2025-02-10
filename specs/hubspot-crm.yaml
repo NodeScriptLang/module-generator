@@ -18,6 +18,7 @@ modules:
     path: /crm/v3/objects/contacts/batch/read
     description: Read a batch of contacts by internal ID, or unique property values
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/contacts/batch/read_read
     params:
       - paramName: archived
         description: Whether to return only results that have been archived.
@@ -71,6 +72,7 @@ modules:
       the internal object ID.  Control what is returned via the `properties`
       query param.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/objects/contacts/{contactId}_getById
     params:
       - paramName: contactId
         description: ""
@@ -135,6 +137,7 @@ modules:
     path: /crm/v3/objects/contacts/{contactId}
     description: Move an Object identified by `{contactId}` to the recycling bin.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: delete-/crm/v3/objects/contacts/{contactId}_archive
     params:
       - paramName: contactId
         description: ""
@@ -153,6 +156,7 @@ modules:
       will be overwritten. Read-only and non-existent properties will be
       ignored. Properties values can be cleared by passing an empty string.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: patch-/crm/v3/objects/contacts/{contactId}_update
     params:
       - paramName: contactId
         description: ""
@@ -185,6 +189,7 @@ modules:
     path: /crm/v3/objects/contacts/merge
     description: Merge two contacts with same type
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/contacts/merge_merge
     params:
       - paramName: objectIdToMerge
         description: ""
@@ -206,6 +211,7 @@ modules:
     path: /crm/v3/objects/contacts/batch/archive
     description: Archive a batch of contacts by ID
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/contacts/batch/archive_archive
     params:
       - paramName: inputs
         description: ""
@@ -222,6 +228,7 @@ modules:
     path: /crm/v3/objects/contacts/batch/create
     description: Create a batch of contacts
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/contacts/batch/create_create
     params:
       - paramName: inputs
         description: ""
@@ -238,6 +245,7 @@ modules:
     path: /crm/v3/objects/contacts/batch/update
     description: Update a batch of contacts
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/contacts/batch/update_update
     params:
       - paramName: inputs
         description: ""
@@ -257,6 +265,7 @@ modules:
       contact by email address. If email address is not found, the email address
       will be added to a blocklist and prevent it from being used in the future.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/contacts/gdpr-delete_purge
     params:
       - paramName: idProperty
         description: ""
@@ -279,6 +288,7 @@ modules:
     description: Read a page of contacts. Control what is returned via the
       `properties` query param.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/objects/contacts_getPage
     params:
       - paramName: limit
         description: The maximum number of results to display per page.
@@ -359,6 +369,7 @@ modules:
       object, including the ID. Documentation and examples for creating standard
       contacts is provided.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/contacts_create
     params:
       - paramName: associations
         description: ""
@@ -400,6 +411,7 @@ modules:
     path: /crm/v3/objects/contacts/search
     description: ""
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/contacts/search_doSearch
     params:
       - paramName: query
         description: ""
@@ -455,6 +467,7 @@ modules:
     path: /crm/v3/objects/deals/batch/read
     description: Read a batch of deals by internal ID, or unique property values
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/deals/batch/read_read
     params:
       - paramName: archived
         description: Whether to return only results that have been archived.
@@ -509,6 +522,7 @@ modules:
       specified by the `idProperty` query param.  Control what is returned via
       the `properties` query param.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/objects/deals/{dealId}_getById
     params:
       - paramName: dealId
         description: ""
@@ -582,6 +596,7 @@ modules:
     path: /crm/v3/objects/deals/{dealId}
     description: Move an Object identified by `{dealId}` to the recycling bin.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: delete-/crm/v3/objects/deals/{dealId}_archive
     params:
       - paramName: dealId
         description: ""
@@ -602,6 +617,7 @@ modules:
       properties will be ignored. Properties values can be cleared by passing an
       empty string.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: patch-/crm/v3/objects/deals/{dealId}_update
     params:
       - paramName: dealId
         description: ""
@@ -648,6 +664,7 @@ modules:
     path: /crm/v3/objects/deals/merge
     description: Merge two deals with same type
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/deals/merge_merge
     params:
       - paramName: objectIdToMerge
         description: ""
@@ -669,6 +686,7 @@ modules:
     path: /crm/v3/objects/deals/batch/archive
     description: Archive a batch of deals by ID
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/deals/batch/archive_archive
     params:
       - paramName: inputs
         description: ""
@@ -685,6 +703,7 @@ modules:
     path: /crm/v3/objects/deals/batch/create
     description: Create a batch of deals
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/deals/batch/create_create
     params:
       - paramName: inputs
         description: ""
@@ -701,6 +720,7 @@ modules:
     path: /crm/v3/objects/deals/batch/update
     description: Update a batch of deals
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/deals/batch/update_update
     params:
       - paramName: inputs
         description: ""
@@ -718,6 +738,7 @@ modules:
     description: Read a page of deals. Control what is returned via the `properties`
       query param.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/objects/deals_getPage
     params:
       - paramName: limit
         description: The maximum number of results to display per page.
@@ -798,6 +819,7 @@ modules:
       object, including the ID. Documentation and examples for creating standard
       deals is provided.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/deals_create
     params:
       - paramName: associations
         description: ""
@@ -849,6 +871,7 @@ modules:
     path: /crm/v3/objects/deals/search
     description: ""
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/deals/search_doSearch
     params:
       - paramName: query
         description: ""
@@ -904,6 +927,7 @@ modules:
     path: /crm-object-schemas/v3/schemas
     description: Returns all object schemas that have been defined for your account.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm-object-schemas/v3/schemas_getAll
     params:
       - paramName: archived
         description: Whether to return only results that have been archived.
@@ -922,6 +946,7 @@ modules:
       associations. The entire object schema, including its object type ID,
       properties, and associations will be returned in the response.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm-object-schemas/v3/schemas_create
     params:
       - paramName: secondaryDisplayProperties
         description: The names of secondary properties for this object. These will be
@@ -1142,6 +1167,7 @@ modules:
     path: /crm-object-schemas/v3/schemas/{objectType}
     description: Returns an existing object schema.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm-object-schemas/v3/schemas/{objectType}_getById
     params:
       - paramName: objectType
         description: Fully qualified name or object type ID of your schema.
@@ -1158,6 +1184,7 @@ modules:
     description: Deletes a schema. Any existing records of this schema must be
       deleted **first**. Otherwise this call will fail.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: delete-/crm-object-schemas/v3/schemas/{objectType}_archive
     params:
       - paramName: objectType
         description: Fully qualified name or object type ID of your schema.
@@ -1183,6 +1210,7 @@ modules:
     path: /crm-object-schemas/v3/schemas/{objectType}
     description: Update the details for an existing object schema.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: patch-/crm-object-schemas/v3/schemas/{objectType}_update
     params:
       - paramName: objectType
         description: Fully qualified name or object type ID of your schema.
@@ -1315,6 +1343,7 @@ modules:
     description: Defines a new association between the primary schema's object type
       and other object types.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm-object-schemas/v3/schemas/{objectType}/associations_createAssociation
     params:
       - paramName: objectType
         description: Fully qualified name or object type ID of your schema.
@@ -1364,6 +1393,7 @@ modules:
     path: /crm-object-schemas/v3/schemas/{objectType}/associations/{associationIdentifier}
     description: Removes an existing association from a schema.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: delete-/crm-object-schemas/v3/schemas/{objectType}/associations/{associationIdentifier}_archiveAssociation
     params:
       - paramName: objectType
         description: Fully qualified name or object type ID of your schema.
@@ -1390,6 +1420,7 @@ modules:
       204 No Content response on success regardless of the initial state of the
       property (e.g. active, already archived, non-existent).
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/properties/{objectType}/batch/archive_archive
     params:
       - paramName: objectType
         description: ""
@@ -1415,6 +1446,7 @@ modules:
     path: /crm/v3/properties/{objectType}/groups/{groupName}
     description: Read a property group identified by {groupName}.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/properties/{objectType}/groups/{groupName}_getByName
     params:
       - paramName: objectType
         description: ""
@@ -1439,6 +1471,7 @@ modules:
     path: /crm/v3/properties/{objectType}/groups/{groupName}
     description: Move a property group identified by {groupName} to the recycling bin.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: delete-/crm/v3/properties/{objectType}/groups/{groupName}_archive
     params:
       - paramName: objectType
         description: ""
@@ -1464,6 +1497,7 @@ modules:
     description: Perform a partial update of a property group identified by
       {groupName}. Provided fields will be overwritten.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: patch-/crm/v3/properties/{objectType}/groups/{groupName}_update
     params:
       - paramName: objectType
         description: ""
@@ -1511,6 +1545,7 @@ modules:
     path: /crm/v3/properties/{objectType}/{propertyName}
     description: Read a property identified by {propertyName}.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/properties/{objectType}/{propertyName}_getByName
     params:
       - paramName: objectType
         description: ""
@@ -1554,6 +1589,7 @@ modules:
     path: /crm/v3/properties/{objectType}/{propertyName}
     description: Move a property identified by {propertyName} to the recycling bin.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: delete-/crm/v3/properties/{objectType}/{propertyName}_archive
     params:
       - paramName: objectType
         description: ""
@@ -1579,6 +1615,7 @@ modules:
     description: Perform a partial update of a property identified by
       {propertyName}. Provided fields will be overwritten.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: patch-/crm/v3/properties/{objectType}/{propertyName}_update
     params:
       - paramName: objectType
         description: ""
@@ -1887,6 +1924,7 @@ modules:
     path: /crm/v3/properties/{objectType}/batch/read
     description: Read a provided list of properties.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/properties/{objectType}/batch/read_read
     params:
       - paramName: objectType
         description: ""
@@ -1920,6 +1958,7 @@ modules:
     description: Create a batch of properties using the same rules as when creating
       an individual property.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/properties/{objectType}/batch/create_create
     params:
       - paramName: objectType
         description: ""
@@ -1946,6 +1985,7 @@ modules:
     description: Read all existing properties for the specified object type and
       HubSpot account.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/properties/{objectType}_getAll
     params:
       - paramName: objectType
         description: ""
@@ -1980,6 +2020,7 @@ modules:
     path: /crm/v3/properties/{objectType}
     description: Create and return a copy of a new property for the specified object type.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/imports/_create
     params:
       - paramName: objectType
         description: ""
@@ -2407,6 +2448,7 @@ modules:
     description: Read all existing property groups for the specified object type and
       HubSpot account.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/properties/{objectType}/groups_getAll
     params:
       - paramName: objectType
         description: ""
@@ -2422,6 +2464,7 @@ modules:
     path: /crm/v3/properties/{objectType}/groups
     description: Create and return a copy of a new property group.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/properties/{objectType}/groups_create
     params:
       - paramName: objectType
         description: ""
@@ -2475,6 +2518,7 @@ modules:
     description: Return a reverse chronological list of all mutations that have
       occurred on the pipeline stage identified by `{stageId}`.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/pipelines/{objectType}/{pipelineId}/stages/{stageId}/audit_getAudit
     params:
       - paramName: objectType
         description: ""
@@ -2499,6 +2543,7 @@ modules:
     path: /crm/v3/pipelines/{objectType}/{pipelineId}
     description: Return a single pipeline object identified by its unique `{pipelineId}`.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: et-/crm/v3/pipelines/{objectType}/{pipelineId}_getById
     params:
       - paramName: objectType
         description: ""
@@ -2525,6 +2570,7 @@ modules:
       provided. This will overwrite any existing pipeline stages. The updated
       pipeline will be returned in the response.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: put-/crm/v3/pipelines/{objectType}/{pipelineId}_replace
     params:
       - paramName: objectType
         description: ""
@@ -2630,6 +2676,7 @@ modules:
     path: /crm/v3/pipelines/{objectType}/{pipelineId}
     description: Delete the pipeline identified by `{pipelineId}`.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: delete-/crm/v3/pipelines/{objectType}/{pipelineId}_archive
     params:
       - paramName: objectType
         description: ""
@@ -2675,6 +2722,7 @@ modules:
     description: Perform a partial update of the pipeline identified by
       `{pipelineId}`. The updated pipeline will be returned in the response.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: patch-/crm/v3/pipelines/{objectType}/{pipelineId}_update
     params:
       - paramName: objectType
         description: ""
@@ -2755,6 +2803,7 @@ modules:
     description: Return a reverse chronological list of all mutations that have
       occurred on the pipeline identified by `{pipelineId}`.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/pipelines/{objectType}/{pipelineId}/audit_getAudit
     params:
       - paramName: objectType
         description: ""
@@ -2780,6 +2829,7 @@ modules:
     description: Return all the stages associated with the pipeline identified by
       `{pipelineId}`.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/pipelines/{objectType}/{pipelineId}/stages_getAll
     params:
       - paramName: objectType
         description: ""
@@ -2806,6 +2856,7 @@ modules:
       `{pipelineId}`. The entire stage object, including its unique ID, will be
       returned in the response.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/pipelines/{objectType}/{pipelineId}/stages_create
     params:
       - paramName: objectType
         description: ""
@@ -2883,6 +2934,7 @@ modules:
     path: /crm/v3/pipelines/{objectType}
     description: Return all pipelines for the object type specified by `{objectType}`.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/pipelines/{objectType}_getAll
     params:
       - paramName: objectType
         description: ""
@@ -2900,6 +2952,7 @@ modules:
       pipeline object, including its unique ID, will be returned in the
       response.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/pipelines/{objectType}_create
     params:
       - paramName: objectType
         description: ""
@@ -2977,6 +3030,7 @@ modules:
     description: Return the stage identified by `{stageId}` associated with the
       pipeline identified by `{pipelineId}`.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/pipelines/{objectType}/{pipelineId}/stages/{stageId}_getById
     params:
       - paramName: objectType
         description: ""
@@ -3011,6 +3065,7 @@ modules:
     description: Replace all the properties of an existing pipeline stage with the
       values provided. The updated stage will be returned in the response.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: put-/crm/v3/pipelines/{objectType}/{pipelineId}/stages/{stageId}_replace
     params:
       - paramName: objectType
         description: ""
@@ -3098,6 +3153,7 @@ modules:
     description: Delete the pipeline stage identified by `{stageId}` associated with
       the pipeline identified by `{pipelineId}`.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: delete-/crm/v3/pipelines/{objectType}/{pipelineId}/stages/{stageId}_archive
     params:
       - paramName: objectType
         description: ""
@@ -3134,6 +3190,7 @@ modules:
       properties not included in this update will keep their existing values.
       The updated stage will be returned in the response.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: patch-/crm/v3/pipelines/{objectType}/{pipelineId}/stages/{stageId}_update
     params:
       - paramName: objectType
         description: ""
@@ -3232,6 +3289,7 @@ modules:
     path: /crm/v3/objects/{objectType}/batch/read
     description: Read a batch of objects by internal ID, or unique property values
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/{objectType}/batch/read_read
     params:
       - paramName: objectType
         description: ""
@@ -3295,6 +3353,7 @@ modules:
       as specified by the `idProperty` query param.  Control what is returned
       via the `properties` query param.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/objects/{objectType}/{objectId}_getById
     params:
       - paramName: objectType
         description: ""
@@ -3377,6 +3436,7 @@ modules:
     path: /crm/v3/objects/{objectType}/{objectId}
     description: Move an Object identified by `{objectId}` to the recycling bin.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: delete-/crm/v3/objects/{objectType}/{objectId}_archive
     params:
       - paramName: objectType
         description: ""
@@ -3407,6 +3467,7 @@ modules:
       non-existent properties will result in an error. Properties values can be
       cleared by passing an empty string.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: patch-/crm/v3/objects/{objectType}/{objectId}_update
     params:
       - paramName: objectType
         description: ""
@@ -3473,6 +3534,7 @@ modules:
     path: /crm/v3/objects/{objectType}/batch/archive
     description: Archive a batch of objects by ID
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/{objectType}/batch/archive_archive
     params:
       - paramName: objectType
         description: ""
@@ -3498,6 +3560,7 @@ modules:
     path: /crm/v3/objects/{objectType}/batch/create
     description: Create a batch of objects
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/{objectType}/batch/create_create
     params:
       - paramName: objectType
         description: ""
@@ -3523,6 +3586,7 @@ modules:
     path: /crm/v3/objects/{objectType}/batch/update
     description: Update a batch of objects by internal ID, or unique property values
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/{objectType}/batch/update_update
     params:
       - paramName: objectType
         description: ""
@@ -3549,6 +3613,7 @@ modules:
     description: Read a page of objects. Control what is returned via the
       `properties` query param.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/objects/{objectType}_getPage"
     params:
       - paramName: objectType
         description: ""
@@ -3638,6 +3703,7 @@ modules:
       the object, including the ID. Documentation and examples for creating
       standard objects is provided.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/{objectType}_create
     params:
       - paramName: objectType
         description: ""
@@ -3679,6 +3745,7 @@ modules:
       specified by the `idProperty` query param. `idProperty` query param refers
       to a property whose values are unique for the object.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/{objectType}/batch/upsert_upsert
     params:
       - paramName: objectType
         description: ""
@@ -3704,6 +3771,7 @@ modules:
     path: /crm/v3/objects/{objectType}/search
     description: ""
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/{objectType}/search_doSearch
     params:
       - paramName: objectType
         description: ""
@@ -3768,6 +3836,7 @@ modules:
     path: /crm/v3/objects/companies/batch/read
     description: Read a batch of companies by internal ID, or unique property values
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/companies/batch/read_read
     params:
       - paramName: archived
         description: Whether to return only results that have been archived.
@@ -3822,6 +3891,7 @@ modules:
       as specified by the `idProperty` query param.  Control what is returned
       via the `properties` query param.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/objects/companies/{companyId}_getById
     params:
       - paramName: companyId
         description: ""
@@ -3895,6 +3965,7 @@ modules:
     path: /crm/v3/objects/companies/{companyId}
     description: Move an Object identified by `{companyId}` to the recycling bin.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: delete-/crm/v3/objects/companies/{companyId}_archive
     params:
       - paramName: companyId
         description: ""
@@ -3915,6 +3986,7 @@ modules:
       properties will be ignored. Properties values can be cleared by passing an
       empty string.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: patch-/crm/v3/objects/companies/{companyId}_update
     params:
       - paramName: companyId
         description: ""
@@ -3961,6 +4033,7 @@ modules:
     path: /crm/v3/objects/companies/merge
     description: Merge two companies with same type
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/companies/merge_merge
     params:
       - paramName: objectIdToMerge
         description: ""
@@ -3982,6 +4055,7 @@ modules:
     path: /crm/v3/objects/companies/batch/archive
     description: Archive a batch of companies by ID
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/companies/batch/archive_archive
     params:
       - paramName: inputs
         description: ""
@@ -3998,6 +4072,7 @@ modules:
     path: /crm/v3/objects/companies/batch/create
     description: Create a batch of companies
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/companies/batch/create_create
     params:
       - paramName: inputs
         description: ""
@@ -4014,6 +4089,7 @@ modules:
     path: /crm/v3/objects/companies/batch/update
     description: Update a batch of companies
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/companies/batch/update_update
     params:
       - paramName: inputs
         description: ""
@@ -4033,6 +4109,7 @@ modules:
       contact by email address. If email address is not found, the email address
       will be added to a blocklist and prevent it from being used in the future.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/companies/gdpr-delete_purge
     params:
       - paramName: idProperty
         description: ""
@@ -4055,6 +4132,7 @@ modules:
     description: Read a page of companies. Control what is returned via the
       `properties` query param.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/objects/companies_getPage
     params:
       - paramName: limit
         description: The maximum number of results to display per page.
@@ -4135,6 +4213,7 @@ modules:
       object, including the ID. Documentation and examples for creating standard
       companies is provided.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/companies_create
     params:
       - paramName: associations
         description: ""
@@ -4186,6 +4265,7 @@ modules:
     path: /crm/v3/objects/companies/search
     description: ""
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/companies/search_doSearch
     params:
       - paramName: query
         description: ""
@@ -4241,6 +4321,7 @@ modules:
     path: /crm/v3/extensions/calling/{appId}/settings
     description: Returns the calling extension settings configured for your app.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/extensions/calling/{appId}/settings_getById
     params:
       - paramName: appId
         description: The ID of the app.
@@ -4257,6 +4338,7 @@ modules:
     description: Used to set the menu label, target iframe URL, and dimensions for
       your calling extension.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/extensions/calling/{appId}/settings_create
     params:
       - paramName: appId
         description: The ID of the app.
@@ -4327,6 +4409,7 @@ modules:
     description: Deletes this calling extension. This will remove your service as an
       option for all connected accounts.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: delete-/crm/v3/extensions/calling/{appId}/settings_archive
     params:
       - paramName: appId
         description: The ID of the app.
@@ -4342,6 +4425,7 @@ modules:
     path: /crm/v3/extensions/calling/{appId}/settings
     description: Updates existing calling extension settings.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: patch-/crm/v3/extensions/calling/{appId}/settings_update
     params:
       - paramName: appId
         description: The ID of the app.
@@ -4411,6 +4495,7 @@ modules:
     path: /crm/v3/extensions/calling/{appId}/settings/recording
     description: Retrieve the recording endpoint configured for a calling extension app.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/extensions/calling/{appId}/settings/recording_getUrlFormat
     params:
       - paramName: appId
         description: The ID of the app.
@@ -4427,6 +4512,7 @@ modules:
     description: Configure a calling extension app with an external URL that HubSpot
       will use to retrieve call recordings.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/extensions/calling/{appId}/settings/recording_registerUrlFormat
     params:
       - paramName: appId
         description: The ID of the app.
@@ -4451,6 +4537,7 @@ modules:
     description: Update the URL that HubSpot will use to retrieve call recordings
       for a calling extension app.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: patch-/crm/v3/extensions/calling/{appId}/settings/recording_updateUrlFormat
     params:
       - paramName: appId
         description: The ID of the app.
@@ -4475,6 +4562,7 @@ modules:
     description: Mark a call recording as ready for transcription, specifying the
       call by its ID (`engagementid`).
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/extensions/calling/recordings/ready_markAsReady
     params:
       - paramName: engagementId
         description: ""
@@ -4490,6 +4578,7 @@ modules:
     description: Read a batch of feedback submissions by internal ID, or unique
       property values
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/feedback_submissions/batch/read_read
     params:
       - paramName: archived
         description: Whether to return only results that have been archived.
@@ -4544,6 +4633,7 @@ modules:
       optionally any unique property value as specified by the `idProperty`
       query param.  Control what is returned via the `properties` query param.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/objects/feedback_submissions/{feedbackSubmissionId}_getById
     params:
       - paramName: feedbackSubmissionId
         description: ""
@@ -4617,6 +4707,7 @@ modules:
     path: /crm/v3/objects/feedback_submissions/{feedbackSubmissionId}
     description: Move an Object identified by `{feedbackSubmissionId}` to the recycling bin.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: delete-/crm/v3/objects/feedback_submissions/{feedbackSubmissionId}_archive
     params:
       - paramName: feedbackSubmissionId
         description: ""
@@ -4637,6 +4728,7 @@ modules:
       overwritten. Read-only and non-existent properties will be ignored.
       Properties values can be cleared by passing an empty string.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: patch-/crm/v3/objects/feedback_submissions/{feedbackSubmissionId}_update
     params:
       - paramName: feedbackSubmissionId
         description: ""
@@ -4678,6 +4770,7 @@ modules:
     path: /crm/v3/objects/feedback_submissions/merge
     description: Merge two feedback submissions with same type
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/feedback_submissions/merge_merge
     params:
       - paramName: objectIdToMerge
         description: ""
@@ -4699,6 +4792,7 @@ modules:
     path: /crm/v3/objects/feedback_submissions/batch/archive
     description: Archive a batch of feedback submissions by ID
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/feedback_submissions/batch/archive_archive
     params:
       - paramName: inputs
         description: ""
@@ -4715,6 +4809,7 @@ modules:
     path: /crm/v3/objects/feedback_submissions/batch/create
     description: Create a batch of feedback submissions
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/feedback_submissions/batch/create_create
     params:
       - paramName: inputs
         description: ""
@@ -4731,6 +4826,7 @@ modules:
     path: /crm/v3/objects/feedback_submissions/batch/update
     description: Update a batch of feedback submissions
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/feedback_submissions/batch/update_update
     params:
       - paramName: inputs
         description: ""
@@ -4750,6 +4846,7 @@ modules:
       contact by email address. If email address is not found, the email address
       will be added to a blocklist and prevent it from being used in the future.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/feedback_submissions/gdpr-delete_purge
     params:
       - paramName: idProperty
         description: ""
@@ -4772,6 +4869,7 @@ modules:
     description: Read a page of feedback submissions. Control what is returned via
       the `properties` query param.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/objects/feedback_submissions_getPage
     params:
       - paramName: limit
         description: The maximum number of results to display per page.
@@ -4852,6 +4950,7 @@ modules:
       copy of the object, including the ID. Documentation and examples for
       creating standard feedback submissions is provided.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/feedback_submissions_create
     params:
       - paramName: associations
         description: ""
@@ -4875,6 +4974,7 @@ modules:
     path: /crm/v3/objects/feedback_submissions/search
     description: ""
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/feedback_submissions/search_doSearch
     params:
       - paramName: query
         description: ""
@@ -4930,6 +5030,7 @@ modules:
     path: /crm/v3/imports/{importId}/cancel
     description: This allows a developer to cancel an active import.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/imports/{importId}/cancel_cancel
     params:
       - paramName: importId
         description: ""
@@ -4945,6 +5046,7 @@ modules:
     path: /crm/v3/imports/{importId}
     description: A complete summary of an import record, including any updates.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/imports/{importId}_getById
     params:
       - paramName: importId
         description: ""
@@ -4960,6 +5062,7 @@ modules:
     path: /crm/v3/imports/{importId}/errors
     description: ""
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/imports/{importId}/errors_getErrors
     params:
       - paramName: after
         description: The paging cursor token of the last successfully read resource will
@@ -4995,6 +5098,7 @@ modules:
     path: /crm/v3/imports/
     description: Returns a paged list of active imports for this account.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/imports/_getPage
     params:
       - paramName: after
         description: The paging cursor token of the last successfully read resource will
@@ -5030,6 +5134,7 @@ modules:
     path: /crm/v3/objects/line_items/batch/read
     description: Read a batch of line items by internal ID, or unique property values
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/line_items/batch/read_read
     params:
       - paramName: archived
         description: Whether to return only results that have been archived.
@@ -5084,6 +5189,7 @@ modules:
       value as specified by the `idProperty` query param.  Control what is
       returned via the `properties` query param.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/objects/line_items/{lineItemId}_getById
     params:
       - paramName: lineItemId
         description: ""
@@ -5157,6 +5263,7 @@ modules:
     path: /crm/v3/objects/line_items/{lineItemId}
     description: Move an Object identified by `{lineItemId}` to the recycling bin.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: delete-/crm/v3/objects/line_items/{lineItemId}_archive
     params:
       - paramName: lineItemId
         description: ""
@@ -5177,6 +5284,7 @@ modules:
       properties will be ignored. Properties values can be cleared by passing an
       empty string.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: patch-/crm/v3/objects/line_items/{lineItemId}_update
     params:
       - paramName: lineItemId
         description: ""
@@ -5223,6 +5331,7 @@ modules:
     path: /crm/v3/objects/line_items/merge
     description: Merge two line items with same type
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/line_items/merge_merge
     params:
       - paramName: objectIdToMerge
         description: ""
@@ -5244,6 +5353,7 @@ modules:
     path: /crm/v3/objects/line_items/batch/archive
     description: Archive a batch of line items by ID
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/line_items/batch/archive_archive
     params:
       - paramName: inputs
         description: ""
@@ -5260,6 +5370,7 @@ modules:
     path: /crm/v3/objects/line_items/batch/create
     description: Create a batch of line items
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/line_items/batch/create_create
     params:
       - paramName: inputs
         description: ""
@@ -5276,6 +5387,7 @@ modules:
     path: /crm/v3/objects/line_items/batch/update
     description: Update a batch of line items
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/line_items/batch/update_update
     params:
       - paramName: inputs
         description: ""
@@ -5295,6 +5407,7 @@ modules:
       contact by email address. If email address is not found, the email address
       will be added to a blocklist and prevent it from being used in the future.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/line_items/gdpr-delete_purge
     params:
       - paramName: idProperty
         description: ""
@@ -5317,6 +5430,7 @@ modules:
     description: Read a page of line items. Control what is returned via the
       `properties` query param.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/objects/line_items_getPage
     params:
       - paramName: limit
         description: The maximum number of results to display per page.
@@ -5397,6 +5511,7 @@ modules:
       the object, including the ID. Documentation and examples for creating
       standard line items is provided.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/line_items_create
     params:
       - paramName: associations
         description: ""
@@ -5448,6 +5563,7 @@ modules:
     path: /crm/v3/objects/line_items/search
     description: ""
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/line_items/search_doSearch
     params:
       - paramName: query
         description: ""
@@ -5503,6 +5619,7 @@ modules:
     path: /crm/v3/owners/
     description: Get a page of owners
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/owners/_getPage
     params:
       - paramName: email
         description: Filter by email address (optional)
@@ -5549,6 +5666,7 @@ modules:
     path: /crm/v3/owners/{ownerId}
     description: Read an owner by given `id` or `userId`
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/owners/{ownerId}_getById
     params:
       - paramName: ownerId
         description: ""
@@ -5587,6 +5705,7 @@ modules:
     path: /crm/v3/objects/products/batch/read
     description: Read a batch of products by internal ID, or unique property values
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/products/batch/read_read
     params:
       - paramName: archived
         description: Whether to return only results that have been archived.
@@ -5641,6 +5760,7 @@ modules:
       as specified by the `idProperty` query param.  Control what is returned
       via the `properties` query param.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/objects/products/{productId}_getById
     params:
       - paramName: productId
         description: ""
@@ -5714,6 +5834,7 @@ modules:
     path: /crm/v3/objects/products/{productId}
     description: Move an Object identified by `{productId}` to the recycling bin.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: delete-/crm/v3/objects/products/{productId}_archive
     params:
       - paramName: productId
         description: ""
@@ -5734,6 +5855,7 @@ modules:
       properties will be ignored. Properties values can be cleared by passing an
       empty string.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: patch-/crm/v3/objects/products/{productId}_update
     params:
       - paramName: productId
         description: ""
@@ -5780,6 +5902,7 @@ modules:
     path: /crm/v3/objects/products/merge
     description: Merge two products with same type
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/products/merge_merge
     params:
       - paramName: objectIdToMerge
         description: ""
@@ -5801,6 +5924,7 @@ modules:
     path: /crm/v3/objects/products/batch/archive
     description: Archive a batch of products by ID
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/products/batch/archive_archive
     params:
       - paramName: inputs
         description: ""
@@ -5817,6 +5941,7 @@ modules:
     path: /crm/v3/objects/products/batch/create
     description: Create a batch of products
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/products/batch/create_create
     params:
       - paramName: inputs
         description: ""
@@ -5833,6 +5958,7 @@ modules:
     path: /crm/v3/objects/products/batch/update
     description: Update a batch of products
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/products/batch/update_update
     params:
       - paramName: inputs
         description: ""
@@ -5852,6 +5978,7 @@ modules:
       contact by email address. If email address is not found, the email address
       will be added to a blocklist and prevent it from being used in the future.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/products/gdpr-delete_purge
     params:
       - paramName: idProperty
         description: ""
@@ -5874,6 +6001,7 @@ modules:
     description: Read a page of products. Control what is returned via the
       `properties` query param.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/objects/products_getPage
     params:
       - paramName: limit
         description: The maximum number of results to display per page.
@@ -5954,6 +6082,7 @@ modules:
       object, including the ID. Documentation and examples for creating standard
       products is provided.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/products_create
     params:
       - paramName: associations
         description: ""
@@ -6005,6 +6134,7 @@ modules:
     path: /crm/v3/objects/products/search
     description: ""
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/products/search_doSearch
     params:
       - paramName: query
         description: ""
@@ -6060,6 +6190,7 @@ modules:
     path: /crm/v3/objects/quotes/batch/read
     description: Read a batch of quotes by internal ID, or unique property values
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/quotes/batch/read_read
     params:
       - paramName: archived
         description: Whether to return only results that have been archived.
@@ -6114,6 +6245,7 @@ modules:
       specified by the `idProperty` query param.  Control what is returned via
       the `properties` query param.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/objects/quotes/{quoteId}_getById
     params:
       - paramName: quoteId
         description: ""
@@ -6187,6 +6319,7 @@ modules:
     path: /crm/v3/objects/quotes/{quoteId}
     description: Move an Object identified by `{quoteId}` to the recycling bin.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: delete-/crm/v3/objects/quotes/{quoteId}_archive
     params:
       - paramName: quoteId
         description: ""
@@ -6207,6 +6340,7 @@ modules:
       properties will be ignored. Properties values can be cleared by passing an
       empty string.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: patch-/crm/v3/objects/quotes/{quoteId}_update
     params:
       - paramName: quoteId
         description: ""
@@ -6249,6 +6383,7 @@ modules:
     path: /crm/v3/objects/quotes/merge
     description: Merge two quotes with same type
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/quotes/merge_merge
     params:
       - paramName: objectIdToMerge
         description: ""
@@ -6270,6 +6405,7 @@ modules:
     path: /crm/v3/objects/quotes/batch/archive
     description: Archive a batch of quotes by ID
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/quotes/batch/archive_archive
     params:
       - paramName: inputs
         description: ""
@@ -6286,6 +6422,7 @@ modules:
     path: /crm/v3/objects/quotes/batch/create
     description: Create a batch of quotes
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/quotes/batch/create_create
     params:
       - paramName: inputs
         description: ""
@@ -6302,6 +6439,7 @@ modules:
     path: /crm/v3/objects/quotes/batch/update
     description: Update a batch of quotes
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/quotes/batch/update_update
     params:
       - paramName: inputs
         description: ""
@@ -6321,6 +6459,7 @@ modules:
       contact by email address. If email address is not found, the email address
       will be added to a blocklist and prevent it from being used in the future.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/quotes/gdpr-delete_purge
     params:
       - paramName: idProperty
         description: ""
@@ -6343,6 +6482,7 @@ modules:
     description: Read a page of quotes. Control what is returned via the
       `properties` query param.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/objects/quotes_getPage
     params:
       - paramName: limit
         description: The maximum number of results to display per page.
@@ -6423,6 +6563,7 @@ modules:
       object, including the ID. Documentation and examples for creating standard
       quotes is provided.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/quotes_create
     params:
       - paramName: associations
         description: ""
@@ -6466,6 +6607,7 @@ modules:
     path: /crm/v3/objects/quotes/search
     description: ""
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/quotes/search_doSearch
     params:
       - paramName: query
         description: ""
@@ -6521,6 +6663,7 @@ modules:
     path: /crm/v3/objects/tickets/batch/read
     description: Read a batch of tickets by internal ID, or unique property values
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/tickets/batch/read_read
     params:
       - paramName: archived
         description: Whether to return only results that have been archived.
@@ -6575,6 +6718,7 @@ modules:
       as specified by the `idProperty` query param.  Control what is returned
       via the `properties` query param.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/objects/tickets/{ticketId}_getById
     params:
       - paramName: ticketId
         description: ""
@@ -6648,6 +6792,7 @@ modules:
     path: /crm/v3/objects/tickets/{ticketId}
     description: Move an Object identified by `{ticketId}` to the recycling bin.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: delete-/crm/v3/objects/tickets/{ticketId}_archive
     params:
       - paramName: ticketId
         description: ""
@@ -6668,6 +6813,7 @@ modules:
       properties will be ignored. Properties values can be cleared by passing an
       empty string.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: patch-/crm/v3/objects/tickets/{ticketId}_update
     params:
       - paramName: ticketId
         description: ""
@@ -6713,6 +6859,7 @@ modules:
     path: /crm/v3/objects/tickets/merge
     description: Merge two tickets with same type
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/tickets/merge_merge
     params:
       - paramName: objectIdToMerge
         description: ""
@@ -6734,6 +6881,7 @@ modules:
     path: /crm/v3/objects/tickets/batch/archive
     description: Archive a batch of tickets by ID
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/tickets/batch/archive_archive
     params:
       - paramName: inputs
         description: ""
@@ -6750,6 +6898,7 @@ modules:
     path: /crm/v3/objects/tickets/batch/create
     description: Create a batch of tickets
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/tickets/batch/create_create
     params:
       - paramName: inputs
         description: ""
@@ -6766,6 +6915,7 @@ modules:
     path: /crm/v3/objects/tickets/batch/update
     description: Update a batch of tickets
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/tickets/batch/update_update
     params:
       - paramName: inputs
         description: ""
@@ -6785,6 +6935,7 @@ modules:
       contact by email address. If email address is not found, the email address
       will be added to a blocklist and prevent it from being used in the future.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/tickets/gdpr-delete_purge
     params:
       - paramName: idProperty
         description: ""
@@ -6807,6 +6958,7 @@ modules:
     description: Read a page of tickets. Control what is returned via the
       `properties` query param.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/objects/tickets_getPage
     params:
       - paramName: limit
         description: The maximum number of results to display per page.
@@ -6887,6 +7039,7 @@ modules:
       object, including the ID. Documentation and examples for creating standard
       tickets is provided.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/tickets_create
     params:
       - paramName: associations
         description: ""
@@ -6936,6 +7089,7 @@ modules:
     path: /crm/v3/objects/tickets/search
     description: ""
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/crm/v3/objects/tickets/search_doSearch
     params:
       - paramName: query
         description: ""
@@ -6994,6 +7148,7 @@ modules:
       `extraData` that isn't found in the event, it will be ignored and we'll
       render without it.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/integrators/timeline/v3/events/{eventTemplateId}/{eventId}/detail_getDetailById
     params:
       - paramName: eventTemplateId
         description: The event template ID.
@@ -7022,6 +7177,7 @@ modules:
       via `objectPropertyName`, this call will also attempt to updates those
       properties, or add them if they don't exist.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/integrators/timeline/v3/events_create
     params:
       - paramName: eventTemplateId
         description: The event template ID.
@@ -7302,6 +7458,7 @@ modules:
     description: This will update the existing token on an event template. Name and
       type can't be changed on existing tokens.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: put-/integrators/timeline/v3/{appId}/event-templates/{eventTemplateId}/tokens/{tokenName}_update
     params:
       - paramName: eventTemplateId
         description: The event template ID.
@@ -7400,6 +7557,7 @@ modules:
       Any lists or reports referencing deleted tokens will no longer return new
       contacts, but old ones will still exist in the lists.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: delete-/integrators/timeline/v3/{appId}/event-templates/{eventTemplateId}/tokens/{tokenName}_archive
     params:
       - paramName: eventTemplateId
         description: The event template ID.
@@ -7434,6 +7592,7 @@ modules:
     description: This returns the previously created event. It contains all existing
       info for the event, but not necessarily the CRM object.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/integrators/timeline/v3/events/{eventTemplateId}/{eventId}_getById
     params:
       - paramName: eventTemplateId
         description: The event template ID.
@@ -7462,6 +7621,7 @@ modules:
       object properties via `objectPropertyName`, this call will also attempt to
       updates those properties, or add them if they don't exist.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/integrators/timeline/v3/events/batch/create_createBatch
     params:
       - paramName: inputs
         description: A collection of timeline events we want to create.
@@ -7519,6 +7679,7 @@ modules:
       template references `extraData` that isn't found in the event, it will be
       ignored and we'll render without it.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/integrators/timeline/v3/events/{eventTemplateId}/{eventId}/render_getRenderById
     params:
       - paramName: eventTemplateId
         description: The event template ID.
@@ -7553,6 +7714,7 @@ modules:
     path: /integrators/timeline/v3/{appId}/event-templates
     description: Use this to list all event templates owned by your app.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/integrators/timeline/v3/{appId}/event-templates_getAll
     params:
       - paramName: appId
         description: The ID of the target app.
@@ -7566,6 +7728,7 @@ modules:
   - moduleName: Timeline / Templates / Create
     method: post
     path: /integrators/timeline/v3/{appId}/event-templates
+    operationId: post-/integrators/timeline/v3/{appId}/event-templates_create
     description: >-
       Event templates define the general structure for a custom timeline event.
       This includes formatted copy for its heading and details, as well as any
@@ -7792,6 +7955,7 @@ modules:
     path: /integrators/timeline/v3/{appId}/event-templates/{eventTemplateId}
     description: View the current state of a specific template and its tokens.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/integrators/timeline/v3/{appId}/event-templates/{eventTemplateId}_getById
     params:
       - paramName: eventTemplateId
         description: The event template ID.
@@ -7823,6 +7987,7 @@ modules:
       You can also update or replace all the tokens in the template here instead
       of doing individual API calls on the `/tokens` endpoint.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: put-/integrators/timeline/v3/{appId}/event-templates/{eventTemplateId}_update
     params:
       - paramName: eventTemplateId
         description: The event template ID.
@@ -8069,6 +8234,7 @@ modules:
       This action can't be undone, so it's highly recommended that you stop
       using any associated events before deleting a template.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: delete-/integrators/timeline/v3/{appId}/event-templates/{eventTemplateId}_archive
     params:
       - paramName: eventTemplateId
         description: The event template ID.
@@ -8107,6 +8273,7 @@ modules:
 
       Token names should be unique across the template.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: post-/integrators/timeline/v3/{appId}/event-templates/{eventTemplateId}/tokens_create
     params:
       - paramName: eventTemplateId
         description: The event template ID.
@@ -8284,6 +8451,7 @@ modules:
     description: Return the settings for a video conference application with the
       specified ID.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: get-/crm/v3/extensions/videoconferencing/settings/{appId}_getById
     params:
       - paramName: appId
         description: The ID of the video conference application. This is the identifier
@@ -8301,6 +8469,7 @@ modules:
     description: Updates the settings for a video conference application with the
       specified ID.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: put-/crm/v3/extensions/videoconferencing/settings/{appId}_replace
     params:
       - paramName: appId
         description: The ID of the video conference application. This is the identifier
@@ -8384,6 +8553,7 @@ modules:
     description: Deletes the settings for a video conference application with the
       specified ID.
     externalDocs: "https://developers.hubspot.com/beta-docs/reference/api"
+    operationId: delete-/crm/v3/extensions/videoconferencing/settings/{appId}_archive
     params:
       - paramName: appId
         description: The ID of the video conference application. This is the identifier
