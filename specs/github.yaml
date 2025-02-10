@@ -11703,7 +11703,7 @@ modules:
           type: any
         required: true
     requestBodyType: json
-  - moduleName: Repos / Remove Status Check Contexts
+  - moduleName: Repos / Status Check Contexts / Remove
     method: delete
     path: /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts
     description: Protected branches are available in public repositories with GitHub

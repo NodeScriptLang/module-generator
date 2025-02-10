@@ -401,7 +401,7 @@ modules:
     method: post
     path: /actions/{idAction}/reactions
     description: Adds a new reaction to an action
-    externalDocs: https://developer.atlassian.com/cloud/trello/rest""
+    externalDocs: "https://developer.atlassian.com/cloud/trello/rest"
     operationId: post-actions-idaction-reactions
     params:
       - paramName: idAction
