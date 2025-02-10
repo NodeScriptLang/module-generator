@@ -19,6 +19,7 @@ modules:
     path: /admin.apps.approve
     description: Approve an app for installation on a workspace.
     externalDocs: https://api.slack.com/methods/admin.apps.approve
+    operationId: admin_apps_approve
     params:
       - paramName: appId
         description: The id of the app to approve.
@@ -47,6 +48,7 @@ modules:
     path: /admin.apps.approved.list
     description: List approved apps for an org or workspace.
     externalDocs: https://api.slack.com/methods/admin.apps.approved.list
+    operationId: admin_apps_approved_list
     params:
       - paramName: limit
         description: The maximum number of items to return. Must be between 1 - 1000
@@ -83,6 +85,7 @@ modules:
     path: /admin.apps.requests.list
     description: List app requests for a team/workspace.
     externalDocs: https://api.slack.com/methods/admin.apps.requests.list
+    operationId: admin_apps_requests_list
     params:
       - paramName: limit
         description: The maximum number of items to return. Must be between 1 - 1000
@@ -112,6 +115,7 @@ modules:
     path: /admin.apps.restrict
     description: Restrict an app for installation on a workspace.
     externalDocs: https://api.slack.com/methods/admin.apps.restrict
+    operationId: admin_apps_restrict
     params:
       - paramName: appId
         description: The id of the app to restrict.
@@ -140,6 +144,7 @@ modules:
     path: /admin.apps.restricted.list
     description: List restricted apps for an org or workspace.
     externalDocs: https://api.slack.com/methods/admin.apps.restricted.list
+    operationId: admin_apps_restricted_list
     params:
       - paramName: limit
         description: The maximum number of items to return. Must be between 1 - 1000
@@ -176,6 +181,7 @@ modules:
     path: /admin.conversations.archive
     description: Archive a public or private channel.
     externalDocs: https://api.slack.com/methods/admin.conversations.archive
+    operationId: admin_conversations_archive
     params:
       - paramName: channelId
         description: The channel to archive.
@@ -190,6 +196,7 @@ modules:
     path: /admin.conversations.convertToPrivate
     description: Convert a public channel to a private channel.
     externalDocs: https://api.slack.com/methods/admin.conversations.convertToPrivate
+    operationId: admin_conversations_convertToPrivate
     params:
       - paramName: channelId
         description: The channel to convert to private.
@@ -204,6 +211,7 @@ modules:
     path: /admin.conversations.create
     description: Create a public or private channel-based conversation.
     externalDocs: https://api.slack.com/methods/admin.conversations.create
+    operationId: admin_conversations_create
     params:
       - paramName: description
         description: Description of the public or private channel to create.
@@ -249,6 +257,7 @@ modules:
     path: /admin.conversations.delete
     description: Delete a public or private channel.
     externalDocs: https://api.slack.com/methods/admin.conversations.delete
+    operationId: admin_conversations_delete
     params:
       - paramName: channelId
         description: The channel to delete.
@@ -263,6 +272,7 @@ modules:
     path: /admin.conversations.disconnectShared
     description: Disconnect a connected channel from one or more workspaces.
     externalDocs: https://api.slack.com/methods/admin.conversations.disconnectShared
+    operationId: admin_conversations_disconnectShared
     params:
       - paramName: channelId
         description: The channel to be disconnected from some workspaces.
@@ -287,6 +297,7 @@ modules:
       connected to other workspaces and then disconnected—and the corresponding
       original channel IDs for key revocation with EKM.
     externalDocs: https://api.slack.com/methods/admin.conversations.ekm.listOriginalConnectedChannelInfo
+    operationId: admin_conversations_ekm_listOriginalConnectedChannelInfo
     params:
       - paramName: channelIds
         description: A comma-separated list of channels to filter to.
@@ -324,6 +335,7 @@ modules:
     path: /admin.conversations.getConversationPrefs
     description: Get conversation preferences for a public or private channel.
     externalDocs: https://api.slack.com/methods/admin.conversations.getConversationPrefs
+    operationId: admin_conversations_getConversationPrefs
     params:
       - paramName: channelId
         description: The channel to get preferences for.
@@ -338,6 +350,7 @@ modules:
     description: Get all the workspaces a given public or private channel is
       connected to within this Enterprise org.
     externalDocs: https://api.slack.com/methods/admin.conversations.getTeams
+    operationId: admin_conversations_getTeams
     params:
       - paramName: channelId
         description: The channel to determine connected workspaces within the
@@ -368,6 +381,7 @@ modules:
     path: /admin.conversations.invite
     description: Invite a user to a public or private channel.
     externalDocs: https://api.slack.com/methods/admin.conversations.invite
+    operationId: admin_conversations_invite
     params:
       - paramName: channelId
         description: The channel that the users will be invited to.
@@ -389,6 +403,7 @@ modules:
     path: /admin.conversations.rename
     description: Rename a public or private channel.
     externalDocs: https://api.slack.com/methods/admin.conversations.rename
+    operationId: admin_conversations_rename
     params:
       - paramName: channelId
         description: The channel to rename.
@@ -410,6 +425,7 @@ modules:
     path: /admin.conversations.restrictAccess.addGroup
     description: Add an allowlist of IDP groups for accessing a channel
     externalDocs: https://api.slack.com/methods/admin.conversations.restrictAccess.addGroup
+    operationId: admin_conversations_restrictAccess_addGroup
     params:
       - paramName: channelId
         description: The channel to link this group to.
@@ -449,6 +465,7 @@ modules:
     path: /admin.conversations.restrictAccess.listGroups
     description: List all IDP Groups linked to a channel
     externalDocs: https://api.slack.com/methods/admin.conversations.restrictAccess.listGroups
+    operationId: admin_conversations_restrictAccess_listGroups
     params:
       - paramName: channelId
         description: ""
@@ -471,6 +488,7 @@ modules:
     path: /admin.conversations.restrictAccess.removeGroup
     description: Remove a linked IDP group linked from a private channel
     externalDocs: https://api.slack.com/methods/admin.conversations.restrictAccess.removeGroup
+    operationId: admin_conversations_restrictAccess_removeGroup
     params:
       - paramName: channelId
         description: The channel to remove the linked group from.
@@ -510,6 +528,7 @@ modules:
     path: /admin.conversations.search
     description: Search for public or private channels in an Enterprise organization.
     externalDocs: https://api.slack.com/methods/admin.conversations.search
+    operationId: admin_conversations_search
     params:
       - paramName: teamIds
         description: Comma separated string of team IDs, signifying the workspaces to
@@ -577,6 +596,7 @@ modules:
     path: /admin.conversations.setConversationPrefs
     description: Set the posting permissions for a public or private channel.
     externalDocs: https://api.slack.com/methods/admin.conversations.setConversationPrefs
+    operationId: admin_conversations_setConversationPrefs
     params:
       - paramName: channelId
         description: The channel to set the prefs for
@@ -599,6 +619,7 @@ modules:
     description: Set the workspaces in an Enterprise grid org that connect to a
       public or private channel.
     externalDocs: https://api.slack.com/methods/admin.conversations.setTeams
+    operationId: admin_conversations_setTeams
     params:
       - paramName: channelId
         description: The encoded `channel_id` to add or remove to workspaces.
@@ -636,6 +657,7 @@ modules:
     path: /admin.conversations.unarchive
     description: Unarchive a public or private channel.
     externalDocs: https://api.slack.com/methods/admin.conversations.unarchive
+    operationId: admin_conversations_unarchive
     params:
       - paramName: channelId
         description: The channel to unarchive.
@@ -650,6 +672,7 @@ modules:
     path: /admin.emoji.add
     description: Add an emoji.
     externalDocs: https://api.slack.com/methods/admin.emoji.add
+    operationId: admin_emoji_add
     params:
       - paramName: name
         description: The name of the emoji to be removed. Colons (`:myemoji:`) around
@@ -680,6 +703,7 @@ modules:
     path: /admin.emoji.addAlias
     description: Add an emoji alias.
     externalDocs: https://api.slack.com/methods/admin.emoji.addAlias
+    operationId: admin_emoji_addAlias
     params:
       - paramName: aliasFor
         description: The alias of the emoji.
@@ -709,6 +733,7 @@ modules:
     path: /admin.emoji.list
     description: List emoji for an Enterprise Grid organization.
     externalDocs: https://api.slack.com/methods/admin.emoji.list
+    operationId: admin_emoji_list
     params:
       - paramName: cursor
         description: Set `cursor` to `next_cursor` returned by the previous call to list
@@ -731,6 +756,7 @@ modules:
     path: /admin.emoji.remove
     description: Remove an emoji across an Enterprise Grid organization
     externalDocs: https://api.slack.com/methods/admin.emoji.remove
+    operationId: admin_emoji_remove
     params:
       - paramName: name
         description: The name of the emoji to be removed. Colons (`:myemoji:`) around
@@ -753,6 +779,7 @@ modules:
     path: /admin.emoji.rename
     description: Rename an emoji.
     externalDocs: https://api.slack.com/methods/admin.emoji.rename
+    operationId: admin_emoji_rename
     params:
       - paramName: name
         description: The name of the emoji to be renamed. Colons (`:myemoji:`) around
@@ -782,6 +809,7 @@ modules:
     path: /admin.inviteRequests.approve
     description: Approve a workspace invite request.
     externalDocs: https://api.slack.com/methods/admin.inviteRequests.approve
+    operationId: admin_inviteRequests_approve
     params:
       - paramName: inviteRequestId
         description: ID of the request to invite.
@@ -803,6 +831,7 @@ modules:
     path: /admin.inviteRequests.approved.list
     description: List all approved workspace invite requests.
     externalDocs: https://api.slack.com/methods/admin.inviteRequests.approved.list
+    operationId: admin_inviteRequests_approved_list
     params:
       - paramName: teamId
         description: ID for the workspace where the invite requests were made.
@@ -832,6 +861,7 @@ modules:
     path: /admin.inviteRequests.denied.list
     description: List all denied workspace invite requests.
     externalDocs: https://api.slack.com/methods/admin.inviteRequests.denied.list
+    operationId: admin_inviteRequests_denied_list
     params:
       - paramName: teamId
         description: ID for the workspace where the invite requests were made.
@@ -861,6 +891,7 @@ modules:
     path: /admin.inviteRequests.deny
     description: Deny a workspace invite request.
     externalDocs: https://api.slack.com/methods/admin.inviteRequests.deny
+    operationId: admin_inviteRequests_deny
     params:
       - paramName: inviteRequestId
         description: ID of the request to invite.
@@ -882,6 +913,7 @@ modules:
     path: /admin.inviteRequests.list
     description: List all pending workspace invite requests.
     externalDocs: https://api.slack.com/methods/admin.inviteRequests.list
+    operationId: admin_inviteRequests_list
     params:
       - paramName: teamId
         description: ID for the workspace where the invite requests were made.
@@ -911,6 +943,7 @@ modules:
     path: /admin.teams.admins.list
     description: List all of the admins on a given workspace.
     externalDocs: https://api.slack.com/methods/admin.teams.admins.list
+    operationId: admin_teams_admins_list
     params:
       - paramName: limit
         description: The maximum number of items to return.
@@ -939,6 +972,7 @@ modules:
     path: /admin.teams.create
     description: Create an Enterprise team.
     externalDocs: https://api.slack.com/methods/admin.teams.create
+    operationId: admin_teams_create
     params:
       - paramName: teamDescription
         description: Description for the team.
@@ -975,6 +1009,7 @@ modules:
     path: /admin.teams.list
     description: List all teams on an Enterprise organization
     externalDocs: https://api.slack.com/methods/admin.teams.list
+    operationId: admin_teams_list
     params:
       - paramName: limit
         description: The maximum number of items to return. Must be between 1 - 100 both
@@ -997,6 +1032,7 @@ modules:
     path: /admin.teams.owners.list
     description: List all of the owners on a given workspace.
     externalDocs: https://api.slack.com/methods/admin.teams.owners.list
+    operationId: admin_teams_owners_list
     params:
       - paramName: teamId
         description: ""
@@ -1026,6 +1062,7 @@ modules:
     path: /admin.teams.settings.info
     description: Fetch information about settings in a workspace
     externalDocs: https://api.slack.com/methods/admin.teams.settings.info
+    operationId: admin_teams_settings_info
     params:
       - paramName: teamId
         description: ""
@@ -1039,6 +1076,7 @@ modules:
     path: /admin.teams.settings.setDefaultChannels
     description: Set the default channels of a workspace.
     externalDocs: https://api.slack.com/methods/admin.teams.settings.setDefaultChannels
+    operationId: admin_teams_settings_setDefaultChannels
     params:
       - paramName: channelIds
         description: An array of channel IDs.
@@ -1067,6 +1105,7 @@ modules:
     path: /admin.teams.settings.setDescription
     description: Set the description of a given workspace.
     externalDocs: https://api.slack.com/methods/admin.teams.settings.setDescription
+    operationId: admin_teams_settings_setDescription
     params:
       - paramName: description
         description: The new description for the workspace.
@@ -1089,6 +1128,7 @@ modules:
     description: An API method that allows admins to set the discoverability of a
       given workspace
     externalDocs: https://api.slack.com/methods/admin.teams.settings.setDiscoverability
+    operationId: admin_teams_settings_setDiscoverability
     params:
       - paramName: discoverability
         description: This workspace's discovery setting. It must be set to one of
@@ -1111,6 +1151,7 @@ modules:
     path: /admin.teams.settings.setIcon
     description: Sets the icon of a workspace.
     externalDocs: https://api.slack.com/methods/admin.teams.settings.setIcon
+    operationId: admin_teams_settings_setIcon
     params:
       - paramName: imageUrl
         description: Image URL for the icon
@@ -1139,6 +1180,7 @@ modules:
     path: /admin.teams.settings.setName
     description: Set the name of a given workspace.
     externalDocs: https://api.slack.com/methods/admin.teams.settings.setName
+    operationId: admin_teams_settings_setName
     params:
       - paramName: name
         description: The new name of the workspace.
@@ -1160,6 +1202,7 @@ modules:
     path: /admin.usergroups.addChannels
     description: Add one or more default channels to an IDP group.
     externalDocs: https://api.slack.com/methods/admin.usergroups.addChannels
+    operationId: admin_usergroups_addChannels
     params:
       - paramName: channelIds
         description: Comma separated string of channel IDs.
@@ -1189,6 +1232,7 @@ modules:
     description: Associate one or more default workspaces with an organization-wide
       IDP group.
     externalDocs: https://api.slack.com/methods/admin.usergroups.addTeams
+    operationId: admin_usergroups_addTeams
     params:
       - paramName: autoProvision
         description: When `true`, this method automatically creates new workspace
@@ -1219,6 +1263,7 @@ modules:
     path: /admin.usergroups.listChannels
     description: List the channels linked to an org-level IDP group (user group).
     externalDocs: https://api.slack.com/methods/admin.usergroups.listChannels
+    operationId: admin_usergroups_listChannels
     params:
       - paramName: usergroupId
         description: ID of the IDP group to list default channels for.
@@ -1247,6 +1292,7 @@ modules:
     description: Remove one or more default channels from an org-level IDP group
       (user group).
     externalDocs: https://api.slack.com/methods/admin.usergroups.removeChannels
+    operationId: admin_usergroups_removeChannels
     params:
       - paramName: channelIds
         description: Comma-separated string of channel IDs
@@ -1268,6 +1314,7 @@ modules:
     path: /admin.users.assign
     description: Add an Enterprise user to a workspace.
     externalDocs: https://api.slack.com/methods/admin.users.assign
+    operationId: admin_users_assign
     params:
       - paramName: channelIds
         description: Comma separated values of channel IDs to add user in the new workspace.
@@ -1311,6 +1358,7 @@ modules:
     path: /admin.users.invite
     description: Invite a user to a workspace.
     externalDocs: https://api.slack.com/methods/admin.users.invite
+    operationId: admin_users_invite
     params:
       - paramName: channelIds
         description: A comma-separated list of `channel_id`s for this user to join. At
@@ -1385,6 +1433,7 @@ modules:
     path: /admin.users.list
     description: List users on a workspace
     externalDocs: https://api.slack.com/methods/admin.users.list
+    operationId: admin_users_list
     params:
       - paramName: teamId
         description: The ID (`T1234`) of the workspace.
@@ -1413,6 +1462,7 @@ modules:
     path: /admin.users.remove
     description: Remove a user from a workspace.
     externalDocs: https://api.slack.com/methods/admin.users.remove
+    operationId: admin_users_remove
     params:
       - paramName: teamId
         description: The ID (`T1234`) of the workspace.
@@ -1434,6 +1484,7 @@ modules:
     path: /admin.users.session.invalidate
     description: Invalidate a single session for a user by session_id
     externalDocs: https://api.slack.com/methods/admin.users.session.invalidate
+    operationId: admin_users_session_invalidate
     params:
       - paramName: sessionId
         description: ""
@@ -1455,6 +1506,7 @@ modules:
     path: /admin.users.session.reset
     description: Wipes all valid sessions on all devices for a given user
     externalDocs: https://api.slack.com/methods/admin.users.session.reset
+    operationId: admin_users_session_reset
     params:
       - paramName: mobileOnly
         description: "Only expire mobile sessions (default: false)"
@@ -1483,6 +1535,7 @@ modules:
     path: /admin.users.setAdmin
     description: Set an existing guest, regular user, or owner to be an admin user.
     externalDocs: https://api.slack.com/methods/admin.users.setAdmin
+    operationId: admin_users_setAdmin
     params:
       - paramName: teamId
         description: The ID (`T1234`) of the workspace.
@@ -1504,6 +1557,7 @@ modules:
     path: /admin.users.setExpiration
     description: Set an expiration for a guest user
     externalDocs: https://api.slack.com/methods/admin.users.setExpiration
+    operationId: admin_users_setExpiration
     params:
       - paramName: expirationTs
         description: Timestamp when guest account should be disabled.
@@ -1532,6 +1586,7 @@ modules:
     path: /admin.users.setOwner
     description: Set an existing guest, regular user, or admin user to be a workspace owner.
     externalDocs: https://api.slack.com/methods/admin.users.setOwner
+    operationId: admin_users_setOwner
     params:
       - paramName: teamId
         description: The ID (`T1234`) of the workspace.
@@ -1553,6 +1608,7 @@ modules:
     path: /admin.users.setRegular
     description: Set an existing guest user, admin user, or owner to be a regular user.
     externalDocs: https://api.slack.com/methods/admin.users.setRegular
+    operationId: admin_users_setRegular
     params:
       - paramName: teamId
         description: The ID (`T1234`) of the workspace.
@@ -1574,6 +1630,7 @@ modules:
     path: /api.test
     description: Checks API calling code.
     externalDocs: https://api.slack.com/methods/api.test
+    operationId: api_test
     params:
       - paramName: error
         description: Error response to return
@@ -1595,6 +1652,7 @@ modules:
     description: Get a list of authorizations for the given event context. Each
       authorization represents an app installation that the event is visible to.
     externalDocs: https://api.slack.com/methods/apps.event.authorizations.list
+    operationId: apps_event_authorizations_list
     params:
       - paramName: eventContext
         description: ""
@@ -1622,12 +1680,14 @@ modules:
     path: /apps.permissions.info
     description: Returns list of permissions this app has on a team.
     externalDocs: https://api.slack.com/methods/apps.permissions.info
+    operationId: apps_permissions_info
     params: []
   - moduleName: Apps / Permissions / Request
     method: get
     path: /apps.permissions.request
     description: Allows an app to request additional scopes
     externalDocs: https://api.slack.com/methods/apps.permissions.request
+    operationId: apps_permissions_request
     params:
       - paramName: scopes
         description: A comma separated list of scopes to request for
@@ -1648,6 +1708,7 @@ modules:
     path: /apps.permissions.resources.list
     description: Returns list of resource grants this app has on a team.
     externalDocs: https://api.slack.com/methods/apps.permissions.resources.list
+    operationId: apps_permissions_resources_list
     params:
       - paramName: cursor
         description: Paginate through collections of data by setting the `cursor`
@@ -1671,6 +1732,7 @@ modules:
     path: /apps.permissions.scopes.list
     description: Returns list of scopes this app has on a team.
     externalDocs: https://api.slack.com/methods/apps.permissions.scopes.list
+    operationId: apps_permissions_scopes_list
     params: []
   - moduleName: Apps / Permissions / List Users
     method: get
@@ -1678,6 +1740,7 @@ modules:
     description: Returns list of user grants and corresponding scopes this app has
       on a team.
     externalDocs: https://api.slack.com/methods/apps.permissions.users.list
+    operationId: apps_permissions_users_list
     params:
       - paramName: cursor
         description: Paginate through collections of data by setting the `cursor`
@@ -1702,6 +1765,7 @@ modules:
     description: Enables an app to trigger a permissions modal to grant an app
       access to a user access scope.
     externalDocs: https://api.slack.com/methods/apps.permissions.users.request
+    operationId: apps_permissions_users_request
     params:
       - paramName: scopes
         description: A comma separated list of user scopes to request for
@@ -1729,6 +1793,7 @@ modules:
     path: /apps.uninstall
     description: Uninstalls your app from a workspace.
     externalDocs: https://api.slack.com/methods/apps.uninstall
+    operationId: apps_uninstall
     params:
       - paramName: clientId
         description: Issued when you created your application.
@@ -1749,6 +1814,7 @@ modules:
     path: /auth.revoke
     description: Revokes a token.
     externalDocs: https://api.slack.com/methods/auth.revoke
+    operationId: auth_revoke
     params:
       - paramName: test
         description: Setting this parameter to `1` triggers a _testing mode_ where the
@@ -1763,12 +1829,14 @@ modules:
     path: /auth.test
     description: Checks authentication & identity.
     externalDocs: https://api.slack.com/methods/auth.test
+    operationId: auth_test
     params: []
   - moduleName: Bots / Info
     method: get
     path: /bots.info
     description: Gets information about a bot user.
     externalDocs: https://api.slack.com/methods/bots.info
+    operationId: bots_info
     params:
       - paramName: bot
         description: Bot user to get info on
@@ -1782,6 +1850,7 @@ modules:
     path: /calls.add
     description: Registers a new Call.
     externalDocs: https://api.slack.com/methods/calls.add
+    operationId: calls_add
     params:
       - paramName: createdBy
         description: The valid Slack user ID of the user who created this Call. When
@@ -1852,6 +1921,7 @@ modules:
     path: /calls.end
     description: Ends a Call.
     externalDocs: https://api.slack.com/methods/calls.end
+    operationId: calls_end
     params:
       - paramName: duration
         description: Call duration in seconds
@@ -1874,6 +1944,7 @@ modules:
     path: /calls.info
     description: Returns information about a Call.
     externalDocs: https://api.slack.com/methods/calls.info
+    operationId: calls_info
     params:
       - paramName: id
         description: "`id` of the Call returned by the [`calls.add`](/methods/calls.add)
@@ -1888,6 +1959,7 @@ modules:
     path: /calls.participants.add
     description: Registers new participants added to a Call.
     externalDocs: https://api.slack.com/methods/calls.participants.add
+    operationId: calls_participants_add
     params:
       - paramName: id
         description: "`id` returned by the [`calls.add`](/methods/calls.add) method."
@@ -1910,6 +1982,7 @@ modules:
     path: /calls.participants.remove
     description: Registers participants removed from a Call.
     externalDocs: https://api.slack.com/methods/calls.participants.remove
+    operationId: calls_participants_remove
     params:
       - paramName: id
         description: "`id` returned by the [`calls.add`](/methods/calls.add) method."
@@ -1932,6 +2005,7 @@ modules:
     path: /calls.update
     description: Updates information about a Call.
     externalDocs: https://api.slack.com/methods/calls.update
+    operationId: calls_update
     params:
       - paramName: desktopAppJoinUrl
         description: When supplied, available Slack clients will attempt to directly
@@ -1968,6 +2042,7 @@ modules:
     path: /chat.delete
     description: Deletes a message.
     externalDocs: https://api.slack.com/methods/chat.delete
+    operationId: chat_delete
     params:
       - paramName: asUser
         description: Pass true to delete the message as the authed user with
@@ -1999,6 +2074,7 @@ modules:
     path: /chat.deleteScheduledMessage
     description: Deletes a pending scheduled message from the queue.
     externalDocs: https://api.slack.com/methods/chat.deleteScheduledMessage
+    operationId: chat_deleteScheduledMessage
     params:
       - paramName: asUser
         description: Pass true to delete the message as the authed user with
@@ -2030,6 +2106,7 @@ modules:
     path: /chat.getPermalink
     description: Retrieve a permalink URL for a specific extant message
     externalDocs: https://api.slack.com/methods/chat.getPermalink
+    operationId: chat_getPermalink
     params:
       - paramName: channel
         description: The ID of the conversation or channel containing the message
@@ -2050,6 +2127,7 @@ modules:
     path: /chat.meMessage
     description: Share a me message into a channel.
     externalDocs: https://api.slack.com/methods/chat.meMessage
+    operationId: chat_meMessage
     params:
       - paramName: channel
         description: Channel to send message to. Can be a public channel, private group
@@ -2072,6 +2150,7 @@ modules:
     path: /chat.postEphemeral
     description: Sends an ephemeral message to a user in a channel.
     externalDocs: https://api.slack.com/methods/chat.postEphemeral
+    operationId: chat_postEphemeral
     params:
       - paramName: asUser
         description: Pass true to post the message as the authed user. Defaults to true
@@ -2181,6 +2260,7 @@ modules:
     path: /chat.postMessage
     description: Sends a message to a channel.
     externalDocs: https://api.slack.com/methods/chat.postMessage
+    operationId: chat_postMessage
     params:
       - paramName: asUser
         description: Pass true to post the message as the authed user, instead of as a
@@ -2309,6 +2389,7 @@ modules:
     path: /chat.scheduleMessage
     description: Schedules a message to be sent to a channel.
     externalDocs: https://api.slack.com/methods/chat.scheduleMessage
+    operationId: chat_scheduleMessage
     params:
       - paramName: asUser
         description: Pass true to post the message as the authed user, instead of as a
@@ -2411,6 +2492,7 @@ modules:
     path: /chat.scheduledMessages.list
     description: Returns a list of scheduled messages.
     externalDocs: https://api.slack.com/methods/chat.scheduledMessages.list
+    operationId: chat_scheduledMessages_list
     params:
       - paramName: channel
         description: The channel of the scheduled messages
@@ -2454,6 +2536,7 @@ modules:
     path: /chat.unfurl
     description: Provide custom unfurl behavior for user-posted URLs
     externalDocs: https://api.slack.com/methods/chat.unfurl
+    operationId: chat_unfurl
     params:
       - paramName: channel
         description: Channel ID of the message
@@ -2509,6 +2592,7 @@ modules:
     path: /chat.update
     description: Updates a message.
     externalDocs: https://api.slack.com/methods/chat.update
+    operationId: chat_update
     params:
       - paramName: asUser
         description: Pass true to update the message as the authed user. [Bot
@@ -2587,6 +2671,7 @@ modules:
     path: /conversations.archive
     description: Archives a conversation.
     externalDocs: https://api.slack.com/methods/conversations.archive
+    operationId: conversations_archive
     params:
       - paramName: channel
         description: ID of conversation to archive
@@ -2601,6 +2686,7 @@ modules:
     path: /conversations.close
     description: Closes a direct message or multi-person direct message.
     externalDocs: https://api.slack.com/methods/conversations.close
+    operationId: conversations_close
     params:
       - paramName: channel
         description: Conversation to close.
@@ -2615,6 +2701,7 @@ modules:
     path: /conversations.create
     description: Initiates a public or private channel-based conversation
     externalDocs: https://api.slack.com/methods/conversations.create
+    operationId: conversations_create
     params:
       - paramName: isPrivate
         description: Create a private channel instead of a public one
@@ -2636,6 +2723,7 @@ modules:
     path: /conversations.history
     description: Fetches a conversation's history of messages and events.
     externalDocs: https://api.slack.com/methods/conversations.history
+    operationId: conversations_history
     params:
       - paramName: channel
         description: Conversation ID to fetch history for.
@@ -2690,6 +2778,7 @@ modules:
     path: /conversations.info
     description: Retrieve information about a conversation.
     externalDocs: https://api.slack.com/methods/conversations.info
+    operationId: conversations_info
     params:
       - paramName: channel
         description: Conversation ID to learn more about
@@ -2719,6 +2808,7 @@ modules:
     path: /conversations.invite
     description: Invites users to a channel.
     externalDocs: https://api.slack.com/methods/conversations.invite
+    operationId: conversations_invite
     params:
       - paramName: channel
         description: The ID of the public or private channel to invite user(s) to.
@@ -2740,6 +2830,7 @@ modules:
     path: /conversations.join
     description: Joins an existing conversation.
     externalDocs: https://api.slack.com/methods/conversations.join
+    operationId: conversations_join
     params:
       - paramName: channel
         description: ID of conversation to join
@@ -2754,6 +2845,7 @@ modules:
     path: /conversations.kick
     description: Removes a user from a conversation.
     externalDocs: https://api.slack.com/methods/conversations.kick
+    operationId: conversations_kick
     params:
       - paramName: channel
         description: ID of conversation to remove user from.
@@ -2775,6 +2867,7 @@ modules:
     path: /conversations.leave
     description: Leaves a conversation.
     externalDocs: https://api.slack.com/methods/conversations.leave
+    operationId: conversations_leave
     params:
       - paramName: channel
         description: Conversation to leave
@@ -2789,6 +2882,7 @@ modules:
     path: /conversations.list
     description: Lists all channels in a Slack team.
     externalDocs: https://api.slack.com/methods/conversations.list
+    operationId: conversations_list
     params:
       - paramName: excludeArchived
         description: Set to `true` to exclude archived channels from the list
@@ -2829,6 +2923,7 @@ modules:
     path: /conversations.mark
     description: Sets the read cursor in a channel.
     externalDocs: https://api.slack.com/methods/conversations.mark
+    operationId: conversations_mark
     params:
       - paramName: channel
         description: Channel or conversation to set the read cursor for.
@@ -2851,6 +2946,7 @@ modules:
     path: /conversations.members
     description: Retrieve members of a conversation.
     externalDocs: https://api.slack.com/methods/conversations.members
+    operationId: conversations_members
     params:
       - paramName: channel
         description: ID of the conversation to retrieve members for
@@ -2883,6 +2979,7 @@ modules:
     path: /conversations.open
     description: Opens or resumes a direct message or multi-person direct message.
     externalDocs: https://api.slack.com/methods/conversations.open
+    operationId: conversations_open
     params:
       - paramName: channel
         description: Resume a conversation by supplying an `im` or `mpim`'s ID. Or
@@ -2916,6 +3013,7 @@ modules:
     path: /conversations.rename
     description: Renames a conversation.
     externalDocs: https://api.slack.com/methods/conversations.rename
+    operationId: conversations_rename
     params:
       - paramName: channel
         description: ID of conversation to rename
@@ -2937,6 +3035,7 @@ modules:
     path: /conversations.replies
     description: Retrieve a thread of messages posted to a conversation
     externalDocs: https://api.slack.com/methods/conversations.replies
+    operationId: conversations_replies
     params:
       - paramName: channel
         description: Conversation ID to fetch thread from.
@@ -3001,6 +3100,7 @@ modules:
     path: /conversations.setPurpose
     description: Sets the purpose for a conversation.
     externalDocs: https://api.slack.com/methods/conversations.setPurpose
+    operationId: conversations_setPurpose
     params:
       - paramName: channel
         description: Conversation to set the purpose of
@@ -3022,6 +3122,7 @@ modules:
     path: /conversations.setTopic
     description: Sets the topic for a conversation.
     externalDocs: https://api.slack.com/methods/conversations.setTopic
+    operationId: conversations_setTopic
     params:
       - paramName: channel
         description: Conversation to set the topic of
@@ -3043,6 +3144,7 @@ modules:
     path: /conversations.unarchive
     description: Reverses conversation archival.
     externalDocs: https://api.slack.com/methods/conversations.unarchive
+    operationId: conversations_unarchive
     params:
       - paramName: channel
         description: ID of conversation to unarchive
@@ -3057,6 +3159,7 @@ modules:
     path: /dialog.open
     description: Open a dialog with a user
     externalDocs: https://api.slack.com/methods/dialog.open
+    operationId: dialog_open
     params:
       - paramName: dialog
         description: The dialog definition. This must be a JSON-encoded string.
@@ -3077,18 +3180,21 @@ modules:
     path: /dnd.endDnd
     description: Ends the current user's Do Not Disturb session immediately.
     externalDocs: https://api.slack.com/methods/dnd.endDnd
+    operationId: dnd_endDnd
     params: []
   - moduleName: DND / End Snooze
     method: post
     path: /dnd.endSnooze
     description: Ends the current user's snooze mode immediately.
     externalDocs: https://api.slack.com/methods/dnd.endSnooze
+    operationId: dnd_endSnooze
     params: []
   - moduleName: DND / Info
     method: get
     path: /dnd.info
     description: Retrieves a user's current Do Not Disturb status.
     externalDocs: https://api.slack.com/methods/dnd.info
+    operationId: dnd_info
     params:
       - paramName: user
         description: User to fetch status for (defaults to current user)
@@ -3102,6 +3208,7 @@ modules:
     path: /dnd.setSnooze
     description: Turns on Do Not Disturb mode for the current user, or changes its duration.
     externalDocs: https://api.slack.com/methods/dnd.setSnooze
+    operationId: dnd_setSnooze
     params:
       - paramName: numMinutes
         description: Number of minutes, from now, to snooze until.
@@ -3123,6 +3230,7 @@ modules:
     path: /dnd.teamInfo
     description: Retrieves the Do Not Disturb status for up to 50 users on a team.
     externalDocs: https://api.slack.com/methods/dnd.teamInfo
+    operationId: dnd_teamInfo
     params:
       - paramName: users
         description: Comma-separated list of users to fetch Do Not Disturb status for
@@ -3136,12 +3244,14 @@ modules:
     path: /emoji.list
     description: Lists custom emoji for a team.
     externalDocs: https://api.slack.com/methods/emoji.list
+    operationId: emoji_list
     params: []
   - moduleName: Files / Comments / Delete
     method: post
     path: /files.comments.delete
     description: Deletes an existing comment on a file.
     externalDocs: https://api.slack.com/methods/files.comments.delete
+    operationId: files_comments_delete
     params:
       - paramName: file
         description: File to delete a comment from.
@@ -3163,6 +3273,7 @@ modules:
     path: /files.delete
     description: Deletes a file.
     externalDocs: https://api.slack.com/methods/files.delete
+    operationId: files_delete
     params:
       - paramName: file
         description: ID of file to delete.
@@ -3177,6 +3288,7 @@ modules:
     path: /files.info
     description: Gets information about a file.
     externalDocs: https://api.slack.com/methods/files.info
+    operationId: files_info
     params:
       - paramName: file
         description: Specify a file by providing its ID.
@@ -3225,6 +3337,7 @@ modules:
     path: /files.list
     description: List for a team, in a channel, or from a user with applied filters.
     externalDocs: https://api.slack.com/methods/files.list
+    operationId: files_list
     params:
       - paramName: user
         description: Filter files created by a single user.
@@ -3291,6 +3404,7 @@ modules:
     path: /files.remote.add
     description: Adds a file from a remote service
     externalDocs: https://api.slack.com/methods/files.remote.add
+    operationId: files_remote_add
     params:
       - paramName: externalId
         description: Creator defined GUID for the file.
@@ -3348,6 +3462,7 @@ modules:
     path: /files.remote.info
     description: Retrieve information about a remote file added to Slack
     externalDocs: https://api.slack.com/methods/files.remote.info
+    operationId: files_remote_info
     params:
       - paramName: file
         description: Specify a file by providing its ID.
@@ -3368,6 +3483,7 @@ modules:
     path: /files.remote.list
     description: Retrieve information about a remote file added to Slack
     externalDocs: https://api.slack.com/methods/files.remote.list
+    operationId: files_remote_list
     params:
       - paramName: channel
         description: Filter files appearing in a specific channel, indicated by its ID.
@@ -3412,6 +3528,7 @@ modules:
     path: /files.remote.remove
     description: Remove a remote file.
     externalDocs: https://api.slack.com/methods/files.remote.remove
+    operationId: files_remote_remove
     params:
       - paramName: externalId
         description: Creator defined GUID for the file.
@@ -3440,6 +3557,7 @@ modules:
     path: /files.remote.share
     description: Share a remote file into a channel.
     externalDocs: https://api.slack.com/methods/files.remote.share
+    operationId: files_remote_share
     params:
       - paramName: file
         description: Specify a file registered with Slack by providing its ID. Either
@@ -3470,6 +3588,7 @@ modules:
     path: /files.remote.update
     description: Updates an existing remote file.
     externalDocs: https://api.slack.com/methods/files.remote.update
+    operationId: files_remote_update
     params:
       - paramName: externalId
         description: Creator defined GUID for the file.
@@ -3534,6 +3653,7 @@ modules:
     path: /files.revokePublicURL
     description: Revokes public/external sharing access for a file
     externalDocs: https://api.slack.com/methods/files.revokePublicURL
+    operationId: files_revokePublicURL
     params:
       - paramName: file
         description: File to revoke
@@ -3548,6 +3668,7 @@ modules:
     path: /files.sharedPublicURL
     description: Enables a file for public/external sharing.
     externalDocs: https://api.slack.com/methods/files.sharedPublicURL
+    operationId: files_sharedPublicURL
     params:
       - paramName: file
         description: File to share
@@ -3562,6 +3683,7 @@ modules:
     path: /files.upload
     description: Uploads or creates a file.
     externalDocs: https://api.slack.com/methods/files.upload
+    operationId: files_upload
     params:
       - paramName: channels
         description: Comma-separated list of channel names or IDs where the file will be
@@ -3636,6 +3758,7 @@ modules:
     path: /migration.exchange
     description: For Enterprise Grid workspaces, map local user IDs to global user IDs
     externalDocs: https://api.slack.com/methods/migration.exchange
+    operationId: migration_exchange
     params:
       - paramName: users
         description: A comma-separated list of user ids, up to 400 per request
@@ -3664,6 +3787,7 @@ modules:
     path: /pins.add
     description: Pins an item to a channel.
     externalDocs: https://api.slack.com/methods/pins.add
+    operationId: pins_add
     params:
       - paramName: channel
         description: Channel to pin the item in.
@@ -3685,6 +3809,7 @@ modules:
     path: /pins.list
     description: Lists items pinned to a channel.
     externalDocs: https://api.slack.com/methods/pins.list
+    operationId: pins_list
     params:
       - paramName: channel
         description: Channel to get pinned items for.
@@ -3698,6 +3823,7 @@ modules:
     path: /pins.remove
     description: Un-pins an item from a channel.
     externalDocs: https://api.slack.com/methods/pins.remove
+    operationId: pins_remove
     params:
       - paramName: channel
         description: Channel where the item is pinned to.
@@ -3719,6 +3845,7 @@ modules:
     path: /reactions.add
     description: Adds a reaction to an item.
     externalDocs: https://api.slack.com/methods/reactions.add
+    operationId: reactions_add
     params:
       - paramName: channel
         description: Channel where the message to add reaction to was posted.
@@ -3747,6 +3874,7 @@ modules:
     path: /reactions.get
     description: Gets reactions for an item.
     externalDocs: https://api.slack.com/methods/reactions.get
+    operationId: reactions_get
     params:
       - paramName: channel
         description: Channel where the message to get reactions for was posted.
@@ -3788,6 +3916,7 @@ modules:
     path: /reactions.list
     description: Lists reactions made by a user.
     externalDocs: https://api.slack.com/methods/reactions.list
+    operationId: reactions_list
     params:
       - paramName: user
         description: Show reactions made by this user. Defaults to the authed user.
@@ -3842,6 +3971,7 @@ modules:
     path: /reactions.remove
     description: Removes a reaction from an item.
     externalDocs: https://api.slack.com/methods/reactions.remove
+    operationId: reactions_remove
     params:
       - paramName: channel
         description: Channel where the message to remove reaction from was posted.
@@ -3884,6 +4014,7 @@ modules:
     path: /reminders.add
     description: Creates a reminder.
     externalDocs: https://api.slack.com/methods/reminders.add
+    operationId: reminders_add
     params:
       - paramName: text
         description: The content of the reminder
@@ -3916,6 +4047,7 @@ modules:
     path: /reminders.complete
     description: Marks a reminder as complete.
     externalDocs: https://api.slack.com/methods/reminders.complete
+    operationId: reminders_complete
     params:
       - paramName: reminder
         description: The ID of the reminder to be marked as complete
@@ -3930,6 +4062,7 @@ modules:
     path: /reminders.delete
     description: Deletes a reminder.
     externalDocs: https://api.slack.com/methods/reminders.delete
+    operationId: reminders_delete
     params:
       - paramName: reminder
         description: The ID of the reminder
@@ -3944,6 +4077,7 @@ modules:
     path: /reminders.info
     description: Gets information about a reminder.
     externalDocs: https://api.slack.com/methods/reminders.info
+    operationId: reminders_info
     params:
       - paramName: reminder
         description: The ID of the reminder
@@ -3957,12 +4091,14 @@ modules:
     path: /reminders.list
     description: Lists all reminders created by or for a given user.
     externalDocs: https://api.slack.com/methods/reminders.list
+    operationId: reminders_list
     params: []
   - moduleName: Search / Messages
     method: get
     path: /search.messages
     description: Searches for messages matching a query.
     externalDocs: https://api.slack.com/methods/search.messages
+    operationId: search_messages
     params:
       - paramName: count
         description: Pass the number of results you want per "page". Maximum of `100`.
@@ -4011,6 +4147,7 @@ modules:
     path: /stars.add
     description: Adds a star to an item.
     externalDocs: https://api.slack.com/methods/stars.add
+    operationId: stars_add
     params:
       - paramName: channel
         description: Channel to add star to, or channel where the message to add star to
@@ -4047,6 +4184,7 @@ modules:
     path: /stars.list
     description: Lists stars for a user.
     externalDocs: https://api.slack.com/methods/stars.list
+    operationId: stars_list
     params:
       - paramName: count
         description: ""
@@ -4087,6 +4225,7 @@ modules:
     path: /stars.remove
     description: Removes a star from an item.
     externalDocs: https://api.slack.com/methods/stars.remove
+    operationId: stars_remove
     params:
       - paramName: channel
         description: Channel to remove star from, or channel where the message to remove
@@ -4123,6 +4262,7 @@ modules:
     path: /team.accessLogs
     description: Gets the access logs for the current team.
     externalDocs: https://api.slack.com/methods/team.accessLogs
+    operationId: team_accessLogs
     params:
       - paramName: before
         description: End of time range of logs to include in results (inclusive).
@@ -4150,6 +4290,7 @@ modules:
     path: /team.billableInfo
     description: Gets billable users information for the current team.
     externalDocs: https://api.slack.com/methods/team.billableInfo
+    operationId: team_billableInfo
     params:
       - paramName: user
         description: A user to retrieve the billable information for. Defaults to all users.
@@ -4163,6 +4304,7 @@ modules:
     path: /team.info
     description: Gets information about the current team.
     externalDocs: https://api.slack.com/methods/team.info
+    operationId: team_info
     params:
       - paramName: team
         description: Team to get info on, if omitted, will return information about the
@@ -4178,6 +4320,7 @@ modules:
     path: /team.integrationLogs
     description: Gets the integration logs for the current team.
     externalDocs: https://api.slack.com/methods/team.integrationLogs
+    operationId: team_integrationLogs
     params:
       - paramName: appId
         description: Filter logs to this Slack app. Defaults to all logs.
@@ -4226,6 +4369,7 @@ modules:
     path: /team.profile.get
     description: Retrieve a team's profile.
     externalDocs: https://api.slack.com/methods/team.profile.get
+    operationId: team_profile_get
     params:
       - paramName: visibility
         description: Filter by visibility.
@@ -4239,6 +4383,7 @@ modules:
     path: /usergroups.create
     description: Create a User Group
     externalDocs: https://api.slack.com/methods/usergroups.create
+    operationId: usergroups_create
     params:
       - paramName: channels
         description: A comma separated string of encoded channel IDs for which the User
@@ -4282,6 +4427,7 @@ modules:
     path: /usergroups.disable
     description: Disable an existing User Group
     externalDocs: https://api.slack.com/methods/usergroups.disable
+    operationId: usergroups_disable
     params:
       - paramName: includeCount
         description: Include the number of users in the User Group.
@@ -4303,6 +4449,7 @@ modules:
     path: /usergroups.enable
     description: Enable a User Group
     externalDocs: https://api.slack.com/methods/usergroups.enable
+    operationId: usergroups_enable
     params:
       - paramName: includeCount
         description: Include the number of users in the User Group.
@@ -4324,6 +4471,7 @@ modules:
     path: /usergroups.list
     description: List all User Groups for a team
     externalDocs: https://api.slack.com/methods/usergroups.list
+    operationId: usergroups_list
     params:
       - paramName: includeUsers
         description: Include the list of users for each User Group.
@@ -4351,6 +4499,7 @@ modules:
     path: /usergroups.update
     description: Update an existing User Group
     externalDocs: https://api.slack.com/methods/usergroups.update
+    operationId: usergroups_update
     params:
       - paramName: channels
         description: A comma separated string of encoded channel IDs for which the User
@@ -4401,6 +4550,7 @@ modules:
     path: /usergroups.users.list
     description: List all users in a User Group
     externalDocs: https://api.slack.com/methods/usergroups.users.list
+    operationId: usergroups_users_list
     params:
       - paramName: includeDisabled
         description: Allow results that involve disabled User Groups.
@@ -4421,6 +4571,7 @@ modules:
     path: /usergroups.users.update
     description: Update the list of users for a User Group
     externalDocs: https://api.slack.com/methods/usergroups.users.update
+    operationId: usergroups_users_update
     params:
       - paramName: includeCount
         description: Include the number of users in the User Group.
@@ -4450,6 +4601,7 @@ modules:
     path: /users.conversations
     description: List conversations the calling user may access.
     externalDocs: https://api.slack.com/methods/users.conversations
+    operationId: users_conversations
     params:
       - paramName: user
         description: Browse conversations by a specific user ID's membership. Non-public
@@ -4499,6 +4651,7 @@ modules:
     path: /users.deletePhoto
     description: Delete the user profile photo
     externalDocs: https://api.slack.com/methods/users.deletePhoto
+    operationId: users_deletePhoto
     params:
       - paramName: token
         description: "Authentication token. Requires scope: `users.profile:write`"
@@ -4513,6 +4666,7 @@ modules:
     path: /users.getPresence
     description: Gets user presence information.
     externalDocs: https://api.slack.com/methods/users.getPresence
+    operationId: users_getPresence
     params:
       - paramName: user
         description: User to get presence info on. Defaults to the authed user.
@@ -4526,12 +4680,14 @@ modules:
     path: /users.identity
     description: Get a user's identity.
     externalDocs: https://api.slack.com/methods/users.identity
+    operationId: users_identity
     params: []
   - moduleName: Users / Info
     method: get
     path: /users.info
     description: Gets information about a user.
     externalDocs: https://api.slack.com/methods/users.info
+    operationId: users_info
     params:
       - paramName: includeLocale
         description: Set this to `true` to receive the locale for this user. Defaults to
@@ -4553,6 +4709,7 @@ modules:
     path: /users.list
     description: Lists all users in a Slack team.
     externalDocs: https://api.slack.com/methods/users.list
+    operationId: users_list
     params:
       - paramName: limit
         description: The maximum number of items to return. Fewer than the requested
@@ -4587,6 +4744,7 @@ modules:
     path: /users.lookupByEmail
     description: Find a user with an email address.
     externalDocs: https://api.slack.com/methods/users.lookupByEmail
+    operationId: users_lookupByEmail
     params:
       - paramName: email
         description: An email address belonging to a user in the workspace
@@ -4600,6 +4758,7 @@ modules:
     path: /users.profile.get
     description: Retrieves a user's profile information.
     externalDocs: https://api.slack.com/methods/users.profile.get
+    operationId: users_profile_get
     params:
       - paramName: includeLabels
         description: Include labels for each ID in custom profile fields
@@ -4620,6 +4779,7 @@ modules:
     path: /users.profile.set
     description: Set the profile information for a user.
     externalDocs: https://api.slack.com/methods/users.profile.set
+    operationId: users_profile_set
     params:
       - paramName: name
         description: Name of a single key to set. Usable only if `profile` is not passed.
@@ -4658,12 +4818,14 @@ modules:
     path: /users.setActive
     description: Marked a user as active. Deprecated and non-functional.
     externalDocs: https://api.slack.com/methods/users.setActive
+    operationId: users_setActive
     params: []
   - moduleName: Users / Set Photo
     method: post
     path: /users.setPhoto
     description: Set the user profile photo
     externalDocs: https://api.slack.com/methods/users.setPhoto
+    operationId: users_setPhoto
     params:
       - paramName: cropW
         description: Width/height of crop box (always square)
@@ -4706,6 +4868,7 @@ modules:
     path: /users.setPresence
     description: Manually sets user presence.
     externalDocs: https://api.slack.com/methods/users.setPresence
+    operationId: users_setPresence
     params:
       - paramName: presence
         description: Either `auto` or `away`
@@ -4720,6 +4883,7 @@ modules:
     path: /views.open
     description: Open a view for a user.
     externalDocs: https://api.slack.com/methods/views.open
+    operationId: views_open
     params:
       - paramName: triggerId
         description: Exchange a trigger to post to the user.
@@ -4741,6 +4905,7 @@ modules:
     path: /views.publish
     description: Publish a static view for a User.
     externalDocs: https://api.slack.com/methods/views.publish
+    operationId: views_publish
     params:
       - paramName: userId
         description: "`id` of the user you want publish a view to."
@@ -4770,6 +4935,7 @@ modules:
     path: /views.push
     description: Push a view onto the stack of a root view.
     externalDocs: https://api.slack.com/methods/views.push
+    operationId: views_push
     params:
       - paramName: triggerId
         description: Exchange a trigger to post to the user.
@@ -4791,6 +4957,7 @@ modules:
     path: /views.update
     description: Update an existing view.
     externalDocs: https://api.slack.com/methods/views.update
+    operationId: views_update
     params:
       - paramName: viewId
         description: A unique identifier of the view to be updated. Either `view_id` or
@@ -4830,6 +4997,7 @@ modules:
     path: /workflows.stepCompleted
     description: Indicate that an app's step in a workflow completed execution.
     externalDocs: https://api.slack.com/methods/workflows.stepCompleted
+    operationId: workflows_stepCompleted
     params:
       - paramName: workflowStepExecuteId
         description: Context identifier that maps to the correct workflow step execution.
@@ -4853,6 +5021,7 @@ modules:
     path: /workflows.stepFailed
     description: Indicate that an app's step in a workflow failed to execute.
     externalDocs: https://api.slack.com/methods/workflows.stepFailed
+    operationId: workflows_stepFailed
     params:
       - paramName: workflowStepExecuteId
         description: Context identifier that maps to the correct workflow step execution.
@@ -4874,6 +5043,7 @@ modules:
     path: /workflows.updateStep
     description: Update the configuration for a workflow extension step.
     externalDocs: https://api.slack.com/methods/workflows.updateStep
+    operationId: workflows_updateStep
     params:
       - paramName: workflowStepEditId
         description: A context identifier provided with `view_submission` payloads used
