@@ -1134,7 +1134,7 @@ modules:
           type: array
           items:
             type: any
-        required: false
+        required: true
         style: form
         explode: true
   - moduleName: Contact Groups / Delete
