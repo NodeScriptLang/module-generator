@@ -25,6 +25,7 @@ modules:
     path: /v1/blocks/{id}
     description: Delete a block
     externalDocs: ""
+    operationId: deleteABlock
     params:
       - paramName: id
         paramKey: id
@@ -38,6 +39,7 @@ modules:
     path: /v1/blocks/{id}
     description: Retrieve a block
     externalDocs: ""
+    operationId: retrieveABlock
     params:
       - paramName: id
         paramKey: id
@@ -51,6 +53,7 @@ modules:
     path: /v1/blocks/{id}
     description: Updates block content. Refer to external docs for more info.
     externalDocs: https://developers.notion.com/reference/update-a-block
+    operationId: updateABlock
     params:
       - paramName: id
         paramKey: id
@@ -72,6 +75,7 @@ modules:
     path: /v1/blocks/{id}/children
     description: Retrieve block children
     externalDocs: ""
+    operationId: retrieveBlockChildren
     params:
       - paramName: id
         paramKey: id
@@ -92,6 +96,7 @@ modules:
     path: /v1/blocks/{id}/children
     description: Append block children
     externalDocs: ""
+    operationId: appendBlockChildren
     params:
       - paramName: id
         paramKey: id
@@ -115,6 +120,7 @@ modules:
     path: /v1/comments
     description: Retrieve a user object using the ID specified in the request path.
     externalDocs: ""
+    operationId: retrieveComments
     params:
       - paramName: blockId
         paramKey: block_id
@@ -136,6 +142,7 @@ modules:
     path: /v1/databases/{id}
     description: "Retrieves a database object using the ID specified in the request path. "
     externalDocs: ""
+    operationId: retrieveADatabase
     params:
       - paramName: id
         paramKey: id
@@ -149,6 +156,7 @@ modules:
     path: /v1/databases/{id}
     description: Update a database
     externalDocs: ""
+    operationId: updateADatabase
     params:
       - paramName: id
         paramKey: id
@@ -179,6 +187,7 @@ modules:
     path: /v1/databases/{id}/query
     description: Query a database
     externalDocs: ""
+    operationId: queryADatabase
     params:
       - paramName: id
         paramKey: id
@@ -201,6 +210,7 @@ modules:
     description: "Retrieves a Page object using the ID in the request path. This
       endpoint exposes page properties, not page content. "
     externalDocs: ""
+    operationId: retrieveAPage
     params:
       - paramName: id
         paramKey: id
@@ -216,6 +226,7 @@ modules:
       in the JSON body of the request. Properties not updated via parameters
       will remain unchanged. "
     externalDocs: ""
+    operationId: updatePageProperties
     params:
       - paramName: id
         paramKey: id
@@ -237,6 +248,7 @@ modules:
     path: /v1/pages/{page_id}/properties/{property_id}
     description: Retrieve a Page Property Item
     externalDocs: ""
+    operationId: retrieveAPagePropertyItem
     params:
       - paramName: pageId
         paramKey: page_id
@@ -257,6 +269,7 @@ modules:
     path: /v1/users/{id}
     description: Retrieve a user object using the ID specified in the request path.
     externalDocs: ""
+    operationId: retrieveAUser
     params:
       - paramName: id
         paramKey: id

@@ -23,6 +23,7 @@ modules:
     path: /v4/spreadsheets
     description: Creates a spreadsheet, returning the newly created spreadsheet.
     externalDocs: ""
+    operationId: sheets.spreadsheets.create
     params:
       - paramName: dataSourceSchedules
         description: Output only. A list of data source refresh schedules.
@@ -111,6 +112,7 @@ modules:
       `?ranges=A1:D5&ranges=Sheet2!A1:C4`). Limiting the range returns only the
       portions of the spreadsheet that intersect the requested ranges."
     externalDocs: ""
+    operationId: sheets.spreadsheets.get
     params:
       - paramName: spreadsheetId
         description: The spreadsheet to request.
@@ -145,6 +147,7 @@ modules:
       must specify the spreadsheet ID and the developer metadata's unique
       metadataId.
     externalDocs: ""
+    operationId: sheets.spreadsheets.developerMetadata.get
     params:
       - paramName: spreadsheetId
         description: The ID of the spreadsheet to retrieve metadata from.
@@ -169,6 +172,7 @@ modules:
       DataFilter represents a location in a spreadsheet, this will return all
       developer metadata associated with locations intersecting that region.
     externalDocs: ""
+    operationId: sheets.spreadsheets.developerMetadata.search
     params:
       - paramName: spreadsheetId
         description: The ID of the spreadsheet to retrieve metadata from.
@@ -195,6 +199,7 @@ modules:
     description: Copies a single sheet from a spreadsheet to another spreadsheet.
       Returns the properties of the newly created sheet.
     externalDocs: ""
+    operationId: sheets.spreadsheets.sheets.copyTo
     params:
       - paramName: spreadsheetId
         description: The ID of the spreadsheet containing the sheet to copy.
@@ -224,6 +229,7 @@ modules:
     description: Returns a range of values from a spreadsheet. The caller must
       specify the spreadsheet ID and a range.
     externalDocs: ""
+    operationId: sheets.spreadsheets.values.get
     params:
       - paramName: spreadsheetId
         description: The ID of the spreadsheet to retrieve data from.
@@ -286,6 +292,7 @@ modules:
     description: Sets values in a range of a spreadsheet. The caller must specify
       the spreadsheet ID, range, and a valueInputOption.
     externalDocs: ""
+    operationId: sheets.spreadsheets.values.update
     params:
       - paramName: spreadsheetId
         description: The ID of the spreadsheet to update.
@@ -407,6 +414,7 @@ modules:
       sheet (column-wise or row-wise), it does not influence what cell the data
       starts being written to.
     externalDocs: ""
+    operationId: sheets.spreadsheets.values.append
     params:
       - paramName: spreadsheetId
         description: The ID of the spreadsheet to update.
@@ -532,6 +540,7 @@ modules:
       spreadsheet ID and range. Only values are cleared -- all other properties
       of the cell (such as formatting, data validation, etc..) are kept.
     externalDocs: ""
+    operationId: sheets.spreadsheets.values.clear
     params:
       - paramName: spreadsheetId
         description: The ID of the spreadsheet to update.
@@ -557,6 +566,7 @@ modules:
       cleared -- all other properties of the cell (such as formatting and data
       validation) are kept.
     externalDocs: ""
+    operationId: sheets.spreadsheets.values.batchClear
     params:
       - paramName: spreadsheetId
         description: The ID of the spreadsheet to update.
@@ -584,6 +594,7 @@ modules:
       are cleared -- all other properties of the cell (such as formatting, data
       validation, etc..) are kept.
     externalDocs: ""
+    operationId: sheets.spreadsheets.values.batchClearByDataFilter
     params:
       - paramName: spreadsheetId
         description: The ID of the spreadsheet to update.
@@ -608,6 +619,7 @@ modules:
     description: Returns one or more ranges of values from a spreadsheet. The caller
       must specify the spreadsheet ID and one or more ranges.
     externalDocs: ""
+    operationId: sheets.spreadsheets.values.batchGet
     params:
       - paramName: spreadsheetId
         description: The ID of the spreadsheet to retrieve data from.
@@ -674,6 +686,7 @@ modules:
       DataFilters. Ranges that match any of the data filters in the request will
       be returned.
     externalDocs: ""
+    operationId: sheets.spreadsheets.values.batchGetByDataFilter
     params:
       - paramName: spreadsheetId
         description: The ID of the spreadsheet to retrieve data from.
@@ -740,6 +753,7 @@ modules:
       specify the spreadsheet ID, a valueInputOption, and one or more
       ValueRanges.
     externalDocs: ""
+    operationId: sheets.spreadsheets.values.batchUpdate
     params:
       - paramName: spreadsheetId
         description: The ID of the spreadsheet to update.
@@ -813,6 +827,7 @@ modules:
       specify the spreadsheet ID, a valueInputOption, and one or more
       DataFilterValueRanges.
     externalDocs: ""
+    operationId: sheets.spreadsheets.values.batchUpdateByDataFilter
     params:
       - paramName: spreadsheetId
         description: The ID of the spreadsheet to update.
@@ -898,6 +913,7 @@ modules:
       collaborator changes. If there are no collaborators, the spreadsheet
       should reflect your changes.
     externalDocs: ""
+    operationId: sheets.spreadsheets.batchUpdate
     params:
       - paramName: spreadsheetId
         description: The spreadsheet to apply the updates to.
@@ -956,6 +972,7 @@ modules:
       intersect ranges matched by any of the filters. By default, data within
       grids is not returned.
     externalDocs: ""
+    operationId: sheets.spreadsheets.getByDataFilter
     params:
       - paramName: spreadsheetId
         description: The spreadsheet to request.

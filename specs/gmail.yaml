@@ -23,6 +23,7 @@ modules:
     path: /gmail/v1/users/{userId}/drafts
     description: Lists the drafts in the user's mailbox.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.drafts.list
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -69,6 +70,7 @@ modules:
     description: Immediately and permanently deletes the specified draft. Does not
       simply trash it.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.drafts.delete
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -90,6 +92,7 @@ modules:
     path: /gmail/v1/users/{userId}/drafts/{id}
     description: Gets the specified draft.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.drafts.get
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -168,6 +171,7 @@ modules:
     description: Lists the history of all changes to the given mailbox. History
       results are returned in chronological order (increasing `historyId`).
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.history.list
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -233,6 +237,7 @@ modules:
     path: /gmail/v1/users/{userId}/labels
     description: Lists all labels in the user's mailbox.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.labels.list
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -247,6 +252,7 @@ modules:
     path: /gmail/v1/users/{userId}/labels
     description: Creates a new label.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.labels.create
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -353,6 +359,7 @@ modules:
     description: Immediately and permanently deletes the specified label and removes
       it from any messages and threads that it is applied to.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.labels.delete
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -374,6 +381,7 @@ modules:
     path: /gmail/v1/users/{userId}/labels/{id}
     description: Gets the specified label.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.labels.get
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -395,6 +403,7 @@ modules:
     path: /gmail/v1/users/{userId}/labels/{id}
     description: Patch the specified label.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.labels.patch
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -507,6 +516,7 @@ modules:
     path: /gmail/v1/users/{userId}/labels/{id}
     description: Updates the specified label.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.labels.update
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -619,6 +629,7 @@ modules:
     path: /gmail/v1/users/{userId}/messages
     description: Lists the messages in the user's mailbox.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.messages.list
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -681,6 +692,7 @@ modules:
     description: Deletes many messages by message ID. Provides no guarantees that
       messages were not already deleted or even existed at all.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.messages.batchDelete
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -705,6 +717,7 @@ modules:
     path: /gmail/v1/users/{userId}/messages/batchModify
     description: Modifies the labels on the specified messages.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.messages.batchModify
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -749,6 +762,7 @@ modules:
     description: Immediately and permanently deletes the specified message. This
       operation cannot be undone. Prefer `messages.trash` instead.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.messages.delete
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -770,6 +784,7 @@ modules:
     path: /gmail/v1/users/{userId}/messages/{id}
     description: Gets the specified message.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.messages.get
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -817,6 +832,7 @@ modules:
     path: /gmail/v1/users/{userId}/messages/{id}/modify
     description: Modifies the labels on the specified message.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.messages.modify
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -859,6 +875,7 @@ modules:
     path: /gmail/v1/users/{userId}/messages/{id}/trash
     description: Moves the specified message to the trash.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.messages.trash
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -880,6 +897,7 @@ modules:
     path: /gmail/v1/users/{userId}/messages/{id}/untrash
     description: Removes the specified message from the trash.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.messages.untrash
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -901,6 +919,7 @@ modules:
     path: /gmail/v1/users/{userId}/messages/{messageId}/attachments/{id}
     description: Gets the specified message attachment.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.messages.attachments.get
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -1035,6 +1054,7 @@ modules:
     path: /gmail/v1/users/{userId}/profile
     description: Gets the current user's Gmail profile.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.getProfile
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -1049,6 +1069,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/autoForwarding
     description: Gets the auto-forwarding setting for the specified account.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.getAutoForwarding
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -1066,6 +1087,7 @@ modules:
       enabled. This method is only available to service account clients that
       have been delegated domain-wide authority.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.updateAutoForwarding
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -1110,6 +1132,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/cse/identities
     description: Lists the client-side encrypted identities for an authenticated user.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.cse.identities.list
     params:
       - paramName: userId
         description: The requester's primary email address. To indicate the
@@ -1144,6 +1167,7 @@ modules:
       certificate to a shared domain-wide directory so that people within a
       Google Workspace organization can encrypt and send mail to the identity.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.cse.identities.create
     params:
       - paramName: userId
         description: The requester's primary email address. To indicate the
@@ -1179,6 +1203,7 @@ modules:
       CreateCseIdentity method to create another identity with the same
       configuration.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.cse.identities.delete
     params:
       - paramName: userId
         description: The requester's primary email address. To indicate the
@@ -1201,6 +1226,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/cse/identities/{cseEmailAddress}
     description: Retrieves a client-side encryption identity configuration.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.cse.identities.get
     params:
       - paramName: userId
         description: The requester's primary email address. To indicate the
@@ -1226,6 +1252,7 @@ modules:
       [S/MIME certificate
       profiles](https://support.google.com/a/answer/7300887).
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.cse.identities.patch
     params:
       - paramName: userId
         description: The requester's primary email address. To indicate the
@@ -1264,6 +1291,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/cse/keypairs
     description: Lists client-side encryption key pairs for an authenticated user.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.cse.keypairs.list
     params:
       - paramName: userId
         description: The requester's primary email address. To indicate the
@@ -1296,6 +1324,7 @@ modules:
     description: Creates and uploads a client-side encryption S/MIME public key
       certificate chain and private key metadata for the authenticated user.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.cse.keypairs.create
     params:
       - paramName: userId
         description: The requester's primary email address. To indicate the
@@ -1375,6 +1404,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/cse/keypairs/{keyPairId}
     description: Retrieves an existing client-side encryption key pair.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.cse.keypairs.get
     params:
       - paramName: userId
         description: The requester's primary email address. To indicate the
@@ -1400,6 +1430,7 @@ modules:
       on the key pair. After 30 days, you can permanently delete the key pair by
       using the ObliterateCseKeyPair method.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.cse.keypairs.disable
     params:
       - paramName: userId
         description: The requester's primary email address. To indicate the
@@ -1424,6 +1455,7 @@ modules:
       key pair becomes active again for any associated client-side encryption
       identities.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.cse.keypairs.enable
     params:
       - paramName: userId
         description: The requester's primary email address. To indicate the
@@ -1451,6 +1483,7 @@ modules:
       were encrypted by an obliterated key. Authenticated users and Google
       Workspace administrators lose access to reading the encrypted messages.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.cse.keypairs.obliterate
     params:
       - paramName: userId
         description: The requester's primary email address. To indicate the
@@ -1475,6 +1508,7 @@ modules:
       available to service account clients that have been delegated domain-wide
       authority.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.delegates.list
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -1499,6 +1533,7 @@ modules:
       new delegate is available for use. This method is only available to
       service account clients that have been delegated domain-wide authority.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.delegates.create
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -1539,6 +1574,7 @@ modules:
       email address, and not an email alias. This method is only available to
       service account clients that have been delegated domain-wide authority.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.delegates.delete
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -1563,6 +1599,7 @@ modules:
       method is only available to service account clients that have been
       delegated domain-wide authority.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.delegates.get
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -1585,6 +1622,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/filters
     description: Lists the message filters of a Gmail user.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.filters.list
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -1599,6 +1637,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/filters
     description: "Creates a filter. Note: you can only create a maximum of 1,000 filters."
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.filters.create
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -1635,6 +1674,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/filters/{id}
     description: Immediately and permanently deletes the specified filter.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.filters.delete
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -1656,6 +1696,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/filters/{id}
     description: Gets a filter.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.filters.get
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -1677,6 +1718,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/forwardingAddresses
     description: Lists the forwarding addresses for the specified account.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.forwardingAddresses.list
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -1696,6 +1738,7 @@ modules:
       available to service account clients that have been delegated domain-wide
       authority.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.forwardingAddresses.create
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -1732,6 +1775,7 @@ modules:
       verification that may have been required. This method is only available to
       service account clients that have been delegated domain-wide authority.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.forwardingAddresses.delete
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -1753,6 +1797,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/forwardingAddresses/{forwardingEmail}
     description: Gets the specified forwarding address.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.forwardingAddresses.get
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -1774,6 +1819,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/imap
     description: Gets IMAP settings.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.getImap
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -1788,6 +1834,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/imap
     description: Updates IMAP settings.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.updateImap
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -1841,6 +1888,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/language
     description: Gets language settings.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.getLanguage
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -1860,6 +1908,7 @@ modules:
       have a close variant that is, and so the variant may be chosen and saved
       instead.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.updateLanguage
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -1892,6 +1941,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/pop
     description: Gets POP settings.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.getPop
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -1906,6 +1956,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/pop
     description: Updates POP settings.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.updatePop
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -1949,6 +2000,7 @@ modules:
       includes the primary send-as address associated with the account as well
       as any custom "from" aliases.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.sendAs.list
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -1971,6 +2023,7 @@ modules:
       with the alias. This method is only available to service account clients
       that have been delegated domain-wide authority.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.sendAs.create
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -2078,6 +2131,7 @@ modules:
       may have been required for using it. This method is only available to
       service account clients that have been delegated domain-wide authority.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.sendAs.delete
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -2100,6 +2154,7 @@ modules:
     description: Gets the specified send-as alias. Fails with an HTTP 404 error if
       the specified address is not a member of the collection.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.sendAs.get
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -2121,6 +2176,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}
     description: Patch the specified send-as alias.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.sendAs.patch
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -2236,6 +2292,7 @@ modules:
       the primary address for the account can only be updated by service account
       clients that have been delegated domain-wide authority.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.sendAs.update
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -2348,6 +2405,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo
     description: Lists S/MIME configs for the specified send-as alias.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.sendAs.smimeInfo.list
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -2371,6 +2429,7 @@ modules:
     description: Insert (upload) the given S/MIME config for the specified send-as
       alias. Note that pkcs12 format is required for the key.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.sendAs.smimeInfo.insert
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -2450,6 +2509,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo/{id}
     description: Deletes the specified S/MIME config for the specified send-as alias.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.sendAs.smimeInfo.delete
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -2479,6 +2539,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo/{id}
     description: Gets the specified S/MIME config for the specified send-as alias.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.sendAs.smimeInfo.get
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -2508,6 +2569,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo/{id}/setDefault
     description: Sets the default S/MIME config for the specified send-as alias.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.sendAs.smimeInfo.setDefault
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -2539,6 +2601,7 @@ modules:
       The verification status must be `pending`. This method is only available
       to service account clients that have been delegated domain-wide authority.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.sendAs.verify
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -2560,6 +2623,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/vacation
     description: Gets vacation responder settings.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.getVacation
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -2574,6 +2638,7 @@ modules:
     path: /gmail/v1/users/{userId}/settings/vacation
     description: Updates vacation responder settings.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.settings.updateVacation
     params:
       - paramName: userId
         description: User's email address. The special value "me" can be used to
@@ -2660,6 +2725,7 @@ modules:
     path: /gmail/v1/users/{userId}/stop
     description: Stop receiving push notifications for the given user mailbox.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.stop
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -2674,6 +2740,7 @@ modules:
     path: /gmail/v1/users/{userId}/threads
     description: Lists the threads in the user's mailbox.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.threads.list
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -2734,6 +2801,7 @@ modules:
       messages that belong to the thread are also deleted. This operation cannot
       be undone. Prefer `threads.trash` instead.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.threads.delete
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -2755,6 +2823,7 @@ modules:
     path: /gmail/v1/users/{userId}/threads/{id}
     description: Gets the specified thread.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.threads.get
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -2799,6 +2868,7 @@ modules:
     description: Modifies the labels applied to the thread. This applies to all
       messages in the thread.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.threads.modify
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -2842,6 +2912,7 @@ modules:
     description: Moves the specified thread to the trash. Any messages that belong
       to the thread are also moved to the trash.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.threads.trash
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -2864,6 +2935,7 @@ modules:
     description: Removes the specified thread from the trash. Any messages that
       belong to the thread are also removed from the trash.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.threads.untrash
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to
@@ -2885,6 +2957,7 @@ modules:
     path: /gmail/v1/users/{userId}/watch
     description: Set up or update a push notification watch on the given user mailbox.
     externalDocs: "https://developers.google.com/gmail/api/reference/rest"
+    operationId: gmail.users.watch
     params:
       - paramName: userId
         description: The user's email address. The special value `me` can be used to

@@ -34,6 +34,7 @@ modules:
     path: /v1beta/cachedContents
     description: Creates CachedContent resource.
     externalDocs: ""
+    operationId: generativelanguage.cachedContents.create
     params:
       - paramName: contents
         description: Optional. Input only. Immutable. The content to cache.
@@ -135,6 +136,7 @@ modules:
     path: /v1beta/cachedContents
     description: Lists CachedContents.
     externalDocs: ""
+    operationId: generativelanguage.cachedContents.list
     params:
       - paramName: pageSize
         description: Optional. The maximum number of cached contents to return. The
@@ -161,6 +163,7 @@ modules:
     path: /v1beta/corpora
     description: Creates an empty `Corpus`.
     externalDocs: ""
+    operationId: generativelanguage.corpora.create
     params:
       - paramName: createTime
         description: Output only. The Timestamp of when the `Corpus` was created.
@@ -203,6 +206,7 @@ modules:
     path: /v1beta/corpora
     description: Lists all `Corpora` owned by the user.
     externalDocs: ""
+    operationId: generativelanguage.corpora.list
     params:
       - paramName: pageSize
         description: Optional. The maximum number of `Corpora` to return (per page). The
@@ -230,6 +234,7 @@ modules:
     path: /v1beta/files
     description: Lists the metadata for `File`s owned by the requesting project.
     externalDocs: ""
+    operationId: generativelanguage.files.list
     params:
       - paramName: pageSize
         description: Optional. Maximum number of `File`s to return per page. If
@@ -251,6 +256,7 @@ modules:
     path: /v1beta/generatedFiles
     description: Lists the generated files owned by the requesting project.
     externalDocs: ""
+    operationId: generativelanguage.generatedFiles.list
     params:
       - paramName: pageSize
         description: Optional. Maximum number of `GeneratedFile`s to return per page. If
@@ -274,6 +280,7 @@ modules:
       [`Model`s](https://ai.google.dev/gemini-api/docs/models/gemini) available
       through the Gemini API.
     externalDocs: ""
+    operationId: generativelanguage.models.list
     params:
       - paramName: pageSize
         description: The maximum number of `Models` to return (per page). If
@@ -303,6 +310,7 @@ modules:
       results through the Operations service. Example: GET
       /v1/tunedModels/az2mb0bpw6i/operations/000-111-222"
     externalDocs: ""
+    operationId: generativelanguage.tunedModels.create
     params:
       - paramName: tunedModelId
         description: "Optional. The unique id for the tuned model if specified. This
@@ -438,6 +446,7 @@ modules:
     path: /v1beta/tunedModels
     description: Lists created tuned models.
     externalDocs: ""
+    operationId: generativelanguage.tunedModels.list
     params:
       - paramName: filter
         description: "Optional. A filter is a full text search over the tuned model's
@@ -479,6 +488,7 @@ modules:
     path: /v1beta/cachedContents/{name}
     description: Deletes CachedContent resource.
     externalDocs: ""
+    operationId: generativelanguage.cachedContents.delete
     params:
       - paramName: name
         description: "Required. The resource name referring to the content cache entry
@@ -493,6 +503,7 @@ modules:
     path: /v1beta/cachedContents/{name}
     description: Reads CachedContent resource.
     externalDocs: ""
+    operationId: generativelanguage.cachedContents.get
     params:
       - paramName: name
         description: "Required. The resource name referring to the content cache entry.
@@ -507,6 +518,7 @@ modules:
     path: /v1beta/cachedContents/{name}
     description: Updates CachedContent resource (only expiration is updatable).
     externalDocs: ""
+    operationId: generativelanguage.cachedContents.patch
     params:
       - paramName: name
         description: "Optional. Identifier. The resource name referring to the cached
@@ -623,6 +635,7 @@ modules:
     path: /v1beta/corpora/{name}
     description: Deletes the permission.
     externalDocs: ""
+    operationId: generativelanguage.corpora.permissions.delete
     params:
       - paramName: name
         description: "Required. The resource name of the permission. Formats:
@@ -648,6 +661,7 @@ modules:
     path: /v1beta/corpora/{name}
     description: Gets information about a specific Permission.
     externalDocs: ""
+    operationId: generativelanguage.corpora.permissions.get
     params:
       - paramName: name
         description: "Required. The resource name of the permission. Formats:
@@ -663,6 +677,7 @@ modules:
     path: /v1beta/corpora/{name}
     description: Updates the permission.
     externalDocs: ""
+    operationId: generativelanguage.corpora.permissions.patch
     params:
       - paramName: name
         description: "Output only. Identifier. The permission name. A unique name will
@@ -731,6 +746,7 @@ modules:
     path: /v1beta/corpora/{name}:query
     description: Performs semantic search over a `Document`.
     externalDocs: ""
+    operationId: generativelanguage.corpora.documents.query
     params:
       - paramName: name
         description: "Required. The name of the `Document` to query. Example:
@@ -788,6 +804,7 @@ modules:
     path: /v1beta/corpora/{parent}/documents
     description: Creates an empty `Document`.
     externalDocs: ""
+    operationId: generativelanguage.corpora.documents.create
     params:
       - paramName: parent
         description: "Required. The name of the `Corpus` where this `Document` will be
@@ -850,6 +867,7 @@ modules:
     path: /v1beta/corpora/{parent}/documents
     description: Lists all `Document`s in a `Corpus`.
     externalDocs: ""
+    operationId: generativelanguage.corpora.documents.list
     params:
       - paramName: parent
         description: "Required. The name of the `Corpus` containing `Document`s.
@@ -885,6 +903,7 @@ modules:
     path: /v1beta/corpora/{parent}/chunks:batchCreate
     description: Batch create `Chunk`s.
     externalDocs: ""
+    operationId: generativelanguage.corpora.documents.chunks.batchCreate
     params:
       - paramName: parent
         description: "Optional. The name of the `Document` where this batch of `Chunk`s
@@ -912,6 +931,7 @@ modules:
     path: /v1beta/corpora/{parent}/chunks:batchDelete
     description: Batch delete `Chunk`s.
     externalDocs: ""
+    operationId: generativelanguage.corpora.documents.chunks.batchDelete
     params:
       - paramName: parent
         description: "Optional. The name of the `Document` containing the `Chunk`s to
@@ -937,6 +957,7 @@ modules:
     path: /v1beta/corpora/{parent}/chunks:batchUpdate
     description: Batch update `Chunk`s.
     externalDocs: ""
+    operationId: generativelanguage.corpora.documents.chunks.batchUpdate
     params:
       - paramName: parent
         description: "Optional. The name of the `Document` containing the `Chunk`s to
@@ -963,6 +984,7 @@ modules:
     path: /v1beta/corpora/{parent}/chunks
     description: Creates a `Chunk`.
     externalDocs: ""
+    operationId: generativelanguage.corpora.documents.chunks.create
     params:
       - paramName: parent
         description: "Required. The name of the `Document` where this `Chunk` will be
@@ -1033,6 +1055,7 @@ modules:
     path: /v1beta/corpora/{parent}/chunks
     description: Lists all `Chunk`s in a `Document`.
     externalDocs: ""
+    operationId: generativelanguage.corpora.documents.chunks.list
     params:
       - paramName: parent
         description: "Required. The name of the `Document` containing `Chunk`s. Example:
@@ -1067,6 +1090,7 @@ modules:
     path: /v1beta/corpora/{parent}/permissions
     description: Create a permission to a specific resource.
     externalDocs: ""
+    operationId: generativelanguage.corpora.permissions.create
     params:
       - paramName: parent
         description: "Required. The parent resource of the `Permission`. Formats:
@@ -1125,6 +1149,7 @@ modules:
     path: /v1beta/corpora/{parent}/permissions
     description: Lists permissions for the specific resource.
     externalDocs: ""
+    operationId: generativelanguage.corpora.permissions.list
     params:
       - paramName: parent
         description: "Required. The parent resource of the permissions. Formats:
@@ -1160,6 +1185,7 @@ modules:
     path: /v1beta/files/{name}
     description: Deletes the `File`.
     externalDocs: ""
+    operationId: generativelanguage.files.delete
     params:
       - paramName: name
         description: "Required. The name of the `File` to delete. Example: `files/abc-123`"
@@ -1173,6 +1199,7 @@ modules:
     path: /v1beta/files/{name}
     description: Gets the metadata for the given `File`.
     externalDocs: ""
+    operationId: generativelanguage.files.get
     params:
       - paramName: name
         description: "Required. The name of the `File` to get. Example: `files/abc-123`"
@@ -1188,6 +1215,7 @@ modules:
       metadata of the generated file is returned. To retrieve the file content
       via REST, add alt=media as a query parameter.
     externalDocs: ""
+    operationId: generativelanguage.media.download
     params:
       - paramName: name
         description: "Required. The name of the generated file to retrieve. Example:
@@ -1204,6 +1232,7 @@ modules:
       consists of a batch of strings represented as `EmbedContentRequest`
       objects.
     externalDocs: ""
+    operationId: generativelanguage.models.batchEmbedContents
     params:
       - paramName: model
         description: "Required. The model's resource name. This serves as an ID for the
@@ -1232,6 +1261,7 @@ modules:
     description: Generates multiple embeddings from the model given input text in a
       synchronous call.
     externalDocs: ""
+    operationId: generativelanguage.models.batchEmbedText
     params:
       - paramName: model
         description: "Required. The name of the `Model` to use for generating the
@@ -1268,6 +1298,7 @@ modules:
     path: /v1beta/models/{model}:countMessageTokens
     description: Runs a model's tokenizer on a string and returns the token count.
     externalDocs: ""
+    operationId: generativelanguage.models.countMessageTokens
     params:
       - paramName: model
         description: "Required. The model's resource name. This serves as an ID for the
@@ -1296,6 +1327,7 @@ modules:
     path: /v1beta/models/{model}:countTextTokens
     description: Runs a model's tokenizer on a text and returns the token count.
     externalDocs: ""
+    operationId: generativelanguage.models.countTextTokens
     params:
       - paramName: model
         description: "Required. The model's resource name. This serves as an ID for the
@@ -1323,6 +1355,7 @@ modules:
       guide](https://ai.google.dev/gemini-api/docs/tokens) to learn more about
       tokens.
     externalDocs: ""
+    operationId: generativelanguage.models.countTokens
     params:
       - paramName: model
         description: "Required. The model's resource name. This serves as an ID for the
@@ -1358,6 +1391,7 @@ modules:
       the specified [Gemini Embedding
       model](https://ai.google.dev/gemini-api/docs/models/gemini#text-embedding).
     externalDocs: ""
+    operationId: generativelanguage.models.embedContent
     params:
       - paramName: model
         description: "Required. The model's resource name. This serves as an ID for the
@@ -1430,6 +1464,7 @@ modules:
     path: /v1beta/models/{model}:embedText
     description: Generates an embedding from the model given an input message.
     externalDocs: ""
+    operationId: generativelanguage.models.embedText
     params:
       - paramName: model
         description: Required. The model name to use with the format model=models/{model}.
@@ -1460,6 +1495,7 @@ modules:
     description: Generates a grounded answer from the model given an input
       `GenerateAnswerRequest`.
     externalDocs: ""
+    operationId: generativelanguage.models.generateAnswer
     params:
       - paramName: model
         description: "Required. The name of the `Model` to use for generating the
@@ -1560,6 +1596,7 @@ modules:
       guide](https://ai.google.dev/gemini-api/docs/models/gemini) and [tuning
       guide](https://ai.google.dev/gemini-api/docs/model-tuning) for details.
     externalDocs: ""
+    operationId: generativelanguage.models.generateContent
     params:
       - paramName: model
         description: "Required. The name of the `Model` to use for generating the
@@ -1674,6 +1711,7 @@ modules:
     path: /v1beta/models/{model}:generateMessage
     description: Generates a response from the model given an input `MessagePrompt`.
     externalDocs: ""
+    operationId: generativelanguage.models.generateMessage
     params:
       - paramName: model
         description: "Required. The name of the model to use. Format:
@@ -1739,6 +1777,7 @@ modules:
     path: /v1beta/models/{model}:generateText
     description: Generates a response from the model given an input message.
     externalDocs: ""
+    operationId: generativelanguage.models.generateText
     params:
       - paramName: model
         description: "Required. The name of the `Model` or `TunedModel` to use for
@@ -1852,6 +1891,7 @@ modules:
       this method to poll the operation result at intervals as recommended by
       the API service.
     externalDocs: ""
+    operationId: generativelanguage.models.operations.get
     params:
       - paramName: name
         description: The name of the operation resource.
@@ -1865,6 +1905,7 @@ modules:
     path: /v1beta/models/{model}:predict
     description: Performs a prediction request.
     externalDocs: ""
+    operationId: generativelanguage.models.predict
     params:
       - paramName: model
         description: "Required. The name of the model for prediction. Format:
@@ -1896,6 +1937,7 @@ modules:
     path: /v1beta/models/{model}:predictLongRunning
     description: Same as Predict but returns an LRO.
     externalDocs: ""
+    operationId: generativelanguage.models.predictLongRunning
     params:
       - paramName: model
         description: "Required. The name of the model for prediction. Format:
@@ -1929,6 +1971,7 @@ modules:
       response](https://ai.google.dev/gemini-api/docs/text-generation?lang=python#generate-a-text-stream)
       from the model given an input `GenerateContentRequest`.
     externalDocs: ""
+    operationId: generativelanguage.models.streamGenerateContent
     params:
       - paramName: model
         description: "Required. The name of the `Model` to use for generating the
@@ -2044,6 +2087,7 @@ modules:
     description: Lists operations that match the specified filter in the request. If
       the server doesn't support this method, it returns `UNIMPLEMENTED`.
     externalDocs: ""
+    operationId: generativelanguage.models.operations.list
     params:
       - paramName: name
         description: The name of the operation's parent resource.
@@ -2078,6 +2122,7 @@ modules:
     path: /v1beta/tunedModels/{name}
     description: Deletes the permission.
     externalDocs: ""
+    operationId: generativelanguage.tunedModels.permissions.delete
     params:
       - paramName: name
         description: "Required. The resource name of the permission. Formats:
@@ -2093,6 +2138,7 @@ modules:
     path: /v1beta/tunedModels/{name}
     description: Gets information about a specific Permission.
     externalDocs: ""
+    operationId: generativelanguage.tunedModels.permissions.get
     params:
       - paramName: name
         description: "Required. The resource name of the permission. Formats:
@@ -2108,6 +2154,7 @@ modules:
     path: /v1beta/tunedModels/{name}
     description: Updates the permission.
     externalDocs: ""
+    operationId: generativelanguage.tunedModels.permissions.patch
     params:
       - paramName: name
         description: "Output only. Identifier. The permission name. A unique name will
@@ -2182,6 +2229,7 @@ modules:
       guide](https://ai.google.dev/gemini-api/docs/models/gemini) and [tuning
       guide](https://ai.google.dev/gemini-api/docs/model-tuning) for details.
     externalDocs: ""
+    operationId: generativelanguage.tunedModels.generateContent
     params:
       - paramName: model
         description: "Required. The name of the `Model` to use for generating the
@@ -2296,6 +2344,7 @@ modules:
     path: /v1beta/tunedModels/{model}:generateText
     description: Generates a response from the model given an input message.
     externalDocs: ""
+    operationId: generativelanguage.tunedModels.generateText
     params:
       - paramName: model
         description: "Required. The name of the `Model` or `TunedModel` to use for
@@ -2409,6 +2458,7 @@ modules:
       change ownership of the tuned model. The current owner will be downgraded
       to writer role.
     externalDocs: ""
+    operationId: generativelanguage.tunedModels.transferOwnership
     params:
       - paramName: name
         description: "Required. The resource name of the tuned model to transfer
@@ -2433,6 +2483,7 @@ modules:
     description: Lists operations that match the specified filter in the request. If
       the server doesn't support this method, it returns `UNIMPLEMENTED`.
     externalDocs: ""
+    operationId: generativelanguage.tunedModels.operations.list
     params:
       - paramName: name
         description: The name of the operation's parent resource.
@@ -2467,6 +2518,7 @@ modules:
     path: /v1beta/tunedModels/{parent}/permissions
     description: Create a permission to a specific resource.
     externalDocs: ""
+    operationId: generativelanguage.tunedModels.permissions.create
     params:
       - paramName: parent
         description: "Required. The parent resource of the `Permission`. Formats:
@@ -2525,6 +2577,7 @@ modules:
     path: /v1beta/tunedModels/{parent}/permissions
     description: Lists permissions for the specific resource.
     externalDocs: ""
+    operationId: generativelanguage.tunedModels.permissions.list
     params:
       - paramName: parent
         description: "Required. The parent resource of the permissions. Formats:

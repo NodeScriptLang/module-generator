@@ -1,6 +1,32 @@
 id: brevo
 displayName: Brevo
 baseUrl: https://api.brevo.com/v3
+description: >
+  Brevo provide a RESTFul API that can be used with any languages. With this
+  API, you will be able to :
+    - Manage your campaigns and get the statistics
+    - Manage your contacts
+    - Send transactional Emails and SMS
+    - and much more...
+
+  You can download our wrappers at https://github.com/orgs/brevo
+
+
+  **Possible responses**
+    | Code | Message |
+    | :-------------: | ------------- |
+    | 200  | OK. Successful Request  |
+    | 201  | OK. Successful Creation |
+    | 202  | OK. Request accepted |
+    | 204  | OK. Successful Update/Deletion  |
+    | 400  | Error. Bad Request  |
+    | 401  | Error. Authentication Needed  |
+    | 402  | Error. Not enough credit, plan upgrade needed  |
+    | 403  | Error. Permission denied  |
+    | 404  | Error. Object does not exist |
+    | 405  | Error. Method not allowed  |
+    | 406  | Error. Not Acceptable  |
+    | 422  | Error. Unprocessable Entity |
 commonParams:
   - paramName: apiKey
     paramKey: api-key
@@ -15,6 +41,7 @@ modules:
     path: /emailCampaigns
     description: Return all your created email campaigns
     externalDocs: ""
+    operationId: getEmailCampaigns
     params:
       - paramName: type
         description: Filter on the type of the campaigns
@@ -125,6 +152,7 @@ modules:
     path: /emailCampaigns
     description: Create an email campaign
     externalDocs: ""
+    operationId: createEmailCampaign
     params:
       - paramName: tag
         description: Tag of the campaign
@@ -458,6 +486,7 @@ modules:
     path: /emailCampaigns/{campaignId}
     description: Get an email campaign report
     externalDocs: ""
+    operationId: getEmailCampaign
     params:
       - paramName: campaignId
         description: Id of the campaign
@@ -486,6 +515,7 @@ modules:
     path: /emailCampaigns/{campaignId}
     description: Update an email campaign
     externalDocs: ""
+    operationId: updateEmailCampaign
     params:
       - paramName: campaignId
         description: Id of the campaign
@@ -829,6 +859,7 @@ modules:
     path: /emailCampaigns/{campaignId}
     description: Delete an email campaign
     externalDocs: ""
+    operationId: deleteEmailCampaign
     params:
       - paramName: campaignId
         description: id of the campaign
@@ -842,6 +873,7 @@ modules:
     path: /emailCampaigns/{campaignId}/sendNow
     description: Send an email campaign immediately, based on campaignId
     externalDocs: ""
+    operationId: sendEmailCampaignNow
     params:
       - paramName: campaignId
         description: Id of the campaign
@@ -855,6 +887,7 @@ modules:
     path: /emailCampaigns/{campaignId}/sendTest
     description: Send an email campaign to your test list
     externalDocs: ""
+    operationId: sendTestEmail
     params:
       - paramName: campaignId
         description: Id of the campaign
@@ -883,6 +916,7 @@ modules:
     path: /emailCampaigns/{campaignId}/status
     description: Update an email campaign status
     externalDocs: ""
+    operationId: updateCampaignStatus
     params:
       - paramName: campaignId
         description: Id of the campaign
@@ -916,6 +950,7 @@ modules:
     path: /emailCampaigns/{campaignId}/sendReport
     description: A PDF will be sent to the specified email addresses
     externalDocs: ""
+    operationId: sendReport
     params:
       - paramName: campaignId
         description: Id of the campaign
@@ -952,6 +987,7 @@ modules:
     path: /emailCampaigns/{campaignId}/abTestCampaignResult
     description: Obtain winning version of an A/B test email campaign
     externalDocs: ""
+    operationId: getAbTestCampaignResult
     params:
       - paramName: campaignId
         description: Id of the A/B test campaign
@@ -966,6 +1002,7 @@ modules:
     description: Get a unique URL to share & import an email template from one Brevo
       account to another.
     externalDocs: ""
+    operationId: getSharedTemplateUrl
     params:
       - paramName: campaignId
         description: Id of the campaign or template
@@ -979,6 +1016,7 @@ modules:
     path: /emailCampaigns/{campaignId}/exportRecipients
     description: Export the recipients of an email campaign
     externalDocs: ""
+    operationId: emailExportRecipients
     params:
       - paramName: campaignId
         description: Id of the campaign
@@ -1017,6 +1055,7 @@ modules:
     path: /emailCampaigns/images
     description: Upload an image to your account's image gallery
     externalDocs: ""
+    operationId: uploadImageToGallery
     params:
       - paramName: imageUrl
         description: >
@@ -1044,6 +1083,7 @@ modules:
     path: /smtp/email
     description: Send a transactional email
     externalDocs: ""
+    operationId: sendTransacEmail
     params:
       - paramName: sender
         description: >
@@ -1257,6 +1297,7 @@ modules:
       default. To retrieve emails before that time, please pass startDate and
       endDate in query filters.
     externalDocs: ""
+    operationId: getTransacEmailsList
     params:
       - paramName: email
         description: >
@@ -1340,6 +1381,7 @@ modules:
     path: /smtp/emails/{uuid}
     description: Get the personalized content of a sent transactional email
     externalDocs: ""
+    operationId: getTransacEmailContent
     params:
       - paramName: uuid
         description: Unique id of the transactional email that has been sent to a
@@ -1367,6 +1409,7 @@ modules:
     path: /smtp/templates
     description: Get the list of email templates
     externalDocs: ""
+    operationId: getSmtpTemplates
     params:
       - paramName: templateStatus
         description: Filter on the status of the template. Active = true, inactive = false
@@ -1410,6 +1453,7 @@ modules:
     path: /smtp/templates
     description: Create an email template
     externalDocs: ""
+    operationId: createSmtpTemplate
     params:
       - paramName: tag
         description: Tag of the template
@@ -1508,6 +1552,7 @@ modules:
     path: /smtp/templates/{templateId}
     description: Returns the template information
     externalDocs: ""
+    operationId: getSmtpTemplate
     params:
       - paramName: templateId
         description: id of the template
@@ -1521,6 +1566,7 @@ modules:
     path: /smtp/templates/{templateId}
     description: Update an email template
     externalDocs: ""
+    operationId: updateSmtpTemplate
     params:
       - paramName: templateId
         description: id of the template
@@ -1630,6 +1676,7 @@ modules:
     path: /smtp/templates/{templateId}
     description: Delete an inactive email template
     externalDocs: ""
+    operationId: deleteSmtpTemplate
     params:
       - paramName: templateId
         description: id of the template
@@ -1643,6 +1690,7 @@ modules:
     path: /smtp/templates/{templateId}/sendTest
     description: Send a template to your test list
     externalDocs: ""
+    operationId: sendTestTemplate
     params:
       - paramName: templateId
         description: Id of the template
@@ -1673,6 +1721,7 @@ modules:
       default if `startDate` and `endDate` OR `days` is not passed. The date
       range can not exceed 90 days
     externalDocs: ""
+    operationId: getAggregatedSmtpReport
     params:
       - paramName: startDate
         description: >
@@ -1713,6 +1762,7 @@ modules:
     path: /smtp/statistics/reports
     description: Get your transactional email activity aggregated per day
     externalDocs: ""
+    operationId: getSmtpReport
     params:
       - paramName: limit
         description: Number of documents returned per page
@@ -1785,6 +1835,7 @@ modules:
       default if `startDate` and `endDate` OR `days` is not passed. The date
       range can not exceed 90 days
     externalDocs: ""
+    operationId: getEmailEventReport
     params:
       - paramName: limit
         description: Number limitation for the result returned
@@ -1911,6 +1962,7 @@ modules:
     path: /smtp/blockedContacts
     description: Get the list of blocked or unsubscribed transactional contacts
     externalDocs: ""
+    operationId: getTransacBlockedContacts
     params:
       - paramName: startDate
         description: >
@@ -1977,12 +2029,14 @@ modules:
     path: /smtp/blockedDomains
     description: Get the list of blocked domains
     externalDocs: ""
+    operationId: getBlockedDomains
     params: []
   - moduleName: Transactional Emails / Blocked Domains / Create
     method: post
     path: /smtp/blockedDomains
     description: Blocks a new domain in order to avoid messages being sent to the same
     externalDocs: ""
+    operationId: blockNewDomain
     params:
       - paramName: domain
         description: name of the domain to be blocked
@@ -1997,6 +2051,7 @@ modules:
     path: /smtp/blockedDomains/{domain}
     description: Unblocks an existing domain from the list of blocked domains
     externalDocs: ""
+    operationId: deleteBlockedDomain
     params:
       - paramName: domain
         description: The name of the domain to be deleted
@@ -2011,6 +2066,7 @@ modules:
     description: Delete hardbounces. To use carefully (e.g. in case of temporary ISP
       failures)
     externalDocs: ""
+    operationId: deleteHardbounces
     params:
       - paramName: startDate
         description: Starting date (YYYY-MM-DD) of the time period for deletion. The
@@ -2044,6 +2100,7 @@ modules:
     description: Fetch scheduled batch of emails by batchId or single scheduled
       email by messageId (Can retrieve data upto 30 days old)
     externalDocs: ""
+    operationId: getScheduledEmailById
     params:
       - paramName: identifier
         description: The `batchId` of scheduled emails batch (Should be a valid UUIDv4)
@@ -2122,6 +2179,7 @@ modules:
     description: Delete scheduled batch of emails by batchId or single scheduled
       email by messageId
     externalDocs: ""
+    operationId: deleteScheduledEmailById
     params:
       - paramName: identifier
         description: The `batchId` of scheduled emails batch (Should be a valid UUIDv4)
@@ -2136,6 +2194,7 @@ modules:
     path: /contacts
     description: Get all the contacts
     externalDocs: ""
+    operationId: getContacts
     params:
       - paramName: limit
         description: Number of documents per page
@@ -2218,6 +2277,7 @@ modules:
     path: /contacts
     description: Create a contact
     externalDocs: ""
+    operationId: createContact
     params:
       - paramName: email
         description: >
@@ -2301,6 +2361,7 @@ modules:
     path: /contacts/doubleOptinConfirmation
     description: Create Contact via DOI (Double-Opt-In) Flow
     externalDocs: ""
+    operationId: createDoiContact
     params:
       - paramName: email
         description: Email address where the confirmation email will be sent. This email
@@ -2365,6 +2426,7 @@ modules:
       ``https://developers.brevo.com/reference/contacts-7#getcontactstats``
       endpoint with the appropriate date ranges.
     externalDocs: ""
+    operationId: getContactInfo
     params:
       - paramName: identifier
         description: Email (urlencoded) OR ID of the contact OR its SMS attribute value
@@ -2412,6 +2474,7 @@ modules:
     path: /contacts/{identifier}
     description: Delete a contact
     externalDocs: ""
+    operationId: deleteContact
     params:
       - paramName: identifier
         description: Email (urlencoded) OR ID of the contact OR EXT_ID attribute
@@ -2438,6 +2501,7 @@ modules:
     path: /contacts/{identifier}
     description: Update a contact
     externalDocs: ""
+    operationId: updateContact
     params:
       - paramName: identifier
         description: Email (urlencoded) OR ID of the contact
@@ -2523,6 +2587,7 @@ modules:
     path: /contacts/batch
     description: Update multiple contacts
     externalDocs: ""
+    operationId: updateBatchContacts
     params:
       - paramName: contacts
         description: List of contacts to be updated
@@ -2539,6 +2604,7 @@ modules:
     path: /contacts/{identifier}/campaignStats
     description: Get email campaigns' statistics for a contact
     externalDocs: ""
+    operationId: getContactStats
     params:
       - paramName: identifier
         description: Email (urlencoded) OR ID of the contact
@@ -2573,12 +2639,14 @@ modules:
     path: /contacts/attributes
     description: List all attributes
     externalDocs: ""
+    operationId: getAttributes
     params: []
   - moduleName: Contacts / Attributes / Update
     method: put
     path: /contacts/attributes/{attributeCategory}/{attributeName}
     description: Update contact attribute
     externalDocs: ""
+    operationId: updateAttribute
     params:
       - paramName: attributeCategory
         description: Category of the attribute
@@ -2641,6 +2709,7 @@ modules:
     path: /contacts/attributes/{attributeCategory}/{attributeName}
     description: Create contact attribute
     externalDocs: ""
+    operationId: createAttribute
     params:
       - paramName: attributeCategory
         description: Category of the attribute
@@ -2739,6 +2808,7 @@ modules:
     path: /contacts/attributes/{attributeCategory}/{attributeName}
     description: Delete an attribute
     externalDocs: ""
+    operationId: deleteAttribute
     params:
       - paramName: attributeCategory
         description: Category of the attribute
@@ -2765,6 +2835,7 @@ modules:
     path: /contacts/attributes/{attributeType}/{multipleChoiceAttribute}/{multipleChoiceAttributeOption}
     description: Delete a multiple-choice attribute option
     externalDocs: ""
+    operationId: deleteMultiAttributeOptions
     params:
       - paramName: attributeType
         description: Type of the attribute
@@ -2795,6 +2866,7 @@ modules:
     path: /contacts/folders
     description: Get all folders
     externalDocs: ""
+    operationId: getFolders
     params:
       - paramName: limit
         description: Number of documents per page
@@ -2831,6 +2903,7 @@ modules:
     path: /contacts/folders
     description: Create a folder
     externalDocs: ""
+    operationId: createFolder
     params:
       - paramName: name
         description: Name of the folder
@@ -2845,6 +2918,7 @@ modules:
     path: /contacts/folders/{folderId}
     description: Returns a folder's details
     externalDocs: ""
+    operationId: getFolder
     params:
       - paramName: folderId
         description: id of the folder
@@ -2858,6 +2932,7 @@ modules:
     path: /contacts/folders/{folderId}
     description: Update a folder
     externalDocs: ""
+    operationId: updateFolder
     params:
       - paramName: folderId
         description: Id of the folder
@@ -2879,6 +2954,7 @@ modules:
     path: /contacts/folders/{folderId}
     description: Delete a folder (and all its lists)
     externalDocs: ""
+    operationId: deleteFolder
     params:
       - paramName: folderId
         description: Id of the folder
@@ -2892,6 +2968,7 @@ modules:
     path: /contacts/folders/{folderId}/lists
     description: Get lists in a folder
     externalDocs: ""
+    operationId: getFolderLists
     params:
       - paramName: folderId
         description: Id of the folder
@@ -2935,6 +3012,7 @@ modules:
     path: /contacts/lists
     description: Get all the lists
     externalDocs: ""
+    operationId: getLists
     params:
       - paramName: limit
         description: Number of documents per page
@@ -2971,6 +3049,7 @@ modules:
     path: /contacts/lists
     description: Create a list
     externalDocs: ""
+    operationId: createList
     params:
       - paramName: name
         description: Name of the list
@@ -2992,6 +3071,7 @@ modules:
     path: /contacts/lists/{listId}
     description: Get a list's details
     externalDocs: ""
+    operationId: getList
     params:
       - paramName: listId
         description: Id of the list
@@ -3031,6 +3111,7 @@ modules:
     path: /contacts/lists/{listId}
     description: Update a list
     externalDocs: ""
+    operationId: updateList
     params:
       - paramName: listId
         description: Id of the list
@@ -3061,6 +3142,7 @@ modules:
     path: /contacts/lists/{listId}
     description: Delete a list
     externalDocs: ""
+    operationId: deleteList
     params:
       - paramName: listId
         description: Id of the list
@@ -3074,6 +3156,7 @@ modules:
     path: /contacts/segments
     description: Get all the segments
     externalDocs: ""
+    operationId: getSegments
     params:
       - paramName: limit
         description: Number of documents per page
@@ -3110,6 +3193,7 @@ modules:
     path: /contacts/lists/{listId}/contacts
     description: Get contacts in a list
     externalDocs: ""
+    operationId: getContactsFromList
     params:
       - paramName: listId
         description: Id of the list
@@ -3163,6 +3247,7 @@ modules:
     path: /contacts/lists/{listId}/contacts/add
     description: Add existing contacts to a list
     externalDocs: ""
+    operationId: addContactToList
     params:
       - paramName: listId
         description: Id of the list
@@ -3184,6 +3269,7 @@ modules:
     path: /contacts/lists/{listId}/contacts/remove
     description: Delete a contact from a list
     externalDocs: ""
+    operationId: removeContactFromList
     params:
       - paramName: listId
         description: Id of the list
@@ -3206,6 +3292,7 @@ modules:
     description: It returns the background process ID which on completion calls the
       notify URL that you have set in the input. File will be available in csv.
     externalDocs: ""
+    operationId: requestContactExport
     params:
       - paramName: exportAttributes
         description: >
@@ -3251,6 +3338,7 @@ modules:
       - Any contact attribute that doesn't exist in your account will be ignored
       at import end.
     externalDocs: ""
+    operationId: importContacts
     params:
       - paramName: fileUrl
         description: >
@@ -3368,6 +3456,7 @@ modules:
     path: /smsCampaigns
     description: Returns the information for all your created SMS campaigns
     externalDocs: ""
+    operationId: getSmsCampaigns
     params:
       - paramName: status
         description: Status of campaign.
@@ -3442,6 +3531,7 @@ modules:
     path: /smsCampaigns
     description: Creates an SMS campaign
     externalDocs: ""
+    operationId: createSmsCampaign
     params:
       - paramName: name
         description: Name of the campaign
@@ -3523,6 +3613,7 @@ modules:
     path: /smsCampaigns/{campaignId}
     description: Get an SMS campaign
     externalDocs: ""
+    operationId: getSmsCampaign
     params:
       - paramName: campaignId
         description: id of the SMS campaign
@@ -3536,6 +3627,7 @@ modules:
     path: /smsCampaigns/{campaignId}
     description: Update an SMS campaign
     externalDocs: ""
+    operationId: updateSmsCampaign
     params:
       - paramName: campaignId
         description: id of the SMS campaign
@@ -3624,6 +3716,7 @@ modules:
     path: /smsCampaigns/{campaignId}
     description: Delete an SMS campaign
     externalDocs: ""
+    operationId: deleteSmsCampaign
     params:
       - paramName: campaignId
         description: id of the SMS campaign
@@ -3637,6 +3730,7 @@ modules:
     path: /smsCampaigns/{campaignId}/sendNow
     description: Send your SMS campaign immediately
     externalDocs: ""
+    operationId: sendSmsCampaignNow
     params:
       - paramName: campaignId
         description: id of the campaign
@@ -3650,6 +3744,7 @@ modules:
     path: /smsCampaigns/{campaignId}/status
     description: Update a campaign's status
     externalDocs: ""
+    operationId: updateSmsCampaignStatus
     params:
       - paramName: campaignId
         description: id of the campaign
@@ -3683,6 +3778,7 @@ modules:
     path: /smsCampaigns/{campaignId}/sendTest
     description: Send a test SMS campaign
     externalDocs: ""
+    operationId: sendTestSms
     params:
       - paramName: campaignId
         description: Id of the SMS campaign
@@ -3708,6 +3804,7 @@ modules:
     description: It returns the background process ID which on completion calls the
       notify URL that you have set in the input.
     externalDocs: ""
+    operationId: requestSmsRecipientExport
     params:
       - paramName: campaignId
         description: id of the campaign
@@ -3745,6 +3842,7 @@ modules:
     description: Send report of Sent and Archived campaign, to the specified email
       addresses, with respective data and a pdf attachment in detail.
     externalDocs: ""
+    operationId: sendSmsReport
     params:
       - paramName: campaignId
         description: id of the campaign
@@ -3781,6 +3879,7 @@ modules:
     path: /transactionalSMS/sms
     description: Send SMS message to a mobile number
     externalDocs: ""
+    operationId: sendTransacSms
     params:
       - paramName: sender
         description: >
@@ -3863,6 +3962,7 @@ modules:
     path: /transactionalSMS/statistics/aggregatedReport
     description: Get your SMS activity aggregated over a period of time
     externalDocs: ""
+    operationId: getTransacAggregatedSmsReport
     params:
       - paramName: startDate
         description: >
@@ -3903,6 +4003,7 @@ modules:
     path: /transactionalSMS/statistics/reports
     description: Get your SMS activity aggregated per day
     externalDocs: ""
+    operationId: getTransacSmsReport
     params:
       - paramName: startDate
         description: >
@@ -3955,6 +4056,7 @@ modules:
     path: /transactionalSMS/statistics/events
     description: Get all your SMS activity (unaggregated events)
     externalDocs: ""
+    operationId: getSmsEvents
     params:
       - paramName: limit
         description: Number of documents per page
@@ -4052,6 +4154,7 @@ modules:
     path: /whatsappCampaigns/{campaignId}
     description: Get a WhatsApp campaign
     externalDocs: ""
+    operationId: getWhatsAppCampaign
     params:
       - paramName: campaignId
         description: Id of the campaign
@@ -4065,6 +4168,7 @@ modules:
     path: /whatsappCampaigns/{campaignId}
     description: Delete a WhatsApp campaign
     externalDocs: ""
+    operationId: deleteWhatsAppCampaign
     params:
       - paramName: campaignId
         description: id of the campaign
@@ -4078,6 +4182,7 @@ modules:
     path: /whatsappCampaigns/{campaignId}
     description: Update a WhatsApp campaign
     externalDocs: ""
+    operationId: updateWhatsAppCampaign
     params:
       - paramName: campaignId
         description: id of the campaign
@@ -4130,6 +4235,7 @@ modules:
     path: /whatsappCampaigns/template-list
     description: Return all your created WhatsApp templates
     externalDocs: ""
+    operationId: getWhatsAppTemplates
     params:
       - paramName: startDate
         description: >
@@ -4200,6 +4306,7 @@ modules:
     path: /whatsappCampaigns
     description: Create and Send a WhatsApp campaign
     externalDocs: ""
+    operationId: createWhatsAppCampaign
     params:
       - paramName: name
         description: Name of the WhatsApp campaign creation
@@ -4238,6 +4345,7 @@ modules:
     path: /whatsappCampaigns
     description: Return all your created WhatsApp campaigns
     externalDocs: ""
+    operationId: getWhatsAppCampaigns
     params:
       - paramName: startDate
         description: >
@@ -4298,6 +4406,7 @@ modules:
     path: /whatsappCampaigns/template
     description: Create a WhatsApp template
     externalDocs: ""
+    operationId: createWhatsAppTemplate
     params:
       - paramName: name
         description: Name of the template
@@ -4374,6 +4483,7 @@ modules:
     path: /whatsappCampaigns/template/approval/{templateId}
     description: Send your WhatsApp template for approval
     externalDocs: ""
+    operationId: sendWhatsAppTemplateApproval
     params:
       - paramName: templateId
         description: id of the template
@@ -4387,12 +4497,14 @@ modules:
     path: /whatsappCampaigns/config
     description: Get your WhatsApp API account information
     externalDocs: ""
+    operationId: getWhatsAppConfig
     params: []
   - moduleName: Senders / List
     method: get
     path: /senders
     description: Get the list of all your senders
     externalDocs: ""
+    operationId: getSenders
     params:
       - paramName: ip
         description: >
@@ -4415,6 +4527,7 @@ modules:
     path: /senders
     description: Create a new sender
     externalDocs: ""
+    operationId: createSender
     params:
       - paramName: name
         description: From Name to use for the sender
@@ -4447,6 +4560,7 @@ modules:
     path: /senders/{senderId}
     description: Update a sender
     externalDocs: ""
+    operationId: updateSender
     params:
       - paramName: senderId
         description: Id of the sender
@@ -4486,6 +4600,7 @@ modules:
     path: /senders/{senderId}
     description: Delete a sender
     externalDocs: ""
+    operationId: deleteSender
     params:
       - paramName: senderId
         description: Id of the sender
@@ -4499,6 +4614,7 @@ modules:
     path: /senders/{senderId}/validate
     description: Validate Sender using OTP
     externalDocs: ""
+    operationId: validateSenderByOTP
     params:
       - paramName: senderId
         description: Id of the sender
@@ -4520,6 +4636,7 @@ modules:
     path: /senders/{senderId}/ips
     description: Get all the dedicated IPs for a sender
     externalDocs: ""
+    operationId: getIpsFromSender
     params:
       - paramName: senderId
         description: Id of the sender
@@ -4533,18 +4650,21 @@ modules:
     path: /senders/ips
     description: Get all the dedicated IPs for your account
     externalDocs: ""
+    operationId: getIps
     params: []
   - moduleName: Domains / List
     method: get
     path: /senders/domains
     description: Get the list of all your domains
     externalDocs: ""
+    operationId: getDomains
     params: []
   - moduleName: Domains / Create
     method: post
     path: /senders/domains
     description: Create a new domain
     externalDocs: ""
+    operationId: createDomain
     params:
       - paramName: name
         description: Domain name
@@ -4559,6 +4679,7 @@ modules:
     path: /senders/domains/{domainName}
     description: Delete a domain
     externalDocs: ""
+    operationId: deleteDomain
     params:
       - paramName: domainName
         description: Domain name
@@ -4572,6 +4693,7 @@ modules:
     path: /senders/domains/{domainName}
     description: Validate domain configuration
     externalDocs: ""
+    operationId: getDomainConfiguration
     params:
       - paramName: domainName
         description: Domain name
@@ -4585,6 +4707,7 @@ modules:
     path: /senders/domains/{domainName}/authenticate
     description: Authenticate a domain
     externalDocs: ""
+    operationId: authenticateDomain
     params:
       - paramName: domainName
         description: Domain name
@@ -4598,6 +4721,7 @@ modules:
     path: /webhooks
     description: Get all webhooks
     externalDocs: ""
+    operationId: getWebhooks
     params:
       - paramName: type
         description: Filter on webhook type
@@ -4627,6 +4751,7 @@ modules:
     path: /webhooks
     description: Create a webhook
     externalDocs: ""
+    operationId: createWebhook
     params:
       - paramName: url
         description: URL of the webhook
@@ -4715,6 +4840,7 @@ modules:
     path: /webhooks/{webhookId}
     description: Get a webhook details
     externalDocs: ""
+    operationId: getWebhook
     params:
       - paramName: webhookId
         description: Id of the webhook
@@ -4728,6 +4854,7 @@ modules:
     path: /webhooks/{webhookId}
     description: Update a webhook
     externalDocs: ""
+    operationId: updateWebhook
     params:
       - paramName: webhookId
         description: Id of the webhook
@@ -4811,6 +4938,7 @@ modules:
     path: /webhooks/{webhookId}
     description: Delete a webhook
     externalDocs: ""
+    operationId: deleteWebhook
     params:
       - paramName: webhookId
         description: Id of the webhook
@@ -4826,6 +4954,7 @@ modules:
       in the CSV file. The link to download the CSV file will be sent to the
       webhook that was provided in the notifyURL.
     externalDocs: ""
+    operationId: exportWebhooksHistory
     params:
       - paramName: requestBody
         paramKey: ""
@@ -4840,12 +4969,14 @@ modules:
     path: /account
     description: Get your account information, plan and credits details
     externalDocs: ""
+    operationId: getAccount
     params: []
   - moduleName: Account / Activity
     method: get
     path: /organization/activities
     description: Get user activity logs
     externalDocs: ""
+    operationId: getAccountActivity
     params:
       - paramName: startDate
         description: Mandatory if endDate is used. Enter start date in UTC date
@@ -4890,12 +5021,14 @@ modules:
     path: /organization/invited/users
     description: Get the list of all your users
     externalDocs: ""
+    operationId: getInvitedUsersList
     params: []
   - moduleName: User / Permissions / Get
     method: get
     path: /organization/user/{email}/permissions
     description: Check user permission
     externalDocs: ""
+    operationId: getUserPermission
     params:
       - paramName: email
         description: Email of the invited user.
@@ -4909,6 +5042,7 @@ modules:
     path: /organization/user/invitation/revoke/{email}
     description: Revoke user permission
     externalDocs: ""
+    operationId: putRevokeUserPermission
     params:
       - paramName: email
         description: Email of the invited user.
@@ -4922,6 +5056,7 @@ modules:
     path: /organization/user/invitation/{action}/{email}
     description: Resend / Cancel invitation
     externalDocs: ""
+    operationId: putresendcancelinvitation
     params:
       - paramName: action
         description: action
@@ -5027,6 +5162,7 @@ modules:
       - The availability of feature and its permission depends on your current
       plan. Please select the features and permissions accordingly.
     externalDocs: ""
+    operationId: inviteuser
     params:
       - paramName: email
         description: Email address for the organization
@@ -5138,6 +5274,7 @@ modules:
       - The availability of feature and its permission depends on your current
       plan. Please select the features and permissions accordingly.
     externalDocs: ""
+    operationId: EditUserPermission
     params:
       - paramName: email
         description: Email address for the organization
@@ -5168,6 +5305,7 @@ modules:
     path: /processes
     description: Return all the processes for your account
     externalDocs: ""
+    operationId: getProcesses
     params:
       - paramName: limit
         description: Number limitation for the result returned
@@ -5204,6 +5342,7 @@ modules:
     path: /processes/{processId}
     description: Return the informations for a process
     externalDocs: ""
+    operationId: getProcess
     params:
       - paramName: processId
         description: Id of the process
@@ -5217,6 +5356,7 @@ modules:
     path: /inbound/events
     description: This endpoint will show the list of all the events for the received emails.
     externalDocs: ""
+    operationId: getInboundEmailEvents
     params:
       - paramName: sender
         description: Email address of the sender.
@@ -5278,6 +5418,7 @@ modules:
     description: This endpoint will show the list of all events history for one
       particular received email.
     externalDocs: ""
+    operationId: getInboundEmailEventsByUuid
     params:
       - paramName: uuid
         description: UUID to fetch events specific to recieved email
@@ -5291,6 +5432,7 @@ modules:
     path: /inbound/attachments/{downloadToken}
     description: This endpoint will retrieve inbound attachment with download token.
     externalDocs: ""
+    operationId: getInboundEmailAttachment
     params:
       - paramName: downloadToken
         description: Token to fetch a particular attachment
@@ -5975,6 +6117,7 @@ modules:
       otherwise if `true` then it's assumed that all permissions will be there
       for the invited admin user.
     externalDocs: ""
+    operationId: inviteAdminUser
     params:
       - paramName: email
         description: Email address for the organization
@@ -6054,12 +6197,14 @@ modules:
     path: /corporate/invited/users
     description: This endpoint allows you to list all Admin users of your Admin account
     externalDocs: ""
+    operationId: getCorporateInvitedUsersList
     params: []
   - moduleName: Master Account / User Permissions / Get
     method: get
     path: /corporate/user/{email}/permissions
     description: Check admin user permissions
     externalDocs: ""
+    operationId: getCorporateUserPermission
     params:
       - paramName: email
         description: Email of the invited user.
@@ -6073,6 +6218,7 @@ modules:
     path: /corporate/groups
     description: This endpoint allows you to list all groups created on your Admin account.
     externalDocs: ""
+    operationId: getSubAccountGroups
     params: []
   - moduleName: Companies / List
     method: get
@@ -7435,6 +7581,7 @@ modules:
     path: /ecommerce/config/displayCurrency
     description: Set the ISO 4217 compliant display currency code for your Brevo account
     externalDocs: ""
+    operationId: setConfigDisplayCurrency
     params:
       - paramName: code
         description: ISO 4217 compliant display currency code
@@ -7530,6 +7677,7 @@ modules:
     path: /orders
     description: Get all the orders
     externalDocs: ""
+    operationId: getOrders
     params:
       - paramName: limit
         description: Number of documents per page
@@ -7585,6 +7733,7 @@ modules:
     path: /orders/status
     description: Manages the transactional status of the order
     externalDocs: ""
+    operationId: createOrder
     params:
       - paramName: id
         description: Unique ID of the order.
@@ -7677,6 +7826,7 @@ modules:
     path: /orders/status/batch
     description: Create multiple orders at one time instead of one order at a time
     externalDocs: ""
+    operationId: createBatchOrder
     params:
       - paramName: orders
         description: array of order objects
@@ -7711,6 +7861,7 @@ modules:
     path: /events
     description: Create an event to track a contact's interaction.
     externalDocs: ""
+    operationId: createEvent
     params:
       - paramName: eventName
         description: The name of the event that occurred. This is how you will find your
@@ -7766,6 +7917,7 @@ modules:
     path: /categories
     description: Return all your categories
     externalDocs: ""
+    operationId: getCategories
     params:
       - paramName: limit
         description: Number of documents per page
@@ -7837,6 +7989,7 @@ modules:
     path: /categories
     description: Create/Update a category
     externalDocs: ""
+    operationId: createUpdateCategory
     params:
       - paramName: id
         description: |
@@ -7892,6 +8045,7 @@ modules:
     path: /categories/{id}
     description: Get a category details
     externalDocs: ""
+    operationId: getCategoryInfo
     params:
       - paramName: id
         description: Category ID
@@ -7905,6 +8059,7 @@ modules:
     path: /categories/batch
     description: Create categories in batch
     externalDocs: ""
+    operationId: createUpdateBatchCategory
     params:
       - paramName: categories
         description: array of categories objects
@@ -7929,6 +8084,7 @@ modules:
     path: /products
     description: Return all your products
     externalDocs: ""
+    operationId: getProducts
     params:
       - paramName: limit
         description: Number of documents per page
@@ -8052,6 +8208,7 @@ modules:
     path: /products
     description: Create/Update a product
     externalDocs: ""
+    operationId: createUpdateProduct
     params:
       - paramName: id
         description: Product ID for which you requested the details
@@ -8151,6 +8308,7 @@ modules:
     path: /products/{id}
     description: Get a product's details
     externalDocs: ""
+    operationId: getProductInfo
     params:
       - paramName: id
         description: Product ID
@@ -8164,6 +8322,7 @@ modules:
     path: /products/batch
     description: Create products in batch
     externalDocs: ""
+    operationId: createUpdateBatchProducts
     params:
       - paramName: products
         description: array of products objects
@@ -8188,6 +8347,7 @@ modules:
     path: /couponCollections
     description: Get all your coupon collections
     externalDocs: ""
+    operationId: getCouponCollections
     params:
       - paramName: limit
         description: Number of documents returned per page
@@ -8236,6 +8396,7 @@ modules:
     path: /couponCollections
     description: Create а coupon collection
     externalDocs: ""
+    operationId: createCouponCollection
     params:
       - paramName: name
         description: Name of the coupons collection
@@ -8282,6 +8443,7 @@ modules:
     path: /couponCollections/{id}
     description: Get a coupon collection by id
     externalDocs: ""
+    operationId: getCouponCollection
     params:
       - paramName: id
         description: Id of the collection to return
@@ -8295,6 +8457,7 @@ modules:
     path: /couponCollections/{id}
     description: Update a coupon collection by id
     externalDocs: ""
+    operationId: updateCouponCollection
     params:
       - paramName: id
         description: Id of the collection to update
@@ -8341,6 +8504,7 @@ modules:
     path: /coupons
     description: Create coupons for a coupon collection
     externalDocs: ""
+    operationId: createCoupons
     params:
       - paramName: collectionId
         description: The id of the coupon collection for which the coupons will be created
@@ -8366,6 +8530,7 @@ modules:
       message you send using the API must contain a Template ID. You must create
       a template on WhatsApp on the Brevo platform to fetch the Template ID.**)
     externalDocs: ""
+    operationId: sendWhatsappMessage
     params:
       - paramName: requestBody
         paramKey: ""
@@ -8382,6 +8547,7 @@ modules:
       activity (30 days by default if `startDate` and `endDate` or `days` is not
       passed. The date range can not exceed 90 days)
     externalDocs: ""
+    operationId: getWhatsappEventReport
     params:
       - paramName: limit
         description: Number limitation for the result returned
@@ -8468,6 +8634,7 @@ modules:
     path: /feeds
     description: This endpoint can fetch all created external feeds.
     externalDocs: ""
+    operationId: getAllExternalFeeds
     params:
       - paramName: search
         description: Can be used to filter records by search keyword on feed name
@@ -8540,6 +8707,7 @@ modules:
     path: /feeds
     description: This endpoint will create an external feed.
     externalDocs: ""
+    operationId: createExternalFeed
     params:
       - paramName: name
         description: Name of the feed
@@ -8625,6 +8793,7 @@ modules:
     path: /feeds/{uuid}
     description: This endpoint will update an external feed.
     externalDocs: ""
+    operationId: getExternalFeedByUUID
     params:
       - paramName: uuid
         description: UUID of the feed to fetch
@@ -8638,6 +8807,7 @@ modules:
     path: /feeds/{uuid}
     description: This endpoint will update an external feed.
     externalDocs: ""
+    operationId: updateExternalFeed
     params:
       - paramName: uuid
         description: UUID of the feed to update
@@ -8729,6 +8899,7 @@ modules:
     path: /feeds/{uuid}
     description: This endpoint will delete an external feed.
     externalDocs: ""
+    operationId: deleteExternalFeed
     params:
       - paramName: uuid
         description: UUID of the feed to delete
@@ -8742,6 +8913,7 @@ modules:
     path: /payments/requests
     description: Create a payment request
     externalDocs: ""
+    operationId: createPaymentRequest
     params:
       - paramName: reference
         description: |
@@ -8801,6 +8973,7 @@ modules:
     path: /payments/requests/{id}
     description: Get payment request details
     externalDocs: ""
+    operationId: getPaymentRequest
     params:
       - paramName: id
         description: Id of the payment Request
@@ -8814,6 +8987,7 @@ modules:
     path: /payments/requests/{id}
     description: Delete a payment request.
     externalDocs: ""
+    operationId: deletePaymentRequest
     params:
       - paramName: id
         description: ID of the payment request.

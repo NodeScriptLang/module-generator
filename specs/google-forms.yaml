@@ -29,6 +29,7 @@ modules:
       create an empty form with a title and (optional) document title, and then
       call forms.update to add the items.
     externalDocs: "https://developers.google.com/forms/api/reference/rest"
+    operationId: forms.forms.create
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -107,6 +108,7 @@ modules:
     path: /v1/forms/{formId}
     description: Get a form.
     externalDocs: "https://developers.google.com/forms/api/reference/rest"
+    operationId: forms.forms.get
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -127,6 +129,7 @@ modules:
     path: /v1/forms/{formId}/responses
     description: List a form's responses.
     externalDocs: "https://developers.google.com/forms/api/reference/rest"
+    operationId: forms.forms.responses.list
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -178,6 +181,7 @@ modules:
     path: /v1/forms/{formId}/responses/{responseId}
     description: Get one response from the form.
     externalDocs: "https://developers.google.com/forms/api/reference/rest"
+    operationId: forms.forms.responses.get
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -207,6 +211,7 @@ modules:
       maximum number of watches is two: For each invoker, the limit is one for
       each event type per form."
     externalDocs: "https://developers.google.com/forms/api/reference/rest"
+    operationId: forms.forms.watches.list
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -230,6 +235,7 @@ modules:
       Watch.EventType. A watch expires seven days after it is created (see
       Watch.expire_time).
     externalDocs: "https://developers.google.com/forms/api/reference/rest"
+    operationId: forms.forms.watches.create
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -275,6 +281,7 @@ modules:
     path: /v1/forms/{formId}/watches/{watchId}
     description: Delete a watch.
     externalDocs: "https://developers.google.com/forms/api/reference/rest"
+    operationId: forms.forms.watches.delete
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -306,6 +313,7 @@ modules:
       the error is no longer present, but fail otherwise. After a watch has
       expired, RenewWatch returns `NOT_FOUND`.
     externalDocs: "https://developers.google.com/forms/api/reference/rest"
+    operationId: forms.forms.watches.renew
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -334,6 +342,7 @@ modules:
     path: /v1/forms/{formId}:batchUpdate
     description: Change the form with a batch of updates.
     externalDocs: "https://developers.google.com/forms/api/reference/rest"
+    operationId: forms.forms.batchUpdate
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.

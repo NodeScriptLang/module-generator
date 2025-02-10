@@ -27,6 +27,7 @@ modules:
       request, including any provided content, are ignored. Returns the created
       presentation.
     externalDocs: "https://developers.google.com/slides/api/reference/rest"
+    operationId: slides.presentations.create
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -145,6 +146,7 @@ modules:
     path: /v1/presentations/{presentationId}
     description: Gets the latest version of the specified presentation.
     externalDocs: "https://developers.google.com/slides/api/reference/rest"
+    operationId: slides.presentations.get
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -179,6 +181,7 @@ modules:
     path: /v1/presentations/{presentationId}/pages/{pageObjectId}
     description: Gets the latest version of the specified page in the presentation.
     externalDocs: "https://developers.google.com/slides/api/reference/rest"
+    operationId: slides.presentations.pages.get
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -222,6 +225,7 @@ modules:
       in the presentation and returns a URL to the thumbnail image. This request
       counts as an [expensive read request](/slides/limits) for quota purposes.
     externalDocs: "https://developers.google.com/slides/api/reference/rest"
+    operationId: slides.presentations.pages.getThumbnail
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
@@ -299,6 +303,7 @@ modules:
       should reflect your changes. In any case, the updates in your request are
       guaranteed to be applied together atomically."
     externalDocs: "https://developers.google.com/slides/api/reference/rest"
+    operationId: slides.presentations.batchUpdate
     params:
       - paramName: fields
         description: Selector specifying which fields to include in a partial response.
