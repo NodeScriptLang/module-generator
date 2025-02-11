@@ -450,6 +450,162 @@ modules:
           default: 1
         required: false
     requestBodyType: json
+  - moduleName: Audio / Create Transcription
+    method: post
+    path: /audio/transcriptions
+    description: Transcribes audio into the input language.
+    externalDocs: ""
+    operationId: createTranscription
+    params:
+      - paramName: file
+        description: >
+          The audio file object (not file name) to transcribe, in one of these
+          formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
+        paramKey: file
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: model
+        description: >
+          ID of the model to use. Only `whisper-1` (which is powered by our open
+          source Whisper V2 model) is currently available.
+        paramKey: model
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: language
+        description: >
+          The language of the input audio. Supplying the input language in
+          [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+          (e.g. `en`) format will improve accuracy and latency.
+        paramKey: language
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: prompt
+        description: >
+          An optional text to guide the model's style or continue a previous
+          audio segment. The [prompt](/docs/guides/speech-to-text#prompting)
+          should match the audio language.
+        paramKey: prompt
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: responseFormat
+        description: >
+          The format of the output, in one of these options: `json`, `text`,
+          `srt`, `verbose_json`, or `vtt`.
+        paramKey: response_format
+        in: body
+        schema:
+          type: string
+          default: json
+          enum:
+            - json
+            - text
+            - srt
+            - verbose_json
+            - vtt
+        required: false
+      - paramName: temperature
+        description: >
+          The sampling temperature, between 0 and 1. Higher values like 0.8 will
+          make the output more random, while lower values like 0.2 will make it
+          more focused and deterministic. If set to 0, the model will use [log
+          probability](https://en.wikipedia.org/wiki/Log_probability) to
+          automatically increase the temperature until certain thresholds are
+          hit.
+        paramKey: temperature
+        in: body
+        schema:
+          type: number
+          default: 0
+        required: false
+      - paramName: timestampGranularities[]
+        description: >
+          The timestamp granularities to populate for this transcription.
+          `response_format` must be set `verbose_json` to use timestamp
+          granularities. Either or both of these options are supported: `word`,
+          or `segment`. Note: There is no additional latency for segment
+          timestamps, but generating word timestamps incurs additional latency.
+        paramKey: timestamp_granularities[]
+        in: body
+        schema:
+          type: array
+          items:
+            type: any
+        required: false
+    requestBodyType: form-data
+  - moduleName: Audio / Create Translation
+    method: post
+    path: /audio/translations
+    description: Translates audio into English.
+    externalDocs: ""
+    operationId: createTranslation
+    params:
+      - paramName: file
+        description: >
+          The audio file object (not file name) translate, in one of these
+          formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
+        paramKey: file
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: model
+        description: >
+          ID of the model to use. Only `whisper-1` (which is powered by our open
+          source Whisper V2 model) is currently available.
+        paramKey: model
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: prompt
+        description: >
+          An optional text to guide the model's style or continue a previous
+          audio segment. The [prompt](/docs/guides/speech-to-text#prompting)
+          should be in English.
+        paramKey: prompt
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: responseFormat
+        description: >
+          The format of the output, in one of these options: `json`, `text`,
+          `srt`, `verbose_json`, or `vtt`.
+        paramKey: response_format
+        in: body
+        schema:
+          type: string
+          default: json
+          enum:
+            - json
+            - text
+            - srt
+            - verbose_json
+            - vtt
+        required: false
+      - paramName: temperature
+        description: >
+          The sampling temperature, between 0 and 1. Higher values like 0.8 will
+          make the output more random, while lower values like 0.2 will make it
+          more focused and deterministic. If set to 0, the model will use [log
+          probability](https://en.wikipedia.org/wiki/Log_probability) to
+          automatically increase the temperature until certain thresholds are
+          hit.
+        paramKey: temperature
+        in: body
+        schema:
+          type: number
+          default: 0
+        required: false
+    requestBodyType: form-data
   - moduleName: Batches / Create
     operationId: createBatch
     method: post
@@ -1486,6 +1642,64 @@ modules:
         schema:
           type: string
         required: false
+  - moduleName: Files / Create
+    method: post
+    path: /files
+    description: >
+      Upload a file that can be used across various endpoints. Individual files
+      can be up to 512 MB, and the size of all files uploaded by one
+      organization can be up to 100 GB.
+
+
+      The Assistants API supports files up to 2 million tokens and of specific
+      file types. See the [Assistants Tools guide](/docs/assistants/tools) for
+      details.
+
+
+      The Fine-tuning API only supports `.jsonl` files. The input also has
+      certain required formats for fine-tuning
+      [chat](/docs/api-reference/fine-tuning/chat-input) or
+      [completions](/docs/api-reference/fine-tuning/completions-input) models.
+
+
+      The Batch API only supports `.jsonl` files up to 200 MB in size. The input
+      also has a specific required
+      [format](/docs/api-reference/batch/request-input).
+
+
+      Please [contact us](https://help.openai.com/) if you need to increase
+      these storage limits.
+    externalDocs: ""
+    operationId: createFile
+    params:
+      - paramName: file
+        description: |
+          The File object (not file name) to be uploaded.
+        paramKey: file
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: purpose
+        description: >
+          The intended purpose of the uploaded file.
+
+
+          Use "assistants" for [Assistants](/docs/api-reference/assistants) and
+          [Message](/docs/api-reference/messages) files, "vision" for Assistants
+          image file inputs, "batch" for [Batch API](/docs/guides/batch), and
+          "fine-tune" for [Fine-tuning](/docs/api-reference/fine-tuning).
+        paramKey: purpose
+        in: body
+        schema:
+          type: string
+          enum:
+            - assistants
+            - batch
+            - fine-tune
+            - vision
+        required: true
+    requestBodyType: form-data
   - moduleName: Files / Delete
     operationId: deleteFile
     method: delete
@@ -1779,6 +1993,94 @@ modules:
           type: number
           default: 20
         required: false
+  - moduleName: Images / Create Edit
+    method: post
+    path: /images/edits
+    description: Creates an edited or extended image given an original image and a prompt.
+    externalDocs: ""
+    operationId: createImageEdit
+    params:
+      - paramName: image
+        description: The image to edit. Must be a valid PNG file, less than 4MB, and
+          square. If mask is not provided, image must have transparency, which
+          will be used as the mask.
+        paramKey: image
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: prompt
+        description: A text description of the desired image(s). The maximum length is
+          1000 characters.
+        paramKey: prompt
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: mask
+        description: An additional image whose fully transparent areas (e.g. where alpha
+          is zero) indicate where `image` should be edited. Must be a valid PNG
+          file, less than 4MB, and have the same dimensions as `image`.
+        paramKey: mask
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: model
+        description: The model to use for image generation. Only `dall-e-2` is supported
+          at this time.
+        paramKey: model
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: n
+        description: The number of images to generate. Must be between 1 and 10.
+        paramKey: n
+        in: body
+        schema:
+          type: number
+          minimum: 1
+          maximum: 10
+          default: 1
+        required: false
+      - paramName: size
+        description: The size of the generated images. Must be one of `256x256`,
+          `512x512`, or `1024x1024`.
+        paramKey: size
+        in: body
+        schema:
+          type: string
+          default: 1024x1024
+          enum:
+            - 256x256
+            - 512x512
+            - 1024x1024
+        required: false
+      - paramName: responseFormat
+        description: The format in which the generated images are returned. Must be one
+          of `url` or `b64_json`. URLs are only valid for 60 minutes after the
+          image has been generated.
+        paramKey: response_format
+        in: body
+        schema:
+          type: string
+          default: url
+          enum:
+            - url
+            - b64_json
+        required: false
+      - paramName: user
+        description: >
+          A unique identifier representing your end-user, which can help OpenAI
+          to monitor and detect abuse. [Learn
+          more](/docs/guides/safety-best-practices#end-user-ids).
+        paramKey: user
+        in: body
+        schema:
+          type: string
+        required: false
+    requestBodyType: form-data
   - moduleName: Images / Generations / Create
     operationId: createImage
     method: post
@@ -1880,6 +2182,77 @@ modules:
           type: string
         required: false
     requestBodyType: json
+  - moduleName: Images / Create Variation
+    method: post
+    path: /images/variations
+    description: Creates a variation of a given image.
+    externalDocs: ""
+    operationId: createImageVariation
+    params:
+      - paramName: image
+        description: The image to use as the basis for the variation(s). Must be a valid
+          PNG file, less than 4MB, and square.
+        paramKey: image
+        in: body
+        schema:
+          type: string
+        required: true
+      - paramName: model
+        description: The model to use for image generation. Only `dall-e-2` is supported
+          at this time.
+        paramKey: model
+        in: body
+        schema:
+          type: string
+        required: false
+      - paramName: n
+        description: The number of images to generate. Must be between 1 and 10. For
+          `dall-e-3`, only `n=1` is supported.
+        paramKey: n
+        in: body
+        schema:
+          type: number
+          minimum: 1
+          maximum: 10
+          default: 1
+        required: false
+      - paramName: responseFormat
+        description: The format in which the generated images are returned. Must be one
+          of `url` or `b64_json`. URLs are only valid for 60 minutes after the
+          image has been generated.
+        paramKey: response_format
+        in: body
+        schema:
+          type: string
+          default: url
+          enum:
+            - url
+            - b64_json
+        required: false
+      - paramName: size
+        description: The size of the generated images. Must be one of `256x256`,
+          `512x512`, or `1024x1024`.
+        paramKey: size
+        in: body
+        schema:
+          type: string
+          default: 1024x1024
+          enum:
+            - 256x256
+            - 512x512
+            - 1024x1024
+        required: false
+      - paramName: user
+        description: >
+          A unique identifier representing your end-user, which can help OpenAI
+          to monitor and detect abuse. [Learn
+          more](/docs/guides/safety-best-practices#end-user-ids).
+        paramKey: user
+        in: body
+        schema:
+          type: string
+        required: false
+    requestBodyType: form-data
   - moduleName: Models / List
     operationId: listModels
     method: get
@@ -5124,6 +5497,42 @@ modules:
           type: string
         required: false
     requestBodyType: json
+  - moduleName: Uploads / Add Part
+    method: post
+    path: /uploads/{upload_id}/parts
+    description: >
+      Adds a [Part](/docs/api-reference/uploads/part-object) to an
+      [Upload](/docs/api-reference/uploads/object) object. A Part represents a
+      chunk of bytes from the file you are trying to upload. 
+
+
+      Each Part can be at most 64 MB, and you can add Parts until you hit the
+      Upload maximum of 8 GB.
+
+
+      It is possible to add multiple Parts in parallel. You can decide the
+      intended order of the Parts when you [complete the
+      Upload](/docs/api-reference/uploads/complete).
+    externalDocs: ""
+    operationId: addUploadPart
+    params:
+      - paramName: uploadId
+        description: |
+          The ID of the Upload.
+        paramKey: upload_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - paramName: data
+        description: |
+          The chunk of bytes for this Part.
+        paramKey: data
+        in: body
+        schema:
+          type: string
+        required: true
+    requestBodyType: form-data
   - moduleName: Vector Stores / List
     operationId: listVectorStores
     method: get
