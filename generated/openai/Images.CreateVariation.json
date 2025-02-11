@@ -1,0 +1,104 @@
+{
+  "moduleName": "OpenAI / Images / Create Variation",
+  "version": "0.0.0",
+  "description": "Creates a variation of a given image.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "image": {
+      "schema": {
+        "type": "string",
+        "description": "The image to use as the basis for the variation(s). Must be a valid PNG file, less than 4MB, and square."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "model": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The model to use for image generation. Only `dall-e-2` is supported at this time."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "n": {
+      "schema": {
+        "type": "number",
+        "default": "1",
+        "minimum": 1,
+        "maximum": 10,
+        "optional": true,
+        "description": "The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "responseFormat": {
+      "schema": {
+        "type": "string",
+        "default": "url",
+        "enum": [
+          "url",
+          "b64_json"
+        ],
+        "optional": true,
+        "description": "The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "size": {
+      "schema": {
+        "type": "string",
+        "default": "1024x1024",
+        "enum": [
+          "256x256",
+          "512x512",
+          "1024x1024"
+        ],
+        "optional": true,
+        "description": "The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "user": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "f466eb47e63296d8fd6e57e75bac4e9c42051e9d583fd27b0d0cca77843381a5"
+  }
+}

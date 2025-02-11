@@ -1,0 +1,59 @@
+{
+  "moduleName": "OpenAI / Files / Create",
+  "version": "0.0.0",
+  "description": "Upload a file that can be used across various endpoints. Individual files can be up to 512 MB, and the size of all files uploaded by one organization can be up to 100 GB.\n\nThe Assistants API supports files up to 2 million tokens and of specific file types. See the [Assistants Tools guide](/docs/assistants/tools) for details.\n\nThe Fine-tuning API only supports `.jsonl` files. The input also has certain required formats for fine-tuning [chat](/docs/api-reference/fine-tuning/chat-input) or [completions](/docs/api-reference/fine-tuning/completions-input) models.\n\nThe Batch API only supports `.jsonl` files up to 200 MB in size. The input also has a specific required [format](/docs/api-reference/batch/request-input).\n\nPlease [contact us](https://help.openai.com/) if you need to increase these storage limits.\n",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "file": {
+      "schema": {
+        "type": "string",
+        "description": "The File object (not file name) to be uploaded.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "purpose": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "assistants",
+          "batch",
+          "fine-tune",
+          "vision"
+        ],
+        "description": "The intended purpose of the uploaded file.\n\nUse \"assistants\" for [Assistants](/docs/api-reference/assistants) and [Message](/docs/api-reference/messages) files, \"vision\" for Assistants image file inputs, \"batch\" for [Batch API](/docs/guides/batch), and \"fine-tune\" for [Fine-tuning](/docs/api-reference/fine-tuning).\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "ad5df9b4e3ff46aa34a2d8d4ed1bf27eb73b4dc396e4cfc97be14fc93c0586af"
+  }
+}

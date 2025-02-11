@@ -1,0 +1,121 @@
+{
+  "moduleName": "OpenAI / Images / Create Edit",
+  "version": "0.0.0",
+  "description": "Creates an edited or extended image given an original image and a prompt.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "image": {
+      "schema": {
+        "type": "string",
+        "description": "The image to edit. Must be a valid PNG file, less than 4MB, and square. If mask is not provided, image must have transparency, which will be used as the mask."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "prompt": {
+      "schema": {
+        "type": "string",
+        "description": "A text description of the desired image(s). The maximum length is 1000 characters."
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "mask": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "model": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The model to use for image generation. Only `dall-e-2` is supported at this time."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "n": {
+      "schema": {
+        "type": "number",
+        "default": "1",
+        "minimum": 1,
+        "maximum": 10,
+        "optional": true,
+        "description": "The number of images to generate. Must be between 1 and 10."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "size": {
+      "schema": {
+        "type": "string",
+        "default": "1024x1024",
+        "enum": [
+          "256x256",
+          "512x512",
+          "1024x1024"
+        ],
+        "optional": true,
+        "description": "The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "responseFormat": {
+      "schema": {
+        "type": "string",
+        "default": "url",
+        "enum": [
+          "url",
+          "b64_json"
+        ],
+        "optional": true,
+        "description": "The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "user": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "cccdbc6516a9b598231842b7a714c02a79e6b05f2a9d9c6b1af502d73b9403e8"
+  }
+}
