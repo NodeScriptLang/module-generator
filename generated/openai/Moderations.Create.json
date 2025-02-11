@@ -33,12 +33,12 @@
     },
     "model": {
       "schema": {
-        "type": "any",
+        "type": "string",
         "optional": true,
         "description": "The content moderation model you would like to use. Learn more in\n[the moderation guide](/docs/guides/moderation), and learn about\navailable models [here](/docs/models#moderation).\n"
       },
       "advanced": true,
-      "hideValue": true
+      "hideValue": false
     }
   },
   "result": {

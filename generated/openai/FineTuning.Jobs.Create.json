@@ -25,11 +25,11 @@
     },
     "model": {
       "schema": {
-        "type": "any",
+        "type": "string",
         "description": "The name of the model to fine-tune. You can select one of the\n[supported models](/docs/guides/fine-tuning#which-models-can-be-fine-tuned).\n"
       },
       "advanced": false,
-      "hideValue": true
+      "hideValue": false
     },
     "trainingFile": {
       "schema": {

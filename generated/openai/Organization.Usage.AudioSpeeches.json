@@ -95,7 +95,7 @@
       "schema": {
         "type": "array",
         "items": {
-          "type": "any"
+          "type": "string"
         },
         "optional": true,
         "description": "Return only usage for these models."

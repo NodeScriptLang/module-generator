@@ -33,12 +33,12 @@
     },
     "model": {
       "schema": {
-        "type": "any",
+        "type": "string",
         "optional": true,
         "description": "The model to use for image generation."
       },
       "advanced": true,
-      "hideValue": true
+      "hideValue": false
     },
     "n": {
       "schema": {
