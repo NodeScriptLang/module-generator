@@ -91,7 +91,7 @@ modules:
         paramKey: model
         in: body
         schema:
-          type: any
+          type: string
         required: true
       - paramName: name
         description: |
@@ -242,7 +242,7 @@ modules:
         paramKey: model
         in: body
         schema:
-          type: any
+          type: string
         required: false
       - paramName: name
         description: |
@@ -393,7 +393,7 @@ modules:
         paramKey: model
         in: body
         schema:
-          type: any
+          type: string
         required: true
       - paramName: input
         description: The text to generate audio for. The maximum length is 4096 characters.
@@ -610,7 +610,7 @@ modules:
         paramKey: model
         in: body
         schema:
-          type: any
+          type: string
         required: true
       - paramName: store
         description: >
@@ -1114,7 +1114,7 @@ modules:
         paramKey: model
         in: body
         schema:
-          type: any
+          type: string
         required: true
       - paramName: prompt
         description: >
@@ -1403,7 +1403,7 @@ modules:
         paramKey: model
         in: body
         schema:
-          type: any
+          type: string
         required: true
       - paramName: encodingFormat
         description: The format to return the embeddings in. Can be either `float` or
@@ -1549,7 +1549,7 @@ modules:
         paramKey: model
         in: body
         schema:
-          type: any
+          type: string
         required: true
       - paramName: trainingFile
         description: >
@@ -1799,7 +1799,7 @@ modules:
         paramKey: model
         in: body
         schema:
-          type: any
+          type: string
         required: false
       - paramName: n
         description: The number of images to generate. Must be between 1 and 10. For
@@ -1944,7 +1944,7 @@ modules:
         paramKey: model
         in: body
         schema:
-          type: any
+          type: string
         required: false
     requestBodyType: json
   - moduleName: Organization / API Keys / List
@@ -2886,7 +2886,7 @@ modules:
         schema:
           type: array
           items:
-            type: any
+            type: string
         required: false
       - paramName: groupBy
         description: Group the usage data by the specified fields. Support fields
@@ -2986,7 +2986,7 @@ modules:
         schema:
           type: array
           items:
-            type: any
+            type: string
         required: false
       - paramName: groupBy
         description: Group the usage data by the specified fields. Support fields
@@ -3158,7 +3158,7 @@ modules:
         schema:
           type: array
           items:
-            type: any
+            type: string
         required: false
       - paramName: batch
         description: >
@@ -3267,7 +3267,7 @@ modules:
         schema:
           type: array
           items:
-            type: any
+            type: string
         required: false
       - paramName: groupBy
         description: Group the usage data by the specified fields. Support fields
@@ -3389,7 +3389,7 @@ modules:
         schema:
           type: array
           items:
-            type: any
+            type: string
         required: false
       - paramName: groupBy
         description: Group the usage data by the specified fields. Support fields
@@ -3489,7 +3489,7 @@ modules:
         schema:
           type: array
           items:
-            type: any
+            type: string
         required: false
       - paramName: groupBy
         description: Group the usage data by the specified fields. Support fields
@@ -3966,7 +3966,7 @@ modules:
         paramKey: model
         in: body
         schema:
-          type: any
+          type: string
         required: false
       - paramName: instructions
         description: Override the default system message of the assistant. This is
@@ -4554,7 +4554,7 @@ modules:
         paramKey: model
         in: body
         schema:
-          type: any
+          type: string
         required: false
       - paramName: instructions
         description: Overrides the
