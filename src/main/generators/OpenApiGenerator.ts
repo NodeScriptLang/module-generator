@@ -67,17 +67,22 @@ export class OpenApiGenerator {
             try {
                 const inferredModuleName = this.inferredModuleNames.get([ep.method, ep.path].join(' ')) ?? '';
                 const paramSpecs = [...this.parseParameters(ep.parameters)];
-                let requestBodyType: 'json' | 'form' | undefined;
+                let requestBodyType: 'json' | 'form' | 'form-data' | undefined;
                 if (ep.opSpec.requestBody) {
                     const requestBody = this.deepResolveRef(ep.opSpec.requestBody);
                     const jsonContent = requestBody.content?.['application/json'];
                     const formContent = requestBody.content?.['application/x-www-form-urlencoded'];
+                    const formDataContent = requestBody.content?.['multipart/form-data'];
+
                     if (jsonContent?.schema) {
                         requestBodyType = 'json';
                         paramSpecs.push(...this.parseRequestBody(jsonContent.schema));
                     } else if (formContent?.schema) {
                         requestBodyType = 'form';
                         paramSpecs.push(...this.parseRequestBody(formContent.schema));
+                    } else if (formDataContent?.schema) {
+                        requestBodyType = 'form-data';
+                        paramSpecs.push(...this.parseRequestBody(formDataContent.schema));
                     } else {
                         throw new UnsupportedFeatureError('Unsupported request body content');
                     }
@@ -94,9 +99,6 @@ export class OpenApiGenerator {
                         return {
                             ...existingParam,
                             description: newParam.description || existingParam.description,
-                            schema: newParam.schema || existingParam.schema,
-                            required: newParam.required || existingParam.required,
-                            paramKey: newParam.paramKey || existingParam.paramKey,
                         };
                     });
 

@@ -1,0 +1,89 @@
+{
+  "moduleName": "OpenAI / Audio / Create Translation",
+  "version": "0.0.0",
+  "description": "Translates audio into English.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "auth": {
+      "schema": {
+        "type": "string",
+        "description": "OpenAI API key.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "betaAccess": {
+      "schema": {
+        "type": "string",
+        "default": "assistants=v2",
+        "description": "Adds OpenAI-Beta for access to new and experimental features."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "file": {
+      "schema": {
+        "type": "string",
+        "description": "The audio file object (not file name) translate, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "model": {
+      "schema": {
+        "type": "string",
+        "description": "ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.\n"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "prompt": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text#prompting) should be in English.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "responseFormat": {
+      "schema": {
+        "type": "string",
+        "default": "json",
+        "enum": [
+          "json",
+          "text",
+          "srt",
+          "verbose_json",
+          "vtt"
+        ],
+        "optional": true,
+        "description": "The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "temperature": {
+      "schema": {
+        "type": "number",
+        "default": "0",
+        "optional": true,
+        "description": "The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use [log probability](https://en.wikipedia.org/wiki/Log_probability) to automatically increase the temperature until certain thresholds are hit.\n"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "",
+    "codeHash": "d85059a3a4f7c52b9d7327a97c29c0e44bc28c61b81d8f3641f0d37f39d6dea7"
+  }
+}
