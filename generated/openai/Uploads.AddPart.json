@@ -1,7 +1,7 @@
 {
   "moduleName": "OpenAI / Uploads / Add Part",
   "version": "0.0.0",
-  "description": "Adds a [Part](/docs/api-reference/uploads/part-object) to an [Upload](/docs/api-reference/uploads/object) object. A Part represents a chunk of bytes from the file you are trying to upload. \n\nEach Part can be at most 64 MB, and you can add Parts until you hit the Upload maximum of 8 GB.\n\nIt is possible to add multiple Parts in parallel. You can decide the intended order of the Parts when you [complete the Upload](/docs/api-reference/uploads/complete).\n",
+  "description": "Adds a [Part](/docs/api-reference/uploads/part-object) to an [Upload](/docs/api-reference/uploads/object) object. A Part represents a chunk of bytes from the file you are trying to upload.\n\nEach Part can be at most 64 MB, and you can add Parts until you hit the Upload maximum of 8 GB.\n\nIt is possible to add multiple Parts in parallel. You can decide the intended order of the Parts when you [complete the Upload](/docs/api-reference/uploads/complete).\n",
   "keywords": [],
   "cacheMode": "always",
   "evalMode": "manual",
@@ -48,6 +48,6 @@
   },
   "attributes": {
     "externalDocs": "",
-    "codeHash": "3af91efab380ed38c47778f98c17033a6dc4ffa747ee222bad69deab937372d5"
+    "codeHash": "894852bd10a37f25c1311791f35fe1895d78fafbea8926282d860c71e08a5310"
   }
 }

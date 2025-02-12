@@ -10,7 +10,26 @@ export async function compute(params, ctx) {
   if (params["betaAccess"] != null) {
     headers["OpenAI-Beta"] = params["betaAccess"];
   }
-  const body = undefined;
+  const formData = new FormData();
+  const addFormDataParam = (key, val, filename) => {
+    if (val === undefined) { return; }
+    if (filename === undefined) {
+        formData.append(key, val);
+    } else {
+        if (typeof val === "string") {
+           val = new Blob([val]);
+        }
+        formData.append(key, val, filename);
+    }
+  };
+  addFormDataParam("file", params["file"]);
+  addFormDataParam("model", params["model"]);
+  addFormDataParam("language", params["language"]);
+  addFormDataParam("prompt", params["prompt"]);
+  addFormDataParam("response_format", params["responseFormat"]);
+  addFormDataParam("temperature", params["temperature"]);
+  addFormDataParam("timestamp_granularities[]", params["timestampGranularities[]"]);
+  const body = formData;
   const res = await ctx.lib.fetch({
     method: "POST",
     url: url.href,

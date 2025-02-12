@@ -52,7 +52,7 @@
       "schema": {
         "type": "string",
         "optional": true,
-        "description": "The default system instructions (i.e. system message) prepended to model \ncalls. This field allows the client to guide the model on desired \nresponses. The model can be instructed on response content and format, \n(e.g. \"be extremely succinct\", \"act friendly\", \"here are examples of good \nresponses\") and on audio behavior (e.g. \"talk quickly\", \"inject emotion \ninto your voice\", \"laugh frequently\"). The instructions are not guaranteed \nto be followed by the model, but they provide guidance to the model on the \ndesired behavior.\n\nNote that the server sets default instructions which will be used if this \nfield is not set and are visible in the `session.created` event at the \nstart of the session.\n"
+        "description": "The default system instructions (i.e. system message) prepended to model\ncalls. This field allows the client to guide the model on desired\nresponses. The model can be instructed on response content and format,\n(e.g. \"be extremely succinct\", \"act friendly\", \"here are examples of good\nresponses\") and on audio behavior (e.g. \"talk quickly\", \"inject emotion\ninto your voice\", \"laugh frequently\"). The instructions are not guaranteed\nto be followed by the model, but they provide guidance to the model on the\ndesired behavior.\n\nNote that the server sets default instructions which will be used if this\nfield is not set and are visible in the `session.created` event at the\nstart of the session.\n"
       },
       "advanced": true,
       "hideValue": false
@@ -71,7 +71,7 @@
           "verse"
         ],
         "optional": true,
-        "description": "The voice the model uses to respond. Voice cannot be changed during the \nsession once the model has responded with audio at least once. Current \nvoice options are `alloy`, `ash`, `ballad`, `coral`, `echo` `sage`, \n`shimmer` and `verse`.\n"
+        "description": "The voice the model uses to respond. Voice cannot be changed during the\nsession once the model has responded with audio at least once. Current\nvoice options are `alloy`, `ash`, `ballad`, `coral`, `echo` `sage`,\n`shimmer` and `verse`.\n"
       },
       "advanced": true,
       "hideValue": false
@@ -85,7 +85,7 @@
           "g711_alaw"
         ],
         "optional": true,
-        "description": "The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.\nFor `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate, \nsingle channel (mono), and little-endian byte order.\n"
+        "description": "The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.\nFor `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate,\nsingle channel (mono), and little-endian byte order.\n"
       },
       "advanced": true,
       "hideValue": false
@@ -117,7 +117,7 @@
       "schema": {
         "type": "any",
         "optional": true,
-        "description": "Configuration for turn detection. Can be set to `null` to turn off. Server \nVAD means that the model will detect the start and end of speech based on \naudio volume and respond at the end of user speech.\n"
+        "description": "Configuration for turn detection. Can be set to `null` to turn off. Server\nVAD means that the model will detect the start and end of speech based on\naudio volume and respond at the end of user speech.\n"
       },
       "advanced": true,
       "hideValue": true
@@ -138,7 +138,7 @@
       "schema": {
         "type": "string",
         "optional": true,
-        "description": "How the model chooses tools. Options are `auto`, `none`, `required`, or \nspecify a function.\n"
+        "description": "How the model chooses tools. Options are `auto`, `none`, `required`, or\nspecify a function.\n"
       },
       "advanced": true,
       "hideValue": false
