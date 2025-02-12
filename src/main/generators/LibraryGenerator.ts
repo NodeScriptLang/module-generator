@@ -189,6 +189,9 @@ export class LibraryGenerator {
             code.line('if (filename === undefined) {');
             code.line('    formData.append(key, val);');
             code.line('} else {');
+            code.line('    if (typeof val === "string") {');
+            code.line('       val = new Blob([val]);');
+            code.line('    }');
             code.line('    formData.append(key, val, filename);');
             code.line('}');
         });
@@ -207,6 +210,7 @@ export class LibraryGenerator {
                 code.line(`addFormDataParam(${paramKey}, params[${paramName}]);`);
             }
         }
-        code.line('return formData;');
+        code.line('const body = formData;');
     }
+
 }
