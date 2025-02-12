@@ -17,11 +17,14 @@ export async function compute(params, ctx) {
     if (filename === undefined) {
         formData.append(key, val);
     } else {
+        if (typeof val === "string") {
+           val = new Blob([val]);
+        }
         formData.append(key, val, filename);
     }
   };
   addFormDataParam("data", params["data"]);
-  return formData;
+  const body = formData;
   const res = await ctx.lib.fetch({
     method: "POST",
     url: url.href,
