@@ -8,7 +8,7 @@ export interface LibraryParamSpec {
     paramName: string;
     paramKey: string;
     description: string;
-    in: 'query' | 'header' | 'cookie' | 'path' | 'body' | 'body_raw';
+    in: 'query' | 'header' | 'cookie' | 'path' | 'body' | 'body_raw' | 'form_data_filename';
     schema: SchemaSpec;
     required: boolean;
     advanced?: boolean;
@@ -28,7 +28,7 @@ export const LibraryParamSpecSchema = new Schema<LibraryParamSpec>({
         description: { type: 'string' },
         in: {
             type: 'string',
-            enum: ['query', 'header', 'cookie', 'path', 'body', 'body_raw'],
+            enum: ['query', 'header', 'cookie', 'path', 'body', 'body_raw', 'form_data_filename'],
         },
         schema: SchemaSpecSchema.schema,
         required: { type: 'boolean' },

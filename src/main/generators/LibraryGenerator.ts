@@ -58,6 +58,8 @@ export class LibraryGenerator {
                 this.emitRequestBodyJson(code, mspec);
             } else if (mspec.requestBodyType === 'form') {
                 this.emitRequestBodyForm(code, mspec);
+            } else if (mspec.requestBodyType === 'form-data') {
+                this.emitRequestBodyFormData(code, mspec);
             } else {
                 code.line('const body = undefined;');
             }
@@ -180,4 +182,31 @@ export class LibraryGenerator {
         code.line('body = body.toString()');
     }
 
+    private emitRequestBodyFormData(code: CodeBuilder, mspec: LibraryModuleSpec) {
+        code.line('const formData = new FormData();');
+        code.block('const addFormDataParam = (key, val, filename) => {', '};', () => {
+            code.line('if (val === undefined) { return; }');
+            code.line('if (filename === undefined) {');
+            code.line('    formData.append(key, val);');
+            code.line('} else {');
+            code.line('    formData.append(key, val, filename);');
+            code.line('}');
+        });
+        for (const param of this.getParamSpecs(mspec)) {
+            if (param.in !== 'body') {
+                continue;
+            }
+            const paramName = JSON.stringify(param.paramName);
+            const paramKey = JSON.stringify(param.paramKey);
+            const filenameParam = this.getParamSpecs(mspec)
+                .find(_ => _.in === 'form_data_filename' && _.paramKey === param.paramKey);
+            if (filenameParam) {
+                const filenameParamName = JSON.stringify(filenameParam.paramName);
+                code.line(`addFormDataParam(${paramKey}, params[${paramName}], params[${filenameParamName}]);`);
+            } else {
+                code.line(`addFormDataParam(${paramKey}, params[${paramName}]);`);
+            }
+        }
+        code.line('return formData;');
+    }
 }

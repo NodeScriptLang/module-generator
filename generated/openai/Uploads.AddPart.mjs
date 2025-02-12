@@ -11,7 +11,17 @@ export async function compute(params, ctx) {
   if (params["betaAccess"] != null) {
     headers["OpenAI-Beta"] = params["betaAccess"];
   }
-  const body = undefined;
+  const formData = new FormData();
+  const addFormDataParam = (key, val, filename) => {
+    if (val === undefined) { return; }
+    if (filename === undefined) {
+        formData.append(key, val);
+    } else {
+        formData.append(key, val, filename);
+    }
+  };
+  addFormDataParam("data", params["data"]);
+  return formData;
   const res = await ctx.lib.fetch({
     method: "POST",
     url: url.href,
