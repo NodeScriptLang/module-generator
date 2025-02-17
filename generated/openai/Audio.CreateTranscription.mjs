@@ -28,7 +28,7 @@ export async function compute(params, ctx) {
   addFormDataParam("prompt", params["prompt"]);
   addFormDataParam("response_format", params["responseFormat"]);
   addFormDataParam("temperature", params["temperature"]);
-  addFormDataParam("timestamp_granularities[]", params["timestampGranularities[]"]);
+  addFormDataParam("timestamp_granularities", params["timestampGranularities"]);
   const body = formData;
   const res = await ctx.lib.fetch({
     method: "POST",
