@@ -13,8 +13,8 @@ export async function compute(params, ctx) {
   addQueryParam("start_time", params["startTime"]);
   addQueryParam("end_time", params["endTime"]);
   addQueryParam("bucket_width", params["bucketWidth"]);
-  addQueryParam("project_ids", params["projectIds"].join(","));
-  addQueryParam("group_by", params["groupBy"].join(","));
+  addQueryParam("project_ids", params["projectIds"]?.join(","));
+  addQueryParam("group_by", params["groupBy"]?.join(","));
   addQueryParam("limit", params["limit"]);
   addQueryParam("page", params["page"]);
   const body = undefined;

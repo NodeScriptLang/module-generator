@@ -12,7 +12,7 @@ export async function compute(params, ctx) {
   }
   addQueryParam("limit", params["limit"]);
   addQueryParam("after", params["after"]);
-  addQueryParam("emails", params["emails"].join(","));
+  addQueryParam("emails", params["emails"]?.join(","));
   const body = undefined;
   const res = await ctx.lib.fetch({
     method: "GET",

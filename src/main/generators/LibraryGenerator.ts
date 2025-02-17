@@ -129,7 +129,7 @@ export class LibraryGenerator {
                     code.line(`addQueryParam(${paramKey}, item);`);
                 });
             } else {
-                code.line(`addQueryParam(${paramKey}, params[${paramName}].join(${JSON.stringify(delimiter)}));`);
+                code.line(`addQueryParam(${paramKey}, params[${paramName}]?.join(${JSON.stringify(delimiter)}));`);
             }
         // TODO add support for objects
         } else {

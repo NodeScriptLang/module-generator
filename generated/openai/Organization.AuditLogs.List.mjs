@@ -11,11 +11,11 @@ export async function compute(params, ctx) {
     headers["OpenAI-Beta"] = params["betaAccess"];
   }
   addQueryParam("effective_at", params["effectiveAt"]);
-  addQueryParam("project_ids[]", params["projectIds[]"].join(","));
-  addQueryParam("event_types[]", params["eventTypes[]"].join(","));
-  addQueryParam("actor_ids[]", params["actorIds[]"].join(","));
-  addQueryParam("actor_emails[]", params["actorEmails[]"].join(","));
-  addQueryParam("resource_ids[]", params["resourceIds[]"].join(","));
+  addQueryParam("project_ids", params["projectIds"]?.join(","));
+  addQueryParam("event_types", params["eventTypes"]?.join(","));
+  addQueryParam("actor_ids", params["actorIds"]?.join(","));
+  addQueryParam("actor_emails", params["actorEmails"]?.join(","));
+  addQueryParam("resource_ids", params["resourceIds"]?.join(","));
   addQueryParam("limit", params["limit"]);
   addQueryParam("after", params["after"]);
   addQueryParam("before", params["before"]);

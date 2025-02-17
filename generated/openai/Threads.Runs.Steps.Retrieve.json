@@ -50,7 +50,6 @@
     "include": {
       "schema": {
         "type": "array",
-        "default": "[]",
         "items": {
           "type": "any"
         },
@@ -69,6 +68,6 @@
   },
   "attributes": {
     "externalDocs": "https://platform.openai.com/docs/api-reference",
-    "codeHash": "13cdca86301f29c0a2909f5ebbd88426fa0568bac1df918631ebdc993bf55e46"
+    "codeHash": "3d16347b22c426ad2ca8a3301e0057ef19925a13106a49d62de167af3d73ce83"
   }
 }

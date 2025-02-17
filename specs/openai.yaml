@@ -525,14 +525,14 @@ modules:
           type: number
           default: 0
         required: false
-      - paramName: timestampGranularities[]
+      - paramName: timestampGranularities
         description: >
           The timestamp granularities to populate for this transcription.
           `response_format` must be set `verbose_json` to use timestamp
           granularities. Either or both of these options are supported: `word`,
           or `segment`. Note: There is no additional latency for segment
           timestamps, but generating word timestamps incurs additional latency.
-        paramKey: timestamp_granularities[]
+        paramKey: timestamp_granularities
         in: body
         schema:
           type: array
@@ -2417,49 +2417,49 @@ modules:
         schema:
           type: any
         required: false
-      - paramName: projectIds[]
+      - paramName: projectIds
         description: Return only events for these projects.
-        paramKey: project_ids[]
+        paramKey: project_ids
         in: query
         schema:
           type: array
           items:
             type: any
         required: false
-      - paramName: eventTypes[]
+      - paramName: eventTypes
         description: Return only events with a `type` in one of these values. For
           example, `project.created`. For all options, see the documentation for
           the [audit log object](/docs/api-reference/audit-logs/object).
-        paramKey: event_types[]
+        paramKey: event_types
         in: query
         schema:
           type: array
           items:
             type: any
         required: false
-      - paramName: actorIds[]
+      - paramName: actorIds
         description: Return only events performed by these actors. Can be a user ID, a
           service account ID, or an api key tracking ID.
-        paramKey: actor_ids[]
+        paramKey: actor_ids
         in: query
         schema:
           type: array
           items:
             type: any
         required: false
-      - paramName: actorEmails[]
+      - paramName: actorEmails
         description: Return only events performed by users with these emails.
-        paramKey: actor_emails[]
+        paramKey: actor_emails
         in: query
         schema:
           type: array
           items:
             type: any
         required: false
-      - paramName: resourceIds[]
+      - paramName: resourceIds
         description: Return only events performed on these targets. For example, a
           project ID updated.
-        paramKey: resource_ids[]
+        paramKey: resource_ids
         in: query
         schema:
           type: array
@@ -4914,7 +4914,6 @@ modules:
         in: query
         schema:
           type: array
-          default: "[]"
           items:
             type: any
         required: false
@@ -5289,7 +5288,6 @@ modules:
         in: query
         schema:
           type: array
-          default: "[]"
           items:
             type: any
         required: false
@@ -5336,7 +5334,6 @@ modules:
         in: query
         schema:
           type: array
-          default: "[]"
           items:
             type: any
         required: false

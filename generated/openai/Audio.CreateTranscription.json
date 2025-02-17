@@ -84,7 +84,7 @@
       "advanced": true,
       "hideValue": false
     },
-    "timestampGranularities[]": {
+    "timestampGranularities": {
       "schema": {
         "type": "array",
         "items": {
@@ -105,6 +105,6 @@
   },
   "attributes": {
     "externalDocs": "",
-    "codeHash": "a12797a3641606a1767fb5c6b404c2d03752557558a6517b087445f397ca8992"
+    "codeHash": "7e7906866e3060931dab67621c813e261305317c05d19724190f71b3baa83d5f"
   }
 }
