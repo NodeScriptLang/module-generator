@@ -11,7 +11,7 @@ export async function compute(params, ctx) {
   if (params["betaAccess"] != null) {
     headers["OpenAI-Beta"] = params["betaAccess"];
   }
-  addQueryParam("include[]", params["include[]"].join(","));
+  addQueryParam("include", params["include"].join(","));
   headers["content-type"] = "application/json";
   let body = {};
   body["assistant_id"] = params["assistantId"];

@@ -4899,7 +4899,7 @@ modules:
         schema:
           type: string
         required: true
-      - paramName: include[]
+      - paramName: include
         description: >
           A list of additional fields to include in the response. Currently the
           only supported value is
@@ -4910,10 +4910,11 @@ modules:
           See the [file search tool
           documentation](/docs/assistants/tools/file-search#customizing-file-search-settings)
           for more information.
-        paramKey: include[]
+        paramKey: include
         in: query
         schema:
           type: array
+          default: "[]"
           items:
             type: any
         required: false
@@ -5273,7 +5274,7 @@ modules:
         schema:
           type: string
         required: false
-      - paramName: include[]
+      - paramName: include
         description: >
           A list of additional fields to include in the response. Currently the
           only supported value is
@@ -5284,10 +5285,11 @@ modules:
           See the [file search tool
           documentation](/docs/assistants/tools/file-search#customizing-file-search-settings)
           for more information.
-        paramKey: include[]
+        paramKey: include
         in: query
         schema:
           type: array
+          default: "[]"
           items:
             type: any
         required: false
@@ -5319,7 +5321,7 @@ modules:
         schema:
           type: string
         required: true
-      - paramName: include[]
+      - paramName: include
         description: >
           A list of additional fields to include in the response. Currently the
           only supported value is
@@ -5330,10 +5332,11 @@ modules:
           See the [file search tool
           documentation](/docs/assistants/tools/file-search#customizing-file-search-settings)
           for more information.
-        paramKey: include[]
+        paramKey: include
         in: query
         schema:
           type: array
+          default: "[]"
           items:
             type: any
         required: false
