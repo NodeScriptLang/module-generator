@@ -12,19 +12,17 @@
     "apiKey": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "Your unique API key for authentication. \nThis key is required in the header of all API requests, to\nauthenticate your account and access Anthropic's services. Get your\nAPI key through the\n[Console](https://console.anthropic.com/settings/keys). Each key is\nscoped to a Workspace.\n"
       },
-      "advanced": true,
+      "advanced": false,
       "hideValue": false
     },
     "anthropicVersion": {
       "schema": {
         "type": "string",
-        "optional": true,
         "description": "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
       },
-      "advanced": true,
+      "advanced": false,
       "hideValue": false
     },
     "toolChoice": {
@@ -85,6 +83,6 @@
   },
   "attributes": {
     "externalDocs": "",
-    "codeHash": "0db73be4d525d7c5233d4c606859955753a7126ba50edf35b50937485e9b6e29"
+    "codeHash": "1e6ffbce849c23036d22948b38fa2366976e6862653d6502161cb50aa3d68a76"
   }
 }

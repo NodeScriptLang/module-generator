@@ -8,7 +8,6 @@ commonKeywords:
 commonParams:
   - paramName: apiKey
     paramKey: x-api-key
-    prefix: Bearer
     description: |
       Your unique API key for authentication. 
       This key is required in the header of all API requests, to
@@ -19,7 +18,7 @@ commonParams:
     in: header
     schema:
       type: string
-    required: false
+    required: true
 modules:
   - moduleName: Messages / Create
     method: post
@@ -45,7 +44,8 @@ modules:
         in: header
         schema:
           type: string
-        required: false
+        required: true
+        default: "2023-06-01"
       - paramName: model
         description: The model that will complete your prompt.\n\nSee
           [models](https://docs.anthropic.com/en/docs/models-overview) for
@@ -208,6 +208,7 @@ modules:
           type: number
           minimum: 1
         required: true
+        default: 1024
         example:
           max_tokens: 1024
           messages:
@@ -517,7 +518,8 @@ modules:
         in: header
         schema:
           type: string
-        required: false
+        required: true
+        default: "2023-06-01"
       - paramName: model
         description: The model that will complete your prompt.\n\nSee
           [models](https://docs.anthropic.com/en/docs/models-overview) for
@@ -586,6 +588,7 @@ modules:
           type: number
           minimum: 1
         required: true
+        default: 1024
         example:
           model: claude-2.1
           prompt: |-
@@ -796,7 +799,8 @@ modules:
         in: header
         schema:
           type: string
-        required: false
+        required: true
+        default: "2023-06-01"
   - moduleName: Models / Get
     method: get
     path: /v1/models/{model_id}
@@ -827,7 +831,8 @@ modules:
         in: header
         schema:
           type: string
-        required: false
+        required: true
+        default: "2023-06-01"
   - moduleName: Message Batches / Create
     method: post
     path: /v1/messages/batches
@@ -852,7 +857,8 @@ modules:
         in: header
         schema:
           type: string
-        required: false
+        required: true
+        default: "2023-06-01"
       - paramName: requests
         description: List of requests for prompt completion. Each is an individual
           request to create a Message.
@@ -912,7 +918,8 @@ modules:
         in: header
         schema:
           type: string
-        required: false
+        required: true
+        default: "2023-06-01"
   - moduleName: Message Batches / Retrieve
     method: get
     path: /v1/messages/batches/{message_batch_id}
@@ -940,7 +947,8 @@ modules:
         in: header
         schema:
           type: string
-        required: false
+        required: true
+        default: "2023-06-01"
   - moduleName: Message Batches / Delete
     method: delete
     path: /v1/messages/batches/{message_batch_id}
@@ -971,7 +979,8 @@ modules:
         in: header
         schema:
           type: string
-        required: false
+        required: true
+        default: "2023-06-01"
   - moduleName: Message Batches / Cancel
     method: post
     path: /v1/messages/batches/{message_batch_id}/cancel
@@ -1007,7 +1016,8 @@ modules:
         in: header
         schema:
           type: string
-        required: false
+        required: true
+        default: "2023-06-01"
   - moduleName: Message Batches / Get Results
     method: get
     path: /v1/messages/batches/{message_batch_id}/results
@@ -1039,7 +1049,8 @@ modules:
         in: header
         schema:
           type: string
-        required: false
+        required: true
+        default: "2023-06-01"
   - moduleName: Messages / Count Tokens
     method: post
     path: /v1/messages/count_tokens
@@ -1063,7 +1074,8 @@ modules:
         in: header
         schema:
           type: string
-        required: false
+        required: true
+        default: "2023-06-01"
       - paramName: toolChoice
         description: How the model should use the provided tools. The model can use a
           specific tool, any available tool, or decide by itself.
@@ -1377,7 +1389,8 @@ modules:
         in: header
         schema:
           type: string
-        required: false
+        required: true
+        default: "2023-06-01"
       - paramName: model
         description: The model that will complete your prompt.\n\nSee
           [models](https://docs.anthropic.com/en/docs/models-overview) for
@@ -1540,6 +1553,7 @@ modules:
           type: number
           minimum: 1
         required: true
+        default: 1024
         example:
           max_tokens: 1024
           messages:
@@ -1873,7 +1887,8 @@ modules:
         in: header
         schema:
           type: string
-        required: false
+        required: true
+        default: "2023-06-01"
   - moduleName: Models / Get Beta
     method: get
     path: /v1/models/{model_id}?beta=true
@@ -1904,7 +1919,8 @@ modules:
         in: header
         schema:
           type: string
-        required: false
+        required: true
+        default: "2023-06-01"
   - moduleName: Message Batches / Create Beta
     method: post
     path: /v1/messages/batches?beta=true
@@ -1941,7 +1957,8 @@ modules:
         in: header
         schema:
           type: string
-        required: false
+        required: true
+        default: "2023-06-01"
       - paramName: requests
         description: List of requests for prompt completion. Each is an individual
           request to create a Message.
@@ -2013,7 +2030,8 @@ modules:
         in: header
         schema:
           type: string
-        required: false
+        required: true
+        default: "2023-06-01"
   - moduleName: Message Batches / Retrieve Beta
     method: get
     path: /v1/messages/batches/{message_batch_id}?beta=true
@@ -2053,7 +2071,8 @@ modules:
         in: header
         schema:
           type: string
-        required: false
+        required: true
+        default: "2023-06-01"
   - moduleName: Message Batches / Delete Beta
     method: delete
     path: /v1/messages/batches/{message_batch_id}?beta=true
@@ -2096,7 +2115,8 @@ modules:
         in: header
         schema:
           type: string
-        required: false
+        required: true
+        default: "2023-06-01"
   - moduleName: Message Batches / Cancel Beta
     method: post
     path: /v1/messages/batches/{message_batch_id}/cancel?beta=true
@@ -2144,7 +2164,8 @@ modules:
         in: header
         schema:
           type: string
-        required: false
+        required: true
+        default: "2023-06-01"
   - moduleName: Message Batches / Get Results Beta
     method: get
     path: /v1/messages/batches/{message_batch_id}/results?beta=true
@@ -2188,7 +2209,8 @@ modules:
         in: header
         schema:
           type: string
-        required: false
+        required: true
+        default: "2023-06-01"
   - moduleName: Messages / Count Tokens Beta
     method: post
     path: /v1/messages/count_tokens?beta=true
@@ -2224,7 +2246,8 @@ modules:
         in: header
         schema:
           type: string
-        required: false
+        required: true
+        default: "2023-06-01"
       - paramName: toolChoice
         description: How the model should use the provided tools. The model can use a
           specific tool, any available tool, or decide by itself.
