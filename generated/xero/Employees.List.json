@@ -1,0 +1,63 @@
+{
+  "moduleName": "Xero / Employees / List",
+  "version": "0.0.0",
+  "description": "Retrieves employees used in Xero payrun",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "ifModifiedSince": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Only records created or modified since this timestamp will be returned"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "where": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by an any element"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "order": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Order by an any element"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "fc7faf0d238b1f33a04c3cfb2d7bdb419c36ae3d128d908350c66f4150b0393a"
+  }
+}

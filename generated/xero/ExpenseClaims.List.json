@@ -1,0 +1,63 @@
+{
+  "moduleName": "Xero / Expense Claims / List",
+  "version": "0.0.0",
+  "description": "Retrieves expense claims",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "ifModifiedSince": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Only records created or modified since this timestamp will be returned"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "where": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by an any element"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "order": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Order by an any element"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "5872328a1e7a49ba5d690f9bddf057eb11bf4f358887b0bfc09eed42ab14410c"
+  }
+}

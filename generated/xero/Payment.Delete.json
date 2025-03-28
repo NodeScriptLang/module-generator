@@ -1,0 +1,62 @@
+{
+  "moduleName": "Xero / Payment / Delete",
+  "version": "0.0.0",
+  "description": "Updates a specific payment for invoices and credit notes",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idempotencyKey": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "This allows you to safely retry requests without the risk of duplicate processing. 128 character max."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "paymentId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Payment"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "status": {
+      "schema": {
+        "type": "string",
+        "default": "DELETED",
+        "description": "The status of the payment."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "00ae0a6133d5c75e622a01f248df3d44a1fe2e547d9a24faeafd536343ad949a"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Credit Note / History / List",
+  "version": "0.0.0",
+  "description": "Retrieves history records of a specific credit note",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "creditNoteId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Credit Note"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "a7b9a6a17d60f1671d3be110ea7261e4b443673909b15ee73ae133fdc6bb4cb0"
+  }
+}

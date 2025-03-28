@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Quote / History / List",
+  "version": "0.0.0",
+  "description": "Retrieves history records of a specific quote",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "quoteId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for an Quote"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "90466f0fd7f1f212cff5f36926a6685d94d7ec16c10f5b42bd634cbd8c05703c"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Prepayment / History / List",
+  "version": "0.0.0",
+  "description": "Retrieves history record for a specific prepayment",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "prepaymentId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a PrePayment"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "fd70bec1c5821d955b89677cd8dc082d93d5e691a44c8d40e833805f7de2454f"
+  }
+}

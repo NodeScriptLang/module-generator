@@ -1,0 +1,74 @@
+{
+  "moduleName": "Xero / Item / Update",
+  "version": "0.0.0",
+  "description": "Updates a specific item",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "itemId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for an Item"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "unitdp": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "idempotencyKey": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "This allows you to safely retry requests without the risk of duplicate processing. 128 character max."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "items": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "f3c2dbf71dc2f0329777e62b3d3fbb3a7351a5184a2fe5da1550a331f3a8d673"
+  }
+}

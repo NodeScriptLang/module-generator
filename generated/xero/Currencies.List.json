@@ -1,0 +1,54 @@
+{
+  "moduleName": "Xero / Currencies / List",
+  "version": "0.0.0",
+  "description": "Retrieves currencies for your Xero organisation",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "where": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by an any element"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "order": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Order by an any element"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "fd08e580cf96299e8db98103b8ccb6ca4836f920d584fa7e7bee38e2c1f3dd79"
+  }
+}

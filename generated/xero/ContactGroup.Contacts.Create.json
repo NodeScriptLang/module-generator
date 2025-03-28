@@ -1,0 +1,86 @@
+{
+  "moduleName": "Xero / Contact Group / Contacts / Create",
+  "version": "0.0.0",
+  "description": "Creates contacts to a specific contact group",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idempotencyKey": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "This allows you to safely retry requests without the risk of duplicate processing. 128 character max."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "contactGroupId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Contact Group"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "pagination": {
+      "schema": {
+        "type": "any",
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": true
+    },
+    "warnings": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Displays array of warning messages from the API"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "contacts": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "c044417ce6c75138504e945bb8abb5f0c9875f17aef8ba04c396313be51dee2c"
+  }
+}

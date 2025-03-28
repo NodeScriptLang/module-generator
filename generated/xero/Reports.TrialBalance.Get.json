@@ -1,0 +1,54 @@
+{
+  "moduleName": "Xero / Reports / Trial Balance / Get",
+  "version": "0.0.0",
+  "description": "Retrieves report for trial balance",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "date": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The date for the Trial Balance report e.g. 2018-03-31"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "paymentsOnly": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Return cash only basis for the Trial Balance report"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "ea4ed67ebfe2ca3eeffada90b59d0a96071c97a7c78cfadf3696581052ec6760"
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "moduleName": "Xero / Linked Transactions / Create",
+  "version": "0.0.0",
+  "description": "Creates linked transactions (billable expenses)",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idempotencyKey": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "This allows you to safely retry requests without the risk of duplicate processing. 128 character max."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sourceTransactionId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by the SourceTransactionID. Get all the linked transactions created from a particular ACCPAY invoice"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sourceLineItemId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The line item identifier from the source transaction."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "contactId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by the combination of ContactID and Status. Get all the linked transactions that have been assigned to a particular customer and have a particular status e.g. GET /LinkedTransactions?ContactID=4bb34b03-3378-4bb2-a0ed-6345abf3224e&Status=APPROVED."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "targetTransactionId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by the TargetTransactionID. Get all the linked transactions  allocated to a particular ACCREC invoice"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "targetLineItemId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The line item identifier from the target transaction. It is possible  to link multiple billable expenses to the same TargetLineItemID."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "linkedTransactionId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The Xero identifier for an Linked Transaction e.g./LinkedTransactions/297c2dc5-cc47-4afd-8ec8-74990b8761e9"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "status": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "APPROVED",
+          "DRAFT",
+          "ONDRAFT",
+          "BILLED",
+          "VOIDED"
+        ],
+        "optional": true,
+        "description": "Filter by the combination of ContactID and Status. Get all the linked transactions that have been assigned to a particular customer and have a particular status e.g. GET /LinkedTransactions?ContactID=4bb34b03-3378-4bb2-a0ed-6345abf3224e&Status=APPROVED."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "type": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "BILLABLEEXPENSE"
+        ],
+        "optional": true,
+        "description": "This will always be BILLABLEEXPENSE. More types may be added in future."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "updatedDateUtc": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The last modified date in UTC format"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sourceTransactionTypeCode": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "ACCPAY",
+          "SPEND"
+        ],
+        "optional": true,
+        "description": "The Type of the source tranasction. This will be ACCPAY if the linked transaction was created from an invoice and SPEND if it was created from a bank transaction."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "validationErrors": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Displays array of validation error messages from the API"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "6c2dd6da8ff294af9544302cd727955be55dc15822a1ac927a6d2868babbf052"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Linked Transaction / Get",
+  "version": "0.0.0",
+  "description": "Retrieves a specific linked transaction (billable expenses) using a unique linked transaction Id",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "linkedTransactionId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a LinkedTransaction"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "bdac68ee37b81298d99ccaefc0f4248dd3f9a1dfc9ade8fa4bf6cbf712368142"
+  }
+}

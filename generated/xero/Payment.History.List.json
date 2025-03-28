@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Payment / History / List",
+  "version": "0.0.0",
+  "description": "Retrieves history records of a specific payment",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "paymentId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Payment"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "fc4b75e6662b55cf6643ca15167f4c4f60614a81155cc5d9ea0c29769cb724d4"
+  }
+}

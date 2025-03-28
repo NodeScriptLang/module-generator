@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Tax Rate / Get By Type",
+  "version": "0.0.0",
+  "description": "Retrieves a specific tax rate according to given TaxType code",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "taxType": {
+      "schema": {
+        "type": "string",
+        "description": "A valid TaxType code"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "2994ef69ad7d07483ec418789c3dee44d91d850f0d30710d482f8638263f97b1"
+  }
+}

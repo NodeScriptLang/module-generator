@@ -1,0 +1,74 @@
+{
+  "moduleName": "Xero / Receipt / Update",
+  "version": "0.0.0",
+  "description": "Updates a specific draft expense claim receipts",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "receiptId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Receipt"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "unitdp": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "idempotencyKey": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "This allows you to safely retry requests without the risk of duplicate processing. 128 character max."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "receipts": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "70764c969f93d371adb4679537516df212abe532de57d36fd6561f0c50c8af4f"
+  }
+}

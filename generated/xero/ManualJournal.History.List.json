@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Manual Journal / History / List",
+  "version": "0.0.0",
+  "description": "Retrieves history for a specific manual journal",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "manualJournalId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a ManualJournal"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "426a5e927d392125f1b52ea33365c32de18eea1425a563470c4ad09fe168221b"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "moduleName": "Xero / Bank Transactions / List",
+  "version": "0.0.0",
+  "description": "Retrieves any spent or received money transactions",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "ifModifiedSince": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Only records created or modified since this timestamp will be returned"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "where": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by an any element"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "order": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Order by an any element"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Up to 100 bank transactions will be returned in a single API call with line items details"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "unitdp": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageSize": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Number of records to retrieve per page"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "49498bc75b145ef6f50b26b7b80bf197a3782011603bddedb764091fa64b6206"
+  }
+}

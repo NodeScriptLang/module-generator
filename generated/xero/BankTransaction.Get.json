@@ -1,0 +1,53 @@
+{
+  "moduleName": "Xero / Bank Transaction / Get",
+  "version": "0.0.0",
+  "description": "Retrieves a single spent or received money transaction by using a unique bank transaction Id",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "bankTransactionId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero generated unique identifier for a bank transaction"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "unitdp": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "e311d62674adace849ee872a56b04e60afb85d4682f060ef3bc959099d71c0b0"
+  }
+}

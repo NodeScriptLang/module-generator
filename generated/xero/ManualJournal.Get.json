@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Manual Journal / Get",
+  "version": "0.0.0",
+  "description": "Retrieves a specific manual journal",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "manualJournalId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a ManualJournal"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "13d102240b67c291ba92c2705c5e04b0c55075d15e7e2601cbbc94f4c1cacb75"
+  }
+}

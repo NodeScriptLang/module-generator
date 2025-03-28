@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Employee / Get",
+  "version": "0.0.0",
+  "description": "Retrieves a specific employee used in Xero payrun using a unique employee Id",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "employeeId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Employee"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "f4a7215a09665c010fd70f7f2bbc36f611cebce7392fb238f7639000d76cf737"
+  }
+}

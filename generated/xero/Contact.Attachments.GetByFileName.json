@@ -1,0 +1,60 @@
+{
+  "moduleName": "Xero / Contact / Attachments / Get By File Name",
+  "version": "0.0.0",
+  "description": "Retrieves a specific attachment from a specific contact by file name",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "contactId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Contact"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "fileName": {
+      "schema": {
+        "type": "string",
+        "description": "Name of the attachment"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "contentType": {
+      "schema": {
+        "type": "string",
+        "description": "The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "baf946ad94da1b35c6e226b64be66b1845b8541420ce8acb25a7ff92792e3783"
+  }
+}

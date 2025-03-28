@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Receipt / History / List",
+  "version": "0.0.0",
+  "description": "Retrieves a history record for a specific receipt",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "receiptId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Receipt"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "d63a1840662ecc6c8d0dd19c68a0e5551a5435759acb5c6a77d2931e3a03e573"
+  }
+}

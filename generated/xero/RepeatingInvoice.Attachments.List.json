@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Repeating Invoice / Attachments / List",
+  "version": "0.0.0",
+  "description": "Retrieves attachments from a specific repeating invoice",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repeatingInvoiceId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Repeating Invoice"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "8821969d76cd0dfe4aed1e2e4b8e5d5a905e0341b5854daf935c28ca25dde94b"
+  }
+}

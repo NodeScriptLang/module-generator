@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Invoice / PDF / Get",
+  "version": "0.0.0",
+  "description": "Retrieves invoices or purchase bills as PDF files",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "invoiceId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for an Invoice"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "115727988a37236a5501e7a102ee864876579bcb659115a38882639da1e59806"
+  }
+}

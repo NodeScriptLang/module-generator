@@ -1,0 +1,36 @@
+{
+  "moduleName": "Xero / Reports / List",
+  "version": "0.0.0",
+  "description": "Retrieves a list of the organistaions unique reports that require a uuid to fetch",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "d4421e66b3f7d37d0f887d12e4fcdc4145437d51addb5db546b97b096d2f1b68"
+  }
+}

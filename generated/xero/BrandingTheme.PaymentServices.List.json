@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Branding Theme / Payment Services / List",
+  "version": "0.0.0",
+  "description": "Retrieves the payment services for a specific branding theme",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "brandingThemeId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Branding Theme"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "d407b5099254113fc00f87b2ac7e32d4200c39290db09e9663838b6f56a893c0"
+  }
+}

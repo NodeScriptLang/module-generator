@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Account / Attachments / List",
+  "version": "0.0.0",
+  "description": "Retrieves attachments for a specific accounts by using a unique account Id",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accountId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for Account object"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "f5feb1d17757f7c99908832e990420ce2566c4a05208bd5eda5711f4de34efd9"
+  }
+}

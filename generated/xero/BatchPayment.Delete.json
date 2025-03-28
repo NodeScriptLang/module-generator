@@ -1,0 +1,62 @@
+{
+  "moduleName": "Xero / Batch Payment / Delete",
+  "version": "0.0.0",
+  "description": "Updates a specific batch payment for invoices and credit notes",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idempotencyKey": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "This allows you to safely retry requests without the risk of duplicate processing. 128 character max."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "batchPaymentId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for BatchPayment"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "status": {
+      "schema": {
+        "type": "string",
+        "default": "DELETED",
+        "description": "The status of the batch payment."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "bc4d5dc272d1d11b3c40c7d4018b94f221ee37b28ee7ff674deefa6d1baba54a"
+  }
+}

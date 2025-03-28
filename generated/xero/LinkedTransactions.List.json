@@ -1,0 +1,90 @@
+{
+  "moduleName": "Xero / Linked Transactions / List",
+  "version": "0.0.0",
+  "description": "Retrieves linked transactions (billable expenses)",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Up to 100 linked transactions will be returned in a single API call. Use the page parameter to specify the page to be returned e.g. page=1."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "linkedTransactionId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The Xero identifier for an Linked Transaction"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "sourceTransactionId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by the SourceTransactionID. Get the linked transactions created from a particular ACCPAY invoice"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "contactId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by the ContactID. Get all the linked transactions that have been assigned to a particular customer."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "status": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by the combination of ContactID and Status. Get  the linked transactions associated to a  customer and with a status"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "targetTransactionId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by the TargetTransactionID. Get all the linked transactions allocated to a particular ACCREC invoice"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "e53ebc38590d5b0272a5561840f8582db1738e525394291c66e79d8500edd02a"
+  }
+}

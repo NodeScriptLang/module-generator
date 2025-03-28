@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Credit Note / Attachments / List",
+  "version": "0.0.0",
+  "description": "Retrieves attachments for a specific credit notes",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "creditNoteId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Credit Note"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "74436bf5da09d70b43cea25f41fbf5cb47093afd71cd59f97d260dba2f79f1b0"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Item / Delete",
+  "version": "0.0.0",
+  "description": "Deletes a specific item",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "itemId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for an Item"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "c2bec43f9ac5a2e770ad3a15f7e4a50bdf60ff353299b4ce277b84f8da314f26"
+  }
+}

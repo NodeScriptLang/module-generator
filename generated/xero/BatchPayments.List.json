@@ -1,0 +1,63 @@
+{
+  "moduleName": "Xero / Batch Payments / List",
+  "version": "0.0.0",
+  "description": "Retrieves either one or many batch payments for invoices",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "ifModifiedSince": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Only records created or modified since this timestamp will be returned"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "where": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by an any element"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "order": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Order by an any element"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "730ff3cfe61422900ae4402fcd7bee40177b3bb7a366e9a1e9c28fbc3ee241bc"
+  }
+}

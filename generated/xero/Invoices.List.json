@@ -1,0 +1,175 @@
+{
+  "moduleName": "Xero / Invoices / List",
+  "version": "0.0.0",
+  "description": "Retrieves sales invoices or purchase bills",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "ifModifiedSince": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Only records created or modified since this timestamp will be returned"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "where": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by an any element"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "order": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Order by an any element"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "ids": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Filter by a comma-separated list of InvoicesIDs."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "invoiceNumbers": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Filter by a comma-separated list of InvoiceNumbers."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "contactIds": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Filter by a comma-separated list of ContactIDs."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "statuses": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Filter by a comma-separated list Statuses. For faster response times we recommend using these explicit parameters instead of passing OR conditions into the Where filter."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "e.g. page=1 – Up to 100 invoices will be returned in a single API call with line items shown for each invoice"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includeArchived": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "e.g. includeArchived=true - Invoices with a status of ARCHIVED will be included in the response"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "createdByMyApp": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "When set to true you'll only retrieve Invoices created by your app"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "unitdp": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "summaryOnly": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageSize": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Number of records to retrieve per page"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "searchTerm": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Search parameter that performs a case-insensitive text search across the fields e.g. InvoiceNumber, Reference."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "0abf06447894b89fa352ecccfe2b6f02375cb03fac894a81364bcefd2baaec3a"
+  }
+}

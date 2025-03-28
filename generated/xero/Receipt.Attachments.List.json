@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Receipt / Attachments / List",
+  "version": "0.0.0",
+  "description": "Retrieves attachments for a specific expense claim receipt",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "receiptId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Receipt"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "5a5dd3ecb62c80620a4123b410781c03bb26740eadb0cf66f6bf271bc2154fe4"
+  }
+}

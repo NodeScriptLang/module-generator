@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Contact / CIS Settings / Get",
+  "version": "0.0.0",
+  "description": "Retrieves CIS settings for a specific contact in a Xero organisation",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "contactId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Contact"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "e97e67e26ad4ce8bf01163b94af926224bf397f328b59ce8d3e168fbdaf1d4b8"
+  }
+}

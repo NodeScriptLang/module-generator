@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Contact Group / Get",
+  "version": "0.0.0",
+  "description": "Retrieves a specific contact group by using a unique contact group Id",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "contactGroupId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Contact Group"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "c365fba80fa533dc5b7f931b7e0c5d2366cca0eae3c2acdef842cf516ef25cdd"
+  }
+}

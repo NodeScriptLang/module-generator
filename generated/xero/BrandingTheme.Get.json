@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Branding Theme / Get",
+  "version": "0.0.0",
+  "description": "Retrieves a specific branding theme using a unique branding theme Id",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "brandingThemeId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Branding Theme"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "116905eff887609e745a4c22f04f45f9668ac4063147d0973d20bb8c1c4070a9"
+  }
+}

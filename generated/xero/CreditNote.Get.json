@@ -1,0 +1,53 @@
+{
+  "moduleName": "Xero / Credit Note / Get",
+  "version": "0.0.0",
+  "description": "Retrieves a specific credit note using a unique credit note Id",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "creditNoteId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Credit Note"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "unitdp": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "2b382e46857b763ba7f9f30b375d721e3ade9da44dae2f587a369d37fbf7bf28"
+  }
+}

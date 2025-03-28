@@ -1,0 +1,65 @@
+{
+  "moduleName": "Xero / Receipt / History / Create",
+  "version": "0.0.0",
+  "description": "Creates a history record for a specific receipt",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idempotencyKey": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "This allows you to safely retry requests without the risk of duplicate processing. 128 character max."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "receiptId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Receipt"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "historyRecords": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "a552f93a3ee59e78388a0d3a24e040a86197c0db2a665d8c190bdcc71b5160d8"
+  }
+}

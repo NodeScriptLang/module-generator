@@ -1,0 +1,104 @@
+{
+  "moduleName": "Xero / Reports / Balance Sheet / Get",
+  "version": "0.0.0",
+  "description": "Retrieves report for balancesheet",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "date": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The date of the Balance Sheet report"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "periods": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "The number of periods for the Balance Sheet report"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "timeframe": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "MONTH",
+          "QUARTER",
+          "YEAR"
+        ],
+        "optional": true,
+        "description": "The period size to compare to (MONTH, QUARTER, YEAR)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "trackingOptionId1": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The tracking option 1 for the Balance Sheet report"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "trackingOptionId2": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The tracking option 2 for the Balance Sheet report"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "standardLayout": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "The standard layout boolean for the Balance Sheet report"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "paymentsOnly": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "return a cash basis for the Balance Sheet report"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "85fecd13c594ebd4c99a7874b1e753b029744bd6622d9a5ef6886a508cd74118"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Contact Group / Contacts / Delete",
+  "version": "0.0.0",
+  "description": "Deletes all contacts from a specific contact group",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "contactGroupId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Contact Group"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "addefa260666b9ce6607af0d2ddef0e74cd8b3ca3c9551d8dd4eaef3e862747b"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Overpayment / History / List",
+  "version": "0.0.0",
+  "description": "Retrieves history records of a specific overpayment",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "overpaymentId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Overpayment"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "c641a75198a88ae2a1d849bc010e00bb9181c576895abb6fe9fcb0d7077e7275"
+  }
+}

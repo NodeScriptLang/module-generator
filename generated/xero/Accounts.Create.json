@@ -1,0 +1,461 @@
+{
+  "moduleName": "Xero / Accounts / Create",
+  "version": "0.0.0",
+  "description": "Creates a new chart of accounts",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idempotencyKey": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "This allows you to safely retry requests without the risk of duplicate processing. 128 character max."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "code": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Customer defined alpha numeric account code e.g 200 or SALES (max length = 10)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Name of account (max length = 150)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "accountId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The Xero identifier for an account – specified as a string following  the endpoint name   e.g. /297c2dc5-cc47-4afd-8ec8-74990b8761e9"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "type": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "BANK",
+          "CURRENT",
+          "CURRLIAB",
+          "DEPRECIATN",
+          "DIRECTCOSTS",
+          "EQUITY",
+          "EXPENSE",
+          "FIXED",
+          "INVENTORY",
+          "LIABILITY",
+          "NONCURRENT",
+          "OTHERINCOME",
+          "OVERHEADS",
+          "PREPAYMENT",
+          "REVENUE",
+          "SALES",
+          "TERMLIAB",
+          "PAYG"
+        ],
+        "optional": true,
+        "description": "See Account Types"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "bankAccountNumber": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "For bank accounts only (Account Type BANK)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "status": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "ACTIVE",
+          "ARCHIVED",
+          "DELETED"
+        ],
+        "optional": true,
+        "description": "Accounts with a status of ACTIVE can be updated to ARCHIVED. See Account Status Codes"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "description": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Description of the Account. Valid for all types of accounts except bank accounts (max length = 4000)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "bankAccountType": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "BANK",
+          "CREDITCARD",
+          "PAYPAL",
+          "NONE",
+          ""
+        ],
+        "optional": true,
+        "description": "For bank accounts only. See Bank Account types"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "currencyCode": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "AED",
+          "AFN",
+          "ALL",
+          "AMD",
+          "ANG",
+          "AOA",
+          "ARS",
+          "AUD",
+          "AWG",
+          "AZN",
+          "BAM",
+          "BBD",
+          "BDT",
+          "BGN",
+          "BHD",
+          "BIF",
+          "BMD",
+          "BND",
+          "BOB",
+          "BRL",
+          "BSD",
+          "BTN",
+          "BWP",
+          "BYN",
+          "BYR",
+          "BZD",
+          "CAD",
+          "CDF",
+          "CHF",
+          "CLF",
+          "CLP",
+          "CNY",
+          "COP",
+          "CRC",
+          "CUC",
+          "CUP",
+          "CVE",
+          "CZK",
+          "DJF",
+          "DKK",
+          "DOP",
+          "DZD",
+          "EEK",
+          "EGP",
+          "ERN",
+          "ETB",
+          "EUR",
+          "FJD",
+          "FKP",
+          "GBP",
+          "GEL",
+          "GHS",
+          "GIP",
+          "GMD",
+          "GNF",
+          "GTQ",
+          "GYD",
+          "HKD",
+          "HNL",
+          "HRK",
+          "HTG",
+          "HUF",
+          "IDR",
+          "ILS",
+          "INR",
+          "IQD",
+          "IRR",
+          "ISK",
+          "JMD",
+          "JOD",
+          "JPY",
+          "KES",
+          "KGS",
+          "KHR",
+          "KMF",
+          "KPW",
+          "KRW",
+          "KWD",
+          "KYD",
+          "KZT",
+          "LAK",
+          "LBP",
+          "LKR",
+          "LRD",
+          "LSL",
+          "LTL",
+          "LVL",
+          "LYD",
+          "MAD",
+          "MDL",
+          "MGA",
+          "MKD",
+          "MMK",
+          "MNT",
+          "MOP",
+          "MRO",
+          "MRU",
+          "MUR",
+          "MVR",
+          "MWK",
+          "MXN",
+          "MXV",
+          "MYR",
+          "MZN",
+          "NAD",
+          "NGN",
+          "NIO",
+          "NOK",
+          "NPR",
+          "NZD",
+          "OMR",
+          "PAB",
+          "PEN",
+          "PGK",
+          "PHP",
+          "PKR",
+          "PLN",
+          "PYG",
+          "QAR",
+          "RON",
+          "RSD",
+          "RUB",
+          "RWF",
+          "SAR",
+          "SBD",
+          "SCR",
+          "SDG",
+          "SEK",
+          "SGD",
+          "SHP",
+          "SKK",
+          "SLE",
+          "SLL",
+          "SOS",
+          "SRD",
+          "STD",
+          "STN",
+          "SVC",
+          "SYP",
+          "SZL",
+          "THB",
+          "TJS",
+          "TMT",
+          "TND",
+          "TOP",
+          "TRY",
+          "TTD",
+          "TWD",
+          "TZS",
+          "UAH",
+          "UGX",
+          "USD",
+          "UYU",
+          "UZS",
+          "VEF",
+          "VES",
+          "VND",
+          "VUV",
+          "WST",
+          "XAF",
+          "XCD",
+          "XOF",
+          "XPF",
+          "YER",
+          "ZAR",
+          "ZMW",
+          "ZMK",
+          "ZWD"
+        ],
+        "optional": true,
+        "description": "3 letter alpha code for the currency – see list of currency codes"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "taxType": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The tax type from taxRates"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "enablePaymentsToAccount": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Boolean – describes whether account can have payments applied to it"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "showInExpenseClaims": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Boolean – describes whether account code is available for use with expense claims"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "class": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "ASSET",
+          "EQUITY",
+          "EXPENSE",
+          "LIABILITY",
+          "REVENUE"
+        ],
+        "optional": true,
+        "description": "See Account Class Types"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "systemAccount": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "DEBTORS",
+          "CREDITORS",
+          "BANKCURRENCYGAIN",
+          "GST",
+          "GSTONIMPORTS",
+          "HISTORICAL",
+          "REALISEDCURRENCYGAIN",
+          "RETAINEDEARNINGS",
+          "ROUNDING",
+          "TRACKINGTRANSFERS",
+          "UNPAIDEXPCLM",
+          "UNREALISEDCURRENCYGAIN",
+          "WAGEPAYABLES",
+          "CISASSETS",
+          "CISASSET",
+          "CISLABOUR",
+          "CISLABOUREXPENSE",
+          "CISLABOURINCOME",
+          "CISLIABILITY",
+          "CISMATERIALS",
+          ""
+        ],
+        "optional": true,
+        "description": "If this is a system account then this element is returned. See System Account types. Note that non-system accounts may have this element set as either “” or null."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "reportingCode": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Shown if set"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "reportingCodeName": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Shown if set"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "hasAttachments": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "boolean to indicate if an account has an attachment (read only)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "updatedDateUtc": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Last modified date UTC format"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "addToWatchlist": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Boolean – describes whether the account is shown in the watchlist widget on the dashboard"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "validationErrors": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Displays array of validation error messages from the API"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "61d966ad003816990be32702aadf6f863a1711df0f600361beb18eeea5115382"
+  }
+}

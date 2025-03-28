@@ -1,0 +1,60 @@
+{
+  "moduleName": "Xero / Invoice / Attachments / Get By File Name",
+  "version": "0.0.0",
+  "description": "Retrieves an attachment from a specific invoice or purchase bill by filename",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "invoiceId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for an Invoice"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "fileName": {
+      "schema": {
+        "type": "string",
+        "description": "Name of the attachment"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "contentType": {
+      "schema": {
+        "type": "string",
+        "description": "The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "5b25e7e5160c0a2b07f93be2c9db71405a9096c7ee3fbe6afa7f05e577052e27"
+  }
+}

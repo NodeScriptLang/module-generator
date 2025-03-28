@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Purchase Order / History / List",
+  "version": "0.0.0",
+  "description": "Retrieves history for a specific purchase order",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "purchaseOrderId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for an Purchase Order"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "d177f8e3edc1e4bf4d3c5101cc65f0e6176809c047d90740d4987a0ce92ca8a2"
+  }
+}

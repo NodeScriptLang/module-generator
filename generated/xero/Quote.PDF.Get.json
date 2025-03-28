@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Quote / PDF / Get",
+  "version": "0.0.0",
+  "description": "Retrieves a specific quote as a PDF file using a unique quote Id",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "quoteId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for an Quote"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "2fa27f2f3b16a21ae28677ece601d163ea76c5f9eee97ea974c87def3201c26d"
+  }
+}

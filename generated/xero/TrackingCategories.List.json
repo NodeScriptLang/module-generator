@@ -1,0 +1,63 @@
+{
+  "moduleName": "Xero / Tracking Categories / List",
+  "version": "0.0.0",
+  "description": "Retrieves tracking categories and options",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "where": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by an any element"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "order": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Order by an any element"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includeArchived": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "e.g. includeArchived=true - Categories and options with a status of ARCHIVED will be included in the response"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "e1771d75e587f9f44c3d2d49752bb464d8fc86eececec9d9f1dd57a20a91bd05"
+  }
+}

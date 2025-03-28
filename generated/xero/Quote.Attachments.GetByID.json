@@ -1,0 +1,60 @@
+{
+  "moduleName": "Xero / Quote / Attachments / Get By ID",
+  "version": "0.0.0",
+  "description": "Retrieves a specific attachment from a specific quote using a unique attachment Id",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "quoteId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for an Quote"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "attachmentId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for Attachment object"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "contentType": {
+      "schema": {
+        "type": "string",
+        "description": "The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "bf564ea21195a63db7c002a28b05325747935d98a83d6b10c0e35b8ddbed3674"
+  }
+}

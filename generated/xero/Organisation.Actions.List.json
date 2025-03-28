@@ -1,0 +1,36 @@
+{
+  "moduleName": "Xero / Organisation / Actions / List",
+  "version": "0.0.0",
+  "description": "Retrieves a list of the key actions your app has permission to perform in the connected Xero organisation.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "56f56d8077c8696f357fca5a046c5e5b5edeba5b07248c73b29af922b76d276b"
+  }
+}

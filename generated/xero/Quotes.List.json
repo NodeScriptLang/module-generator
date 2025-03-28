@@ -1,0 +1,126 @@
+{
+  "moduleName": "Xero / Quotes / List",
+  "version": "0.0.0",
+  "description": "Retrieves sales quotes",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "ifModifiedSince": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Only records created or modified since this timestamp will be returned"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "dateFrom": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter for quotes after a particular date"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "dateTo": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter for quotes before a particular date"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "expiryDateFrom": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter for quotes expiring after a particular date"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "expiryDateTo": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter for quotes before a particular date"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "contactId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter for quotes belonging to a particular contact"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "status": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter for quotes of a particular Status"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "e.g. page=1 – Up to 100 Quotes will be returned in a single API call with line items shown for each quote"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "order": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Order by an any element"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "quoteNumber": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by quote number (e.g. GET https://.../Quotes?QuoteNumber=QU-0001)"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "bea7577e1f0a9dfd19759a39028584a7032aeadca58d375a2cfbe8c17ac28ef4"
+  }
+}

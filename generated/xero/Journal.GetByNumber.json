@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Journal / Get By Number",
+  "version": "0.0.0",
+  "description": "Retrieves a specific journal using a unique journal number.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "journalNumber": {
+      "schema": {
+        "type": "number",
+        "description": "Number of a Journal"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "bbb99a5696707d0f18ebaf5bdfbd330fea1b8b8d0715a4d8b18ef2c61b866a4d"
+  }
+}

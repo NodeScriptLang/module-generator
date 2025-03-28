@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Organisation / CIS Settings / Get",
+  "version": "0.0.0",
+  "description": "Retrieves the CIS settings for the Xero organistaion.",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "organisationId": {
+      "schema": {
+        "type": "string",
+        "description": "The unique Xero identifier for an organisation"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "ede45daf49a003b137baff52542807ddaf1134e2494d9c6fec517d3a4e20132e"
+  }
+}

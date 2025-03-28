@@ -1,0 +1,45 @@
+{
+  "moduleName": "Xero / Reports / Ten Ninety Nine / Get",
+  "version": "0.0.0",
+  "description": "Retrieve reports for 1099",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "reportYear": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The year of the 1099 report"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "99ecff3e86ab72834314b166469019eb8a4e26b26166b5338c9931d5ddb1d5b5"
+  }
+}

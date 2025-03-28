@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Purchase Order / Attachments / List",
+  "version": "0.0.0",
+  "description": "Retrieves attachments for a specific purchase order",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "purchaseOrderId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for an Purchase Order"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "79c879fb627e6dd1bbfa3c064e6abc21f1ccb32043cc1baced744893f01dbb7a"
+  }
+}

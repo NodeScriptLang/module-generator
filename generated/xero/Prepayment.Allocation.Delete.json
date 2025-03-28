@@ -1,0 +1,52 @@
+{
+  "moduleName": "Xero / Prepayment / Allocation / Delete",
+  "version": "0.0.0",
+  "description": "Deletes an Allocation from a Prepayment",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "prepaymentId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a PrePayment"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "allocationId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for Allocation object"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "797c617ece5a486f415dd9203157e23f738d9390b3ad593c92b30179c0ebc999"
+  }
+}

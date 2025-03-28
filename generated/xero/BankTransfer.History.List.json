@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Bank Transfer / History / List",
+  "version": "0.0.0",
+  "description": "Retrieves history from a specific bank transfer using a unique bank transfer Id",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "bankTransferId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero generated unique identifier for a bank transfer"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "4886606429b143a5537918308d350beb4e06620472cd547e821758277f67f3b7"
+  }
+}

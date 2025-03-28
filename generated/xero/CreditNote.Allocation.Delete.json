@@ -1,0 +1,52 @@
+{
+  "moduleName": "Xero / Credit Note / Allocation / Delete",
+  "version": "0.0.0",
+  "description": "Deletes an Allocation from a Credit Note",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "creditNoteId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Credit Note"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "allocationId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for Allocation object"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "e8ad1c5086757137f8b4749d0eb3548dd797799504ab51fac5b2baa87f33d45b"
+  }
+}

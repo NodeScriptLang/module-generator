@@ -1,0 +1,65 @@
+{
+  "moduleName": "Xero / Invoice / History / Create",
+  "version": "0.0.0",
+  "description": "Creates a history record for a specific invoice",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idempotencyKey": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "This allows you to safely retry requests without the risk of duplicate processing. 128 character max."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "invoiceId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for an Invoice"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "historyRecords": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "ea61cd4811efb138d5abd54f9ca6a6908c4e0d912fd4ab756b487e05a9d6dcfc"
+  }
+}

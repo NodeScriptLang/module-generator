@@ -1,0 +1,63 @@
+{
+  "moduleName": "Xero / Journals / List",
+  "version": "0.0.0",
+  "description": "Retrieves journals",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "ifModifiedSince": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Only records created or modified since this timestamp will be returned"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "offset": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Offset by a specified journal number. e.g. journals with a JournalNumber greater than the offset will be returned"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "paymentsOnly": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "Filter to retrieve journals on a cash basis. Journals are returned on an accrual basis by default."
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "fcca763dcb15d59b8d876e5f8ec3870e40eeee28c1c36f6098bd28a1abd8e610"
+  }
+}

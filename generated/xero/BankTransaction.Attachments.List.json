@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Bank Transaction / Attachments / List",
+  "version": "0.0.0",
+  "description": "Retrieves any attachments from a specific bank transactions",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "bankTransactionId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero generated unique identifier for a bank transaction"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "2bd13a1a6139fba24e06f80e56993075b957e1198fc975c5b831b139eab6f2b2"
+  }
+}

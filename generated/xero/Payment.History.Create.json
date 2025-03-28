@@ -1,0 +1,65 @@
+{
+  "moduleName": "Xero / Payment / History / Create",
+  "version": "0.0.0",
+  "description": "Creates a history record for a specific payment",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idempotencyKey": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "This allows you to safely retry requests without the risk of duplicate processing. 128 character max."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "paymentId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Payment"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "historyRecords": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "04d466f89ac1b0d5183ddfac094d51e8ccd52b0aa46d7e1823e8abfea193908a"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Quote / Attachments / List",
+  "version": "0.0.0",
+  "description": "Retrieves attachments for a specific quote",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "quoteId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for an Quote"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "f05d3941f14b41544ed41ed51a68251f67c6149c582e8db828f79ca16b8badf2"
+  }
+}

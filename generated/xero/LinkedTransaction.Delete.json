@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Linked Transaction / Delete",
+  "version": "0.0.0",
+  "description": "Deletes a specific linked transactions (billable expenses)",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "linkedTransactionId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a LinkedTransaction"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "d29d2313a23de35e37cb72059722f33761c5d356a73e7da529efcdb72cd98950"
+  }
+}

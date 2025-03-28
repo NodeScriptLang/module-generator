@@ -1,0 +1,121 @@
+{
+  "moduleName": "Xero / Contacts / List",
+  "version": "0.0.0",
+  "description": "Retrieves all contacts in a Xero organisation",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "ifModifiedSince": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Only records created or modified since this timestamp will be returned"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "where": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by an any element"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "order": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Order by an any element"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "ids": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "Filter by a comma separated list of ContactIDs. Allows you to retrieve a specific set of contacts in a single call."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "page": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "e.g. page=1 - Up to 100 contacts will be returned in a single API call."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "includeArchived": {
+      "schema": {
+        "type": "boolean",
+        "optional": true,
+        "description": "e.g. includeArchived=true - Contacts with a status of ARCHIVED will be included in the response"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "summaryOnly": {
+      "schema": {
+        "type": "boolean",
+        "default": "false",
+        "optional": true,
+        "description": "Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "searchTerm": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Search parameter that performs a case-insensitive text search across the Name, FirstName, LastName, ContactNumber and EmailAddress fields."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "pageSize": {
+      "schema": {
+        "type": "number",
+        "optional": true,
+        "description": "Number of records to retrieve per page"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "0cec32ede0de80a4ee6a206f315620ca677bc8d18ca2f9ebd6f34b700a8089a7"
+  }
+}

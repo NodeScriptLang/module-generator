@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Purchase Order / Get By Number",
+  "version": "0.0.0",
+  "description": "Retrieves a specific purchase order using purchase order number",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "purchaseOrderNumber": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a PurchaseOrder"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "555bdc3a62054ce3261677e958542899210919bcd7809c7da8c11699d0251228"
+  }
+}

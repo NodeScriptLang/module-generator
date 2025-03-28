@@ -1,0 +1,107 @@
+{
+  "moduleName": "Xero / Tracking Categories / Create",
+  "version": "0.0.0",
+  "description": "Create tracking categories",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idempotencyKey": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "This allows you to safely retry requests without the risk of duplicate processing. 128 character max."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "trackingCategoryId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The Xero identifier for a tracking category e.g. 297c2dc5-cc47-4afd-8ec8-74990b8761e9"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "trackingOptionId": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The Xero identifier for a tracking option e.g. dc54c220-0140-495a-b925-3246adc0075f"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "name": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The name of the tracking category e.g. Department, Region (max length = 100)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "option": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "The option name of the tracking option e.g. East, West (max length = 100)"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "status": {
+      "schema": {
+        "type": "string",
+        "enum": [
+          "ACTIVE",
+          "ARCHIVED",
+          "DELETED"
+        ],
+        "optional": true,
+        "description": "The status of a tracking category"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "options": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": "See Tracking Options"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "0c707fe20653d046fc4cdd02b39e9b02a343b22a52f3e0228422a9b00328fa45"
+  }
+}

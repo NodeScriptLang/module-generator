@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Account / Delete",
+  "version": "0.0.0",
+  "description": "Deletes a chart of accounts",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "accountId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for Account object"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "100e73690dac390292614bcdceddcabe9c1040c71264456ba3747870da8bf605"
+  }
+}

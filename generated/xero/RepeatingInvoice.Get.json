@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Repeating Invoice / Get",
+  "version": "0.0.0",
+  "description": "Retrieves a specific repeating invoice by using a unique repeating invoice Id",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repeatingInvoiceId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Repeating Invoice"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "8e1ec69c48641418c1b2bb96e3a30c4d2b26744becbfa9aec41fbc26458305f7"
+  }
+}

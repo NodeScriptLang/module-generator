@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Expense Claim / History / List",
+  "version": "0.0.0",
+  "description": "Retrieves history records of a specific expense claim",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "expenseClaimId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a ExpenseClaim"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "38d4b604054a8dc9e3d629fdb6a814a6063817cc69e78f3d1d19f4fe909d2a22"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "moduleName": "Xero / Tracking Options / Delete",
+  "version": "0.0.0",
+  "description": "Deletes a specific option for a specific tracking category",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "trackingCategoryId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a TrackingCategory"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "trackingOptionId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Tracking Option"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "d4c517b3799a0c926d1407e6b322646f75a103ad60ac439a0ef8150ac0e07589"
+  }
+}

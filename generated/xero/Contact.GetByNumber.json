@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Contact / Get By Number",
+  "version": "0.0.0",
+  "description": "Retrieves a specific contact by contact number in a Xero organisation",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "contactNumber": {
+      "schema": {
+        "type": "string",
+        "description": "This field is read only on the Xero contact screen, used to identify contacts in external systems (max length = 50)."
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "3e6967e08d8efca6ccb41a4e58e395713294d4a4c01c5a15bcee1af3a6f04d8b"
+  }
+}

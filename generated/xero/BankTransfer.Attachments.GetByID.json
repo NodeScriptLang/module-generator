@@ -1,0 +1,60 @@
+{
+  "moduleName": "Xero / Bank Transfer / Attachments / Get By ID",
+  "version": "0.0.0",
+  "description": "Retrieves a specific attachment from a specific bank transfer using a unique attachment ID",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "bankTransferId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero generated unique identifier for a bank transfer"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "attachmentId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for Attachment object"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "contentType": {
+      "schema": {
+        "type": "string",
+        "description": "The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "724dba0359261520ea47a7854a34f50f51a97c275b84dd9951b7f1ba43f587ac"
+  }
+}

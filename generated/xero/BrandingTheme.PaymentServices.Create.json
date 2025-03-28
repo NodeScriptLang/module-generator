@@ -1,0 +1,65 @@
+{
+  "moduleName": "Xero / Branding Theme / Payment Services / Create",
+  "version": "0.0.0",
+  "description": "Creates a new custom payment service for a specific branding theme",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "idempotencyKey": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "This allows you to safely retry requests without the risk of duplicate processing. 128 character max."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "brandingThemeId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Branding Theme"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "paymentServices": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "any"
+        },
+        "optional": true,
+        "description": ""
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "e7660a663489dab6d36566f57dbb4e311eaa693a300e5962433ed19bc474e72c"
+  }
+}

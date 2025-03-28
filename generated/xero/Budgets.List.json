@@ -1,0 +1,63 @@
+{
+  "moduleName": "Xero / Budgets / List",
+  "version": "0.0.0",
+  "description": "Retrieve a list of budgets",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "ids": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by BudgetID. Allows you to retrieve a specific individual budget."
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "dateTo": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by start date"
+      },
+      "advanced": true,
+      "hideValue": false
+    },
+    "dateFrom": {
+      "schema": {
+        "type": "string",
+        "optional": true,
+        "description": "Filter by end date"
+      },
+      "advanced": true,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "ba53763777fc7d091cf890b6e2c687a714ee9b7b792c3aecd310faaf87b3f9da"
+  }
+}

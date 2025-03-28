@@ -1,0 +1,60 @@
+{
+  "moduleName": "Xero / Repeating Invoice / Attachments / Get By ID",
+  "version": "0.0.0",
+  "description": "Retrieves a specific attachment from a specific repeating invoice",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "repeatingInvoiceId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Repeating Invoice"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "attachmentId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for Attachment object"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "contentType": {
+      "schema": {
+        "type": "string",
+        "description": "The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "195ff83ce183fcbab67a3b2bcfcdbb473bb6eb5172d7034dcb9b07f3d5e945b3"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "moduleName": "Xero / Purchase Order / Attachments / Get By ID",
+  "version": "0.0.0",
+  "description": "Retrieves specific attachment for a specific purchase order using a unique attachment Id",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "purchaseOrderId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for an Purchase Order"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "attachmentId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for Attachment object"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "contentType": {
+      "schema": {
+        "type": "string",
+        "description": "The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "5cf950d0c8744e35f2f2a4c010778bd1529b7fbb19bafcaf024f3f4b237a1b8e"
+  }
+}

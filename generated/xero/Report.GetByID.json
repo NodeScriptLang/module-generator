@@ -1,0 +1,44 @@
+{
+  "moduleName": "Xero / Report / Get By ID",
+  "version": "0.0.0",
+  "description": "Retrieves a specific report using a unique ReportID",
+  "keywords": [],
+  "cacheMode": "always",
+  "evalMode": "manual",
+  "params": {
+    "accessToken": {
+      "schema": {
+        "type": "any",
+        "description": "OAuth 2 access token."
+      },
+      "advanced": false,
+      "hideValue": true
+    },
+    "xeroTenantId": {
+      "schema": {
+        "type": "string",
+        "description": "Xero identifier for Tenant"
+      },
+      "advanced": false,
+      "hideValue": false
+    },
+    "reportId": {
+      "schema": {
+        "type": "string",
+        "description": "Unique identifier for a Report"
+      },
+      "advanced": false,
+      "hideValue": false
+    }
+  },
+  "result": {
+    "schema": {
+      "type": "any"
+    },
+    "async": true
+  },
+  "attributes": {
+    "externalDocs": "https://developer.xero.com/documentation/api/accounting/overview",
+    "codeHash": "2738b50924c334f8cf8ca85f9378147dfa83978221da38244c0096dbb6addc84"
+  }
+}
